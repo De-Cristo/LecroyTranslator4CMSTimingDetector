@@ -454,7 +454,7 @@ Waveform ReadLeCroyBinaryWaveform(const std::string& filename)
 // -------------------------------------------------------------
 // CSV writer: flatten segments into "Segment,Time_s,Voltage_V"
 // -------------------------------------------------------------
-void writeDataCSV(const Waveform& wave, const std::string& inputFile)
+void writeDataCSV(const Waveform& wave, const std::string& inputFile, const std::string& outDir = "")
 {
     namespace fs = std::filesystem;
 
@@ -462,9 +462,21 @@ void writeDataCSV(const Waveform& wave, const std::string& inputFile)
     std::string base = inPath.stem().string();  // file name without extension
     std::string outName = base + "_data.csv";
 
-    std::ofstream fout(outName);
+    fs::path outPath;
+    if (outDir.empty()) outPath = fs::path(outName);
+    else outPath = fs::path(outDir) / outName;
+
+    if (!outPath.parent_path().empty()) {
+        std::error_code ec;
+        fs::create_directories(outPath.parent_path(), ec);
+        if (ec) {
+            throw std::runtime_error("Cannot create output directory: " + outPath.parent_path().string());
+        }
+    }
+
+    std::ofstream fout(outPath.string());
     if (!fout) {
-        throw std::runtime_error("Cannot open CSV file for writing: " + outName);
+        throw std::runtime_error("Cannot open CSV file for writing: " + outPath.string());
     }
 
     // header
@@ -484,13 +496,13 @@ void writeDataCSV(const Waveform& wave, const std::string& inputFile)
     }
 
     fout.close();
-    std::cout << "Data CSV written to: " << outName << "\n";
+    std::cout << "Data CSV written to: " << outPath.string() << "\n";
 }
 
 // -------------------------------------------------------------
 // Meta CSV writer: "Field,Value", similar spirit to MATLAB version
 // -------------------------------------------------------------
-void writeMetaCSV(const Waveform& wave, const std::string& inputFile)
+void writeMetaCSV(const Waveform& wave, const std::string& inputFile, const std::string& outDir = "")
 {
     namespace fs = std::filesystem;
 
@@ -498,9 +510,21 @@ void writeMetaCSV(const Waveform& wave, const std::string& inputFile)
     std::string base = inPath.stem().string();  // file name without extension
     std::string outName = base + "_meta.csv";
 
-    std::ofstream fout(outName);
+    fs::path outPath;
+    if (outDir.empty()) outPath = fs::path(outName);
+    else outPath = fs::path(outDir) / outName;
+
+    if (!outPath.parent_path().empty()) {
+        std::error_code ec;
+        fs::create_directories(outPath.parent_path(), ec);
+        if (ec) {
+            throw std::runtime_error("Cannot create output directory: " + outPath.parent_path().string());
+        }
+    }
+
+    std::ofstream fout(outPath.string());
     if (!fout) {
-        throw std::runtime_error("Cannot open meta CSV file for writing: " + outName);
+        throw std::runtime_error("Cannot open meta CSV file for writing: " + outPath.string());
     }
 
     fout << "Field,Value\n";
@@ -537,7 +561,7 @@ void writeMetaCSV(const Waveform& wave, const std::string& inputFile)
     }
 
     fout.close();
-    std::cout << "Meta CSV written to: " << outName << "\n";
+    std::cout << "Meta CSV written to: " << outPath.string() << "\n";
 }
 
 
@@ -547,9 +571,12 @@ void writeMetaCSV(const Waveform& wave, const std::string& inputFile)
 int main(int argc, char* argv[])
 {
     if (argc < 2) {
-        std::cerr << "Usage: " << argv[0] << " waveform.trc\n";
+        std::cerr << "Usage: " << argv[0] << " waveform.trc [outdir]\n";
         return 1;
     }
+
+    std::string outDir;
+    if (argc >= 3) outDir = argv[2];
 
     try {
         Waveform wave = ReadLeCroyBinaryWaveform(argv[1]);
@@ -571,9 +598,9 @@ int main(int argc, char* argv[])
             }
         }
 
-        // Write CSV files
-        writeDataCSV(wave, wave.info.fileName);
-        writeMetaCSV(wave, wave.info.fileName);
+        // Write CSV files (optionally into outDir)
+        writeDataCSV(wave, wave.info.fileName, outDir);
+        writeMetaCSV(wave, wave.info.fileName, outDir);
 
     } catch (const std::exception& ex) {
         std::cerr << "Error: " << ex.what() << "\n";
