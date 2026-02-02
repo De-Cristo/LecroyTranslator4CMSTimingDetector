@@ -1,0 +1,258 @@
+#!/usr/bin/env python3
+"""
+Apply mapping results to original ROOT events: read mapping (mapping_results_segN.csv),
+read peaks CSVs (one per meta file), and append peak time/amplitude as an entry for a
+given channel (default 192) to the ROOT tree, preserving all other branches.
+
+Usage examples:
+  # Process a single mapping file (one segment):
+  python3 apply_mapping_add_peaks.py \
+    --root /eos/cms/.../4237/1_e.root \
+    --csv ../trc_out_root_reco/4237_1_e.csv \
+    --mapping ../trc_out_sync/mapping_results_0004237_0000001_6347.csv \
+    --peaks-dir ../trc_out_MCP_reco \
+    --peaks-pattern "peaks_raw_C1_*_{suffix}_data.csv" \
+    --channel 192 \
+    --out out_with_peaks_seg6347.root
+
+  # Process all mapping files (all segments) in a directory or via glob — script merges all mappings
+  # into the single output (keeps original ROOT entry ordering):
+  python3 apply_mapping_add_peaks.py \
+    --root /eos/cms/.../4237/1_e.root \
+    --csv ../trc_out_root_reco/4237_1_e.csv \
+    --mapping "../trc_out_sync/mapping_results_*.csv" \
+    --peaks-dir ../trc_out_MCP_reco \
+    --peaks-pattern "peaks_raw_C1_*_{suffix}_data.csv" \
+    --channel 192 \
+    --out out_with_peaks_all_segments.root
+
+Notes:
+- The script expects the CSV produced from the ROOT dump (the same one used by Febd_synchronizor)
+  that contains a column listing per-event 'time' arrays (as serialized Python lists). That CSV
+  must contain either an 'entry' column with the original ROOT entry index or preserve row order
+  matching the ROOT tree.
+- The mapping CSV (mapping_results_segN.csv) must contain a row with key 'trigger_to_root' whose
+  value is a JSON list (may contain nulls). 'trigger_to_root'[j] = i means trigger-index j maps to
+  root-cluster index i (index into the cluster entries used when producing the mapping).
+- The peaks CSV files are searched by pattern: the script substitutes {suffix} with the numeric
+  suffix extracted from the mapping filename if possible. If no match is found the script will
+  try to find any peaks CSV in the provided peaks-dir and match by order.
+- The script writes a new ROOT file with the same branches as the input tree, except the
+  chosen channel/time/energy branches are extended by the new peak entries for matched events.
+
+This is a best-effort utility; verify the output before using in production.
+"""
+
+import argparse
+import ast
+import csv
+import json
+import os
+import re
+from pathlib import Path
+
+try:
+    import uproot
+    import awkward as ak
+    import numpy as np
+    import pandas as pd
+except Exception as e:
+    print('Missing dependency:', e)
+    print('Install: pip install uproot awkward numpy pandas')
+    raise
+
+
+def parse_list_field(s):
+    if pd.isna(s):
+        return []
+    if isinstance(s, list):
+        return s
+    try:
+        return ast.literal_eval(s)
+    except Exception:
+        return []
+
+
+def find_peaks_file_for_suffix(peaks_dir, pattern_template, suffix):
+    # pattern_template should include '{suffix}' placeholder
+    patt = pattern_template.format(suffix=suffix)
+    matches = sorted(Path(peaks_dir).parent.glob(os.path.basename(patt))) if os.path.dirname(patt) else sorted(Path(peaks_dir).glob(patt))
+    # allow absolute path in pattern
+    if not matches:
+        matches = sorted(Path(peaks_dir).glob(patt)) if Path(peaks_dir).is_dir() else []
+    return matches[0] if matches else None
+
+
+def infer_peak_columns(df_peaks):
+    # Try to guess columns for time and amplitude
+    cols = [c.lower() for c in df_peaks.columns]
+    time_col = None
+    amp_col = None
+    for c in df_peaks.columns:
+        lc = c.lower()
+        if time_col is None and ('time' in lc or 'peak_time' in lc or 't_' in lc):
+            time_col = c
+        if amp_col is None and ('amp' in lc or 'amplitude' in lc or 'height' in lc or 'peak' in lc):
+            amp_col = c
+    # fallback to first two columns
+    if time_col is None and len(df_peaks.columns) >= 1:
+        time_col = df_peaks.columns[0]
+    if amp_col is None and len(df_peaks.columns) >= 2:
+        amp_col = df_peaks.columns[1]
+    return time_col, amp_col
+
+
+def expand_mapping_paths(mapping_args):
+    paths = []
+    for item in mapping_args:
+        if any(ch in item for ch in ['*', '?', '[']):
+            paths.extend(sorted(Path().glob(item)))
+        else:
+            paths.append(Path(item))
+    # de-dup while preserving order
+    seen = set()
+    ordered = []
+    for p in paths:
+        s = str(p)
+        if s not in seen:
+            ordered.append(p)
+            seen.add(s)
+    return ordered
+
+
+def load_mapped_root_idx(mapping_csv_path):
+    return load_mapping_value(mapping_csv_path, "mapped_root_idx") or []
+
+
+def load_mapping_value(mapping_csv_path, key_name):
+    with open(mapping_csv_path, "r", newline='') as fh:
+        reader = csv.reader(fh)
+        for parts in reader:
+            if not parts or len(parts) < 2:
+                continue
+            key = parts[0].strip()
+            if key != key_name:
+                continue
+            value_json = parts[1].strip()
+            try:
+                value = json.loads(value_json)
+            except Exception:
+                value = None
+            if isinstance(value, str):
+                try:
+                    return json.loads(value)
+                except Exception:
+                    try:
+                        return ast.literal_eval(value)
+                    except Exception:
+                        return None
+            return value
+    return None
+
+
+def find_peaks_file_for_mapping(peaks_dir, pattern_template, mapping_path):
+    base = Path(mapping_path).name
+    m = re.search(r'(\d{7}_\d{7}_\d{4})', base)
+    token = m.group(1) if m else None
+    candidates = sorted(Path(peaks_dir).glob(pattern_template))
+    if token:
+        for c in candidates:
+            if token in c.name:
+                return c
+    if len(candidates) == 1:
+        return candidates[0]
+    return None
+
+
+def main():
+    p = argparse.ArgumentParser(description='Apply mapping and insert peak time/amp into ROOT tree as channel entries')
+    p.add_argument('--root', required=True, help='Input ROOT file path')
+    p.add_argument('--csv', required=True, help='CSV dump from root with per-event time lists (used to recover event ordering and indices)')
+    p.add_argument('--mapping', required=True, nargs='+', help='Mapping CSV(s) produced by Febd_synchronizor (mapping_results_{suffix}.csv). Accepts a glob or multiple files')
+    p.add_argument('--peaks-dir', required=True, help='Directory containing peaks CSV files')
+    p.add_argument('--peaks-pattern', default='peaks_raw_C1_*_{suffix}_data.csv', help='Pattern to find peaks CSV; use {suffix} placeholder that will be replaced by numeric suffix from mapping filename')
+    p.add_argument('--channel', type=int, default=192, help='Channel ID to add peaks to')
+    p.add_argument('--out', required=True, help='Output ROOT file path')
+    p.add_argument('--branch-channel', default='channelID', help='Branch name for channel list in ROOT tree')
+    p.add_argument('--branch-time', default='time', help='Branch name for time list in ROOT tree')
+    p.add_argument('--branch-energy', default='energy', help='Branch name for energy list in ROOT tree')
+    args = p.parse_args()
+
+    root_path = args.root
+    csv_path = args.csv
+    mapping_path = args.mapping
+    peaks_dir = args.peaks_dir
+    pattern_template = args.peaks_pattern
+    out_root = args.out
+
+    # Step 1: copy input ROOT to output unchanged (ignore mapping/peaks for now)
+    print('Step 1: copying input ROOT to output (no mapping applied)')
+    # Simple byte-copy avoids uproot limitations when tree contains nested/jagged records.
+    import shutil
+    out_path = out_root
+    out_dir = os.path.dirname(out_path)
+    if out_dir:
+        os.makedirs(out_dir, exist_ok=True)
+    shutil.copy2(root_path, out_path)
+    print('Copied input ROOT to', out_path, '(bytewise, unchanged)')
+
+    # Step 2/3: add MCP tree with mapped_root_idx and peaks as branches
+    print('Step 2/3: adding MCP tree with mapped_root_idx + peak_time/peak_amp')
+    mapping_paths = expand_mapping_paths(mapping_path)
+    if not mapping_paths:
+        raise FileNotFoundError('No mapping CSVs matched the provided --mapping arguments')
+    all_indices = []
+    all_peak_time = []
+    all_peak_amp = []
+    for mp in mapping_paths:
+        idx_list = load_mapped_root_idx(mp) or []
+        trigger_to_root = load_mapping_value(mp, "trigger_to_root") or []
+        root_to_trigger = load_mapping_value(mp, "root_to_trigger") or []
+        peaks_file = find_peaks_file_for_mapping(peaks_dir, pattern_template, mp)
+        if peaks_file is None:
+            raise FileNotFoundError(f'No peaks CSV matched for mapping {mp}')
+        df_peaks = pd.read_csv(peaks_file)
+        if "segment" not in df_peaks.columns:
+            raise KeyError(f'Missing "segment" column in peaks file: {peaks_file}')
+        if "peak_time_ns" not in df_peaks.columns or "peak_amp" not in df_peaks.columns:
+            raise KeyError(f'Missing peak_time_ns/peak_amp columns in peaks file: {peaks_file}')
+        seg_to_peak = dict(zip(df_peaks["segment"].astype(int), zip(df_peaks["peak_time_ns"], df_peaks["peak_amp"])))
+
+        # Append in trigger order (same order used to build mapped_root_idx)
+        local_peak_time = []
+        local_peak_amp = []
+        for j_trigger, i_root in enumerate(trigger_to_root):
+            if i_root is None or (isinstance(i_root, float) and np.isnan(i_root)):
+                continue
+            i_root_int = int(i_root)
+            if 0 <= i_root_int < len(root_to_trigger):
+                trig_idx = root_to_trigger[i_root_int]
+            else:
+                trig_idx = j_trigger
+            if trig_idx is None or (isinstance(trig_idx, float) and np.isnan(trig_idx)):
+                seg = j_trigger + 1
+            else:
+                seg = int(trig_idx) + 1
+            peak = seg_to_peak.get(seg, (np.nan, np.nan))
+            local_peak_time.append(peak[0])
+            local_peak_amp.append(peak[1])
+
+        if len(idx_list) != len(local_peak_time):
+            print(f'Warning: mapped_root_idx length {len(idx_list)} != peaks length {len(local_peak_time)} for {mp}')
+
+        all_indices.extend(idx_list)
+        all_peak_time.extend(local_peak_time)
+        all_peak_amp.extend(local_peak_amp)
+    if len(all_indices) == 0:
+        print('Warning: mapped_root_idx is empty; MCP/index will be an empty branch')
+    with uproot.update(out_path) as f:
+        f["MCP"] = {
+            "index": np.array(all_indices, dtype=np.int64),
+            "peak_time": np.array(all_peak_time, dtype=np.float64),
+            "peak_amp": np.array(all_peak_amp, dtype=np.float64),
+        }
+    print('Added MCP tree with', len(all_indices), 'entries')
+
+
+if __name__ == '__main__':
+    main()

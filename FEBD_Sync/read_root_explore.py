@@ -74,7 +74,7 @@ def main():
     p.add_argument('--dump-json', help='If provided, dump per-event nested JSON lines to this file.')
     p.add_argument('--dump-df', help='If provided, convert tree (or first --max-entries) to a pandas DataFrame and save as pickle.')
     p.add_argument('--require-channels', nargs='+', type=int, help='List of channelID values that must be present in an event to include it (e.g. --require-channels 192 156)')
-    p.add_argument('--max-entries', type=int, default=1000, help='Max number of events to dump')
+    p.add_argument('--max-entries', type=int, default=10000, help='Max number of events to dump')
     p.add_argument('--channel', type=int, help='Channel ID to plot time distribution for (uses channelIdx mapping)')
     p.add_argument('--outdir', help='Output directory to save plots (default: current directory)')
     p.add_argument('--workers', type=int, default=1, help='Number of worker threads for per-event processing (default: 1)')
