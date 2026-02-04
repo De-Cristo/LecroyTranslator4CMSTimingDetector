@@ -862,6 +862,8 @@ def process_group(group, out_dir, plot_first=5, polarity='rising', method='zero'
                 'tclk_ns': float(slope) if not np.isnan(slope) else np.nan,
                 'sigma_single_edge_ns': sigma_single,
                 'sigma_t0_ns': sigma_t0,
+                't_event_ref_ns': float(tns[0]) if (tns is not None and len(tns) > 0) else np.nan,
+                't0_abs_ns': float(tns[0] + intercept) if (tns is not None and len(tns) > 0 and not np.isnan(intercept)) else np.nan,
                 'source_file': os.path.basename(infile)
             })
 
@@ -918,7 +920,7 @@ def process_group(group, out_dir, plot_first=5, polarity='rising', method='zero'
     # Prepare DataFrames to return (and also save per-file CSVs)
     df_zero = pd.DataFrame(rows_zero) if len(rows_zero) > 0 else pd.DataFrame(columns=['eventNo','edge_time_ns_rel'])
     df_template_edges = pd.DataFrame(rows_template_edges) if len(rows_template_edges) > 0 else pd.DataFrame(columns=['eventNo','edge_index','precise_time_ns'])
-    df_template_fit = pd.DataFrame(rows_template_fit) if len(rows_template_fit) > 0 else pd.DataFrame(columns=['eventNo','n_edges_total','n_edges_used','t0_ns','tclk_ns','sigma_single_edge_ns','sigma_t0_ns'])
+    df_template_fit = pd.DataFrame(rows_template_fit) if len(rows_template_fit) > 0 else pd.DataFrame(columns=['eventNo','n_edges_total','n_edges_used','t0_ns','tclk_ns','sigma_single_edge_ns','sigma_t0_ns','t_event_ref_ns','t0_abs_ns'])
 
     print(f"[info] process_group done: rows_zero={len(df_zero)} rows_template_edges={len(df_template_edges)} rows_template_fit={len(df_template_fit)} for {base}")
 
