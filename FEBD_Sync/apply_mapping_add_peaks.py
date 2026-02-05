@@ -41,6 +41,9 @@ Notes:
   chosen channel/time/energy branches are extended by the new peak entries for matched events.
 
 This is a best-effort utility; verify the output before using in production.
+
+Author: Licheng Zhang (licheng.zhang@cern.ch)
+Date: 2026-01
 """
 
 import argparse
@@ -204,6 +207,7 @@ def main():
     all_indices = []
     all_peak_time = []
     all_peak_amp = []
+    all_peak_phi = []
     for mp in mapping_paths:
         idx_list = load_mapped_root_idx(mp) or []
         trigger_to_root = load_mapping_value(mp, "trigger_to_root") or []
@@ -212,15 +216,57 @@ def main():
         if peaks_file is None:
             raise FileNotFoundError(f'No peaks CSV matched for mapping {mp}')
         df_peaks = pd.read_csv(peaks_file)
+
+        # Determine time column (require ps)
+        if "peak_time_ps" in df_peaks.columns:
+            time_col = "peak_time_ps"
+            time_in_ps = True
+        else:
+            raise KeyError(f'Missing peak_time_ps column in peaks file: {peaks_file}')
+
+        # t0 may be present (added by combine_mcp_clock); prefer ps
+        if "t0_abs_ps" in df_peaks.columns:
+            t0_col = "t0_abs_ps"
+            t0_in_ps = True
+        elif "t0_abs_ns" in df_peaks.columns:
+            t0_col = "t0_abs_ns"
+            t0_in_ps = False
+        else:
+            # t0 missing — we'll compute phi as NaN later
+            t0_col = None
+            t0_in_ps = False
+
         if "segment" not in df_peaks.columns:
             raise KeyError(f'Missing "segment" column in peaks file: {peaks_file}')
-        if "peak_time_ns" not in df_peaks.columns or "peak_amp" not in df_peaks.columns:
-            raise KeyError(f'Missing peak_time_ns/peak_amp columns in peaks file: {peaks_file}')
-        seg_to_peak = dict(zip(df_peaks["segment"].astype(int), zip(df_peaks["peak_time_ns"], df_peaks["peak_amp"])))
+        if "peak_amp" not in df_peaks.columns:
+            raise KeyError(f'Missing peak_amp column in peaks file: {peaks_file}')
+
+        # Build mapping: segment -> (peak_time_ps, peak_amp, t0_abs_ps)
+        seg_to_peak = {}
+        for _, row in df_peaks.iterrows():
+            try:
+                seg = int(row["segment"])
+            except Exception:
+                continue
+            # peak time in ps
+            pt = row.get(time_col, np.nan)
+            if not time_in_ps and not pd.isna(pt):
+                pt = float(pt) * 1000.0
+            # amplitude
+            pa = row.get("peak_amp", np.nan)
+            # t0 in ps if present
+            if t0_col is not None:
+                t0v = row.get(t0_col, np.nan)
+                if not t0_in_ps and not pd.isna(t0v):
+                    t0v = float(t0v) * 1000.0
+            else:
+                t0v = np.nan
+            seg_to_peak[int(seg)] = (pt if not pd.isna(pt) else np.nan, pa if not pd.isna(pa) else np.nan, t0v if not pd.isna(t0v) else np.nan)
 
         # Append in trigger order (same order used to build mapped_root_idx)
         local_peak_time = []
         local_peak_amp = []
+        local_peak_phi = []
         for j_trigger, i_root in enumerate(trigger_to_root):
             if i_root is None or (isinstance(i_root, float) and np.isnan(i_root)):
                 continue
@@ -233,9 +279,19 @@ def main():
                 seg = j_trigger + 1
             else:
                 seg = int(trig_idx) + 1
-            peak = seg_to_peak.get(seg, (np.nan, np.nan))
-            local_peak_time.append(peak[0])
-            local_peak_amp.append(peak[1])
+            peak = seg_to_peak.get(seg, (np.nan, np.nan, np.nan))
+            peak_time_ps, peak_amp, t0_abs_ps = peak
+            # compute phi: (peak_time_ps - t0_abs_ps) mod 6250 (ps)
+            if np.isnan(peak_time_ps) or np.isnan(t0_abs_ps):
+                phi = np.nan
+            else:
+                try:
+                    phi = float((peak_time_ps - t0_abs_ps) % 6250.0)
+                except Exception:
+                    phi = np.nan
+            local_peak_time.append(peak_time_ps)
+            local_peak_amp.append(peak_amp)
+            local_peak_phi.append(phi)
 
         if len(idx_list) != len(local_peak_time):
             print(f'Warning: mapped_root_idx length {len(idx_list)} != peaks length {len(local_peak_time)} for {mp}')
@@ -243,13 +299,17 @@ def main():
         all_indices.extend(idx_list)
         all_peak_time.extend(local_peak_time)
         all_peak_amp.extend(local_peak_amp)
+        all_peak_phi.extend(local_peak_phi)
+
     if len(all_indices) == 0:
         print('Warning: mapped_root_idx is empty; MCP/index will be an empty branch')
     with uproot.update(out_path) as f:
         f["MCP"] = {
             "index": np.array(all_indices, dtype=np.int64),
+            # write peak_time in picoseconds (ps)
             "peak_time": np.array(all_peak_time, dtype=np.float64),
             "peak_amp": np.array(all_peak_amp, dtype=np.float64),
+            "phi_peak": np.array(all_peak_phi, dtype=np.float64),
         }
     print('Added MCP tree with', len(all_indices), 'entries')
 
