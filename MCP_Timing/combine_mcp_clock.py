@@ -39,15 +39,16 @@ except Exception as e:
     raise ImportError(f"Failed to import clock_study.process_group: {e}")
 
 
-def build_t0_map_from_clock(clock_csv, out_dir, plot_first=0, polarity='rising',
-                            method='template', template_min_corr=None, drop_last_edge=0,
-                            min_edge_spacing_ns=None, high_jitter_threshold_ps=None):
-    """Run clock template processing and return mapping eventNo -> t0_abs_ns.
-    Uses process_group to compute per-event template fits and reads the resulting
-    DataFrame returned by the function.
+def build_t0_and_edges_from_clock(clock_csv, out_dir, plot_first=0, polarity='rising',
+                                  method='template', template_min_corr=None, drop_last_edge=0,
+                                  min_edge_spacing_ns=None, high_jitter_threshold_ps=None):
+    """Run clock template processing and return:
+      - t0_map: eventNo -> t0_abs_ns
+      - rising_edges_abs_ns: eventNo -> sorted list of absolute rising-edge times (ns)
+    Uses process_group to compute per-event template fits and per-edge precise times.
     """
     # process_group returns (df_zero, df_template_edges, df_template_fit)
-    _, _, df_fit = clock_process_group(
+    _, df_edges, df_fit = clock_process_group(
         clock_csv,
         out_dir,
         plot_first=plot_first,
@@ -62,20 +63,54 @@ def build_t0_map_from_clock(clock_csv, out_dir, plot_first=0, polarity='rising',
 
     if df_fit is None or df_fit.empty:
         print("[warn] No template-fit results returned by clock processing; t0 map will be empty")
-        return {}
+        return {}, {}
 
     # Expect column 't0_abs_ns' added by clock_study
     if 't0_abs_ns' not in df_fit.columns:
         print("[warn] clock template-fit DataFrame has no 't0_abs_ns' column; t0 map will be empty")
-        return {}
+        return {}, {}
 
     # Build mapping eventNo -> t0_abs_ns
     df_map = df_fit.set_index('eventNo')['t0_abs_ns']
     t0_map = df_map.to_dict()
-    return t0_map
+
+    # Build mapping eventNo -> absolute rising-edge times (ns)
+    rising_edges_abs_ns = {}
+    if df_edges is not None and not df_edges.empty:
+        # Map eventNo -> t_event_ref_ns to convert relative edge times to absolute
+        if 't_event_ref_ns' in df_fit.columns:
+            t_event_ref_map = df_fit.set_index('eventNo')['t_event_ref_ns'].to_dict()
+        else:
+            t_event_ref_map = {}
+
+        # Edge type handling: use explicit 'rising' edges when available
+        for evt, g in df_edges.groupby('eventNo'):
+            evt = int(evt)
+            t_ref = t_event_ref_map.get(evt, np.nan)
+            if np.isnan(t_ref):
+                continue
+
+            if 'edge_type' in g.columns:
+                g_r = g[g['edge_type'] == 'rising']
+                # If no explicit edge_type and polarity is rising, keep all edges
+                if g_r.empty and polarity == 'rising':
+                    g_r = g
+            else:
+                g_r = g
+
+            if 'precise_time_ns' not in g_r.columns:
+                continue
+
+            times_rel = g_r['precise_time_ns'].dropna().to_numpy()
+            if len(times_rel) == 0:
+                continue
+            times_abs = (times_rel + float(t_ref)).astype(float)
+            rising_edges_abs_ns[evt] = sorted(times_abs.tolist())
+
+    return t0_map, rising_edges_abs_ns
 
 
-def build_mcp_peaks_with_t0(mcp_csv, t0_map, out_dir, plot_first=5, min_amp=None):
+def build_mcp_peaks_with_t0(mcp_csv, t0_map, rising_edges_abs_ns, out_dir, plot_first=5, min_amp=None):
     """Run MCP peak reconstruction (using load_wave_csv + fit_largest_peak) and
     attach t0_abs_ns for each event (segment) using t0_map.
 
@@ -106,6 +141,19 @@ def build_mcp_peaks_with_t0(mcp_csv, t0_map, out_dir, plot_first=5, min_amp=None
 
         # lookup t0_abs for this event/segment (event numbers are integers matching seg)
         t0_abs = t0_map.get(int(seg), np.nan)
+        # absolute time of MCP peak
+        peak_abs_ns = float(trigger_ns) + float(r['peak_time_ns']) if (r.get('peak_time_ns') is not None and not np.isnan(r.get('peak_time_ns'))) else np.nan
+
+        # nearest rising edge BEFORE peak, absolute time (ns)
+        prev_rising_edge_abs_ns = np.nan
+        edges = rising_edges_abs_ns.get(int(seg), [])
+        if edges and not np.isnan(peak_abs_ns):
+            # edges are sorted, find last edge <= peak_abs_ns
+            for t_edge in edges:
+                if t_edge <= peak_abs_ns:
+                    prev_rising_edge_abs_ns = float(t_edge)
+                else:
+                    break
 
         rows.append({
             'segment': int(seg),
@@ -115,9 +163,12 @@ def build_mcp_peaks_with_t0(mcp_csv, t0_map, out_dir, plot_first=5, min_amp=None
             'baseline': r['baseline'],
             'fit_success': bool(r['fit_success']),
             't0_abs_ns': float(t0_abs) if (t0_abs is not None and not np.isnan(t0_abs)) else np.nan,
+            'trigger_time_s': float(trig_s) if trig_s is not None else np.nan,
             # also store times in picoseconds with higher numeric precision
             'peak_time_ps': (float(r['peak_time_ns']) * 1000.0) if (r.get('peak_time_ns') is not None and not np.isnan(r.get('peak_time_ns'))) else np.nan,
             't0_abs_ps': (float(t0_abs) * 1000.0) if (t0_abs is not None and not np.isnan(t0_abs)) else np.nan,
+            'prev_rising_edge_abs_ps': (prev_rising_edge_abs_ns * 1000.0) if (prev_rising_edge_abs_ns is not None and not np.isnan(prev_rising_edge_abs_ns)) else np.nan,
+            'trigger_time_ps': (float(trig_s) * 1e12) if trig_s is not None else np.nan,
         })
 
     df = pd.DataFrame(rows)
@@ -130,7 +181,7 @@ def build_mcp_peaks_with_t0(mcp_csv, t0_map, out_dir, plot_first=5, min_amp=None
 
     out_csv = os.path.join(out_dir, f"peaks_{base}_with_t0.csv")
     os.makedirs(out_dir, exist_ok=True)
-    cols_out = ['segment', 'peak_time_ns', 'peak_time_ps', 'peak_amp', 'peak_sigma_ns', 'baseline', 'fit_success', 't0_abs_ns', 't0_abs_ps']
+    cols_out = ['segment', 'peak_time_ns', 'peak_time_ps', 'peak_amp', 'peak_sigma_ns', 'baseline', 'fit_success', 't0_abs_ns', 't0_abs_ps', 'prev_rising_edge_abs_ps', 'trigger_time_s', 'trigger_time_ps']
     # use higher precision for float formatting so ps columns show more digits
     df.to_csv(out_csv, index=False, columns=cols_out, float_format='%.12g')
     print(f"[ok] Wrote augmented MCP peaks CSV: {out_csv} (rows={len(df)})")
@@ -155,7 +206,7 @@ def main():
 
     # run clock processing
     print(f"[info] Running clock processing on {args.clock}")
-    t0_map = build_t0_map_from_clock(
+    t0_map, rising_edges_abs_ns = build_t0_and_edges_from_clock(
         args.clock,
         args.out_dir,
         plot_first=args.clock_plot_first,
@@ -169,7 +220,7 @@ def main():
 
     # run MCP peak reconstruction and attach t0
     print(f"[info] Running MCP peak reconstruction on {args.mcp}")
-    df_peaks = build_mcp_peaks_with_t0(args.mcp, t0_map, args.out_dir, plot_first=args.plot_first, min_amp=args.min_amp)
+    df_peaks = build_mcp_peaks_with_t0(args.mcp, t0_map, rising_edges_abs_ns, args.out_dir, plot_first=args.plot_first, min_amp=args.min_amp)
 
     print('[done] combine_mcp_clock completed')
 

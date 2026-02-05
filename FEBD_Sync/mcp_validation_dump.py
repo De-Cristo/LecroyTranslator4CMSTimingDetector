@@ -238,6 +238,7 @@ def main():
     p.add_argument("--mcp-peak-time", default="peak_time", help="MCP peak time branch name (default: peak_time)")
     p.add_argument("--mcp-peak-amp", default="peak_amp", help="MCP peak amp branch name (default: peak_amp)")
     p.add_argument("--mcp-peak-phase", default="phi_peak", help="MCP peak phase branch name (default: phi_peak)")
+    p.add_argument("--mcp-trigger-time", default="trigger_time", help="MCP trigger time branch name (default: trigger_time)")
     p.add_argument("--max-entries", type=int, default=None, help="Max entries to process")
     p.add_argument("--require-channels", nargs="+", type=int, help="ChannelID values that must be present in an event to include it")
     p.add_argument("--workers", type=int, default=1, help="Number of worker threads for per-event dumping")
@@ -283,6 +284,12 @@ def main():
     else:
         mcp_phi = np.full(len(mcp_idx), np.nan)
 
+    # try to read trigger_time if present
+    if args.mcp_trigger_time in mcp.keys():
+        mcp_trig = mcp[args.mcp_trigger_time].array(library="np")
+    else:
+        mcp_trig = np.full(len(mcp_idx), np.nan)
+
     mcp_map = {}
     def convert_val(v, src, dst):
         try:
@@ -311,9 +318,14 @@ def main():
             phi_val = float(mcp_phi[i])
         except Exception:
             phi_val = math.nan
+        try:
+            trig_val = float(mcp_trig[i])
+        except Exception:
+            trig_val = math.nan
         # convert from tree unit to desired dump unit
         peak_out = convert_val(raw, args.mcp_unit, args.dump_unit)
-        mcp_map[int(mcp_idx[i])] = (peak_out, peak_amp_val, phi_val)
+        trig_out = convert_val(trig_val, args.mcp_unit, args.dump_unit)
+        mcp_map[int(mcp_idx[i])] = (peak_out, peak_amp_val, phi_val, trig_out)
 
     # Produce a per-event CSV identical to read_root_explore --dump-df output.
     # Optionally also produce an MCP-augmented CSV with extra columns.
@@ -357,7 +369,7 @@ def main():
     if out_mcp:
         mcp_file = open(out_mcp, "w", newline="")
         mcp_writer = csv.writer(mcp_file)
-        mcp_writer.writerow(['entry', 'channelID', 'channelIdx', 'time', 'energy', 'mcp_index', 'mcp_peak_time', 'mcp_peak_amp', 'mcp_peak_phase'])
+        mcp_writer.writerow(['entry', 'channelID', 'channelIdx', 'time', 'energy', 'mcp_index', 'mcp_peak_time', 'mcp_peak_amp', 'mcp_peak_phase', 'mcp_trigger_time'])
 
     from concurrent.futures import ThreadPoolExecutor
     with open(args.out, "w", newline="") as cf:
@@ -374,15 +386,16 @@ def main():
                 if mcp_writer:
                     i = result[0]
                     if i in mcp_map:
-                        peak_time, peak_amp, phi_peak = mcp_map[i]
+                        peak_time, peak_amp, phi_peak, trig_time = mcp_map[i]
                         mcp_index = i
                     else:
-                        peak_time, peak_amp, phi_peak = (math.nan, math.nan, math.nan)
+                        peak_time, peak_amp, phi_peak, trig_time = (math.nan, math.nan, math.nan, math.nan)
                         mcp_index = math.nan
 
                     pt_out = '' if peak_time != peak_time else peak_time
                     pa_out = '' if peak_amp != peak_amp else peak_amp
                     ph_out = '' if phi_peak != phi_peak else phi_peak
+                    tr_out = '' if trig_time != trig_time else trig_time
                     mcp_writer.writerow([
                         result[0],
                         result[1],
@@ -393,6 +406,7 @@ def main():
                         pt_out,
                         pa_out,
                         ph_out,
+                        tr_out,
                     ])
 
     if mcp_file:
