@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# Author: Licheng Zhang (licheng.zhang@cern.ch)
+# Time: Feb-2026
 print('[start] clock_study.py executing', flush=True)
 """
 clock_study.py

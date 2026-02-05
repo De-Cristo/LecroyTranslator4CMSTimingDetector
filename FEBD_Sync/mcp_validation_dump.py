@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# Author: Licheng Zhang (licheng.zhang@cern.ch)
+# Time: Feb-2026
 """
 Dump channel 192 (or chosen channel) from ROOT data tree and attach MCP peak info.
 

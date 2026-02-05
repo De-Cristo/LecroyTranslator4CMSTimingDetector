@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# Author: Licheng Zhang (licheng.zhang@cern.ch)
+# Time: Feb-2026
 """
 combine_mcp_clock.py
 
@@ -163,12 +165,12 @@ def build_mcp_peaks_with_t0(mcp_csv, t0_map, rising_edges_abs_ns, out_dir, plot_
             'baseline': r['baseline'],
             'fit_success': bool(r['fit_success']),
             't0_abs_ns': float(t0_abs) if (t0_abs is not None and not np.isnan(t0_abs)) else np.nan,
-            'trigger_time_s': float(trig_s) if trig_s is not None else np.nan,
+            'trigger_time_s': (float(trig_s) + float(off_s)) if (trig_s is not None and off_s is not None) else np.nan,
             # also store times in picoseconds with higher numeric precision
             'peak_time_ps': (float(r['peak_time_ns']) * 1000.0) if (r.get('peak_time_ns') is not None and not np.isnan(r.get('peak_time_ns'))) else np.nan,
             't0_abs_ps': (float(t0_abs) * 1000.0) if (t0_abs is not None and not np.isnan(t0_abs)) else np.nan,
             'prev_rising_edge_abs_ps': (prev_rising_edge_abs_ns * 1000.0) if (prev_rising_edge_abs_ns is not None and not np.isnan(prev_rising_edge_abs_ns)) else np.nan,
-            'trigger_time_ps': (float(trig_s) * 1e12) if trig_s is not None else np.nan,
+            'trigger_time_ps': (float(trig_s) + float(off_s)) * 1e12 if (trig_s is not None and off_s is not None) else np.nan,
         })
 
     df = pd.DataFrame(rows)

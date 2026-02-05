@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# Author: Licheng Zhang (licheng.zhang@cern.ch)
+# Time: Feb-2026
 """
 Apply mapping results to original ROOT events: read mapping (mapping_results_segN.csv),
 read peaks CSVs (one per meta file), and append peak time/amplitude as an entry for a
@@ -8,7 +10,6 @@ Usage examples:
   # Process a single mapping file (one segment):
   python3 apply_mapping_add_peaks.py \
     --root /eos/cms/.../4237/1_e.root \
-    --csv ../trc_out_root_reco/4237_1_e.csv \
     --mapping ../trc_out_sync/mapping_results_0004237_0000001_6347.csv \
     --peaks-dir ../trc_out_MCP_reco \
     --peaks-pattern "peaks_raw_C1_*_{suffix}_data.csv" \
@@ -19,7 +20,6 @@ Usage examples:
   # into the single output (keeps original ROOT entry ordering):
   python3 apply_mapping_add_peaks.py \
     --root /eos/cms/.../4237/1_e.root \
-    --csv ../trc_out_root_reco/4237_1_e.csv \
     --mapping "../trc_out_sync/mapping_results_*.csv" \
     --peaks-dir ../trc_out_MCP_reco \
     --peaks-pattern "peaks_raw_C1_*_{suffix}_data.csv" \
@@ -27,10 +27,6 @@ Usage examples:
     --out out_with_peaks_all_segments.root
 
 Notes:
-- The script expects the CSV produced from the ROOT dump (the same one used by Febd_synchronizor)
-  that contains a column listing per-event 'time' arrays (as serialized Python lists). That CSV
-  must contain either an 'entry' column with the original ROOT entry index or preserve row order
-  matching the ROOT tree.
 - The mapping CSV (mapping_results_segN.csv) must contain a row with key 'trigger_to_root' whose
   value is a JSON list (may contain nulls). 'trigger_to_root'[j] = i means trigger-index j maps to
   root-cluster index i (index into the cluster entries used when producing the mapping).
@@ -170,7 +166,6 @@ def find_peaks_file_for_mapping(peaks_dir, pattern_template, mapping_path):
 def main():
     p = argparse.ArgumentParser(description='Apply mapping and insert peak time/amp into ROOT tree as channel entries')
     p.add_argument('--root', required=True, help='Input ROOT file path')
-    p.add_argument('--csv', required=True, help='CSV dump from root with per-event time lists (used to recover event ordering and indices)')
     p.add_argument('--mapping', required=True, nargs='+', help='Mapping CSV(s) produced by Febd_synchronizor (mapping_results_{suffix}.csv). Accepts a glob or multiple files')
     p.add_argument('--peaks-dir', required=True, help='Directory containing peaks CSV files')
     p.add_argument('--peaks-pattern', default='peaks_raw_C1_*_{suffix}_data.csv', help='Pattern to find peaks CSV; use {suffix} placeholder that will be replaced by numeric suffix from mapping filename')
@@ -182,7 +177,6 @@ def main():
     args = p.parse_args()
 
     root_path = args.root
-    csv_path = args.csv
     mapping_path = args.mapping
     peaks_dir = args.peaks_dir
     pattern_template = args.peaks_pattern

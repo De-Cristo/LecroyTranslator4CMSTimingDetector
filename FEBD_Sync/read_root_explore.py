@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# Author: Licheng Zhang (licheng.zhang@cern.ch)
+# Time: Feb-2026
 """
 Simple ROOT 'data' tree explorer and quick HEP-style plots.
 
