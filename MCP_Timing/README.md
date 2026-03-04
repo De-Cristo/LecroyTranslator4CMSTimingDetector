@@ -63,6 +63,25 @@ Outputs:
 - `peaks_<base>.csv`
 - Optional diagnostic plots (disable with `--no-plots`)
 
+### `process_mcp_clock.sh`
+
+Batch wrapper script to combine MCP peak reconstruction with clock `t0` over an entire directory of CSV files.
+
+Common usage:
+
+```bash
+source process_mcp_clock.sh <input_dir> <output_dir>
+
+# Example
+source process_mcp_clock.sh /eos/user/l/lichengz/MTD/TB2025/trc_out_4405/ /eos/user/l/lichengz/MTD/TB2025/trc_out_MCP_clock_reco_4405/
+```
+
+Outputs:
+
+- Processed `<output_dir>/peaks_raw_C1_*_data_with_t0.csv` files
+- `file_summary.txt` report in the output directory
+
+
 ### `combine_mcp_clock.py`
 
 Runs `clock_study.py` (template mode) to get per-event `t0_abs_ns`, then runs MCP peak reconstruction and attaches `t0_abs_ns` to each segment.
@@ -79,7 +98,7 @@ python3 combine_mcp_clock.py \
 
 Output:
 
-- `peaks_<mcp_base>_with_t0.csv` with `t0_abs_ns` and `t0_abs_ps` columns
+- `peaks_<mcp_base>_with_t0.csv` with `t0_abs_ps` column
 
 ## Notes
 

@@ -161,7 +161,9 @@ def load_wave_csv(path):
             trig_arr = meta_global['trigger_time']
         if 'trigger_offset' in meta_global:
             offset_arr = meta_global['trigger_offset']
-        # Apply per-event correction: t_ns += (trigger_time + trigger_offset) * 1e9
+        # Apply per-event trigger_offset correction only
+        # (Time_s already contains the absolute time from the scope;
+        #  trigger_time is embedded in Time_s, so only trigger_offset is needed)
         if isinstance(trig_arr, np.ndarray) or isinstance(offset_arr, np.ndarray):
             n_events = len(waves)
             for evt in sorted(list(waves.keys())):
@@ -170,12 +172,10 @@ def load_wave_csv(path):
                 shift_s = 0.0
                 try:
                     idx = int(evt) - 1  # meta arrays are usually 0-based list corresponding to segment index
-                    if isinstance(trig_arr, np.ndarray) and idx >= 0 and idx < len(trig_arr):
-                        shift_s = float(trig_arr[idx])
                     if isinstance(offset_arr, np.ndarray) and idx >= 0 and idx < len(offset_arr):
-                        shift_s = shift_s + float(offset_arr[idx])
+                        shift_s = float(offset_arr[idx])
                 except Exception as e:
-                    print(f"[warn] Could not read trigger/offset for event {evt}: {e}", flush=True)
+                    print(f"[warn] Could not read trigger_offset for event {evt}: {e}", flush=True)
                 if shift_s != 0.0:
                     shift_ns = shift_s * 1e9
                     tns = tns + shift_ns

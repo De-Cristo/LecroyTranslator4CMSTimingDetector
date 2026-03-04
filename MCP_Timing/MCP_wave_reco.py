@@ -304,8 +304,9 @@ def load_wave_csv(path):
         if seg_idx < 0 or seg_idx >= len(trigger_times):
             raise ValueError(f"Segment {seg} out of range for meta data (0-{len(trigger_times)-1})")
         
-        # Absolute time: trigger_time + trigger_offset + relative Time_s, in ns
-        abs_time_ns = 1e9 * (trigger_times[seg_idx] + trigger_offsets[seg_idx]) + g['_time_ns']
+        # Corrected absolute time: Time_s is already absolute from scope,
+        # only apply trigger_offset (per-channel digitiser delay)
+        abs_time_ns = 1e9 * trigger_offsets[seg_idx] + g['_time_ns']
         out[int(seg)] = (abs_time_ns.to_numpy(), g['_amp'].to_numpy())
         meta[int(seg)] = {
             'trigger_time_s': trigger_times[seg_idx],

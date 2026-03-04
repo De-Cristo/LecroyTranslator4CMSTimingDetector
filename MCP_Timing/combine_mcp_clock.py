@@ -129,13 +129,14 @@ def build_mcp_peaks_with_t0(mcp_csv, t0_map, rising_edges_abs_ns, out_dir, plot_
         # reconstruct trigger reference in ns if present in meta
         trig_s = m.get('trigger_time_s', None)
         off_s = m.get('trigger_offset_s', None)
-        if trig_s is not None and off_s is not None:
-            trigger_ns = 1e9 * (float(trig_s) + float(off_s))
+        # trigger_offset correction applied by load_wave_csv; reconstruct for subtraction
+        if off_s is not None:
+            trigger_ns = 1e9 * float(off_s)
         else:
             # fallback: treat first sample as event reference
             trigger_ns = float(t_abs[0]) if len(t_abs) > 0 else 0.0
 
-        # time relative to trigger (same convention as MCP_wave_reco.run_single)
+        # Remove the trigger_offset to get raw scope time for peak fitting
         t_rel = t_abs - trigger_ns
 
         # Fit largest peak
@@ -143,34 +144,34 @@ def build_mcp_peaks_with_t0(mcp_csv, t0_map, rising_edges_abs_ns, out_dir, plot_
 
         # lookup t0_abs for this event/segment (event numbers are integers matching seg)
         t0_abs = t0_map.get(int(seg), np.nan)
-        # absolute time of MCP peak
-        peak_abs_ns = float(trigger_ns) + float(r['peak_time_ns']) if (r.get('peak_time_ns') is not None and not np.isnan(r.get('peak_time_ns'))) else np.nan
+
+        # peak time in ns (this is the absolute scope time since Time_s is absolute)
+        # We ADD the trigger offset to reconstruct the true corrected physical time
+        peak_time_raw_ns = float(r['peak_time_ns']) if (r.get('peak_time_ns') is not None and not np.isnan(r.get('peak_time_ns'))) else np.nan
+        peak_time_abs_ns = peak_time_raw_ns + float(off_s) if (not np.isnan(peak_time_raw_ns) and off_s is not None) else peak_time_raw_ns
 
         # nearest rising edge BEFORE peak, absolute time (ns)
         prev_rising_edge_abs_ns = np.nan
         edges = rising_edges_abs_ns.get(int(seg), [])
-        if edges and not np.isnan(peak_abs_ns):
-            # edges are sorted, find last edge <= peak_abs_ns
+        if edges and not np.isnan(peak_time_abs_ns):
+            # edges are sorted, find last edge <= peak_time_abs_ns
             for t_edge in edges:
-                if t_edge <= peak_abs_ns:
+                if t_edge <= peak_time_abs_ns:
                     prev_rising_edge_abs_ns = float(t_edge)
                 else:
                     break
 
         rows.append({
             'segment': int(seg),
-            'peak_time_ns': r['peak_time_ns'],
+            'peak_time_ps': (peak_time_abs_ns * 1000.0) if not np.isnan(peak_time_abs_ns) else np.nan,
             'peak_amp': r['peak_amp'],
-            'peak_sigma_ns': r['peak_sigma_ns'],
+            'peak_sigma_ps': float(r['peak_sigma_ns']) * 1000.0 if r.get('peak_sigma_ns') is not None else np.nan,
             'baseline': r['baseline'],
             'fit_success': bool(r['fit_success']),
-            't0_abs_ns': float(t0_abs) if (t0_abs is not None and not np.isnan(t0_abs)) else np.nan,
-            'trigger_time_s': (float(trig_s) + float(off_s)) if (trig_s is not None and off_s is not None) else np.nan,
-            # also store times in picoseconds with higher numeric precision
-            'peak_time_ps': (float(r['peak_time_ns']) * 1000.0) if (r.get('peak_time_ns') is not None and not np.isnan(r.get('peak_time_ns'))) else np.nan,
             't0_abs_ps': (float(t0_abs) * 1000.0) if (t0_abs is not None and not np.isnan(t0_abs)) else np.nan,
             'prev_rising_edge_abs_ps': (prev_rising_edge_abs_ns * 1000.0) if (prev_rising_edge_abs_ns is not None and not np.isnan(prev_rising_edge_abs_ns)) else np.nan,
             'trigger_time_ps': (float(trig_s) + float(off_s)) * 1e12 if (trig_s is not None and off_s is not None) else np.nan,
+            'trigger_offset_ps': (float(off_s) * 1e12) if off_s is not None else np.nan,
         })
 
     df = pd.DataFrame(rows)
@@ -183,7 +184,7 @@ def build_mcp_peaks_with_t0(mcp_csv, t0_map, rising_edges_abs_ns, out_dir, plot_
 
     out_csv = os.path.join(out_dir, f"peaks_{base}_with_t0.csv")
     os.makedirs(out_dir, exist_ok=True)
-    cols_out = ['segment', 'peak_time_ns', 'peak_time_ps', 'peak_amp', 'peak_sigma_ns', 'baseline', 'fit_success', 't0_abs_ns', 't0_abs_ps', 'prev_rising_edge_abs_ps', 'trigger_time_s', 'trigger_time_ps']
+    cols_out = ['segment', 'peak_time_ps', 'peak_amp', 'peak_sigma_ps', 'baseline', 'fit_success', 't0_abs_ps', 'prev_rising_edge_abs_ps', 'trigger_time_ps', 'trigger_offset_ps']
     # use higher precision for float formatting so ps columns show more digits
     df.to_csv(out_csv, index=False, columns=cols_out, float_format='%.12g')
     print(f"[ok] Wrote augmented MCP peaks CSV: {out_csv} (rows={len(df)})")
