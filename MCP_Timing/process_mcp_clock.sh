@@ -44,12 +44,22 @@ while read -r c1_file; do
     if [ -f "$c2_file" ]; then
         echo "Pair found: $c1_basename and $c2_basename"
         
-        # Run the python processing script
+        # Run zero-crossing check on C2 to generate jitter plots
+        echo "Running zero-crossing jitter check on $c2_basename..."
+        python3 clock_study.py \
+            --input "$c2_file" \
+            --out-dir "$OUTPUT_DIR" \
+            --disable-template-correction \
+            --method zero \
+            --polarity rising
+            
+        # Run the combined python processing script
         python3 combine_mcp_clock.py \
             --mcp "$c1_file" \
             --clock "$c2_file" \
             --out-dir "$OUTPUT_DIR" \
             --clock-polarity rising \
+            --clock-disable-template-correction \
             --clock-min-edge-spacing-ns 3 \
             --clock-drop-last-edge 2 \
             --clock-plot-first 0

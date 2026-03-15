@@ -107,7 +107,7 @@ def parabolic_refine(x, y, i):
     dt = (x[i+1] - x[i]) if i+1 < len(x) else (x[i] - x[i-1])
     return x[i] + delta*dt
 
-def fit_largest_peak(t_ns, a, plot=False, title="", save_path=None):
+def fit_largest_peak(t_ns, a, plot=False, title="", save_path=None, t_range=None):
     """
     Fit the largest peak in a waveform using a Gaussian model.
     
@@ -129,6 +129,7 @@ def fit_largest_peak(t_ns, a, plot=False, title="", save_path=None):
     Returns:
         Dictionary with keys:
             - peak_time_ns: Fitted peak center position (same units as t_ns)
+            - peak_time_err_ns: Statistical uncertainty on peak position (from fit)
             - peak_amp: Fitted amplitude (above baseline)
             - peak_sigma_ns: Fitted Gaussian width (sigma)
             - baseline: Fitted baseline level
@@ -150,7 +151,8 @@ def fit_largest_peak(t_ns, a, plot=False, title="", save_path=None):
         - No peaks found
         - Fit fails to converge
     """
-    out = dict(peak_time_ns=np.nan, peak_amp=np.nan, peak_sigma_ns=np.nan,
+    out = dict(peak_time_ns=np.nan, peak_time_err_ns=np.nan, 
+               peak_amp=np.nan, peak_sigma_ns=np.nan,
                baseline=np.nan, fit_success=False)
 
     # Validation: need sufficient data and valid values
@@ -167,9 +169,14 @@ def fit_largest_peak(t_ns, a, plot=False, title="", save_path=None):
     idx_pos, _ = find_peaks(a, prominence=prominence)
     idx_neg, _ = find_peaks(-a, prominence=prominence)
     
-    # Combine all candidates with their absolute amplitudes
+    # Combined candidate peaks
     cand = [(i, abs(a[i])) for i in idx_pos] + [(i, abs(a[i])) for i in idx_neg]
     
+    # Filter by time range if provided
+    if t_range is not None:
+        t_min, t_max = t_range
+        cand = [c for c in cand if t_min <= t_ns[c[0]] <= t_max]
+
     # If no peaks found, optionally plot and return
     if not cand:
         if plot and save_path:
@@ -216,10 +223,17 @@ def fit_largest_peak(t_ns, a, plot=False, title="", save_path=None):
     
     # Perform nonlinear least-squares fit
     try:
-        popt, _ = curve_fit(gaussian, xrel, y, p0=p0, bounds=bounds, maxfev=5000)
+        popt, pcov = curve_fit(gaussian, xrel, y, p0=p0, bounds=bounds, maxfev=5000)
         amp, mu_rel, sig, base = [float(v) for v in popt]
+        
+        # Pull statistical uncertainty of mu_rel (parameter index 1) from covariance matrix
+        mu_err = np.nan
+        if pcov is not None:
+             mu_err = float(np.sqrt(pcov[1, 1]))
+
         mu_abs = mu0 + mu_rel
-        out.update(peak_time_ns=mu_abs, peak_amp=amp, peak_sigma_ns=sig,
+        out.update(peak_time_ns=mu_abs, peak_time_err_ns=mu_err,
+                   peak_amp=amp, peak_sigma_ns=sig,
                    baseline=base, fit_success=True)
 
         if plot and save_path:
@@ -318,7 +332,7 @@ def load_wave_csv(path):
 # ---------------- pipeline ----------------
 
 def run_single(csv_path, plot_first=5, out_dir="./out", enable_plots=True,
-               min_amp=None):
+               min_amp=None, t_min=None, t_max=None):
     os.makedirs(out_dir, exist_ok=True)
     print(f"[i] Loading: {csv_path}")
     w, meta = load_wave_csv(csv_path)
@@ -347,14 +361,17 @@ def run_single(csv_path, plot_first=5, out_dir="./out", enable_plots=True,
             out_png = os.path.join(out_dir, f"waveform_seg{seg}_{base}.png")
             plt.savefig(out_png, dpi=150); plt.close(fig)
 
-        # Fit peak
+        # Fit peak (with optional time window)
+        t_range = (t_min, t_max) if (t_min is not None or t_max is not None) else None
         r = fit_largest_peak(t_rel, a, plot=(enable_plots and k < plot_first),
                              title=f"Segment {seg} – fit",
-                             save_path=os.path.join(out_dir, f"fit_seg{seg}_{base}.png") if k < plot_first else None)
+                             save_path=os.path.join(out_dir, f"fit_seg{seg}_{base}.png") if k < plot_first else None,
+                             t_range=t_range)
 
         rows.append({
             'segment': seg,
             'peak_time_ns': r['peak_time_ns'],
+            'peak_time_err_ns': r['peak_time_err_ns'],
             'peak_amp': r['peak_amp'],
             'peak_sigma_ns': r['peak_sigma_ns'],
             'baseline': r['baseline'],
@@ -381,7 +398,7 @@ def run_single(csv_path, plot_first=5, out_dir="./out", enable_plots=True,
 
     # Output CSV
     out_csv = os.path.join(out_dir, f"peaks_{base}.csv")
-    cols_out = ['segment', 'peak_time_ns', 'peak_amp', 'peak_sigma_ns', 'baseline']
+    cols_out = ['segment', 'peak_time_ns', 'peak_time_err_ns', 'peak_amp', 'peak_sigma_ns', 'baseline']
     res[cols_out].to_csv(out_csv, index=False)
     print(f"[ok] Wrote: {out_csv}")
 
@@ -420,6 +437,8 @@ def main():
     ap.add_argument("--no-plots", action="store_true", help="Disable all plot generation")
     ap.add_argument("--min-amp", type=float, default=None,
                     help="Minimum peak amplitude magnitude (|amp|) to include event (default: no threshold)")
+    ap.add_argument("--t-min", type=float, default=None, help="Minimum peak time (ns relative to trigger) to search")
+    ap.add_argument("--t-max", type=float, default=None, help="Maximum peak time (ns relative to trigger) to search")
     args = ap.parse_args()
 
     out_dir = args.out_dir or args.dir
@@ -443,7 +462,7 @@ def main():
         csv_path = wf[0]
 
     run_single(csv_path, plot_first=args.plot_first, out_dir=out_dir, enable_plots=enable_plots,
-               min_amp=args.min_amp)
+               min_amp=args.min_amp, t_min=args.t_min, t_max=args.t_max)
 
 if __name__ == "__main__":
     main()

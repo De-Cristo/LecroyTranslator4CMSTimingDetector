@@ -14,9 +14,9 @@ Usage example:
     --clock-plot-first 0
 
 The script will run the clock template fitter (via importing process_group
-from clock_study.py) to obtain per-event absolute t0 (column `t0_abs_ns`) and
+from clock_study.py) to obtain per-event absolute t_ave (column `t_ave_ps`) and
 will run the MCP peak fitter (using functions from MCP_wave_reco.py) to
-produce a peaks CSV augmented with a new column `t0_abs_ns` for each segment.
+produce a peaks CSV augmented with a new column `t_ave_ps` for each segment.
 
 If no t0 is available for an event the value will be NaN.
 
@@ -43,14 +43,15 @@ except Exception as e:
 
 def build_t0_and_edges_from_clock(clock_csv, out_dir, plot_first=0, polarity='rising',
                                   method='template', template_min_corr=None, drop_last_edge=0,
-                                  min_edge_spacing_ns=None, high_jitter_threshold_ps=None):
+                                  min_edge_spacing_ns=None, high_jitter_threshold_ps=None,
+                                  disable_template_correction=False):
     """Run clock template processing and return:
       - t0_map: eventNo -> t0_abs_ns
       - rising_edges_abs_ns: eventNo -> sorted list of absolute rising-edge times (ns)
     Uses process_group to compute per-event template fits and per-edge precise times.
     """
-    # process_group returns (df_zero, df_template_edges, df_template_fit)
-    _, df_edges, df_fit = clock_process_group(
+    # process_group returns (df_zero, df_template_edges, df_template_fit, df_zero_fit)
+    _, df_edges, df_fit, _ = clock_process_group(
         clock_csv,
         out_dir,
         plot_first=plot_first,
@@ -61,6 +62,7 @@ def build_t0_and_edges_from_clock(clock_csv, out_dir, plot_first=0, polarity='ri
         template_min_corr=template_min_corr,
         drop_last_edge=drop_last_edge,
         min_edge_spacing_ns=min_edge_spacing_ns,
+        disable_template_correction=disable_template_correction,
     )
 
     if df_fit is None or df_fit.empty:
@@ -112,9 +114,9 @@ def build_t0_and_edges_from_clock(clock_csv, out_dir, plot_first=0, polarity='ri
     return t0_map, rising_edges_abs_ns
 
 
-def build_mcp_peaks_with_t0(mcp_csv, t0_map, rising_edges_abs_ns, out_dir, plot_first=5, min_amp=None):
+def build_mcp_peaks_with_tave(mcp_csv, tave_map, rising_edges_abs_ns, out_dir, plot_first=5, min_amp=None, t_min=None, t_max=None):
     """Run MCP peak reconstruction (using load_wave_csv + fit_largest_peak) and
-    attach t0_abs_ns for each event (segment) using t0_map.
+    attach t_ave_ps for each event (segment) using tave_map.
 
     Returns the DataFrame written to CSV.
     """
@@ -140,10 +142,11 @@ def build_mcp_peaks_with_t0(mcp_csv, t0_map, rising_edges_abs_ns, out_dir, plot_
         t_rel = t_abs - trigger_ns
 
         # Fit largest peak
-        r = fit_largest_peak(t_rel, a, plot=False, title=f"Segment {seg} – fit", save_path=None)
+        t_range = (t_min, t_max) if (t_min is not None or t_max is not None) else None
+        r = fit_largest_peak(t_rel, a, plot=False, title=f"Segment {seg} – fit", save_path=None, t_range=t_range)
 
-        # lookup t0_abs for this event/segment (event numbers are integers matching seg)
-        t0_abs = t0_map.get(int(seg), np.nan)
+        # lookup t_ave for this event/segment (event numbers are integers matching seg)
+        t_ave = tave_map.get(int(seg), np.nan)
 
         # peak time in ns (this is the absolute scope time since Time_s is absolute)
         # We ADD the trigger offset to reconstruct the true corrected physical time
@@ -164,11 +167,12 @@ def build_mcp_peaks_with_t0(mcp_csv, t0_map, rising_edges_abs_ns, out_dir, plot_
         rows.append({
             'segment': int(seg),
             'peak_time_ps': (peak_time_abs_ns * 1000.0) if not np.isnan(peak_time_abs_ns) else np.nan,
+            'peak_time_err_ps': float(r['peak_time_err_ns']) * 1000.0 if r.get('peak_time_err_ns') is not None else np.nan,
             'peak_amp': r['peak_amp'],
             'peak_sigma_ps': float(r['peak_sigma_ns']) * 1000.0 if r.get('peak_sigma_ns') is not None else np.nan,
             'baseline': r['baseline'],
             'fit_success': bool(r['fit_success']),
-            't0_abs_ps': (float(t0_abs) * 1000.0) if (t0_abs is not None and not np.isnan(t0_abs)) else np.nan,
+            't_ave_ps': float(t_ave) if (t_ave is not None and not np.isnan(t_ave)) else np.nan,
             'prev_rising_edge_abs_ps': (prev_rising_edge_abs_ns * 1000.0) if (prev_rising_edge_abs_ns is not None and not np.isnan(prev_rising_edge_abs_ns)) else np.nan,
             'trigger_time_ps': (float(trig_s) + float(off_s)) * 1e12 if (trig_s is not None and off_s is not None) else np.nan,
             'trigger_offset_ps': (float(off_s) * 1e12) if off_s is not None else np.nan,
@@ -182,9 +186,9 @@ def build_mcp_peaks_with_t0(mcp_csv, t0_map, rising_edges_abs_ns, out_dir, plot_
     if df.empty:
         print("[warn] No MCP peak rows after filtering; writing empty CSV")
 
-    out_csv = os.path.join(out_dir, f"peaks_{base}_with_t0.csv")
+    out_csv = os.path.join(out_dir, f"peaks_{base}_with_tave.csv")
     os.makedirs(out_dir, exist_ok=True)
-    cols_out = ['segment', 'peak_time_ps', 'peak_amp', 'peak_sigma_ps', 'baseline', 'fit_success', 't0_abs_ps', 'prev_rising_edge_abs_ps', 'trigger_time_ps', 'trigger_offset_ps']
+    cols_out = ['segment', 'peak_time_ps', 'peak_time_err_ps', 'peak_amp', 'peak_sigma_ps', 'baseline', 'fit_success', 't_ave_ps', 'prev_rising_edge_abs_ps', 'trigger_time_ps', 'trigger_offset_ps']
     # use higher precision for float formatting so ps columns show more digits
     df.to_csv(out_csv, index=False, columns=cols_out, float_format='%.12g')
     print(f"[ok] Wrote augmented MCP peaks CSV: {out_csv} (rows={len(df)})")
@@ -202,8 +206,11 @@ def main():
     ap.add_argument('--clock-drop-last-edge', type=int, default=0)
     ap.add_argument('--clock-min-edge-spacing-ns', type=float, default=1.0)
     ap.add_argument('--clock-high-jitter-threshold-ps', type=float, default=None)
+    ap.add_argument('--clock-disable-template-correction', action='store_true', help='If set, do not apply sub-sample cross-correlation shift for template edges')
     ap.add_argument('--plot-first', type=int, default=5, help='Number of MCP plots (unused here, kept for compatibility)')
     ap.add_argument('--min-amp', type=float, default=None, help='Minimum peak amplitude to keep')
+    ap.add_argument('--mcp-t-min', type=float, default=None, help='Minimum MCP peak time (ns relative to trigger)')
+    ap.add_argument('--mcp-t-max', type=float, default=None, help='Maximum MCP peak time (ns relative to trigger)')
 
     args = ap.parse_args()
 
@@ -219,11 +226,14 @@ def main():
         drop_last_edge=args.clock_drop_last_edge,
         min_edge_spacing_ns=args.clock_min_edge_spacing_ns,
         high_jitter_threshold_ps=args.clock_high_jitter_threshold_ps,
+        disable_template_correction=args.clock_disable_template_correction,
     )
 
-    # run MCP peak reconstruction and attach t0
+    # run MCP peak reconstruction and attach t_ave
     print(f"[info] Running MCP peak reconstruction on {args.mcp}")
-    df_peaks = build_mcp_peaks_with_t0(args.mcp, t0_map, rising_edges_abs_ns, args.out_dir, plot_first=args.plot_first, min_amp=args.min_amp)
+    df_peaks = build_mcp_peaks_with_tave(args.mcp, t0_map, rising_edges_abs_ns, args.out_dir, 
+                                         plot_first=args.plot_first, min_amp=args.min_amp,
+                                         t_min=args.mcp_t_min, t_max=args.mcp_t_max)
 
     print('[done] combine_mcp_clock completed')
 
