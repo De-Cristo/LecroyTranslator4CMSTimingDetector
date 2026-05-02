@@ -202,7 +202,10 @@ def main():
     all_peak_time = []
     all_peak_amp = []
     all_peak_phi = []
+    all_peak_phi_from_edge = []
     all_trigger_time = []
+    all_trigger_phi = []
+    all_trigger_phi_from_edge = []
     for mp in mapping_paths:
         idx_list = load_mapped_root_idx(mp) or []
         trigger_to_root = load_mapping_value(mp, "trigger_to_root") or []
@@ -242,19 +245,27 @@ def main():
             trig_col = None
             trig_in_ps = False
 
+        # prev_rising_edge_abs_ps (ps) from combine_mcp_clock
+        if "prev_rising_edge_abs_ps" in df_peaks.columns:
+            edge_col = "prev_rising_edge_abs_ps"
+            edge_in_ps = True
+        else:
+            edge_col = None
+            edge_in_ps = False
+
         if "segment" not in df_peaks.columns:
             raise KeyError(f'Missing "segment" column in peaks file: {peaks_file}')
         if "peak_amp" not in df_peaks.columns:
             raise KeyError(f'Missing peak_amp column in peaks file: {peaks_file}')
 
-        # Build mapping: segment -> (peak_time_ps, peak_amp, t0_abs_ps, trigger_time_ps)
+        # Build mapping: segment -> (peak_time_ps, peak_amp, t0_abs_ps, trigger_time_ps, peak_abs_ps)
         seg_to_peak = {}
         for _, row in df_peaks.iterrows():
             try:
                 seg = int(row["segment"])
             except Exception:
                 continue
-            # peak time in ps
+            # peak time in ps (absolute scope time)
             pt = row.get(time_col, np.nan)
             if not time_in_ps and not pd.isna(pt):
                 pt = float(pt) * 1000.0
@@ -274,18 +285,29 @@ def main():
                     trv = float(trv) * 1e12
             else:
                 trv = np.nan
+            # prev_rising_edge_abs_ps in ps if present
+            if edge_col is not None:
+                edgev = row.get(edge_col, np.nan)
+                if not edge_in_ps and not pd.isna(edgev):
+                    edgev = float(edgev) * 1000.0
+            else:
+                edgev = np.nan
             seg_to_peak[int(seg)] = (
                 pt if not pd.isna(pt) else np.nan,
                 pa if not pd.isna(pa) else np.nan,
                 t0v if not pd.isna(t0v) else np.nan,
                 trv if not pd.isna(trv) else np.nan,
+                edgev if not pd.isna(edgev) else np.nan,
             )
 
         # Append in trigger order (same order used to build mapped_root_idx)
         local_peak_time = []
         local_peak_amp = []
         local_peak_phi = []
+        local_peak_phi_from_edge = []
         local_trigger_time = []
+        local_trigger_phi = []
+        local_trigger_phi_from_edge = []
         for j_trigger, i_root in enumerate(trigger_to_root):
             if i_root is None or (isinstance(i_root, float) and np.isnan(i_root)):
                 continue
@@ -298,9 +320,10 @@ def main():
                 seg = j_trigger + 1
             else:
                 seg = int(trig_idx) + 1
-            peak = seg_to_peak.get(seg, (np.nan, np.nan, np.nan, np.nan))
-            peak_time_ps, peak_amp, t0_abs_ps, trigger_time_ps = peak
+            peak = seg_to_peak.get(seg, (np.nan, np.nan, np.nan, np.nan, np.nan))
+            peak_time_ps, peak_amp, t0_abs_ps, trigger_time_ps, prev_edge_ps = peak
             # compute phi: (peak_time_ps - t0_abs_ps) mod 6250 (ps)
+            # peak_time_ps is the absolute scope time; t0_abs_ps is the clock t0
             if np.isnan(peak_time_ps) or np.isnan(t0_abs_ps):
                 phi = np.nan
             else:
@@ -308,10 +331,39 @@ def main():
                     phi = float((peak_time_ps - t0_abs_ps) % 6250.0)
                 except Exception:
                     phi = np.nan
+            # compute phi from nearest rising edge (for cross-check)
+            if np.isnan(peak_time_ps) or np.isnan(prev_edge_ps):
+                phi_edge = np.nan
+            else:
+                try:
+                    phi_edge = float((peak_time_ps - prev_edge_ps) % 6250.0)
+                except Exception:
+                    phi_edge = np.nan
+            # compute trigger phase from t0 (phi_trigger)
+            if np.isnan(trigger_time_ps) or np.isnan(t0_abs_ps):
+                phi_trig = np.nan
+            else:
+                try:
+                    phi_trig = float((trigger_time_ps - t0_abs_ps) % 6250.0)
+                except Exception:
+                    phi_trig = np.nan
+
+            # compute trigger phase from nearest rising edge (phi_trigger_from_edge)
+            if np.isnan(trigger_time_ps) or np.isnan(prev_edge_ps):
+                phi_trig_edge = np.nan
+            else:
+                try:
+                    phi_trig_edge = float((trigger_time_ps - prev_edge_ps) % 6250.0)
+                except Exception:
+                    phi_trig_edge = np.nan
+
             local_peak_time.append(peak_time_ps)
             local_peak_amp.append(peak_amp)
             local_peak_phi.append(phi)
+            local_peak_phi_from_edge.append(phi_edge)
             local_trigger_time.append(trigger_time_ps)
+            local_trigger_phi.append(phi_trig)
+            local_trigger_phi_from_edge.append(phi_trig_edge)
 
         if len(idx_list) != len(local_peak_time):
             print(f'Warning: mapped_root_idx length {len(idx_list)} != peaks length {len(local_peak_time)} for {mp}')
@@ -320,18 +372,24 @@ def main():
         all_peak_time.extend(local_peak_time)
         all_peak_amp.extend(local_peak_amp)
         all_peak_phi.extend(local_peak_phi)
+        all_peak_phi_from_edge.extend(local_peak_phi_from_edge)
         all_trigger_time.extend(local_trigger_time)
+        all_trigger_phi.extend(local_trigger_phi)
+        all_trigger_phi_from_edge.extend(local_trigger_phi_from_edge)
 
     if len(all_indices) == 0:
         print('Warning: mapped_root_idx is empty; MCP/index will be an empty branch')
     with uproot.update(out_path) as f:
         f["MCP"] = {
             "index": np.array(all_indices, dtype=np.int64),
-            # write peak_time in picoseconds (ps)
+            # peak_time is the absolute scope time in picoseconds (ps)
             "peak_time": np.array(all_peak_time, dtype=np.float64),
             "peak_amp": np.array(all_peak_amp, dtype=np.float64),
             "phi_peak": np.array(all_peak_phi, dtype=np.float64),
+            "phi_peak_from_edge": np.array(all_peak_phi_from_edge, dtype=np.float64),
             "trigger_time": np.array(all_trigger_time, dtype=np.float64),
+            "phi_trigger": np.array(all_trigger_phi, dtype=np.float64),
+            "phi_trigger_from_edge": np.array(all_trigger_phi_from_edge, dtype=np.float64),
         }
     print('Added MCP tree with', len(all_indices), 'entries')
 

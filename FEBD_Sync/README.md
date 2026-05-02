@@ -8,6 +8,19 @@ Tools for exporting ROOT data, synchronizing with scope triggers, adding MCP pea
 
 **Scripts**
 
+**`process_sync.sh` / `fast_sync_add_mcp_newv_debug.py`**
+- Purpose: Batch wrapper and single-pass script for FEBD synchronization + MCP attach workflow. This replaces the multi-step `read_root_explore.py`, `Febd_synchronizor.py`, and `apply_mapping_add_peaks.py` pipeline.
+- Example:
+  ```bash
+  bash process_sync.sh \
+    --root-dir /eos/cms/store/group/dpg_mtd/comm_mtd/TB/MTDTB_H8_Sep2025/TOFHIR/reco/4405/ \
+    --peaks-dir /eos/user/l/lichengz/MTD/TB2025/trc_out_MCP_clock_reco_4405/ \
+    --meta-dir /eos/user/l/lichengz/MTD/TB2025/trc_out_4405/ \
+    --out-dir /eos/user/l/lichengz/MTD/TB2025/trc_out_sync_4405/ \
+    --dedup \
+    --max-files 1
+  ```
+
 **`read_root_explore.py`**
 - Purpose: Inspect ROOT trees and export per-event lists (`channelID`, `channelIdx`, `time`, `energy`) to a CSV.
 - Output format (dump-df): one row per event with JSON list strings.

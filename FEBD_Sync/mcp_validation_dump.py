@@ -22,6 +22,7 @@ try:
     import numpy as np
     import matplotlib.pyplot as plt
     import pandas as pd
+    from scipy.optimize import curve_fit
 except Exception as e:
     print("Missing Python dependency:", e)
     print("Install: pip install uproot awkward numpy matplotlib pandas")
@@ -286,6 +287,24 @@ def main():
     else:
         mcp_phi = np.full(len(mcp_idx), np.nan)
 
+    # try to read phi_peak_from_edge if present
+    if "phi_peak_from_edge" in mcp.keys():
+        mcp_phi_from_edge = mcp["phi_peak_from_edge"].array(library="np")
+    else:
+        mcp_phi_from_edge = np.full(len(mcp_idx), np.nan)
+
+    # try to read phi_trigger if present (t0-based)
+    if "phi_trigger" in mcp.keys():
+        mcp_phi_trigger = mcp["phi_trigger"].array(library="np")
+    else:
+        mcp_phi_trigger = np.full(len(mcp_idx), np.nan)
+
+    # try to read phi_trigger_from_edge if present (edge-based)
+    if "phi_trigger_from_edge" in mcp.keys():
+        mcp_phi_trigger_edge = mcp["phi_trigger_from_edge"].array(library="np")
+    else:
+        mcp_phi_trigger_edge = np.full(len(mcp_idx), np.nan)
+
     # try to read trigger_time if present
     if args.mcp_trigger_time in mcp.keys():
         mcp_trig = mcp[args.mcp_trigger_time].array(library="np")
@@ -321,13 +340,25 @@ def main():
         except Exception:
             phi_val = math.nan
         try:
+            phi_from_edge_val = float(mcp_phi_from_edge[i])
+        except Exception:
+            phi_from_edge_val = math.nan
+        try:
+            phi_trigger_val = float(mcp_phi_trigger[i])
+        except Exception:
+            phi_trigger_val = math.nan
+        try:
+            phi_trigger_edge_val = float(mcp_phi_trigger_edge[i])
+        except Exception:
+            phi_trigger_edge_val = math.nan
+        try:
             trig_val = float(mcp_trig[i])
         except Exception:
             trig_val = math.nan
         # convert from tree unit to desired dump unit
         peak_out = convert_val(raw, args.mcp_unit, args.dump_unit)
         trig_out = convert_val(trig_val, args.mcp_unit, args.dump_unit)
-        mcp_map[int(mcp_idx[i])] = (peak_out, peak_amp_val, phi_val, trig_out)
+        mcp_map[int(mcp_idx[i])] = (peak_out, peak_amp_val, phi_val, phi_from_edge_val, phi_trigger_val, phi_trigger_edge_val, trig_out)
 
     # Produce a per-event CSV identical to read_root_explore --dump-df output.
     # Optionally also produce an MCP-augmented CSV with extra columns.
@@ -388,10 +419,10 @@ def main():
                 if mcp_writer:
                     i = result[0]
                     if i in mcp_map:
-                        peak_time, peak_amp, phi_peak, trig_time = mcp_map[i]
+                        peak_time, peak_amp, phi_peak, phi_from_edge, phi_trigger, phi_trigger_edge, trig_time = mcp_map[i]
                         mcp_index = i
                     else:
-                        peak_time, peak_amp, phi_peak, trig_time = (math.nan, math.nan, math.nan, math.nan)
+                        peak_time, peak_amp, phi_peak, phi_from_edge, phi_trigger, phi_trigger_edge, trig_time = (math.nan, math.nan, math.nan, math.nan, math.nan, math.nan, math.nan)
                         mcp_index = math.nan
 
                     pt_out = '' if peak_time != peak_time else peak_time
@@ -418,6 +449,310 @@ def main():
             print(f"[warn] Failed to close MCP output file {out_mcp}: {e}")
 
     print(f"Wrote {rows_written} rows to {args.out}")
+
+    # --- Diagnostic histograms ---
+    out_plot_dir = os.path.dirname(args.out) or '.'
+    # Collect arrays from mcp_map for plotting
+    peak_time_arr = []   # peak_time (absolute scope time)
+    peak_minus_trig_arr = []  # peak_time - trigger_time
+    phi_diff_arr = []  # phi_peak_from_edge - phi_trigger_from_edge
+    phi_diff_t0_arr = []  # phi_peak - phi_trigger (t0-based)
+    inv_amp_arr = []   # 1/peak_amp
+    for idx_val, vals in mcp_map.items():
+        peak_time, peak_amp, phi_peak, phi_from_edge, phi_trigger, phi_trigger_edge, trig_time = vals
+        # peak time
+        if peak_time == peak_time:  # not NaN
+            peak_time_arr.append(float(peak_time))
+        # peak - trigger
+        if peak_time == peak_time and trig_time == trig_time:
+            peak_minus_trig_arr.append(float(peak_time) - float(trig_time))
+        
+        if abs(peak_amp) > 1e-6:  # avoid division by zero
+            inv_amp = 1.0 / abs(float(peak_amp))
+            
+            # 1. Edge-based phi difference
+            if phi_from_edge == phi_from_edge and phi_trigger_edge == phi_trigger_edge:
+                # Center phase difference to [-3125, +3125] ps
+                phi_diff_raw = float(phi_from_edge - phi_trigger_edge)
+                if phi_diff_raw > 3125.0:
+                    phi_diff_raw -= 6250.0
+                elif phi_diff_raw < -3125.0:
+                    phi_diff_raw += 6250.0
+                phi_diff_arr.append(phi_diff_raw)
+                # Store inv_amp only once since it's the same for both
+                if len(inv_amp_arr) < len(phi_diff_arr): 
+                    inv_amp_arr.append(inv_amp)
+
+            # 2. t0-based phi difference
+            if phi_peak == phi_peak and phi_trigger == phi_trigger:
+                # Center phase difference to [-3125, +3125] ps
+                phi_diff_raw = float(phi_peak - phi_trigger)
+                if phi_diff_raw > 3125.0:
+                    phi_diff_raw -= 6250.0
+                elif phi_diff_raw < -3125.0:
+                    phi_diff_raw += 6250.0
+                phi_diff_t0_arr.append(phi_diff_raw)
+
+            # 3. Raw time difference (peak_time - trigger_time) for amplitude walk
+            if peak_time == peak_time and trig_time == trig_time:
+                peak_minus_trig_vals = float(peak_time) - float(trig_time)
+                # Store tuple (dt, inv_amp) to keep them paired for this specific plot
+                # We can reuse inv_amp_arr logic but safer to build separate list if needed
+                # Actually, let's just append to a dedicated list of tuples since length might differ from phi arrays
+                pass # logic handled below by re-scanning or similar. 
+                # Wait, we already built peak_minus_trig_arr earlier. We just need corresponding inv_amp.
+                # Let's start a dedicated list for this plot:
+                pass
+    
+    # Re-scan for peak-trig amplitude walk to ensure rigorous pairing
+    peak_minus_trig_walk_data = [] 
+    for idx_val, vals in mcp_map.items():
+        peak_time, peak_amp, phi_peak, phi_from_edge, phi_trigger, phi_trigger_edge, trig_time = vals
+        if peak_time == peak_time and trig_time == trig_time and peak_amp == peak_amp and abs(peak_amp) > 1e-6:
+            dt = float(peak_time) - float(trig_time)
+            inv_a = 1.0 / abs(float(peak_amp))
+            peak_minus_trig_walk_data.append((dt, inv_a))
+    
+    unit_label = args.dump_unit
+
+    if len(peak_time_arr) > 0:
+        peak_time_arr = np.array(peak_time_arr)
+        fig, ax = plt.subplots(1, 1, figsize=(7, 4.5))
+        ax.hist(peak_time_arr, bins=80, edgecolor='black', alpha=0.8)
+        mu = float(np.mean(peak_time_arr)); sd = float(np.std(peak_time_arr))
+        ax.set_title(f"Peak time (absolute scope time)\nMean={mu:.3f} {unit_label}  RMS={sd:.3f} {unit_label}  N={len(peak_time_arr)}")
+        ax.set_xlabel(f"peak_time ({unit_label})"); ax.set_ylabel("Counts"); ax.grid(True, alpha=0.3)
+        plt.tight_layout()
+        hist_path = os.path.join(out_plot_dir, "hist_peak_time.png")
+        plt.savefig(hist_path, dpi=150); plt.close(fig)
+        print(f"[ok] Saved peak time histogram: {hist_path}")
+
+    if len(peak_minus_trig_arr) > 0:
+        peak_minus_trig_arr = np.array(peak_minus_trig_arr)
+        fig, ax = plt.subplots(1, 1, figsize=(7, 4.5))
+        ax.hist(peak_minus_trig_arr, bins=80, edgecolor='black', alpha=0.8)
+        mu = float(np.mean(peak_minus_trig_arr)); sd = float(np.std(peak_minus_trig_arr))
+        ax.set_title(f"Peak time − trigger time\nMean={mu:.3f} {unit_label}  RMS={sd:.3f} {unit_label}  N={len(peak_minus_trig_arr)}")
+        ax.set_xlabel(f"peak_time − trigger_time ({unit_label})"); ax.set_ylabel("Counts"); ax.grid(True, alpha=0.3)
+        plt.tight_layout()
+        hist_path = os.path.join(out_plot_dir, "hist_peak_minus_trigger.png")
+        plt.savefig(hist_path, dpi=150); plt.close(fig)
+        print(f"[ok] Saved peak − trigger histogram: {hist_path}")
+
+    # Amplitude walk plot: (phi_peak_from_edge - phi_trigger) vs 1/peak_amp
+    if len(phi_diff_arr) > 0 and len(inv_amp_arr) > 0:
+        phi_vals = np.array(phi_diff_arr)
+        inv_amp_vals = np.array(inv_amp_arr)
+        
+        # 1. Remove outliers (iterative sigma clipping)
+        mask = np.ones(len(phi_vals), dtype=bool)
+        for _ in range(3):
+            data = phi_vals[mask]
+            if len(data) < 2: break
+            mu, std = np.median(data), np.std(data)
+            if std == 0: break
+            mask = mask & (np.abs(phi_vals - mu) < 3 * std)
+        
+        phi_clean = phi_vals[mask]
+        inv_amp_clean = inv_amp_vals[mask]
+        print(f"[info] Amplitude walk: kept {len(phi_clean)}/{len(phi_vals)} events after cleaning")
+
+        # 2. Linear fit
+        slope, intercept = np.nan, np.nan
+        residuals = []
+        if len(phi_clean) > 2:
+            try:
+                slope, intercept = np.polyfit(inv_amp_clean, phi_clean, 1)
+                fit_fn = np.poly1d([slope, intercept])
+                residuals = phi_clean - fit_fn(inv_amp_clean)
+            except Exception as e:
+                print(f"[warn] Linear fit failed: {e}")
+
+        # Plot scatter + fit (Panel 1) and Residuals (Panel 2)
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5))
+        
+        # Panel 1: Scatter
+        ax1.scatter(inv_amp_vals, phi_vals, s=5, alpha=0.2, label='All data', color='gray')
+        ax1.scatter(inv_amp_clean, phi_clean, s=5, alpha=0.6, label='Cleaned', color='tab:blue')
+        if not np.isnan(slope):
+            x_line = np.linspace(inv_amp_clean.min(), inv_amp_clean.max(), 100)
+            ax1.plot(x_line, fit_fn(x_line), 'r-', label=f'Fit: {slope:.2f}*x + {intercept:.2f}', linewidth=2)
+        ax1.set_xlabel("1 / |peak_amp| (1/V)")
+        ax1.set_ylabel("φ_peak_from_edge − φ_trigger_from_edge (ps)")
+        ax1.legend()
+        ax1.grid(True, alpha=0.3)
+        ax1.set_title(f"Amplitude Walk\nSlope={slope:.4f} ps*V")
+
+        # Panel 2: Residuals
+        if len(residuals) > 0:
+            # Histogram
+            n, bins, patches = ax2.hist(residuals, bins=50, density=True, alpha=0.6, color='g', label='Residuals')
+            
+            # Gaussian fit to residuals
+            try:
+                def gaussian(x, a, x0, sigma):
+                    return a * np.exp(-(x - x0)**2 / (2 * sigma**2))
+                
+                bin_centers = 0.5 * (bins[:-1] + bins[1:])
+                # Initial guess: a=peak height, x0=mean, sigma=std
+                p0 = [np.max(n), np.mean(residuals), np.std(residuals)]
+                popt, pcov = curve_fit(gaussian, bin_centers, n, p0=p0)
+                
+                x_fit = np.linspace(bins[0], bins[-1], 200)
+                ax2.plot(x_fit, gaussian(x_fit, *popt), 'r-', linewidth=2, 
+                         label=f'Gaus Fit:\n$\mu$={popt[1]:.2f} ps\n$\sigma$={np.abs(popt[2]):.2f} ps')
+                ax2.legend()
+            except Exception as e:
+                print(f"[warn] Gaussian fit to residuals failed: {e}")
+            
+        ax2.set_xlabel("Residuals (ps)")
+        ax2.set_title("Residuals of Linear Fit")
+        ax2.grid(True, alpha=0.3)
+
+        plt.tight_layout()
+        scatter_path = os.path.join(out_plot_dir, "scatter_phi_diff_vs_inv_amp.png")
+        plt.savefig(scatter_path, dpi=150); plt.close(fig)
+        print(f"[ok] Saved amplitude walk analysis plot (edge-based): {scatter_path}")
+
+    # Amplitude walk plot (t0-based): (phi_peak - phi_trigger) vs 1/peak_amp
+    # Note: inv_amp_arr corresponds one-to-one with phi_diff_t0_arr only if filter logic was identical
+    # To be safe, let's re-zip or assume nearly identical coverage. 
+    # Actually, simpler to just re-build inv_amp for t0 plot if counts differ, 
+    # but for now let's use the one we built if lengths match.
+    if len(phi_diff_t0_arr) > 0 and len(phi_diff_t0_arr) == len(inv_amp_arr):
+        phi_vals = np.array(phi_diff_t0_arr)
+        inv_amp_vals = np.array(inv_amp_arr)
+        
+        # 1. Remove outliers (iterative sigma clipping)
+        mask = np.ones(len(phi_vals), dtype=bool)
+        for _ in range(3):
+            data = phi_vals[mask]
+            if len(data) < 2: break
+            mu, std = np.median(data), np.std(data)
+            if std == 0: break
+            mask = mask & (np.abs(phi_vals - mu) < 3 * std)
+        
+        phi_clean = phi_vals[mask]
+        inv_amp_clean = inv_amp_vals[mask]
+        
+        # 2. Linear fit
+        slope, intercept = np.nan, np.nan
+        residuals = []
+        if len(phi_clean) > 2:
+            try:
+                slope, intercept = np.polyfit(inv_amp_clean, phi_clean, 1)
+                fit_fn = np.poly1d([slope, intercept])
+                residuals = phi_clean - fit_fn(inv_amp_clean)
+            except Exception:
+                pass
+
+        # Plot scatter + fit (Panel 1) and Residuals (Panel 2)
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5))
+        
+        # Panel 1: Scatter
+        ax1.scatter(inv_amp_vals, phi_vals, s=5, alpha=0.2, label='All data', color='gray')
+        ax1.scatter(inv_amp_clean, phi_clean, s=5, alpha=0.6, label='Cleaned', color='tab:orange')
+        if not np.isnan(slope):
+            x_line = np.linspace(inv_amp_clean.min(), inv_amp_clean.max(), 100)
+            ax1.plot(x_line, fit_fn(x_line), 'b-', label=f'Fit: {slope:.2f}*x + {intercept:.2f}', linewidth=2)
+        ax1.set_xlabel("1 / |peak_amp| (1/V)")
+        ax1.set_ylabel("φ_peak − φ_trigger (t0-based) (ps)")
+        ax1.legend()
+        ax1.grid(True, alpha=0.3)
+        ax1.set_title(f"Amplitude Walk (t0-based)\nSlope={slope:.4f} ps*V")
+
+        # Panel 2: Residuals
+        if len(residuals) > 0:
+            n, bins, patches = ax2.hist(residuals, bins=50, density=True, alpha=0.6, color='purple', label='Residuals')
+            try:
+                def gaussian(x, a, x0, sigma):
+                    return a * np.exp(-(x - x0)**2 / (2 * sigma**2))
+                bin_centers = 0.5 * (bins[:-1] + bins[1:])
+                p0 = [np.max(n), np.mean(residuals), np.std(residuals)]
+                popt, pcov = curve_fit(gaussian, bin_centers, n, p0=p0)
+                x_fit = np.linspace(bins[0], bins[-1], 200)
+                ax2.plot(x_fit, gaussian(x_fit, *popt), 'k-', linewidth=2, 
+                         label=f'Gaus Fit:\n$\mu$={popt[1]:.2f} ps\n$\sigma$={np.abs(popt[2]):.2f} ps')
+                ax2.legend()
+            except Exception:
+                pass
+            
+        ax2.set_xlabel("Residuals (ps)")
+        ax2.set_title("Residuals of Linear Fit")
+        ax2.grid(True, alpha=0.3)
+
+        plt.tight_layout()
+        scatter_path_t0 = os.path.join(out_plot_dir, "scatter_phi_diff_vs_inv_amp_t0.png")
+        plt.savefig(scatter_path_t0, dpi=150); plt.close(fig)
+        print(f"[ok] Saved amplitude walk analysis plot (t0-based): {scatter_path_t0}")
+
+    # Amplitude walk plot (raw time): (peak_time - trigger_time) vs 1/peak_amp
+    if len(peak_minus_trig_walk_data) > 0:
+        dt_vals = np.array([x[0] for x in peak_minus_trig_walk_data])
+        inv_vals = np.array([x[1] for x in peak_minus_trig_walk_data])
+
+        # 1. Remove outliers (iterative sigma clipping)
+        mask = np.ones(len(dt_vals), dtype=bool)
+        for _ in range(3):
+            data = dt_vals[mask]
+            if len(data) < 2: break
+            mu, std = np.median(data), np.std(data)
+            if std == 0: break
+            mask = mask & (np.abs(dt_vals - mu) < 3 * std)
+        
+        dt_clean = dt_vals[mask]
+        inv_clean = inv_vals[mask]
+        
+        # 2. Linear fit
+        slope, intercept = np.nan, np.nan
+        residuals = []
+        if len(dt_clean) > 2:
+            try:
+                slope, intercept = np.polyfit(inv_clean, dt_clean, 1)
+                fit_fn = np.poly1d([slope, intercept])
+                residuals = dt_clean - fit_fn(inv_clean)
+            except Exception:
+                pass
+
+        # Plot scatter + fit (Panel 1) and Residuals (Panel 2)
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5))
+        
+        # Panel 1: Scatter
+        ax1.scatter(inv_vals, dt_vals, s=5, alpha=0.2, label='All data', color='gray')
+        ax1.scatter(inv_clean, dt_clean, s=5, alpha=0.6, label='Cleaned', color='tab:green')
+        if not np.isnan(slope):
+            x_line = np.linspace(inv_clean.min(), inv_clean.max(), 100)
+            ax1.plot(x_line, fit_fn(x_line), 'r-', label=f'Fit: {slope:.2f}*x + {intercept:.2f}', linewidth=2)
+        ax1.set_xlabel("1 / |peak_amp| (1/V)")
+        ax1.set_ylabel("peak_time − trigger_time (ps)")
+        ax1.legend()
+        ax1.grid(True, alpha=0.3)
+        ax1.set_title(f"Amplitude Walk (Raw Time)\nSlope={slope:.4f} ps*V")
+
+        # Panel 2: Residuals
+        if len(residuals) > 0:
+            n, bins, patches = ax2.hist(residuals, bins=50, density=True, alpha=0.6, color='teal', label='Residuals')
+            try:
+                def gaussian(x, a, x0, sigma):
+                    return a * np.exp(-(x - x0)**2 / (2 * sigma**2))
+                bin_centers = 0.5 * (bins[:-1] + bins[1:])
+                p0 = [np.max(n), np.mean(residuals), np.std(residuals)]
+                popt, pcov = curve_fit(gaussian, bin_centers, n, p0=p0)
+                x_fit = np.linspace(bins[0], bins[-1], 200)
+                ax2.plot(x_fit, gaussian(x_fit, *popt), 'k-', linewidth=2, 
+                         label=f'Gaus Fit:\n$\mu$={popt[1]:.2f} ps\n$\sigma$={np.abs(popt[2]):.2f} ps')
+                ax2.legend()
+            except Exception:
+                pass
+            
+        ax2.set_xlabel("Residuals (ps)")
+        ax2.set_title("Residuals of Linear Fit")
+        ax2.grid(True, alpha=0.3)
+
+        plt.tight_layout()
+        scatter_path_raw = os.path.join(out_plot_dir, "scatter_peak_minus_trig_vs_inv_amp.png")
+        plt.savefig(scatter_path_raw, dpi=150); plt.close(fig)
+        print(f"[ok] Saved amplitude walk analysis plot (raw time): {scatter_path_raw}")
 
     # Optional: run fit using the freshly dumped CSV
     if args.fit_from_csv:
