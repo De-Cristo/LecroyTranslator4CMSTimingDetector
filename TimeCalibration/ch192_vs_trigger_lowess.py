@@ -199,6 +199,25 @@ def _build_corrected_stages(ch_time_seg, lowess_resid, trigger_time, fit_mask):
     return lowess_only, final
 
 
+def _required_validation_channels(val_channels, ch_target):
+    return set(val_channels) | {234, 243, ch_target}
+
+
+def _augment_with_bar_channel(data_dict, val_channels):
+    v_channels = list(val_channels)
+    if len(val_channels) == 2:
+        left, right = val_channels
+        data_dict["val_time_bar"] = (
+            data_dict[f"val_time_{left}"] + data_dict[f"val_time_{right}"]
+        ) / 2.0
+        data_dict["val_energy_bar"] = (
+            data_dict[f"val_energy_{left}"] + data_dict[f"val_energy_{right}"]
+        ) / 2.0
+        if "bar" not in v_channels:
+            v_channels.append("bar")
+    return v_channels
+
+
 def _save_inverse_energy_scatter(prefix, energy, series, val_ch, ch, title_prefix, labels):
     label_pairs = _series_label_pairs(labels)
     fig, axes = plt.subplots(1, len(labels), figsize=(7 * len(labels), 5), squeeze=False)
@@ -331,13 +350,7 @@ def _per_file_analysis_lowess(data_dict, prefix, ch, val_channels, nbins,
     mcp_peak = data_dict["mcp_peak_time"]
     val_bar_ok = data_dict["val_bar_ok"]
 
-    # Add pseudo-channel 'bar' if 137 and 150 are present
-    v_channels = list(val_channels)
-    if 137 in val_channels and 150 in val_channels:
-        data_dict["val_time_bar"] = (data_dict["val_time_137"] + data_dict["val_time_150"]) / 2.0
-        data_dict["val_energy_bar"] = (data_dict["val_energy_137"] + data_dict["val_energy_150"]) / 2.0
-        if "bar" not in v_channels:
-            v_channels.append("bar")
+    v_channels = _augment_with_bar_channel(data_dict, val_channels)
 
     colors = ["tab:blue", "tab:orange", "tab:green", "tab:red", "tab:purple"]
     fit_colors = ["red", "darkgreen", "darkblue", "purple", "brown"]
@@ -876,12 +889,7 @@ def main():
     mcp_peak = combined["mcp_peak_time"]
     val_bar_ok = combined["val_bar_ok"].astype(bool)
 
-    v_channels = list(args.val_channels)
-    if 137 in v_channels and 150 in v_channels:
-        combined["val_time_bar"] = (combined["val_time_137"] + combined["val_time_150"]) / 2.0
-        combined["val_energy_bar"] = (combined["val_energy_137"] + combined["val_energy_150"]) / 2.0
-        if "bar" not in v_channels:
-            v_channels.append("bar")
+    v_channels = _augment_with_bar_channel(combined, args.val_channels)
 
 
     seg_colors = ["tab:blue", "tab:orange", "tab:green", "tab:red", "tab:purple"]
@@ -1107,7 +1115,7 @@ def extract_ch_times_multi(root_file, cfg, mcp_map):
             out["mcp_peak_time"].append(pt)
             out["event_idx"].append(evt_idx)
 
-            required_channels = {137, 150, 234, 243, ch_target}
+            required_channels = _required_validation_channels(val_channels, ch_target)
             ch_set = set(ch_list.tolist())
             out["val_bar_ok"].append(ch_set == required_channels)
             

@@ -97,6 +97,22 @@ class LowessHelperTest(unittest.TestCase):
         self.assertGreater(abs(m_lowess - 1.0), 1e-3)
         self.assertAlmostEqual(m_final, 1.0, places=10)
 
+    def test_required_validation_channels_follow_requested_pair(self):
+        got = ch192_vs_trigger_lowess._required_validation_channels([133, 154], 192)
+        self.assertEqual(got, {133, 154, 234, 243, 192})
+
+    def test_any_two_validation_channels_get_bar_average(self):
+        data = {
+            "val_time_133": np.array([1.0, 3.0]),
+            "val_time_154": np.array([5.0, 7.0]),
+            "val_energy_133": np.array([10.0, 14.0]),
+            "val_energy_154": np.array([6.0, 10.0]),
+        }
+        v_channels = ch192_vs_trigger_lowess._augment_with_bar_channel(data, [133, 154])
+        self.assertEqual(v_channels, [133, 154, "bar"])
+        self.assertTrue(np.allclose(data["val_time_bar"], np.array([3.0, 5.0])))
+        self.assertTrue(np.allclose(data["val_energy_bar"], np.array([8.0, 12.0])))
+
 
 if __name__ == "__main__":
     unittest.main()
