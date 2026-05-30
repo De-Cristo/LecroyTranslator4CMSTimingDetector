@@ -17,6 +17,8 @@ From the `LecroyTranslator/` directory run:
 
 ## Usage
 
+### Single file processing
+
     ./read_lecroy <waveform.trc> [out_dir]
 
 - `<waveform.trc>`: path to the LeCroy `.trc` file.
@@ -25,6 +27,15 @@ From the `LecroyTranslator/` directory run:
 You can run it in background if desired:
 
     ./read_lecroy ../LecroyBin2ascii/raw_C1_0004522_0000001_13675.trc ./outdir &
+
+### Batch processing
+
+To process all `.trc` files in a given directory, you can use the provided `process_trc.sh` script:
+
+    ./process_trc.sh <input_dir> <output_dir>
+
+- `<input_dir>`: directory containing the input `.trc` files.
+- `<output_dir>`: directory where the resulting CSV files and a `file_list.txt` will be written.
 
 ## Output files
 

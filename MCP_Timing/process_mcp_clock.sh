@@ -1,4 +1,6 @@
 #!/bin/bash
+# /afs/cern.ch/user/m/mtd/MCP_reco_test
+# /eos/cms/store/group/dpg_mtd/comm_mtd/TB/MTDTB_H8_Sep2025/LeCroy/raw/xxxx
 
 # Check if correct number of arguments are provided
 if [ "$#" -lt 2 ] || [ "$#" -gt 3 ]; then

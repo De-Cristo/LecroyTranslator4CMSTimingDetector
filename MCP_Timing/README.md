@@ -70,11 +70,15 @@ Batch wrapper script to combine MCP peak reconstruction with clock `t0` over an 
 Common usage:
 
 ```bash
-source process_mcp_clock.sh <input_dir> <output_dir>
+./process_mcp_clock.sh <input_dir> <output_dir> [max_files]
 
 # Example
-source process_mcp_clock.sh /eos/user/l/lichengz/MTD/TB2025/trc_out_4405/ /eos/user/l/lichengz/MTD/TB2025/trc_out_MCP_clock_reco_4405/
+./process_mcp_clock.sh /eos/user/l/lichengz/MTD/TB2025/trc_out_4405/ /eos/user/l/lichengz/MTD/TB2025/trc_out_MCP_clock_reco_4405/
 ```
+
+- `<input_dir>`: Directory containing the waveform CSVs.
+- `<output_dir>`: Directory where combined peak CSVs and diagnostic plots will be written.
+- `[max_files]`: Optional. Limit the number of processed file pairs for quick testing.
 
 Outputs:
 

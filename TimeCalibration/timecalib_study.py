@@ -2,7 +2,7 @@
 # Author: Licheng Zhang (licheng.zhang@cern.ch)
 # Time: Feb-2026
 """
-Plot channel time vs MCP peak_time and (channel time % 6250) vs MCP phi_peak.
+Plot channel time vs MCP peak_time.
 
 Example:
   python3 timecalib_plots.py input.root --channels 133
@@ -96,30 +96,45 @@ def parse_args():
     p.add_argument("--second-module", choices=["up", "down"], help="Second detector module (up/down)")
     p.add_argument("--second-lyso-bar", type=int, help="Second lyso bar index (0-15)")
     p.add_argument("--second-side", choices=["L", "R", "both"], help="Second lyso bar side (L/R/both)")
-    p.add_argument("--branch-channel", default="channelID")
-    p.add_argument("--branch-idx", default="channelIdx")
+    p.add_argument("--branch-idx", default="channelID")
     p.add_argument("--branch-time", default="time")
     p.add_argument("--branch-energy", default="energy")
     p.add_argument("--mcp-tree", default="MCP")
     p.add_argument("--mcp-index", default="index")
     p.add_argument("--mcp-peak-time", default="peak_time")
-    p.add_argument("--mcp-peak-phase", default="phi_peak")
+    p.add_argument("--mcp-peak-amp", default="peak_amp")
     p.add_argument("--mcp-trigger-time", default="trigger_time")
     p.add_argument("--max-entries", type=int, default=None)
-    p.add_argument("--dt-wrap", type=float, default=6250.0,
-                   help="Clock period for phase calculations (default: 6250)")
     p.add_argument("--time-peak-lines", type=int, default=3,
                    help="Number of linear segments to fit for ch192 vs trigger (default: 3)")
     p.add_argument("--out-ch192-vs-trigger", default="ch192_vs_mcp_trigger.png",
                    help="Output plot filename for channel 192 time vs MCP trigger_time (with linear fit)")
-    p.add_argument("--out-delta-phi", default="delta_phi.png",
-                   help="Output plot filename for delta phi (single detector vs MCP)")
-    p.add_argument("--out-delta-phi-up-down", default="delta_phi_up_down.png",
-                   help="Output plot filename for delta phi (up - down)")
-    p.add_argument("--out-delta-phi-up-mcp", default="delta_phi_up_mcp.png",
-                   help="Output plot filename for delta phi (up - MCP)")
-    p.add_argument("--out-delta-phi-down-mcp", default="delta_phi_down_mcp.png",
-                   help="Output plot filename for delta phi (down - MCP)")
+    p.add_argument("--out-raw-time-diff", default="raw_time_diff.png",
+                   help="Output plot filename for raw time difference (t_bar - t_192) - (t_mcp_peak - t_mcp_trigger)")
+    p.add_argument("--out-raw-time-scatter", default="raw_time_scatter.png",
+                   help="Output plot filename for scatter of (t_bar - t_192) vs (t_mcp_peak - t_mcp_trigger)")
+    p.add_argument("--out-raw-time-residual", default="raw_time_residual.png",
+                   help="Output plot filename for residuals of the linear fit")
+    p.add_argument("--out-raw-time-scatter-clean", default="raw_time_scatter_clean.png",
+                   help="Output scatter plot filename with outliers removed")
+    p.add_argument("--out-raw-time-residual-clean", default="raw_time_residual_clean.png",
+                   help="Output residual plot filename with outliers removed")
+    p.add_argument("--out-time-vs-mcp-peak", default="time_vs_mcp_peak.png",
+                   help="Output plot filename for TOFHIR time vs MCP peak_time scatter plot")
+    p.add_argument("--out-mcp-peak-time-vs-amp", default="mcp_peak_time_vs_amp.png",
+                   help="Output plot filename for MCP peak_time vs peak_amp scatter plot")
+    p.add_argument("--out-walk-mcp", default="walk_mcp_time.png",
+                   help="Output scatter plot filename for (mcp_peak - mcp_trigger) vs 1/peak_amp")
+    p.add_argument("--out-walk-mcp-res", default="walk_mcp_time_res.png",
+                   help="Output residual plot filename for MCP time walk fit")
+    p.add_argument("--out-walk-bar", default="walk_bar_time.png",
+                   help="Output scatter plot filename for (bar_time - ch192) vs 1/peak_amp")
+    p.add_argument("--out-walk-bar-res", default="walk_bar_time_res.png",
+                   help="Output residual plot filename for detector time walk fit")
+    p.add_argument("--out-t-diff-first", default="t_diff_first.png",
+                   help="Output plot filename for time_left - time_right (first bar)")
+    p.add_argument("--out-t-diff-second", default="t_diff_second.png",
+                   help="Output plot filename for time_left - time_right (second bar)")
     p.add_argument("--out-energy", default="energy_plot_channel.png",
                    help="Output plot filename for energy histogram of --plot-channel")
     p.add_argument("--out-energy-second", default="energy_plot_second.png",
@@ -149,10 +164,16 @@ def process_file(path, cfg):
         "path": path,
         "x_ch192": [],
         "y_trig": [],
-        "delta_phi": [],
-        "delta_phi_up_down": [],
-        "delta_phi_up_mcp": [],
-        "delta_phi_down_mcp": [],
+        "time_vs_mcp_peak_x": [],  # TOFHIR time
+        "time_vs_mcp_peak_y": [],  # MCP peak_time
+        "mcp_peak_time_vs_amp_x": [],  # MCP peak_time
+        "mcp_peak_time_vs_amp_y": [],  # MCP peak_amp
+        "raw_time_diff": [], # Raw time diff: (t_bar - t_192) - (t_mcp_peak - t_mcp_trigger)
+        "raw_det_diff": [], # (t_bar - t_192)
+        "raw_mcp_diff": [], # (t_mcp_peak - t_mcp_trigger)
+        "raw_peak_amp": [], # peak_amp for time walk
+        "t_diff_first": [], # time_left - time_right (first bar)
+        "t_diff_second": [], # time_left - time_right (second bar)
         "energy_vals": [],
         "energy_vals_second": [],
         "counters": {
@@ -181,15 +202,8 @@ def process_file(path, cfg):
     mcp = f[cfg["mcp_tree"]]
     mcp_idx = mcp[cfg["mcp_index"]].array(library="np")
     mcp_pt = mcp[cfg["mcp_peak_time"]].array(library="np")
-    if cfg["mcp_peak_phase"] in mcp.keys():
-        mcp_phi = mcp[cfg["mcp_peak_phase"]].array(library="np")
-    else:
-        mcp_phi = np.full(len(mcp_idx), np.nan)
-    if cfg["mcp_trigger_time"] in mcp.keys():
-        mcp_tt = mcp[cfg["mcp_trigger_time"]].array(library="np")
-    else:
-        mcp_tt = np.full(len(mcp_idx), np.nan)
-
+    mcp_amp = mcp[cfg["mcp_peak_amp"]].array(library="np")
+    mcp_tt = mcp[cfg["mcp_trigger_time"]].array(library="np")
     mcp_map = {}
     for i in range(len(mcp_idx)):
         try:
@@ -201,19 +215,21 @@ def process_file(path, cfg):
         except Exception:
             pt = math.nan
         try:
-            phi = float(mcp_phi[i])
+            amp = float(mcp_amp[i])
         except Exception:
-            phi = math.nan
+            amp = math.nan
         try:
             tt = float(mcp_tt[i])
         except Exception:
             tt = math.nan
-        mcp_map[idx] = (pt, phi, tt)
+        mcp_map[idx] = (pt, amp, tt)
 
     arrays = tree.arrays([cfg["branch_channel"], cfg["branch_time"], cfg["branch_energy"]], library="ak")
     if cfg["branch_channel"] not in arrays.fields or cfg["branch_time"] not in arrays.fields:
         out["counters"]["missing_mcp"] += 1
+        print(f"[ERROR] Branches missing in tree: {cfg['branch_channel']} or {cfg['branch_time']}. Fields: {arrays.fields}", flush=True)
         return out
+
 
     n_entries = tree.num_entries
     max_e = n_entries if cfg["max_entries"] is None else min(cfg["max_entries"], n_entries)
@@ -221,13 +237,22 @@ def process_file(path, cfg):
     required = set(cfg["channels"])
     required.add(int(cfg["trigger_channel"]))
 
+    # DEBUG: Print number of entries and MCP map size
+    if max_e > 0:
+        print(f"[DEBUG] Processing {path}: entries={max_e}, mcp_map_size={len(mcp_map)}", flush=True)
+        print(f"[DEBUG] First 5 MCP map keys: {list(mcp_map.keys())[:5]}", flush=True)
+        print(f"[DEBUG] Required channels: {required}", flush=True)
+
     for i in range(max_e):
         out["counters"]["total"] += 1
         try:
             ch_list = ak.to_list(arrays[cfg["branch_channel"]][i])
-        except Exception:
+        except Exception as e:
+            if out["counters"]["missing_ch"] < 5:
+                print(f"[DEBUG] Event {i} missing_ch. Error: {e}", flush=True)
             out["counters"]["missing_ch"] += 1
             continue
+
         try:
             time_list = ak.to_list(arrays[cfg["branch_time"]][i])
         except Exception:
@@ -239,6 +264,10 @@ def process_file(path, cfg):
             energy_list = []
 
         if not required.issubset(set(ch_list)):
+            if out["counters"]["missing_ch"] < 3:
+                present = [c for c in required if c in ch_list]
+                missing = [c for c in required if c not in ch_list]
+                print(f"[DEBUG] Event {i} failed required check. Present: {present}, Missing: {missing}, ch_list sample: {ch_list[:10]}", flush=True)
             out["counters"]["missing_ch"] += 1
             continue
 
@@ -252,7 +281,10 @@ def process_file(path, cfg):
                 pos_r = ch_list.index(cfg["ch_r"])
                 if pos_l < 0 or pos_r < 0 or pos_l >= len(time_list) or pos_r >= len(time_list):
                     raise IndexError("L/R time index out of range")
-                ch_time = 0.5 * (float(time_list[pos_l]) + float(time_list[pos_r]))
+                tl = float(time_list[pos_l])
+                tr = float(time_list[pos_r])
+                ch_time = 0.5 * (tl + tr)
+                out["t_diff_first"].append(tl - tr)
                 if pos_l < len(energy_list) and pos_r < len(energy_list):
                     ch_energy = float(energy_list[pos_l]) + float(energy_list[pos_r])
             except Exception:
@@ -283,7 +315,10 @@ def process_file(path, cfg):
                     pos2_r = ch_list.index(cfg["ch2_r"])
                     if pos2_l < 0 or pos2_r < 0 or pos2_l >= len(time_list) or pos2_r >= len(time_list):
                         raise IndexError("Second L/R time index out of range")
-                    ch2_time = 0.5 * (float(time_list[pos2_l]) + float(time_list[pos2_r]))
+                    t2l = float(time_list[pos2_l])
+                    t2r = float(time_list[pos2_r])
+                    ch2_time = 0.5 * (t2l + t2r)
+                    out["t_diff_second"].append(t2l - t2r)
                     if pos2_l < len(energy_list) and pos2_r < len(energy_list):
                         ch2_energy = float(energy_list[pos2_l]) + float(energy_list[pos2_r])
                 except Exception:
@@ -321,12 +356,27 @@ def process_file(path, cfg):
                 second_energy_ok = False
             if second_energy_ok and (ch2_energy == ch2_energy):
                 out["energy_vals_second"].append(ch2_energy)
-
+        
         if i not in mcp_map:
+            # DEBUG: Sample missing MCP for first few events
+            if out["counters"]["missing_mcp"] < 5:
+                print(f"[DEBUG] Event {i} missing in mcp_map. Keys: {list(mcp_map.keys())[:5]}...", flush=True)
             out["counters"]["missing_mcp"] += 1
             continue
 
-        peak_time, phi_peak, trig_time = mcp_map[i]
+        
+        peak_time, peak_amp, trig_time = mcp_map[i]
+        
+        # DEBUG: Check if required channels are present for first few matched events
+        if out["counters"]["kept"] < 10:
+            present = [c for c in required if c in ch_list]
+            missing = [c for c in required if c not in ch_list]
+            print(f"[DEBUG] Event {i} MATCHED MCP. Found channels: {present}. Missing: {missing}", flush=True)
+
+        # Collect MCP peak_time vs peak_amp
+        if (peak_time == peak_time) and (peak_amp == peak_amp):
+            out["mcp_peak_time_vs_amp_x"].append(peak_time)
+            out["mcp_peak_time_vs_amp_y"].append(peak_amp)
 
         if not cfg["skip_ch192_plot"]:
             try:
@@ -338,49 +388,31 @@ def process_file(path, cfg):
             except Exception:
                 pass
 
+        # Collect TOFHIR time vs MCP peak_time
+        if (ch_time == ch_time) and (peak_time == peak_time):
+            out["time_vs_mcp_peak_x"].append(ch_time)
+            out["time_vs_mcp_peak_y"].append(peak_time)
+
+        # Raw time difference (t_bar - t_192) - (t_mcp_peak - t_mcp_trigger)
         try:
             pos_192_u = ch_list.index(cfg["trigger_channel"])
             ch192_t = float(time_list[pos_192_u])
             if not (ch_time == ch_time and ch192_t == ch192_t and peak_time == peak_time and trig_time == trig_time):
-                raise ValueError("Missing time values for delta phi")
-            p = float(cfg["dt_wrap"])
-            if p <= 0:
-                raise ValueError("dt_wrap must be > 0 for phi")
-            phi_obj = ch_time % p
-            phi_192 = ch192_t % p
-            phi_mcp_peak = peak_time % p
-            phi_trigger = trig_time % p
-            dphi = (phi_obj - phi_192) - (phi_mcp_peak - phi_trigger)
-            dphi = ((dphi + 0.5 * p) % p) - 0.5 * p
-            out["delta_phi"].append(dphi)
+                raise ValueError("Missing time values for raw time diff")
+            
+            # Raw time difference (t_bar - t_192) - (t_mcp_peak - t_mcp_trigger)
+            det_diff = ch_time - ch192_t
+            mcp_diff = peak_time - trig_time
+            raw_diff = det_diff - mcp_diff
+            out["raw_time_diff"].append(raw_diff)
+            out["raw_det_diff"].append(det_diff)
+            out["raw_mcp_diff"].append(mcp_diff)
+            out["raw_peak_amp"].append(peak_amp)
         except Exception:
             if not (trig_time == trig_time):
                 out["counters"]["missing_mcp_trigger"] += 1
 
-        if cfg["second_configured"] and second_energy_ok:
-            try:
-                t2 = ch2_time
-                if not (t2 == t2 and ch_time == ch_time and ch192_t == ch192_t and peak_time == peak_time and trig_time == trig_time):
-                    raise ValueError("Missing time values for second delta phi")
-                p = float(cfg["dt_wrap"])
-                if p <= 0:
-                    raise ValueError("dt_wrap must be > 0 for phi")
-                phi1 = ch_time % p
-                phi2 = t2 % p
-                phi_192 = ch192_t % p
-                phi_mcp_peak = peak_time % p
-                phi_trigger = trig_time % p
-                dphi_up_down = (phi1 - phi2)
-                dphi_up_mcp = (phi1 - phi_192) - (phi_mcp_peak - phi_trigger)
-                dphi_down_mcp = (phi2 - phi_192) - (phi_mcp_peak - phi_trigger)
-                dphi_up_down = ((dphi_up_down + 0.5 * p) % p) - 0.5 * p
-                dphi_up_mcp = ((dphi_up_mcp + 0.5 * p) % p) - 0.5 * p
-                dphi_down_mcp = ((dphi_down_mcp + 0.5 * p) % p) - 0.5 * p
-                out["delta_phi_up_down"].append(dphi_up_down)
-                out["delta_phi_up_mcp"].append(dphi_up_mcp)
-                out["delta_phi_down_mcp"].append(dphi_down_mcp)
-            except Exception:
-                pass
+
 
         out["counters"]["kept"] += 1
 
@@ -474,10 +506,16 @@ def main():
     # Accumulators across all files
     x_ch192 = []
     y_trig = []
-    delta_phi = []
-    delta_phi_up_down = []
-    delta_phi_up_mcp = []
-    delta_phi_down_mcp = []
+    time_vs_mcp_peak_x = []
+    time_vs_mcp_peak_y = []
+    mcp_peak_time_vs_amp_x = []
+    mcp_peak_time_vs_amp_y = []
+    raw_time_diff = []
+    raw_det_diff = []
+    raw_mcp_diff = []
+    raw_peak_amp = []
+    t_diff_first = []
+    t_diff_second = []
     energy_vals = []
     energy_vals_second = []
     counters = {
@@ -494,16 +532,15 @@ def main():
 
     cfg = {
         "channels": args.channels,
-        "branch_channel": args.branch_channel,
+        "branch_channel": args.branch_idx,
         "branch_time": args.branch_time,
         "branch_energy": args.branch_energy,
         "mcp_tree": args.mcp_tree,
         "mcp_index": args.mcp_index,
         "mcp_peak_time": args.mcp_peak_time,
-        "mcp_peak_phase": args.mcp_peak_phase,
+        "mcp_peak_amp": args.mcp_peak_amp,
         "mcp_trigger_time": args.mcp_trigger_time,
         "max_entries": args.max_entries,
-        "dt_wrap": args.dt_wrap,
         "energy_min": args.energy_min,
         "energy_max": args.energy_max,
         "second_energy_min": args.second_energy_min,
@@ -532,14 +569,21 @@ def main():
         # accumulate
         x_ch192.extend(res["x_ch192"])
         y_trig.extend(res["y_trig"])
-        delta_phi.extend(res["delta_phi"])
-        delta_phi_up_down.extend(res["delta_phi_up_down"])
-        delta_phi_up_mcp.extend(res["delta_phi_up_mcp"])
-        delta_phi_down_mcp.extend(res["delta_phi_down_mcp"])
+        time_vs_mcp_peak_x.extend(res["time_vs_mcp_peak_x"])
+        time_vs_mcp_peak_y.extend(res["time_vs_mcp_peak_y"])
+        mcp_peak_time_vs_amp_x.extend(res["mcp_peak_time_vs_amp_x"])
+        mcp_peak_time_vs_amp_y.extend(res["mcp_peak_time_vs_amp_y"])
+        raw_time_diff.extend(res["raw_time_diff"])
+        raw_det_diff.extend(res["raw_det_diff"])
+        raw_mcp_diff.extend(res["raw_mcp_diff"])
+        raw_peak_amp.extend(res["raw_peak_amp"])
+        t_diff_first.extend(res["t_diff_first"])
+        t_diff_second.extend(res["t_diff_second"])
         energy_vals.extend(res["energy_vals"])
         energy_vals_second.extend(res["energy_vals_second"])
         for k in counters:
             counters[k] += res["counters"].get(k, 0)
+
 
         # per-file ch192 plot
         if args.skip_ch192_plot:
@@ -620,21 +664,53 @@ def main():
         plt.savefig(args.out_ch192_vs_trigger, dpi=150)
         print("Saved:", args.out_ch192_vs_trigger)
 
-    # Delta phi plot (primary vs MCP)
-    if not delta_phi:
-        print("No valid points for delta phi plot.")
+    # TOFHIR time vs MCP peak_time scatter plot
+    if not time_vs_mcp_peak_x:
+        print("No valid points for TOFHIR time vs MCP peak_time plot.")
+    else:
+        x = np.asarray(time_vs_mcp_peak_x, dtype=float)
+        y = np.asarray(time_vs_mcp_peak_y, dtype=float)
+        plt.figure(figsize=(6.5, 4.5))
+        plt.scatter(x, y, s=10, alpha=0.6, color="steelblue")
+        plt.xlabel(f"TOFHIR time ({plot_channel_label})")
+        plt.ylabel("MCP peak_time")
+        plt.title(f"TOFHIR time vs MCP peak_time")
+        plt.grid(True, alpha=0.3)
+        plt.tight_layout()
+        plt.savefig(args.out_time_vs_mcp_peak, dpi=150)
+        print("Saved:", args.out_time_vs_mcp_peak)
+
+    # MCP peak_time vs peak_amp scatter plot
+    if not mcp_peak_time_vs_amp_x:
+        print("No valid points for MCP peak_time vs peak_amp plot.")
+    else:
+        x = np.asarray(mcp_peak_time_vs_amp_x, dtype=float)
+        y = np.asarray(mcp_peak_time_vs_amp_y, dtype=float)
+        plt.figure(figsize=(6.5, 4.5))
+        plt.scatter(x, y, s=10, alpha=0.6, color="mediumseagreen")
+        plt.xlabel("MCP peak_time")
+        plt.ylabel("MCP peak_amp")
+        plt.title("MCP peak_time vs peak_amp")
+        plt.grid(True, alpha=0.3)
+        plt.tight_layout()
+        plt.savefig(args.out_mcp_peak_time_vs_amp, dpi=150)
+        print("Saved:", args.out_mcp_peak_time_vs_amp)
+
+    # Raw time difference plot: (t_bar - t_192) - (t_mcp_peak - t_mcp_trigger)
+    if not raw_time_diff:
+        print("No valid points for raw time difference plot.")
     else:
         plt.figure(figsize=(6.5, 4.5))
-        counts, bins, _ = plt.hist(delta_phi, bins=args.energy_bins, alpha=0.75, color="slateblue", edgecolor="white")
-        # Gaussian fit on delta phi histogram
+        counts, bins, _ = plt.hist(raw_time_diff, bins=args.energy_bins, alpha=0.75, color="forestgreen", edgecolor="white")
+        # Gaussian fit
         try:
             bin_centers = 0.5 * (bins[:-1] + bins[1:])
             mask = counts > 0
             x_fit = bin_centers[mask]
             y_fit = counts[mask]
             if x_fit.size >= 3:
-                mu0 = float(np.mean(delta_phi))
-                sigma0 = float(np.std(delta_phi, ddof=1))
+                mu0 = float(np.mean(raw_time_diff))
+                sigma0 = float(np.std(raw_time_diff, ddof=1))
                 a0 = float(np.max(y_fit))
                 def gauss_mu(x, a, mu, sigma):
                     return a * np.exp(-0.5 * ((x - mu) / sigma) ** 2)
@@ -646,77 +722,208 @@ def main():
                          label=f"Gaussian fit: μ={mu_fit:.3g}, σ={abs(sigma_fit):.3g}")
                 plt.legend()
         except Exception as e:
-            print("Gaussian fit failed for delta phi plot:", e)
-        plt.xlabel("delta phi = (phi_obj-phi_192)-(phi_mcp_peak-phi_trigger)")
+            print("Gaussian fit failed for raw time difference plot:", e)
+        plt.xlabel("(t_bar - t_192) - (t_mcp_peak - t_mcp_trigger)")
         plt.ylabel("counts")
-        plt.title("Delta phi")
+        plt.title("Raw Time Difference (No Modulo)")
         plt.grid(True, alpha=0.3)
         plt.tight_layout()
-        plt.savefig(args.out_delta_phi, dpi=150)
-        print("Saved:", args.out_delta_phi)
+        plt.savefig(args.out_raw_time_diff, dpi=150)
+        print("Saved:", args.out_raw_time_diff)
 
-    # Delta phi plots for two-detector mode + MCP
-    if second_configured:
-        def plot_delta_phi(vals, out_path, title):
-            if not vals:
-                print(f"No valid points for {title}.")
-                return None
+    # Raw time scatter plot: (t_bar - t_192) vs (t_mcp_peak - t_mcp_trigger)
+    # Scaled by 1/1000
+    if not (raw_det_diff and raw_mcp_diff):
+        print("No valid points for raw time scatter plot.")
+    else:
+        # Scale data by 1/1000
+        x_raw = np.asarray(raw_mcp_diff, dtype=float)
+        y_raw = np.asarray(raw_det_diff, dtype=float)
+        x = x_raw / 1000.0
+        y = y_raw / 1000.0
+
+        # Linear fit
+        try:
+            m, b = np.polyfit(x, y, 1)
+            residuals = y - (m * x + b)
+            
+            # Scatter plot with fit line
             plt.figure(figsize=(6.5, 4.5))
-            counts, bins, _ = plt.hist(vals, bins=args.energy_bins, alpha=0.75, color="slateblue", edgecolor="white")
-            # Gaussian fit
-            fit_sigma = None
-            try:
-                bin_centers = 0.5 * (bins[:-1] + bins[1:])
-                mask = counts > 0
-                x_fit = bin_centers[mask]
-                y_fit = counts[mask]
-                if x_fit.size >= 3:
-                    mu0 = float(np.mean(vals))
-                    sigma0 = float(np.std(vals, ddof=1))
-                    a0 = float(np.max(y_fit))
-                    def gauss_mu(x, a, mu, sigma):
-                        return a * np.exp(-0.5 * ((x - mu) / sigma) ** 2)
-                    popt, _ = curve_fit(gauss_mu, x_fit, y_fit, p0=[a0, mu0, sigma0], maxfev=10000)
-                    a_fit, mu_fit, sigma_fit = popt
-                    fit_sigma = float(abs(sigma_fit))
-                    x_line = np.linspace(bin_centers.min(), bin_centers.max(), 400)
-                    y_line = gauss_mu(x_line, a_fit, mu_fit, abs(sigma_fit))
-                    plt.plot(x_line, y_line, color="crimson", linewidth=2,
-                             label=f"Gaussian fit: μ={mu_fit:.3g}, σ={abs(sigma_fit):.3g}")
-                    plt.legend()
-            except Exception as e:
-                print(f"Gaussian fit failed for {title}:", e)
-            plt.xlabel(title)
-            plt.ylabel("counts")
-            plt.title(title)
+            plt.scatter(x, y, s=10, alpha=0.6, color="darkcyan", label="Data")
+            x_line = np.linspace(x.min(), x.max(), 200)
+            y_line = m * x_line + b
+            plt.plot(x_line, y_line, color="crimson", linewidth=2, label=f"Fit: y={m:.5f}x + {b:.5f}")
+            plt.xlabel("(t_mcp_peak - t_mcp_trigger) / 1000")
+            plt.ylabel("(t_bar - t_192) / 1000")
+            plt.title("Detector vs MCP relative timing (Scaled by 1/1000)")
+            plt.legend()
             plt.grid(True, alpha=0.3)
             plt.tight_layout()
-            plt.savefig(out_path, dpi=150)
-            print("Saved:", out_path)
-            return fit_sigma
+            plt.savefig(args.out_raw_time_scatter, dpi=150)
+            print("Saved:", args.out_raw_time_scatter)
 
-        sigma_ud_fit = plot_delta_phi(delta_phi_up_down, args.out_delta_phi_up_down, "delta phi (up - down)")
-        sigma_um_fit = plot_delta_phi(delta_phi_up_mcp, args.out_delta_phi_up_mcp, "delta phi (up - MCP)")
-        sigma_dm_fit = plot_delta_phi(delta_phi_down_mcp, args.out_delta_phi_down_mcp, "delta phi (down - MCP)")
+            # Residuals plot
+            plt.figure(figsize=(6.5, 4.5))
+            counts, bins, _ = plt.hist(residuals, bins=args.energy_bins, alpha=0.75, color="mediumpurple", edgecolor="white")
+            
+            # Gaussian fit on residuals
+            bin_centers = 0.5 * (bins[:-1] + bins[1:])
+            mask = counts > 0
+            x_fit = bin_centers[mask]
+            y_fit = counts[mask]
+            if x_fit.size >= 3:
+                mu0 = float(np.mean(residuals))
+                sigma0 = float(np.std(residuals, ddof=1))
+                a0 = float(np.max(y_fit))
+                def gauss_mu(x, a, mu, sigma):
+                    return a * np.exp(-0.5 * ((x - mu) / sigma) ** 2)
+                try:
+                    popt, _ = curve_fit(gauss_mu, x_fit, y_fit, p0=[a0, mu0, sigma0], maxfev=10000)
+                    a_fit, mu_fit, sigma_fit = popt
+                    x_line_res = np.linspace(bin_centers.min(), bin_centers.max(), 400)
+                    y_line_res = gauss_mu(x_line_res, a_fit, mu_fit, abs(sigma_fit))
+                    plt.plot(x_line_res, y_line_res, color="crimson", linewidth=2,
+                             label=f"Gaussian fit: μ={mu_fit:.3g}, σ={abs(sigma_fit):.3g}")
+                    plt.legend()
+                except Exception as e:
+                    print("Gaussian fit failed for residuals:", e)
+            
+            plt.xlabel("Residuals (Data - Fit)")
+            plt.ylabel("counts")
+            plt.title("Residuals of Linear Fit")
+            plt.grid(True, alpha=0.3)
+            plt.tight_layout()
+            plt.savefig(args.out_raw_time_residual, dpi=150)
+            print("Saved:", args.out_raw_time_residual)
 
-        # Sigma extraction from three delta distributions
-        if sigma_ud_fit and sigma_um_fit and sigma_dm_fit:
-            sigma_ud = float(sigma_ud_fit)
-            sigma_um = float(sigma_um_fit)
-            sigma_dm = float(sigma_dm_fit)
-            # Solve: sigma_ud^2 = su^2 + sd^2; sigma_um^2 = su^2 + sm^2; sigma_dm^2 = sd^2 + sm^2
-            su2 = 0.5 * (sigma_ud**2 + sigma_um**2 - sigma_dm**2)
-            sd2 = 0.5 * (sigma_ud**2 + sigma_dm**2 - sigma_um**2)
-            sm2 = 0.5 * (sigma_um**2 + sigma_dm**2 - sigma_ud**2)
-            su = math.sqrt(su2) if su2 > 0 else math.nan
-            sd = math.sqrt(sd2) if sd2 > 0 else math.nan
-            sm = math.sqrt(sm2) if sm2 > 0 else math.nan
-            print("[sigma] std(delta_up_down) =", sigma_ud)
-            print("[sigma] std(delta_up_mcp)  =", sigma_um)
-            print("[sigma] std(delta_down_mcp)=", sigma_dm)
-            print("[sigma] solved sigma_up   =", su)
-            print("[sigma] solved sigma_down =", sd)
-            print("[sigma] solved sigma_mcp  =", sm)
+            # --- Outlier Removal (Iterative Fit) ---
+            # 1. Initial cleaning: Mean +/- 3*StdDev on the y-axis
+            mu_y = np.mean(y)
+            sigma_y = np.std(y)
+            mask_clean = (y >= mu_y - 3 * sigma_y) & (y <= mu_y + 3 * sigma_y)
+            x_clean = x[mask_clean]
+            y_clean = y[mask_clean]
+            
+            # 2. Iterative Linear Fit (2 iterations)
+            # Fit -> Remove residuals > 2.5 sigma -> Refit
+            if len(x_clean) > 2:
+                for i in range(2):
+                    if len(x_clean) < 3: break
+                    # Fit
+                    m_temp, b_temp = np.polyfit(x_clean, y_clean, 1)
+                    res_temp = y_clean - (m_temp * x_clean + b_temp)
+                    mu_res = np.mean(res_temp)
+                    sigma_res = np.std(res_temp)
+                    # Filter based on residuals
+                    mask_iter = (res_temp >= mu_res - 2.5 * sigma_res) & (res_temp <= mu_res + 2.5 * sigma_res)
+                    x_clean = x_clean[mask_iter]
+                    y_clean = y_clean[mask_iter]
+                
+                # Final Fit on refined data
+                if len(x_clean) > 2:
+                    m_clean, b_clean = np.polyfit(x_clean, y_clean, 1)
+                    residuals_clean = y_clean - (m_clean * x_clean + b_clean)
+                    
+                    # Setup figure for clean scatter
+                    plt.figure(figsize=(6.5, 4.5))
+                    plt.scatter(x_clean, y_clean, s=10, alpha=0.6, color="teal", label="Data (Clean)")
+                    x_line_c = np.linspace(x_clean.min(), x_clean.max(), 200)
+                    y_line_c = m_clean * x_line_c + b_clean
+                    plt.plot(x_line_c, y_line_c, color="darkorange", linewidth=2, label=f"IterFit: y={m_clean:.5f}x + {b_clean:.5f}")
+                    plt.xlabel("(t_mcp_peak - t_mcp_trigger) / 1000")
+                    plt.ylabel("(t_bar - t_192) / 1000")
+                    plt.title("Detector vs MCP relative timing (Iterative Outlier Removal)")
+                    plt.legend()
+                    plt.grid(True, alpha=0.3)
+                    plt.tight_layout()
+                    plt.savefig(args.out_raw_time_scatter_clean, dpi=150)
+                    print("Saved:", args.out_raw_time_scatter_clean)
+                    
+                    # Setup figure for clean residuals
+                    plt.figure(figsize=(6.5, 4.5))
+                    counts_c, bins_c, _ = plt.hist(residuals_clean, bins=args.energy_bins, alpha=0.75, color="royalblue", edgecolor="white")
+                    
+                    # Gaussian fit on clean residuals
+                    bin_centers_c = 0.5 * (bins_c[:-1] + bins_c[1:])
+                    mask_c = counts_c > 0
+                    x_fit_c = bin_centers_c[mask_c]
+                    y_fit_c = counts_c[mask_c]
+                    if x_fit_c.size >= 3:
+                         mu0_c = float(np.mean(residuals_clean))
+                         sigma0_c = float(np.std(residuals_clean, ddof=1))
+                         a0_c = float(np.max(y_fit_c))
+                         try:
+                            popt_c, _ = curve_fit(gauss_mu, x_fit_c, y_fit_c, p0=[a0_c, mu0_c, sigma0_c], maxfev=10000)
+                            a_fit_c, mu_fit_c, sigma_fit_c = popt_c
+                            x_line_res_c = np.linspace(bin_centers_c.min(), bin_centers_c.max(), 400)
+                            y_line_res_c = gauss_mu(x_line_res_c, a_fit_c, mu_fit_c, abs(sigma_fit_c))
+                            plt.plot(x_line_res_c, y_line_res_c, color="darkorange", linewidth=2,
+                                     label=f"Gaussian fit: μ={mu_fit_c:.3g}, σ={abs(sigma_fit_c):.3g}")
+                            plt.legend()
+                         except Exception as e:
+                            print("Gaussian fit failed for clean residuals:", e)
+                    
+                    plt.xlabel("Residuals (Data - Fit)")
+                    plt.ylabel("counts")
+                    plt.title("Residuals of Iterative Fit (Clean)")
+                    plt.grid(True, alpha=0.3)
+                    plt.tight_layout()
+                    plt.savefig(args.out_raw_time_residual_clean, dpi=150)
+                    print("Saved:", args.out_raw_time_residual_clean)
+                else:
+                    print("Not enough points left after iterative outlier removal.")
+            else:
+                 print("Not enough points left after initial outlier removal.")
+
+        except Exception as e:
+            print("Linear fit failed for raw time scatter:", e)
+            # Fallback to just scatter if fit fails
+            plt.figure(figsize=(6.5, 4.5))
+            plt.scatter(x, y, s=10, alpha=0.6, color="darkcyan")
+            plt.xlabel("(t_mcp_peak - t_mcp_trigger) / 1000")
+            plt.ylabel("(t_bar - t_192) / 1000")
+            plt.title("Detector vs MCP relative timing (Scaled by 1/1000)")
+            plt.grid(True, alpha=0.3)
+            plt.tight_layout()
+            plt.savefig(args.out_raw_time_scatter, dpi=150)
+            print("Saved (no fit):", args.out_raw_time_scatter)
+
+    # Time Difference plots: T_L - T_R
+    def plot_t_diff(vals, out_path, title):
+        if not vals:
+            return
+        plt.figure(figsize=(6.5, 4.5))
+        counts, bins, _ = plt.hist(vals, bins=args.energy_bins, alpha=0.75, color="teal", edgecolor="white")
+        try:
+            bin_centers = 0.5 * (bins[:-1] + bins[1:])
+            mask = counts > 0
+            x_fit = bin_centers[mask]
+            y_fit = counts[mask]
+            if x_fit.size >= 3:
+                mu0 = float(np.mean(vals))
+                sigma0 = float(np.std(vals, ddof=1))
+                a0 = float(np.max(y_fit))
+                def gauss_mu(x, a, mu, sigma):
+                    return a * np.exp(-0.5 * ((x - mu) / sigma) ** 2)
+                popt, _ = curve_fit(gauss_mu, x_fit, y_fit, p0=[a0, mu0, sigma0], maxfev=10000)
+                a_fit, mu_fit, sigma_fit = popt
+                x_line = np.linspace(bin_centers.min(), bin_centers.max(), 400)
+                y_line = gauss_mu(x_line, a_fit, mu_fit, abs(sigma_fit))
+                plt.plot(x_line, y_line, color="red", linewidth=2,
+                         label=f"Gaussian fit: μ={mu_fit:.3g}, σ={abs(sigma_fit):.3g}")
+                plt.legend()
+        except: pass
+        plt.xlabel("T_left - T_right (ps)")
+        plt.ylabel("counts")
+        plt.title(title)
+        plt.grid(True, alpha=0.3); plt.tight_layout()
+        plt.savefig(out_path, dpi=150)
+        print("Saved:", out_path)
+
+    if combine_lr:
+        plot_t_diff(t_diff_first, args.out_t_diff_first, f"T_left - T_right ({plot_channel_label})")
+    if second_configured and second_combine_lr:
+        plot_t_diff(t_diff_second, args.out_t_diff_second, f"T_left - T_right ({plot2_channel_label})")
 
     # Energy histogram for plot_channel
     if not energy_vals:
@@ -748,5 +955,116 @@ def main():
             print("Saved:", args.out_energy_second)
 
     # All other plots removed for analysis-focused study
+    # Time Walk Plots (vs 1/amplitude)
+    if not (raw_mcp_diff and raw_peak_amp):
+        print("No valid points for time walk plots.")
+    else:
+        # Filter for valid amplitude (non-zero to avoid division by zero)
+        mcp_arr = np.array(raw_mcp_diff)
+        amp_arr = np.array(raw_peak_amp)
+        det_arr = np.array(raw_det_diff) # Same length as raw_mcp_diff and raw_peak_amp
+        
+        valid_mask = (amp_arr != 0) & np.isfinite(amp_arr) & np.isfinite(mcp_arr) & np.isfinite(det_arr)
+        if np.sum(valid_mask) > 0:
+            x_inv = 1.0 / amp_arr[valid_mask]
+            y_mcp = mcp_arr[valid_mask]
+            y_det = det_arr[valid_mask]
+
+            # 1. (mcp_peak - mcp_trigger) vs 1/peak_amp
+            # Remove outliers in y_mcp - stricter iterative 2-sigma cut
+            mask_clean_mcp = np.ones(len(y_mcp), dtype=bool)
+            for _ in range(3):
+                subset = y_mcp[mask_clean_mcp]
+                if len(subset) < 5: break
+                mu_sub = np.mean(subset)
+                sig_sub = np.std(subset)
+                mask_clean_mcp = mask_clean_mcp & (y_mcp >= mu_sub - 2.0*sig_sub) & (y_mcp <= mu_sub + 2.0*sig_sub)
+
+            x_mcp_f = x_inv[mask_clean_mcp]
+            y_mcp_f = y_mcp[mask_clean_mcp]
+
+            # Linear fit for MCP
+            m_mcp, b_mcp = np.polyfit(x_mcp_f, y_mcp_f, 1)
+            res_mcp = y_mcp_f - (m_mcp * x_mcp_f + b_mcp)
+
+            plt.figure(figsize=(6.5, 4.5))
+            plt.scatter(x_mcp_f, y_mcp_f, s=10, alpha=0.6, color="darkviolet", label="Data")
+            x_line = np.linspace(x_mcp_f.min(), x_mcp_f.max(), 100)
+            plt.plot(x_line, m_mcp * x_line + b_mcp, color="red", label=f"Fit: m={m_mcp:.3f}, b={b_mcp:.3f}")
+            plt.xlabel("1 / peak_amp (1/V)")
+            plt.ylabel("mcp_peak - mcp_trigger (ps)")
+            plt.title("MCP Time Walk: Delta T vs 1/Amplitude")
+            plt.grid(True, alpha=0.3); plt.legend(); plt.tight_layout()
+            plt.savefig(args.out_walk_mcp, dpi=150)
+            print("Saved:", args.out_walk_mcp)
+
+            # Residual histogram for MCP
+            plt.figure(figsize=(6.5, 4.5))
+            c_mcp, b_mcp_h, _ = plt.hist(res_mcp, bins=args.energy_bins, alpha=0.75, color="darkviolet", edgecolor="white")
+            # Gaussian fit on residuals
+            try:
+                bc_mcp = 0.5 * (b_mcp_h[:-1] + b_mcp_h[1:])
+                mask_mcp = c_mcp > 0
+                def gauss(x, a, mu, sigma): return a * np.exp(-0.5 * ((x - mu) / sigma) ** 2)
+                popt_mcp, _ = curve_fit(gauss, bc_mcp[mask_mcp], c_mcp[mask_mcp], p0=[np.max(c_mcp), np.mean(res_mcp), np.std(res_mcp)])
+                plt.plot(bc_mcp, gauss(bc_mcp, *popt_mcp), color="red", linewidth=2, label=f"μ={popt_mcp[1]:.3g}, σ={abs(popt_mcp[2]):.3g}")
+                plt.legend()
+            except: pass
+            plt.xlabel("MCP Residuals (ps)")
+            plt.ylabel("counts")
+            plt.title("MCP Time Walk Residuals")
+            plt.grid(True, alpha=0.3); plt.tight_layout()
+            plt.savefig(args.out_walk_mcp_res, dpi=150)
+            print("Saved:", args.out_walk_mcp_res)
+
+            # 2. (bar_time - ch192) vs 1/peak_amp
+            # Remove outliers in y_det (bar_time - ch192) - stricter iterative 2-sigma cut
+            mask_clean = np.ones(len(y_det), dtype=bool)
+            for _ in range(3):
+                subset = y_det[mask_clean]
+                if len(subset) < 5: break
+                mu_sub = np.mean(subset)
+                sig_sub = np.std(subset)
+                mask_clean = mask_clean & (y_det >= mu_sub - 2.0*sig_sub) & (y_det <= mu_sub + 2.0*sig_sub)
+            
+            x_det_f = x_inv[mask_clean]
+            y_det_f = y_det[mask_clean]
+
+            # Linear fit for Detector
+            m_det, b_det = np.polyfit(x_det_f, y_det_f, 1)
+            res_det = y_det_f - (m_det * x_det_f + b_det)
+
+            plt.figure(figsize=(6.5, 4.5))
+            plt.scatter(x_det_f, y_det_f, s=10, alpha=0.6, color="dodgerblue", label="Data")
+            x_line_det = np.linspace(x_det_f.min(), x_det_f.max(), 100)
+            plt.plot(x_line_det, m_det * x_line_det + b_det, color="red", label=f"Fit: m={m_det:.3f}, b={b_det:.3f}")
+            plt.xlabel("1 / peak_amp (1/V)")
+            plt.ylabel("bar_time - ch192 (ps)")
+            plt.title("Detector Time Walk Check: Delta T vs 1/MCP Amplitude")
+            plt.grid(True, alpha=0.3); plt.legend(); plt.tight_layout()
+            plt.savefig(args.out_walk_bar, dpi=150)
+            print("Saved:", args.out_walk_bar)
+
+            # Residual histogram for Detector
+            plt.figure(figsize=(6.5, 4.5))
+            c_det, b_det_h, _ = plt.hist(res_det, bins=args.energy_bins, alpha=0.75, color="dodgerblue", edgecolor="white")
+            # Gaussian fit on residuals
+            try:
+                bc_det = 0.5 * (b_det_h[:-1] + b_det_h[1:])
+                mask_det = c_det > 0
+                def gauss(x, a, mu, sigma): return a * np.exp(-0.5 * ((x - mu) / sigma) ** 2)
+                popt_det, _ = curve_fit(gauss, bc_det[mask_det], c_det[mask_det], p0=[np.max(c_det), np.mean(res_det), np.std(res_det)])
+                plt.plot(bc_det, gauss(bc_det, *popt_det), color="red", linewidth=2, label=f"μ={popt_det[1]:.3g}, σ={abs(popt_det[2]):.3g}")
+                plt.legend()
+            except: pass
+            plt.xlabel("Detector Residuals (ps)")
+            plt.ylabel("counts")
+            plt.title("Detector Time Walk Residuals")
+            plt.grid(True, alpha=0.3); plt.tight_layout()
+            plt.savefig(args.out_walk_bar_res, dpi=150)
+            print("Saved:", args.out_walk_bar_res)
+        else:
+            print("No valid amplitude points for time walk plots.")
+            
 if __name__ == "__main__":
     main()
