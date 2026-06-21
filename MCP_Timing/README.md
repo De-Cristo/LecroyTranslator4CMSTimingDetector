@@ -104,6 +104,10 @@ Output:
 
 - `peaks_<mcp_base>_with_t0.csv` with `t0_abs_ps` column
 
+## Documentation
+
+- `MCP_TIMING_METHOD_NOTES.md` — detailed scientific summary of the MCP timing reconstruction pipeline, including waveform alignment, Gaussian peak fitting, 160 MHz clock template alignment, multi-edge linear fitting, and the combined output schema.
+
 ## Notes
 
 - All scripts use a non-interactive matplotlib backend and write plots to disk.

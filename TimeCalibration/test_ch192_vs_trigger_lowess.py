@@ -1,8 +1,11 @@
 import math
+import os
 from pathlib import Path
 import sys
+import tempfile
 import types
 import unittest
+from unittest import mock
 
 import numpy as np
 
@@ -112,6 +115,66 @@ class LowessHelperTest(unittest.TestCase):
         self.assertEqual(v_channels, [133, 154, "bar"])
         self.assertTrue(np.allclose(data["val_time_bar"], np.array([3.0, 5.0])))
         self.assertTrue(np.allclose(data["val_energy_bar"], np.array([8.0, 12.0])))
+
+    def test_binned_profile_points_use_means_and_sem(self):
+        x = np.array([0.10, 0.12, 0.19, 0.21, 0.28, 0.29])
+        y = np.array([1.0, 3.0, 5.0, 7.0, 9.0, 11.0])
+
+        x_prof, y_prof, y_err, counts = ch192_vs_trigger_lowess._binned_profile_points(
+            x, y, nbins=3, min_entries=2
+        )
+
+        self.assertEqual(list(counts), [2, 2, 2])
+        self.assertTrue(np.allclose(x_prof, np.array([0.11, 0.20, 0.285])))
+        self.assertTrue(np.allclose(y_prof, np.array([2.0, 6.0, 10.0])))
+        self.assertTrue(np.allclose(y_err, np.array([
+            np.std([1.0, 3.0], ddof=1) / np.sqrt(2.0),
+            np.std([5.0, 7.0], ddof=1) / np.sqrt(2.0),
+            np.std([9.0, 11.0], ddof=1) / np.sqrt(2.0),
+        ])))
+
+    def test_parse_args_accepts_walk_fit_binning_cli(self):
+        with mock.patch.object(
+            sys, "argv",
+            ["prog", "input.root", "--walk-fit-bins", "9", "--walk-fit-min-entries", "7"]
+        ):
+            args = ch192_vs_trigger_lowess.parse_args()
+        self.assertEqual(args.walk_fit_bins, 9)
+        self.assertEqual(args.walk_fit_min_entries, 7)
+
+    def test_write_walk_fit_csvs_saves_event_binned_and_coeff_data(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            prefix = os.path.join(tmpdir, "walk_test")
+            x_fit = np.array([0.1, 0.2, 0.3])
+            y_fit = np.array([1.0, 2.0, 3.0])
+            p = np.array([1.0, 2.0, 3.0])
+            x_prof = np.array([0.15, 0.25])
+            y_prof = np.array([1.5, 2.5])
+            y_err = np.array([0.1, 0.2])
+            counts = np.array([10, 12])
+            p_binned = np.array([4.0, 5.0, 6.0])
+
+            ch192_vs_trigger_lowess._write_walk_fit_csvs(
+                prefix, x_fit, y_fit, p, x_prof, y_prof, y_err, counts, p_binned
+            )
+
+            event_csv = Path(f"{prefix}_walk_fit_data.csv")
+            binned_csv = Path(f"{prefix}_walk_fit_binned_data.csv")
+            coeff_csv = Path(f"{prefix}_walk_fit_coeffs.csv")
+            self.assertTrue(event_csv.exists())
+            self.assertTrue(binned_csv.exists())
+            self.assertTrue(coeff_csv.exists())
+
+            event_lines = event_csv.read_text().strip().splitlines()
+            binned_lines = binned_csv.read_text().strip().splitlines()
+            coeff_lines = coeff_csv.read_text().strip().splitlines()
+            self.assertEqual(event_lines[0], "invE,delta_t")
+            self.assertEqual(event_lines[1], "0.1,1.0")
+            self.assertEqual(binned_lines[0], "invE_mean,delta_t_mean,delta_t_sem,count")
+            self.assertEqual(binned_lines[1], "0.15,1.5,0.1,10")
+            self.assertEqual(coeff_lines[0], "fit_kind,p2,p1,p0")
+            self.assertEqual(coeff_lines[1], "event,1.0,2.0,3.0")
+            self.assertEqual(coeff_lines[2], "binned,4.0,5.0,6.0")
 
 
 if __name__ == "__main__":

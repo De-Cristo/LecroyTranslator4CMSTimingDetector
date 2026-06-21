@@ -20,6 +20,7 @@ Example:
 """
 
 import argparse
+import csv
 import glob
 import math
 import os
@@ -84,6 +85,10 @@ def parse_args():
                    help="LOWESS robust iterations (default: 3)")
     p.add_argument("--lowess-delta", type=float, default=0.0,
                    help="LOWESS delta optimization parameter (default: 0.0)")
+    p.add_argument("--walk-fit-bins", type=int, default=12,
+                   help="Number of horizontal bins for binned walk-fit companion plot (default: 12)")
+    p.add_argument("--walk-fit-min-entries", type=int, default=5,
+                   help="Minimum entries per horizontal bin for binned walk-fit companion plot (default: 5)")
     return p.parse_args()
 
 
@@ -274,9 +279,78 @@ def _save_inverse_energy_scatter(prefix, energy, series, val_ch, ch, title_prefi
     log(f"Saved: {prefix}_validation_invE.png")
 
 
+def _binned_profile_points(x, y, nbins=12, min_entries=5):
+    x = np.asarray(x, dtype=float)
+    y = np.asarray(y, dtype=float)
+    mask = np.isfinite(x) & np.isfinite(y)
+    x = x[mask]
+    y = y[mask]
+
+    if len(x) == 0:
+        return (
+            np.array([], dtype=float),
+            np.array([], dtype=float),
+            np.array([], dtype=float),
+            np.array([], dtype=int),
+        )
+
+    edges = np.linspace(float(np.min(x)), float(np.max(x)), nbins + 1)
+    x_prof = []
+    y_prof = []
+    y_err = []
+    counts = []
+
+    for i in range(nbins):
+        if i == nbins - 1:
+            in_bin = (x >= edges[i]) & (x <= edges[i + 1])
+        else:
+            in_bin = (x >= edges[i]) & (x < edges[i + 1])
+        if int(np.sum(in_bin)) < min_entries:
+            continue
+
+        x_bin = x[in_bin]
+        y_bin = y[in_bin]
+        n_bin = len(x_bin)
+        x_prof.append(float(np.mean(x_bin)))
+        y_prof.append(float(np.mean(y_bin)))
+        counts.append(n_bin)
+        if n_bin >= 2:
+            y_err.append(float(np.std(y_bin, ddof=1) / np.sqrt(n_bin)))
+        else:
+            y_err.append(0.0)
+
+    return (
+        np.asarray(x_prof, dtype=float),
+        np.asarray(y_prof, dtype=float),
+        np.asarray(y_err, dtype=float),
+        np.asarray(counts, dtype=int),
+    )
 
 
-def _apply_walk_correction(delta_t, energy, prefix="", title=""):
+def _write_walk_fit_csvs(prefix, x_fit, y_fit, p, x_prof, y_prof, y_err, counts, p_binned=None):
+    with open(f"{prefix}_walk_fit_data.csv", "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["invE", "delta_t"])
+        for x_val, y_val in zip(x_fit, y_fit):
+            writer.writerow([x_val, y_val])
+
+    with open(f"{prefix}_walk_fit_binned_data.csv", "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["invE_mean", "delta_t_mean", "delta_t_sem", "count"])
+        for x_val, y_val, err_val, count in zip(x_prof, y_prof, y_err, counts):
+            writer.writerow([x_val, y_val, err_val, int(count)])
+
+    with open(f"{prefix}_walk_fit_coeffs.csv", "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["fit_kind", "p2", "p1", "p0"])
+        writer.writerow(["event", *p.tolist()])
+        if p_binned is not None:
+            writer.writerow(["binned", *p_binned.tolist()])
+
+
+
+
+def _apply_walk_correction(delta_t, energy, prefix="", title="", walk_fit_bins=12, walk_fit_min_entries=5):
     mask = np.isfinite(delta_t) & np.isfinite(energy) & (energy > 0)
     if mask.sum() < 10:
         return delta_t.copy()
@@ -324,6 +398,34 @@ def _apply_walk_correction(delta_t, energy, prefix="", title=""):
         ax.grid(True, alpha=0.3)
         fig.savefig(f"{prefix}_walk_fit.png", dpi=150)
         plt.close(fig)
+
+        x_prof, y_prof, y_err, counts = _binned_profile_points(
+            x_fit, y_fit, nbins=walk_fit_bins, min_entries=walk_fit_min_entries
+        )
+        p_binned = None
+        if len(x_prof) >= 3:
+            p_binned = np.polyfit(x_prof, y_prof, 2)
+            fig, ax = plt.subplots(figsize=(8, 6))
+            ax.errorbar(
+                x_prof, y_prof, yerr=y_err,
+                fmt="o", color="steelblue", ecolor="steelblue",
+                elinewidth=1, capsize=3,
+                label=f"Binned profile ({len(x_prof)} bins)"
+            )
+            x_line = np.linspace(x_prof.min(), x_prof.max(), 100)
+            y_line = np.polyval(p_binned, x_line)
+            ax.plot(
+                x_line, y_line, color="red", linewidth=2,
+                label=f"Fit: {p_binned[0]:.2e}x² + {p_binned[1]:.2e}x + {p_binned[2]:.2e}"
+            )
+            ax.set_xlabel("1 / Energy")
+            ax.set_ylabel("Delta t (ps)")
+            ax.set_title(f"{title} (binned)")
+            ax.legend()
+            ax.grid(True, alpha=0.3)
+            fig.savefig(f"{prefix}_walk_fit_binned.png", dpi=150)
+            plt.close(fig)
+        _write_walk_fit_csvs(prefix, x_fit, y_fit, p, x_prof, y_prof, y_err, counts, p_binned)
     
     # Correct all valid events
     corrected_delta = delta_t.copy()
@@ -344,7 +446,8 @@ def _apply_walk_correction(delta_t, energy, prefix="", title=""):
 # ──────────────────────────────────────────────────────────────────
 
 def _per_file_analysis_lowess(data_dict, prefix, ch, val_channels, nbins,
-                              lowess_frac=0.15, lowess_it=3, lowess_delta=0.0):
+                              lowess_frac=0.15, lowess_it=3, lowess_delta=0.0,
+                              walk_fit_bins=12, walk_fit_min_entries=5):
     ch_time = data_dict["ch_time"]
     mcp_trig = data_dict["mcp_trig_time"]
     mcp_peak = data_dict["mcp_peak_time"]
@@ -722,8 +825,16 @@ def _per_file_analysis_lowess(data_dict, prefix, ch, val_channels, nbins,
                 f"[LOWESS] Validation inverse-energy (ch{val_ch})", labels
             )
 
-            delta_before_walk = _apply_walk_correction(delta_before, val_energy_ok, f"{prefix}_ch{val_ch}_walk_before", f"Walk Fit: Before cal (ch{val_ch})")
-            delta_expected_walk = _apply_walk_correction(delta_expected, val_energy_ok, f"{prefix}_ch{val_ch}_walk_expected", f"Walk Fit: Expected ch192 (ch{val_ch})")
+            delta_before_walk = _apply_walk_correction(
+                delta_before, val_energy_ok,
+                f"{prefix}_ch{val_ch}_walk_before", f"Walk Fit: Before cal (ch{val_ch})",
+                walk_fit_bins=walk_fit_bins, walk_fit_min_entries=walk_fit_min_entries
+            )
+            delta_expected_walk = _apply_walk_correction(
+                delta_expected, val_energy_ok,
+                f"{prefix}_ch{val_ch}_walk_expected", f"Walk Fit: Expected ch192 (ch{val_ch})",
+                walk_fit_bins=walk_fit_bins, walk_fit_min_entries=walk_fit_min_entries
+            )
 
             cb = _mad_clip(delta_before_walk)
             ce = _mad_clip(delta_expected_walk)
@@ -857,7 +968,8 @@ def main():
 
         result = _per_file_analysis_lowess(
             data, file_prefix, ch, args.val_channels, nbins,
-            lowess_frac=args.lowess_frac, lowess_it=args.lowess_it, lowess_delta=args.lowess_delta
+            lowess_frac=args.lowess_frac, lowess_it=args.lowess_it, lowess_delta=args.lowess_delta,
+            walk_fit_bins=args.walk_fit_bins, walk_fit_min_entries=args.walk_fit_min_entries
         )
         for k in data_keys:
             combined[k].append(data[k])
@@ -999,8 +1111,16 @@ def main():
                 f"[LOWESS] Validation inverse-energy (ch{val_ch})", labels
             )
 
-            delta_before_walk = _apply_walk_correction(delta_before, val_energy_ok, f"{prefix}_ch{val_ch}_walk_before", f"Walk Fit: Before cal (ch{val_ch})")
-            delta_expected_walk = _apply_walk_correction(delta_expected, val_energy_ok, f"{prefix}_ch{val_ch}_walk_expected", f"Walk Fit: Expected ch192 (ch{val_ch})")
+            delta_before_walk = _apply_walk_correction(
+                delta_before, val_energy_ok,
+                f"{prefix}_ch{val_ch}_walk_before", f"Walk Fit: Before cal (ch{val_ch})",
+                walk_fit_bins=args.walk_fit_bins, walk_fit_min_entries=args.walk_fit_min_entries
+            )
+            delta_expected_walk = _apply_walk_correction(
+                delta_expected, val_energy_ok,
+                f"{prefix}_ch{val_ch}_walk_expected", f"Walk Fit: Expected ch192 (ch{val_ch})",
+                walk_fit_bins=args.walk_fit_bins, walk_fit_min_entries=args.walk_fit_min_entries
+            )
 
             clean_before = mad_clip(delta_before_walk)
             clean_expected = mad_clip(delta_expected_walk)

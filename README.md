@@ -129,6 +129,48 @@ python3 TimeCalibration/timecalib_study.py \
 
 Produces detailed timing studies and additional plots.
 
+## Additional Timing Calibration Studies
+
+### LOWESS trigger-channel calibration (`TimeCalibration/ch192_vs_trigger_lowess.py`)
+
+A side-branch study that calibrates TOFHIR channel 192 (the trigger channel) against the MCP `trigger_time` using robust linear fits per data segment, LOWESS-smoothed residuals, and an inverse-energy time-walk correction. The current version also exports binned walk-fit companion plots and CSVs for reproducibility.
+
+```bash
+python3 TimeCalibration/ch192_vs_trigger_lowess.py \
+  "/path/to/data/4405_*_e.root" \
+  --channel 192 \
+  --val-channels 133 154 \
+  --bar 7 \
+  --workers 4 \
+  --walk-fit-bins 12 \
+  --walk-fit-min-entries 5
+```
+
+Outputs include:
+- Per-segment and combined residual plots
+- Validation histograms before/after calibration
+- `*_walk_fit_data.csv`, `*_walk_fit_binned_data.csv`, `*_walk_fit_coeffs.csv`
+
+### Refit walk correction from CSV (`TimeCalibration/walk_fit_from_csv.py`)
+
+Standalone helper to refit a time-walk correction from a saved `*_walk_fit_data.csv` without re-running the full ROOT analysis. Useful for quick iterations on the walk-fit model.
+
+```bash
+python3 TimeCalibration/walk_fit_from_csv.py \
+  4399_10_e/ch192_vs_trig_lowess_bar7_ch133_walk_before_walk_fit_data.csv \
+  --nbins 12 --min-entries 5 --poly-order 2
+```
+
+Generates `*_refit_scatter.png`, `*_refit_binned.png`, `*_refit_coeffs.csv`, and `*_refit_profile.csv`.
+
+### Documentation notes
+
+See `TimeCalibration/` for detailed notes on the analysis architecture and methods:
+- `ARCHITECTURE.md` — modular bar-analysis design
+- `TIMING_METHOD_NOTES.md` — current bar-level timing method
+- `CH192_VS_TRIGGER_NOTES.md` — purpose and workflow of `ch192_vs_trigger.py`
+- `ENGINEERING_NOISE_CANCELLING_NOTES.md` — baseline-drift filtering options
+
 ## Notes
 
 - Ensure all input paths exist and are accessible.

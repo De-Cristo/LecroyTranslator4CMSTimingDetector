@@ -29,6 +29,21 @@ python3 bar_analysis_main.py \
     1. **Pass 1**: Performs Landau fits on raw energy spectra to determine optimal cut thresholds.
     2. **Pass 2**: Applies thresholds and calibrations to produce final timing distributions.
 
+## Additional Scripts
+
+- `ch192_vs_trigger.py`: Side-branch calibration test comparing channel 192 timing to the MCP trigger time.
+- `ch192_vs_trigger_lowess.py`: Extended version of the above using LOWESS residual smoothing, with binned walk-fit companion plots and CSV exports.
+- `ch192_vs_trigger_savgol.py`, `ch192_vs_trigger_wiener*.py`: Alternative smoothing/denoising variants for the residual calibration.
+- `walk_fit_from_csv.py`: Standalone tool to refit a time-walk correction from a saved `*_walk_fit_data.csv`.
+- `timecalib_plots.py`, `timecalib_study.py`, `MCP_analysis.py`: Older calibration plotting and MCP-referenced study scripts.
+
+## Documentation
+
+- `ARCHITECTURE.md` — four-layer design of the modular bar-analysis suite.
+- `TIMING_METHOD_NOTES.md` — detailed summary of the current bar-level timing method.
+- `CH192_VS_TRIGGER_NOTES.md` — explanation of the `ch192_vs_trigger.py` workflow.
+- `ENGINEERING_NOISE_CANCELLING_NOTES.md` — filtering options for low-frequency baseline drift.
+
 ## Files
 - `bar_analysis_main.py`: Main CLI and orchestration logic.
 - `bar_processing.py`: Data extraction and filtering functions.
