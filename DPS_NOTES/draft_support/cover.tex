@@ -1,0 +1,31 @@
+% Draft A4 cover adapted from the supplied template.
+% Standard paragraph justification avoids the unavailable everysel dependency.
+\documentclass[11pt,a4paper]{article}
+\usepackage[left=25mm,right=25mm,top=18mm,bottom=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\input{metadata.tex}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\begin{document}
+\begin{center}
+{\small Internal review draft -- 20 October 2026\\No CMS DP number assigned}
+\vspace{8mm}\par\hrule\vspace{5mm}
+\begin{minipage}{.15\textwidth}\includegraphics[width=\linewidth]{CMSlogo_black_label_1024.png}\end{minipage}
+\hfill\begin{minipage}{.64\textwidth}\centering
+The Compact Muon Solenoid Experiment\par\medskip
+{\Large CMS Performance Note}
+\end{minipage}\hfill
+\begin{minipage}{.13\textwidth}\includegraphics[width=\linewidth]{LogoOutline-Black.pdf}\end{minipage}
+\vspace{5mm}\par\hrule\vspace{20mm}
+{\LARGE\DPTitle\par}
+\vspace{8mm}{\large CMS\par}\medskip
+\texttt{\DPContact}\par
+\vspace{14mm}\textbf{Abstract}\par\vspace{6mm}
+\begin{minipage}{.93\textwidth}\setlength{\parskip}{6pt}\DPAbstract\end{minipage}
+\vfill
+{\small Draft v1 for scientific discussion. Not approved for public release.\\
+The following slides retain explicitly marked review items.}
+\end{center}
+\end{document}

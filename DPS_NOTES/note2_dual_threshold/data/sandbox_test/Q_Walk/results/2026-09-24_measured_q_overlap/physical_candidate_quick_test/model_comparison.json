@@ -1,0 +1,222 @@
+{
+  "constant": {
+    "coefficients": [
+      20.19359068307511
+    ],
+    "training_chi2": 1002.3941923126812,
+    "training_ndf": 9,
+    "lobo_awc_rmse_ua": 8.390472606012672,
+    "lobo_awc_mae_ua": 5.906659327321484,
+    "lobo_relative_rmse": 0.5825344814962362,
+    "lobo_curve_rms_ps": 19.287138655188127,
+    "folds": [
+      {
+        "bar": 5,
+        "held_channels": [
+          151
+        ],
+        "coefficients": [
+          20.683475599266153
+        ]
+      },
+      {
+        "bar": 7,
+        "held_channels": [
+          154,
+          133
+        ],
+        "coefficients": [
+          19.82305601040118
+        ]
+      },
+      {
+        "bar": 8,
+        "held_channels": [
+          150,
+          137
+        ],
+        "coefficients": [
+          20.88338782610325
+        ]
+      },
+      {
+        "bar": 9,
+        "held_channels": [
+          155,
+          135
+        ],
+        "coefficients": [
+          19.877521679874942
+        ]
+      },
+      {
+        "bar": 10,
+        "held_channels": [
+          156,
+          134
+        ],
+        "coefficients": [
+          19.975554587602662
+        ]
+      },
+      {
+        "bar": 11,
+        "held_channels": [
+          159
+        ],
+        "coefficients": [
+          20.225200643099043
+        ]
+      }
+    ]
+  },
+  "inverse_c1_line": {
+    "coefficients": [
+      14.469667697717775,
+      0.06122553854087838
+    ],
+    "training_chi2": 607.7265320062595,
+    "training_ndf": 8,
+    "lobo_awc_rmse_ua": 5.97021828137909,
+    "lobo_awc_mae_ua": 4.739984840267993,
+    "lobo_relative_rmse": 0.4084420140733847,
+    "lobo_curve_rms_ps": 15.479302954313857,
+    "folds": [
+      {
+        "bar": 5,
+        "held_channels": [
+          151
+        ],
+        "coefficients": [
+          16.32829475753025,
+          0.04490330416561039
+        ]
+      },
+      {
+        "bar": 7,
+        "held_channels": [
+          154,
+          133
+        ],
+        "coefficients": [
+          14.165892355780045,
+          0.0655251083910881
+        ]
+      },
+      {
+        "bar": 8,
+        "held_channels": [
+          150,
+          137
+        ],
+        "coefficients": [
+          14.878969025836344,
+          0.07541882427091966
+        ]
+      },
+      {
+        "bar": 9,
+        "held_channels": [
+          155,
+          135
+        ],
+        "coefficients": [
+          13.327430337704236,
+          0.06499389604079636
+        ]
+      },
+      {
+        "bar": 10,
+        "held_channels": [
+          156,
+          134
+        ],
+        "coefficients": [
+          14.138053693631669,
+          0.061977255806504615
+        ]
+      },
+      {
+        "bar": 11,
+        "held_channels": [
+          159
+        ],
+        "coefficients": [
+          13.921495448079279,
+          0.06566575906758254
+        ]
+      }
+    ]
+  },
+  "physical": {
+    "coefficients": [
+      0.2735090457366498
+    ],
+    "training_chi2": 349.87834920779255,
+    "training_ndf": 9,
+    "lobo_awc_rmse_ua": 3.018980516446699,
+    "lobo_awc_mae_ua": 2.4392452171184607,
+    "lobo_relative_rmse": 0.17221239040661154,
+    "lobo_curve_rms_ps": 9.991714110488283,
+    "folds": [
+      {
+        "bar": 5,
+        "held_channels": [
+          151
+        ],
+        "coefficients": [
+          0.27421642062329493
+        ]
+      },
+      {
+        "bar": 7,
+        "held_channels": [
+          154,
+          133
+        ],
+        "coefficients": [
+          0.27263256733909247
+        ]
+      },
+      {
+        "bar": 8,
+        "held_channels": [
+          150,
+          137
+        ],
+        "coefficients": [
+          0.2684478784976379
+        ]
+      },
+      {
+        "bar": 9,
+        "held_channels": [
+          155,
+          135
+        ],
+        "coefficients": [
+          0.2790938358831626
+        ]
+      },
+      {
+        "bar": 10,
+        "held_channels": [
+          156,
+          134
+        ],
+        "coefficients": [
+          0.27311649836062724
+        ]
+      },
+      {
+        "bar": 11,
+        "held_channels": [
+          159
+        ],
+        "coefficients": [
+          0.27204918890836416
+        ]
+      }
+    ]
+  }
+}

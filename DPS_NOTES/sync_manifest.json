@@ -1,0 +1,590 @@
+{
+  "source_workspace": "/afs/cern.ch/work/l/lichengz/private/MTD/TB_2025/sandbox_test",
+  "repository": "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector",
+  "review_status": {
+    "N1-1": "author validated; comments removed",
+    "N1-2": "comments replaced with verified current code locations"
+  },
+  "files": [
+    {
+      "path": "DPS_NOTES/AGENTS.md",
+      "sha256": "9d4cd18cbcb63edca051d804c6673de1b166024b38c3d547e06a569a3c31538d",
+      "bytes": 1003
+    },
+    {
+      "path": "DPS_NOTES/README_DRAFTS.md",
+      "sha256": "9b87706b55a13caf7d0f1aae1de4b4f716834f0ebfe252b35feb3d27e52b9c9b",
+      "bytes": 5225
+    },
+    {
+      "path": "DPS_NOTES/REPOSITORY_WORKFLOW.md",
+      "sha256": "8a863f3145504a81f59e1eff7e60721a4ab0d889b1d5f96139009c1cb10de2e9",
+      "bytes": 3066
+    },
+    {
+      "path": "DPS_NOTES/both_notes_review_v1.pdf",
+      "sha256": "053451d090320d3dabf042aae2e6a97984628c434be9bf7377b1611dd053d7ff",
+      "bytes": 28468366
+    },
+    {
+      "path": "DPS_NOTES/cms_dp_note_template/CMSlogo_black_label_1024.png",
+      "sha256": "d1f729beb4ca25a205044cf0aeb782a227dd2d8c3f800ef9f24dca45b87a3053",
+      "bytes": 122385
+    },
+    {
+      "path": "DPS_NOTES/cms_dp_note_template/LogoOutline-Black.pdf",
+      "sha256": "e387ce1145e4432bf1e7639e854749b984cce693b45a61e56fc493c55109b264",
+      "bytes": 801990
+    },
+    {
+      "path": "DPS_NOTES/cms_dp_note_template/README.txt",
+      "sha256": "b832ef3f65f9bd86f3d8aa1d61002cd1657dc2c7e466a1df045da142140a00e2",
+      "bytes": 2516
+    },
+    {
+      "path": "DPS_NOTES/cms_dp_note_template/cover.tex",
+      "sha256": "b34d7464b6c2382754a7a7f8928ed4e2e3985c50755f59092c24f50c5e034da2",
+      "bytes": 2697
+    },
+    {
+      "path": "DPS_NOTES/cms_dp_note_template/figures/README.txt",
+      "sha256": "68502f38ef939449e7e88a672c87224a876b76ced3c2841ab102ceb182707cfb",
+      "bytes": 101
+    },
+    {
+      "path": "DPS_NOTES/cms_dp_note_template/main.tex",
+      "sha256": "dec6d649669119a8b48b2d6d4a0de38652ed892efb95b8bd711ab7b2e9239c9f",
+      "bytes": 3612
+    },
+    {
+      "path": "DPS_NOTES/cms_dp_note_template/metadata.tex",
+      "sha256": "e8ac56a08af27daaba891d2c8ce6bcedfa27831d553c00fd9f667be8bc05e713",
+      "bytes": 894
+    },
+    {
+      "path": "DPS_NOTES/draft_support/build.py",
+      "sha256": "4c1b31476e0285ffc1dbee03c0dc49ed4051307790530ae5e7c8d4d06c2622b2",
+      "bytes": 4497
+    },
+    {
+      "path": "DPS_NOTES/draft_support/build_assets.py",
+      "sha256": "fd89fbedff8ccb3636ec2b024e7fd39b8b392973be7720e0da759d49494205ae",
+      "bytes": 12192
+    },
+    {
+      "path": "DPS_NOTES/draft_support/cover.tex",
+      "sha256": "aefe379488a0d61daf75d0e691c17d92141cdbff39b651bed038fd87bd626916",
+      "bytes": 1297
+    },
+    {
+      "path": "DPS_NOTES/draft_support/slides_preamble.tex",
+      "sha256": "ec12b2bee4e3d5e339bff612d0a4fa89beac54d592b12aaca0405c562d43fe85",
+      "bytes": 1948
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/CMSlogo_black_label_1024.png",
+      "sha256": "d1f729beb4ca25a205044cf0aeb782a227dd2d8c3f800ef9f24dca45b87a3053",
+      "bytes": 122385
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/LogoOutline-Black.pdf",
+      "sha256": "e387ce1145e4432bf1e7639e854749b984cce693b45a61e56fc493c55109b264",
+      "bytes": 801990
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/README.md",
+      "sha256": "754e111ae47fdbbb03307013e052c458b74802dbc2712356ce55f745d1597a66",
+      "bytes": 1454
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/build_report.json",
+      "sha256": "2dbbf9e1eb1aad554ac63e02b7852a9c647d8719a928eb1bd4e2304ca372b404",
+      "bytes": 315
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/cover.pdf",
+      "sha256": "1c1b4090b66843b28d00cc47a687a093cac17b52f19cdbfac57c33730bff908a",
+      "bytes": 949489
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/cover.tex",
+      "sha256": "aefe379488a0d61daf75d0e691c17d92141cdbff39b651bed038fd87bd626916",
+      "bytes": 1297
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/CMS-Note/cmsnote/Multi-clock-phases.png",
+      "sha256": "2bd792ca8f5815bd7b5e06b720e0983bda3a418637b362873a28c8f342bb3893",
+      "bytes": 52917
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/CMS-Note/cmsnote/bar-mcp.jpg",
+      "sha256": "3588c3fef729bb40ddae41a3204f541fac9b1e49d4c62f12a5c1793173653060",
+      "bytes": 67289
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/CMS-Note/cmsnote/clock-jitters.png",
+      "sha256": "564c4d14d64d1eef8904aadb0c8afe805d1bf4f2ad6a2978cc7b2bc4e4bb8b27",
+      "bytes": 115256
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/CMS-Note/cmsnote/event_matching_validation.png",
+      "sha256": "8f7020b9deefcd9f997fb37872ee62274017e841992fdc898eae3e64b8376cd4",
+      "bytes": 1084109
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/CMS-Note/cmsnote/mcpwave.jpg",
+      "sha256": "7ff590d7ceaea460c0715b947f0f64b70aaf2da2f96e0e23f42162ed47640b35",
+      "bytes": 85032
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/CMS-Note/cmsnote/photonishpkdif.jpg",
+      "sha256": "2d47b2e0164025e815a4d67c3e14de62370335164e0e8b0f0fda20fa4146feef",
+      "bytes": 137673
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/CMS-Note/cmsnote/residuals.jpg",
+      "sha256": "ee503aa7366357759776f99486a08eb5e3c43b1b8ca434840418da5eb93b9678",
+      "bytes": 527768
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/CMS-Note/cmsnote/setup.jpg",
+      "sha256": "9585c6b67be9b3b5f75b743e719988e9ff9a18acaf48d0a93c228bffdaff03e0",
+      "bytes": 127625
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/CMS-Note/cmsnote/sipdif.jpg",
+      "sha256": "db592dc0652c17c29090698613edeb01eb3f9f9e90c6d300c92ac8b7a5a98474",
+      "bytes": 65009
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/CMS-Note/cmsnote/spill.jpg",
+      "sha256": "73b47d5357c51f6db48bcf5999a858c48f91acc547dc6c7b2e3d2e7794ea3d12",
+      "bytes": 136271
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/reference_coefficients.csv",
+      "sha256": "982b8f8a656a1a454d35e2f6328ee600ec457b92f5ba4ca08fc283bad1f582ec",
+      "bytes": 315
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch133_walk_before_walk_fit_expected_refit_coeffs.csv",
+      "sha256": "be9aa0b65f80c6b60df85153194b1307a02b3c3596b7bc60a625c9f946a61a5a",
+      "bytes": 152
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch133_walk_before_walk_fit_expected_refit_profile.csv",
+      "sha256": "87478ad912d4d7b4c3fd6f448afe5d6262bf52d7b6d0f8aeffda8ff76ff2d600",
+      "bytes": 1735
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch154_walk_before_walk_fit_expected_refit_coeffs.csv",
+      "sha256": "a3f40a19f7a3362d365f05022e574a2c17809d817b2bcd9f9f3160f52891441e",
+      "bytes": 152
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch154_walk_before_walk_fit_expected_refit_profile.csv",
+      "sha256": "970dc0e87fa171416f66569bf509b6f17f9a16c12efd10447d9fdb210c6548fe",
+      "bytes": 1369
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch137_walk_before_walk_fit_expected_refit_coeffs.csv",
+      "sha256": "e1d10cf2f90f3141393c6f6aeac5f625425ad07ab19d406a18bd495f75fbb8a4",
+      "bytes": 150
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch137_walk_before_walk_fit_expected_refit_profile.csv",
+      "sha256": "eb081c1156945577baa6c2a43b0757fd125aa0faafeabb953a9684fe249874d0",
+      "bytes": 3197
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch150_walk_before_walk_fit_expected_refit_coeffs.csv",
+      "sha256": "643ef4a4cf67938d70ab6c18524e0dc0f2e31fd3454fdd3696bc66f26f669062",
+      "bytes": 149
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch150_walk_before_walk_fit_expected_refit_profile.csv",
+      "sha256": "6d7f2f653d0928a2f3f853c149524f9819b5bbf3d69c63e6c1d1ed72897122ca",
+      "bytes": 1717
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/figure_manifest.json",
+      "sha256": "8d9f3526743d73bacec2ac110d10e4aaf28485ae6bc56a656cbc8c4c61cd8284",
+      "bytes": 7695
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/figures/bar_end_difference.pdf",
+      "sha256": "df765e030acb31ef1a5444e5dcd19ca0e7203301b1de8074e74f8fdf1e90e347",
+      "bytes": 886317
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/figures/bar_mcp_difference.pdf",
+      "sha256": "51e2587df2aa5a288a6638c53247ccef0c9c4ebf51c26668df9c9be5666e1d45",
+      "bytes": 896626
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/figures/clock_edges.pdf",
+      "sha256": "dc7d3453b56227b4ed2d6009efa3a3bc782bdaa61024a9cd9b095eab09b0355c",
+      "bytes": 919612
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/figures/clock_estimators.pdf",
+      "sha256": "75f7a3654b6df9d131fb2e0e7a865f654197826890d9b12979b65e017a9c6f40",
+      "bytes": 870744
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/figures/clock_relation.pdf",
+      "sha256": "8170cf91bbeb5a567d3afad356e496da59bb1734c5e5805b6f7c2b83da78773f",
+      "bytes": 873385
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/figures/clock_residuals.pdf",
+      "sha256": "eabc66ce2b770211d9a880496fd6b7f9b7d8326ce02598baf8c500c15b89db0a",
+      "bytes": 1196017
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/figures/event_matching.pdf",
+      "sha256": "7c5e4c9b81bf13262e070de3aaf2c3b85a12406be378ee4911778fbf642245a8",
+      "bytes": 1334703
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/figures/mcp_pair_timing.pdf",
+      "sha256": "d7017877c4d1f45e08cc03447aaa1177eb648e346aab5473d916954f81e7da54",
+      "bytes": 989924
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/figures/mcp_waveform.pdf",
+      "sha256": "5a06d86d415b9c863544ef32487664e1f7ad7ed100f91e5a813b0995c3e77485",
+      "bytes": 901170
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/figures/reference_ch133.pdf",
+      "sha256": "a7ad142511d2207a39b6ffd95251b10f118c727bd574b3f280e67d5de0456ec5",
+      "bytes": 1065177
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/figures/reference_ch137.pdf",
+      "sha256": "1e88cb9b2456f2b37bee37ecd3b05d12f95e0e78f64705f003757b1e5ecedcfd",
+      "bytes": 1066482
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/figures/reference_ch150.pdf",
+      "sha256": "2df5d5c091712d0e5b4c6b6ad4e22de7403bce6289d9b4899e363c0934662486",
+      "bytes": 1065227
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/figures/reference_ch154.pdf",
+      "sha256": "71957c76dbf81c907ae4b33b49924488dc367a6b8c55291438480f4c7c8c61cf",
+      "bytes": 1064947
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/figures/setup.pdf",
+      "sha256": "162b734c73aff46c132ec8365d859419f396eb9e9fe9ab7d378313ed5f4d0a85",
+      "bytes": 1197882
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/main.tex",
+      "sha256": "266ed17846c0de34d0989404d4e4d37bbd80f926ad6bf1c08126f924d89d3ea2",
+      "bytes": 12259
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/metadata.tex",
+      "sha256": "e45647177e7655d85fb0a1cabd50e552339938d3697a95ab83bf0d3e5c48cf80",
+      "bytes": 1300
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/note_with_cover.pdf",
+      "sha256": "8eb49101de5e9ba39e835e4d81c69ddc14eda1fa632f17767e4d938393fa6165",
+      "bytes": 15714018
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/slides.pdf",
+      "sha256": "a04add7015fdcc95dd3c5faff76643d79df249094f5c25444f67b342d1edd72b",
+      "bytes": 14710755
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/slides_preamble.tex",
+      "sha256": "ec12b2bee4e3d5e339bff612d0a4fa89beac54d592b12aaca0405c562d43fe85",
+      "bytes": 1948
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/CMSlogo_black_label_1024.png",
+      "sha256": "d1f729beb4ca25a205044cf0aeb782a227dd2d8c3f800ef9f24dca45b87a3053",
+      "bytes": 122385
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/LogoOutline-Black.pdf",
+      "sha256": "e387ce1145e4432bf1e7639e854749b984cce693b45a61e56fc493c55109b264",
+      "bytes": 801990
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/README.md",
+      "sha256": "9fabdc0fbbe6f042781a920198931d496ff9f6e7cafa9e88fa247a795c58e9b5",
+      "bytes": 764
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/build_report.json",
+      "sha256": "f342c3c838e2acde696dc650b74cecf35dec3d593381b07239080f4a5e101483",
+      "bytes": 315
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/cover.pdf",
+      "sha256": "609672641cfc3478dd6595ec5af306e7a2be6b2f1a8f71dbaada94a9cb3c32fa",
+      "bytes": 950156
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/cover.tex",
+      "sha256": "aefe379488a0d61daf75d0e691c17d92141cdbff39b651bed038fd87bd626916",
+      "bytes": 1297
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/awc_summary_special_10_channels_no_ch240_linear.csv",
+      "sha256": "ecd34498f05187caf40e66db4fd59373ddb0065d8da418ef1261ef5f9922ba80",
+      "bytes": 3173
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/awc_summary_special_10_channels_no_ch240_linear_fit.json",
+      "sha256": "6488dac443b08dd24315e0c53a7a6bbf4de05e30a12494a8ddefa9ac4066b14e",
+      "bytes": 693
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_137.json",
+      "sha256": "110f9ff896a8d37a263dea9c8cf3970c16c8746f88b0cf2cee90443e0e7347c7",
+      "bytes": 652
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_137_comparison.csv",
+      "sha256": "f2731819b261e3b19152977befac5a75d00bd3232b266f452f838a6e2010bc28",
+      "bytes": 293282
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_154.json",
+      "sha256": "fde8aa501e1528fb49d7db4db17db507b1752509a80e84931a8d7e02bb16f23a",
+      "bytes": 647
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_154_comparison.csv",
+      "sha256": "007573438c25e7afc423f5fdbc791c21b8fd355d40de0795cbea0972b3068a6e",
+      "bytes": 292987
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_159.json",
+      "sha256": "4765503642aae48c5662fd1e42942cdd269484b8adf32905e0f88d2052f8745a",
+      "bytes": 659
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_159_comparison.csv",
+      "sha256": "75b95134df8d3d6764eb53b4f0e0312c3a6ec49c7f927761a232c1eae8a7c776",
+      "bytes": 224658
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_242.json",
+      "sha256": "d6b67d8d3b37d33d28870d865e596d3d62c4c90175759e94db51d9ecc2925f4d",
+      "bytes": 653
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_242_comparison.csv",
+      "sha256": "ae9d1fad1674843ad1b1aad843b07d39d1dc60e3c77b0067791596ef7bce16d9",
+      "bytes": 293257
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channels.csv",
+      "sha256": "e2eaec7c4127f989c8fc0bf719dd6935bda6792076bf80f0bc5b2732858c4e2d",
+      "bytes": 6070
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/energy_spectra/channel_137_energy_spectrum.csv",
+      "sha256": "736ce86ed57b1925cd9fbdd455706a5fe9371cd1e6b1c5a87c64479c3876e0d5",
+      "bytes": 8436
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_133/channel_133_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz",
+      "sha256": "5541bb4d4097c90fa14185ef755de3576fd214b42006f75e315cce22dcf60070",
+      "bytes": 14344
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_133/channel_133_safe_time2_two_upstream_peak_right_profile_linear_summary.json",
+      "sha256": "bb58d94d60da0ac37c2a3f3a1b5d3e534a6199d5c70b6ec81946e4960358c4e4",
+      "bytes": 5656
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_133/run4076_profile.csv",
+      "sha256": "2ff2c1b7308756c6356f8d197036f0c13a5f925fc3ec052ca7e632905074bfd9",
+      "bytes": 1274
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_137/channel_137_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz",
+      "sha256": "b57f0ced468f7c59ee15ea7c30793522d135f044925ec7cf9aeca817d2aded0d",
+      "bytes": 13726
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_137/channel_137_safe_time2_two_upstream_peak_right_profile_linear_summary.json",
+      "sha256": "b3d42f2904b04829243da70efccff8417066dc6ecea09b382e413082e9a52d72",
+      "bytes": 5647
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_137/run4076_profile.csv",
+      "sha256": "83b8f263564a1a050a7d546a8987a2d9f131374716f0b4279cd74de903c3d685",
+      "bytes": 1264
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_150/channel_150_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz",
+      "sha256": "c5128f06650bf9889daaaf5f621a650fabd716050ea1a0c08b8af27cc0120697",
+      "bytes": 13593
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_150/channel_150_safe_time2_two_upstream_peak_right_profile_linear_summary.json",
+      "sha256": "89edacff189f943c3af679f998c786a9b6c352282394856e12beb9eec82a3bb9",
+      "bytes": 5652
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_150/run4076_profile.csv",
+      "sha256": "5066265cd9fdb530f5cadfd01f260d30d8443384729de76a9ef7135bea266093",
+      "bytes": 1268
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_154/channel_154_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz",
+      "sha256": "799314108cd210e46be18304222549a9cac2197af4058c04215f404edb9fdf2f",
+      "bytes": 13634
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_154/channel_154_safe_time2_two_upstream_peak_right_profile_linear_summary.json",
+      "sha256": "09b759904b2fd723276cbd80f4e89c33c62705733082061aba659542aec8f202",
+      "bytes": 5655
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_154/run4076_profile.csv",
+      "sha256": "7e6189b9de837f891d57dc32857fdba228e43c846d1a737e8cc638a4737c5b6f",
+      "bytes": 1271
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/physical_candidate_quick_test/channel_predictions.csv",
+      "sha256": "6e9862e42eaf4fa68232dd04c65285ebb0690c983dd18fb897b39e6236ab29cc",
+      "bytes": 5878
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/physical_candidate_quick_test/model_comparison.json",
+      "sha256": "0c19946e2e30ca493b59303d94b05478cc10127bd341227b02c153c44e37f160",
+      "bytes": 4149
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/figure_manifest.json",
+      "sha256": "6da38b78c893d8ffea0ad930b6a9f9091ede5ece789d806ce5a0ec3c45a4d35b",
+      "bytes": 11959
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/figures/awc_summary_all.pdf",
+      "sha256": "954c902893ea5e67f249f1d72d9f4b812c557bfab523b89acd69c1f92c1e982e",
+      "bytes": 1064081
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/figures/awc_summary_selected.pdf",
+      "sha256": "385e18ff567de0531a6e31836f254f683d6df03c08410e327b694000dfdff0a5",
+      "bytes": 1063464
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/figures/comparison_ch137.pdf",
+      "sha256": "c6de561549f9ff6b5baa8ff56ab466a583271575c0d526dbce2bf4578a659812",
+      "bytes": 795866
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/figures/comparison_ch154.pdf",
+      "sha256": "858a3428a95d33f7fe88a136172344af27b461c75356a9a32c8907f7f2f2ed1b",
+      "bytes": 795349
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/figures/comparison_ch159.pdf",
+      "sha256": "c3914db37d2b35006e798f3782bd423aad9c0b84ca666e5f7061c6ca9f7873fa",
+      "bytes": 780207
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/figures/comparison_ch242.pdf",
+      "sha256": "609460dff5ce4d713141777d5a0a895ff7fc435fa81d4bd6b4dbd14d0010b7f2",
+      "bytes": 795157
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/figures/internal_predictor.pdf",
+      "sha256": "92d23e12ccd1f0035800f8ef46cba555ddec4d4446244383260acc73e2951326",
+      "bytes": 1063112
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/figures/q_spectra_ch137.pdf",
+      "sha256": "df14092ad0b836b0d33f5d47fb255837a05b4f7c6877108aaa8a988cffc6fed4",
+      "bytes": 737182
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/figures/slope_ch133.pdf",
+      "sha256": "41ec58c2a3d9ce61cff3ce8913a25b08914951615223aa6e2de18c134621ce3c",
+      "bytes": 1072068
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/figures/slope_ch137.pdf",
+      "sha256": "2e66ad46481fda2fc678995cf099e1179ec519fc66aaf9a4881ef0acf3ab6878",
+      "bytes": 1071986
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/figures/slope_ch150.pdf",
+      "sha256": "3786f00ce7acd32090ed88b52813f5ead720e16375240a7cc1413adb6e426013",
+      "bytes": 1071846
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/figures/slope_ch154.pdf",
+      "sha256": "f92c67591c3b8340b5a9b3a914f687286ffc35c44531875498c8f52546083405",
+      "bytes": 1072043
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/main.tex",
+      "sha256": "7fe3a0ed5e3db469030de836fc78655e08aa41cc0cde8b57ed92991ea15aede2",
+      "bytes": 14631
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/metadata.tex",
+      "sha256": "ed207bc56f1e1c4daef3b052db60ca5ed94f6f98ab52a298effb2af79337f1af",
+      "bytes": 1377
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/note_with_cover.pdf",
+      "sha256": "77ced26d68e1fbd80c52eabd84d271ac8ad2adb887e167f645ec52e198b0b41f",
+      "bytes": 12753816
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/slides.pdf",
+      "sha256": "ea8bdd43195ad923028d6ab3fb791e42620a92cac39d43bc2d90f5a4ed9db272",
+      "bytes": 11748532
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/slides_preamble.tex",
+      "sha256": "ec12b2bee4e3d5e339bff612d0a4fa89beac54d592b12aaca0405c562d43fe85",
+      "bytes": 1948
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-20/gap_analysis.md",
+      "sha256": "743792b7c44a665c30c32037c3249ca3af1be714ee3a832935a27f0ae2a23075",
+      "bytes": 16507
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-20/writing_plan.md",
+      "sha256": "90a1ef469aea109480af3b8ac3dac99511d6d8dcde585792531d955c797de802",
+      "bytes": 12417
+    },
+    {
+      "path": "FEBD_Sync/simple_sync.py",
+      "sha256": "ccbc94412053425679271bf8ffda49cce0c3b9cedde5be5333779e0d3cb5a6fa",
+      "bytes": 45976
+    },
+    {
+      "path": "TimeCalibration/ch192_vs_trigger_lowess.py",
+      "sha256": "3e186bbebd88e0359da3871a215a3aa8c5daf5d3521c8f2491fdb35f21cdb317",
+      "bytes": 52588
+    },
+    {
+      "path": "TimeCalibration/ch192_vs_trigger.py",
+      "sha256": "91c8d2148cbba587a773fd8af0a60f11581c1be3c9662d89a70639cf65ac72e0",
+      "bytes": 49631
+    },
+    {
+      "path": "TimeCalibration/bar_processing.py",
+      "sha256": "1c6a42cfd243f42feb2c6667be5bd7779372e1e653220f64aea7de6bcbfe30f4",
+      "bytes": 39074
+    }
+  ]
+}

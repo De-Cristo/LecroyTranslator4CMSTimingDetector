@@ -1,0 +1,14 @@
+{
+  "slides": 22,
+  "cover_pages": 1,
+  "combined_pages": 23,
+  "labelled_figures": 12,
+  "overfull_boxes": 0,
+  "preview_sheets": [
+    "preview/contact_sheet_1.png",
+    "preview/contact_sheet_2.png",
+    "preview/contact_sheet_3.png",
+    "preview/contact_sheet_4.png"
+  ],
+  "status": "internal review draft"
+}

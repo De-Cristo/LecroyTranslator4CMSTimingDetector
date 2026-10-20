@@ -1,0 +1,90 @@
+% A4 CMS DP cover adapted from the downloaded CMS CR first-page template.
+% Overleaf: select cover.tex and the pdfLaTeX compiler.
+% Keep the two supplied logo files beside this file.
+\documentclass[11pt,a4paper]{article}
+\usepackage[left=25mm,right=25mm,top=18mm,bottom=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{helvet}
+\usepackage{times}
+\usepackage{ragged2e}
+\DeclareMathSizes{11}{11}{8}{6}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% ============================================================
+% EDIT THESE FIELDS
+% Use the assigned DP number when available; XXX is a placeholder.
+% Escape special characters in text: \&, \%, \_, \#.
+% Mathematical notation can be written inside $...$.
+% ============================================================
+\input{metadata.tex}
+
+% ============================================================
+% COVER LAYOUT -- normally no changes are needed below this line.
+% This is an adaptation for DP use, not a verified official DP template.
+% ============================================================
+\newcommand{\CMSLogo}{CMSlogo_black_label_1024.png}
+\newcommand{\CERNLogo}{LogoOutline-Black.pdf}
+\newcommand{\CoverRule}{\par\noindent\rule{\textwidth}{0.4pt}\par}
+
+\begin{document}
+\begin{titlepage}
+\centering
+
+\noindent
+\begin{minipage}[t]{0.55\textwidth}
+  \raggedright\fontsize{10}{12}\selectfont
+  Available on CMS information server
+\end{minipage}%
+\begin{minipage}[t]{0.45\textwidth}
+  \raggedleft\fontsize{14}{16}\selectfont\bfseries
+  CMS DP-\DPNumber
+\end{minipage}
+
+\vspace{8mm}
+\CoverRule
+\vspace{3mm}
+
+\noindent
+\begin{minipage}[c]{0.14\textwidth}
+  \centering\includegraphics[width=0.90\linewidth]{\CMSLogo}
+\end{minipage}%
+\begin{minipage}[c]{0.72\textwidth}
+  \centering
+  {\fontsize{12}{15}\selectfont\bfseries
+    The Compact Muon Solenoid Experiment\par}
+  \vspace{3mm}
+  {\resizebox{0.98\linewidth}{!}{\sffamily CMS Performance Note}\par}
+  \vspace{3mm}
+  {\fontsize{8}{10}\selectfont
+    Mailing address: CMS CERN, CH-1211 GENEVA 23, Switzerland\par}
+\end{minipage}%
+\begin{minipage}[c]{0.14\textwidth}
+  \centering\includegraphics[width=0.90\linewidth]{\CERNLogo}
+\end{minipage}
+
+\vspace{3mm}
+\CoverRule
+\vspace{5mm}
+{\raggedleft\fontsize{12}{15}\selectfont\bfseries\DPDate\par}
+
+\vspace{19mm}
+{\sffamily\fontsize{20}{25}\selectfont\DPTitle\par}
+\vspace{6mm}
+{\fontsize{11}{14}\selectfont\DPAuthors\par}
+
+\vspace{12mm}
+{\fontsize{11}{14}\selectfont\bfseries Abstract\par}
+\vspace{7mm}
+\begin{minipage}{0.90\textwidth}
+  \justifying
+  \fontsize{11}{13.5}\selectfont
+  \setlength{\parindent}{0pt}
+  \setlength{\parskip}{6pt}
+  \DPAbstract\par
+\end{minipage}
+
+\vfill
+\end{titlepage}
+\end{document}

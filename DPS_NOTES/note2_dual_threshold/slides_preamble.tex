@@ -1,0 +1,42 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\input{metadata.tex}
+\usetheme{default}
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{structure}{fg=black}
+\setbeamercolor{frametitle}{fg=black,bg=white}
+\setbeamerfont{frametitle}{size=\large,series=\bfseries}
+\setbeamersize{text margin left=7mm,text margin right=7mm}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{%
+  \hbox to \paperwidth{\hspace{7mm}\scriptsize\color{black!55}Internal review draft -- 20 October 2026
+  \hfill\raisebox{0pt}[9mm][1mm]{\includegraphics[height=7mm]{CMSlogo_black_label_1024.png}}\hspace{6mm}}}
+\setbeamertemplate{footline}{%
+  \hbox to \paperwidth{\hspace{7mm}\scriptsize\DPShortTitle
+  \hfill Draft v1\quad\insertframenumber/\inserttotalframenumber\hspace{7mm}}\vspace{2mm}}
+\setbeamertemplate{frametitle}{\vspace{-1mm}\insertframetitle\par\vspace{1mm}}
+\setlength{\parskip}{2.5pt}
+\newcommand{\Review}[2]{\par\smallskip{\fontsize{7.5}{8.5}\selectfont\color{red!65!black}\textbf{Review #1:} #2\par}}
+\newcommand{\Caption}{\fontsize{9}{10.5}\selectfont}
+\newcommand{\FigureSlide}[4]{%
+  \begin{frame}[t]{#1}
+    \begin{columns}[T,onlytextwidth]
+      \begin{column}{.61\textwidth}
+        \centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{figures/#2.pdf}
+      \end{column}
+      \begin{column}{.37\textwidth}\Caption #3\par\medskip{\fontsize{7}{8.5}\selectfont\color{black!55}#4\par}\end{column}
+    \end{columns}
+  \end{frame}}
+\newcommand{\OpeningSlides}{%
+  \begin{frame}
+    \centering{\LARGE\DPTitle\par}\vspace{7mm}
+    {\large CMS\par}\vspace{3mm}
+    \href{mailto:\DPContact}{\DPContact}
+    \vspace{7mm}\par{\small Discussion draft; not approved for public release.}
+  \end{frame}
+  \begin{frame}{Abstract}\small\DPAbstract\end{frame}}
+\hypersetup{pdftitle={\DPTitle},pdfauthor={CMS}}

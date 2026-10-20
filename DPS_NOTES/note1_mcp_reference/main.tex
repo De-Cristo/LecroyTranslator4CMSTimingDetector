@@ -1,0 +1,265 @@
+\input{slides_preamble.tex}
+\begin{document}
+\OpeningSlides
+
+\FigureSlide{Beam-test setup and the reference signal}{setup}{
+The September 2025 beam test used scintillator bars read out at both ends by
+silicon photomultipliers (SiPMs). A downstream MCP-PMT provides a fast reference
+for a restricted region of the bars.
+
+The BTL front-end readout and oscilloscope use different time coordinates.
+The scope trigger reaches TOFHIR channel 192; a separate 160\,MHz clock link
+can also be recorded by the scope.
+
+The highlighted lower readout path is used for the reference-bar calibration.
+}{Legacy setup illustration from the supplied Note1 source. Acronyms inside the
+illustration will be simplified in the final redraw.}
+
+\FigureSlide{Reconstructing the MCP pulse time}{mcp_waveform}{
+An example Hamamatsu MCP waveform is shown with its fitted pulse template.
+The fit estimates the pulse centroid rather than using the threshold-crossing
+time alone, reducing sensitivity to pulse amplitude.
+
+The scope-trigger time identifies the event; the fitted peak supplies its
+relative reference time. Their difference is measured within the same
+oscilloscope waveform.
+}{}
+
+\FigureSlide{Intrinsic reference timing is a separate measurement}{mcp_pair_timing}{
+The distribution compares the fitted times of two MCP-PMTs recorded by the
+oscilloscope. The measured width is 10.6\,ps.
+
+Assuming independent errors and a 7.5\,ps PHOTONIS contribution gives
+$\sigma_{\rm HPK}\simeq\sqrt{10.6^2-7.5^2}=7.5$\,ps.
+
+This scope-only estimate does not include synchronization to the BTL readout.
+}{}
+
+\FigureSlide{Matching the same particles between readouts}{event_matching}{
+Consecutive trigger intervals measured by channel 192 are compared with those
+recorded by the scope. Correlated intervals identify candidate matches
+despite the independent clocks.
+
+The interval-ratio distribution tests matching consistency. It is not a
+measurement of the picosecond resolution of the reconstructed particle time.
+
+Only uniquely matched events enter the reference calibration.
+}{Implementation (repository-relative):\par
+\nolinkurl{FEBD_Sync/simple_sync.py}\par
+\texttt{dedup\_triggers}: duplicate removal.\par
+\texttt{match\_cumulative\_time}: matching and tolerance.}
+
+\FigureSlide{Clock-rate alignment within acquisition segments}{clock_relation}{
+Matched scope-trigger times are compared with TOFHIR trigger times.
+A nearly linear relation describes the overall clock-rate difference within
+an acquisition segment.
+
+An offset and a slope are needed: a slope close to one is not sufficient
+over a long time interval. Clock resets require separate segment coordinates.
+\Review{N1-3}{Trace the segment configuration and coefficients used for the
+published calibration.}
+}{Legacy clock-relation plot. This plot illustrates synchronization, not
+charge-dependent time walk.}
+
+\FigureSlide{Correcting smooth residual clock drift}{clock_residuals}{
+After the linear clock-rate correction, the time residual still changes
+within each of three segments. Points are matched events; red curves show
+the smooth trend estimated by LOWESS, a locally weighted regression.
+
+The smooth trend is removed with the appropriate sign when constructing
+the common clock coordinate.
+\Review{N1-3}{Regenerate the before/after sequence and verify that the
+residual is corrected exactly once.}
+}{Legacy residuals in ns versus segment time in seconds. These are
+pre-LOWESS residuals, not final timing resolutions.}
+
+\begin{frame}{A single, explicit time convention}
+\small
+Let $g(u)$ map a scope-trigger timestamp $u$ into the TOFHIR time coordinate,
+including the linear clock relation and the fitted smooth drift.
+Define the within-waveform difference
+\[
+  \delta_{\rm MCP}=t_{\rm peak}^{\rm scope}-t_{\rm trigger}^{\rm scope}.
+\]
+The intended reference difference is then
+\[
+ \Delta t_i=t_i^{\rm TOFHIR}-\left[g(t_{\rm trigger}^{\rm scope})
+                    +\delta_{\rm MCP}\right],
+\]
+up to a fixed cable/geometry offset and the negligible-rate-conversion
+approximation for the short within-waveform interval.
+
+The charge-dependent component of $\Delta t_i$ is the time walk.
+An arbitrary constant does not change a shape calibration.
+\Review{N1-3}{This explicit definition uses a minus sign for $\delta_{\rm MCP}$
+in $\Delta t_i$. Reconcile it with the plus sign in the old manuscript
+before freezing equations and the historical implementation.}
+\end{frame}
+
+\begin{frame}{Reference bars and calibration selection}
+\fontsize{10}{11.5}\selectfont
+\begin{tabular}{lll}
+\toprule
+Upstream bar & SiPM channels & Role\\
+\midrule
+7 & 133, 154 & First reference pair\\
+8 & 137, 150 & Second reference pair\\
+\bottomrule
+\end{tabular}\par
+\medskip
+\begin{itemize}
+\item Select coincident SiPM hits and a unique MCP-associated event, using
+channel 192 as the TOFHIR indicator.
+\item Require a successfully reconstructed MCP pulse and consistent
+peak-to-trigger timing. This is a waveform-quality cut, not a particle
+transit-time measurement inside the MCP.
+\item Use $Q$, the TOFHIR ADC charge proxy. It is not a deposited energy in MeV.
+\item Fit the profile of $\Delta t_i$ versus $1/Q$ over the retained charge range.
+\end{itemize}
+{\scriptsize\textbf{Implementation (repository-relative):}\par
+\nolinkurl{TimeCalibration/ch192_vs_trigger_lowess.py}: coincidence and walk-sample selection.\par
+\nolinkurl{TimeCalibration/ch192_vs_trigger.py}: \texttt{build\_mcp\_map}, optional MCP cuts.\par
+\nolinkurl{TimeCalibration/bar_processing.py}: peak-to-trigger timing selector.\par}
+\end{frame}
+
+\FigureSlide{Bar 7: channel 133 reference calibration}{reference_ch133}{
+Run 4399 events are grouped in inverse-charge bins. Each point is the mean
+time difference; the vertical bar is its saved standard error of the mean
+(SEM). The curve is the saved binned quadratic
+$W(Q)=a+b/Q+c/Q^2$.
+
+There are 26 retained profile points. The time coordinate includes the
+historical constant display offset.
+\Review{N1-4}{Confirm the historical fit weighting and clipping.
+The plotted SEM does not by itself imply weighted fitting.}
+}{Redrawn from archived profile and coefficient CSVs. No refit.
+Saved display convention includes a +26\,ns shift.}
+
+\FigureSlide{Bar 7: channel 154 reference calibration}{reference_ch154}{
+The opposite end of bar 7 is calibrated independently. Points show the mean
+time difference and SEM in 20 retained inverse-charge bins.
+
+The red curve is the saved quadratic in $1/Q$, not a quadratic in $Q$.
+Channel-dependent coefficients allow for different pulse responses at
+the two bar ends.
+\Review{N1-4}{The manuscript's common 12-bin statement is incompatible
+with these saved profile tables.}
+}{Run 4399 legacy calibration, redrawn without refitting.
+Same +26\,ns display convention as channel 133.}
+
+\FigureSlide{Bar 8: channel 137 reference calibration}{reference_ch137}{
+The channel-137 time difference increases as inverse charge increases:
+smaller signals cross a fixed threshold later.
+
+Points are profile means with SEM; the red line is the saved binned
+quadratic. There are 48 retained points. The correction is applicable
+over the measured charge support, not automatically outside it.
+\Review{N1-4}{Retain this legacy result or replace all four channels
+with one consistently regenerated calibration.}
+}{Run 4399 legacy calibration. Coefficients and numerical points are
+included with the draft.}
+
+\FigureSlide{Bar 8: channel 150 reference calibration}{reference_ch150}{
+The opposite end of bar 8 has its own charge-dependent delay.
+The 25 points show the mean timing difference and SEM; the curve is
+the saved binned quadratic.
+
+The four curves demonstrate the calibration procedure. Different numbers
+of retained points are preserved rather than imposing an undocumented
+common binning.
+\Review{N1-4}{The newer reference used for the extended comparison in
+Note2 has different selections and fit weighting.}
+}{Run 4399 legacy calibration. Coefficient units are ns, ns\,ADC and
+ns\,ADC$^2$ for $a$, $b$ and $c$.}
+
+\FigureSlide{Timing validation using the two bar ends}{bar_end_difference}{
+The distribution is the corrected time difference between the two SiPM
+ends of bar 8. The displayed Gaussian width is approximately 53\,ps.
+
+For uncorrelated end errors and controlled hit-position effects,
+$\sigma((t_L+t_R)/2)=\sigma(t_L-t_R)/2$, giving roughly 26\,ps.
+Common timing jitter cancels in the end difference.
+\Review{N1-5}{Recover histogram inputs, fit range, uncertainty and
+position selection before treating 26\,ps as a final resolution.}
+}{Legacy timing distribution. The inference is conditional; it does not
+measure synchronization jitter.}
+
+\FigureSlide{Timing validation against the MCP reference}{bar_mcp_difference}{
+The corrected bar-average time is compared with the MCP time.
+The legacy panel reports a width of 46.8\,ps.
+
+This difference includes the bar, MCP and residual synchronization
+contributions, including any correlations. It must not be identified
+with the intrinsic MCP resolution.
+\Review{N1-5}{Establish whether 46.8\,ps is a Gaussian-fit width or
+sample RMS, and recover its uncertainty and event selection.}
+}{Legacy bar--MCP distribution, not refitted for this draft. Do not
+combine unrelated selections or clock branches in quadrature.}
+
+\begin{frame}{Reference-calibration result and scope}
+\small
+\begin{itemize}
+\item A trigger link permits common-event calibration across independent
+BTL and oscilloscope time coordinates.
+\item A linear clock relation plus a smooth residual correction defines
+the reference-time mapping.
+\item Four saved inverse-charge profiles and quadratic functions describe
+the reference-bar time walk. Numerical points, SEM and coefficients
+accompany this draft.
+\item Intrinsic MCP timing, reference-bar timing and cross-system
+synchronization are different performance quantities.
+\item Charge range and operating conditions limit transfer to other
+samples; a constant time offset is not a walk-shape difference.
+\end{itemize}
+\medskip
+The present evidence supports the calibration workflow. Final precision
+claims require a frozen selection and complete statistical/systematic treatment.
+\end{frame}
+
+\begin{frame}{Review queue before publication}
+\footnotesize
+\begin{tabular}{l>{\raggedright\arraybackslash}p{11cm}}
+\toprule
+ID & Decision or missing evidence\\
+\midrule
+N1-3 & Reconcile time signs, clock mapping and segment/LOWESS configuration.\\
+N1-4 & Choose legacy or updated calibration; align bins, clipping, weighting and coefficient convention.\\
+N1-5 & Reproduce bar timing widths with uncertainties and position/covariance assumptions.\\
+N1-6 & Verify citations, official template/DP metadata and final publication packaging.\\
+\bottomrule
+\end{tabular}\par
+\medskip
+Sources: supplied \texttt{Note1.pdf}; candidate editable manuscript
+\texttt{CMS-Note/cmsnote}; archived calibration CSVs in
+\texttt{Q\_Walk/reference\_quadratic\_t0}.
+\par\smallskip
+The figure manifest records the exact copied inputs and checksums.
+This review slide is removed from a public release.
+\end{frame}
+
+\FigureSlide{Backup: clock-phase reconstruction}{clock_edges}{
+The reference clock is sampled by the oscilloscope. Several rising-edge
+crossings can be reconstructed within a waveform.
+
+Fitting edge time against edge index allows the clock phase to be estimated
+using multiple cycles. Evaluating the fit near the mean edge index avoids
+unnecessary extrapolation.
+
+This is an alternative synchronization diagnostic, distinct from the
+trigger-link branch used for the legacy reference curves.
+}{Legacy illustration. Correlated edge errors prevent assuming an
+automatic $1/\sqrt{N}$ precision improvement.}
+
+\FigureSlide{Backup: comparing clock estimators}{clock_estimators}{
+The recorded MCP time is compared with three clock-phase estimators:
+a single edge, a regression intercept and the fitted time at the mean
+edge index.
+
+The distributions illustrate estimator dependence. Their widths contain
+the contributions present in this specific measurement and are not
+automatically an absolute clock-accuracy measurement.
+\Review{N1-6}{Recover source arrays and confirm common selections and
+width definitions before using numerical improvements.}
+}{Legacy clock-estimator diagnostic, retained as a discussion backup.}
+
+\end{document}

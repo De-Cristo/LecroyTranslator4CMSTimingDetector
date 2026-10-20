@@ -1,0 +1,35 @@
+{
+  "channels": [
+    159,
+    156,
+    155,
+    154,
+    151,
+    150,
+    137,
+    135,
+    134,
+    133
+  ],
+  "model": "AWC = intercept + slope * (1/c1)",
+  "intercept_ua": 14.469667697717771,
+  "slope": 0.061225538540878456,
+  "formal_parameter_errors": [
+    0.31681254743831994,
+    0.003081887939825422
+  ],
+  "covariance": [
+    [
+      0.10037019021435772,
+      -0.0008879629688252758
+    ],
+    [
+      -0.0008879629688252758,
+      9.498033273641385e-06
+    ]
+  ],
+  "chi2": 607.7265320062594,
+  "ndf": 8,
+  "weights": "sigma=(p84-p16)/2, weight=1/sigma^2",
+  "limitations": "Fixed x; x-y correlations and t0-reference uncertainty omitted. Covariance not rescaled by chi2/ndf."
+}

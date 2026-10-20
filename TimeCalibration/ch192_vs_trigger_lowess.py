@@ -223,6 +223,10 @@ def _augment_with_bar_channel(data_dict, val_channels):
     return v_channels
 
 
+def _display_time_ns(values_ps):
+    return np.asarray(values_ps, dtype=float) / 1000.0 + 26.0
+
+
 def _save_inverse_energy_scatter(prefix, energy, series, val_ch, ch, title_prefix, labels):
     label_pairs = _series_label_pairs(labels)
     fig, axes = plt.subplots(1, len(labels), figsize=(7 * len(labels), 5), squeeze=False)
@@ -245,9 +249,10 @@ def _save_inverse_energy_scatter(prefix, energy, series, val_ch, ch, title_prefi
 
         x_fit = x[fit_mask]
         y_fit = y[fit_mask]
+        y_fit_display = _display_time_ns(y_fit)
 
-        ax.scatter(x_fit, y_fit, s=3, alpha=0.3, color=color)
-        ax.axhline(0.0, color="grey", linewidth=1, linestyle="--")
+        ax.scatter(x_fit, y_fit_display, s=3, alpha=0.3, color=color)
+        ax.axhline(26.0, color="grey", linewidth=1, linestyle="--")
 
         if len(x_fit) >= 2:
             x0 = float(np.mean(x_fit))
@@ -257,7 +262,7 @@ def _save_inverse_energy_scatter(prefix, energy, series, val_ch, ch, title_prefi
             y_line = m * (x_line - x0) + b + y0
             ax.plot(
                 x_line,
-                y_line,
+                _display_time_ns(y_line),
                 color="red",
                 linewidth=2,
                 label=f"slope={m:.3e}, N={len(x_fit)}",
@@ -265,7 +270,7 @@ def _save_inverse_energy_scatter(prefix, energy, series, val_ch, ch, title_prefi
             ax.legend(fontsize=8)
 
         ax.set_xlabel(f"1 / E(ch{val_ch})")
-        ax.set_ylabel(f"t(ch{val_ch}) - t(ch{ch}_variant) (ps)")
+        ax.set_ylabel(f"t(ch{val_ch}) - t(ch{ch}_variant) + 26 ns (ns)")
         ax.set_title(label)
         ax.grid(True, alpha=0.3)
 
@@ -387,12 +392,12 @@ def _apply_walk_correction(delta_t, energy, prefix="", title="", walk_fit_bins=1
     if prefix:
         import matplotlib.pyplot as plt
         fig, ax = plt.subplots(figsize=(8, 6))
-        ax.scatter(x_fit, y_fit, s=3, alpha=0.3, color="steelblue", label=f"Data (N={len(x_fit)})")
+        ax.scatter(x_fit, _display_time_ns(y_fit), s=3, alpha=0.3, color="steelblue", label=f"Data (N={len(x_fit)})")
         x_line = np.linspace(x_fit.min(), x_fit.max(), 100)
         y_line = np.polyval(p, x_line)
-        ax.plot(x_line, y_line, color="red", linewidth=2, label=f"Fit: {p[0]:.2e}x² + {p[1]:.2e}x + {p[2]:.2e}")
+        ax.plot(x_line, _display_time_ns(y_line), color="red", linewidth=2, label=f"Fit: {p[0]:.2e}x² + {p[1]:.2e}x + {p[2]:.2e}")
         ax.set_xlabel("1 / Energy")
-        ax.set_ylabel("Delta t (ps)")
+        ax.set_ylabel("Delta t + 26 ns (ns)")
         ax.set_title(title)
         ax.legend()
         ax.grid(True, alpha=0.3)
@@ -407,7 +412,7 @@ def _apply_walk_correction(delta_t, energy, prefix="", title="", walk_fit_bins=1
             p_binned = np.polyfit(x_prof, y_prof, 2)
             fig, ax = plt.subplots(figsize=(8, 6))
             ax.errorbar(
-                x_prof, y_prof, yerr=y_err,
+                x_prof, _display_time_ns(y_prof), yerr=np.asarray(y_err, dtype=float) / 1000.0,
                 fmt="o", color="steelblue", ecolor="steelblue",
                 elinewidth=1, capsize=3,
                 label=f"Binned profile ({len(x_prof)} bins)"
@@ -415,11 +420,11 @@ def _apply_walk_correction(delta_t, energy, prefix="", title="", walk_fit_bins=1
             x_line = np.linspace(x_prof.min(), x_prof.max(), 100)
             y_line = np.polyval(p_binned, x_line)
             ax.plot(
-                x_line, y_line, color="red", linewidth=2,
+                x_line, _display_time_ns(y_line), color="red", linewidth=2,
                 label=f"Fit: {p_binned[0]:.2e}x² + {p_binned[1]:.2e}x + {p_binned[2]:.2e}"
             )
             ax.set_xlabel("1 / Energy")
-            ax.set_ylabel("Delta t (ps)")
+            ax.set_ylabel("Delta t + 26 ns (ns)")
             ax.set_title(f"{title} (binned)")
             ax.legend()
             ax.grid(True, alpha=0.3)

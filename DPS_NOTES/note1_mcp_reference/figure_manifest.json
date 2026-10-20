@@ -1,0 +1,190 @@
+[
+  {
+    "note": "note1_mcp_reference",
+    "figure": "figures/setup.pdf",
+    "kind": "legacy raster retained; data not refitted",
+    "sources": [
+      {
+        "original": "CMS-Note/cmsnote/setup.jpg",
+        "snapshot": "data/CMS-Note/cmsnote/setup.jpg",
+        "sha256": "9585c6b67be9b3b5f75b743e719988e9ff9a18acaf48d0a93c228bffdaff03e0"
+      }
+    ]
+  },
+  {
+    "note": "note1_mcp_reference",
+    "figure": "figures/mcp_waveform.pdf",
+    "kind": "legacy raster retained; data not refitted",
+    "sources": [
+      {
+        "original": "CMS-Note/cmsnote/mcpwave.jpg",
+        "snapshot": "data/CMS-Note/cmsnote/mcpwave.jpg",
+        "sha256": "7ff590d7ceaea460c0715b947f0f64b70aaf2da2f96e0e23f42162ed47640b35"
+      }
+    ]
+  },
+  {
+    "note": "note1_mcp_reference",
+    "figure": "figures/mcp_pair_timing.pdf",
+    "kind": "legacy raster retained; data not refitted",
+    "sources": [
+      {
+        "original": "CMS-Note/cmsnote/photonishpkdif.jpg",
+        "snapshot": "data/CMS-Note/cmsnote/photonishpkdif.jpg",
+        "sha256": "2d47b2e0164025e815a4d67c3e14de62370335164e0e8b0f0fda20fa4146feef"
+      }
+    ]
+  },
+  {
+    "note": "note1_mcp_reference",
+    "figure": "figures/event_matching.pdf",
+    "kind": "legacy raster retained; data not refitted",
+    "sources": [
+      {
+        "original": "CMS-Note/cmsnote/event_matching_validation.png",
+        "snapshot": "data/CMS-Note/cmsnote/event_matching_validation.png",
+        "sha256": "8f7020b9deefcd9f997fb37872ee62274017e841992fdc898eae3e64b8376cd4"
+      }
+    ]
+  },
+  {
+    "note": "note1_mcp_reference",
+    "figure": "figures/clock_relation.pdf",
+    "kind": "legacy raster retained; data not refitted",
+    "sources": [
+      {
+        "original": "CMS-Note/cmsnote/spill.jpg",
+        "snapshot": "data/CMS-Note/cmsnote/spill.jpg",
+        "sha256": "73b47d5357c51f6db48bcf5999a858c48f91acc547dc6c7b2e3d2e7794ea3d12"
+      }
+    ]
+  },
+  {
+    "note": "note1_mcp_reference",
+    "figure": "figures/clock_residuals.pdf",
+    "kind": "legacy raster retained; data not refitted",
+    "sources": [
+      {
+        "original": "CMS-Note/cmsnote/residuals.jpg",
+        "snapshot": "data/CMS-Note/cmsnote/residuals.jpg",
+        "sha256": "ee503aa7366357759776f99486a08eb5e3c43b1b8ca434840418da5eb93b9678"
+      }
+    ]
+  },
+  {
+    "note": "note1_mcp_reference",
+    "figure": "figures/bar_end_difference.pdf",
+    "kind": "legacy raster retained; data not refitted",
+    "sources": [
+      {
+        "original": "CMS-Note/cmsnote/sipdif.jpg",
+        "snapshot": "data/CMS-Note/cmsnote/sipdif.jpg",
+        "sha256": "db592dc0652c17c29090698613edeb01eb3f9f9e90c6d300c92ac8b7a5a98474"
+      }
+    ]
+  },
+  {
+    "note": "note1_mcp_reference",
+    "figure": "figures/bar_mcp_difference.pdf",
+    "kind": "legacy raster retained; data not refitted",
+    "sources": [
+      {
+        "original": "CMS-Note/cmsnote/bar-mcp.jpg",
+        "snapshot": "data/CMS-Note/cmsnote/bar-mcp.jpg",
+        "sha256": "3588c3fef729bb40ddae41a3204f541fac9b1e49d4c62f12a5c1793173653060"
+      }
+    ]
+  },
+  {
+    "note": "note1_mcp_reference",
+    "figure": "figures/clock_edges.pdf",
+    "kind": "legacy raster retained; data not refitted",
+    "sources": [
+      {
+        "original": "CMS-Note/cmsnote/Multi-clock-phases.png",
+        "snapshot": "data/CMS-Note/cmsnote/Multi-clock-phases.png",
+        "sha256": "2bd792ca8f5815bd7b5e06b720e0983bda3a418637b362873a28c8f342bb3893"
+      }
+    ]
+  },
+  {
+    "note": "note1_mcp_reference",
+    "figure": "figures/clock_estimators.pdf",
+    "kind": "legacy raster retained; data not refitted",
+    "sources": [
+      {
+        "original": "CMS-Note/cmsnote/clock-jitters.png",
+        "snapshot": "data/CMS-Note/cmsnote/clock-jitters.png",
+        "sha256": "564c4d14d64d1eef8904aadb0c8afe805d1bf4f2ad6a2978cc7b2bc4e4bb8b27"
+      }
+    ]
+  },
+  {
+    "note": "note1_mcp_reference",
+    "figure": "figures/reference_ch133.pdf",
+    "kind": "redrawn from saved numerical results",
+    "sources": [
+      {
+        "original": "sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch133_walk_before_walk_fit_expected_refit_profile.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch133_walk_before_walk_fit_expected_refit_profile.csv",
+        "sha256": "87478ad912d4d7b4c3fd6f448afe5d6262bf52d7b6d0f8aeffda8ff76ff2d600"
+      },
+      {
+        "original": "sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch133_walk_before_walk_fit_expected_refit_coeffs.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch133_walk_before_walk_fit_expected_refit_coeffs.csv",
+        "sha256": "be9aa0b65f80c6b60df85153194b1307a02b3c3596b7bc60a625c9f946a61a5a"
+      }
+    ]
+  },
+  {
+    "note": "note1_mcp_reference",
+    "figure": "figures/reference_ch154.pdf",
+    "kind": "redrawn from saved numerical results",
+    "sources": [
+      {
+        "original": "sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch154_walk_before_walk_fit_expected_refit_profile.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch154_walk_before_walk_fit_expected_refit_profile.csv",
+        "sha256": "970dc0e87fa171416f66569bf509b6f17f9a16c12efd10447d9fdb210c6548fe"
+      },
+      {
+        "original": "sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch154_walk_before_walk_fit_expected_refit_coeffs.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch154_walk_before_walk_fit_expected_refit_coeffs.csv",
+        "sha256": "a3f40a19f7a3362d365f05022e574a2c17809d817b2bcd9f9f3160f52891441e"
+      }
+    ]
+  },
+  {
+    "note": "note1_mcp_reference",
+    "figure": "figures/reference_ch137.pdf",
+    "kind": "redrawn from saved numerical results",
+    "sources": [
+      {
+        "original": "sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch137_walk_before_walk_fit_expected_refit_profile.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch137_walk_before_walk_fit_expected_refit_profile.csv",
+        "sha256": "eb081c1156945577baa6c2a43b0757fd125aa0faafeabb953a9684fe249874d0"
+      },
+      {
+        "original": "sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch137_walk_before_walk_fit_expected_refit_coeffs.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch137_walk_before_walk_fit_expected_refit_coeffs.csv",
+        "sha256": "e1d10cf2f90f3141393c6f6aeac5f625425ad07ab19d406a18bd495f75fbb8a4"
+      }
+    ]
+  },
+  {
+    "note": "note1_mcp_reference",
+    "figure": "figures/reference_ch150.pdf",
+    "kind": "redrawn from saved numerical results",
+    "sources": [
+      {
+        "original": "sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch150_walk_before_walk_fit_expected_refit_profile.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch150_walk_before_walk_fit_expected_refit_profile.csv",
+        "sha256": "6d7f2f653d0928a2f3f853c149524f9819b5bbf3d69c63e6c1d1ed72897122ca"
+      },
+      {
+        "original": "sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch150_walk_before_walk_fit_expected_refit_coeffs.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch150_walk_before_walk_fit_expected_refit_coeffs.csv",
+        "sha256": "643ef4a4cf67938d70ab6c18524e0dc0f2e31fd3454fdd3696bc66f26f669062"
+      }
+    ]
+  }
+]
