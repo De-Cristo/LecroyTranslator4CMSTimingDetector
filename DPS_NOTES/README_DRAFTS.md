@@ -73,6 +73,13 @@ subtraction and LOWESS path. Slides 7-9 no longer carry its review comments;
 slide 9 shows the explicit minus sign and code references. No physics results
 or analysis code were changed.
 
+N1-4 investigation: `review_2026-10-21_reference_comparison/` compares the four
+saved reference shapes and controlled binning/weighting changes. The shape
+differences are 1.65-4.88 ps RMS after offset alignment on joint support.
+The legacy profiles reconstruct from the raw-channel-192 `walk_before`
+samples; the newer reference uses the expected trigger time. N1-4 remains
+open, and this investigation has not replaced either note's reference curves.
+
 ## Edit and rebuild
 
 Edit each note's `main.tex` and `metadata.tex`. Shared layout and cover source:
