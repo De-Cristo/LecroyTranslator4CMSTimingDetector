@@ -6,7 +6,8 @@ copies of those inputs and the four-channel coefficient table.
 
 This draft preserves the legacy four-channel reference functions and adds the
 four clock-corrected references used in Note2. Both versions are explicitly
-identified. See open review items N1-5 and N1-6 before any public release.
+identified. N1-5 is closed for the conditional timing-validation scope of this
+version. N1-6 remains open before any public release.
 
 N1-1 is resolved: the author confirmed validation of the MCP waveform and
 intrinsic-reference timing results. The review questions and provenance
@@ -58,8 +59,16 @@ and after channel-wise walk correction, with both ends inside measured support.
 They report Gaussian-core widths, conditional block-bootstrap intervals,
 full-sample SD and outside-window fractions. Historical timing images move to
 backup. No intrinsic 26 ps bar resolution or quadrature-derived synchronization
-jitter is claimed. N1-5 remains open for position, covariance, residual segment
-offsets and calibration systematics. See `../review_2026-10-22_clock_quality/`.
+jitter is claimed. See `../review_2026-10-22_clock_quality/`.
+
+N1-5 is closed at the author's request on 22 October 2026 for this version.
+The accepted claim is the same-event bar--MCP core-width improvement from
+77.69 to 64.16 ps with explicitly conditional statistical intervals. The review
+comment and queue entry are removed. Intrinsic bar resolution and separate
+synchronization-jitter extraction are outside this version's scope; position,
+covariance, residual segment offsets and calibration systematics are not
+included in the quoted intervals. This closure does not validate those broader
+claims or close any Note2 review item. No data, fit, selection or figure changed.
 
 The standalone source archive compiles with pdfLaTeX. Within the repository,
 use the shared builder described in `../README_DRAFTS.md`. No CMS DP identifier

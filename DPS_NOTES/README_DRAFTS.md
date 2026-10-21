@@ -45,8 +45,9 @@ versions, selections and uncertainties have already been reconciled.
 2. N2-2: freeze run configurations, time decoding and numerical cuts.
 3. N1-3 is closed: the note now explicitly follows the code's minus-sign convention.
 4. N2-3 / N2-4: assess slope-model adequacy, matching objective and uncertainties.
-5. N1-5: bar timing widths reproduced; position, covariance and calibration
-   systematics remain open. N2-5 concerns shape closure versus event resolution.
+5. N1-5 is closed for this version: same-event timing validation with conditional
+   statistical intervals. Intrinsic bar resolution and synchronization-jitter
+   extraction are outside scope. N2-5 remains a separate review item.
 6. N2-6: define channel eligibility independently of the observed summary trend.
 7. N2-7: decide whether internal prediction belongs in the main result.
 8. N1-6: bibliography, official template, metadata and release packaging.
@@ -97,8 +98,13 @@ validation. Missing timestamps no longer hide resets; a clock-only 1 ns
 scaled-MAD group threshold rejects gross failures without shifting MCP rows.
 All 22 reference functions and their overlap-only AWC comparisons are refreshed
 in `Q_Walk/results/2026-10-22_clock_quality/`. Both notes use that version.
-Historical outputs are unchanged. N1-5 is not fully closed: intrinsic-resolution
-and synchronization-jitter claims require additional physical/systematic input.
+Historical outputs are unchanged. The author subsequently closed N1-5 for this
+version under the narrower timing-validation claim: the same-event bar--MCP
+core width improves from 77.69 to 64.16 ps, with explicitly conditional
+statistical intervals. Its slide comment and review-queue entry are removed.
+Intrinsic-resolution and synchronization-jitter extraction are outside scope;
+the existing position, covariance, segment-offset and calibration-systematic
+limitations remain explicit. This closure changes no numerical results.
 
 ## Edit and rebuild
 

@@ -13,6 +13,10 @@ RESULTS = ROOT / "Q_Walk/results/2026-10-22_clock_quality"
 
 
 def main():
+    note_source = (ROOT / "DPS_NOTES/note1_mcp_reference/main.tex").read_text()
+    assert r"\Review{N1-5}" not in note_source
+    assert "N1-5 &" not in note_source
+    assert "outside its scope" in note_source
     hashes = json.loads((RESULTS / "input_sha256.json").read_text())
     for name, digest in hashes.items():
         assert hashlib.sha256((RESULTS / name).read_bytes()).hexdigest() == digest, name
@@ -63,7 +67,7 @@ def main():
                   bar8_events=len(events), combined_pages=len(writer.pages), builds=builds,
                   combined_sha256=hashlib.sha256(destination.read_bytes()).hexdigest(),
                   test_results="140 focused tests and 25 integration tests passed; 1 optional integration test skipped",
-                  review_status="N1-5 implemented; intrinsic-resolution systematics remain open")
+                  review_status="N1-5 closed by author for conditional timing-validation scope; intrinsic bar resolution and synchronization-jitter extraction excluded")
     (OUT / "verification.json").write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))
 

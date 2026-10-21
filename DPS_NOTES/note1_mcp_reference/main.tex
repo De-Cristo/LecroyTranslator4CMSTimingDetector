@@ -312,9 +312,10 @@ inferring detector covariance directly from the measured reference residuals.
 
 The two separately fitted core widths are not variances of a common model.
 Their quadrature difference is not a justified synchronization-jitter estimate.
-\Review{N1-5}{Widths and conditional statistical intervals are reproduced.
-Position, covariance, segment-offset and calibration-systematic contributions
-remain to be established before an intrinsic-resolution claim.}
+This version reports same-event timing validation with conditional statistical
+intervals. Intrinsic bar resolution and synchronization-jitter extraction are
+outside its scope. Position, covariance, segment-offset and calibration
+systematics are not included in the quoted intervals.
 \end{frame}
 
 \begin{frame}{Reference-calibration result and scope}
@@ -333,8 +334,9 @@ synchronization are different performance quantities.
 samples; a constant time offset is not a walk-shape difference.
 \end{itemize}
 \medskip
-The present evidence supports the calibration workflow. Final precision
-claims require a frozen selection and complete statistical/systematic treatment.
+For the same selected events, walk correction reduces the bar--MCP core width
+from \RBefore{} to \RAfter\,ps. This is a conditional timing-validation result,
+not an intrinsic-resolution measurement or a complete uncertainty budget.
 \end{frame}
 
 \begin{frame}{Review queue before publication}
@@ -343,7 +345,6 @@ claims require a frozen selection and complete statistical/systematic treatment.
 \toprule
 ID & Decision or missing evidence\\
 \midrule
-N1-5 & Widths reproduced; establish position, covariance, segment-offset and calibration systematics.\\
 N1-6 & Verify citations, official template/DP metadata and final publication packaging.\\
 \bottomrule
 \end{tabular}\par

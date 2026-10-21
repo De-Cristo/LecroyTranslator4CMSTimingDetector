@@ -1,7 +1,10 @@
 # N1-5 implementation and validation, 22 October 2026
 
 The accepted modifications replace historical timing claims with reproducible
-same-event comparisons. N1-5 remains open for intrinsic-resolution systematics.
+same-event comparisons. N1-5 is closed by author decision for this version's
+conditional timing-validation scope. Intrinsic bar resolution and separate
+synchronization-jitter extraction are outside scope; their unresolved physical
+and systematic inputs have not been validated by this closure.
 
 ## Production changes
 

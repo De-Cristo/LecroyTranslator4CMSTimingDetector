@@ -6,7 +6,7 @@
     "N1-2": "comments replaced with verified current code locations",
     "N1-3": "closed 2026-10-21: explicit minus-sign formula and single LOWESS contribution verified against code; documentation only",
     "N1-4": "closed 2026-10-21: author requested adding clock-corrected results to Note1; exact Note2 references shown alongside archived fits, with selections and shape comparison; no fit changes",
-    "N1-5": "22 October 2026: accepted clock-quality fixes implemented; 22 references and 21 AWC comparisons refreshed; same-event timing widths and conditional intervals reproduced; intrinsic-resolution systematics remain open"
+    "N1-5": "Closed by author on 22 October 2026 for this version: same-event conditional timing validation only; intrinsic bar resolution and synchronization-jitter extraction outside scope. Review comment and queue entry removed; physical limitations retained; no numerical changes."
   },
   "files": [
     {
@@ -16,8 +16,8 @@
     },
     {
       "path": "DPS_NOTES/README_DRAFTS.md",
-      "sha256": "79befedfeaec2729621304145ccc4f78e8fd563553afefdca360622a065b8f6b",
-      "bytes": 7439
+      "sha256": "9503cc5aa88e55d0f71064a6fe6f78eb8bd1f9fa6e0294668e871a0d5f0011ae",
+      "bytes": 7882
     },
     {
       "path": "DPS_NOTES/REPOSITORY_WORKFLOW.md",
@@ -26,8 +26,8 @@
     },
     {
       "path": "DPS_NOTES/both_notes_review_v1.pdf",
-      "sha256": "5cc30cdadee6adb8de8af3bb9b17a62bbd1bb14dc72488cf7f95c1c3a7b4349a",
-      "bytes": 6597582
+      "sha256": "332a9a63b7efeb218ff44b8848ded612a8df8803b805b18d24d41d8449d5477e",
+      "bytes": 6597502
     },
     {
       "path": "DPS_NOTES/cms_dp_note_template/CMSlogo_black_label_1024.png",
@@ -96,8 +96,8 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/README.md",
-      "sha256": "06569f20a8342aa81db84e9c60513a552fa058e5c361ae046780903d1e83acaf",
-      "bytes": 4151
+      "sha256": "81d66643ee11852a45526042370e069746a07a3c78bf4544a58cb3c358301a62",
+      "bytes": 4729
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/build_report.json",
@@ -106,7 +106,7 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/cover.pdf",
-      "sha256": "8d7b1d1c5dca8173d940932e1d7ffbb43afe8c238b89cca7f3a002b4e9ac1499",
+      "sha256": "c243a3c856b5d46e9dd9d9950ed547e075ce8ef14e7435e0879b4e527ee0214d",
       "bytes": 949770
     },
     {
@@ -436,8 +436,8 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/main.tex",
-      "sha256": "f5dc19fd2b9724833f8e20948600c1b406f25287c2fe5fd8783db1a5af027a55",
-      "bytes": 20049
+      "sha256": "756f0acbce23170df960845c2e92c01e45f31f4ce66a9c6e0afb3e230378c518",
+      "bytes": 20090
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/metadata.tex",
@@ -446,8 +446,8 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/note_with_cover.pdf",
-      "sha256": "921ba958da21f474d16ab162dff9f2f322a322864ff3b1a42f7e0a9f9a684066",
-      "bytes": 4608987
+      "sha256": "26275c5ebbcf3431f2790e074922a5987bcd9cf9a2967211d38ce752bedd1de4",
+      "bytes": 4608907
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/review_values.tex",
@@ -456,8 +456,8 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/slides.pdf",
-      "sha256": "4c9eb8a006c11e363dabf65d70e61ea3a87a40b1052542fd4608234540370135",
-      "bytes": 3575206
+      "sha256": "2534bf2ecd0276685ea0f07797110a9284f9061abfd9b7c73ca0e9033e95050f",
+      "bytes": 3575092
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/slides_preamble.tex",
@@ -1286,8 +1286,8 @@
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_clock_quality/README.md",
-      "sha256": "994b532ac0297ab33d6bafdea206d2d62f694eca150ae80c014731c97451d007",
-      "bytes": 4396
+      "sha256": "0af28e08cb182721976e25e6b0b5087532a843ccf16a586aa5dae78034e30005",
+      "bytes": 4610
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_clock_quality/all_events_selection.csv.gz",
@@ -1636,13 +1636,13 @@
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_clock_quality/verification.json",
-      "sha256": "80d8eb1e116b8b9bc0bfdda12b4f99692d38cf19df5f639b7d0201b613ce4b24",
-      "bytes": 1292
+      "sha256": "382589f8a079d95b82a10b140de4ec55c548f287b6f7e69594da84ff0135af4e",
+      "bytes": 1364
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_clock_quality/verify.py",
-      "sha256": "94a01f287eb881a423dead350283276c0e4b1d913aabbf0d00ce27ba7d57fab9",
-      "bytes": 3811
+      "sha256": "0ffd2b05a0b6f83bbc7eb4ff856c43fdf2cfd1cc8bbc757d2a401861fb6059ac",
+      "bytes": 4095
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -3197,6 +3197,7 @@
     "focused_tests_passed": 140,
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
-    "unrelated_docs_preserved": true
+    "unrelated_docs_preserved": true,
+    "latest_change": "N1-5 scope closure: Note1 rebuilt without overflow, slides visually inspected, combined PDF verified; numerical inputs, figures and analysis code unchanged; previous tests reused."
   }
 }
