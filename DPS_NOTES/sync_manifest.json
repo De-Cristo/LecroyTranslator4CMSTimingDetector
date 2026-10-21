@@ -4,7 +4,8 @@
   "review_status": {
     "N1-1": "author validated; comments removed",
     "N1-2": "comments replaced with verified current code locations",
-    "N1-3": "closed 2026-10-21: explicit minus-sign formula and single LOWESS contribution verified against code; documentation only"
+    "N1-3": "closed 2026-10-21: explicit minus-sign formula and single LOWESS contribution verified against code; documentation only",
+    "N1-4": "open: numerical comparison saved 2026-10-21; shapes close, but legacy raw channel-192 versus updated expected-trigger reconstruction differs; no reference replacement agreed"
   },
   "files": [
     {
@@ -14,8 +15,8 @@
     },
     {
       "path": "DPS_NOTES/README_DRAFTS.md",
-      "sha256": "6b4c792662eaa70726bbba6a63e849a8747571cc5cc20e05463dd228951c53e1",
-      "bytes": 5500
+      "sha256": "6b1d045744c14bc4d4036dde21637a85e9e57451468a33e1f731ba9ae0a3df56",
+      "bytes": 5953
     },
     {
       "path": "DPS_NOTES/REPOSITORY_WORKFLOW.md",
@@ -566,6 +567,221 @@
       "path": "DPS_NOTES/review_2026-10-20/writing_plan.md",
       "sha256": "90a1ef469aea109480af3b8ac3dac99511d6d8dcde585792531d955c797de802",
       "bytes": 12417
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/README.md",
+      "sha256": "b92536b8c3d74e0a9e671dd141b2db65d3d768aa570331f10939e79ca2df8d8c",
+      "bytes": 5899
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/channel_133_comparison.png",
+      "sha256": "704adfbb6176dd961ff2568b39a2b44a813a6eef7a608abc6aab0f9f00ac0326",
+      "bytes": 145861
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/channel_133_curves.csv",
+      "sha256": "53ccec861196322a6f8bd45e2fd0616e5c2ee44f70173ae1219b2f7e69228080",
+      "bytes": 1995913
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/channel_133_details.json",
+      "sha256": "b2f7b2197fff99a76301b1c93e9dcd137bdce3e0d6e7cdf3060dc1e820508e1e",
+      "bytes": 1293
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/channel_137_comparison.png",
+      "sha256": "0f62ccca176a1fa1de58bf17da6848fa5314ecb4bf2a84d4efb3e1cb15852abd",
+      "bytes": 154899
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/channel_137_curves.csv",
+      "sha256": "2441d15b4368fc83829ea71f93e324f87a9645746c194f596ccb8af53ce7cd72",
+      "bytes": 1989592
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/channel_137_details.json",
+      "sha256": "9c5bb619330f6d795d42229fafafba2a29affcb80c6d7ac445d92885651160e5",
+      "bytes": 1296
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/channel_150_comparison.png",
+      "sha256": "2021e985c5241e1f7750291006cc33be12e4840432482ddd5376ea42a10a434e",
+      "bytes": 158477
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/channel_150_curves.csv",
+      "sha256": "d92fa962db6c74a69e4f27d226c4d3d41814db45b518f530098be99b7cdbf078",
+      "bytes": 2002673
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/channel_150_details.json",
+      "sha256": "6f0ca27847fc7b882122ec6024d72e6077c02360d3cd2620a3eab41b984ae411",
+      "bytes": 1291
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/channel_154_comparison.png",
+      "sha256": "4e4d13150a25e536fa69fb0c7edf4e75a02daef809e003fd2bcfd78d17e39735",
+      "bytes": 153457
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/channel_154_curves.csv",
+      "sha256": "d89c5327bafb2a684b70b7ff4eff699964f36f25b58585741e1e4b1430cca223",
+      "bytes": 2029251
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/channel_154_details.json",
+      "sha256": "e36f52eebe835373ac774196a39baf9fd5b348b7d1435d596f238cb51b8b4690",
+      "bytes": 1286
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/compare.py",
+      "sha256": "ad8122fceb9fef1f5ad035fdaabf38964e40850608516123b41e7ab2df3c537f",
+      "bytes": 8899
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/input_manifest.json",
+      "sha256": "f0d8eb8fb781e69c64754236794facbd45b546efcc85ea10c130bd19ab2f42cd",
+      "bytes": 8073
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/Q_Walk/qwalk_downstream_t0_reference.py",
+      "sha256": "6f7ae849b8be3bf678a1672724c5b842dfac5c0cdb30d963d3d520e4b8b200af",
+      "bytes": 8991
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/Q_Walk/qwalk_extended_t0_reference.py",
+      "sha256": "53c1a6f906224d8d5889d5ec3104caae1e5116de5f44f49ca176afc7355a2713",
+      "bytes": 12275
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/Q_Walk/qwalk_t0_data.py",
+      "sha256": "5ef8904aca3a18421e993fa3dc150c37e513699357116fa0d1af94addeb077db",
+      "bytes": 23078
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/Q_Walk/qwalk_t0_models.py",
+      "sha256": "e5908c1c4e11a97cf12fef21666de470bfe31f61d43979f6535b59db53eda675",
+      "bytes": 74473
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch133_walk_before_walk_fit_expected_refit_coeffs.csv",
+      "sha256": "be9aa0b65f80c6b60df85153194b1307a02b3c3596b7bc60a625c9f946a61a5a",
+      "bytes": 152
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch133_walk_before_walk_fit_expected_refit_profile.csv",
+      "sha256": "87478ad912d4d7b4c3fd6f448afe5d6262bf52d7b6d0f8aeffda8ff76ff2d600",
+      "bytes": 1735
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch154_walk_before_walk_fit_expected_refit_coeffs.csv",
+      "sha256": "a3f40a19f7a3362d365f05022e574a2c17809d817b2bcd9f9f3160f52891441e",
+      "bytes": 152
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch154_walk_before_walk_fit_expected_refit_profile.csv",
+      "sha256": "970dc0e87fa171416f66569bf509b6f17f9a16c12efd10447d9fdb210c6548fe",
+      "bytes": 1369
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch137_walk_before_walk_fit_expected_refit_coeffs.csv",
+      "sha256": "e1d10cf2f90f3141393c6f6aeac5f625425ad07ab19d406a18bd495f75fbb8a4",
+      "bytes": 150
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch137_walk_before_walk_fit_expected_refit_profile.csv",
+      "sha256": "eb081c1156945577baa6c2a43b0757fd125aa0faafeabb953a9684fe249874d0",
+      "bytes": 3197
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch150_walk_before_walk_fit_expected_refit_coeffs.csv",
+      "sha256": "643ef4a4cf67938d70ab6c18524e0dc0f2e31fd3454fdd3696bc66f26f669062",
+      "bytes": 149
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch150_walk_before_walk_fit_expected_refit_profile.csv",
+      "sha256": "6d7f2f653d0928a2f3f853c149524f9819b5bbf3d69c63e6c1d1ed72897122ca",
+      "bytes": 1717
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_133/run4399_upstream_bar7_ch133_t0_quadratic.json",
+      "sha256": "b28f1b88e7b3dac53fa43b10ecf105948fa6aa8948db0d9bcc2c39fbd24f1588",
+      "bytes": 1239
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_133/run4399_upstream_bar7_ch133_t0_quadratic_profile.csv",
+      "sha256": "a194efb23e0f34a366d53fb56141d47d8fa4154c93ed565ac504a69a0afc57c1",
+      "bytes": 7310
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_137/run4399_upstream_bar8_ch137_t0_quadratic.json",
+      "sha256": "0dc04655cfd5fb7b253013d29d5c63906d4b57c232d9f54eb7911b156aee2986",
+      "bytes": 1244
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_137/run4399_upstream_bar8_ch137_t0_quadratic_profile.csv",
+      "sha256": "8897fafc937543cb5001ec16274520e1e7b11d515624ee72c1440fd200e6abcd",
+      "bytes": 7698
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_150/run4399_upstream_bar8_ch150_t0_quadratic.json",
+      "sha256": "486c401c8b455264942c7288fdf1c424d9df626a1b355fd8b5e7f57e3b8ab509",
+      "bytes": 1243
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_150/run4399_upstream_bar8_ch150_t0_quadratic_profile.csv",
+      "sha256": "b09819dde668c6baa3e5ca97312b72c0c787b331efb0b2b16022574299b24e52",
+      "bytes": 7376
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_154/run4399_upstream_bar7_ch154_t0_quadratic.json",
+      "sha256": "d295d9e23b810c2bc2de2b61c7009caadf31c07c479f4851ac8ab11f37aee4ab",
+      "bytes": 1232
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_154/run4399_upstream_bar7_ch154_t0_quadratic_profile.csv",
+      "sha256": "204c22bf81a9edee8d1e616b31250870cb7c65e2b092181ad88ce1dd5770b139",
+      "bytes": 7331
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/TimeCalibration/ch192_vs_trigger_lowess.py",
+      "sha256": "3e186bbebd88e0359da3871a215a3aa8c5daf5d3521c8f2491fdb35f21cdb317",
+      "bytes": 52588
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/TimeCalibration/walk_fit_from_csv.py",
+      "sha256": "2982c0d06c8e4c3500537f8bc1c8ce0f536218d65a9a50457a6df8bf1b287ac2",
+      "bytes": 8397
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/archieved/ch192_vs_trig_lowess_bar7_ch133_walk_before_walk_fit_data.csv",
+      "sha256": "acef868972c006592f575a2a6317579aed3d2d88bd17148d27206b39671846e2",
+      "bytes": 84595
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/archieved/ch192_vs_trig_lowess_bar7_ch154_walk_before_walk_fit_data.csv",
+      "sha256": "b7500da9864df22b14046c228ba7000c1a30d70b25fe1c2076f08ed4b0eca6f3",
+      "bytes": 85350
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/archieved/ch192_vs_trig_lowess_bar8_ch137_walk_before_walk_fit_data.csv",
+      "sha256": "adaf1ec96ed755d22d495ce09edc92639a745c4a424e367d7b5ae5cf83428c0b",
+      "bytes": 399894
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/inputs/archieved/ch192_vs_trig_lowess_bar8_ch150_walk_before_walk_fit_data.csv",
+      "sha256": "178744f5970e0a1810e4a17f1a60aabda6a828b456fb1a4b65167f0d920308e5",
+      "bytes": 404988
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/reference_comparison.pdf",
+      "sha256": "ffdc3e84786240814a38cd8a5eb92af45ff44d460593b205d302ad4a54d8be31",
+      "bytes": 764232
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-21_reference_comparison/summary.csv",
+      "sha256": "d3dd7008a9796ac673abfdb2e7b3f7dcf8150abc08be85d5429285504bf1f165",
+      "bytes": 1436
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
