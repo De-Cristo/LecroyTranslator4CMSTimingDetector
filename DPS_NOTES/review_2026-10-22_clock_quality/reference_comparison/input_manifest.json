@@ -1,0 +1,132 @@
+[
+  {
+    "original": "TimeCalibration/walk_fit_from_csv.py",
+    "snapshot": "inputs/TimeCalibration/walk_fit_from_csv.py",
+    "sha256": "2982c0d06c8e4c3500537f8bc1c8ce0f536218d65a9a50457a6df8bf1b287ac2"
+  },
+  {
+    "original": "TimeCalibration/ch192_vs_trigger_lowess.py",
+    "snapshot": "inputs/TimeCalibration/ch192_vs_trigger_lowess.py",
+    "sha256": "3e186bbebd88e0359da3871a215a3aa8c5daf5d3521c8f2491fdb35f21cdb317"
+  },
+  {
+    "original": "Q_Walk/qwalk_extended_t0_reference.py",
+    "snapshot": "inputs/Q_Walk/qwalk_extended_t0_reference.py",
+    "sha256": "eaebb69d62479b5b896d9d320ddc36775770ee9d496de5cb0221be7ecf9486bd"
+  },
+  {
+    "original": "Q_Walk/qwalk_downstream_t0_reference.py",
+    "snapshot": "inputs/Q_Walk/qwalk_downstream_t0_reference.py",
+    "sha256": "6f7ae849b8be3bf678a1672724c5b842dfac5c0cdb30d963d3d520e4b8b200af"
+  },
+  {
+    "original": "Q_Walk/qwalk_t0_data.py",
+    "snapshot": "inputs/Q_Walk/qwalk_t0_data.py",
+    "sha256": "70c5cb4d123979a45966a663b5a1da0f7096f43edf22bb8946525b6e41499672"
+  },
+  {
+    "original": "Q_Walk/qwalk_t0_models.py",
+    "snapshot": "inputs/Q_Walk/qwalk_t0_models.py",
+    "sha256": "e5908c1c4e11a97cf12fef21666de470bfe31f61d43979f6535b59db53eda675"
+  },
+  {
+    "original": "Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch133_walk_before_walk_fit_expected_refit_profile.csv",
+    "snapshot": "inputs/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch133_walk_before_walk_fit_expected_refit_profile.csv",
+    "sha256": "87478ad912d4d7b4c3fd6f448afe5d6262bf52d7b6d0f8aeffda8ff76ff2d600"
+  },
+  {
+    "original": "Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch133_walk_before_walk_fit_expected_refit_coeffs.csv",
+    "snapshot": "inputs/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch133_walk_before_walk_fit_expected_refit_coeffs.csv",
+    "sha256": "be9aa0b65f80c6b60df85153194b1307a02b3c3596b7bc60a625c9f946a61a5a"
+  },
+  {
+    "original": "Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar7_ch133_t0_quadratic.json",
+    "snapshot": "inputs/Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar7_ch133_t0_quadratic.json",
+    "sha256": "c34a17b52b934fe24d4d2cb48051e2ab4ef695408b39599182dc77b766070e52"
+  },
+  {
+    "original": "Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar7_ch133_t0_quadratic_profile.csv",
+    "snapshot": "inputs/Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar7_ch133_t0_quadratic_profile.csv",
+    "sha256": "c68f3ead6c35f615ef5c76da0907d295fa20201c731ef28fece7731dce4611d5"
+  },
+  {
+    "original": "archieved/ch192_vs_trig_lowess_bar7_ch133_walk_before_walk_fit_data.csv",
+    "snapshot": "inputs/archieved/ch192_vs_trig_lowess_bar7_ch133_walk_before_walk_fit_data.csv",
+    "sha256": "acef868972c006592f575a2a6317579aed3d2d88bd17148d27206b39671846e2"
+  },
+  {
+    "original": "Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch154_walk_before_walk_fit_expected_refit_profile.csv",
+    "snapshot": "inputs/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch154_walk_before_walk_fit_expected_refit_profile.csv",
+    "sha256": "970dc0e87fa171416f66569bf509b6f17f9a16c12efd10447d9fdb210c6548fe"
+  },
+  {
+    "original": "Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch154_walk_before_walk_fit_expected_refit_coeffs.csv",
+    "snapshot": "inputs/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch154_walk_before_walk_fit_expected_refit_coeffs.csv",
+    "sha256": "a3f40a19f7a3362d365f05022e574a2c17809d817b2bcd9f9f3160f52891441e"
+  },
+  {
+    "original": "Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar7_ch154_t0_quadratic.json",
+    "snapshot": "inputs/Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar7_ch154_t0_quadratic.json",
+    "sha256": "49a9040c97b5b66d8843efe55ef41833d117f28a49d27d1fd920cda908c895fa"
+  },
+  {
+    "original": "Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar7_ch154_t0_quadratic_profile.csv",
+    "snapshot": "inputs/Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar7_ch154_t0_quadratic_profile.csv",
+    "sha256": "c1d9b097bcaa3a0f8d27d513aa167b139cede32cb18c96ef9b18e1da4bc8902c"
+  },
+  {
+    "original": "archieved/ch192_vs_trig_lowess_bar7_ch154_walk_before_walk_fit_data.csv",
+    "snapshot": "inputs/archieved/ch192_vs_trig_lowess_bar7_ch154_walk_before_walk_fit_data.csv",
+    "sha256": "b7500da9864df22b14046c228ba7000c1a30d70b25fe1c2076f08ed4b0eca6f3"
+  },
+  {
+    "original": "Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch137_walk_before_walk_fit_expected_refit_profile.csv",
+    "snapshot": "inputs/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch137_walk_before_walk_fit_expected_refit_profile.csv",
+    "sha256": "eb081c1156945577baa6c2a43b0757fd125aa0faafeabb953a9684fe249874d0"
+  },
+  {
+    "original": "Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch137_walk_before_walk_fit_expected_refit_coeffs.csv",
+    "snapshot": "inputs/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch137_walk_before_walk_fit_expected_refit_coeffs.csv",
+    "sha256": "e1d10cf2f90f3141393c6f6aeac5f625425ad07ab19d406a18bd495f75fbb8a4"
+  },
+  {
+    "original": "Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar8_ch137_t0_quadratic.json",
+    "snapshot": "inputs/Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar8_ch137_t0_quadratic.json",
+    "sha256": "a4f78241af2d9bd8e66cf77a5965dbe7c159a39a36720a0796c3f7f4fc21ed19"
+  },
+  {
+    "original": "Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar8_ch137_t0_quadratic_profile.csv",
+    "snapshot": "inputs/Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar8_ch137_t0_quadratic_profile.csv",
+    "sha256": "cda2951e346e91013de8f7a2c5ad7a037337672221477d6789bc2f0cf8595def"
+  },
+  {
+    "original": "archieved/ch192_vs_trig_lowess_bar8_ch137_walk_before_walk_fit_data.csv",
+    "snapshot": "inputs/archieved/ch192_vs_trig_lowess_bar8_ch137_walk_before_walk_fit_data.csv",
+    "sha256": "adaf1ec96ed755d22d495ce09edc92639a745c4a424e367d7b5ae5cf83428c0b"
+  },
+  {
+    "original": "Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch150_walk_before_walk_fit_expected_refit_profile.csv",
+    "snapshot": "inputs/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch150_walk_before_walk_fit_expected_refit_profile.csv",
+    "sha256": "6d7f2f653d0928a2f3f853c149524f9819b5bbf3d69c63e6c1d1ed72897122ca"
+  },
+  {
+    "original": "Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch150_walk_before_walk_fit_expected_refit_coeffs.csv",
+    "snapshot": "inputs/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch150_walk_before_walk_fit_expected_refit_coeffs.csv",
+    "sha256": "643ef4a4cf67938d70ab6c18524e0dc0f2e31fd3454fdd3696bc66f26f669062"
+  },
+  {
+    "original": "Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar8_ch150_t0_quadratic.json",
+    "snapshot": "inputs/Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar8_ch150_t0_quadratic.json",
+    "sha256": "05102a9f83b9b866c9f38b78b98d68c5ed0bdbc713327ebc0e524dbeab9bfeb3"
+  },
+  {
+    "original": "Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar8_ch150_t0_quadratic_profile.csv",
+    "snapshot": "inputs/Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar8_ch150_t0_quadratic_profile.csv",
+    "sha256": "41170e423ac6ea570dcfafbe2d2fbecd4fb71e52fd8b375309b0caaa1421029e"
+  },
+  {
+    "original": "archieved/ch192_vs_trig_lowess_bar8_ch150_walk_before_walk_fit_data.csv",
+    "snapshot": "inputs/archieved/ch192_vs_trig_lowess_bar8_ch150_walk_before_walk_fit_data.csv",
+    "sha256": "178744f5970e0a1810e4a17f1a60aabda6a828b456fb1a4b65167f0d920308e5"
+  }
+]

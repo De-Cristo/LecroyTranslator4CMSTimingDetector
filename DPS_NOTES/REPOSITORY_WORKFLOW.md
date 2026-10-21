@@ -52,6 +52,13 @@ uses analysis-tree paths from the working `sandbox_test` environment; the full
 ROOT datasets and complete Q_Walk analysis tree are not part of this note upload.
 Do not describe this synchronization as reproducing the original event analysis.
 
+The 22 October clock-quality update also includes the changed Q_Walk ingestion
+and reference runner, their local module dependencies and focused tests, plus
+the refreshed numerical reference/closure artifacts. Extraction caches and
+ROOT inputs remain local. Full event regeneration still requires the documented
+EOS inputs and analysis environment. Numerical snapshots permit verification of
+the displayed results without those ROOT files.
+
 The current notes remain marked as review drafts. Publishing them in the
 repository does not remove any unresolved scientific review item or imply CMS
 approval.

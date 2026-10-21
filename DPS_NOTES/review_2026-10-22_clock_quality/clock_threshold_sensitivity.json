@@ -1,0 +1,18 @@
+{
+  "1000": {
+    "retained_groups": 174,
+    "retained_events": 12094
+  },
+  "10000": {
+    "retained_groups": 174,
+    "retained_events": 12094
+  },
+  "100000": {
+    "retained_groups": 174,
+    "retained_events": 12094
+  },
+  "1000000": {
+    "retained_groups": 174,
+    "retained_events": 12094
+  }
+}

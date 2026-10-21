@@ -1,0 +1,302 @@
+[
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_1_e.root",
+    "size_bytes": 56264371,
+    "mtime_ns": 1777737452577231689
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_2_e.root",
+    "size_bytes": 56006645,
+    "mtime_ns": 1777737461204870074
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_3_e.root",
+    "size_bytes": 55970551,
+    "mtime_ns": 1777737469145085649
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_4_e.root",
+    "size_bytes": 55571624,
+    "mtime_ns": 1777737477593754772
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_5_e.root",
+    "size_bytes": 55947180,
+    "mtime_ns": 1777737484772543635
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_6_e.root",
+    "size_bytes": 56421212,
+    "mtime_ns": 1777737486329879276
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_7_e.root",
+    "size_bytes": 56375142,
+    "mtime_ns": 1777737486965982454
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_8_e.root",
+    "size_bytes": 57273876,
+    "mtime_ns": 1777737488098778793
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_9_e.root",
+    "size_bytes": 56773521,
+    "mtime_ns": 1777737488645739005
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_10_e.root",
+    "size_bytes": 56642814,
+    "mtime_ns": 1777737442182653060
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_11_e.root",
+    "size_bytes": 56754252,
+    "mtime_ns": 1777737442851246540
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_12_e.root",
+    "size_bytes": 56830470,
+    "mtime_ns": 1777737443417065803
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_13_e.root",
+    "size_bytes": 56027115,
+    "mtime_ns": 1777737443968784729
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_14_e.root",
+    "size_bytes": 56188127,
+    "mtime_ns": 1777737444624204896
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_15_e.root",
+    "size_bytes": 56076824,
+    "mtime_ns": 1777737445632885744
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_16_e.root",
+    "size_bytes": 55678934,
+    "mtime_ns": 1777737449109398735
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_17_e.root",
+    "size_bytes": 56037266,
+    "mtime_ns": 1777737449601301237
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_18_e.root",
+    "size_bytes": 56788770,
+    "mtime_ns": 1777737450219674035
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_19_e.root",
+    "size_bytes": 53151286,
+    "mtime_ns": 1777737451664736987
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_20_e.root",
+    "size_bytes": 56424757,
+    "mtime_ns": 1777737453480469628
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_21_e.root",
+    "size_bytes": 56291555,
+    "mtime_ns": 1777737454062354376
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_22_e.root",
+    "size_bytes": 57279531,
+    "mtime_ns": 1777737454761661462
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_23_e.root",
+    "size_bytes": 55948540,
+    "mtime_ns": 1777737455819921259
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_24_e.root",
+    "size_bytes": 55786881,
+    "mtime_ns": 1777737456449875489
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_25_e.root",
+    "size_bytes": 55988496,
+    "mtime_ns": 1777737457693651616
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_26_e.root",
+    "size_bytes": 56236122,
+    "mtime_ns": 1777737458298906422
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_27_e.root",
+    "size_bytes": 55750420,
+    "mtime_ns": 1777737458936079752
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_28_e.root",
+    "size_bytes": 55804975,
+    "mtime_ns": 1777737459614142375
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_29_e.root",
+    "size_bytes": 56593973,
+    "mtime_ns": 1777737460513007530
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_30_e.root",
+    "size_bytes": 56720870,
+    "mtime_ns": 1777737461737162615
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_31_e.root",
+    "size_bytes": 56590267,
+    "mtime_ns": 1777737462686501156
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_32_e.root",
+    "size_bytes": 56595092,
+    "mtime_ns": 1777737463573419507
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_33_e.root",
+    "size_bytes": 56925535,
+    "mtime_ns": 1777737464113570779
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_34_e.root",
+    "size_bytes": 55662603,
+    "mtime_ns": 1777737464781842329
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_35_e.root",
+    "size_bytes": 56287754,
+    "mtime_ns": 1777737465547609902
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_36_e.root",
+    "size_bytes": 56580898,
+    "mtime_ns": 1777737466369480618
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_37_e.root",
+    "size_bytes": 56288407,
+    "mtime_ns": 1777737467072450449
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_38_e.root",
+    "size_bytes": 57175795,
+    "mtime_ns": 1777737467800308461
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_39_e.root",
+    "size_bytes": 56638834,
+    "mtime_ns": 1777737468594043055
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_40_e.root",
+    "size_bytes": 57147070,
+    "mtime_ns": 1777737469977172308
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_41_e.root",
+    "size_bytes": 57183070,
+    "mtime_ns": 1777737470662591580
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_42_e.root",
+    "size_bytes": 56448008,
+    "mtime_ns": 1777737471294779438
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_43_e.root",
+    "size_bytes": 56377689,
+    "mtime_ns": 1777737472362100406
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_44_e.root",
+    "size_bytes": 56209623,
+    "mtime_ns": 1777737473023014627
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_45_e.root",
+    "size_bytes": 56736104,
+    "mtime_ns": 1777737473696735507
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_46_e.root",
+    "size_bytes": 56793277,
+    "mtime_ns": 1777737474385208646
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_47_e.root",
+    "size_bytes": 55651083,
+    "mtime_ns": 1777737475634284856
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_48_e.root",
+    "size_bytes": 57136253,
+    "mtime_ns": 1777737476464208636
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_49_e.root",
+    "size_bytes": 56370620,
+    "mtime_ns": 1777737476918123159
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_50_e.root",
+    "size_bytes": 56431234,
+    "mtime_ns": 1777737478126605531
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_51_e.root",
+    "size_bytes": 56549500,
+    "mtime_ns": 1777737478864271877
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_52_e.root",
+    "size_bytes": 56551200,
+    "mtime_ns": 1777737479464275554
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_53_e.root",
+    "size_bytes": 56377515,
+    "mtime_ns": 1777737480086860894
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_54_e.root",
+    "size_bytes": 56795403,
+    "mtime_ns": 1777737480613369386
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_55_e.root",
+    "size_bytes": 57127500,
+    "mtime_ns": 1777737481733922976
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_56_e.root",
+    "size_bytes": 56873559,
+    "mtime_ns": 1777737482374592172
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_57_e.root",
+    "size_bytes": 56704489,
+    "mtime_ns": 1777737483099917040
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_58_e.root",
+    "size_bytes": 56546140,
+    "mtime_ns": 1777737483583503233
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_59_e.root",
+    "size_bytes": 56809698,
+    "mtime_ns": 1777737484165955825
+  },
+  {
+    "path": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_60_e.root",
+    "size_bytes": 56574876,
+    "mtime_ns": 1777737485377645590
+  }
+]

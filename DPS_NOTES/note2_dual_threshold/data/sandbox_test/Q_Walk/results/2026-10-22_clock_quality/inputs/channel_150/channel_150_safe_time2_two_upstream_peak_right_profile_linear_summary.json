@@ -1,0 +1,185 @@
+{
+  "input": "/eos/cms/store/group/dpg_mtd/comm_mtd/TB/MTDTB_H8_Sep2025/TOFHIR/reco/4076/23_e.root",
+  "time2_mode": "safe",
+  "target_channel": 150,
+  "required_exact_pair": [
+    137,
+    150
+  ],
+  "event_selection": "exactly two upstream hits, equal to the required pair; non-upstream hits are ignored",
+  "selection_module": "upstream",
+  "pair_channel_hits": 25979,
+  "prompt_channel_hits": 20867,
+  "q_selection": {
+    "definition": "Q >= lower half-maximum boundary of the prompt Q peak",
+    "q_cut_adc": 283.90867671704257,
+    "selected_hits": 19312
+  },
+  "profile": {
+    "bins_requested": 10,
+    "points": [
+      {
+        "q_low_adc": 283.9102783203125,
+        "q_high_adc": 332.9439636230469,
+        "q_mean_adc": 311.1438765808334,
+        "slope_mean_ua_per_ns": 13.131836518774955,
+        "slope_sd_ua_per_ns": 0.880515674519494,
+        "slope_sem_ua_per_ns": 0.01037193605140773,
+        "count": 7207
+      },
+      {
+        "q_low_adc": 332.9439636230469,
+        "q_high_adc": 381.97764892578124,
+        "q_mean_adc": 354.6435458557786,
+        "slope_mean_ua_per_ns": 13.545785098848773,
+        "slope_sd_ua_per_ns": 0.9009454577448641,
+        "slope_sem_ua_per_ns": 0.01109575764339871,
+        "count": 6593
+      },
+      {
+        "q_low_adc": 381.97764892578124,
+        "q_high_adc": 431.01133422851564,
+        "q_mean_adc": 402.9376638026392,
+        "slope_mean_ua_per_ns": 13.973095721159408,
+        "slope_sd_ua_per_ns": 0.951597363942137,
+        "slope_sem_ua_per_ns": 0.017948278819422517,
+        "count": 2811
+      },
+      {
+        "q_low_adc": 431.01133422851564,
+        "q_high_adc": 480.04501953125,
+        "q_mean_adc": 452.3387721794696,
+        "slope_mean_ua_per_ns": 14.317051118814874,
+        "slope_sd_ua_per_ns": 0.9679828872267044,
+        "slope_sem_ua_per_ns": 0.027827551451839044,
+        "count": 1210
+      },
+      {
+        "q_low_adc": 480.04501953125,
+        "q_high_adc": 529.0787048339844,
+        "q_mean_adc": 501.97309585938973,
+        "slope_mean_ua_per_ns": 14.632024653055415,
+        "slope_sd_ua_per_ns": 0.9858673775086054,
+        "slope_sem_ua_per_ns": 0.038259074166501386,
+        "count": 664
+      },
+      {
+        "q_low_adc": 529.0787048339844,
+        "q_high_adc": 578.1123901367188,
+        "q_mean_adc": 552.6701894124349,
+        "slope_mean_ua_per_ns": 14.904710668726274,
+        "slope_sd_ua_per_ns": 1.056119328134478,
+        "slope_sem_ua_per_ns": 0.05153334646843965,
+        "count": 420
+      },
+      {
+        "q_low_adc": 578.1123901367188,
+        "q_high_adc": 627.1460754394532,
+        "q_mean_adc": 600.1399492117075,
+        "slope_mean_ua_per_ns": 15.294340765849807,
+        "slope_sd_ua_per_ns": 1.1096377041770495,
+        "slope_sem_ua_per_ns": 0.07693953153074026,
+        "count": 208
+      },
+      {
+        "q_low_adc": 627.1460754394532,
+        "q_high_adc": 676.1797607421875,
+        "q_mean_adc": 652.7103789513852,
+        "slope_mean_ua_per_ns": 15.539573857061248,
+        "slope_sd_ua_per_ns": 1.2038525604250663,
+        "slope_sem_ua_per_ns": 0.11035698327852222,
+        "count": 119
+      },
+      {
+        "q_low_adc": 676.1797607421875,
+        "q_high_adc": 725.213446044922,
+        "q_mean_adc": 697.8949929514239,
+        "slope_mean_ua_per_ns": 15.992334962630423,
+        "slope_sd_ua_per_ns": 1.299221010788003,
+        "slope_sem_ua_per_ns": 0.16500123337139225,
+        "count": 62
+      },
+      {
+        "q_low_adc": 725.213446044922,
+        "q_high_adc": 774.2471313476562,
+        "q_mean_adc": 739.0888298882378,
+        "slope_mean_ua_per_ns": 16.452981929754163,
+        "slope_sd_ua_per_ns": 1.1962767435600477,
+        "slope_sem_ua_per_ns": 0.2819651325156901,
+        "count": 18
+      }
+    ]
+  },
+  "linear_profile_fit": {
+    "intercept_ua_per_ns": 10.731734633563292,
+    "coefficient_ua_per_ns_per_adc": 0.00784859707924257,
+    "covariance": [
+      [
+        0.0014904418897164569,
+        -4.0172649698434194e-06
+      ],
+      [
+        -4.0172649698434194e-06,
+        1.1150786484606946e-08
+      ]
+    ],
+    "profile_bins_used": 10
+  },
+  "linear_profile_bootstrap": {
+    "replicas": 1000,
+    "seed": 4076,
+    "attempts": 1000,
+    "discarded_replicas": 0,
+    "confidence_level": "central 68 percent",
+    "coefficients_file": "channel_150_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz",
+    "fixed_q_bin_edges_adc": [
+      283.9102783203125,
+      332.9439636230469,
+      381.97764892578124,
+      431.01133422851564,
+      480.04501953125,
+      529.0787048339844,
+      578.1123901367188,
+      627.1460754394532,
+      676.1797607421875,
+      725.213446044922,
+      774.2471313476562
+    ],
+    "intercept_ua_per_ns_percentiles": [
+      10.693503107275488,
+      10.734285800134103,
+      10.772877290309829
+    ],
+    "coefficient_ua_per_ns_per_adc_percentiles": [
+      0.007738846524488068,
+      0.007842566222324598,
+      0.007950451835389094
+    ]
+  },
+  "landau_gauss_fit": {
+    "mpv_q_adc": 316.7937257907715,
+    "landau_width_adc": 25.129385317974023,
+    "gaussian_sigma_adc": 23.57620243906046,
+    "fit_q_low_adc": 245.89662726008862,
+    "fit_q_high_adc": 638.6878049819461,
+    "fit_event_count": 20422,
+    "negative_log_likelihood": 110924.18368863314,
+    "covariance_approx": [
+      [
+        0.16392829836446557,
+        -0.07822799088502035,
+        0.12843923324572187
+      ],
+      [
+        -0.07822799088502033,
+        0.24800028369216595,
+        -0.22470252941543853
+      ],
+      [
+        0.1284392332457219,
+        -0.22470252941543856,
+        0.38244680914283946
+      ]
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "channel": 244,
+  "module": "downstream",
+  "bar": 4,
+  "q4076_min": 342.9998996542951,
+  "q4076_max": 629.6785627092634,
+  "q4399_min": 131.90411085155438,
+  "q4399_max": 359.9891488951023,
+  "overlap_min": 342.9998996542951,
+  "overlap_max": 359.9891488951023,
+  "grid_points": 3000,
+  "excluded_gap_grid_points": 0,
+  "awc_ua": 79.93953147563292,
+  "offset_ns": -31.109084334299872,
+  "awc_p16": 70.32782297921855,
+  "awc_p50": 81.67466231333621,
+  "awc_p84": 98.02907864434835,
+  "rms_ps": 0.04201784888710615,
+  "c1": 0.0012508738602003966,
+  "bootstrap_valid": 1000,
+  "profile4076_points_in_overlap": 1,
+  "profile4399_points_in_overlap": 1
+}

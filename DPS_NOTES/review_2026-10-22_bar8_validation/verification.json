@@ -1,0 +1,18 @@
+{
+  "synthetic_nan_reset_old_labels": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "finite_trigger_labels": [
+    0,
+    0,
+    1,
+    1
+  ],
+  "review_pdf_pages": 6,
+  "all_pages_cms_label": true,
+  "production_modified": false
+}

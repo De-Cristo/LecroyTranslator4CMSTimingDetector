@@ -1,4 +1,5 @@
 \input{slides_preamble.tex}
+\input{review_values.tex}
 \begin{document}
 \OpeningSlides
 
@@ -59,6 +60,53 @@ The central 68\% interval uses the 16th and 84th percentiles of 1000 fits.
 \end{itemize}
 \Review{N2-2}{Use the frozen extended-profile metadata. Do not silently inherit
 newer code defaults. These full-statistics profiles are not train/test splits.}
+\end{frame}
+
+\begin{frame}{Reference version shared with Note 1}
+\small
+The run-4399 MCP functions were refitted on 22 October 2026 after correcting
+segment detection across missing trigger timestamps and excluding invalid
+clock groups. Note 1 documents the timing validation and remaining limitations.
+
+For each topology, file and segment, the scaled MAD of the channel-192
+versus scope-trigger line residuals must not exceed 1\,ns before LOWESS.
+The selection uses clock information, not SiPM timing residuals.
+Suspect event associations are excluded; no MCP rows are shifted.
+
+All AWC-and-offset fits in this note use these refreshed references.
+The run-4076 slope fits, bootstrap replicas and measured-support matching
+definition are unchanged. The charge spectra use the updated reference sample.
+
+AWC intervals still hold the reference fixed. They do not account for
+reference-fit uncertainty, clock-selection uncertainty or cross-run transfer.
+
+{\scriptsize Numerical version: \texttt{Q\_Walk/results/2026-10-22\_clock\_quality}.}
+\end{frame}
+
+\begin{frame}{Sensitivity to the refreshed reference}
+\small
+The run-4076 input is fixed; these changes arise from the reference rerun,
+including its automatically determined charge selection and measured support.
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+Channel & Previous AWC [$\mu$A] & Refreshed AWC [$\mu$A]\\
+\midrule
+137 & 18.513 & 18.332\\
+136 & 27.899 & -4.240\\
+151 & 7.649 & 9.354\\
+\bottomrule
+\end{tabular}
+\end{center}
+Channel 136 has only 210 selected reference hits. Its sign change, and the
+22\% shift for channel 151, expose sensitivity not covered by slope-only errors.
+They are retained in the exploratory summary, not accepted as robust calibrations.
+
+Sparse clock groups retain the existing line-only fallback when fewer than ten
+alignment inliers are available. A small residual scale in such a group does
+not independently validate its event association.
+\Review{N2-6}{Require reference stability and adequate clock statistics before
+defining the final channel-performance sample.}
 \end{frame}
 
 \FigureSlide{Charge spectra define the available comparison sample}{q_spectra_ch137}{
@@ -143,11 +191,11 @@ run-4076 inverse-slope model after fitting AWC and a constant offset.
 Only jointly measured charge support is shown.
 
 The lower panel is the difference between the two curves. Its RMS is
-6.62\,ps; this is not a single-event timing resolution.
+\ExampleRMS\,ps; this is not a single-event timing resolution.
 
 The band varies the run-4076 slope fit while holding the MCP curve fixed.
-}{AWC = 18.513\,$\mu$A; conditional 16--84\% interval
-[18.299, 18.791]\,$\mu$A. Both curves share one display offset.}
+}{AWC = \ExampleAWC\,$\mu$A; conditional 16--84\% interval
+[\ExampleLow, \ExampleHigh]\,$\mu$A. Both curves share one display offset.}
 
 \FigureSlide{Channel 154: a second shape-comparison example}{comparison_ch154}{
 The same overlap-only objective determines AWC and the offset for
@@ -168,7 +216,7 @@ They do not represent discontinuities in either analytic model.
 
 The lower panel uses exactly the same supported points. All displayed
 intervals participate in the common AWC-and-offset fit.
-}{The stored comparison excludes 703 of the 3000 initial grid points
+}{The stored comparison excludes \GapCount{} of the 3000 initial grid points
 for this channel. No line is drawn through those gaps.}
 
 \FigureSlide{Downstream example: channel 242}{comparison_ch242}{
@@ -201,7 +249,7 @@ The ten-channel upstream subset previously selected for discussion is
 shown on linear axes. Bars are conditional AWC bootstrap intervals;
 channel numbers identify the points.
 
-The saved weighted straight line has $\chi^2/{\rm ndf}=607.7/8$ under its
+The saved weighted straight line has $\chi^2/{\rm ndf}=\SummaryChi/8$ under its
 limited error model. It does not adequately describe the variation.
 \Review{N2-6}{The subset was selected interactively. It is exploratory,
 not an unbiased population-level validation.}
@@ -274,7 +322,7 @@ Each point compares reference-fitted AWC with a prediction made after
 excluding that channel's entire bar from the fit of $K$.
 Ten upstream channels span six held-out bar groups.
 
-The RMS prediction error is 3.02\,$\mu$A; the RMS fractional error is 17.2\%.
+The RMS prediction error is \PredictorRMSE\,$\mu$A; the RMS fractional error is \PredictorFraction\%.
 Horizontal intervals are conditional reference-AWC intervals, not
 predictive intervals.
 \Review{N2-7}{Small selected sample; feature/target correlations and

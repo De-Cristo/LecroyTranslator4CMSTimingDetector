@@ -1,0 +1,22 @@
+[
+  {
+    "file_id": "4399_56_e",
+    "previous_entry": 23331,
+    "next_entry": 64556,
+    "previous_trigger_ps": 547423821419.0,
+    "next_trigger_ps": -25030.3289352,
+    "old_segment": 0,
+    "new_segment": 1,
+    "intervening_nonfinite": 1
+  },
+  {
+    "file_id": "4399_5_e",
+    "previous_entry": 84064,
+    "next_entry": 129138,
+    "previous_trigger_ps": 492470828368.0,
+    "next_trigger_ps": -25028.612197,
+    "old_segment": 1,
+    "new_segment": 2,
+    "intervening_nonfinite": 98
+  }
+]

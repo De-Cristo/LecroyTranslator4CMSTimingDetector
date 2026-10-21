@@ -1,0 +1,47 @@
+[
+  {
+    "source": "Q_Walk/qwalk_t0_data.py",
+    "snapshot": "inputs/Q_Walk/qwalk_t0_data.py",
+    "sha256": "5ef8904aca3a18421e993fa3dc150c37e513699357116fa0d1af94addeb077db"
+  },
+  {
+    "source": "Q_Walk/qwalk_t0_models.py",
+    "snapshot": "inputs/Q_Walk/qwalk_t0_models.py",
+    "sha256": "e5908c1c4e11a97cf12fef21666de470bfe31f61d43979f6535b59db53eda675"
+  },
+  {
+    "source": "Q_Walk/qwalk_core.py",
+    "snapshot": "inputs/Q_Walk/qwalk_core.py",
+    "sha256": "ac270f44a8fe8b2805d8d5cc49253e09acea4b09051e0ab895b22ddc46e13a3d"
+  },
+  {
+    "source": "Q_Walk/qwalk_channels.py",
+    "snapshot": "inputs/Q_Walk/qwalk_channels.py",
+    "sha256": "2c71215d0fcd9606ebf485157163ab715f8e51ef02adea07f6e87ce0435d59af"
+  },
+  {
+    "source": "Q_Walk/qwalk_extended_t0_reference.py",
+    "snapshot": "inputs/Q_Walk/qwalk_extended_t0_reference.py",
+    "sha256": "53c1a6f906224d8d5889d5ec3104caae1e5116de5f44f49ca176afc7355a2713"
+  },
+  {
+    "source": "Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_137/run4399_upstream_bar8_ch137_t0_quadratic.json",
+    "snapshot": "inputs/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_137/run4399_upstream_bar8_ch137_t0_quadratic.json",
+    "sha256": "0dc04655cfd5fb7b253013d29d5c63906d4b57c232d9f54eb7911b156aee2986"
+  },
+  {
+    "source": "Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_137/run4399_upstream_bar8_ch137_t0_quadratic_profile.csv",
+    "snapshot": "inputs/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_137/run4399_upstream_bar8_ch137_t0_quadratic_profile.csv",
+    "sha256": "8897fafc937543cb5001ec16274520e1e7b11d515624ee72c1440fd200e6abcd"
+  },
+  {
+    "source": "Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_150/run4399_upstream_bar8_ch150_t0_quadratic.json",
+    "snapshot": "inputs/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_150/run4399_upstream_bar8_ch150_t0_quadratic.json",
+    "sha256": "486c401c8b455264942c7288fdf1c424d9df626a1b355fd8b5e7f57e3b8ab509"
+  },
+  {
+    "source": "Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_150/run4399_upstream_bar8_ch150_t0_quadratic_profile.csv",
+    "snapshot": "inputs/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_150/run4399_upstream_bar8_ch150_t0_quadratic_profile.csv",
+    "sha256": "b09819dde668c6baa3e5ca97312b72c0c787b331efb0b2b16022574299b24e52"
+  }
+]

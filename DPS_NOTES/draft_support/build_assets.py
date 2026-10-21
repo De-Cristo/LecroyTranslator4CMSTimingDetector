@@ -13,7 +13,8 @@ import numpy as np
 
 DPS = Path(__file__).resolve().parents[1]
 ROOT = DPS.parent
-OVERLAP = ROOT / "Q_Walk/results/2026-09-24_measured_q_overlap"
+OVERLAP = ROOT / "Q_Walk/results/2026-10-22_clock_quality"
+TIMING = DPS / "review_2026-10-22_clock_quality"
 LEGACY = ROOT / "Q_Walk/reference_quadratic_t0"
 CMS = ROOT.parent / "CMS-Note/cmsnote"
 N1 = DPS / "note1_mcp_reference"
@@ -104,7 +105,7 @@ def reference_profiles():
 
 
 def clock_reference_profiles():
-    snapshot(DPS / "review_2026-10-21_reference_comparison/summary.csv", N1)
+    snapshot(TIMING / "reference_comparison/summary.csv", N1)
     rows = []
     for ch, bar in ((133, 7), (154, 7), (137, 8), (150, 8)):
         folder = OVERLAP / f"inputs/channel_{ch}"
@@ -265,6 +266,82 @@ def predictor():
     save(fig, N2, "internal_predictor", [path, path.with_name("model_comparison.json")])
 
 
+def timing_validation():
+    from scipy.special import ndtr
+    report_path = TIMING / "validation_report.json"
+    events_path = TIMING / "selected_events.csv.gz"
+    import pandas as pd
+    report = json.loads(report_path.read_text())
+    events = pd.read_csv(events_path)
+    for obs, label, name in (("D", r"$t_{137}-t_{150}$", "validated_end_difference"),
+                             ("R", r"$(t_{137}+t_{150})/2-t_{\rm MCP}^{\rm mapped}$", "validated_bar_mcp")):
+        fig, ax = canvas()
+        for stage, color, title in (("before", "0.5", "Before walk"), ("corrected", "#2375aa", "After walk")):
+            values = events[f"{obs}_{stage}"].to_numpy()
+            w = report["widths"][f"{obs}_{stage}"]
+            ax.hist(values - np.median(values), bins=np.arange(-400, 410, 10), histtype="step",
+                    color=color, lw=1.7, label=f"{title}: core sigma {w['sigma_ps']:.2f} ps")
+        w = report["widths"][f"{obs}_corrected"]
+        mu = w["fit_mean_ps"] - w["median_ps"]
+        lo, hi = w["fit_low_ps"] - w["median_ps"], w["fit_high_ps"] - w["median_ps"]
+        sigma = w["sigma_ps"]
+        xx = np.linspace(lo, hi, 300)
+        norm = ndtr((hi - mu) / sigma) - ndtr((lo - mu) / sigma)
+        yy = w["count"] * 10 / (sigma * np.sqrt(2*np.pi) * norm) * np.exp(-.5*((xx-mu)/sigma)**2)
+        ax.plot(xx, yy, color="#c03937", label="Corrected Gaussian-core fit")
+        ax.set(xlabel=label + " [ps], median centered", ylabel="Events / 10 ps", xlim=(-400, 400),
+               title=f"Run 4399 | Bar 8 | {len(events):,} common events")
+        interval = report["bootstrap"]["segment_block"][obs]
+        ax.text(.03, .96, f"After walk: 68% block interval [{interval['p16']:.2f}, {interval['p84']:.2f}] ps\n"
+                f"Full-sample SD {w['rms_about_mean_ps']:.2f} ps; outside fit window {100*w['outside_fit_fraction']:.2f}%",
+                transform=ax.transAxes, va="top", fontsize=10)
+        ax.legend(loc="upper right", bbox_to_anchor=(1, .82), fontsize=9)
+        ax.set_ylim(top=ax.get_ylim()[1]*1.22)
+        save(fig, N1, name, [report_path, events_path])
+    groups_path = TIMING / "segment_stability.csv"
+    groups = pd.read_csv(groups_path)
+    fig, ax = canvas()
+    for obs, color in (("D", "#2375aa"), ("R", "#c03937")):
+        ax.plot(np.arange(len(groups)), groups[f"{obs}_median_ps"], ".", color=color, label=obs)
+    ax.set(xlabel="File / segment group (at least 30 selected events)", ylabel="Group median [ps]",
+           title="Clock-qualified sample | No segment recentering")
+    ax.legend()
+    save(fig, N1, "validated_segment_stability", [groups_path, report_path])
+
+
+def review_values():
+    report = json.loads((TIMING / "validation_report.json").read_text())
+    values = {"TimingCount": str(report["selection_counts"]["both_measured_support"])}
+    for obs in ("D", "R"):
+        for stage, suffix in (("before", "Before"), ("corrected", "After")):
+            values[obs + suffix] = f"{report['widths'][obs + '_' + stage]['sigma_ps']:.2f}"
+        interval = report["bootstrap"]["segment_block"][obs]
+        values[obs + "Low"], values[obs + "High"] = f"{interval['p16']:.2f}", f"{interval['p84']:.2f}"
+        w = report["widths"][obs + "_corrected"]
+        values[obs + "SD"] = f"{w['rms_about_mean_ps']:.2f}"
+        values[obs + "Tail"] = f"{100*w['outside_fit_fraction']:.2f}"
+    for ch, name in ((133, "RefBinsA"), (154, "RefBinsB"), (137, "RefBinsC"), (150, "RefBinsD")):
+        values[name] = str(len(read_csv(next((OVERLAP / f"inputs/channel_{ch}").glob("*t0_quadratic_profile.csv")))))
+    awc = json.loads((OVERLAP / "channel_137.json").read_text())
+    for key, name in (("awc_ua", "ExampleAWC"), ("awc_p16", "ExampleLow"), ("awc_p84", "ExampleHigh"), ("rms_ps", "ExampleRMS")):
+        values[name] = f"{awc[key]:.3f}" if key != "rms_ps" else f"{awc[key]:.2f}"
+    values["GapCount"] = str(json.loads((OVERLAP / "channel_159.json").read_text())["excluded_gap_grid_points"])
+    fit = json.loads((OVERLAP / "awc_summary_special_10_channels_no_ch240_linear_fit.json").read_text())
+    values["SummaryChi"] = f"{fit['chi2']:.1f}"
+    predictor = json.loads((OVERLAP / "physical_candidate_quick_test/model_comparison.json").read_text())["physical"]
+    values["PredictorRMSE"] = f"{predictor['lobo_awc_rmse_ua']:.2f}"
+    values["PredictorFraction"] = f"{100*predictor['lobo_relative_rmse']:.1f}"
+    text = "% Generated from frozen numerical results by build_assets.py.\n"
+    text += "".join("\\newcommand{\\" + key + "}{" + value + "}\n" for key, value in values.items())
+    for note in (N1, N2):
+        (note / "review_values.tex").write_text(text)
+    rows = read_csv(TIMING / "reference_comparison/summary.csv")
+    (N1 / "data/reference_shape_table.tex").write_text(
+        "\\begin{tabular}{lrr}\n\\toprule\nChannel & Shape RMS difference [ps] & Maximum absolute difference [ps]\\\\\n\\midrule\n" + "".join(
+        f"{int(row['channel'])} & {row['shape_rms_ps']:.2f} & {row['max_abs_shape_ps']:.2f}" + r"\\" + "\n"
+        for row in rows) + "\\bottomrule\n\\end{tabular}\n")
+
+
 def main():
     for note in (N1, N2):
         for folder in ("figures", "data", "build"):
@@ -291,6 +368,8 @@ def main():
         comparison(ch)
     awc_summary()
     predictor()
+    timing_validation()
+    review_values()
     for note in (N1, N2):
         (note / "figure_manifest.json").write_text(json.dumps(
             [r for r in MANIFEST if r["note"] == note.name], indent=2) + "\n")

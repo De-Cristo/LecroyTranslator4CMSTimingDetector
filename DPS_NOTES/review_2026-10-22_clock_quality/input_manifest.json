@@ -1,0 +1,52 @@
+[
+  {
+    "source": "Q_Walk/qwalk_t0_data.py",
+    "snapshot": "inputs/Q_Walk/qwalk_t0_data.py",
+    "sha256": "70c5cb4d123979a45966a663b5a1da0f7096f43edf22bb8946525b6e41499672"
+  },
+  {
+    "source": "Q_Walk/qwalk_extended_t0_reference.py",
+    "snapshot": "inputs/Q_Walk/qwalk_extended_t0_reference.py",
+    "sha256": "eaebb69d62479b5b896d9d320ddc36775770ee9d496de5cb0221be7ecf9486bd"
+  },
+  {
+    "source": "Q_Walk/qwalk_t0_models.py",
+    "snapshot": "inputs/Q_Walk/qwalk_t0_models.py",
+    "sha256": "e5908c1c4e11a97cf12fef21666de470bfe31f61d43979f6535b59db53eda675"
+  },
+  {
+    "source": "Q_Walk/qwalk_core.py",
+    "snapshot": "inputs/Q_Walk/qwalk_core.py",
+    "sha256": "ac270f44a8fe8b2805d8d5cc49253e09acea4b09051e0ab895b22ddc46e13a3d"
+  },
+  {
+    "source": "DPS_NOTES/review_2026-10-22_bar8_validation/validate.py",
+    "snapshot": "inputs/DPS_NOTES/review_2026-10-22_bar8_validation/validate.py",
+    "sha256": "34c59825dff84ca67bd40767d5ecaf59246de88d466b8894e849cc91fa077bed"
+  },
+  {
+    "source": "Q_Walk/results/2026-10-22_clock_quality/refresh.py",
+    "snapshot": "inputs/Q_Walk/results/2026-10-22_clock_quality/refresh.py",
+    "sha256": "2da431e93f5fd0d90fc2507eda07b11a7a29635b02e48e77222619746edccd16"
+  },
+  {
+    "source": "Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar8_ch137_t0_quadratic.json",
+    "snapshot": "inputs/Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar8_ch137_t0_quadratic.json",
+    "sha256": "a4f78241af2d9bd8e66cf77a5965dbe7c159a39a36720a0796c3f7f4fc21ed19"
+  },
+  {
+    "source": "Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar8_ch150_t0_quadratic.json",
+    "snapshot": "inputs/Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar8_ch150_t0_quadratic.json",
+    "sha256": "05102a9f83b9b866c9f38b78b98d68c5ed0bdbc713327ebc0e524dbeab9bfeb3"
+  },
+  {
+    "source": "Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar8_ch137_t0_quadratic_profile.csv",
+    "snapshot": "inputs/Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar8_ch137_t0_quadratic_profile.csv",
+    "sha256": "cda2951e346e91013de8f7a2c5ad7a037337672221477d6789bc2f0cf8595def"
+  },
+  {
+    "source": "Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar8_ch150_t0_quadratic_profile.csv",
+    "snapshot": "inputs/Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar8_ch150_t0_quadratic_profile.csv",
+    "sha256": "41170e423ac6ea570dcfafbe2d2fbecd4fb71e52fd8b375309b0caaa1421029e"
+  }
+]

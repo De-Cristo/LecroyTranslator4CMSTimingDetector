@@ -1,4 +1,5 @@
 \input{slides_preamble.tex}
+\input{review_values.tex}
 \begin{document}
 \OpeningSlides
 
@@ -188,7 +189,7 @@ of each bin's median, with at least five entries. Bars show the SEM after clippi
 \item Fit $W(Q)=a+b/Q+c/Q^2$ with an objective weighted by $1/\mathrm{SEM}^2$.
 The next four figures use the exact saved reference coefficients used in Note 2.
 \end{itemize}
-{\scriptsize Source snapshots: \texttt{2026-09-24\_measured\_q\_overlap/inputs}.
+{\scriptsize Source snapshots: \texttt{2026-10-22\_clock\_quality/inputs}.
 The displayed +26\,ns constant changes neither the shape nor the saved coefficients.}
 \end{frame}
 
@@ -196,7 +197,7 @@ The displayed +26\,ns constant changes neither the shape nor the saved coefficie
 The time difference now uses the reconstructed trigger time rather than
 the measured channel-192 timestamp, suppressing the fitted clock drift.
 
-Points show mean time differences with SEM in 19 retained inverse-charge bins.
+Points show mean time differences with SEM in \RefBinsA{} retained inverse-charge bins.
 The red curve is the saved SEM-weighted quadratic used in Note 2.
 
 The curve is shown only within retained-bin support and the outer profile
@@ -209,23 +210,23 @@ The opposite end of bar 7 is calibrated with the same clock-reconstruction
 and profile procedure. Its independent coefficients describe its own
 charge-dependent timing response.
 
-The 19 points are retained-bin means; vertical bars show SEM after timing
+The \RefBinsB{} points are retained-bin means; vertical bars show SEM after timing
 clipping. The red curve is the saved uncertainty-weighted quadratic in $1/Q$.
 }{Exact reference snapshot used in Note2. Coefficients and profile points
 are included with this note; the +26\,ns display shift is separate.}
 
 \FigureSlide{Clock-corrected reference: bar 8, channel 137}{clock_reference_ch137}{
-All 20 inverse-charge bins survive the profile requirements for this channel.
+There are \RefBinsC{} retained inverse-charge bins for this channel.
 Smaller charge gives a larger timing delay, as expected for fixed-threshold
 readout of pulses with different amplitudes.
 
 Points and bars are the mean and SEM after clipping. The saved quadratic
 is the MCP benchmark for the channel-137 inverse-slope comparison in Note 2.
-}{Run 4399; expected-trigger timing; no new fit or event processing.
+}{Run 4399; expected-trigger timing; refitted after clock-quality selection.
 The +26\,ns shift affects only the vertical display origin.}
 
 \FigureSlide{Clock-corrected reference: bar 8, channel 150}{clock_reference_ch150}{
-The channel-150 reference uses 19 retained profile bins and the same
+The channel-150 reference uses \RefBinsD{} retained profile bins and the same
 clock-corrected time definition as the other three channels.
 
 Bars represent SEM, not the spread of individual event times.
@@ -240,49 +241,81 @@ Only the figure receives the constant +26\,ns display shift.}
 Compare both saved functions on jointly populated charge support, after
 removing a constant offset only. No multiplicative scaling is fitted.
 \begin{center}
-\begin{tabular}{lrr}
-\toprule
-Channel & Shape RMS difference [ps] & Maximum absolute difference [ps]\\
-\midrule
-133 & 2.20 & 7.44\\
-154 & 3.91 & 8.75\\
-137 & 1.65 & 3.97\\
-150 & 4.88 & 10.42\\
-\bottomrule
-\end{tabular}
+\input{data/reference_shape_table.tex}
 \end{center}
-The walk varies by about 190--250\,ps over these intervals.
-Rebinning the same archived events alone changes shapes by 0.14--1.41\,ps RMS.
-The production versions also differ in trigger reconstruction, selection,
-clipping and fit weights.
+The current reference includes finite-timestamp reset handling and a clock-only
+quality requirement. The archived and current versions also differ in trigger
+reconstruction, selection, clipping and fit weights.
 
 These are differences between calibration functions, not timing resolutions
 or a statistical-equivalence test. Note 2 uses the clock-corrected version.
 \end{frame}
 
-\FigureSlide{Timing validation using the two bar ends}{bar_end_difference}{
-The distribution is the corrected time difference between the two SiPM
-ends of bar 8. The displayed Gaussian width is approximately 53\,ps.
+\begin{frame}{Clock quality before timing validation}
+\small
+Consecutive finite scope timestamps define segment boundaries. Missing
+timestamps cannot conceal a reset; nonfinite triggers have no valid mapping.
 
-For uncorrelated end errors and controlled hit-position effects,
-$\sigma((t_L+t_R)/2)=\sigma(t_L-t_R)/2$, giving roughly 26\,ps.
-Common timing jitter cancels in the end difference.
-\Review{N1-5}{Recover histogram inputs, fit range, uncertainty and
-position selection before treating 26\,ps as a final resolution.}
-}{Legacy timing distribution. The inference is conditional; it does not
-measure synchronization jitter.}
+For each topology, file and segment, fit channel 192 against the scope trigger.
+Reject the whole group if the line-residual scale $1.4826\,\mathrm{MAD}$ exceeds
+1\,ns, before LOWESS. This rule uses clocks only, not SiPM arrival times.
 
-\FigureSlide{Timing validation against the MCP reference}{bar_mcp_difference}{
-The corrected bar-average time is compared with the MCP time.
-The legacy panel reports a width of 46.8\,ps.
+Six finite-trigger bar-8 groups fail. Changing the threshold from 1\,ns to 1\,$\mu$s retains
+the same groups. Suspected one-event association offsets are excluded, not
+repaired by shifting MCP rows.
 
-This difference includes the bar, MCP and residual synchronization
-contributions, including any correlations. It must not be identified
-with the intrinsic MCP resolution.
-\Review{N1-5}{Establish whether 46.8\,ps is a Gaussian-fit width or
-sample RMS, and recover its uncertainty and event selection.}
-}{Legacy bar--MCP distribution, not refitted for this draft. Do not
-combine unrelated selections or clock branches in quadrature.}
+Refit the channel walk curves after this selection. For the following timing
+comparison require both ends to pass quality, peak-left charge cuts and
+their own populated reference support within the outer profile means.
+No additional selection is made on either timing-difference observable.
+
+{\scriptsize Implementation: \texttt{Q\_Walk/qwalk\_t0\_data.py};
+new references: \texttt{2026-10-22\_clock\_quality}.}
+\end{frame}
+
+\FigureSlide{Timing validation using the two bar ends}{validated_end_difference}{
+The same \TimingCount{} bar-8 events are shown before and after subtracting
+the two channel-specific walk functions. The common clock mapping is fixed.
+
+The Gaussian-core width changes from \DBefore{} to \DAfter\,ps.
+The corrected full-sample SD is \DSD\,ps; \DTail\% lie outside the core window.
+
+The 16th--84th percentile interval is [\DLow, \DHigh]\,ps from 400
+file/segment-block bootstrap replicas, with calibrations held fixed.
+}{Truncated-normal likelihood within median $\pm2.5(1.4826\,\mathrm{MAD})$.
+Each histogram is median-centered for display only; the SD includes all events.}
+
+\FigureSlide{Timing validation against the MCP reference}{validated_bar_mcp}{
+The bar-average time minus mapped MCP time uses the identical event sample
+and clock reconstruction before and after channel-wise walk correction.
+
+The core width changes from \RBefore{} to \RAfter\,ps.
+The corrected full-sample SD is \RSD\,ps; \RTail\% lie outside the fit window.
+
+The conditional block-bootstrap interval is [\RLow, \RHigh]\,ps.
+This observable includes detector, MCP and residual clock contributions.
+}{Same core-fit definition as the end difference. The display range does not
+restrict the SD. No segment-by-segment timing recentering is applied.}
+
+\begin{frame}{What these timing widths establish}
+\small
+The reproduced distributions establish conditional before/after performance,
+not intrinsic bar resolution or a separate synchronization-jitter measurement.
+At fixed position, for end timing errors $e_L,e_R$,
+\[
+\mathrm{Var}\!\left(\frac{e_L+e_R}{2}\right)
+=\frac{\mathrm{Var}(e_L-e_R)}{4}+\mathrm{Cov}(e_L,e_R).
+\]
+Halving an end-difference width requires controlled position effects and
+negligible end-error covariance. Shared MCP and clock errors also prevent
+inferring detector covariance directly from the measured reference residuals.
+
+The two separately fitted core widths are not variances of a common model.
+Their quadrature difference is not a justified synchronization-jitter estimate.
+\Review{N1-5}{Widths and conditional statistical intervals are reproduced.
+Position, covariance, segment-offset and calibration-systematic contributions
+remain to be established before an intrinsic-resolution claim.}
+\end{frame}
 
 \begin{frame}{Reference-calibration result and scope}
 \small
@@ -310,7 +343,7 @@ claims require a frozen selection and complete statistical/systematic treatment.
 \toprule
 ID & Decision or missing evidence\\
 \midrule
-N1-5 & Reproduce bar timing widths with uncertainties and position/covariance assumptions.\\
+N1-5 & Widths reproduced; establish position, covariance, segment-offset and calibration systematics.\\
 N1-6 & Verify citations, official template/DP metadata and final publication packaging.\\
 \bottomrule
 \end{tabular}\par
@@ -322,6 +355,36 @@ Sources: supplied \texttt{Note1.pdf}; candidate editable manuscript
 The figure manifest records the exact copied inputs and checksums.
 This review slide is removed from a public release.
 \end{frame}
+
+\FigureSlide{Backup: residual segment offsets}{validated_segment_stability}{
+Points show median end differences ($D$) and bar-minus-MCP differences ($R$)
+for groups containing at least 30 selected events.
+
+Clock-quality selection removes gross reconstruction failures, but smaller
+group offsets remain. They contribute to the aggregate timing distribution.
+
+The main timing figures do not subtract these medians. Their effect must
+be understood before extracting a synchronization contribution.
+}{Group medians are descriptive point estimates, not independent resolution
+measurements. Identifiers and event counts accompany the numerical data.}
+
+\FigureSlide{Backup: historical end-difference illustration}{bar_end_difference}{
+This archived figure displays a width of 52.87\,ps. Its exact event sample,
+histogram inputs and fit definition have not been recovered.
+
+It is retained only to identify the historical result. The reproducible
+clock-qualified before/after comparison replaces it in the main result.
+No intrinsic 26\,ps bar-resolution claim is made from this image.
+}{Historical illustration, not the current calibration result.}
+
+\FigureSlide{Backup: historical bar--MCP illustration}{bar_mcp_difference}{
+The archived panel reports 46.8\,ps. Whether this denotes a fitted core width
+or a sample RMS, and the original selection, have not been established.
+
+It is not combined with the current end-difference result. The new
+bar--MCP plot specifies its common event sample, core fit, full-sample SD
+and conditional statistical interval.
+}{Historical illustration; not independently reproduced by the documented full-run pipeline.}
 
 \FigureSlide{Backup: clock-phase reconstruction}{clock_edges}{
 The reference clock is sampled by the oscilloscope. Several rising-edge

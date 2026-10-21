@@ -46,6 +46,21 @@ The comparison summary CSV is also included under this note's data snapshots.
 This closes the reference-version gap, not N1-5 timing-resolution validation or
 N2-1 cross-run transfer conditions.
 
+N1-5 implementation, 22 October 2026: finite-trigger segmentation now detects
+resets across missing timestamps. The reference pipeline rejects whole
+topology/file/segment groups with pre-LOWESS clock-line scaled MAD above 1000 ps.
+All 22 run4399 references are refitted in `Q_Walk/results/2026-10-22_clock_quality/`;
+the four displayed references and all Note2 comparisons use that version.
+The previous September snapshots remain historical evidence, not current inputs.
+
+The main timing figures now use the same clock-qualified bar-8 events before
+and after channel-wise walk correction, with both ends inside measured support.
+They report Gaussian-core widths, conditional block-bootstrap intervals,
+full-sample SD and outside-window fractions. Historical timing images move to
+backup. No intrinsic 26 ps bar resolution or quadrature-derived synchronization
+jitter is claimed. N1-5 remains open for position, covariance, residual segment
+offsets and calibration systematics. See `../review_2026-10-22_clock_quality/`.
+
 The standalone source archive compiles with pdfLaTeX. Within the repository,
 use the shared builder described in `../README_DRAFTS.md`. No CMS DP identifier
 has been assigned in this draft.

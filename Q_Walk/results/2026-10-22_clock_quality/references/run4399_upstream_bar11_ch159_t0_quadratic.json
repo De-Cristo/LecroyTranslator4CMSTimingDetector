@@ -1,0 +1,55 @@
+{
+  "channel": 159,
+  "module": "upstream",
+  "bar": 11,
+  "pair": [
+    130,
+    159
+  ],
+  "coincidence_pair": [
+    234,
+    243
+  ],
+  "formula": "walk_ns(Q) = a + b / Q + c / Q^2",
+  "coefficients_ns": {
+    "a": -26.879063602677505,
+    "b": 334.19652661024963,
+    "c": -36399.657945959516
+  },
+  "covariance_ns2_abc": [
+    [
+      0.038558686691435605,
+      -24.52292410665521,
+      3813.6525749301163
+    ],
+    [
+      -24.52292410665521,
+      15730.844375677834,
+      -2463783.604838038
+    ],
+    [
+      3813.652574930116,
+      -2463783.604838038,
+      388269166.93540555
+    ]
+  ],
+  "fit_method": "weighted quadratic fit to 20 full-selected-range inverse-Q profile means with weights 1/SEM^2",
+  "fit_domain": {
+    "q_min_adc": 249.22412641195646,
+    "q_max_adc": 511.3869942043303
+  },
+  "profile_domain": {
+    "q_min_adc": 244.31671142578128,
+    "q_max_adc": 524.8487548828125
+  },
+  "selection": {
+    "topology_matched_events": 415,
+    "channel_hits": 415,
+    "quality_hits": 380,
+    "q_cut_adc": 243.8697929081917,
+    "selected_hits": 352,
+    "profile_bins_retained": 17
+  },
+  "profile_csv": "Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar11_ch159_t0_quadratic_profile.csv",
+  "clock_quality": "finite-trigger segmentation; whole-group pre-LOWESS scaled MAD <= 1000 ps; no row shifts"
+}

@@ -5,18 +5,18 @@
     "kind": "redrawn from saved numerical results",
     "sources": [
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_133/channel_133_safe_time2_two_upstream_peak_right_profile_linear_summary.json",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_133/channel_133_safe_time2_two_upstream_peak_right_profile_linear_summary.json",
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_133/channel_133_safe_time2_two_upstream_peak_right_profile_linear_summary.json",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_133/channel_133_safe_time2_two_upstream_peak_right_profile_linear_summary.json",
         "sha256": "bb58d94d60da0ac37c2a3f3a1b5d3e534a6199d5c70b6ec81946e4960358c4e4"
       },
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_133/channel_133_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_133/channel_133_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz",
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_133/channel_133_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_133/channel_133_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz",
         "sha256": "5541bb4d4097c90fa14185ef755de3576fd214b42006f75e315cce22dcf60070"
       },
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_133/run4076_profile.csv",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_133/run4076_profile.csv",
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_133/run4076_profile.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_133/run4076_profile.csv",
         "sha256": "2ff2c1b7308756c6356f8d197036f0c13a5f925fc3ec052ca7e632905074bfd9"
       }
     ]
@@ -27,18 +27,18 @@
     "kind": "redrawn from saved numerical results",
     "sources": [
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_154/channel_154_safe_time2_two_upstream_peak_right_profile_linear_summary.json",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_154/channel_154_safe_time2_two_upstream_peak_right_profile_linear_summary.json",
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_154/channel_154_safe_time2_two_upstream_peak_right_profile_linear_summary.json",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_154/channel_154_safe_time2_two_upstream_peak_right_profile_linear_summary.json",
         "sha256": "09b759904b2fd723276cbd80f4e89c33c62705733082061aba659542aec8f202"
       },
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_154/channel_154_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_154/channel_154_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz",
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_154/channel_154_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_154/channel_154_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz",
         "sha256": "799314108cd210e46be18304222549a9cac2197af4058c04215f404edb9fdf2f"
       },
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_154/run4076_profile.csv",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_154/run4076_profile.csv",
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_154/run4076_profile.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_154/run4076_profile.csv",
         "sha256": "7e6189b9de837f891d57dc32857fdba228e43c846d1a737e8cc638a4737c5b6f"
       }
     ]
@@ -49,18 +49,18 @@
     "kind": "redrawn from saved numerical results",
     "sources": [
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_137/channel_137_safe_time2_two_upstream_peak_right_profile_linear_summary.json",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_137/channel_137_safe_time2_two_upstream_peak_right_profile_linear_summary.json",
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_137/channel_137_safe_time2_two_upstream_peak_right_profile_linear_summary.json",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_137/channel_137_safe_time2_two_upstream_peak_right_profile_linear_summary.json",
         "sha256": "b3d42f2904b04829243da70efccff8417066dc6ecea09b382e413082e9a52d72"
       },
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_137/channel_137_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_137/channel_137_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz",
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_137/channel_137_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_137/channel_137_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz",
         "sha256": "b57f0ced468f7c59ee15ea7c30793522d135f044925ec7cf9aeca817d2aded0d"
       },
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_137/run4076_profile.csv",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_137/run4076_profile.csv",
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_137/run4076_profile.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_137/run4076_profile.csv",
         "sha256": "83b8f263564a1a050a7d546a8987a2d9f131374716f0b4279cd74de903c3d685"
       }
     ]
@@ -71,18 +71,18 @@
     "kind": "redrawn from saved numerical results",
     "sources": [
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_150/channel_150_safe_time2_two_upstream_peak_right_profile_linear_summary.json",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_150/channel_150_safe_time2_two_upstream_peak_right_profile_linear_summary.json",
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_150/channel_150_safe_time2_two_upstream_peak_right_profile_linear_summary.json",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_150/channel_150_safe_time2_two_upstream_peak_right_profile_linear_summary.json",
         "sha256": "89edacff189f943c3af679f998c786a9b6c352282394856e12beb9eec82a3bb9"
       },
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_150/channel_150_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_150/channel_150_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz",
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_150/channel_150_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_150/channel_150_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz",
         "sha256": "c5128f06650bf9889daaaf5f621a650fabd716050ea1a0c08b8af27cc0120697"
       },
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_150/run4076_profile.csv",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_150/run4076_profile.csv",
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_150/run4076_profile.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_150/run4076_profile.csv",
         "sha256": "5066265cd9fdb530f5cadfd01f260d30d8443384729de76a9ef7135bea266093"
       }
     ]
@@ -93,9 +93,9 @@
     "kind": "redrawn from saved numerical results",
     "sources": [
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/energy_spectra/channel_137_energy_spectrum.csv",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/energy_spectra/channel_137_energy_spectrum.csv",
-        "sha256": "736ce86ed57b1925cd9fbdd455706a5fe9371cd1e6b1c5a87c64479c3876e0d5"
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/energy_spectra/channel_137_energy_spectrum.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/energy_spectra/channel_137_energy_spectrum.csv",
+        "sha256": "682544fcd19e77ceac5c80f35018d4efbe65dee7fa4f5dfde308ea2dc7f1e99b"
       }
     ]
   },
@@ -105,14 +105,14 @@
     "kind": "saved curve comparison; lower panel is model-minus-model, not event resolution",
     "sources": [
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_137_comparison.csv",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_137_comparison.csv",
-        "sha256": "f2731819b261e3b19152977befac5a75d00bd3232b266f452f838a6e2010bc28"
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/channel_137_comparison.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/channel_137_comparison.csv",
+        "sha256": "5bd38f52567be0ee421d8234a9f08318788f9a96c38184dc2e116aa90dd9fb9f"
       },
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_137.json",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_137.json",
-        "sha256": "110f9ff896a8d37a263dea9c8cf3970c16c8746f88b0cf2cee90443e0e7347c7"
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/channel_137.json",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/channel_137.json",
+        "sha256": "08821d919272a66ccbfdeb1e4dc1def1e6604f93689a5c9ecd3e5ea8efd52d14"
       }
     ]
   },
@@ -122,14 +122,14 @@
     "kind": "saved curve comparison; lower panel is model-minus-model, not event resolution",
     "sources": [
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_154_comparison.csv",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_154_comparison.csv",
-        "sha256": "007573438c25e7afc423f5fdbc791c21b8fd355d40de0795cbea0972b3068a6e"
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/channel_154_comparison.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/channel_154_comparison.csv",
+        "sha256": "f04c1d7a358bf0bf7fb16f8324b43aef0a1072674f421ad764e7ddf15e9525a9"
       },
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_154.json",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_154.json",
-        "sha256": "fde8aa501e1528fb49d7db4db17db507b1752509a80e84931a8d7e02bb16f23a"
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/channel_154.json",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/channel_154.json",
+        "sha256": "96a7111f843540075bd77d1dc42416e7c80dfe63ab1f3ff266ffda5bc07e1228"
       }
     ]
   },
@@ -139,14 +139,14 @@
     "kind": "saved curve comparison; lower panel is model-minus-model, not event resolution",
     "sources": [
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_159_comparison.csv",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_159_comparison.csv",
-        "sha256": "75b95134df8d3d6764eb53b4f0e0312c3a6ec49c7f927761a232c1eae8a7c776"
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/channel_159_comparison.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/channel_159_comparison.csv",
+        "sha256": "563f9bf14eb6fef16ad796b287c292fd43e71dfd47f9eeb19400283a340b82a9"
       },
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_159.json",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_159.json",
-        "sha256": "4765503642aae48c5662fd1e42942cdd269484b8adf32905e0f88d2052f8745a"
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/channel_159.json",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/channel_159.json",
+        "sha256": "955997a3e35e03bd1d8fe1ae422d3975401d01936aec8b6fa32a6b6d3c6980fd"
       }
     ]
   },
@@ -156,14 +156,14 @@
     "kind": "saved curve comparison; lower panel is model-minus-model, not event resolution",
     "sources": [
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_242_comparison.csv",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_242_comparison.csv",
-        "sha256": "ae9d1fad1674843ad1b1aad843b07d39d1dc60e3c77b0067791596ef7bce16d9"
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/channel_242_comparison.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/channel_242_comparison.csv",
+        "sha256": "8a0c40380010a592e9c5343cd8e66fa2ba336834278d2c0c0ac75bbe72f70384"
       },
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_242.json",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channel_242.json",
-        "sha256": "d6b67d8d3b37d33d28870d865e596d3d62c4c90175759e94db51d9ecc2925f4d"
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/channel_242.json",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/channel_242.json",
+        "sha256": "1ee02b234435be5798d035a90f3a550c04695bb380738c775f492d4b98812fc9"
       }
     ]
   },
@@ -173,14 +173,14 @@
     "kind": "redrawn from saved numerical results",
     "sources": [
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/awc_summary_special_10_channels_no_ch240_linear.csv",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/awc_summary_special_10_channels_no_ch240_linear.csv",
-        "sha256": "ecd34498f05187caf40e66db4fd59373ddb0065d8da418ef1261ef5f9922ba80"
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/awc_summary_special_10_channels_no_ch240_linear.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/awc_summary_special_10_channels_no_ch240_linear.csv",
+        "sha256": "841226865ea17fd9df59bbcac543c100ebc78342fe98ae94c246e85c8ffc978c"
       },
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/awc_summary_special_10_channels_no_ch240_linear_fit.json",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/awc_summary_special_10_channels_no_ch240_linear_fit.json",
-        "sha256": "6488dac443b08dd24315e0c53a7a6bbf4de05e30a12494a8ddefa9ac4066b14e"
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/awc_summary_special_10_channels_no_ch240_linear_fit.json",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/awc_summary_special_10_channels_no_ch240_linear_fit.json",
+        "sha256": "db5466d32e1892674a90c44a5ae8c10d4e7f721c677d2410a0a588af957d08f6"
       }
     ]
   },
@@ -190,9 +190,9 @@
     "kind": "redrawn from saved numerical results",
     "sources": [
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channels.csv",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/channels.csv",
-        "sha256": "e2eaec7c4127f989c8fc0bf719dd6935bda6792076bf80f0bc5b2732858c4e2d"
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/channels.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/channels.csv",
+        "sha256": "f5747ef7a014a9f97b83b4d39d5da6cba025224faaba86e07da80a20a7c17d7a"
       }
     ]
   },
@@ -202,14 +202,14 @@
     "kind": "redrawn from saved numerical results",
     "sources": [
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/physical_candidate_quick_test/channel_predictions.csv",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/physical_candidate_quick_test/channel_predictions.csv",
-        "sha256": "6e9862e42eaf4fa68232dd04c65285ebb0690c983dd18fb897b39e6236ab29cc"
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/physical_candidate_quick_test/channel_predictions.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/physical_candidate_quick_test/channel_predictions.csv",
+        "sha256": "cff4ea726092781158efb8a3baf21ded9857f1397a2cc5c45ec20dab52262884"
       },
       {
-        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/physical_candidate_quick_test/model_comparison.json",
-        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/physical_candidate_quick_test/model_comparison.json",
-        "sha256": "0c19946e2e30ca493b59303d94b05478cc10127bd341227b02c153c44e37f160"
+        "original": "sandbox_test/Q_Walk/results/2026-10-22_clock_quality/physical_candidate_quick_test/model_comparison.json",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/physical_candidate_quick_test/model_comparison.json",
+        "sha256": "cdee0ac9f8b6f293d79571a819c83e670d718c5774c5466634161b3a113e5ae1"
       }
     ]
   }

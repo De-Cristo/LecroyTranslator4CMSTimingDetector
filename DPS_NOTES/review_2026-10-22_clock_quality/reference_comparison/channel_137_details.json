@@ -1,0 +1,42 @@
+{
+  "channel": 137,
+  "old_requested_bins_reconstructed": 100,
+  "old_retained_bins": 48,
+  "new_requested_bins": 20,
+  "new_retained_bins": 20,
+  "overlap_q_min_adc": 189.3760827712175,
+  "overlap_q_max_adc": 400.68631145616126,
+  "supported_grid_points": 19033,
+  "excluded_grid_points": 968,
+  "extra_offset_removed_after_26ns_ps": 1.597282484563711,
+  "shape_rms_ps": 1.332642513272055,
+  "max_abs_shape_ps": 3.21730047614599,
+  "peak_to_peak_shape_ps": 4.7576823031253435,
+  "old_walk_span_ps": 222.9950458388794,
+  "new_walk_span_ps": 225.01006522017875,
+  "old_profile_event_count": 11703,
+  "new_profile_event_count": 11032,
+  "legacy_mean_reconstruction_max_error_ps": 3.3306690738754696e-12,
+  "same_legacy_events_rebin20_rms_ps": 1.042281384743318,
+  "same_old_profile_weighting_only_rms_ps": 0.2894835410383468,
+  "old_coefficients_c_b_a_ns": [
+    -15233.507643930243,
+    198.5354033944996,
+    0.12176797584467636
+  ],
+  "new_coefficients_c_b_a_ns": [
+    -17132.27597840108,
+    214.02421862412126,
+    -25.906681072240918
+  ],
+  "same_event_rebin20_coefficients_c_b_a_ns": [
+    -16104.201630199073,
+    206.3488574236884,
+    0.10477510340988365
+  ],
+  "old_profile_wls_coefficients_c_b_a_ns": [
+    -15480.917079712446,
+    200.74573288845352,
+    0.11692942017443514
+  ]
+}

@@ -21,9 +21,11 @@ marked as an internal review draft. No official DP number or approval is implied
 
 Note1 retains the **legacy four-channel calibration** and adds the four
 **clock-corrected references used by Note2**, with their selection, fit definition
-and numerical comparison. Both sets are redrawn without refitting. Existing waveform,
-synchronization and resolution illustrations are retained as labelled legacy
-rasters. Captions say when raw-input provenance or uncertainty is incomplete.
+and numerical comparison. The current clock-corrected references were refitted
+on 22 October 2026 after clock-quality fixes. Existing waveform and
+synchronization illustrations remain labelled legacy rasters. Historical timing
+images are backups; reproducible before/after timing distributions replace them
+in the main result.
 
 Note2 uses the **newer extended, measured-overlap study**, whose clock-corrected
 reference is now also documented in Note1. Profile fits, spectra, curve comparisons and AWC summaries are redrawn
@@ -43,7 +45,8 @@ versions, selections and uncertainties have already been reconciled.
 2. N2-2: freeze run configurations, time decoding and numerical cuts.
 3. N1-3 is closed: the note now explicitly follows the code's minus-sign convention.
 4. N2-3 / N2-4: assess slope-model adequacy, matching objective and uncertainties.
-5. N1-5 / N2-5: reproduce bar timing validation.
+5. N1-5: bar timing widths reproduced; position, covariance and calibration
+   systematics remain open. N2-5 concerns shape closure versus event resolution.
 6. N2-6: define channel eligibility independently of the observed summary trend.
 7. N2-7: decide whether internal prediction belongs in the main result.
 8. N1-6: bibliography, official template, metadata and release packaging.
@@ -87,6 +90,16 @@ was changed. Note2's reference-version caveat is removed; its cross-run transfer
 review remains open. The comparison directory preserves the investigation
 record preceding this decision.
 
+N1-5 update, 22 October 2026: `review_2026-10-22_bar8_validation/` preserves
+the initial investigation, including missed resets and likely association
+offsets. `review_2026-10-22_clock_quality/` contains the subsequent production
+validation. Missing timestamps no longer hide resets; a clock-only 1 ns
+scaled-MAD group threshold rejects gross failures without shifting MCP rows.
+All 22 reference functions and their overlap-only AWC comparisons are refreshed
+in `Q_Walk/results/2026-10-22_clock_quality/`. Both notes use that version.
+Historical outputs are unchanged. N1-5 is not fully closed: intrinsic-resolution
+and synchronization-jitter claims require additional physical/systematic input.
+
 ## Edit and rebuild
 
 Edit each note's `main.tex` and `metadata.tex`. Shared layout and cover source:
@@ -102,7 +115,7 @@ python3 DPS_NOTES/draft_support/build.py --assets
 ```
 
 Omit `--assets` when only slide text or layout changed. Required tools:
-Python with NumPy, Matplotlib, Pillow and pypdf; pdfLaTeX; Poppler `pdftoppm`.
+Python with NumPy, pandas, SciPy, Matplotlib, Pillow and pypdf; pdfLaTeX; Poppler `pdftoppm`.
 The figure builder reads existing analysis outputs; it does not open ROOT files,
 refit physics models, change selections or modify `Q_Walk`.
 
