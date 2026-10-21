@@ -56,8 +56,6 @@ an acquisition segment.
 
 An offset and a slope are needed: a slope close to one is not sufficient
 over a long time interval. Clock resets require separate segment coordinates.
-\Review{N1-3}{Trace the segment configuration and coefficients used for the
-published calibration.}
 }{Legacy clock-relation plot. This plot illustrates synchronization, not
 charge-dependent time walk.}
 
@@ -66,12 +64,12 @@ After the linear clock-rate correction, the time residual still changes
 within each of three segments. Points are matched events; red curves show
 the smooth trend estimated by LOWESS, a locally weighted regression.
 
-The smooth trend is removed with the appropriate sign when constructing
-the common clock coordinate.
-\Review{N1-3}{Regenerate the before/after sequence and verify that the
-residual is corrected exactly once.}
+The fitted trend is added to the linear prediction to reconstruct the
+expected channel-192 trigger time. This expected time is subtracted once
+from the SiPM time in the reference difference.
 }{Legacy residuals in ns versus segment time in seconds. These are
-pre-LOWESS residuals, not final timing resolutions.}
+pre-LOWESS residuals, not final timing resolutions. Implementation:
+\nolinkurl{TimeCalibration/ch192_vs_trigger_lowess.py}, lines 657--668 and 816.}
 
 \begin{frame}{A single, explicit time convention}
 \small
@@ -81,19 +79,20 @@ Define the within-waveform difference
 \[
   \delta_{\rm MCP}=t_{\rm peak}^{\rm scope}-t_{\rm trigger}^{\rm scope}.
 \]
-The intended reference difference is then
+The reference difference implemented in the calibration is
 \[
- \Delta t_i=t_i^{\rm TOFHIR}-\left[g(t_{\rm trigger}^{\rm scope})
-                    +\delta_{\rm MCP}\right],
+ \Delta t_i=t_i^{\rm TOFHIR}-g(t_{\rm trigger}^{\rm scope})
+                    -\delta_{\rm MCP},
 \]
 up to a fixed cable/geometry offset and the negligible-rate-conversion
 approximation for the short within-waveform interval.
 
 The charge-dependent component of $\Delta t_i$ is the time walk.
-An arbitrary constant does not change a shape calibration.
-\Review{N1-3}{This explicit definition uses a minus sign for $\delta_{\rm MCP}$
-in $\Delta t_i$. Reconcile it with the plus sign in the old manuscript
-before freezing equations and the historical implementation.}
+An arbitrary constant does not change a shape calibration.\par
+{\scriptsize\textbf{Implementation:}
+\nolinkurl{TimeCalibration/ch192_vs_trigger_lowess.py}, lines 816 and 1102.
+Both per-file and combined-run calculations subtract
+\texttt{(mcp\_peak - mcp\_trig)}.\par}
 \end{frame}
 
 \begin{frame}{Reference bars and calibration selection}
@@ -222,7 +221,6 @@ claims require a frozen selection and complete statistical/systematic treatment.
 \toprule
 ID & Decision or missing evidence\\
 \midrule
-N1-3 & Reconcile time signs, clock mapping and segment/LOWESS configuration.\\
 N1-4 & Choose legacy or updated calibration; align bins, clipping, weighting and coefficient convention.\\
 N1-5 & Reproduce bar timing widths with uncertainties and position/covariance assumptions.\\
 N1-6 & Verify citations, official template/DP metadata and final publication packaging.\\

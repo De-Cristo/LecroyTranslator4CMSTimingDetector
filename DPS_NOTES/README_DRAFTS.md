@@ -39,7 +39,7 @@ versions, selections and uncertainties have already been reconciled.
 
 1. N1-4 / N2-1: select one reference calibration version for both notes.
 2. N2-2: freeze run configurations, time decoding and numerical cuts.
-3. N1-3: settle clock mapping, time-difference signs and correction ordering.
+3. N1-3 is closed: the note now explicitly follows the code's minus-sign convention.
 4. N2-3 / N2-4: assess slope-model adequacy, matching objective and uncertainties.
 5. N1-5 / N2-5: reproduce bar timing validation.
 6. N2-6: define channel eligibility independently of the observed summary trend.
@@ -67,6 +67,11 @@ underlying results are unchanged.
 N1-2 comments were replaced with relevant code paths on Note1 slides 6 and 10.
 The code locations are verified; this change does not independently recover
 the historical runtime configuration. N1-2 is no longer in the slide review queue.
+
+N1-3 was closed on 21 October 2026 after checking the implemented reference-time
+subtraction and LOWESS path. Slides 7-9 no longer carry its review comments;
+slide 9 shows the explicit minus sign and code references. No physics results
+or analysis code were changed.
 
 ## Edit and rebuild
 

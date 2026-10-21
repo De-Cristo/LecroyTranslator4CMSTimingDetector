@@ -3,7 +3,8 @@
   "repository": "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector",
   "review_status": {
     "N1-1": "author validated; comments removed",
-    "N1-2": "comments replaced with verified current code locations"
+    "N1-2": "comments replaced with verified current code locations",
+    "N1-3": "closed 2026-10-21: explicit minus-sign formula and single LOWESS contribution verified against code; documentation only"
   },
   "files": [
     {
@@ -13,8 +14,8 @@
     },
     {
       "path": "DPS_NOTES/README_DRAFTS.md",
-      "sha256": "9b87706b55a13caf7d0f1aae1de4b4f716834f0ebfe252b35feb3d27e52b9c9b",
-      "bytes": 5225
+      "sha256": "6b4c792662eaa70726bbba6a63e849a8747571cc5cc20e05463dd228951c53e1",
+      "bytes": 5500
     },
     {
       "path": "DPS_NOTES/REPOSITORY_WORKFLOW.md",
@@ -23,8 +24,8 @@
     },
     {
       "path": "DPS_NOTES/both_notes_review_v1.pdf",
-      "sha256": "053451d090320d3dabf042aae2e6a97984628c434be9bf7377b1611dd053d7ff",
-      "bytes": 28468366
+      "sha256": "9356295d54494776e1d7c0cd21ec25c55cf3dad9c27e4905247c49d24a9198fa",
+      "bytes": 28441436
     },
     {
       "path": "DPS_NOTES/cms_dp_note_template/CMSlogo_black_label_1024.png",
@@ -93,8 +94,8 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/README.md",
-      "sha256": "754e111ae47fdbbb03307013e052c458b74802dbc2712356ce55f745d1597a66",
-      "bytes": 1454
+      "sha256": "aff34d784cad94b01ba3900f17ca5a95aefaf1ac57baaf7cf37da11a539b3adb",
+      "bytes": 2219
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/build_report.json",
@@ -103,7 +104,7 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/cover.pdf",
-      "sha256": "1c1b4090b66843b28d00cc47a687a093cac17b52f19cdbfac57c33730bff908a",
+      "sha256": "ab15c8110cab63123875e2cb9a58acce188e063d79240ef5ece479d1606d3c80",
       "bytes": 949489
     },
     {
@@ -283,8 +284,8 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/main.tex",
-      "sha256": "266ed17846c0de34d0989404d4e4d37bbd80f926ad6bf1c08126f924d89d3ea2",
-      "bytes": 12259
+      "sha256": "5ce421a2f4cafb46268f6605d74de2a5d3b4337bf40671aaea679f3d18114a9c",
+      "bytes": 12158
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/metadata.tex",
@@ -293,13 +294,13 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/note_with_cover.pdf",
-      "sha256": "8eb49101de5e9ba39e835e4d81c69ddc14eda1fa632f17767e4d938393fa6165",
-      "bytes": 15714018
+      "sha256": "0cd81f97ff8143e1f6ce1c2cdf31a1b003232f76f5c7a99a2e76b1f75e5e8609",
+      "bytes": 15687118
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/slides.pdf",
-      "sha256": "a04add7015fdcc95dd3c5faff76643d79df249094f5c25444f67b342d1edd72b",
-      "bytes": 14710755
+      "sha256": "c9235f8cbc2379775ac9fde30b929ecc60cb581e5d66f6e47e8a0bc806d2e977",
+      "bytes": 14685538
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/slides_preamble.tex",
