@@ -1,0 +1,54 @@
+{
+  "channel": 150,
+  "module": "upstream",
+  "bar": 8,
+  "pair": [
+    137,
+    150
+  ],
+  "coincidence_pair": [
+    234,
+    243
+  ],
+  "formula": "walk_ns(Q) = a + b / Q + c / Q^2",
+  "coefficients_ns": {
+    "a": -26.330481642133496,
+    "b": 471.3154901422018,
+    "c": -67558.23963256132
+  },
+  "covariance_ns2_abc": [
+    [
+      0.0008030033241408236,
+      -0.6322307568964307,
+      122.00837146742484
+    ],
+    [
+      -0.6322307568964307,
+      502.93398825255815,
+      -97893.9720890121
+    ],
+    [
+      122.00837146742482,
+      -97893.97208901211,
+      19197262.890224706
+    ]
+  ],
+  "fit_method": "weighted quadratic fit to 20 full-selected-range inverse-Q profile means with weights 1/SEM^2",
+  "fit_domain": {
+    "q_min_adc": 312.7955250225139,
+    "q_max_adc": 664.9239172503035
+  },
+  "profile_domain": {
+    "q_min_adc": 307.56072998046875,
+    "q_max_adc": 694.1153033735566
+  },
+  "selection": {
+    "topology_matched_events": 12481,
+    "channel_hits": 12481,
+    "quality_hits": 12193,
+    "q_cut_adc": 307.55307226181026,
+    "selected_hits": 11301,
+    "profile_bins_retained": 19
+  },
+  "profile_csv": "Q_Walk/reference_quadratic_t0_extended_full_q_v2/run4399_upstream_bar8_ch150_t0_quadratic_profile.csv"
+}

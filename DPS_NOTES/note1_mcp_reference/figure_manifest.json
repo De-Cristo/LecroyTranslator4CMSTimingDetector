@@ -186,5 +186,73 @@
         "sha256": "643ef4a4cf67938d70ab6c18524e0dc0f2e31fd3454fdd3696bc66f26f669062"
       }
     ]
+  },
+  {
+    "note": "note1_mcp_reference",
+    "figure": "figures/clock_reference_ch133.pdf",
+    "kind": "Note2 reference snapshot; no refit; +26 ns display shift only",
+    "sources": [
+      {
+        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_133/run4399_upstream_bar7_ch133_t0_quadratic_profile.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_133/run4399_upstream_bar7_ch133_t0_quadratic_profile.csv",
+        "sha256": "a194efb23e0f34a366d53fb56141d47d8fa4154c93ed565ac504a69a0afc57c1"
+      },
+      {
+        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_133/run4399_upstream_bar7_ch133_t0_quadratic.json",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_133/run4399_upstream_bar7_ch133_t0_quadratic.json",
+        "sha256": "b28f1b88e7b3dac53fa43b10ecf105948fa6aa8948db0d9bcc2c39fbd24f1588"
+      }
+    ]
+  },
+  {
+    "note": "note1_mcp_reference",
+    "figure": "figures/clock_reference_ch154.pdf",
+    "kind": "Note2 reference snapshot; no refit; +26 ns display shift only",
+    "sources": [
+      {
+        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_154/run4399_upstream_bar7_ch154_t0_quadratic_profile.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_154/run4399_upstream_bar7_ch154_t0_quadratic_profile.csv",
+        "sha256": "204c22bf81a9edee8d1e616b31250870cb7c65e2b092181ad88ce1dd5770b139"
+      },
+      {
+        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_154/run4399_upstream_bar7_ch154_t0_quadratic.json",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_154/run4399_upstream_bar7_ch154_t0_quadratic.json",
+        "sha256": "d295d9e23b810c2bc2de2b61c7009caadf31c07c479f4851ac8ab11f37aee4ab"
+      }
+    ]
+  },
+  {
+    "note": "note1_mcp_reference",
+    "figure": "figures/clock_reference_ch137.pdf",
+    "kind": "Note2 reference snapshot; no refit; +26 ns display shift only",
+    "sources": [
+      {
+        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_137/run4399_upstream_bar8_ch137_t0_quadratic_profile.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_137/run4399_upstream_bar8_ch137_t0_quadratic_profile.csv",
+        "sha256": "8897fafc937543cb5001ec16274520e1e7b11d515624ee72c1440fd200e6abcd"
+      },
+      {
+        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_137/run4399_upstream_bar8_ch137_t0_quadratic.json",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_137/run4399_upstream_bar8_ch137_t0_quadratic.json",
+        "sha256": "0dc04655cfd5fb7b253013d29d5c63906d4b57c232d9f54eb7911b156aee2986"
+      }
+    ]
+  },
+  {
+    "note": "note1_mcp_reference",
+    "figure": "figures/clock_reference_ch150.pdf",
+    "kind": "Note2 reference snapshot; no refit; +26 ns display shift only",
+    "sources": [
+      {
+        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_150/run4399_upstream_bar8_ch150_t0_quadratic_profile.csv",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_150/run4399_upstream_bar8_ch150_t0_quadratic_profile.csv",
+        "sha256": "b09819dde668c6baa3e5ca97312b72c0c787b331efb0b2b16022574299b24e52"
+      },
+      {
+        "original": "sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_150/run4399_upstream_bar8_ch150_t0_quadratic.json",
+        "snapshot": "data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_150/run4399_upstream_bar8_ch150_t0_quadratic.json",
+        "sha256": "486c401c8b455264942c7288fdf1c424d9df626a1b355fd8b5e7f57e3b8ab509"
+      }
+    ]
   }
 ]

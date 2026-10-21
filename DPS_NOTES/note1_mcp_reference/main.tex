@@ -121,7 +121,7 @@ transit-time measurement inside the MCP.
 \nolinkurl{TimeCalibration/bar_processing.py}: peak-to-trigger timing selector.\par}
 \end{frame}
 
-\FigureSlide{Bar 7: channel 133 reference calibration}{reference_ch133}{
+\FigureSlide{Archived reference: bar 7, channel 133}{reference_ch133}{
 Run 4399 events are grouped in inverse-charge bins. Each point is the mean
 time difference; the vertical bar is its saved standard error of the mean
 (SEM). The curve is the saved binned quadratic
@@ -129,36 +129,36 @@ $W(Q)=a+b/Q+c/Q^2$.
 
 There are 26 retained profile points. The time coordinate includes the
 historical constant display offset.
-\Review{N1-4}{Confirm the historical fit weighting and clipping.
-The plotted SEM does not by itself imply weighted fitting.}
+These archived means use measured channel-192 timing. An unweighted fit
+to the means reproduces the saved coefficients; SEM bars are not fit weights.
 }{Redrawn from archived profile and coefficient CSVs. No refit.
 Saved display convention includes a +26\,ns shift.}
 
-\FigureSlide{Bar 7: channel 154 reference calibration}{reference_ch154}{
+\FigureSlide{Archived reference: bar 7, channel 154}{reference_ch154}{
 The opposite end of bar 7 is calibrated independently. Points show the mean
 time difference and SEM in 20 retained inverse-charge bins.
 
 The red curve is the saved quadratic in $1/Q$, not a quadratic in $Q$.
 Channel-dependent coefficients allow for different pulse responses at
 the two bar ends.
-\Review{N1-4}{The manuscript's common 12-bin statement is incompatible
-with these saved profile tables.}
+The archived fit is unweighted and uses measured channel-192 timing.
+The retained bin counts are channel dependent.
 }{Run 4399 legacy calibration, redrawn without refitting.
 Same +26\,ns display convention as channel 133.}
 
-\FigureSlide{Bar 8: channel 137 reference calibration}{reference_ch137}{
+\FigureSlide{Archived reference: bar 8, channel 137}{reference_ch137}{
 The channel-137 time difference increases as inverse charge increases:
 smaller signals cross a fixed threshold later.
 
 Points are profile means with SEM; the red line is the saved binned
 quadratic. There are 48 retained points. The correction is applicable
 over the measured charge support, not automatically outside it.
-\Review{N1-4}{Retain this legacy result or replace all four channels
-with one consistently regenerated calibration.}
+This unweighted, measured-channel-192 result is retained for comparison
+with the clock-corrected reference shown next.
 }{Run 4399 legacy calibration. Coefficients and numerical points are
 included with the draft.}
 
-\FigureSlide{Bar 8: channel 150 reference calibration}{reference_ch150}{
+\FigureSlide{Archived reference: bar 8, channel 150}{reference_ch150}{
 The opposite end of bar 8 has its own charge-dependent delay.
 The 25 points show the mean timing difference and SEM; the curve is
 the saved binned quadratic.
@@ -166,10 +166,99 @@ the saved binned quadratic.
 The four curves demonstrate the calibration procedure. Different numbers
 of retained points are preserved rather than imposing an undocumented
 common binning.
-\Review{N1-4}{The newer reference used for the extended comparison in
-Note2 has different selections and fit weighting.}
+This is the archived, unweighted fit using measured channel-192 timing.
 }{Run 4399 legacy calibration. Coefficient units are ns, ns\,ADC and
 ns\,ADC$^2$ for $a$, $b$ and $c$.}
+
+\begin{frame}{Clock-corrected reference shared with Note 2}
+\footnotesize
+The following results use the expected trigger time $g(u)$ reconstructed
+from the segment-wise linear clock relation and LOWESS drift:
+\[
+\Delta t_i=t_i^{\rm TOFHIR}-g(t_{\rm trigger}^{\rm scope})
+ -(t_{\rm peak}^{\rm scope}-t_{\rm trigger}^{\rm scope}).
+\]
+\begin{itemize}
+\item Run 4399: exactly five TOFHIR hits, comprising the target upstream pair,
+downstream channels 234 and 243, and channel 192, with a unique MCP match.
+\item Require finite, positive charge and slope-related quality quantities;
+retain $Q$ at or above the left half-maximum boundary of the spectrum peak.
+\item Form 20 uniform $1/Q$ bins; retain times within $5(1.4826\,\mathrm{MAD})$
+of each bin's median, with at least five entries. Bars show the SEM after clipping.
+\item Fit $W(Q)=a+b/Q+c/Q^2$ with an objective weighted by $1/\mathrm{SEM}^2$.
+The next four figures use the exact saved reference coefficients used in Note 2.
+\end{itemize}
+{\scriptsize Source snapshots: \texttt{2026-09-24\_measured\_q\_overlap/inputs}.
+The displayed +26\,ns constant changes neither the shape nor the saved coefficients.}
+\end{frame}
+
+\FigureSlide{Clock-corrected reference: bar 7, channel 133}{clock_reference_ch133}{
+The time difference now uses the reconstructed trigger time rather than
+the measured channel-192 timestamp, suppressing the fitted clock drift.
+
+Points show mean time differences with SEM in 19 retained inverse-charge bins.
+The red curve is the saved SEM-weighted quadratic used in Note 2.
+
+The curve is shown only within retained-bin support and the outer profile
+means. Missing bins are not extrapolated across.
+}{Run 4399; frozen Note2 input, redrawn without refitting.
+A constant +26\,ns shift is applied only for display.}
+
+\FigureSlide{Clock-corrected reference: bar 7, channel 154}{clock_reference_ch154}{
+The opposite end of bar 7 is calibrated with the same clock-reconstruction
+and profile procedure. Its independent coefficients describe its own
+charge-dependent timing response.
+
+The 19 points are retained-bin means; vertical bars show SEM after timing
+clipping. The red curve is the saved uncertainty-weighted quadratic in $1/Q$.
+}{Exact reference snapshot used in Note2. Coefficients and profile points
+are included with this note; the +26\,ns display shift is separate.}
+
+\FigureSlide{Clock-corrected reference: bar 8, channel 137}{clock_reference_ch137}{
+All 20 inverse-charge bins survive the profile requirements for this channel.
+Smaller charge gives a larger timing delay, as expected for fixed-threshold
+readout of pulses with different amplitudes.
+
+Points and bars are the mean and SEM after clipping. The saved quadratic
+is the MCP benchmark for the channel-137 inverse-slope comparison in Note 2.
+}{Run 4399; expected-trigger timing; no new fit or event processing.
+The +26\,ns shift affects only the vertical display origin.}
+
+\FigureSlide{Clock-corrected reference: bar 8, channel 150}{clock_reference_ch150}{
+The channel-150 reference uses 19 retained profile bins and the same
+clock-corrected time definition as the other three channels.
+
+Bars represent SEM, not the spread of individual event times.
+The red line is the saved SEM-weighted inverse-charge quadratic.
+These four results connect the MCP calibration in this note to the AWC
+shape comparison in Note 2.
+}{Run 4399; coefficients are preserved in their original ns convention.
+Only the figure receives the constant +26\,ns display shift.}
+
+\begin{frame}{Archived and clock-corrected shapes are close}
+\small
+Compare both saved functions on jointly populated charge support, after
+removing a constant offset only. No multiplicative scaling is fitted.
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+Channel & Shape RMS difference [ps] & Maximum absolute difference [ps]\\
+\midrule
+133 & 2.20 & 7.44\\
+154 & 3.91 & 8.75\\
+137 & 1.65 & 3.97\\
+150 & 4.88 & 10.42\\
+\bottomrule
+\end{tabular}
+\end{center}
+The walk varies by about 190--250\,ps over these intervals.
+Rebinning the same archived events alone changes shapes by 0.14--1.41\,ps RMS.
+The production versions also differ in trigger reconstruction, selection,
+clipping and fit weights.
+
+These are differences between calibration functions, not timing resolutions
+or a statistical-equivalence test. Note 2 uses the clock-corrected version.
+\end{frame}
 
 \FigureSlide{Timing validation using the two bar ends}{bar_end_difference}{
 The distribution is the corrected time difference between the two SiPM
@@ -202,9 +291,9 @@ combine unrelated selections or clock branches in quadrature.}
 BTL and oscilloscope time coordinates.
 \item A linear clock relation plus a smooth residual correction defines
 the reference-time mapping.
-\item Four saved inverse-charge profiles and quadratic functions describe
-the reference-bar time walk. Numerical points, SEM and coefficients
-accompany this draft.
+\item Four clock-corrected inverse-charge profiles and quadratic functions
+provide the reference used in Note 2. The archived fits remain as a comparison;
+numerical points, SEM and both coefficient sets accompany this draft.
 \item Intrinsic MCP timing, reference-bar timing and cross-system
 synchronization are different performance quantities.
 \item Charge range and operating conditions limit transfer to other
@@ -221,7 +310,6 @@ claims require a frozen selection and complete statistical/systematic treatment.
 \toprule
 ID & Decision or missing evidence\\
 \midrule
-N1-4 & Choose legacy or updated calibration; align bins, clipping, weighting and coefficient convention.\\
 N1-5 & Reproduce bar timing widths with uncertainties and position/covariance assumptions.\\
 N1-6 & Verify citations, official template/DP metadata and final publication packaging.\\
 \bottomrule

@@ -103,6 +103,39 @@ def reference_profiles():
         w.writerows(rows)
 
 
+def clock_reference_profiles():
+    snapshot(DPS / "review_2026-10-21_reference_comparison/summary.csv", N1)
+    rows = []
+    for ch, bar in ((133, 7), (154, 7), (137, 8), (150, 8)):
+        folder = OVERLAP / f"inputs/channel_{ch}"
+        stem = f"run4399_upstream_bar{bar}_ch{ch}_t0_quadratic"
+        pp, cp = folder / f"{stem}_profile.csv", folder / f"{stem}.json"
+        p, meta = read_csv(pp), json.loads(cp.read_text())
+        a, b, c = [meta["coefficients_ns"][k] for k in ("a", "b", "c")]
+        x = np.linspace(p["inv_q_mean"].min(), p["inv_q_mean"].max(), 600)
+        supported = np.zeros(x.size, dtype=bool)
+        for row in p:
+            supported |= (x >= row["inv_q_bin_low"]) & (x <= row["inv_q_bin_high"])
+        fig, ax = canvas()
+        ax.errorbar(p["inv_q_mean"], p["delta_t_ref_mean_ps"] / 1000 + 26,
+                    yerr=p["delta_t_ref_sem_ps"] / 1000, fmt="o", ms=4.5,
+                    capsize=2, color="#2375aa", label="Profile mean +/- SEM")
+        ax.plot(x, np.where(supported, a + b*x + c*x*x + 26, np.nan),
+                color="#c03937", lw=2, label="Saved SEM-weighted quadratic")
+        ax.set(xlabel=r"$1/Q$ [ADC$^{-1}$]", ylabel="Time difference [ns]",
+               title=f"Run 4399 | Channel {ch} | Clock-corrected reference")
+        ax.xaxis.set_major_locator(plt.MaxNLocator(nbins=6, prune="both"))
+        ax.legend(loc="best")
+        save(fig, N1, f"clock_reference_ch{ch}", [pp, cp],
+             "Note2 reference snapshot; no refit; +26 ns display shift only")
+        rows.append(dict(channel=ch, bar=bar, retained_bins=len(p),
+                         a_ns=a, b_ns_adc=b, c_ns_adc2=c, display_offset_ns=26))
+    with (N1 / "data/clock_reference_coefficients.csv").open("w") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+
+
 def slope_profile(ch):
     folder = OVERLAP / f"inputs/channel_{ch}"
     sp = next(folder.glob("*linear_summary.json"))
@@ -250,6 +283,7 @@ def main():
     ):
         legacy_image(filename, name)
     reference_profiles()
+    clock_reference_profiles()
     for ch in (133, 154, 137, 150):
         slope_profile(ch)
     spectrum()

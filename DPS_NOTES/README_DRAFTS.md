@@ -19,13 +19,14 @@ marked as an internal review draft. No official DP number or approval is implied
 
 ## How this first version handles the known gaps
 
-Note1 retains the **legacy four-channel calibration**. Its profiles and
-coefficients are redrawn from CSV without refitting. Existing waveform,
+Note1 retains the **legacy four-channel calibration** and adds the four
+**clock-corrected references used by Note2**, with their selection, fit definition
+and numerical comparison. Both sets are redrawn without refitting. Existing waveform,
 synchronization and resolution illustrations are retained as labelled legacy
 rasters. Captions say when raw-input provenance or uncertainty is incomplete.
 
-Note2 uses the **newer extended, measured-overlap study**, not the legacy Note1
-curves. Profile fits, spectra, curve comparisons and AWC summaries are redrawn
+Note2 uses the **newer extended, measured-overlap study**, whose clock-corrected
+reference is now also documented in Note1. Profile fits, spectra, curve comparisons and AWC summaries are redrawn
 from frozen numerical outputs. The old ambiguous residual illustration is
 replaced with an explicitly defined model-minus-model residual. The internal
 AWC predictor is exploratory backup material. The ten-channel subset is
@@ -37,7 +38,8 @@ versions, selections and uncertainties have already been reconciled.
 
 ## Review sequence
 
-1. N1-4 / N2-1: select one reference calibration version for both notes.
+1. N1-4 is closed: Note1 now includes the clock-corrected reference used by Note2.
+   N2-1 remains open for the cross-run operating conditions and transfer justification.
 2. N2-2: freeze run configurations, time decoding and numerical cuts.
 3. N1-3 is closed: the note now explicitly follows the code's minus-sign convention.
 4. N2-3 / N2-4: assess slope-model adequacy, matching objective and uncertainties.
@@ -77,8 +79,13 @@ N1-4 investigation: `review_2026-10-21_reference_comparison/` compares the four
 saved reference shapes and controlled binning/weighting changes. The shape
 differences are 1.65-4.88 ps RMS after offset alignment on joint support.
 The legacy profiles reconstruct from the raw-channel-192 `walk_before`
-samples; the newer reference uses the expected trigger time. N1-4 remains
-open, and this investigation has not replaced either note's reference curves.
+samples; the newer reference uses the expected trigger time. At the author's
+request, N1-4 was closed on 21 October 2026 by adding the clock-corrected method,
+four profiles and a comparison summary to Note1 (slides 15-20). The archived
+curves remain explicitly labelled. Neither fit version nor the Note2 analysis
+was changed. Note2's reference-version caveat is removed; its cross-run transfer
+review remains open. The comparison directory preserves the investigation
+record preceding this decision.
 
 ## Edit and rebuild
 

@@ -5,7 +5,7 @@
     "N1-1": "author validated; comments removed",
     "N1-2": "comments replaced with verified current code locations",
     "N1-3": "closed 2026-10-21: explicit minus-sign formula and single LOWESS contribution verified against code; documentation only",
-    "N1-4": "open: numerical comparison saved 2026-10-21; shapes close, but legacy raw channel-192 versus updated expected-trigger reconstruction differs; no reference replacement agreed"
+    "N1-4": "closed 2026-10-21: author requested adding clock-corrected results to Note1; exact Note2 references shown alongside archived fits, with selections and shape comparison; no fit changes"
   },
   "files": [
     {
@@ -15,8 +15,8 @@
     },
     {
       "path": "DPS_NOTES/README_DRAFTS.md",
-      "sha256": "6b1d045744c14bc4d4036dde21637a85e9e57451468a33e1f731ba9ae0a3df56",
-      "bytes": 5953
+      "sha256": "74cde2803ea080c01107991618b441efe5de02189c04d77c5247a3ac888bf4eb",
+      "bytes": 6533
     },
     {
       "path": "DPS_NOTES/REPOSITORY_WORKFLOW.md",
@@ -25,8 +25,8 @@
     },
     {
       "path": "DPS_NOTES/both_notes_review_v1.pdf",
-      "sha256": "9356295d54494776e1d7c0cd21ec25c55cf3dad9c27e4905247c49d24a9198fa",
-      "bytes": 28441436
+      "sha256": "272c15f4455cb2c35b2791944faeafc3a2ef2b3bab3503dfb6ab299a3487cda1",
+      "bytes": 32738562
     },
     {
       "path": "DPS_NOTES/cms_dp_note_template/CMSlogo_black_label_1024.png",
@@ -70,8 +70,8 @@
     },
     {
       "path": "DPS_NOTES/draft_support/build_assets.py",
-      "sha256": "fd89fbedff8ccb3636ec2b024e7fd39b8b392973be7720e0da759d49494205ae",
-      "bytes": 12192
+      "sha256": "4c31d99376ff4e4eddd428ab4422354543be1f01ca33cfd506f8869446e87c30",
+      "bytes": 14105
     },
     {
       "path": "DPS_NOTES/draft_support/cover.tex",
@@ -95,18 +95,18 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/README.md",
-      "sha256": "aff34d784cad94b01ba3900f17ca5a95aefaf1ac57baaf7cf37da11a539b3adb",
-      "bytes": 2219
+      "sha256": "afc5754f4bb5f4907cb4db16eabc56590d7f0dcd615f1f873d820c897952aa6a",
+      "bytes": 3129
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/build_report.json",
-      "sha256": "2dbbf9e1eb1aad554ac63e02b7852a9c647d8719a928eb1bd4e2304ca372b404",
-      "bytes": 315
+      "sha256": "fac4579ad3823acb91968f35c82a233e38fcd9ee11ce91eb1113552bef0e9940",
+      "bytes": 350
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/cover.pdf",
-      "sha256": "ab15c8110cab63123875e2cb9a58acce188e063d79240ef5ece479d1606d3c80",
-      "bytes": 949489
+      "sha256": "15423215b7f1f7906cefd63e0bc73270897175cf3f1a89304578ae0e87ca73d0",
+      "bytes": 949770
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/cover.tex",
@@ -164,9 +164,19 @@
       "bytes": 136271
     },
     {
+      "path": "DPS_NOTES/note1_mcp_reference/data/clock_reference_coefficients.csv",
+      "sha256": "2d13c571b3aa14fec9aaccee788f614e822e750aaeccafe53c25c3045312102f",
+      "bytes": 350
+    },
+    {
       "path": "DPS_NOTES/note1_mcp_reference/data/reference_coefficients.csv",
       "sha256": "982b8f8a656a1a454d35e2f6328ee600ec457b92f5ba4ca08fc283bad1f582ec",
       "bytes": 315
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/sandbox_test/DPS_NOTES/review_2026-10-21_reference_comparison/summary.csv",
+      "sha256": "d3dd7008a9796ac673abfdb2e7b3f7dcf8150abc08be85d5429285504bf1f165",
+      "bytes": 1436
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch133_walk_before_walk_fit_expected_refit_coeffs.csv",
@@ -209,9 +219,49 @@
       "bytes": 1717
     },
     {
+      "path": "DPS_NOTES/note1_mcp_reference/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_133/run4399_upstream_bar7_ch133_t0_quadratic.json",
+      "sha256": "b28f1b88e7b3dac53fa43b10ecf105948fa6aa8948db0d9bcc2c39fbd24f1588",
+      "bytes": 1239
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_133/run4399_upstream_bar7_ch133_t0_quadratic_profile.csv",
+      "sha256": "a194efb23e0f34a366d53fb56141d47d8fa4154c93ed565ac504a69a0afc57c1",
+      "bytes": 7310
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_137/run4399_upstream_bar8_ch137_t0_quadratic.json",
+      "sha256": "0dc04655cfd5fb7b253013d29d5c63906d4b57c232d9f54eb7911b156aee2986",
+      "bytes": 1244
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_137/run4399_upstream_bar8_ch137_t0_quadratic_profile.csv",
+      "sha256": "8897fafc937543cb5001ec16274520e1e7b11d515624ee72c1440fd200e6abcd",
+      "bytes": 7698
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_150/run4399_upstream_bar8_ch150_t0_quadratic.json",
+      "sha256": "486c401c8b455264942c7288fdf1c424d9df626a1b355fd8b5e7f57e3b8ab509",
+      "bytes": 1243
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_150/run4399_upstream_bar8_ch150_t0_quadratic_profile.csv",
+      "sha256": "b09819dde668c6baa3e5ca97312b72c0c787b331efb0b2b16022574299b24e52",
+      "bytes": 7376
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_154/run4399_upstream_bar7_ch154_t0_quadratic.json",
+      "sha256": "d295d9e23b810c2bc2de2b61c7009caadf31c07c479f4851ac8ab11f37aee4ab",
+      "bytes": 1232
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/inputs/channel_154/run4399_upstream_bar7_ch154_t0_quadratic_profile.csv",
+      "sha256": "204c22bf81a9edee8d1e616b31250870cb7c65e2b092181ad88ce1dd5770b139",
+      "bytes": 7331
+    },
+    {
       "path": "DPS_NOTES/note1_mcp_reference/figure_manifest.json",
-      "sha256": "8d9f3526743d73bacec2ac110d10e4aaf28485ae6bc56a656cbc8c4c61cd8284",
-      "bytes": 7695
+      "sha256": "257ce950c6596da3412a40dc14bd0fd0850f6751c4b241fb875d83316eeeff7c",
+      "bytes": 11719
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/figures/bar_end_difference.pdf",
@@ -232,6 +282,26 @@
       "path": "DPS_NOTES/note1_mcp_reference/figures/clock_estimators.pdf",
       "sha256": "75f7a3654b6df9d131fb2e0e7a865f654197826890d9b12979b65e017a9c6f40",
       "bytes": 870744
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/figures/clock_reference_ch133.pdf",
+      "sha256": "c34a942eb662ba80181d6e0f08ed8f016afabdd31e6a6271d985b0d0d21ed6bc",
+      "bytes": 1064743
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/figures/clock_reference_ch137.pdf",
+      "sha256": "0b2edc86d0af16f8b407ddf833933de406dabd239beaff526eab9f7e150169ae",
+      "bytes": 1064713
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/figures/clock_reference_ch150.pdf",
+      "sha256": "051c8134974d9150670d6ceea74f73c9107114b9c2c11b9bc532d1ba51b0080b",
+      "bytes": 1064808
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/figures/clock_reference_ch154.pdf",
+      "sha256": "309717d9df7cd41c1722b88e3173805292fd7a0627b9f14e84f26f34ce04a7c6",
+      "bytes": 1064663
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/figures/clock_relation.pdf",
@@ -285,23 +355,23 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/main.tex",
-      "sha256": "5ce421a2f4cafb46268f6605d74de2a5d3b4337bf40671aaea679f3d18114a9c",
-      "bytes": 12158
+      "sha256": "03316747f9646a6f556bf44e0d768e02271b2d59221f31cc5c876fbca0e6defc",
+      "bytes": 16440
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/metadata.tex",
-      "sha256": "e45647177e7655d85fb0a1cabd50e552339938d3697a95ab83bf0d3e5c48cf80",
-      "bytes": 1300
+      "sha256": "d14acf2a19871ee1c5833c7c05386c9223adc0ebe023475f3457d09e7ec0e5f2",
+      "bytes": 1463
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/note_with_cover.pdf",
-      "sha256": "0cd81f97ff8143e1f6ce1c2cdf31a1b003232f76f5c7a99a2e76b1f75e5e8609",
-      "bytes": 15687118
+      "sha256": "54c295188704b8e46d18d18f4c5b53bff2678a769eb112b3ac8e22c40c8d1985",
+      "bytes": 19984514
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/slides.pdf",
-      "sha256": "c9235f8cbc2379775ac9fde30b929ecc60cb581e5d66f6e47e8a0bc806d2e977",
-      "bytes": 14685538
+      "sha256": "1db70eb27955ef7866244bec0f7afcdd161acc07b19cd9a1879626c6ec4797bc",
+      "bytes": 18969620
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/slides_preamble.tex",
@@ -320,8 +390,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/README.md",
-      "sha256": "9fabdc0fbbe6f042781a920198931d496ff9f6e7cafa9e88fa247a795c58e9b5",
-      "bytes": 764
+      "sha256": "bfecce845f830c82f274641019f520111d17654dd71b86acc33af3e0bdc88896",
+      "bytes": 1029
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/build_report.json",
@@ -330,7 +400,7 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/cover.pdf",
-      "sha256": "609672641cfc3478dd6595ec5af306e7a2be6b2f1a8f71dbaada94a9cb3c32fa",
+      "sha256": "6dcb08e3fda83cb7980cc0a175c0d772bf610fa0362c737ffef56b5731207a17",
       "bytes": 950156
     },
     {
@@ -535,8 +605,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/main.tex",
-      "sha256": "7fe3a0ed5e3db469030de836fc78655e08aa41cc0cde8b57ed92991ea15aede2",
-      "bytes": 14631
+      "sha256": "ed8b2d0b163b35a90e0f782fbede6bd57b43b445319f9c2d7ba0eeb51045f229",
+      "bytes": 14621
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/metadata.tex",
@@ -545,13 +615,13 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/note_with_cover.pdf",
-      "sha256": "77ced26d68e1fbd80c52eabd84d271ac8ad2adb887e167f645ec52e198b0b41f",
-      "bytes": 12753816
+      "sha256": "1cab915a68c50d482b2ec3928ac55b8b6dfae5b26cc3a021bb4eb8088ad99309",
+      "bytes": 12753788
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/slides.pdf",
-      "sha256": "ea8bdd43195ad923028d6ab3fb791e42620a92cac39d43bc2d90f5a4ed9db272",
-      "bytes": 11748532
+      "sha256": "e6297a8cef238ad6044e5fd6a8e9d8c4c8830412663866beb7117468f1e9edc3",
+      "bytes": 11748507
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/slides_preamble.tex",
