@@ -129,7 +129,8 @@ def build_candidate(note):
                   slides=len(reader.pages), with_cover_pages=len(writer.pages),
                   overfull_boxes=0, unresolved_citations=0, dp_number=None,
                   template_officially_confirmed=False, cover_handling_confirmed=False,
-                  scientific_review_comments_retained=note.name == "note2_dual_threshold",
+                  scientific_review_comments_retained=(note.name == "note2_dual_threshold"
+                      and r"\Review{" in (note / "main.tex").read_text()),
                   files={p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in (slides_path, cover_path)})
     (note / "candidate_report.json").write_text(json.dumps(report, indent=2) + "\n")
     print(note.name, "candidate:", json.dumps(report), flush=True)

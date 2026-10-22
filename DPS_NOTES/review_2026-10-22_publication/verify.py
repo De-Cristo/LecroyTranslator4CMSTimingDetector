@@ -58,7 +58,8 @@ def main():
             assert "Timing reconstruction and threshold scale" in candidate_text
             assert "Landau" in candidate_text and "does not set this cut" in candidate_text
             for index in (3, 4):
-                assert f"N2-{index}" in candidate_text
+                assert f"N2-{index}" not in candidate_text and f"N2-{index}" not in review_text
+            assert not json.loads((note / "candidate_report.json").read_text())["scientific_review_comments_retained"]
             assert "N2-5" not in review_text and "N2-5" not in candidate_text
             assert "N2-6" not in review_text and "N2-6" not in candidate_text
             assert "N2-7" not in review_text and "N2-7" not in candidate_text
@@ -109,7 +110,13 @@ def main():
             for removed in ("Residual check: is a straight line sufficient?",
                             "Model and selection choices change the inferred AWC"):
                 assert removed not in candidate_text and removed not in review_text
-            assert "Linear-model adequacy remains open" in " ".join(candidate_text.split())
+            for deck in (review_text, candidate_text):
+                normalized = " ".join(deck.split())
+                assert "Linearity is a working approximation, not a validated precision model" in normalized
+                assert "Model and selection dependence are excluded from the quoted errors" in normalized
+                assert "slope-only statistical" in normalized
+                assert "reported separately, not total calibration uncertainties" in normalized
+            assert "The current review items are closed for this exploratory version" in " ".join(review_text.split())
             assert "Channel 137: inverse-slope and MCP walk shapes" in candidate_text
             assert "MCP-fit uncertainty and charge weighting" in candidate_text
             for entry in json.loads((note / "data/n2_4_manifest.json").read_text()):
@@ -134,7 +141,7 @@ def main():
                   combined_pages=len(PdfReader(combined).pages),
                   combined_sha256=hashlib.sha256(combined.read_bytes()).hexdigest(),
                   review_status="N1-6 local work complete; convener template, DP metadata, cover handling and release approval pending",
-                  note2_review_status="N2-1/N2-2 closed as documented; N2-5 closed for documentation-only model-closure scope; N2-6 closed for exploratory reporting, all 21 and the original ten-channel results retained; N2-7 closed for MCP-trained exploratory backup scope, not reference-free calibration; N2-3/N2-4 remain open; numerical results unchanged",
+                  note2_review_status="All current Note2 review items closed within documented scope. N2-3/N2-4 temporarily closed by author for exploratory linear model and conditional statistics with separate weighting sensitivity; permanent limitations retained, not precision-model validation or a total error budget. Next pass is page by page; numerical results unchanged.",
                   analysis_tests="previous clock-quality tests reused; N2-2 ROOT replay and 17 focused tests documented in review_2026-10-22_n2_2/README.md; frozen numerical results unchanged")
     (OUT / "verification.json").write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report, indent=2))

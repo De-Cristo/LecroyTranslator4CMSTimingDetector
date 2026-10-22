@@ -10,7 +10,10 @@ exploratory internal prediction. The 4076 and 4399 samples are different events.
 N2-1 is closed under the nominal-setup assumption below; N2-2 is closed after
 the ROOT replay documented below. N2-5 is closed for the documentation-only
 scope below. N2-6 is closed for the exploratory reporting scope below.
-N2-7 is closed for exploratory backup scope. N2-3 and N2-4 remain open before release.
+N2-7 is closed for exploratory backup scope. N2-3 and N2-4 are temporarily
+closed by author approval for this exploratory version, as documented below.
+All current Note2 review items are closed within their stated scope; a new
+page-by-page review and CMS release approval remain pending.
 
 On 21 October 2026 the clock-corrected reference profiles were also added to
 Note1, closing the reference-version gap N1-4. This left the N2-1 question of
@@ -23,8 +26,9 @@ points, the exploratory predictor and the run4399 charge spectrum were
 regenerated consistently. The run4076 slope fits and bootstrap replicas are
 unchanged. Current inputs are `Q_Walk/results/2026-10-22_clock_quality/`; the
 old September results are preserved. `reference_update_awc_impact.csv` records
-the per-channel change. The quoted intervals still hold the reference fixed.
-No cross-run or reference-fit systematic has been added to those intervals.
+the per-channel change. The original plotted intervals hold the reference fixed;
+the separate N2-4 table adds reference-fit statistics. Neither includes
+cross-run transfer or a total calibration systematic uncertainty.
 
 N2-1 closed on 22 October 2026 under the author's stated working assumption:
 the nominal detector setup is the same, with MCP reference timing in run 4399
@@ -34,7 +38,7 @@ bias, thresholds, temperature, firmware or charge calibration. The slides
 state the assumption and retain the unquantified cross-run and
 selection-dependent response limitations. No fit, data, figure or numerical
 uncertainty changed. The two inline N2-1 comments and queue entry were removed;
-the other N2 review items remain open.
+the other N2 review items were addressed subsequently as documented below.
 
 N2-2 closed on 22 October 2026 after replaying the run4076 `23_e.root` input
 for all 22 frozen channel profiles. Counts, histogram charge boundaries, bin
@@ -47,7 +51,7 @@ selection has no 100 ps minimum-rise cut; newer defaults must not be inherited.
 Channel 135's singleton bin has undefined SEM and is excluded from its fit.
 See `../review_2026-10-22_n2_2/README.md` and `audit.json` for evidence and
 limitations. The audit changes no saved fit, bootstrap replica, spectrum or
-AWC value. Selection sensitivity remains under N2-3; channel-quality limitations
+AWC value. Selection sensitivity is documented under N2-3; channel-quality limitations
 are documented under the N2-6 reporting scope below. N2-4 covers the uncertainty budget.
 
 On 22 October 2026 the author requested keeping only the original comparison:
@@ -56,7 +60,12 @@ new model/sensitivity slides have been removed from both slide versions.
 The nominal fits, reference, comparison plots and conclusions are unchanged.
 The N2-3 audit remains saved separately in `../review_2026-10-22_n2_3/`;
 its exported assets are retained for provenance but are not displayed in the
-note. Model adequacy remains an open review point, not a validated conclusion.
+note. N2-3 is temporarily closed by author approval on 22 October 2026 for
+this exploratory version: linearity is a working approximation, not a validated
+precision model. Model and selection dependence are outside the quoted errors.
+The sensitivity evidence is preserved; further validation is needed before
+precision calibration claims. The inline comment and queue entry are replaced
+with permanent limitations, without changing the original comparison.
 
 N2-4 audit completed on 22 October 2026: all 22 MCP coefficient/covariance
 fits and 21 nominal AWC fits reproduce. A new table reports conditional
@@ -65,7 +74,14 @@ coefficient uncertainty, alongside sensitivity to three alternative charge
 weights. Central curves, original slope-only plot bands and conclusions are
 unchanged. The expanded intervals are not total calibration uncertainties;
 weighting shifts are separate, not added in quadrature. See
-`../review_2026-10-22_n2_4/README.md`. N2-4 awaits acceptance of this scope.
+`../review_2026-10-22_n2_4/README.md`. The author accepted this reporting scope
+on 22 October 2026 and temporarily closed N2-4 for this version. The original
+plots retain explicitly labelled slope-only statistical bands; the additional
+table includes MCP-fit statistics and separate weighting sensitivity. Clock,
+fine-time calibration, cross-run transfer and model/selection effects remain
+outside the reported intervals. The inline comment and queue entry are removed;
+this is not closure of a total uncertainty budget. A new page-by-page review
+can reopen either decision. No numerical result or conclusion changes.
 
 N2-5 closed by author approval on 22 October 2026 for this version. All four
 comparison captions distinguish model-shape closure from event timing
@@ -104,8 +120,9 @@ reference-free performance. No new analysis or figure generation is required.
 The N1-6 packaging update also adds verified context/method references here.
 `publication_candidate_slides.pdf` and `publication_candidate_with_cover.pdf`
 provide independent candidate deliverables for this note. They remain explicitly
-unapproved and retain the scientific review comments; only the closing queue is
-omitted. No N2 review item is closed by this formatting change. See
+unapproved and retain the permanent scientific qualifications; the closing
+review-status slide is omitted. Review closure follows the explicit author
+decisions above, not this formatting change. See
 `../PUBLICATION_CHECKLIST.md` for pending convener decisions and cover handling.
 
 The standalone source archive compiles with pdfLaTeX. Within the repository,

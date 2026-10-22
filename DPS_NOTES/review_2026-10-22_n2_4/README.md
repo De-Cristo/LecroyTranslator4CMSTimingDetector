@@ -97,8 +97,10 @@ separately. Do not add the maximum weighting shift in quadrature as though
 it were a measured one-sigma error. Do not assert that weighting is negligible.
 
 The requested reference propagation and weighting audit are complete.
-N2-4 remains open for acceptance of this reporting scope; this is not a complete
-calibration uncertainty budget. Clock/LOWESS calibration, fine-time lookup,
+The author accepted this reporting scope on 22 October 2026 and temporarily
+closed N2-4 for this exploratory version, subject to the next page-by-page
+review. This is not a complete calibration uncertainty budget.
+Clock/LOWESS calibration, fine-time lookup,
 cross-run response transfer, model/selection choices, random support boundaries,
 and cross-channel correlations remain unpropagated. The original Note2 curve
 bands and summary bars retain their clearly labelled slope-only definition;

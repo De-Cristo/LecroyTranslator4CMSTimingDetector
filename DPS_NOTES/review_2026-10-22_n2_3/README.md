@@ -1,7 +1,10 @@
 # N2-3: linear-profile adequacy and AWC sensitivity
 
-22 October 2026. **Diagnostics complete; N2-3 remains open for a model/range
-decision.** No nominal calibration, selection, bootstrap band or reference
+22 October 2026. **Temporarily closed by author approval for exploratory scope.**
+Linearity remains a working approximation, not a validated precision model;
+model and selection dependence are outside the quoted errors. The author
+will revisit decisions in a page-by-page review. No nominal calibration,
+selection, bootstrap band or reference
 curve has been replaced. This directory records an exploratory audit, not a
 new recommended calibration or a total-uncertainty prescription.
 
@@ -72,10 +75,13 @@ Do not declare the linear model generally adequate or select the replacement
 solely because it resembles the MCP curve. Decide a physically acceptable
 slope model and fitting range from run4076 profile behavior, then repeat the
 fixed MCP comparison. Preserve unsupported and unstable-channel diagnostics.
-The total uncertainty prescription and channel-quality rules remain N2-4
-and N2-6 respectively. Closing N2-3 requires this decision and revalidation,
-or an explicit author decision to limit the claim to an exploratory model
-with the observed limitations; this audit alone does not close it.
+The author chose the alternative, limited scope for this version: retain the
+original comparison as an exploratory model with these observed limitations.
+This closes the review comment, not the model-validation question. The audit
+is preserved separately; model/range revalidation remains necessary for
+precision calibration claims. N2-4 documents conditional statistical errors
+and separate weighting sensitivity, and N2-6 documents exploratory channel
+coverage. Neither supplies a total model/selection uncertainty.
 
 ## Outputs and reproduction
 

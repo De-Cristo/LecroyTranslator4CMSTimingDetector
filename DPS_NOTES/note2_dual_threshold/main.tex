@@ -131,8 +131,9 @@ All AWC-and-offset fits in this note use these refreshed references.
 The run-4076 slope fits, bootstrap replicas and measured-support matching
 definition are unchanged. The charge spectra use the updated reference sample.
 
-AWC intervals still hold the reference fixed. They do not account for
-reference-fit uncertainty, clock-selection uncertainty or cross-run transfer.
+The original plotted AWC intervals hold the reference fixed. They exclude
+reference-fit uncertainty, clock-selection uncertainty and cross-run transfer.
+The later table adds reference-fit statistics separately.
 
 {\scriptsize Numerical version: \texttt{Q\_Walk/results/2026-10-22\_clock\_quality}.}
 \end{frame}
@@ -191,8 +192,9 @@ independently at each bar end.
 
 Bars show hit SD. The line uses SEM weights and the band propagates the
 saved bootstrap coefficient replicas, including their correlation.
-\Review{N2-3}{Linear-model adequacy remains open. The separate sensitivity
-audit is retained outside this note; this version keeps the original comparison.}
+Linearity is a working approximation, not a validated precision model.
+Model and selection dependence are excluded from the quoted errors;
+the separate sensitivity study is retained outside this note.
 }{Run 4076, extended-profile snapshot. No model refit is performed for
 the slide rendering.}
 
@@ -292,7 +294,7 @@ Blue circles are upstream and red squares downstream.
 The x coordinate is $1/c_1$, the inverse coefficient of the linear
 $S(Q)$ fit; the y coordinate is reference-fitted AWC.
 
-Bars span the 16th--84th bootstrap percentiles.
+Bars span the slope-only statistical 16th--84th bootstrap percentiles.
 There are 21 completed fits; channel 238 has no measured overlap.
 All completed fits are retained, including limited-support and poorly
 constrained cases documented in the channel-status table below.
@@ -301,7 +303,7 @@ this is not a final quality-selected performance sample.}
 
 \FigureSlide{A selected subset does not establish a universal law}{awc_summary_selected}{
 The ten-channel upstream subset previously selected for discussion is
-shown on linear axes. Bars are conditional AWC bootstrap intervals;
+shown on linear axes. Bars are slope-only statistical AWC bootstrap intervals;
 channel numbers identify the points.
 
 The saved weighted straight line has $\chi^2/{\rm ndf}=\SummaryChi/8$ under its
@@ -368,7 +370,7 @@ covariance through the AWC-plus-offset fit. The Gaussian mixture gives the
 16--84\% interval; central AWC values and comparison curves are unchanged.
 \par
 All table values are in $\mu$A. ``Both runs'' adds MCP-fit statistics, not
-cross-run or model systematics. The original plots retain slope-only bands.
+cross-run or model systematics. The original plots retain slope-only statistical bands.
 {\centering\input{data/n2_4_uncertainty_table.tex}\par}
 Maximum weighting shift: largest $|\Delta\mathrm{AWC}|$ using uniform $1/Q$
 or either run's charge population instead of uniform Q. Same overlap and
@@ -376,8 +378,8 @@ free offset; these shifts are not statistical errors or added in quadrature.
 \par
 All 21 overlap channels were checked; channel 238 has no overlap.
 A shared reference-time offset affects only the fitted offset, not AWC.
-\Review{N2-4}{Requested audit complete. Accept conditional statistical intervals
-with separate weighting sensitivity; a total uncertainty budget remains outside this check.}
+These are conditional statistical intervals, with weighting sensitivity
+reported separately, not total calibration uncertainties.
 \end{frame}
 
 \begin{frame}{Result and next validation step}
@@ -438,14 +440,12 @@ not a fitted result. No blanket 10\% precision claim is made.}
 \ifdefined\PublicationCandidate\else
 \begin{frame}{Review queue before publication}
 \footnotesize
-\begin{tabular}{l>{\raggedright\arraybackslash}p{11cm}}
-\toprule
-ID & Decision or missing evidence\\
-\midrule
-N2-3 & Model adequacy remains open; sensitivity audit saved separately.\\
-N2-4 & Audit complete; accept statistical scope and weighting-sensitivity reporting.\\
-\bottomrule
-\end{tabular}\par
+The current review items are closed for this exploratory version.
+Permanent qualifications remain beside the results; closure does not validate
+the linear model for precision calibration or establish a total uncertainty budget.
+\par\medskip
+The next review pass is page by page. Model choice, uncertainty treatment and
+claims can be revisited; the numerical results are unchanged.
 \medskip
 Sources: supplied \texttt{Note2.pdf}; extended profile snapshots and the dated
 measured-overlap study. All plotted tables and checksums accompany this draft.

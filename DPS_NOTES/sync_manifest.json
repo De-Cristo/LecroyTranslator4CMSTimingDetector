@@ -10,8 +10,8 @@
     "N1-6": "Local citation and candidate-packaging work completed 22 October 2026. Official template, DP identifiers, cover handling and CMS approval remain pending with conveners; no submission.",
     "N2-1": "Closed 22 October 2026 under author-stated same-nominal-detector-setup assumption: run4399 MCP reference, run4076 dual-threshold timing. No independent run-condition verification. Cross-run and selection-dependent response effects remain unquantified; no numerical changes.",
     "N2-2": "Closed 22 October 2026 after original ROOT replay of all 22 frozen run4076 profiles: exact counts, histogram boundaries, bin statistics, coefficients/covariance and saved bootstrap summaries verified. Safe timing and threshold decoding documented. No newer 100 ps cut inherited. Selection sensitivity and channel quality remain N2-3/N2-6; no frozen numerical changes.",
-    "N2-3": "Author requested original comparison only on 22 October 2026. Two model/sensitivity slides removed; separate audit preserved. Nominal linear-slope versus clock-corrected MCP comparison and conclusions unchanged. Model adequacy remains open.",
-    "N2-4": "Audit complete 22 October 2026: 22 reference covariances reproduced; 21 unchanged AWC fits and combined conditional intervals; 84 weighted fits checked. Original comparison and slope-only figures retained; new table separates both-run statistics and weighting sensitivity. Reporting scope awaits author acceptance; not a total calibration uncertainty.",
+    "N2-3": "Temporarily closed by author on 22 October 2026 for exploratory scope. Original linear model retained as a working approximation, not validated for precision calibration. Model/selection dependence excluded from quoted errors; separate sensitivity audit preserved. Permanent caveats replace comment/queue entry; page-by-page review can revisit decision. No numerical changes.",
+    "N2-4": "Temporarily closed by author on 22 October 2026 accepting conditional statistical reporting with separate charge-weighting sensitivity. Original plots retain slope-only statistics; separate table adds MCP-fit covariance. Not a total uncertainty budget; clock, fine-time, cross-run and model/selection effects remain outside intervals. Page-by-page review can revisit decision. No numerical changes.",
     "N2-5": "Closed by author on 22 October 2026 for documentation-only scope: all four comparison captions and lower axes identify model differences and RMS shape mismatch, not event timing resolution. Comment and queue entry removed; no numerical or conclusion changes.",
     "N2-6": "Closed by author on 22 October 2026 for exploratory reporting: all 21 completed fits and original ten-channel results/line retained unchanged. Channel-status table documents no overlap, narrow support, broad conditional intervals and negative amplitudes; no new quality selection or detector-wide performance claim.",
     "N2-7": "Closed by author on 22 October 2026 for exploratory backup scope. Both MCP-trained predictor slides retained after the conclusion, not a demonstration of reference-free calibration. Independent validation, feature/target correlations and full prediction uncertainties remain future work. No numerical changes."
@@ -24,13 +24,13 @@
     },
     {
       "path": "DPS_NOTES/PUBLICATION_CHECKLIST.md",
-      "sha256": "ea6ee2c27747efb21090fc4e99576164bf5755bd19d55c7d4d7bf7a52666cf54",
-      "bytes": 3133
+      "sha256": "91129e491e4a095ba1f0997074503af5d35d629b0e86b429a0740d0935fcbf33",
+      "bytes": 3349
     },
     {
       "path": "DPS_NOTES/README_DRAFTS.md",
-      "sha256": "4d2e41f0bec6401aab320a1d12267febf5cdd92bcd948bd05e0e8a2af26830d1",
-      "bytes": 10619
+      "sha256": "bd85f881edcef0c98306fd6971b79af3b42e47a389689865e338372f54412c35",
+      "bytes": 11148
     },
     {
       "path": "DPS_NOTES/REPOSITORY_WORKFLOW.md",
@@ -39,8 +39,8 @@
     },
     {
       "path": "DPS_NOTES/both_notes_review_v1.pdf",
-      "sha256": "3b5db115b5b509a98a889d8ba1cfdd47222f35ddc2ca031fefebab5890efa8be",
-      "bytes": 6657037
+      "sha256": "3a0512fc25611449e88cad81d4cbb8b47f3a3861fe673bb53a945d5edf03466d",
+      "bytes": 6657110
     },
     {
       "path": "DPS_NOTES/cms_dp_note_template/CMSlogo_black_label_1024.png",
@@ -79,8 +79,8 @@
     },
     {
       "path": "DPS_NOTES/draft_support/build.py",
-      "sha256": "11b4f77d1974ca3f83a2dc0a8d0156a6c08a0a98ed9dc3f2e8e9057dc0ec9c69",
-      "bytes": 7614
+      "sha256": "e79d02b6dc88a323eb103c6e52e824b3845a2de555282296d0d00da5e58b34e5",
+      "bytes": 7689
     },
     {
       "path": "DPS_NOTES/draft_support/build_assets.py",
@@ -519,8 +519,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/README.md",
-      "sha256": "510018d578dd9db90db16c03ceffe975ddce22a7e1c18abd526eb8ae2f39d858",
-      "bytes": 7489
+      "sha256": "f3b0bc68d513c58e92e136a99d67b59aef92b37291bfbc8d94b75828ed8ffd42",
+      "bytes": 8768
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/build_report.json",
@@ -529,12 +529,12 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/candidate_report.json",
-      "sha256": "4833e294225ec08f05ec15b54f58d570e4a1a4a5c25189ca4405ac7b4e865cac",
-      "bytes": 548
+      "sha256": "0321c63051757977fe257bdfb4be8abb5aa633dd7411bedd35cfbee3da308c52",
+      "bytes": 549
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/cover.pdf",
-      "sha256": "61bd6fa99e744d5732f6898ba38634644ed6817ea98b528c74b993db5d36492c",
+      "sha256": "79f45fc56a0e538c5d75893fcbd07dad512b59d48cc5bbb23636f1fdc675eee8",
       "bytes": 950156
     },
     {
@@ -934,8 +934,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/main.tex",
-      "sha256": "47d13fe681772bdf5d995d63a450ea404ad6d958904758fda8aebdc655ee7ee0",
-      "bytes": 21306
+      "sha256": "101137fd57548aac54f0699749c395cbd24f1d2c2c0c741ae1a0f17dcc6e16ec",
+      "bytes": 21495
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/metadata.tex",
@@ -944,8 +944,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/note_with_cover.pdf",
-      "sha256": "c7addc0dbf113fb94df83575782a478199c1c121c2785c5c89bc712eb2458141",
-      "bytes": 2039297
+      "sha256": "b06723a61b056b78eece268481ccdf1d534393314e201c0b41e7af092ca6e6eb",
+      "bytes": 2039370
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate.tex",
@@ -954,13 +954,13 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate_slides.pdf",
-      "sha256": "471704e87f632fa74ad34dc5e87d788b1dfbbc4db69e9dd187cc1b0e16102016",
-      "bytes": 997257
+      "sha256": "83d5ae1e4508a06dfaa784befba385242edf9f6f1241c3414ed8e8a7a527b147",
+      "bytes": 997248
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate_with_cover.pdf",
-      "sha256": "54c5ab2812da39bbce17ef48762f92519eb478a45945c1ec97dd18972c872722",
-      "bytes": 2018432
+      "sha256": "6aff5f52d8d6af965d43c17098ad018476dc5a411c7eedcab317784a412baf77",
+      "bytes": 2018425
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/references.tex",
@@ -974,8 +974,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/slides.pdf",
-      "sha256": "4847cb7d3a630d2ea2c2ddc3de5643c105bce62040526c9391fc587790d324b7",
-      "bytes": 1017133
+      "sha256": "24889c0b03057db0d64b86efac90bfdb35f9235b722cbb28fa4618dc4282173d",
+      "bytes": 1017207
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/slides_preamble.tex",
@@ -1769,8 +1769,8 @@
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_clock_quality/verification.json",
-      "sha256": "b584e96679aa2f79c513d7e45512bf585e3cef06a5ce3699840f1e3ade2ef1e9",
-      "bytes": 1699
+      "sha256": "a00f6ec9f57440bd5e0c3a07835d6e1042606e19a3d38535f4d53d76fd052bda",
+      "bytes": 1681
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_clock_quality/verify.py",
@@ -1814,8 +1814,8 @@
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_n2_3/README.md",
-      "sha256": "63062b8e1304bc35ccdb6c9888c6448917f6b09a159ca45ea13c0da6c1231ed9",
-      "bytes": 5785
+      "sha256": "a9560884423e5ca76b4fc5da71506747508a42e0d306f6f8ed7ff55049ac92cd",
+      "bytes": 6203
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_n2_3/channels.csv",
@@ -2004,8 +2004,8 @@
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_n2_4/README.md",
-      "sha256": "ecf95ad0788a33061ab2e056afa312dfd542f94635da2c75b5685db6019666a3",
-      "bytes": 7070
+      "sha256": "eb84889a9a9439e88f0bd9a49f5c3920a0ae1e79e412872db778a8c70e17b1e5",
+      "bytes": 7171
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_n2_4/channel_130_propagation.npz",
@@ -2199,13 +2199,13 @@
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_publication/verification.json",
-      "sha256": "d1e7a3fefeb6695d9ccb1c00022aa8a399194fae084849b9f3640de6dfd16eca",
-      "bytes": 1477
+      "sha256": "33016f07e0dca5564b694813cca822e0bd868bf6939f5335da97dd137694704a",
+      "bytes": 1498
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_publication/verify.py",
-      "sha256": "4282a5a87aaad83686d556165af1d19e1564a8c50e294e291557c227fb4f0222",
-      "bytes": 9223
+      "sha256": "9eb7834fa56acc8503931fa5c43ab0570fb15344c343945c2a088cc8899e8818",
+      "bytes": 9911
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -3781,7 +3781,7 @@
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "N2-7 documentation-only closure: two comments replaced by permanent caveats and queue entry removed. Predictor/ten-channel figures, input hashes, numerical macros, manifest and conclusion unchanged. Note2 review/candidate and combined PDFs rebuilt; visual and publication-package checks passed. Prior numerical checks reused after AFS timeout on unchanged input_sha256.json. Changed-file hashes checked; unchanged records reused.",
+    "latest_change": "N2-3/N2-4 temporarily closed for exploratory version; permanent model/uncertainty caveats replace remaining comments and queue entries. All figure/input hashes, numerical macros and conclusion unchanged. Note2 review/candidate and combined PDFs rebuilt; six affected slides inspected; publication verification passed. Prior numerical analysis checks reused. Changed-file hashes checked; unchanged records reused.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 27,
@@ -3797,6 +3797,7 @@
     "n2_6_record": "DPS_NOTES/review_2026-10-22_n2_6/README.md",
     "n2_6_changed_files_hash_checked": 16,
     "n2_7_changed_files_hash_checked": 13,
-    "n2_7_record": "DPS_NOTES/note2_dual_threshold/README.md"
+    "n2_7_record": "DPS_NOTES/note2_dual_threshold/README.md",
+    "n2_3_n2_4_closure_changed_files_hash_checked": 17
   }
 }

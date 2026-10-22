@@ -28,10 +28,13 @@ comparison. Their internal review versions and source files are preserved.
 The validated residual-segment-offset diagnostic remains in the candidate.
 In particular, the unvalidated clock-estimator image cannot appear in that PDF.
 
-Note 2's candidate omits its closing review-queue slide but deliberately retains
-the unresolved scientific comments beside the relevant results. They must not
-be hidden merely to make a draft look publication-ready. N1-6 work closes no
-Note 2 scientific item.
+Note 2's candidate omits its closing review-status slide but retains permanent
+scientific qualifications beside the relevant results. The current Note2
+comments are closed by explicit author decisions for their stated scope;
+N2-3 and N2-4 are temporarily closed for the exploratory version pending a
+page-by-page review. This does not validate a precision model, establish total
+calibration uncertainties or authorize release. N1-6 packaging itself closes
+no scientific item.
 
 ## Completed locally
 

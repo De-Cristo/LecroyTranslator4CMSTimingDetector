@@ -53,11 +53,17 @@ versions, selections and uncertainties have already been reconciled.
 4. N2-3: eight-variant diagnostics are saved in `review_2026-10-22_n2_3/`.
    At the author's request, Note2 keeps only the original linear-slope versus
    clock-corrected MCP comparison; the two audit slides are removed. Nominal
-   results and conclusions are unchanged. Model adequacy remains open.
+   results and conclusions are unchanged. N2-3 is temporarily closed by author
+   approval for this exploratory version: linearity is a working approximation;
+   model/selection dependence remains outside the quoted errors. Further
+   validation is required before precision calibration claims.
    N2-4: reference-covariance propagation and four-weighting audit complete;
    see `review_2026-10-22_n2_4/`. A separate table reports expanded conditional
    intervals without changing the original curves/bands. Acceptance of this
-   statistical scope and weighting-sensitivity reporting remains open.
+   statistical scope and separate weighting-sensitivity reporting was approved
+   by the author, temporarily closing N2-4 for this version. Original plot bands
+   remain slope-only statistical intervals, not total calibration errors.
+   Both decisions can be revisited in the next page-by-page review.
 5. N1-5 is closed for this version: same-event timing validation with conditional
    statistical intervals. Intrinsic bar resolution and synchronization-jitter
    extraction are outside scope. N2-5 is closed for documentation-only scope:
@@ -134,8 +140,9 @@ readout, LOWESS and the bootstrap principle. Each has separate unapproved
 publication-candidate PDFs, with and without the optional local A4 cover.
 The Note1 candidate excludes the four unvalidated historical timing/clock
 backups, including the clock-estimator comparison; full internal review decks
-retain them. Note2's unresolved scientific comments remain visible. No fits,
-plots or scientific review decisions changed. See `PUBLICATION_CHECKLIST.md`
+retain them. Subsequent author-approved Note2 closures replace review comments
+with permanent scientific qualifications. The packaging itself changes no fits,
+plots or scientific review decisions. See `PUBLICATION_CHECKLIST.md`
 and `review_2026-10-22_publication/citation_audit.md`. N1-6 is not fully closed:
 the conveners must still confirm official format, metadata and cover handling.
 

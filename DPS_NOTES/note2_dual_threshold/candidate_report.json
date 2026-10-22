@@ -7,9 +7,9 @@
   "dp_number": null,
   "template_officially_confirmed": false,
   "cover_handling_confirmed": false,
-  "scientific_review_comments_retained": true,
+  "scientific_review_comments_retained": false,
   "files": {
-    "publication_candidate_slides.pdf": "471704e87f632fa74ad34dc5e87d788b1dfbbc4db69e9dd187cc1b0e16102016",
-    "publication_candidate_with_cover.pdf": "54c5ab2812da39bbce17ef48762f92519eb478a45945c1ec97dd18972c872722"
+    "publication_candidate_slides.pdf": "83d5ae1e4508a06dfaa784befba385242edf9f6f1241c3414ed8e8a7a527b147",
+    "publication_candidate_with_cover.pdf": "6aff5f52d8d6af965d43c17098ad018476dc5a411c7eedcab317784a412baf77"
   }
 }
