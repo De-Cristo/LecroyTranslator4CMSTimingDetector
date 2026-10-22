@@ -1,6 +1,7 @@
 # Short slide drafts: version 2, draft 1
 
-Two ten-slide notes, with no A4 cover pages. These are separate from the full
+Two notes, each with ten content slides and one compact reference slide,
+with no A4 cover pages. These are separate from the full
 notes, which remain unchanged. Each deck retains the CMS/contact title slide,
 a short abstract on slide 2, labelled plots, and concise procedural captions.
 The titles follow the author's wording, including TOFHIR2C in Note 2.
@@ -10,7 +11,11 @@ The titles follow the author's wording, including TOFHIR2C in Note 2.
 - `note2_dual_threshold/slides.pdf`: measure the slope proxy, select/profile
   hits, construct the inverse-slope correction, calibrate AWC against MCP,
   and summarize channel dependence and limitations.
-- `both_notes_slides_v2.pdf`: both decks, 20 landscape pages, no covers.
+- `both_notes_slides_v2.pdf`: both decks, 22 landscape pages, no covers.
+
+Each final reference slide uses two columns and preserves the original
+bibliography entries and numbering: eight entries in Note 1 and twelve in Note 2.
+The build checks that these entries match the full notes exactly.
 
 Figures and numerical macros are copied unchanged from the full notes.
 `asset_manifest.json` records each source and hash. No ROOT inputs are read

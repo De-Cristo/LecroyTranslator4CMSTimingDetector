@@ -54,7 +54,13 @@ def main():
         assert not problems, (name, problems)
         shutil.copy2(note / "build/main.pdf", note / "slides.pdf")
         pdf = PdfReader(note / "slides.pdf")
-        assert len(pdf.pages) == 10, (name, len(pdf.pages))
+        assert len(pdf.pages) == 11, (name, len(pdf.pages))
+        assert "References" in pdf.pages[-1].extract_text()
+        assert sum("References" in page.extract_text() for page in pdf.pages) == 1
+        entry_pattern = r"\\bibitem\[(\d+)\]\{([^}]+)\}([\s\S]*?)(?=\\bibitem|\\end\{thebibliography\})"
+        entries = lambda path: [(number, key, " ".join(body.split()))
+                                for number, key, body in re.findall(entry_pattern, path.read_text())]
+        assert entries(note / "references.tex") == entries(original / "references.tex")
         assert "cms-dpg-conveners-mtd@cern.ch" in pdf.pages[0].extract_text()
         assert "Abstract" in pdf.pages[1].extract_text()
         for page in pdf.pages:
@@ -74,7 +80,9 @@ def main():
                     sheet.paste(img, (x, y))
                     draw.text((x, y - 19), f"Slide {start+i+1}", fill="black")
             sheet.save(preview / f"contact_sheet_{start//6+1}.png")
-        report[name] = dict(slides=len(pdf.pages), cover_pages=0, figures=len(figures),
+        report[name] = dict(slides=len(pdf.pages), content_slides=10, reference_slides=1,
+                            reference_entries=len(entries(note / "references.tex")),
+                            cover_pages=0, figures=len(figures),
                             overflow=0, unresolved_citations=0,
                             sha256=hashlib.sha256((note / "slides.pdf").read_bytes()).hexdigest())
         print(name, json.dumps(report[name]), flush=True)

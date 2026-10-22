@@ -2234,23 +2234,23 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/README.md",
-      "sha256": "56444f04657098610a8e9578f4246a521836b7d12e6c44d48982509a76657074",
-      "bytes": 1553
+      "sha256": "1f0b2a27087d09a1987771fff447aedd9fbf0c41b184c033f20804f349a94471",
+      "bytes": 1825
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/both_notes_slides_v2.pdf",
-      "sha256": "8bca8177fe0a38a72c91a0f75998ed432fc11ac67342ad1c2e7d4a454c4f75e5",
-      "bytes": 2844229
+      "sha256": "0a3bfc036f60f8b5a5293c30a6cc91645a5130ff936105f8e87bbeb2b1d23514",
+      "bytes": 2914901
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build.py",
-      "sha256": "8ea0b2bbdd27ad37900b80c7e5737adf416f05df8faade928b85fe70ddc88b96",
-      "bytes": 4383
+      "sha256": "28facb9d0c4329961e669ce6f9f1259728a5587d41c07946a09e254ad9fcfe20",
+      "bytes": 5043
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_report.json",
-      "sha256": "8838072669e9176ad6a0d7e347b86820999edc0ac29e27f07f10650da91471f6",
-      "bytes": 517
+      "sha256": "1b78c0f909c40aed3a002cba101746c7f8763c213a02dc7791c3584821d053c2",
+      "bytes": 680
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/CMSlogo_black_label_1024.png",
@@ -2299,13 +2299,18 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/main.tex",
-      "sha256": "f9d8305d1750a1088d01b0ab98deba2679be7cc03497ff8a25ba6e10c54ef22c",
-      "bytes": 6053
+      "sha256": "be5ed8aa8387d352508957b4a8fba70464f65d16da8a27b69fd4222bd21ff844",
+      "bytes": 6076
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/metadata.tex",
       "sha256": "ddde843bc0eae1bf51f9228ba56c4847658d1a217e422469a6b582cc39e52810",
       "bytes": 209
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/references.tex",
+      "sha256": "3647e278700f171c3bb1ff7a39aa8142af2dd3ef8cdb19804096db8dc745b704",
+      "bytes": 1737
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/review_values.tex",
@@ -2314,8 +2319,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/slides.pdf",
-      "sha256": "66272bcd39ab6108ded20220e13fe624850defa491ae1523918993da979f9689",
-      "bytes": 2102870
+      "sha256": "892c4bc416c2737297836e003c8db081c75e5317e7afc8bcf95997aa79b3bdf8",
+      "bytes": 2131888
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/CMSlogo_black_label_1024.png",
@@ -2359,13 +2364,18 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/main.tex",
-      "sha256": "8836d370745efeb278b03ad559ac9433a9c68e87682f4a5ecad4a8b728c35808",
-      "bytes": 6583
+      "sha256": "8f23e6a9ebce06830bb7542d25c154ce1e3281a9b0aa93c8c99fb876f705be99",
+      "bytes": 6606
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/metadata.tex",
       "sha256": "5cad1000b7558ca1b1147b9b6a669ef3898c1a0927e751096bf36b7508cb9b96",
       "bytes": 215
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/references.tex",
+      "sha256": "ae793e8adc0e011395bd714c5e4fafa384569ad972efe3c4291d9c16d9ddcf8a",
+      "bytes": 2481
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/review_values.tex",
@@ -2374,8 +2384,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/slides.pdf",
-      "sha256": "96de7dc7161883ee9ab415e46e37d8a2542a391f1f289cb7f2388b81b818ebd5",
-      "bytes": 677065
+      "sha256": "f0a2faad1cd61b34bb0bc3ad67c0abb76e6050171abe3efa5a50b5c1557e0b7e",
+      "bytes": 705960
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/slides_preamble.tex",
@@ -2384,8 +2394,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
-      "sha256": "458ac031c4e4881940274dfd8c4d446b85d0a5a1889990ffd9e76f163bd32df6",
-      "bytes": 1911
+      "sha256": "8785822a06a961c47042f5d5faa57d322a014cb55be012d7e07422bc84470aac",
+      "bytes": 2102
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -3954,14 +3964,14 @@
     }
   ],
   "verification": {
-    "file_count": 787,
+    "file_count": 789,
     "all_source_hashes_match": true,
     "combined_pages": 57,
     "focused_tests_passed": 140,
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "Added separate version-2 short slide drafts: 10 slides per note, no A4 covers, exact author titles, simplified procedural descriptions and existing validated figures. Original full notes and combined v1 PDF verified unchanged. All slides inspected; builds, plot labels, page counts, title text and pinned code links verified.",
+    "latest_change": "Added one compact reference slide to each short deck, preserving every original bibliography entry and number. Retitled Note 1 slide 9 to explicitly identify the before/after walk-correction time-difference histogram. Both decks compile without overflow; changed pages inspected; original full notes unchanged.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 26,
@@ -3981,16 +3991,18 @@
     "n2_3_n2_4_closure_changed_files_hash_checked": 17,
     "title_update_changed_files_hash_checked": 17,
     "github_link_verification": "DPS_NOTES/review_2026-10-22_publication/repository_links.json",
-    "latest_changed_files_hash_checked": 31,
+    "latest_changed_files_hash_checked": 11,
     "original_text_verification": "DPS_NOTES/review_2026-10-22_publication/original_text_check.json",
     "language_review_verification": "DPS_NOTES/review_2026-10-22_publication/language_review_verification.json",
     "short_slides_v2": {
       "directory": "DPS_NOTES/slides_v2_2026-10-22",
-      "note1_slides": 10,
-      "note2_slides": 10,
-      "combined_pages": 20,
+      "note1_slides": 11,
+      "note2_slides": 11,
+      "combined_pages": 22,
       "cover_pages": 0,
-      "verification": "DPS_NOTES/slides_v2_2026-10-22/verification.json"
+      "verification": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
+      "content_slides_each": 10,
+      "reference_slides_each": 1
     }
   }
 }

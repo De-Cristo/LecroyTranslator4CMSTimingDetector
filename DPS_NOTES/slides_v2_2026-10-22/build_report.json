@@ -1,20 +1,26 @@
 {
   "note1_mcp_reference": {
-    "slides": 10,
+    "slides": 11,
+    "content_slides": 10,
+    "reference_slides": 1,
+    "reference_entries": 8,
     "cover_pages": 0,
     "figures": 7,
     "overflow": 0,
     "unresolved_citations": 0,
-    "sha256": "66272bcd39ab6108ded20220e13fe624850defa491ae1523918993da979f9689"
+    "sha256": "892c4bc416c2737297836e003c8db081c75e5317e7afc8bcf95997aa79b3bdf8"
   },
   "note2_dual_threshold": {
-    "slides": 10,
+    "slides": 11,
+    "content_slides": 10,
+    "reference_slides": 1,
+    "reference_entries": 12,
     "cover_pages": 0,
     "figures": 6,
     "overflow": 0,
     "unresolved_citations": 0,
-    "sha256": "96de7dc7161883ee9ab415e46e37d8a2542a391f1f289cb7f2388b81b818ebd5"
+    "sha256": "f0a2faad1cd61b34bb0bc3ad67c0abb76e6050171abe3efa5a50b5c1557e0b7e"
   },
-  "combined_pages": 20,
+  "combined_pages": 22,
   "status": "compiled; internal review draft"
 }
