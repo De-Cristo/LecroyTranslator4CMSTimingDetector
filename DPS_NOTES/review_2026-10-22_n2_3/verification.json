@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "channels": 22,
+  "profile_fits": 176,
+  "independently_recomputed_alignments": 160,
+  "nominal_replays_recorded": 21,
+  "diagnostic_figures": 25,
+  "scientific_status": "N2-3 remains open for model/range decision; diagnostics complete",
+  "frozen_inputs_unchanged": true
+}

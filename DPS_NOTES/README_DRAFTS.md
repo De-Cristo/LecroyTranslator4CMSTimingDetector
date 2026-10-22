@@ -50,7 +50,10 @@ versions, selections and uncertainties have already been reconciled.
    histogram-derived charge boundary and absence of the newer 100 ps cut.
    See `review_2026-10-22_n2_2/`; numerical results are unchanged.
 3. N1-3 is closed: the note now explicitly follows the code's minus-sign convention.
-4. N2-3 / N2-4: assess slope-model adequacy, matching objective and uncertainties.
+4. N2-3: eight-variant diagnostics complete for all 22 channels; linear adequacy
+   is not established. Choose the slope model/range and revalidate before
+   closure. See `review_2026-10-22_n2_3/`; nominal results are unchanged.
+   N2-4: assess the matching objective and total uncertainty prescription.
 5. N1-5 is closed for this version: same-event timing validation with conditional
    statistical intervals. Intrinsic bar resolution and synchronization-jitter
    extraction are outside scope. N2-5 remains a separate review item.

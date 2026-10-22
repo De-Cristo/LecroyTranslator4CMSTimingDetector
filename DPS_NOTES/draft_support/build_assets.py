@@ -342,6 +342,16 @@ def review_values():
         for row in rows) + "\\bottomrule\n\\end{tabular}\n")
 
 
+def n2_model_diagnostics():
+    audit = DPS / "review_2026-10-22_n2_3"
+    name = "profile_residuals_ch137"
+    for suffix in ("pdf", "png"):
+        shutil.copy2(audit / f"figures/{name}.{suffix}", N2 / f"figures/{name}.{suffix}")
+    register(N2, name, [audit / p for p in
+                       ("profiles.csv", "models.json", "channels.csv", "variants.csv", "report.json")],
+             "N2-3 exploratory residual and selection/model sensitivity audit; nominal results unchanged")
+
+
 def main():
     for note in (N1, N2):
         for folder in ("figures", "data", "build"):
@@ -369,6 +379,7 @@ def main():
     awc_summary()
     predictor()
     timing_validation()
+    n2_model_diagnostics()
     review_values()
     for note in (N1, N2):
         (note / "figure_manifest.json").write_text(json.dumps(

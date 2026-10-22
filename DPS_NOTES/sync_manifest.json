@@ -9,7 +9,8 @@
     "N1-5": "Closed by author on 22 October 2026 for this version: same-event conditional timing validation only; intrinsic bar resolution and synchronization-jitter extraction outside scope. Review comment and queue entry removed; physical limitations retained; no numerical changes.",
     "N1-6": "Local citation and candidate-packaging work completed 22 October 2026. Official template, DP identifiers, cover handling and CMS approval remain pending with conveners; no submission.",
     "N2-1": "Closed 22 October 2026 under author-stated same-nominal-detector-setup assumption: run4399 MCP reference, run4076 dual-threshold timing. No independent run-condition verification. Cross-run and selection-dependent response effects remain unquantified; no numerical changes.",
-    "N2-2": "Closed 22 October 2026 after original ROOT replay of all 22 frozen run4076 profiles: exact counts, histogram boundaries, bin statistics, coefficients/covariance and saved bootstrap summaries verified. Safe timing and threshold decoding documented. No newer 100 ps cut inherited. Selection sensitivity and channel quality remain N2-3/N2-6; no frozen numerical changes."
+    "N2-2": "Closed 22 October 2026 after original ROOT replay of all 22 frozen run4076 profiles: exact counts, histogram boundaries, bin statistics, coefficients/covariance and saved bootstrap summaries verified. Safe timing and threshold decoding documented. No newer 100 ps cut inherited. Selection sensitivity and channel quality remain N2-3/N2-6; no frozen numerical changes.",
+    "N2-3": "Diagnostics complete 22 October 2026: 22 channels, 176 profile fits, 160 same-support AWC comparisons; linear adequacy not established. Model/range decision and revalidation remain open. Nominal calibration unchanged."
   },
   "files": [
     {
@@ -24,8 +25,8 @@
     },
     {
       "path": "DPS_NOTES/README_DRAFTS.md",
-      "sha256": "8fce0a6175baa4f0587841809a26c471987102515d8b409d5dc184689e24fb1e",
-      "bytes": 9405
+      "sha256": "6e7fa70a133c68ed8b60cfe21d4863761193a3086be926e1ae9cc04a40b3f9ec",
+      "bytes": 9626
     },
     {
       "path": "DPS_NOTES/REPOSITORY_WORKFLOW.md",
@@ -34,8 +35,8 @@
     },
     {
       "path": "DPS_NOTES/both_notes_review_v1.pdf",
-      "sha256": "b3e5c67d120b6acf3402ae23582f7a2eda35b5dc5b0d6123dd2676b3ebe2bf57",
-      "bytes": 6648904
+      "sha256": "78762a9ba89fe1b6f7fcab4749a6f1dcd2b54df3f46a830d2d9a0af3aea724e3",
+      "bytes": 6682799
     },
     {
       "path": "DPS_NOTES/cms_dp_note_template/CMSlogo_black_label_1024.png",
@@ -79,8 +80,8 @@
     },
     {
       "path": "DPS_NOTES/draft_support/build_assets.py",
-      "sha256": "987f75e213693f1c1e2d4f3260ca7db8f44b85fa5ef95d03e6a8c328b16324a9",
-      "bytes": 19256
+      "sha256": "c9a1b299d09dad694a9cf9ff9ea3d814548d4bd49f6278ae0b4e3f916a894808",
+      "bytes": 19771
     },
     {
       "path": "DPS_NOTES/draft_support/cover.tex",
@@ -514,28 +515,53 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/README.md",
-      "sha256": "0d099005d9b8ddd5a983df870259e5f16cef38fc2fbc47eb79bc4288f97d4510",
-      "bytes": 3810
+      "sha256": "abda0c363af64dcc0b1e2438ee99bbe65a88954ed41174ad6947176b0b6c343a",
+      "bytes": 4416
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/build_report.json",
-      "sha256": "828b1d77ef03e59c46d6c0ed6291c07ae660a5861ac05f595b60df56835f9e44",
+      "sha256": "b727a8fc6f979dc0855cdb6255c4dd1a4c7a0aa5d3c0576121213cfa7196a0fa",
       "bytes": 350
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/candidate_report.json",
-      "sha256": "520447e918d59740bf02cd32e56014ffc025a417319c5e7b82b6ab8e5502c4d2",
+      "sha256": "ddd97e0a5f122aa78083ccb3676e93f3c9570d8d4d54bb93503c22332281bbbe",
       "bytes": 548
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/cover.pdf",
-      "sha256": "50ad60530a8efc8391583eb3b6ed1a833e390418213ebb86e7fc0137e05c460f",
+      "sha256": "c9b19d6051370518e595eaa148f1777b8ad73941278ba6cd7f96aef415ac5431",
       "bytes": 950156
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/cover.tex",
       "sha256": "6cb092a7fa9e30237b367b1c138258a926f101f34b970e44bd3fa8ad3fca7c2b",
       "bytes": 1297
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/DPS_NOTES/review_2026-10-22_n2_3/channels.csv",
+      "sha256": "08ff40bf8c8c78dda7b211d7879c1ffa3abc0a493fa50aa4dd4f1c1e909353fd",
+      "bytes": 7160
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/DPS_NOTES/review_2026-10-22_n2_3/models.json",
+      "sha256": "bc1aa7e7c348516510a59af6e9640945b7e4bfc55e8d51c082203ed96b170323",
+      "bytes": 153101
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/DPS_NOTES/review_2026-10-22_n2_3/profiles.csv",
+      "sha256": "11146b62a1775b264d62fafdb186f7d2f5d9e4768c80947045ce2a07953ecc43",
+      "bytes": 303147
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/DPS_NOTES/review_2026-10-22_n2_3/report.json",
+      "sha256": "0137c896005fed4c460f65cc663704b5ea4cca33e7a3b70fdeb582a22c188d41",
+      "bytes": 36652
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/DPS_NOTES/review_2026-10-22_n2_3/variants.csv",
+      "sha256": "8e389a0a02e58382cd402fd4717655141f513ad18bab6ef1f78634be701e3756",
+      "bytes": 50315
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/awc_summary_special_10_channels_no_ch240_linear.csv",
@@ -799,8 +825,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/figure_manifest.json",
-      "sha256": "0960ec7d7dedabced48870a521ab1927a58fa04388f5ae1679efe386f1b89f90",
-      "bytes": 11699
+      "sha256": "014dfabc8656001bef49096f25fd63b326f467ab41d33b4c949c4853359a6820",
+      "bytes": 13276
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/figures/awc_summary_all.pdf",
@@ -838,6 +864,11 @@
       "bytes": 23584
     },
     {
+      "path": "DPS_NOTES/note2_dual_threshold/figures/profile_residuals_ch137.pdf",
+      "sha256": "ebd006ddb8c4163010ac9bf845e412b198978d32ba5338e2ec9cb003e5c1ba4b",
+      "bytes": 24549
+    },
+    {
       "path": "DPS_NOTES/note2_dual_threshold/figures/q_spectra_ch137.pdf",
       "sha256": "9e5c640d8813a8f728cde965091c7f8addb7f60789f2ef5eda925ad0ee462f52",
       "bytes": 20964
@@ -864,8 +895,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/main.tex",
-      "sha256": "1de121e97146be6a9516aab43e69d7f680d591598f5370db85af5d372c4b4236",
-      "bytes": 18943
+      "sha256": "0d12f620b48b41ba03fc441955d735592d8ac9217a37da925654ee98a0e3d393",
+      "bytes": 20701
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/metadata.tex",
@@ -874,8 +905,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/note_with_cover.pdf",
-      "sha256": "a3d0ca287f03447e4f55be8abf1dea3638f9a065c3546b26bc1e16c4adb308a7",
-      "bytes": 2031200
+      "sha256": "ec24f9b8b9c9776313b7a4f2bfeed6a18c0765a4ca749a606e748320ee62c0f7",
+      "bytes": 2064999
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate.tex",
@@ -884,13 +915,13 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate_slides.pdf",
-      "sha256": "ec37f89f7d307e1d260ed86f2e75d9cbc8095334d12a464db2affaa5aaee45a4",
-      "bytes": 989979
+      "sha256": "3d3755a03d5f0816d64692752d85fb7ab069125a5ff0edb04f6fb49bcc7dea44",
+      "bytes": 1019592
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate_with_cover.pdf",
-      "sha256": "3b8479b6637f75920408fa43d020f7bb71fe0f996e219a7b6d2b1ffe7d7b0155",
-      "bytes": 2009969
+      "sha256": "cdb0a54a3949d7bc733f400233933a0492bee80af5dbe81c617bde7e50375c33",
+      "bytes": 2043744
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/references.tex",
@@ -904,8 +935,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/slides.pdf",
-      "sha256": "dd54cc69f82850f54ca1099b09c25b47265a7d03b5766f3e3cf88647a878174c",
-      "bytes": 1010237
+      "sha256": "2b3855102ad72a9e4ab69e935985b078644e932e5ee83c6b1b2512db15494c85",
+      "bytes": 1039749
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/slides_preamble.tex",
@@ -1699,7 +1730,7 @@
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_clock_quality/verification.json",
-      "sha256": "a99a05687d08e6ac340cec3671599d27d05bc0d5458fd8a9c5b9ce4381a0bec8",
+      "sha256": "2148cd0d4312a0f12240f81f5404334d49f30379c08b1085c4c80ed453f00c8b",
       "bytes": 1403
     },
     {
@@ -1743,19 +1774,209 @@
       "bytes": 2554
     },
     {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/README.md",
+      "sha256": "63062b8e1304bc35ccdb6c9888c6448917f6b09a159ca45ea13c0da6c1231ed9",
+      "bytes": 5785
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/channels.csv",
+      "sha256": "08ff40bf8c8c78dda7b211d7879c1ffa3abc0a493fa50aa4dd4f1c1e909353fd",
+      "bytes": 7160
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/common_grid.csv",
+      "sha256": "94a76215a14ef4477fcc500afa729ead7df9c44f84440bf16ff1b64d4cdd4453",
+      "bytes": 2131110
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/awc_sensitivity.pdf",
+      "sha256": "9f8f169553cc27e46d415004932a1bd857b00239e80c97fdeb8aebfe2a497f6e",
+      "bytes": 45104
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/channel_130_diagnostics.pdf",
+      "sha256": "52deb9be493eaa84d75380694cb30cc6e30669a4531832a498a03522ece77145",
+      "bytes": 33180
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/channel_133_diagnostics.pdf",
+      "sha256": "e72441afb4d337e3c9341f6e06bbc8afd6811b22827c2eef0a6af0e09f6b8934",
+      "bytes": 32981
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/channel_134_diagnostics.pdf",
+      "sha256": "f2c0ee68c77e7134845b84278354fdf123d4f7e701caf53ee9dce5f0ca2f9e7a",
+      "bytes": 32696
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/channel_135_diagnostics.pdf",
+      "sha256": "9fa56496a8df72344e901da159d4c1f97892e57e91e82334331c913c4c6bc6d8",
+      "bytes": 32729
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/channel_136_diagnostics.pdf",
+      "sha256": "2e5a6b71f575065ba0e8c4ad8b72a37ae66f2eab734cb0f3867b2b045cd3ce77",
+      "bytes": 33205
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/channel_137_diagnostics.pdf",
+      "sha256": "64742129d0d76ee29870b5fbfc1226edfb31a29923272942188fa94ba597f7b7",
+      "bytes": 32854
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/channel_139_diagnostics.pdf",
+      "sha256": "e18abb76546e993b14dfc17a97432e2613e8ae791c92b621711d9d3bf5b788a6",
+      "bytes": 32995
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/channel_149_diagnostics.pdf",
+      "sha256": "533b3bc8a77ac8890b24eec9ac38ae101a4e2ef351379c83c9bb9c8d589a4d16",
+      "bytes": 33000
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/channel_150_diagnostics.pdf",
+      "sha256": "6e6a0b1cce1bdf79fcf476603ad97944c756dc1d87bc545f1d33068b997cb99e",
+      "bytes": 32662
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/channel_151_diagnostics.pdf",
+      "sha256": "9ca48dbce7b2daac35ad120dfb517eaec8ef8921ce44f3cf02958ad3616a4c43",
+      "bytes": 33119
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/channel_154_diagnostics.pdf",
+      "sha256": "013f554b7e82b3081143c47b0eebdfa55ec782da0d40a8b1255438e633eb87c2",
+      "bytes": 32688
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/channel_155_diagnostics.pdf",
+      "sha256": "b0ae50ad04d76b560d36cb884e41f6c1c871d0650d1070e1dd48a37ed078cd99",
+      "bytes": 32800
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/channel_156_diagnostics.pdf",
+      "sha256": "65cc7592535425cb43c57804615b9187e702f358d1d7d4b379376116c388ac18",
+      "bytes": 32724
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/channel_159_diagnostics.pdf",
+      "sha256": "9bfd60b63329380c8f04afaa187e997ba24362358544f5ea920ad52991c46e99",
+      "bytes": 33174
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/channel_235_diagnostics.pdf",
+      "sha256": "ee0be47b11dd74eae392568c7dd7df56ebe16de9bbb5609066355546a97a9f7e",
+      "bytes": 29334
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/channel_236_diagnostics.pdf",
+      "sha256": "a6808eaa2146c8436e9cbc395e969dfdf0dabee1c3b76f49229207630fc2cb11",
+      "bytes": 32485
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/channel_238_diagnostics.pdf",
+      "sha256": "49390536d5dd944c2e99d48a9d8585d2c9dcaaec686ac9473f50b990d5b3064a",
+      "bytes": 30030
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/channel_239_diagnostics.pdf",
+      "sha256": "3babadf2d647dc70a314233b38a1b1aa880f7722a0303cc820984b71c79e9fb1",
+      "bytes": 32909
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/channel_240_diagnostics.pdf",
+      "sha256": "5aa5c811a3936acd15fdae4fad758c71e13b0321e1d955989460586b2ef83d2b",
+      "bytes": 32822
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/channel_242_diagnostics.pdf",
+      "sha256": "7b3ddae30b5cda73d7a274a335db2c38f0db3f65b5a60bdbccb9b4029b2afaf4",
+      "bytes": 32950
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/channel_244_diagnostics.pdf",
+      "sha256": "96b19868878f6deb99eecb6ccd870e78d00ea6933deafc8c7b7093a4989ae262",
+      "bytes": 33017
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/channel_245_diagnostics.pdf",
+      "sha256": "05ce57acbf16590bda67e969e574ae9805e7bd0070d76a6ecf7e7d52ad69e4ac",
+      "bytes": 32973
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/profile_residuals_ch137.pdf",
+      "sha256": "ebd006ddb8c4163010ac9bf845e412b198978d32ba5338e2ec9cb003e5c1ba4b",
+      "bytes": 24549
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/figures/profile_residuals_four_channels.pdf",
+      "sha256": "ac753b115e75c742a020903e4f77a40be25765acf6abade76d6c8956db49bfcc",
+      "bytes": 35696
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/models.json",
+      "sha256": "bc1aa7e7c348516510a59af6e9640945b7e4bfc55e8d51c082203ed96b170323",
+      "bytes": 153101
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/plot.py",
+      "sha256": "b6820a649b3a6d7c9bf86cf5fbcc736555fb04a31db0a550e7eee6a54e0022c9",
+      "bytes": 6834
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/profiles.csv",
+      "sha256": "11146b62a1775b264d62fafdb186f7d2f5d9e4768c80947045ce2a07953ecc43",
+      "bytes": 303147
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/report.json",
+      "sha256": "0137c896005fed4c460f65cc663704b5ea4cca33e7a3b70fdeb582a22c188d41",
+      "bytes": 36652
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/study.py",
+      "sha256": "f08f205d39ac1dc3e99f74bcbcf4e6bdddc7fefa9692a9df1a39b6582bbb0f3e",
+      "bytes": 13923
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/study_definition.md",
+      "sha256": "0c37edf7c3a2931afdf7071180500024910536b773117b26fac7c75789bbca4c",
+      "bytes": 2802
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/test_study.py",
+      "sha256": "828f33a089d9baa1bd7939fd98d1720c4719d47cf620329abffa6c22b96b999b",
+      "bytes": 1635
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/variants.csv",
+      "sha256": "8e389a0a02e58382cd402fd4717655141f513ad18bab6ef1f78634be701e3756",
+      "bytes": 50315
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/verification.json",
+      "sha256": "42a06a01337d101455e80d65887295557dfee18904ed7dcd24c5006bcfad341a",
+      "bytes": 300
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_3/verify.py",
+      "sha256": "7662fd05e2027e3fc5648d6c2696fd0faa7ff8487c1d61da7d2654ffa3e57e40",
+      "bytes": 4862
+    },
+    {
       "path": "DPS_NOTES/review_2026-10-22_publication/citation_audit.md",
       "sha256": "763ae3943ec99298b13dd102c4eac8846ba9c4db1fb88a965b8df4f397dfc049",
       "bytes": 2945
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_publication/verification.json",
-      "sha256": "5c9079fbf1090076f402a3a527f3c0f7fc6362e467c889c45f47266197105ee1",
-      "bytes": 1284
+      "sha256": "11629cae6ecd4885014e3f74b6de5cee2036b0b36e91f8640753d361363e89f1",
+      "bytes": 1341
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_publication/verify.py",
-      "sha256": "41177ce078dd4dce0d2c1892d61ba50854b7ed845b47b96b7db8539a0e93ae76",
-      "bytes": 4695
+      "sha256": "f17ce936c8171ea63f28b7c34fb07720321edd173d826dd3088b0340de28e865",
+      "bytes": 5003
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -3324,20 +3545,22 @@
     }
   ],
   "verification": {
-    "file_count": 662,
+    "file_count": 706,
     "all_source_hashes_match": true,
-    "combined_pages": 61,
+    "combined_pages": 63,
     "focused_tests_passed": 140,
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "N2-2: 22-channel ROOT replay and 17 focused tests passed; documentation corrected and closure recorded; Note2 review/candidate and combined PDFs rebuilt and visually checked. Frozen numerical inputs, figures and production analysis code unchanged. Existing local profile helpers/tests added for audit reproducibility.",
+    "latest_change": "N2-3: residual and sensitivity audit completed; four focused tests and independent arithmetic/provenance checks passed. Note2 slides 15-16 and combined review rebuilt and visually checked. No nominal fit or reference changed; comment remains open.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 27,
-      "note2_dual_threshold": 26
+      "note2_dual_threshold": 28
     },
     "n2_2_verification": "DPS_NOTES/review_2026-10-22_n2_2/verification.json",
-    "n2_2_focused_tests_passed": 17
+    "n2_2_focused_tests_passed": 17,
+    "n2_3_verification": "DPS_NOTES/review_2026-10-22_n2_3/verification.json",
+    "n2_3_focused_tests_passed": 4
   }
 }

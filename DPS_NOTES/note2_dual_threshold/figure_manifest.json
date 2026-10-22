@@ -212,5 +212,37 @@
         "sha256": "cdee0ac9f8b6f293d79571a819c83e670d718c5774c5466634161b3a113e5ae1"
       }
     ]
+  },
+  {
+    "note": "note2_dual_threshold",
+    "figure": "figures/profile_residuals_ch137.pdf",
+    "kind": "N2-3 exploratory residual and selection/model sensitivity audit; nominal results unchanged",
+    "sources": [
+      {
+        "original": "sandbox_test/DPS_NOTES/review_2026-10-22_n2_3/profiles.csv",
+        "snapshot": "data/sandbox_test/DPS_NOTES/review_2026-10-22_n2_3/profiles.csv",
+        "sha256": "11146b62a1775b264d62fafdb186f7d2f5d9e4768c80947045ce2a07953ecc43"
+      },
+      {
+        "original": "sandbox_test/DPS_NOTES/review_2026-10-22_n2_3/models.json",
+        "snapshot": "data/sandbox_test/DPS_NOTES/review_2026-10-22_n2_3/models.json",
+        "sha256": "bc1aa7e7c348516510a59af6e9640945b7e4bfc55e8d51c082203ed96b170323"
+      },
+      {
+        "original": "sandbox_test/DPS_NOTES/review_2026-10-22_n2_3/channels.csv",
+        "snapshot": "data/sandbox_test/DPS_NOTES/review_2026-10-22_n2_3/channels.csv",
+        "sha256": "08ff40bf8c8c78dda7b211d7879c1ffa3abc0a493fa50aa4dd4f1c1e909353fd"
+      },
+      {
+        "original": "sandbox_test/DPS_NOTES/review_2026-10-22_n2_3/variants.csv",
+        "snapshot": "data/sandbox_test/DPS_NOTES/review_2026-10-22_n2_3/variants.csv",
+        "sha256": "8e389a0a02e58382cd402fd4717655141f513ad18bab6ef1f78634be701e3756"
+      },
+      {
+        "original": "sandbox_test/DPS_NOTES/review_2026-10-22_n2_3/report.json",
+        "snapshot": "data/sandbox_test/DPS_NOTES/review_2026-10-22_n2_3/report.json",
+        "sha256": "0137c896005fed4c460f65cc663704b5ea4cca33e7a3b70fdeb582a22c188d41"
+      }
+    ]
   }
 ]
