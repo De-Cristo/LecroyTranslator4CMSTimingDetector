@@ -16,3 +16,10 @@ Read `REPOSITORY_WORKFLOW.md` for scope and verification. Keep code references
 consistent with the online version; preserve scientific results unless the
 review decision explicitly changes them. Repository upload is not official CMS
 approval or authorization to submit the notes to CMS.
+
+In rendered notes, captions and implementation footnotes, cite code through
+clickable GitHub links, not local filesystem or unlinked repository-relative
+paths. Prefer immutable commit links. Before citing, verify the committed code
+matches the local version; synchronize any intended changes first. Do not cite
+or link results directories, audit folders or local directory names in rendered
+text. Preserve provenance metadata internally; do not delete saved artifacts.

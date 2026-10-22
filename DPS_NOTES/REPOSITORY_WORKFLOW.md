@@ -45,6 +45,23 @@ changes. Do not delete unrelated files while synchronizing.
 
 ## Reproducibility scope
 
+Use the shared `RepoFile` LaTeX helper for direct implementation-script citations.
+It links to GitHub at `AnalysisRevision`, not to a moving branch or a local
+path. The displayed reference slide identifies the pinned revision. Before
+changing that revision, check all linked targets and verify cited script bytes
+against both the working analysis files and the committed Git objects. Push
+code changes before pointing the note at a new code revision. A later note-only
+commit need not change this pin if the cited code is unchanged. Do not include
+directory links or results-folder names in rendered notes or captions.
+
+After compiling, check PDF citations and matching committed/local script bytes:
+`python DPS_NOTES/review_2026-10-22_publication/verify_repository_links.py --repository /path/to/LecroyTranslator4CMSTimingDetector`.
+Fetch the remote before this check so `origin/master` is current.
+
+The source manifests retain local provenance paths for reproducibility; those
+paths are metadata, not citations in the rendered notes. The original supplied
+manuscripts and external ROOT data are not implied to be uploaded to GitHub.
+
 The checked-in PDFs, figure PDFs, LaTeX and numerical snapshots support review
 and recompilation of the decks. Running `draft_support/build.py` without
 `--assets` recompiles from the included figures. The `--assets` route currently

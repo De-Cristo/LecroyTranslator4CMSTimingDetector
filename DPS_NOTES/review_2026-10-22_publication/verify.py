@@ -31,6 +31,24 @@ def main():
         candidate = PdfReader(note / "publication_candidate_slides.pdf")
         review_text = "\n".join(map(text, review.pages))
         candidate_text = "\n".join(map(text, candidate.pages))
+        preamble = (note / "slides_preamble.tex").read_text()
+        assert preamble == (DPS / "draft_support/slides_preamble.tex").read_text()
+        repo = re.search(r"\\newcommand\{\\AnalysisRepo\}\{([^}]+)\}", preamble).group(1)
+        revision = re.search(r"\\newcommand\{\\AnalysisRevision\}\{([0-9a-f]{40})\}", preamble).group(1)
+        expected_links = set()
+        assert r"\RepoDir" not in source
+        for path in re.findall(r"\\RepoFile\{([^}]+)\}", source):
+            path = path.replace(r"\#", "#")
+            expected_links.add(f"{repo}/blob/{revision}/{path}")
+        for deck, content in ((review, review_text), (candidate, candidate_text)):
+            urls = {str(a.get_object().get("/A", {}).get("/URI", ""))
+                    for page in deck.pages for a in page.get("/Annots", [])}
+            assert {u for u in urls if u.startswith(repo)} == expected_links
+            assert f"fixed code revision {revision[:7]}" in " ".join(content.split())
+            for local_path in ("FEBD_Sync/", "TimeCalibration/", "Q_Walk/", "DPS_NOTES/",
+                               "/afs/", "repository-relative", "CMS-Note/cmsnote",
+                               "2026-10-22_clock_quality"):
+                assert local_path not in content
         assert "Review queue before publication" in review_text
         assert "Review queue before publication" not in candidate_text
         assert "not approved for public release" in text(candidate.pages[0])
@@ -47,6 +65,10 @@ def main():
         assert text(packaged.pages[0]) == text(cover.pages[0])
         assert [text(p) for p in packaged.pages[1:]] == list(map(text, candidate.pages))
         if name == "note1_mcp_reference":
+            for content in (review_text, candidate_text):
+                assert "Timing validation using the two bar ends" not in content
+                assert "Timing validation against the MCP reference" in content
+                assert "Same core-fit definition as the end difference" not in content
             assert "Backup: comparing clock estimators" in review_text
             assert "Backup: comparing clock estimators" not in candidate_text
             assert "Backup: residual segment offsets" in candidate_text
@@ -134,6 +156,7 @@ def main():
                              candidate_slides=len(candidate.pages),
                              candidate_with_cover_pages=len(packaged.pages),
                              citations=sorted(cited), source_bundle_checked=True,
+                             github_revision=revision, github_links_checked=len(expected_links),
                              layout_overflow=0, unresolved_citations=0)
     combined = DPS / "both_notes_review_v1.pdf"
     assert len(PdfReader(combined).pages) == sum(r["review_slides"] + 1 for r in reports.values())

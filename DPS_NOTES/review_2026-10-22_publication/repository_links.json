@@ -1,0 +1,97 @@
+{
+  "status": "passed",
+  "repository": "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector",
+  "revision": "45a907c422d6c8afbe0cdf44cd2827d3433d0f97",
+  "published_ancestor_of_origin_master": true,
+  "cited_scripts": [
+    "FEBD_Sync/simple_sync.py",
+    "Q_Walk/qwalk_core.py",
+    "Q_Walk/qwalk_t0_data.py",
+    "Q_Walk/qwalk_two_hit_pair_profile.py",
+    "TimeCalibration/bar_processing.py",
+    "TimeCalibration/ch192_vs_trigger.py",
+    "TimeCalibration/ch192_vs_trigger_lowess.py"
+  ],
+  "links": [
+    {
+      "url": "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/FEBD_Sync/simple_sync.py",
+      "path": "FEBD_Sync/simple_sync.py",
+      "kind": "blob",
+      "committed_target_exists": true,
+      "sha256": "ccbc94412053425679271bf8ffda49cce0c3b9cedde5be5333779e0d3cb5a6fa",
+      "local_and_checkout_match": true
+    },
+    {
+      "url": "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_core.py",
+      "path": "Q_Walk/qwalk_core.py",
+      "kind": "blob",
+      "committed_target_exists": true,
+      "sha256": "ac270f44a8fe8b2805d8d5cc49253e09acea4b09051e0ab895b22ddc46e13a3d",
+      "local_and_checkout_match": true
+    },
+    {
+      "url": "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_t0_data.py",
+      "path": "Q_Walk/qwalk_t0_data.py",
+      "kind": "blob",
+      "committed_target_exists": true,
+      "sha256": "70c5cb4d123979a45966a663b5a1da0f7096f43edf22bb8946525b6e41499672",
+      "local_and_checkout_match": true
+    },
+    {
+      "url": "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
+      "path": "Q_Walk/qwalk_two_hit_pair_profile.py",
+      "kind": "blob",
+      "committed_target_exists": true,
+      "sha256": "5327ead6e3fb244cf27b8096b4367b216e2f8dc85a72b1ce3f1af123a1fb0105",
+      "local_and_checkout_match": true
+    },
+    {
+      "url": "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/bar_processing.py",
+      "path": "TimeCalibration/bar_processing.py",
+      "kind": "blob",
+      "committed_target_exists": true,
+      "sha256": "1c6a42cfd243f42feb2c6667be5bd7779372e1e653220f64aea7de6bcbfe30f4",
+      "local_and_checkout_match": true
+    },
+    {
+      "url": "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger.py",
+      "path": "TimeCalibration/ch192_vs_trigger.py",
+      "kind": "blob",
+      "committed_target_exists": true,
+      "sha256": "91c8d2148cbba587a773fd8af0a60f11581c1be3c9662d89a70639cf65ac72e0",
+      "local_and_checkout_match": true
+    },
+    {
+      "url": "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py",
+      "path": "TimeCalibration/ch192_vs_trigger_lowess.py",
+      "kind": "blob",
+      "committed_target_exists": true,
+      "sha256": "3e186bbebd88e0359da3871a215a3aa8c5daf5d3521c8f2491fdb35f21cdb317",
+      "local_and_checkout_match": true
+    },
+    {
+      "url": "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py#L1102",
+      "path": "TimeCalibration/ch192_vs_trigger_lowess.py",
+      "kind": "blob",
+      "committed_target_exists": true,
+      "sha256": "3e186bbebd88e0359da3871a215a3aa8c5daf5d3521c8f2491fdb35f21cdb317",
+      "local_and_checkout_match": true
+    },
+    {
+      "url": "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py#L657-L668",
+      "path": "TimeCalibration/ch192_vs_trigger_lowess.py",
+      "kind": "blob",
+      "committed_target_exists": true,
+      "sha256": "3e186bbebd88e0359da3871a215a3aa8c5daf5d3521c8f2491fdb35f21cdb317",
+      "local_and_checkout_match": true
+    },
+    {
+      "url": "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py#L816",
+      "path": "TimeCalibration/ch192_vs_trigger_lowess.py",
+      "kind": "blob",
+      "committed_target_exists": true,
+      "sha256": "3e186bbebd88e0359da3871a215a3aa8c5daf5d3521c8f2491fdb35f21cdb317",
+      "local_and_checkout_match": true
+    }
+  ]
+}

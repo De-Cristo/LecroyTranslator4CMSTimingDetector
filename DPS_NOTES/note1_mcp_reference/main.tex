@@ -45,8 +45,7 @@ The interval-ratio distribution tests matching consistency. It is not a
 measurement of the picosecond resolution of the reconstructed particle time.
 
 Only uniquely matched events enter the reference calibration.
-}{Implementation (repository-relative):\par
-\nolinkurl{FEBD_Sync/simple_sync.py}\par
+}{\RepoFile{FEBD_Sync/simple_sync.py}{GitHub: trigger-matching implementation}.\par
 \texttt{dedup\_triggers}: duplicate removal.\par
 \texttt{match\_cumulative\_time}: matching and tolerance.}
 
@@ -69,8 +68,9 @@ The fitted trend is added to the linear prediction to reconstruct the
 expected channel-192 trigger time. This expected time is subtracted once
 from the SiPM time in the reference difference.
 }{Legacy residuals in ns versus segment time in seconds. These are
-pre-LOWESS residuals, not final timing resolutions. Implementation:
-\nolinkurl{TimeCalibration/ch192_vs_trigger_lowess.py}, lines 657--668 and 816.}
+pre-LOWESS residuals, not final timing resolutions.
+\RepoFile{TimeCalibration/ch192_vs_trigger_lowess.py\#L657-L668}{GitHub: clock prediction};
+\RepoFile{TimeCalibration/ch192_vs_trigger_lowess.py\#L816}{reference subtraction}.}
 
 \begin{frame}{A single, explicit time convention}
 \small
@@ -90,8 +90,9 @@ approximation for the short within-waveform interval.
 
 The charge-dependent component of $\Delta t_i$ is the time walk.
 An arbitrary constant does not change a shape calibration.\par
-{\scriptsize\textbf{Implementation:}
-\nolinkurl{TimeCalibration/ch192_vs_trigger_lowess.py}, lines 816 and 1102.
+{\scriptsize\textbf{GitHub implementation:}
+\RepoFile{TimeCalibration/ch192_vs_trigger_lowess.py\#L816}{per-file subtraction};
+\RepoFile{TimeCalibration/ch192_vs_trigger_lowess.py\#L1102}{combined-run subtraction}.
 Both per-file and combined-run calculations subtract
 \texttt{(mcp\_peak - mcp\_trig)}.\par}
 \end{frame}
@@ -116,10 +117,10 @@ transit-time measurement inside the MCP.
 \item Use $Q$, the TOFHIR ADC charge proxy. It is not a deposited energy in MeV.
 \item Fit the profile of $\Delta t_i$ versus $1/Q$ over the retained charge range.
 \end{itemize}
-{\scriptsize\textbf{Implementation (repository-relative):}\par
-\nolinkurl{TimeCalibration/ch192_vs_trigger_lowess.py}: coincidence and walk-sample selection.\par
-\nolinkurl{TimeCalibration/ch192_vs_trigger.py}: \texttt{build\_mcp\_map}, optional MCP cuts.\par
-\nolinkurl{TimeCalibration/bar_processing.py}: peak-to-trigger timing selector.\par}
+{\scriptsize\textbf{GitHub implementation:}\par
+\RepoFile{TimeCalibration/ch192_vs_trigger_lowess.py}{Coincidence and walk-sample selection}.\par
+\RepoFile{TimeCalibration/ch192_vs_trigger.py}{MCP mapping and optional cuts}.\par
+\RepoFile{TimeCalibration/bar_processing.py}{Peak-to-trigger timing selector}.\par}
 \end{frame}
 
 \FigureSlide{Archived reference: bar 7, channel 133}{reference_ch133}{
@@ -189,8 +190,7 @@ of each bin's median, with at least five entries. Bars show the SEM after clippi
 \item Fit $W(Q)=a+b/Q+c/Q^2$ with an objective weighted by $1/\mathrm{SEM}^2$.
 The next four figures use the exact saved reference coefficients used in Note 2.
 \end{itemize}
-{\scriptsize Source snapshots: \texttt{2026-10-22\_clock\_quality/inputs}.
-The displayed +26\,ns constant changes neither the shape nor the saved coefficients.}
+{\scriptsize The displayed +26\,ns constant changes neither the shape nor the saved coefficients.}
 \end{frame}
 
 \FigureSlide{Clock-corrected reference: bar 7, channel 133}{clock_reference_ch133}{
@@ -269,34 +269,21 @@ comparison require both ends to pass quality, peak-left charge cuts and
 their own populated reference support within the outer profile means.
 No additional selection is made on either timing-difference observable.
 
-{\scriptsize Implementation: \texttt{Q\_Walk/qwalk\_t0\_data.py};
-new references: \texttt{2026-10-22\_clock\_quality}.}
+{\scriptsize \RepoFile{Q_Walk/qwalk_t0_data.py}{GitHub: clock-quality selection}.}
 \end{frame}
 
-\FigureSlide{Timing validation using the two bar ends}{validated_end_difference}{
-The same \TimingCount{} bar-8 events are shown before and after subtracting
-the two channel-specific walk functions. The common clock mapping is fixed.
-
-The Gaussian-core width changes from \DBefore{} to \DAfter\,ps.
-The corrected full-sample SD is \DSD\,ps; \DTail\% lie outside the core window.
-
-The 16th--84th percentile interval is [\DLow, \DHigh]\,ps from 400
-file/segment-block bootstrap replicas, with calibrations held fixed.
-Ref.~\cite{Bootstrap} gives the general resampling principle.
-}{Truncated-normal likelihood within median $\pm2.5(1.4826\,\mathrm{MAD})$.
-Each histogram is median-centered for display only; the SD includes all events.}
-
 \FigureSlide{Timing validation against the MCP reference}{validated_bar_mcp}{
-The bar-average time minus mapped MCP time uses the identical event sample
-and clock reconstruction before and after channel-wise walk correction.
+For \TimingCount{} events, compare bar-average time minus mapped MCP time
+before/after walk correction, with fixed clock mapping.
 
 The core width changes from \RBefore{} to \RAfter\,ps.
 The corrected full-sample SD is \RSD\,ps; \RTail\% lie outside the fit window.
 
-The conditional block-bootstrap interval is [\RLow, \RHigh]\,ps.
-This observable includes detector, MCP and residual clock contributions.
-}{Same core-fit definition as the end difference. The display range does not
-restrict the SD. No segment-by-segment timing recentering is applied.}
+The conditional 16--84\% interval is [\RLow, \RHigh]\,ps
+(400 file/segment-block bootstraps, fixed calibrations)~\cite{Bootstrap}.
+Includes detector, MCP and residual clock contributions.
+}{Truncated-normal fit: median $\pm2.5(1.4826\,\mathrm{MAD})$.
+Median-centered display; full-sample SD; no segment-wise recentering.}
 
 \begin{frame}{What these timing widths establish}
 \small
@@ -311,8 +298,8 @@ Halving an end-difference width requires controlled position effects and
 negligible end-error covariance. Shared MCP and clock errors also prevent
 inferring detector covariance directly from the measured reference residuals.
 
-The two separately fitted core widths are not variances of a common model.
-Their quadrature difference is not a justified synchronization-jitter estimate.
+Separately fitted core widths cannot be treated as variances of a common model
+to infer synchronization jitter by quadrature subtraction.
 This version reports same-event timing validation with conditional statistical
 intervals. Intrinsic bar resolution and synchronization-jitter extraction are
 outside its scope. Position, covariance, segment-offset and calibration
@@ -353,9 +340,7 @@ N1-6 & Local citations and candidate packaging checked; conveners must confirm t
 \bottomrule
 \end{tabular}\par
 \medskip
-Sources: supplied \texttt{Note1.pdf}; candidate editable manuscript
-\texttt{CMS-Note/cmsnote}; archived calibration CSVs in
-\texttt{Q\_Walk/reference\_quadratic\_t0}.
+Sources: the supplied original manuscript and the calibration tables used in this study.
 \par\smallskip
 The figure manifest records the exact copied inputs and checksums.
 This review slide is removed from a public release.

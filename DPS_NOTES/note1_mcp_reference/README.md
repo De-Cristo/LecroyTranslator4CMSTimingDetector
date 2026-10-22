@@ -87,3 +87,11 @@ No analysis result changed in this citation/packaging update.
 The standalone source archive compiles with pdfLaTeX. Within the repository,
 use the shared builder described in `../README_DRAFTS.md`. No CMS DP identifier
 has been assigned in this draft.
+
+Page-by-page review, 22 October 2026: the author removed the slide titled
+"Timing validation using the two bar ends" (formerly 22/32) from both versions.
+The bar--MCP timing-validation slide remains and now states its sample, fit and
+bootstrap definitions directly, without referring to the removed slide.
+The underlying end-difference figure, inputs and audit are retained as provenance,
+not displayed as a slide. This removal changes no fit or calibration result.
+The review deck has 31 slides; the candidate has 26, before optional A4 covers.

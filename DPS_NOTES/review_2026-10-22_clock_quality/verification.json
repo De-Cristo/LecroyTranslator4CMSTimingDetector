@@ -3,12 +3,12 @@
   "reference_channels": 22,
   "overlap_fits": 21,
   "bar8_events": 10127,
-  "combined_pages": 63,
+  "combined_pages": 62,
   "builds": {
     "note1_mcp_reference": {
-      "slides": 32,
+      "slides": 31,
       "cover_pages": 1,
-      "combined_pages": 33,
+      "combined_pages": 32,
       "labelled_figures": 21,
       "overfull_boxes": 0,
       "preview_sheets": [
@@ -37,8 +37,8 @@
       "status": "internal review draft"
     }
   },
-  "combined_sha256": "f71f96142226d5c72ca5cab34bd242ff9891892d397febf1b81b4a749dca68c6",
+  "combined_sha256": "1521e7430c781213bcc2d46bb20a3908e018a2002af95eb60767153975efb217",
   "test_results": "140 focused tests and 25 integration tests passed; 1 optional integration test skipped",
   "review_status": "N1-5 closed by author for conditional timing-validation scope; intrinsic bar resolution and synchronization-jitter extraction excluded",
-  "latest_packaging_check": "Both titles shortened to CMS BTL; prototype bars/prototypes removed from titles only. Both review/candidate decks and covers rebuilt, title text verified, abstract slides verified unchanged against previous repository PDFs. Prior successful numerical checks reused for title-only change."
+  "latest_packaging_check": "Direct commit-pinned GitHub script citations replace local code paths; directory/result-folder citations removed. Note1 end-difference slide removed at author request; retained MCP slide is self-contained. Figures, numerical macros, manifests and title/abstract metadata unchanged. Prior numerical checks reused; both note versions rebuilt."
 }

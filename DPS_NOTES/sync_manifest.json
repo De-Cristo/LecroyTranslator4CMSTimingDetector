@@ -19,8 +19,8 @@
   "files": [
     {
       "path": "DPS_NOTES/AGENTS.md",
-      "sha256": "9d4cd18cbcb63edca051d804c6673de1b166024b38c3d547e06a569a3c31538d",
-      "bytes": 1003
+      "sha256": "ca47fb630ce912177e576f0e55ddde92444ca33d03106f35d9d4c208e3212a91",
+      "bytes": 1473
     },
     {
       "path": "DPS_NOTES/PUBLICATION_CHECKLIST.md",
@@ -34,13 +34,13 @@
     },
     {
       "path": "DPS_NOTES/REPOSITORY_WORKFLOW.md",
-      "sha256": "4df257a244825aba3cf708a9552535100b65dcf83cc0bfcc4b7097165b36e9c1",
-      "bytes": 3957
+      "sha256": "1e3f9bc6f4b8028d40d62d97fc61a4565fbace7190a855b06137a4f34f8706e2",
+      "bytes": 5093
     },
     {
       "path": "DPS_NOTES/both_notes_review_v1.pdf",
-      "sha256": "f71f96142226d5c72ca5cab34bd242ff9891892d397febf1b81b4a749dca68c6",
-      "bytes": 6655321
+      "sha256": "1521e7430c781213bcc2d46bb20a3908e018a2002af95eb60767153975efb217",
+      "bytes": 6556522
     },
     {
       "path": "DPS_NOTES/cms_dp_note_template/CMSlogo_black_label_1024.png",
@@ -94,13 +94,13 @@
     },
     {
       "path": "DPS_NOTES/draft_support/references.tex",
-      "sha256": "dc93796a763e81eebbf279621c090bc403c42b25b8161321661f3f79707993f3",
-      "bytes": 1226
+      "sha256": "30aca6cbe908139c12aec2f5cc23cb59d2b87c81be5e8323842a581bac3bc1b4",
+      "bytes": 1319
     },
     {
       "path": "DPS_NOTES/draft_support/slides_preamble.tex",
-      "sha256": "587b529a72ad8f892371617310b9169c9d175a6f419edfc730a5148541259aaf",
-      "bytes": 1948
+      "sha256": "98f63a9423640bcaf75f778ee8ebcdcd77a46deb497f64e589777218a0bda064",
+      "bytes": 2191
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/CMSlogo_black_label_1024.png",
@@ -114,22 +114,22 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/README.md",
-      "sha256": "e802289f7bd41f5a2cf76c526547eb9b48cc8e286d28bdda5f6818b43ed9f29c",
-      "bytes": 5612
+      "sha256": "40e26116ade030c87378837e58fc06100973b0fd3cf18735273427d9e54ad02a",
+      "bytes": 6159
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/build_report.json",
-      "sha256": "ae45c8b9ee37d3111ab542f4885298e8742effeb9d0b4a7b785afe625ded6165",
+      "sha256": "adbbf7defda0c329d381603a74b5945c31874ce2a9581835fa44bc628bcb5011",
       "bytes": 385
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/candidate_report.json",
-      "sha256": "1d2ce160db809307ef5abe1ce76cacb6415e9b52f68ceff5782126c37b85cbd4",
+      "sha256": "8520c3b078f2be920be27b024a9bb7dd46617bc51f46d3ad6ec37e283389ef96",
       "bytes": 549
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/cover.pdf",
-      "sha256": "d81787a70f0cced56456d71ffbc05bb51f8f0e968312ab7c7d7b4f2c00816806",
+      "sha256": "19cb28b4d63c2fb693549001f257fb68eb626b355180a81d598dcd9a97f453ff",
       "bytes": 949178
     },
     {
@@ -459,8 +459,8 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/main.tex",
-      "sha256": "ef5970e63a49882dcf572964f7a807d4f477292eb59ca9a48deab15a1b869140",
-      "bytes": 20322
+      "sha256": "e5fe644080fef353c2243ceeb801321b6304568e613d3032310ac7a861e5daa7",
+      "bytes": 19560
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/metadata.tex",
@@ -469,8 +469,8 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/note_with_cover.pdf",
-      "sha256": "7ffe62c2bc40945511ec1301c46983310a03b7655e5767f1eb05003af145fb27",
-      "bytes": 4616359
+      "sha256": "35be3711ffac815d40c061c42bdb1a22317df54146f66e9784f95f3892db6a16",
+      "bytes": 4561755
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/publication_candidate.tex",
@@ -479,18 +479,18 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/publication_candidate_slides.pdf",
-      "sha256": "94560a1ecc1ccfce1281041c340209c31b55d8391e7e1d9246b4e9c475b21aee",
-      "bytes": 2875362
+      "sha256": "9477352c77806d9aa78c69a26d20d00b0c7b6e2663599622a96f49a5700a497c",
+      "bytes": 2845051
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/publication_candidate_with_cover.pdf",
-      "sha256": "16f802696e68d33ef1199f70091cb48e2a8c47f0b150c3df7ec68bc9c732ac68",
-      "bytes": 3901289
+      "sha256": "3532af218c1ce431f870807f8cec1fe04a29995b609354f24f8559fb38efcf24",
+      "bytes": 3870082
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/references.tex",
-      "sha256": "dc93796a763e81eebbf279621c090bc403c42b25b8161321661f3f79707993f3",
-      "bytes": 1226
+      "sha256": "30aca6cbe908139c12aec2f5cc23cb59d2b87c81be5e8323842a581bac3bc1b4",
+      "bytes": 1319
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/review_values.tex",
@@ -499,13 +499,13 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/slides.pdf",
-      "sha256": "bd92248cda366425e69d7e4a3df09472786341ae48fccac5f0f3b9ea6ee041a0",
-      "bytes": 3580962
+      "sha256": "3a02e3f630b34e44aa044862d31f919402791dae08f32a68bc1aefe9bebdc67f",
+      "bytes": 3527861
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/slides_preamble.tex",
-      "sha256": "587b529a72ad8f892371617310b9169c9d175a6f419edfc730a5148541259aaf",
-      "bytes": 1948
+      "sha256": "98f63a9423640bcaf75f778ee8ebcdcd77a46deb497f64e589777218a0bda064",
+      "bytes": 2191
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/CMSlogo_black_label_1024.png",
@@ -529,12 +529,12 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/candidate_report.json",
-      "sha256": "474bb47378b9a687baf8df31f1f7a4a55b7af25b37cae402765fdbf548cfbb3b",
+      "sha256": "a55c77482d3394bb62b07954c79f6506005e4d63bbdbc1a8613c9af185a93e35",
       "bytes": 549
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/cover.pdf",
-      "sha256": "69b3a4fcab11bc8d9659442f04b592144e183b0a2122ae8337b4179793723546",
+      "sha256": "376319eb482e091ad7f485d665f0e60dab17faac82cc0ca6c553be14a5589ea3",
       "bytes": 949804
     },
     {
@@ -934,8 +934,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/main.tex",
-      "sha256": "101137fd57548aac54f0699749c395cbd24f1d2c2c0c741ae1a0f17dcc6e16ec",
-      "bytes": 21495
+      "sha256": "9fba60149f37ba15ae3f7131a6754973946f5ebae9de7537f73bba647f65f0e8",
+      "bytes": 21331
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/metadata.tex",
@@ -944,8 +944,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/note_with_cover.pdf",
-      "sha256": "3ac62721acde8a3f1e21bb09045ffa5fce5c611e98d11366aa51643682ad0a0d",
-      "bytes": 2038691
+      "sha256": "cd27b1b0403a564e5a1b1643f4902e5893c3538dda062add5edbaf0e6b786b81",
+      "bytes": 1994564
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate.tex",
@@ -954,18 +954,18 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate_slides.pdf",
-      "sha256": "1bef7e40d3b799bbe5a3819759ebdd40d2d49a3745b1aecdaed3d5cef2b83550",
-      "bytes": 996953
+      "sha256": "29848fc2725d67035456732e584de4785f504cf1915afb3274e081434b4235f2",
+      "bytes": 972773
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate_with_cover.pdf",
-      "sha256": "d41e5fe1447077e9ce03013461749978087b1c5d322767d826a8c2d1d0502e09",
-      "bytes": 2017746
+      "sha256": "3793b442abbc769d0809b35054545c776a064477c88961e18cc2bc30dfcff33e",
+      "bytes": 1993068
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/references.tex",
-      "sha256": "dc93796a763e81eebbf279621c090bc403c42b25b8161321661f3f79707993f3",
-      "bytes": 1226
+      "sha256": "30aca6cbe908139c12aec2f5cc23cb59d2b87c81be5e8323842a581bac3bc1b4",
+      "bytes": 1319
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/review_values.tex",
@@ -974,13 +974,13 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/slides.pdf",
-      "sha256": "5717be39f8428729ad1df7ed5b7ce94c92ace7a02ee2a5d17dc818b856b2e336",
-      "bytes": 1016909
+      "sha256": "647d898f0198328449ea58429238c36673c216bf42aea3e337fa21341c2b1fd2",
+      "bytes": 974019
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/slides_preamble.tex",
-      "sha256": "587b529a72ad8f892371617310b9169c9d175a6f419edfc730a5148541259aaf",
-      "bytes": 1948
+      "sha256": "98f63a9423640bcaf75f778ee8ebcdcd77a46deb497f64e589777218a0bda064",
+      "bytes": 2191
     },
     {
       "path": "DPS_NOTES/review_2026-10-20/gap_analysis.md",
@@ -1769,8 +1769,8 @@
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_clock_quality/verification.json",
-      "sha256": "75527dd209eb999fedb4e7f45a0cecc35d8a8a47b601f4581a0977e2bdfa3096",
-      "bytes": 1722
+      "sha256": "df987c3f869d39b87bc85fea6e08d4dc28dec85b0e080da5bf41af3a283011cb",
+      "bytes": 1775
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_clock_quality/verify.py",
@@ -2198,14 +2198,24 @@
       "bytes": 2945
     },
     {
+      "path": "DPS_NOTES/review_2026-10-22_publication/repository_links.json",
+      "sha256": "5e4da22dce32999ff08d1115c9e7e61a75660935f362cd14232f6ee7960f0f4d",
+      "bytes": 4643
+    },
+    {
       "path": "DPS_NOTES/review_2026-10-22_publication/verification.json",
-      "sha256": "fddbca775c899cfa3cb34dedb0bef4a6ce7d14f4be19f6507c3db72b59a5fe5d",
-      "bytes": 1498
+      "sha256": "eb36ce93a5b49d72daab97235bda4c21517d414639186ae98e2bfa4bcf6e0e58",
+      "bytes": 1702
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_publication/verify.py",
-      "sha256": "9eb7834fa56acc8503931fa5c43ab0570fb15344c343945c2a088cc8899e8818",
-      "bytes": 9911
+      "sha256": "7a34b020e23de69d5aafd11fbc5ed1158d095d405e9c8c285e757e66b3c31235",
+      "bytes": 11576
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_publication/verify_repository_links.py",
+      "sha256": "e591206c19e45bd2d92baeb782a0fd8627ad5a1281817aebd83c17f3cc8aec30",
+      "bytes": 3014
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -3774,17 +3784,17 @@
     }
   ],
   "verification": {
-    "file_count": 751,
+    "file_count": 753,
     "all_source_hashes_match": true,
-    "combined_pages": 63,
+    "combined_pages": 62,
     "focused_tests_passed": 140,
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "Both titles shortened to end at CMS BTL; prototype bars/prototypes removed only from titles. Both review/candidate decks and A4 covers rebuilt; title text and unchanged abstract slides checked against prior PDFs. Original supplied abstracts read and compared: current abstracts are draft rewrites, not verbatim originals; they remain unchanged. Both title slides inspected; combined PDF and publication checks passed. Prior numerical checks reused; changed files hash-checked.",
+    "latest_change": "Direct GitHub script citations replace local code paths; all directory/results-folder references removed from rendered notes. Ten PDF link targets and seven matching local/committed scripts verified at published revision 45a907c. Note1 slide formerly 22/32 removed from review/candidate; retained MCP slide made self-contained. Figures, numerical macros, manifests and title/abstract metadata unchanged; prior numerical checks reused. Notes rebuilt, layout and citation checks passed; changed-file hashes verified.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
-      "note1_mcp_reference": 27,
+      "note1_mcp_reference": 26,
       "note2_dual_threshold": 28
     },
     "n2_2_verification": "DPS_NOTES/review_2026-10-22_n2_2/verification.json",
@@ -3799,6 +3809,8 @@
     "n2_7_changed_files_hash_checked": 13,
     "n2_7_record": "DPS_NOTES/note2_dual_threshold/README.md",
     "n2_3_n2_4_closure_changed_files_hash_checked": 17,
-    "title_update_changed_files_hash_checked": 17
+    "title_update_changed_files_hash_checked": 17,
+    "github_link_verification": "DPS_NOTES/review_2026-10-22_publication/repository_links.json",
+    "latest_changed_files_hash_checked": 30
   }
 }

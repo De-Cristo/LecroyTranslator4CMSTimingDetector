@@ -2,9 +2,9 @@
   "status": "passed",
   "notes": {
     "note1_mcp_reference": {
-      "review_slides": 32,
-      "candidate_slides": 27,
-      "candidate_with_cover_pages": 28,
+      "review_slides": 31,
+      "candidate_slides": 26,
+      "candidate_with_cover_pages": 27,
       "citations": [
         "Bootstrap",
         "LOWESS",
@@ -12,6 +12,8 @@
         "TOFHIR2"
       ],
       "source_bundle_checked": true,
+      "github_revision": "45a907c422d6c8afbe0cdf44cd2827d3433d0f97",
+      "github_links_checked": 8,
       "layout_overflow": 0,
       "unresolved_citations": 0
     },
@@ -26,12 +28,14 @@
         "TOFHIR2"
       ],
       "source_bundle_checked": true,
+      "github_revision": "45a907c422d6c8afbe0cdf44cd2827d3433d0f97",
+      "github_links_checked": 2,
       "layout_overflow": 0,
       "unresolved_citations": 0
     }
   },
-  "combined_pages": 63,
-  "combined_sha256": "f71f96142226d5c72ca5cab34bd242ff9891892d397febf1b81b4a749dca68c6",
+  "combined_pages": 62,
+  "combined_sha256": "1521e7430c781213bcc2d46bb20a3908e018a2002af95eb60767153975efb217",
   "review_status": "N1-6 local work complete; convener template, DP metadata, cover handling and release approval pending",
   "note2_review_status": "All current Note2 review items closed within documented scope. N2-3/N2-4 temporarily closed by author for exploratory linear model and conditional statistics with separate weighting sensitivity; permanent limitations retained, not precision-model validation or a total error budget. Next pass is page by page; numerical results unchanged.",
   "analysis_tests": "previous clock-quality tests reused; N2-2 ROOT replay and 17 focused tests documented in review_2026-10-22_n2_2/README.md; frozen numerical results unchanged"

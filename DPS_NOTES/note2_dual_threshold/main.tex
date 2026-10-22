@@ -64,7 +64,7 @@ DAC codes 10 and 35. The implemented scale gives
  \Delta I=(35-10)\times0.3125\,\mu\mathrm{A}=7.8125\,\mu\mathrm{A},\qquad
  \frac{S}{\mu\mathrm{A/ns}}=1000\,\frac{\Delta I/\mu\mathrm{A}}{(t_2-t_1)/\mathrm{ps}}.
 \]
-{\scriptsize Implementation: \texttt{Q\_Walk/qwalk\_core.py}. This checks the
+{\scriptsize \RepoFile{Q_Walk/qwalk_core.py}{GitHub: timing and threshold reconstruction}. This checks the
 implemented conversion, not an independent hardware-threshold calibration.}
 \end{frame}
 
@@ -84,7 +84,7 @@ and hit SD; fit with SEM weights. Bins with undefined or negligible SEM are omit
 Quote the 16th--84th percentiles; Ref.~\cite{Bootstrap} gives the general principle.
 \end{itemize}
 {\scriptsize All selected hits are used; there is no train/test split.
-Implementation: \texttt{Q\_Walk/qwalk\_two\_hit\_pair\_profile.py},
+\RepoFile{Q_Walk/qwalk_two_hit_pair_profile.py}{GitHub: pair selection and profiling},
 with the newer optional minimum-rise cut disabled.}
 \end{frame}
 
@@ -112,8 +112,6 @@ belongs to the selection-sensitivity and channel-quality studies.
 Channel 135 has one singleton bin: its SEM is undefined and only nine bins
 enter that channel's linear fit. No fit or plotted data changed in this audit.
 
-{\scriptsize Audit, input/code hashes and per-channel counts:
-\texttt{DPS\_NOTES/review\_2026-10-22\_n2\_2/}.}
 \end{frame}
 
 \begin{frame}{Reference version shared with Note 1}
@@ -135,7 +133,6 @@ The original plotted AWC intervals hold the reference fixed. They exclude
 reference-fit uncertainty, clock-selection uncertainty and cross-run transfer.
 The later table adds reference-fit statistics separately.
 
-{\scriptsize Numerical version: \texttt{Q\_Walk/results/2026-10-22\_clock\_quality}.}
 \end{frame}
 
 \begin{frame}{Sensitivity to the refreshed reference}
@@ -447,8 +444,8 @@ the linear model for precision calibration or establish a total uncertainty budg
 The next review pass is page by page. Model choice, uncertainty treatment and
 claims can be revisited; the numerical results are unchanged.
 \medskip
-Sources: supplied \texttt{Note2.pdf}; extended profile snapshots and the dated
-measured-overlap study. All plotted tables and checksums accompany this draft.
+Sources: the supplied original manuscript and the profile and measured-overlap results.
+All plotted tables and checksums accompany this draft.
 \par\smallskip
 Primary-source references are included. Official template, DP metadata and
 cover handling still require convener confirmation.
