@@ -10,6 +10,11 @@
     "sha256": "c32474f7dd29d949165ff43ad6d595b815a8611abedd73ca7769cfe781b66d15"
   },
   {
+    "file": "figures/bar_pair_before_after.pdf",
+    "source": "../Q_Walk/results/2026-10-22_bar_pair_timing/bar_pair_before_after.pdf",
+    "sha256": "4a6e261755e57b28a386a5bdb8ea6e960519629742f803075538d4ca82fb8a2e"
+  },
+  {
     "file": "figures/clock_reference_ch137.pdf",
     "source": "note1_mcp_reference/figures/clock_reference_ch137.pdf",
     "sha256": "cbaff61c263dcfd18afa1e75a11cfd862ffebd29424580d4ff1ce29073ee507f"

@@ -1,0 +1,38 @@
+{
+  "channel": 137,
+  "quality_hits": 12028,
+  "q_cut_adc": 185.920810803,
+  "selected_hits": 11053,
+  "retained_bins": 20,
+  "coefficients_ns": {
+    "a": -25.906681070583836,
+    "b": 214.02421793982538,
+    "c": -17132.27591310483
+  },
+  "covariance_ns2_abc": [
+    [
+      0.0002729392782433761,
+      -0.13883878543968392,
+      17.079903488295635
+    ],
+    [
+      -0.13883878543968392,
+      72.08489192453516,
+      -9007.67777393206
+    ],
+    [
+      17.07990348829563,
+      -9007.67777393206,
+      1139942.7370857908
+    ]
+  ],
+  "q_min_adc": 189.37608269747923,
+  "q_max_adc": 585.6893362389271,
+  "method": "20 uniform full-selected-range inverse-Q bins; 5 scaled-MAD bin clipping; SEM-weighted quadratic",
+  "clock_quality": "October refreshed finite-trigger segmentation and <=1000 ps pre-LOWESS scaled-MAD gate",
+  "upstream_reproduction": {
+    "profile_mean_max_difference_ps": 3.637978807091713e-12,
+    "exact_bin_counts": true,
+    "coefficients_agree": true
+  }
+}

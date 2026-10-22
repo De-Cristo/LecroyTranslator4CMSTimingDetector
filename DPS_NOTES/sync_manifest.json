@@ -2234,22 +2234,22 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/README.md",
-      "sha256": "1f0b2a27087d09a1987771fff447aedd9fbf0c41b184c033f20804f349a94471",
-      "bytes": 1825
+      "sha256": "0ed4e696383e61e7e6ed469863e26baf6d65375bb9de2e573663870be50e6004",
+      "bytes": 3013
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/both_notes_slides_v2.pdf",
-      "sha256": "0a3bfc036f60f8b5a5293c30a6cc91645a5130ff936105f8e87bbeb2b1d23514",
-      "bytes": 2914901
+      "sha256": "e3c4983172071b04bee14d843d8ff24eeb8b3a22684387a1f47fa28d5f68a73e",
+      "bytes": 2940200
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build.py",
-      "sha256": "28facb9d0c4329961e669ce6f9f1259728a5587d41c07946a09e254ad9fcfe20",
-      "bytes": 5043
+      "sha256": "c7f8e63bb5249064fd3654a4599bf2695c461692a7a80e65e55ebd8288fd6854",
+      "bytes": 5317
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_report.json",
-      "sha256": "1b78c0f909c40aed3a002cba101746c7f8763c213a02dc7791c3584821d053c2",
+      "sha256": "cc26c0fdce13febe001f89a74687a5b6dea28301f41cda67893bf6e7de595e4f",
       "bytes": 680
     },
     {
@@ -2259,8 +2259,13 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/asset_manifest.json",
-      "sha256": "207a38e3f48e16eff6b45baf7dbe6f109663ae5a79db38d61f103bf7e179c461",
-      "bytes": 1767
+      "sha256": "255082c094c2ba1c651df9c4ce65a19299221276ad2d1e5ccb277ce47a646bfc",
+      "bytes": 1994
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/bar_pair_before_after.pdf",
+      "sha256": "4a6e261755e57b28a386a5bdb8ea6e960519629742f803075538d4ca82fb8a2e",
+      "bytes": 27266
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/clock_reference_ch137.pdf",
@@ -2299,8 +2304,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/main.tex",
-      "sha256": "be5ed8aa8387d352508957b4a8fba70464f65d16da8a27b69fd4222bd21ff844",
-      "bytes": 6076
+      "sha256": "17c2dd1a8f039866d9769af2b905aee76b19a652f52d618fbbb2b6d1a93ff65f",
+      "bytes": 6157
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/metadata.tex",
@@ -2319,8 +2324,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/slides.pdf",
-      "sha256": "892c4bc416c2737297836e003c8db081c75e5317e7afc8bcf95997aa79b3bdf8",
-      "bytes": 2131888
+      "sha256": "3fd967261056bdd375efb658e9b028513812957b571cd949c3289fa246e8c4be",
+      "bytes": 2154404
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/CMSlogo_black_label_1024.png",
@@ -2384,7 +2389,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/slides.pdf",
-      "sha256": "f0a2faad1cd61b34bb0bc3ad67c0abb76e6050171abe3efa5a50b5c1557e0b7e",
+      "sha256": "9bd1e6e2b13b971f0f75201e2cb23311d181933a24f4af80b7167803aa2efcb2",
       "bytes": 705960
     },
     {
@@ -2394,8 +2399,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
-      "sha256": "8785822a06a961c47042f5d5faa57d322a014cb55be012d7e07422bc84470aac",
-      "bytes": 2102
+      "sha256": "2d576d86fca7d0c603916d76d32235e0e1d27e9db3a79564b78df497e6834d5d",
+      "bytes": 2453
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -2471,6 +2476,141 @@
       "path": "Q_Walk/results/2026-09-24_measured_q_overlap/try_physical_candidate.py",
       "sha256": "52bf52f97761d876e219da740ed85a6f96aa261ae220451aac2e5d1492b2e9f3",
       "bytes": 6574
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_reference_check/README.md",
+      "sha256": "767b47f9b1ec6a9f29aa42124adebd9a0b760fa909d3c3a6b70a6a0872172820",
+      "bytes": 4600
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_reference_check/channel_137_candidate.json",
+      "sha256": "b611385a48365f953296b635a90948999de4bd540c96d576249cdfc7ee95fbaf",
+      "bytes": 989
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_reference_check/channel_137_current_profile.csv",
+      "sha256": "632ecda88022c58af8027a82552494268ed4f103335b24c07825c7b062df9991",
+      "bytes": 7661
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_reference_check/channel_150_candidate.json",
+      "sha256": "3de838cec8c5c3f3c94d18f3a187353695b1fbd4e1613e255e6322745c3c8798",
+      "bytes": 993
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_reference_check/channel_150_current_profile.csv",
+      "sha256": "22308b8ab24dcd47878a6ba387367a3e2a831bbb00c71a97555ae430cc04fbd8",
+      "bytes": 7349
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_reference_check/channel_234_candidate.json",
+      "sha256": "2f3c87f60c87dce45f92b1df6a96c6129b58c90d0184e9e76a9f0c83c2d3dca7",
+      "bytes": 1762
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_reference_check/channel_234_current_clock_legacy_bins_profile.csv",
+      "sha256": "178b26cb1f59a38a98e3ed250609fc7bd3419d1a2ade316dc0d4446d0bd27935",
+      "bytes": 7638
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_reference_check/channel_234_current_profile.csv",
+      "sha256": "3ef9adbf56ba2d5059affa5bd79a580f7bb7f3e27e0f5374dfa96d462bf1d440",
+      "bytes": 6612
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_reference_check/channel_243_candidate.json",
+      "sha256": "c50386d494b12e27bfb41c7cbc8949947175546218d9a9ad81cdf88b1b0e698e",
+      "bytes": 1761
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_reference_check/channel_243_current_clock_legacy_bins_profile.csv",
+      "sha256": "c9ad575d65506b4c8cb0a2c3da668d1e40822c23e351948579268659afde04da",
+      "bytes": 7628
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_reference_check/channel_243_current_profile.csv",
+      "sha256": "61724e9d097c6da9c5f1ac452a6287b4b45f32ceff356947ba60933a96e4e919",
+      "bytes": 6237
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_reference_check/check.py",
+      "sha256": "0ddc35feb4bcf6cd4df7057099c8ae0688035751e9d712726c3696ffb7f35495",
+      "bytes": 7819
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_reference_check/common_supported_event_ids.csv",
+      "sha256": "fff5da7dd37a9aa34d02a6d587124d7abd18d49afb56d57068c028ecd37861ef",
+      "bytes": 140194
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_reference_check/input_manifest.json",
+      "sha256": "82ffd4fc883ebd30bff373c6c7e07655e82652323257f12690804c6942e570e6",
+      "bytes": 2896
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_reference_check/report.json",
+      "sha256": "9f3bfec1f67badccb6dce8cb03e22ea1153af8194a77de9beeb77c2ef7d7dd7e",
+      "bytes": 6673
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_timing/README.md",
+      "sha256": "3fd101885847457d15a389a98f16283b0ebc86f62dac43005b2525d244d2882d",
+      "bytes": 4367
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_timing/bar_pair_before_after.pdf",
+      "sha256": "4a6e261755e57b28a386a5bdb8ea6e960519629742f803075538d4ca82fb8a2e",
+      "bytes": 27266
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_timing/charge_dependence.pdf",
+      "sha256": "18672a22ae5f66d8e800bd57abfa9a5afdd304f2c57eca612bbe26b118a5d91e",
+      "bytes": 33803
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_timing/charge_profiles.csv",
+      "sha256": "668f7a5422c2ac676de17c3a435466d7adce17454870d9ae4d84d3fa4c379890",
+      "bytes": 5785
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_timing/histogram_bins.csv",
+      "sha256": "5c3008330567f68a3d1624e6cb7cb042745780a691d71ccab8b6705b954f40fa",
+      "bytes": 938
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_timing/input_manifest.json",
+      "sha256": "d9c813c99444091b0193b57789824f63c9c87faa45a499448b8d3f3623068503",
+      "bytes": 1553
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_timing/paired_block_bootstrap.csv",
+      "sha256": "056be48b64d7c720e41da9713d75418ac51bce775ae3035e9e0292fbc763f083",
+      "bytes": 31494
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_timing/report.json",
+      "sha256": "1443cf0fdce3319b7871cb5141af9be1dc6b02b7120f7d652a1af3f9d010f6bf",
+      "bytes": 5466
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_timing/segment_statistics.csv",
+      "sha256": "416bb9dd07b2391c4f79d60faa831aa3c9512383f493831e849b43c55e72ca82",
+      "bytes": 13568
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_timing/selected_events.csv.gz",
+      "sha256": "8e28d1dd5307f127771500a36fc25fdcab49a217ab7b687dc64869f4f93e3db6",
+      "bytes": 384885
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_timing/validate.py",
+      "sha256": "78776d3f64569b2cfa522c2e950206eb665e77b365c512b7c3ef4bff329c4f99",
+      "bytes": 9976
+    },
+    {
+      "path": "Q_Walk/results/2026-10-22_bar_pair_timing/verification.json",
+      "sha256": "3f17bf734a0ca8525851f0d8c54fa9e1a702c9803f9367cbe9de994a5df6a7a6",
+      "bytes": 373
     },
     {
       "path": "Q_Walk/results/2026-10-22_clock_quality/README.md",
@@ -3964,14 +4104,14 @@
     }
   ],
   "verification": {
-    "file_count": 789,
+    "file_count": 817,
     "all_source_hashes_match": true,
     "combined_pages": 57,
     "focused_tests_passed": 140,
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "Added one compact reference slide to each short deck, preserving every original bibliography entry and number. Retitled Note 1 slide 9 to explicitly identify the before/after walk-correction time-difference histogram. Both decks compile without overflow; changed pages inspected; original full notes unchanged.",
+    "latest_change": "Restructured short Note 1 around author purpose-to-validation narrative, explicit test-beam-only synchronization, corrected upstream reference bars, and final downstream-reference timing histogram. Added saved four-channel audit and timing evidence, no refits; full notes and Note 2 content unchanged. Builds, visual layout, final-slide numbers and pinned code links verified.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 26,
@@ -3991,7 +4131,7 @@
     "n2_3_n2_4_closure_changed_files_hash_checked": 17,
     "title_update_changed_files_hash_checked": 17,
     "github_link_verification": "DPS_NOTES/review_2026-10-22_publication/repository_links.json",
-    "latest_changed_files_hash_checked": 11,
+    "latest_changed_files_hash_checked": 37,
     "original_text_verification": "DPS_NOTES/review_2026-10-22_publication/original_text_check.json",
     "language_review_verification": "DPS_NOTES/review_2026-10-22_publication/language_review_verification.json",
     "short_slides_v2": {
@@ -4002,7 +4142,9 @@
       "cover_pages": 0,
       "verification": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
       "content_slides_each": 10,
-      "reference_slides_each": 1
+      "reference_slides_each": 1,
+      "note1_structure_review": "purpose -> parallel streams -> matching -> drift correction -> upstream walk calibration -> final bar-to-bar timing",
+      "bar_pair_validation": "Q_Walk/results/2026-10-22_bar_pair_timing/verification.json"
     }
   }
 }

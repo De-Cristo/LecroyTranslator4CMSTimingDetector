@@ -1,0 +1,58 @@
+{
+  "channel": 234,
+  "quality_hits": 12094,
+  "q_cut_adc": 50.1693314534375,
+  "selected_hits": 11195,
+  "retained_bins": 17,
+  "coefficients_ns": {
+    "a": -23.654373334947607,
+    "b": 73.711560830536,
+    "c": -1899.342721169094
+  },
+  "covariance_ns2_abc": [
+    [
+      0.0006533482802754038,
+      -0.09753872359856114,
+      3.466860197058513
+    ],
+    [
+      -0.09753872359856115,
+      14.952129003693797,
+      -542.1301125398359
+    ],
+    [
+      3.4668601970585136,
+      -542.1301125398359,
+      19990.651720599606
+    ]
+  ],
+  "q_min_adc": 51.360004149265215,
+  "q_max_adc": 157.5109888275436,
+  "method": "20 uniform full-selected-range inverse-Q bins; 5 scaled-MAD bin clipping; SEM-weighted quadratic",
+  "clock_quality": "October refreshed finite-trigger segmentation and <=1000 ps pre-LOWESS scaled-MAD gate",
+  "legacy": {
+    "topology_matched_events": 12481,
+    "channel_hits": 12481,
+    "quality_hits": 12445,
+    "q_cut_adc": 50.18242687988281,
+    "selected_hits": 11522,
+    "profile_bins_retained": 20
+  },
+  "legacy_profile_reproduces_saved_coefficients": true,
+  "old_vs_current_shape": {
+    "q_min_adc": 51.360004149265215,
+    "q_max_adc": 147.06484162998024,
+    "mean_offset_ps": -0.49377205955485987,
+    "centered_rms_ps": 0.21321254532416864,
+    "centered_max_abs_ps": 0.5219303559975088,
+    "weighting": "uniform Q grid on common fit support; constant offset removed"
+  },
+  "old_vs_current_clock_legacy_bins_shape": {
+    "q_min_adc": 51.144419970912615,
+    "q_max_adc": 146.8431409894632,
+    "mean_offset_ps": -0.20292140283358823,
+    "centered_rms_ps": 0.20349931989173908,
+    "centered_max_abs_ps": 0.5483613657705537,
+    "weighting": "uniform Q grid on common fit support; constant offset removed"
+  }
+}

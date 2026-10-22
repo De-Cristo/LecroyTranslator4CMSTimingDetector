@@ -1,0 +1,38 @@
+[
+  {
+    "path": "Q_Walk/results/2026-10-22_bar_pair_timing/validate.py",
+    "sha256": "78776d3f64569b2cfa522c2e950206eb665e77b365c512b7c3ef4bff329c4f99"
+  },
+  {
+    "path": "Q_Walk/results/2026-10-22_clock_quality/cache/upstream_bar8_aligned.csv.gz",
+    "sha256": "e6ae420d1b58f52704894835edc5f6adc34796c2e5f20840d121eee8ab3a8d95"
+  },
+  {
+    "path": "DPS_NOTES/review_2026-10-22_bar8_validation/validate.py",
+    "sha256": "34c59825dff84ca67bd40767d5ecaf59246de88d466b8894e849cc91fa077bed"
+  },
+  {
+    "path": "Q_Walk/qwalk_t0_models.py",
+    "sha256": "e5908c1c4e11a97cf12fef21666de470bfe31f61d43979f6535b59db53eda675"
+  },
+  {
+    "path": "Q_Walk/results/2026-10-22_bar_pair_reference_check/common_supported_event_ids.csv",
+    "sha256": "fff5da7dd37a9aa34d02a6d587124d7abd18d49afb56d57068c028ecd37861ef"
+  },
+  {
+    "path": "Q_Walk/results/2026-10-22_bar_pair_reference_check/channel_137_candidate.json",
+    "sha256": "b611385a48365f953296b635a90948999de4bd540c96d576249cdfc7ee95fbaf"
+  },
+  {
+    "path": "Q_Walk/results/2026-10-22_bar_pair_reference_check/channel_150_candidate.json",
+    "sha256": "3de838cec8c5c3f3c94d18f3a187353695b1fbd4e1613e255e6322745c3c8798"
+  },
+  {
+    "path": "Q_Walk/results/2026-10-22_bar_pair_reference_check/channel_234_candidate.json",
+    "sha256": "2f3c87f60c87dce45f92b1df6a96c6129b58c90d0184e9e76a9f0c83c2d3dca7"
+  },
+  {
+    "path": "Q_Walk/results/2026-10-22_bar_pair_reference_check/channel_243_candidate.json",
+    "sha256": "c50386d494b12e27bfb41c7cbc8949947175546218d9a9ad81cdf88b1b0e698e"
+  }
+]

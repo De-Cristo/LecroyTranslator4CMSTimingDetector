@@ -2,48 +2,54 @@
 \begin{document}
 \TitleSlide
 
-\begin{frame}{Abstract}
+\begin{frame}{Purpose: provide a reliable time reference for BTL analyses}
 \large
-Fixed-threshold timing depends on signal amplitude. An external
-microchannel-plate photomultiplier (MCP-PMT) provides a reference for measuring
-this time walk in BTL channels.
+Several BTL test-beam analyses need a reliable particle-arrival time reference.
 \medskip
 
-The MCP oscilloscope and BTL readout use independent clocks. Trigger matching,
-segment-wise clock alignment and LOWESS smoothing bring their times into a
-common coordinate. Quadratic fits in inverse charge then describe the walk.
+For a subset of the data, a digital oscilloscope recorded MCP-PMT signals
+in parallel with the BTL readout.
 \medskip
 
-For the same selected events, correction reduces the bar--MCP core width
-from \RBefore{} to \RAfter\,ps. This validates the correction under fixed
-selections; the width still includes detector, MCP and residual clock effects.
+\textbf{Approach:} synchronize the two streams, use the MCP to calibrate
+upstream reference bars, then use their corrected times as the reference
+for downstream timing.
+\medskip
+
+\normalsize
+\textbf{Final check:} the time difference between downstream and reference bars
+before and after walk correction.
 \end{frame}
 
-\PlotSlide{The reference and BTL readout must share a time coordinate}{setup}{
-\textbf{Problem}
+\PlotSlide{Parallel MCP and BTL streams are linked through FEBd}{setup}{
+\textbf{Two readout streams}
 
-Smaller pulses cross a fixed threshold later. Measuring this delay requires
-an independent arrival-time reference.
+The scope records the MCP-PMT pulse. FEBd records the BTL SiPM signals.
 
-\textbf{Readout}
+\textbf{Synchronization link}
 
-The scope records the MCP pulse. Its trigger also reaches TOFHIR channel 192
-in the FEBd readout.
+The scope trigger also reaches TOFHIR channel 192 in FEBd.
+
+This link connects independently clocked records of the same particle.
 }{September 2025 beam test. The highlighted lower path provides the reference-bar data.
-The trigger link identifies coincident records; the clocks still need alignment.}
+This FEBd-based synchronization is specific to the test-beam setup, not the final HL-LHC synchronization scheme.}
 
-\PlotSlide{1. Match events using the intervals between triggers}{event_matching}{
+\PlotSlide{Events are correlated using the intervals between triggers}{event_matching}{
 \begin{enumerate}
 \item Compare consecutive trigger intervals in channel 192 and the scope.
 \item Find consistent interval patterns.
 \item Keep only unique event matches.
 \end{enumerate}
 
-Matching identifies the same particle. It does not yet establish picosecond timing.
+Consistent trigger patterns identify coincident events in the two streams.
+
+Event matching alone does not remove relative clock drift.
 }{The correlated intervals and their ratio test event matching, not detector resolution.
 \Code{FEBD_Sync/simple_sync.py}{GitHub: trigger matching}.}
 
-\PlotSlide{2. Correct clock-rate differences and smooth drift}{clock_residuals}{
+\PlotSlide{The matched clocks show low-frequency relative drift}{clock_residuals}{
+\textbf{Correct the timing coordinate}
+
 \begin{enumerate}
 \item Split data at clock resets.
 \item Fit a line between matched trigger times in each segment.
@@ -55,7 +61,7 @@ Add the drift to the line prediction to obtain $g(u)$, the expected TOFHIR trigg
 Reject groups with pre-LOWESS residual scale $1.4826\,\mathrm{MAD}>1$\,ns.
 \Code{TimeCalibration/ch192_vs_trigger_lowess.py}{GitHub: clock reconstruction}.}
 
-\PlotSlide{3. Use the MCP pulse to define the reference time}{mcp_waveform}{
+\PlotSlide{After synchronization, the MCP defines the calibration time}{mcp_waveform}{
 Fit the MCP waveform to estimate its pulse time.
 
 Within the scope waveform, define
@@ -70,8 +76,9 @@ The charge-dependent part of this difference is the walk.
 }{The waveform and fitted template determine the MCP pulse time. $u$ is the scope-trigger timestamp.
 A fixed cable/geometry offset is irrelevant to the shape; clock-rate conversion over the short waveform interval is neglected.}
 
-\begin{frame}{4. Build charge profiles from a common selected sample}
+\begin{frame}{Measure the upstream channels' time walk versus charge}
 \small
+Measure the charge-dependent threshold delay relative to the synchronized MCP.
 \begin{enumerate}
 \item In run 4399, require exactly five TOFHIR hits and a unique MCP match:
 the target upstream pair, downstream channels 234 and 243, and channel 192.
@@ -90,7 +97,7 @@ SEM denotes the standard error of the mean.
 \Code{Q_Walk/qwalk_t0_data.py}{GitHub: selected reference sample}.}
 \end{frame}
 
-\begin{frame}[t]{Each channel needs its own walk calibration}
+\begin{frame}[t]{Walk-corrected upstream bars provide the time reference}
 \begin{columns}[T,onlytextwidth]
 \begin{column}{.49\textwidth}
 \centering\textbf{Bar 7: channel 154}\par
@@ -101,12 +108,15 @@ SEM denotes the standard error of the mean.
 \includegraphics[width=\linewidth,height=43mm,keepaspectratio]{figures/clock_reference_ch137.pdf}
 \end{column}
 \end{columns}
+\small
+Correct each end: $t_i^{\rm corr}=t_i-W_i(Q_i)$.
+Use the bar average: $t_{\rm ref}=(t_L^{\rm corr}+t_R^{\rm corr})/2$.
 \Source{Run 4399 examples. Points show mean time differences with SEM; red curves are SEM-weighted quadratics in $1/Q$.
 Only populated charge support is shown. The +26\,ns display offset does not change the walk shape.
 The full note also shows channels 133 and 150.}
 \end{frame}
 
-\PlotSlide{5. Time difference before and after walk correction}{validated_bar_mcp}{
+\PlotSlide{Check the calibrated reference bar against the MCP}{validated_bar_mcp}{
 \textbf{\TimingCount{} common events}
 
 Subtract each channel's fitted walk, then form the bar-average time minus MCP time.
@@ -121,23 +131,21 @@ This is not the intrinsic bar resolution.
 }{Fixed clock mapping; a truncated-normal core fit uses median $\pm2.5(1.4826\,\mathrm{MAD})$.
 The corrected-width 16--84\% interval is [\RLow, \RHigh]\,ps from 400 file/segment-block bootstraps with fixed calibrations.}
 
-\begin{frame}{Use synchronized MCP timing to calibrate the walk shape}
-\large
-\begin{enumerate}
-\item Match events and reject poor clock groups.
-\item Reconstruct the reference time with a line plus LOWESS drift.
-\item Fit each channel's timing profile versus inverse charge.
-\item Subtract the fitted walk within its measured charge range.
-\end{enumerate}
-\medskip
-\normalsize
-\textbf{Result:} the same-event bar--MCP distribution becomes narrower.
+\PlotSlide{Final check: downstream--reference-bar timing}{bar_pair_before_after}{
+\textbf{8,737 common events}
 
-\textbf{Scope:} quoted intervals are conditional statistics. Position,
-correlations, residual clock offsets and calibration systematics remain outside them.
-\Source{The full MCP reference note retains the detailed selections, bibliography and uncertainty discussion.
-\Code{TimeCalibration/ch192_vs_trigger_lowess.py}{GitHub: timing correction};
-\Code{Q_Walk/qwalk_t0_data.py}{GitHub: reference selection}.}
-\end{frame}
+Bar 3 (234, 243) minus reference bar 8 (137, 150).
+
+All four channels are walk corrected before averaging each bar's ends.
+
+\textbf{Core width}
+\[
+161.7\ \longrightarrow\ 141.8\ \mathrm{ps}
+\]
+\textbf{12.3\% narrower.}
+The MCP time cancels from this difference.
+}{Same events and populated charge support; histograms median-centered for display.
+Same core-fit definition as the preceding slide; fixed-calibration 68\% block interval: [138.0, 145.6]\,ps after correction.
+In-sample, asymmetric and fit-window dependent; not a single-bar resolution measurement.}
 \input{references.tex}
 \end{document}

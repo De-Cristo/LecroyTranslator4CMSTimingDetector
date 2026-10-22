@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "events": 8737,
+  "checks": [
+    "same unique events before/after",
+    "correction identity",
+    "histogram accounting including overflow",
+    "SD reproduces event data",
+    "400 successful paired bootstrap fits",
+    "input hashes unchanged",
+    "single-page labelled PDFs",
+    "histogram and charge-profile PNGs visually inspected"
+  ]
+}

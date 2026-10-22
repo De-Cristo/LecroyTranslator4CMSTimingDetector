@@ -26,13 +26,16 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "Both compact reference slides and retitled Note 1 histogram slide inspected individually. Previous content unchanged except slide 9 title and page totals; verified against prior PDFs.",
-  "scientific_inputs": "Existing labelled figure PDFs and numerical macros copied unchanged; no refits.",
-  "combined_sha256": "0a3bfc036f60f8b5a5293c30a6cc91645a5130ff936105f8e87bbeb2b1d23514",
+  "visual_review": "All Note 1 slides inspected via contact sheets, and new final timing slide inspected individually; zero build overflow. Note 2 text unchanged on all eleven pages.",
+  "scientific_inputs": "Existing figures retained; previously saved bar-pair validation added unchanged. Final-slide numbers checked against report.json; no analysis rerun.",
+  "combined_sha256": "e3c4983172071b04bee14d843d8ff24eeb8b3a22684387a1f47fa28d5f68a73e",
   "content_slides_each": 10,
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 8,
     "note2": 12
-  }
+  },
+  "note2_slide_content_unchanged": true,
+  "structure_review": "Six author points implemented; Purpose replaces short-deck abstract on slide 2; final physics slide is bar-pair timing, followed only by references.",
+  "bar_pair_validation": "Q_Walk/results/2026-10-22_bar_pair_timing/verification.json"
 }

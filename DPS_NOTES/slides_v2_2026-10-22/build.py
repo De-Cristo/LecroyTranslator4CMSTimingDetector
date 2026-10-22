@@ -1,6 +1,7 @@
 """Build the two short slide decks from existing validated figures; no refitting."""
 import hashlib
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -35,11 +36,13 @@ def main():
         manifest = []
         for relative in assets:
             origin = original / relative
+            if name == "note1_mcp_reference" and relative == "figures/bar_pair_before_after.pdf":
+                origin = ROOT.parent.parent / "Q_Walk/results/2026-10-22_bar_pair_timing/bar_pair_before_after.pdf"
             target = note / relative
             shutil.copy2(origin, target)
             digest = hashlib.sha256(target.read_bytes()).hexdigest()
             assert digest == hashlib.sha256(origin.read_bytes()).hexdigest()
-            manifest.append(dict(file=relative, source=str(origin.relative_to(ROOT.parent)), sha256=digest))
+            manifest.append(dict(file=relative, source=os.path.relpath(origin, ROOT.parent), sha256=digest))
             if relative.startswith("figures/"):
                 assert "Preliminary Phase 2" in PdfReader(target).pages[0].extract_text()
         (note / "asset_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
@@ -62,7 +65,7 @@ def main():
                                 for number, key, body in re.findall(entry_pattern, path.read_text())]
         assert entries(note / "references.tex") == entries(original / "references.tex")
         assert "cms-dpg-conveners-mtd@cern.ch" in pdf.pages[0].extract_text()
-        assert "Abstract" in pdf.pages[1].extract_text()
+        assert ("Purpose" if name == "note1_mcp_reference" else "Abstract") in pdf.pages[1].extract_text()
         for page in pdf.pages:
             assert float(page.mediabox.width) > float(page.mediabox.height)
             combined.add_page(page)

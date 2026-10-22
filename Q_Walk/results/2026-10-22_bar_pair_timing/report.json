@@ -1,0 +1,166 @@
+{
+  "events": 8737,
+  "blocks": 174,
+  "channels": [
+    137,
+    150,
+    234,
+    243
+  ],
+  "definition": "((t234+t243)-(t137+t150))/2; corrected = before - (W234+W243-W137-W150)/2",
+  "stats": {
+    "before": {
+      "sigma_ps": 161.7007872423821,
+      "uncertainty_ps": 1.4797803755266943,
+      "count": 8670,
+      "status": "ok",
+      "n": 8737,
+      "rms_about_mean_ps": 159.87167660271152,
+      "median_ps": 2502.5,
+      "scaled_mad_ps": 163.82729999999998,
+      "fit_low_ps": 2092.93175,
+      "fit_high_ps": 2912.06825,
+      "outside_fit_fraction": 0.0076685361107931786,
+      "fit_mean_ps": 2514.5872536424913
+    },
+    "after": {
+      "sigma_ps": 141.79162255588662,
+      "uncertainty_ps": 1.2356664995723685,
+      "count": 8718,
+      "status": "ok",
+      "n": 8737,
+      "rms_about_mean_ps": 139.46254678255207,
+      "median_ps": -14.035366688418435,
+      "scaled_mad_ps": 152.34061125288454,
+      "fit_low_ps": -394.8868948206298,
+      "fit_high_ps": 366.8161614437929,
+      "outside_fit_fraction": 0.0021746594941055284,
+      "fit_mean_ps": 0.21647666563064655
+    }
+  },
+  "paired_block_bootstrap": {
+    "before_sigma_ps": {
+      "p16": 156.91039443809757,
+      "p84": 165.6108256953643,
+      "successful": 400
+    },
+    "after_sigma_ps": {
+      "p16": 137.9985974006306,
+      "p84": 145.59831018090352,
+      "successful": 400
+    },
+    "improvement_ps": {
+      "p16": 18.302924501847034,
+      "p84": 20.97976096464198,
+      "successful": 400
+    },
+    "reduction_percent": {
+      "p16": 11.464859701121165,
+      "p84": 12.90450894365666,
+      "successful": 400
+    }
+  },
+  "core_window_sensitivity": {
+    "2.0": {
+      "before": {
+        "sigma_ps": 165.40329899130734,
+        "uncertainty_ps": 2.0191037302455364,
+        "count": 8426,
+        "status": "ok",
+        "n": 8737,
+        "rms_about_mean_ps": 159.87167660271152,
+        "median_ps": 2502.5,
+        "scaled_mad_ps": 163.82729999999998,
+        "fit_low_ps": 2174.8454,
+        "fit_high_ps": 2830.1546,
+        "outside_fit_fraction": 0.035595742245622064,
+        "fit_mean_ps": 2508.780165559047
+      },
+      "after": {
+        "sigma_ps": 148.78444281709506,
+        "uncertainty_ps": 1.7251934858313165,
+        "count": 8573,
+        "status": "ok",
+        "n": 8737,
+        "rms_about_mean_ps": 139.46254678255207,
+        "median_ps": -14.035366688418435,
+        "scaled_mad_ps": 152.34061125288454,
+        "fit_low_ps": -318.7165891941875,
+        "fit_high_ps": 290.64585581735065,
+        "outside_fit_fraction": 0.018770745107016137,
+        "fit_mean_ps": -2.425295386865155
+      }
+    },
+    "3.0": {
+      "before": {
+        "sigma_ps": 159.72569273457157,
+        "uncertainty_ps": 1.2854013884045283,
+        "count": 8724,
+        "status": "ok",
+        "n": 8737,
+        "rms_about_mean_ps": 159.87167660271152,
+        "median_ps": 2502.5,
+        "scaled_mad_ps": 163.82729999999998,
+        "fit_low_ps": 2011.0181,
+        "fit_high_ps": 2993.9818999999998,
+        "outside_fit_fraction": 0.0014879249170195719,
+        "fit_mean_ps": 2516.3375910096465
+      },
+      "after": {
+        "sigma_ps": 139.32582945254973,
+        "uncertainty_ps": 1.0946948688356506,
+        "count": 8736,
+        "status": "ok",
+        "n": 8737,
+        "rms_about_mean_ps": 139.46254678255207,
+        "median_ps": -14.035366688418435,
+        "scaled_mad_ps": 152.34061125288454,
+        "fit_low_ps": -471.0572004470721,
+        "fit_high_ps": 442.9864670702352,
+        "outside_fit_fraction": 0.00011445576284765938,
+        "fit_mean_ps": 0.34459014371917596
+      }
+    },
+    "4.0": {
+      "before": {
+        "sigma_ps": 159.04457436130224,
+        "uncertainty_ps": 1.2070594319343286,
+        "count": 8736,
+        "status": "ok",
+        "n": 8737,
+        "rms_about_mean_ps": 159.87167660271152,
+        "median_ps": 2502.5,
+        "scaled_mad_ps": 163.82729999999998,
+        "fit_low_ps": 1847.1908,
+        "fit_high_ps": 3157.8091999999997,
+        "outside_fit_fraction": 0.00011445576284765938,
+        "fit_mean_ps": 2516.752500500755
+      },
+      "after": {
+        "sigma_ps": 138.4643465080644,
+        "uncertainty_ps": 1.0487810735082816,
+        "count": 8736,
+        "status": "ok",
+        "n": 8737,
+        "rms_about_mean_ps": 139.46254678255207,
+        "median_ps": -14.035366688418435,
+        "scaled_mad_ps": 152.34061125288454,
+        "fit_low_ps": -623.3978116999566,
+        "fit_high_ps": 595.3270783231197,
+        "outside_fit_fraction": 0.00011445576284765938,
+        "fit_mean_ps": 0.17177725490020213
+      }
+    }
+  },
+  "core_fit": "truncated-normal maximum likelihood within median +/- 2.5 scaled MAD, separately per state",
+  "uncertainty": "400 paired file/segment block replicas; fixed calibrations and selection; conditional statistical intervals only",
+  "shared_reference_cancellation_max_abs_ps": 0.0,
+  "selection": "Same 8737 events, four-channel quality, peak-right cuts and populated fit support; no final timing-tail cut",
+  "caveat": "In-sample validation; not a single-bar resolution measurement. Calibration/systematic uncertainties not propagated.",
+  "core_width_reduction_percent": 12.312348644693083,
+  "interpretation": "Distribution narrows and charge dependence decreases, but it remains asymmetric; core-window dependence exceeds the conditional statistical precision.",
+  "outside_display_range": {
+    "before": 1,
+    "after": 1
+  }
+}

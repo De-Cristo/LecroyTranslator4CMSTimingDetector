@@ -1,0 +1,77 @@
+[
+  {
+    "path": "Q_Walk/results/2026-10-22_clock_quality/cache/upstream_bar8_aligned.csv.gz",
+    "bytes": 3771678,
+    "sha256": "e6ae420d1b58f52704894835edc5f6adc34796c2e5f20840d121eee8ab3a8d95"
+  },
+  {
+    "path": "Q_Walk/results/2026-10-22_bar_pair_reference_check/check.py",
+    "bytes": 7819,
+    "sha256": "0ddc35feb4bcf6cd4df7057099c8ae0688035751e9d712726c3696ffb7f35495"
+  },
+  {
+    "path": "Q_Walk/qwalk_t0_models.py",
+    "bytes": 74473,
+    "sha256": "e5908c1c4e11a97cf12fef21666de470bfe31f61d43979f6535b59db53eda675"
+  },
+  {
+    "path": "Q_Walk/qwalk_t0_data.py",
+    "bytes": 24443,
+    "sha256": "70c5cb4d123979a45966a663b5a1da0f7096f43edf22bb8946525b6e41499672"
+  },
+  {
+    "path": "Q_Walk/qwalk_extended_t0_reference.py",
+    "bytes": 13717,
+    "sha256": "eaebb69d62479b5b896d9d320ddc36775770ee9d496de5cb0221be7ecf9486bd"
+  },
+  {
+    "path": "Q_Walk/qwalk_downstream_t0_reference.py",
+    "bytes": 8991,
+    "sha256": "6f7ae849b8be3bf678a1672724c5b842dfac5c0cdb30d963d3d520e4b8b200af"
+  },
+  {
+    "path": "Q_Walk/qwalk_run4076_safe_time2_scatter.py",
+    "bytes": 16416,
+    "sha256": "e6d204039e6380f3bd120b070e65fba483f18150c7c0185ffd2279ffae0b8ca1"
+  },
+  {
+    "path": "Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar8_ch137_t0_quadratic.json",
+    "bytes": 1354,
+    "sha256": "a4f78241af2d9bd8e66cf77a5965dbe7c159a39a36720a0796c3f7f4fc21ed19"
+  },
+  {
+    "path": "Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar8_ch137_t0_quadratic_profile.csv",
+    "bytes": 7675,
+    "sha256": "cda2951e346e91013de8f7a2c5ad7a037337672221477d6789bc2f0cf8595def"
+  },
+  {
+    "path": "Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar8_ch150_t0_quadratic.json",
+    "bytes": 1355,
+    "sha256": "05102a9f83b9b866c9f38b78b98d68c5ed0bdbc713327ebc0e524dbeab9bfeb3"
+  },
+  {
+    "path": "Q_Walk/results/2026-10-22_clock_quality/references/run4399_upstream_bar8_ch150_t0_quadratic_profile.csv",
+    "bytes": 7357,
+    "sha256": "41170e423ac6ea570dcfafbe2d2fbecd4fb71e52fd8b375309b0caaa1421029e"
+  },
+  {
+    "path": "Q_Walk/reference_quadratic_t0/run4399_bar8_downbar3_ch234_t0_quadratic.json",
+    "bytes": 1778,
+    "sha256": "e43e5565b16889b439f64fbcc8ea48a85a555dc155b98dc9e5dd68ba0e438b30"
+  },
+  {
+    "path": "Q_Walk/reference_quadratic_t0/run4399_bar8_downbar3_ch234_t0_quadratic_profile.csv",
+    "bytes": 7715,
+    "sha256": "eebb0dcfb685eff88274ac3069a82cfe8f82ccfc8c576694ddcc710075f7c6ac"
+  },
+  {
+    "path": "Q_Walk/reference_quadratic_t0/run4399_bar8_downbar3_ch243_t0_quadratic.json",
+    "bytes": 1784,
+    "sha256": "01ec0093078fa30941987254473178c9ca556b69de43b118eb7847c3560d509b"
+  },
+  {
+    "path": "Q_Walk/reference_quadratic_t0/run4399_bar8_downbar3_ch243_t0_quadratic_profile.csv",
+    "bytes": 7713,
+    "sha256": "1767c84bf77666ea5c2f14f988757f21e665d130c082aeadd067dacbb62910a9"
+  }
+]
