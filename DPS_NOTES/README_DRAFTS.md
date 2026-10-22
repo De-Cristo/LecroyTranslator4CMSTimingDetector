@@ -63,7 +63,11 @@ versions, selections and uncertainties have already been reconciled.
    extraction are outside scope. N2-5 is closed for documentation-only scope:
    all four Note2 comparison captions and lower axes explicitly identify a
    model difference, not event timing resolution; no numerical changes.
-6. N2-6: define channel eligibility independently of the observed summary trend.
+6. N2-6 is closed for exploratory reporting: retain all 21 completed fits and
+   the unchanged, interactively selected ten-channel illustration. The new
+   status table documents missing/narrow overlap and poorly constrained cases;
+   no new quality cuts or population-level performance claim are introduced.
+   See `review_2026-10-22_n2_6/` for the inventory and limitations.
 7. N2-7: decide whether internal prediction belongs in the main result.
 8. N1-6: local references and candidate packaging completed; official template,
    DP metadata and cover/submission handling await convener confirmation.

@@ -16,9 +16,9 @@
       "unresolved_citations": 0
     },
     "note2_dual_threshold": {
-      "review_slides": 28,
-      "candidate_slides": 27,
-      "candidate_with_cover_pages": 28,
+      "review_slides": 29,
+      "candidate_slides": 28,
+      "candidate_with_cover_pages": 29,
       "citations": [
         "Bootstrap",
         "LOWESS",
@@ -30,9 +30,9 @@
       "unresolved_citations": 0
     }
   },
-  "combined_pages": 62,
-  "combined_sha256": "28e80fbbe5837b937d17d9562a1b1070d6d80ca65ade8025c525bc1cc7577b92",
+  "combined_pages": 63,
+  "combined_sha256": "b5c0770ffe8e9d69e6177958e5d1460837894b26627ebca70ba232aba42852f9",
   "review_status": "N1-6 local work complete; convener template, DP metadata, cover handling and release approval pending",
-  "note2_review_status": "N2-1/N2-2 closed as documented; N2-5 closed by author for documentation-only model-closure scope; N2-3/N2-4/N2-6/N2-7 remain open; original comparison and numerical results retained",
+  "note2_review_status": "N2-1/N2-2 closed as documented; N2-5 closed for documentation-only model-closure scope; N2-6 closed for exploratory reporting, all 21 and the original ten-channel results retained; N2-3/N2-4/N2-7 remain open; numerical results unchanged",
   "analysis_tests": "previous clock-quality tests reused; N2-2 ROOT replay and 17 focused tests documented in review_2026-10-22_n2_2/README.md; frozen numerical results unchanged"
 }

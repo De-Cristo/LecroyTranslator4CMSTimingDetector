@@ -159,8 +159,8 @@ They are retained in the exploratory summary, not accepted as robust calibration
 Sparse clock groups retain the existing line-only fallback when fewer than ten
 alignment inliers are available. A small residual scale in such a group does
 not independently validate its event association.
-\Review{N2-6}{Require reference stability and adequate clock statistics before
-defining the final channel-performance sample.}
+Reference stability and adequate clock statistics remain prerequisites for
+a future quality-selected performance sample; this note reports exploratory fits.
 \end{frame}
 
 \FigureSlide{Charge spectra define the available comparison sample}{q_spectra_ch137}{
@@ -294,8 +294,8 @@ $S(Q)$ fit; the y coordinate is reference-fitted AWC.
 
 Bars span the 16th--84th bootstrap percentiles.
 There are 21 completed fits; channel 238 has no measured overlap.
-\Review{N2-6}{Publish eligibility and failure criteria, including narrow
-support and poorly constrained channels.}
+All completed fits are retained, including limited-support and poorly
+constrained cases documented in the channel-status table below.
 }{Linear axes. Large intervals and negative coefficients are retained;
 this is not a final quality-selected performance sample.}
 
@@ -306,10 +306,38 @@ channel numbers identify the points.
 
 The saved weighted straight line has $\chi^2/{\rm ndf}=\SummaryChi/8$ under its
 limited error model. It does not adequately describe the variation.
-\Review{N2-6}{The subset was selected interactively. It is exploratory,
-not an unbiased population-level validation.}
+The subset was selected interactively and is illustrative, not quality-selected
+or an unbiased population-level validation.
 }{The fit treats x as fixed and uses half the 16--84\% AWC span as
 its symmetric uncertainty. Correlations and reference errors are omitted.}
+
+\begin{frame}{Channel coverage and limitations}
+\footnotesize
+The explored set contains 14 upstream and 8 downstream channels. All 21
+completed alignments are shown; only channel 238 lacks measured overlap.
+No additional quality cut is applied to this summary.
+\begin{center}
+\begin{tabular}{l>{\raggedright\arraybackslash}p{9.4cm}}
+\toprule
+Channels & Observed limitation and treatment\\
+\midrule
+238 & No common measured charge range; no AWC estimate.\\
+235, 244 & Overlap spans only 3.10 and 16.99 ADC, respectively;
+one profile mean from each run lies within each overlap. Fits retained.\\
+130, 236, 239 & Slope-only AWC intervals include zero and span hundreds
+of $\mu$A. Fits retained as poorly constrained cases.\\
+136, 245 & Negative central AWC values are retained, not accepted
+as validated positive-amplitude calibrations.\\
+\bottomrule
+\end{tabular}
+\end{center}
+The ten-channel illustration is unchanged: 133, 134, 135, 137, 150, 151,
+154, 155, 156 and 159. Its membership is not a derived eligibility rule.
+
+{\scriptsize Table entries are diagnostic examples, not additional exclusions.
+Small curve mismatch over narrow support does not validate a calibration.
+The full per-channel support and interval table is saved with the figure data.}
+\end{frame}
 
 \begin{frame}{What the present uncertainties do and do not include}
 \small
@@ -416,7 +444,6 @@ ID & Decision or missing evidence\\
 \midrule
 N2-3 & Model adequacy remains open; sensitivity audit saved separately.\\
 N2-4 & Audit complete; accept statistical scope and weighting-sensitivity reporting.\\
-N2-6 & Freeze channel eligibility independently of observed trend; publish exclusions.\\
 N2-7 & Decide whether internal prediction remains backup or gains enough validation for a main result.\\
 \bottomrule
 \end{tabular}\par

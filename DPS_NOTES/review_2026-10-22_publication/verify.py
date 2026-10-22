@@ -1,4 +1,5 @@
 """Check the N1-6 documentation-only candidate packaging."""
+import csv
 import hashlib
 import json
 import re
@@ -56,9 +57,38 @@ def main():
             assert "N2-2" not in review_text and "N2-2" not in candidate_text
             assert "Timing reconstruction and threshold scale" in candidate_text
             assert "Landau" in candidate_text and "does not set this cut" in candidate_text
-            for index in (3, 4, 6, 7):
+            for index in (3, 4, 7):
                 assert f"N2-{index}" in candidate_text
             assert "N2-5" not in review_text and "N2-5" not in candidate_text
+            assert "N2-6" not in review_text and "N2-6" not in candidate_text
+            assert "Channel coverage and limitations" in candidate_text
+            assert "AWC versus inverse slope coefficient: all completed fits" in candidate_text
+            assert "A selected subset does not establish a universal law" in candidate_text
+            assert "illustrative, not quality-selected" in " ".join(candidate_text.split())
+            snapshot = note / "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality"
+            with (snapshot / "channels.csv").open() as stream:
+                channels = {int(r["channel"]): r for r in csv.DictReader(stream)}
+            expected_up = {130, 133, 134, 135, 136, 137, 139, 149, 150, 151, 154, 155, 156, 159}
+            expected_down = {235, 236, 239, 240, 242, 244, 245}
+            assert set(channels) == expected_up | expected_down
+            assert json.loads((DPS / "review_2026-10-22_n2_6/failures.json").read_text()) == [
+                {"channel": 238, "error": "No measured profile overlap"}]
+            for ch, width in ((235, "3.10"), (244, "16.99")):
+                row = channels[ch]
+                assert f'{float(row["overlap_max"]) - float(row["overlap_min"]):.2f}' == width
+                assert width in candidate_text
+                assert int(row["profile4076_points_in_overlap"]) == 1
+                assert int(row["profile4399_points_in_overlap"]) == 1
+            for ch in (130, 236, 239):
+                row = channels[ch]
+                assert float(row["awc_p16"]) < 0 < float(row["awc_p84"])
+                assert float(row["awc_p84"]) - float(row["awc_p16"]) > 100
+            assert all(float(channels[ch]["awc_ua"]) < 0 for ch in (136, 245))
+            with (snapshot / "awc_summary_special_10_channels_no_ch240_linear.csv").open() as stream:
+                selected = list(csv.DictReader(stream))
+            assert {int(r["channel"]) for r in selected} == {
+                133, 134, 135, 137, 150, 151, 154, 155, 156, 159}
+            assert len(selected) == 10
             for ch in (137, 154, 159, 242):
                 figure = PdfReader(note / f"figures/comparison_ch{ch}.pdf")
                 assert "Model difference" in " ".join(text(figure.pages[0]).split())
@@ -94,7 +124,7 @@ def main():
                   combined_pages=len(PdfReader(combined).pages),
                   combined_sha256=hashlib.sha256(combined.read_bytes()).hexdigest(),
                   review_status="N1-6 local work complete; convener template, DP metadata, cover handling and release approval pending",
-                  note2_review_status="N2-1/N2-2 closed as documented; N2-5 closed by author for documentation-only model-closure scope; N2-3/N2-4/N2-6/N2-7 remain open; original comparison and numerical results retained",
+                  note2_review_status="N2-1/N2-2 closed as documented; N2-5 closed for documentation-only model-closure scope; N2-6 closed for exploratory reporting, all 21 and the original ten-channel results retained; N2-3/N2-4/N2-7 remain open; numerical results unchanged",
                   analysis_tests="previous clock-quality tests reused; N2-2 ROOT replay and 17 focused tests documented in review_2026-10-22_n2_2/README.md; frozen numerical results unchanged")
     (OUT / "verification.json").write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report, indent=2))

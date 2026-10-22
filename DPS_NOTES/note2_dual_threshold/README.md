@@ -9,7 +9,8 @@ It explicitly distinguishes reference-fitted AWC, model-shape closure and
 exploratory internal prediction. The 4076 and 4399 samples are different events.
 N2-1 is closed under the nominal-setup assumption below; N2-2 is closed after
 the ROOT replay documented below. N2-5 is closed for the documentation-only
-scope below. N2-3, N2-4, N2-6 and N2-7 remain open before release.
+scope below. N2-6 is closed for the exploratory reporting scope below.
+N2-3, N2-4 and N2-7 remain open before release.
 
 On 21 October 2026 the clock-corrected reference profiles were also added to
 Note1, closing the reference-version gap N1-4. This left the N2-1 question of
@@ -46,8 +47,8 @@ selection has no 100 ps minimum-rise cut; newer defaults must not be inherited.
 Channel 135's singleton bin has undefined SEM and is excluded from its fit.
 See `../review_2026-10-22_n2_2/README.md` and `audit.json` for evidence and
 limitations. The audit changes no saved fit, bootstrap replica, spectrum or
-AWC value. N2-3/N2-6 still cover selection sensitivity and channel quality;
-N2-4 still covers the uncertainty budget.
+AWC value. Selection sensitivity remains under N2-3; channel-quality limitations
+are documented under the N2-6 reporting scope below. N2-4 covers the uncertainty budget.
 
 On 22 October 2026 the author requested keeping only the original comparison:
 the linear-slope Q method against the clock-corrected MCP reference. The two
@@ -75,6 +76,18 @@ from an event-time distribution. No corrected-event resolution or resolution
 improvement is established by these plots. The comment and queue entry are
 removed; numerical data, curves, intervals and conclusions are unchanged.
 See `../review_2026-10-22_n2_5/README.md` for the closure record.
+
+N2-6 closed by author approval on 22 October 2026 for exploratory reporting.
+All 21 completed alignments and the existing ten-channel plot and straight-line
+fit are retained unchanged. The latter is explicitly an interactively selected
+illustration, not a quality-selected sample or population-level validation.
+A channel-status table documents channel 238's absent overlap, narrow support,
+large conditional intervals and negative amplitudes without imposing new cuts.
+Reference stability and adequate clock statistics remain prerequisites for a
+future performance sample, not validated by this closure. The full numerical
+channel inventory and closure scope are described in
+`../review_2026-10-22_n2_6/README.md`. All three inline comments and the review
+queue entry are removed; fits, figure files and conclusions are unchanged.
 
 The N1-6 packaging update also adds verified context/method references here.
 `publication_candidate_slides.pdf` and `publication_candidate_with_cover.pdf`
