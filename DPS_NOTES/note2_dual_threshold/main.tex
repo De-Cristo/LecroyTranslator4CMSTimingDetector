@@ -191,6 +191,8 @@ independently at each bar end.
 
 Bars show hit SD. The line uses SEM weights and the band propagates the
 saved bootstrap coefficient replicas, including their correlation.
+\Review{N2-3}{Linear-model adequacy remains open. The separate sensitivity
+audit is retained outside this note; this version keeps the original comparison.}
 }{Run 4076, extended-profile snapshot. No model refit is performed for
 the slide rendering.}
 
@@ -214,48 +216,6 @@ The line and shaded interval describe the fitted mean. Points and SD bars
 retain information on the spread within the selected charge bins.
 }{Run 4076, extended-profile snapshot. Constant AWC does not mean a
 constant timing correction.}
-
-\FigureSlide{Residual check: is a straight line sufficient?}{profile_residuals_ch137}{
-For channel 137, each point is the mean pulse slope minus its fitted
-prediction. Bars are the standard error of the bin mean (SEM), not the
-spread of individual hits. Zero means agreement with the profile.
-
-Both fits use the same selected hits and ten bins. The quadratic prediction
-is averaged over the charges inside each bin.
-The diagnostic $\chi^2/\mathrm{ndf}$ falls from 24.7 to 3.5;
-the remaining structure is not explained by the narrow bootstrap band.
-}{Exploratory run-4076 audit of all 22 channels. These statistics condition
-on the reconstructed sample; they are not calibrated significance tests.}
-
-\begin{frame}{Model and selection choices change the inferred AWC}
-\Caption
-Eight fits per channel: nominal linear, quadratic, 8/12 bins,
-charge boundary $\pm5\%$, and rise time $\geq100$ ps with either
-the frozen or a recomputed charge boundary.
-\par
-Each alternative is aligned to the same MCP curve on common charge support,
-with AWC and a free offset. All table values are in $\mu\mathrm{A}$.
-\begin{center}
-\begin{tabular}{rrrr}
-\toprule
-Channel & Linear AWC & Quadratic AWC & Largest $|\Delta\mathrm{AWC}|$\\
-\midrule
-133 & 35.65 & 36.92 & 3.33\\
-154 & 24.18 & 23.59 & 1.07\\
-137 & 18.24 & 22.99 & 4.75\\
-150 & 21.01 & 23.46 & 2.44\\
-\bottomrule
-\end{tabular}
-\end{center}
-\Caption
-20/22 channels retain common support: channel 235 loses it under the
-variations; channel 238 has no saved MCP overlap. Channels 236, 239 and 244
-change AWC sign. The variation range is not a confidence interval.
-For channel 137, quadratic improves the slope fit but worsens MCP-curve RMS
-from 6.65 to 9.14 ps. Nominal results are unchanged.
-\Review{N2-3}{Diagnostics complete; linear adequacy is not established.
-Choose the slope model/range from run 4076 before revalidating MCP closure.}
-\end{frame}
 
 \begin{frame}{Determine AWC using only jointly measured support}
 \small
@@ -433,7 +393,7 @@ not a fitted result. No blanket 10\% precision claim is made.}
 \toprule
 ID & Decision or missing evidence\\
 \midrule
-N2-3 & Diagnostics complete; decide slope model/range and revalidate.\\
+N2-3 & Model adequacy remains open; sensitivity audit saved separately.\\
 N2-4 & Validate alignment objective and complete the uncertainty propagation.\\
 N2-5 & Keep model closure distinct from event timing-resolution validation.\\
 N2-6 & Freeze channel eligibility independently of observed trend; publish exclusions.\\

@@ -10,7 +10,7 @@
     "N1-6": "Local citation and candidate-packaging work completed 22 October 2026. Official template, DP identifiers, cover handling and CMS approval remain pending with conveners; no submission.",
     "N2-1": "Closed 22 October 2026 under author-stated same-nominal-detector-setup assumption: run4399 MCP reference, run4076 dual-threshold timing. No independent run-condition verification. Cross-run and selection-dependent response effects remain unquantified; no numerical changes.",
     "N2-2": "Closed 22 October 2026 after original ROOT replay of all 22 frozen run4076 profiles: exact counts, histogram boundaries, bin statistics, coefficients/covariance and saved bootstrap summaries verified. Safe timing and threshold decoding documented. No newer 100 ps cut inherited. Selection sensitivity and channel quality remain N2-3/N2-6; no frozen numerical changes.",
-    "N2-3": "Diagnostics complete 22 October 2026: 22 channels, 176 profile fits, 160 same-support AWC comparisons; linear adequacy not established. Model/range decision and revalidation remain open. Nominal calibration unchanged."
+    "N2-3": "Author requested original comparison only on 22 October 2026. Two model/sensitivity slides removed; separate audit preserved. Nominal linear-slope versus clock-corrected MCP comparison and conclusions unchanged. Model adequacy remains open."
   },
   "files": [
     {
@@ -25,8 +25,8 @@
     },
     {
       "path": "DPS_NOTES/README_DRAFTS.md",
-      "sha256": "6e7fa70a133c68ed8b60cfe21d4863761193a3086be926e1ae9cc04a40b3f9ec",
-      "bytes": 9626
+      "sha256": "dd58613f18cbb505fc6cae7170a52102d96361cd5017ebda7f6f8090931cb8a3",
+      "bytes": 9698
     },
     {
       "path": "DPS_NOTES/REPOSITORY_WORKFLOW.md",
@@ -35,8 +35,8 @@
     },
     {
       "path": "DPS_NOTES/both_notes_review_v1.pdf",
-      "sha256": "78762a9ba89fe1b6f7fcab4749a6f1dcd2b54df3f46a830d2d9a0af3aea724e3",
-      "bytes": 6682799
+      "sha256": "786d2f75515921b3a001749bac6b130e2aaf95c76fe3d1b18b60ee18eee1001e",
+      "bytes": 6648924
     },
     {
       "path": "DPS_NOTES/cms_dp_note_template/CMSlogo_black_label_1024.png",
@@ -515,22 +515,22 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/README.md",
-      "sha256": "abda0c363af64dcc0b1e2438ee99bbe65a88954ed41174ad6947176b0b6c343a",
-      "bytes": 4416
+      "sha256": "0ed4d82e69b0230243a61f2dde12b8ea71b1b0a359fe5d536c168d8b7c02c72f",
+      "bytes": 4345
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/build_report.json",
-      "sha256": "b727a8fc6f979dc0855cdb6255c4dd1a4c7a0aa5d3c0576121213cfa7196a0fa",
+      "sha256": "e57184c976a701521e855ac9930550d15788399e2d31cb19660fb79cde4b4866",
       "bytes": 350
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/candidate_report.json",
-      "sha256": "ddd97e0a5f122aa78083ccb3676e93f3c9570d8d4d54bb93503c22332281bbbe",
+      "sha256": "78730a05f3259526730358d3d6ef0807aa90a7b245b7e93bebb9a16a394f35f2",
       "bytes": 548
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/cover.pdf",
-      "sha256": "c9b19d6051370518e595eaa148f1777b8ad73941278ba6cd7f96aef415ac5431",
+      "sha256": "520221b94e702e94a44e5e53e4417aef20109d82b54e6162b27eaf246289fb4d",
       "bytes": 950156
     },
     {
@@ -895,8 +895,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/main.tex",
-      "sha256": "0d12f620b48b41ba03fc441955d735592d8ac9217a37da925654ee98a0e3d393",
-      "bytes": 20701
+      "sha256": "7c3e02aba457e45458a00a23f827a9688e81e7230a891f32f9b694422189c1d4",
+      "bytes": 18970
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/metadata.tex",
@@ -905,8 +905,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/note_with_cover.pdf",
-      "sha256": "ec24f9b8b9c9776313b7a4f2bfeed6a18c0765a4ca749a606e748320ee62c0f7",
-      "bytes": 2064999
+      "sha256": "d1b46a007b0c310cb276080c7a619946de79b4fb58e0a272b90a1a702a9d0ecf",
+      "bytes": 2031220
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate.tex",
@@ -915,13 +915,13 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate_slides.pdf",
-      "sha256": "3d3755a03d5f0816d64692752d85fb7ab069125a5ff0edb04f6fb49bcc7dea44",
-      "bytes": 1019592
+      "sha256": "522a5e06ddab44d256d999d5423a62f8d040f09d213e9736973469577ccac686",
+      "bytes": 990004
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate_with_cover.pdf",
-      "sha256": "cdb0a54a3949d7bc733f400233933a0492bee80af5dbe81c617bde7e50375c33",
-      "bytes": 2043744
+      "sha256": "7ef2387f3933d299dc3b5e79ac00f3cbb40d805e70dec47d98a6de10786a8aec",
+      "bytes": 2009982
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/references.tex",
@@ -935,8 +935,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/slides.pdf",
-      "sha256": "2b3855102ad72a9e4ab69e935985b078644e932e5ee83c6b1b2512db15494c85",
-      "bytes": 1039749
+      "sha256": "f43abf373741e7ccd2b3a5ea843cb2706674c5aaf106d33323bb613e0cd1222e",
+      "bytes": 1010256
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/slides_preamble.tex",
@@ -1730,7 +1730,7 @@
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_clock_quality/verification.json",
-      "sha256": "2148cd0d4312a0f12240f81f5404334d49f30379c08b1085c4c80ed453f00c8b",
+      "sha256": "aa8bc98342c380b39c5da49b958fe68ad5a1ef82dbb600d82872d220646e45ec",
       "bytes": 1403
     },
     {
@@ -1970,13 +1970,13 @@
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_publication/verification.json",
-      "sha256": "11629cae6ecd4885014e3f74b6de5cee2036b0b36e91f8640753d361363e89f1",
-      "bytes": 1341
+      "sha256": "55fe1d3498f7b3232b8996961c6f6353a7fc5d0614fdada3c36b9c109a8e6f90",
+      "bytes": 1320
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_publication/verify.py",
-      "sha256": "f17ce936c8171ea63f28b7c34fb07720321edd173d826dd3088b0340de28e865",
-      "bytes": 5003
+      "sha256": "2dc921a1ab163f4d8e2d9bfafdadd0172086beb03a217bf76fb3bac3333286c5",
+      "bytes": 5155
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -3547,16 +3547,16 @@
   "verification": {
     "file_count": 706,
     "all_source_hashes_match": true,
-    "combined_pages": 63,
+    "combined_pages": 61,
     "focused_tests_passed": 140,
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "N2-3: residual and sensitivity audit completed; four focused tests and independent arithmetic/provenance checks passed. Note2 slides 15-16 and combined review rebuilt and visually checked. No nominal fit or reference changed; comment remains open.",
+    "latest_change": "Author scope decision: retain original Note2 comparison only. Review and candidate PDFs rebuilt and checked; combined review regenerated. All 12 original figure PDFs and original conclusion text verified unchanged against f5606bf. Separate N2-3 audit retained; no analysis rerun.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 27,
-      "note2_dual_threshold": 28
+      "note2_dual_threshold": 26
     },
     "n2_2_verification": "DPS_NOTES/review_2026-10-22_n2_2/verification.json",
     "n2_2_focused_tests_passed": 17,

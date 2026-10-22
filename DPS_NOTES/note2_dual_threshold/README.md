@@ -48,14 +48,13 @@ limitations. The audit changes no saved fit, bootstrap replica, spectrum or
 AWC value. N2-3/N2-6 still cover selection sensitivity and channel quality;
 N2-4 still covers the uncertainty budget.
 
-N2-3 diagnostics completed on 22 October 2026: all 22 channels were checked
-with eight model/selection variants. Two new slides show the channel-137
-residual check and AWC sensitivity on common measured support. The nominal
-linear calibration is not replaced. Quadratic improves many slope profiles
-but does not consistently improve MCP closure, and several downstream AWC
-values change sign. N2-3 remains open for the slope-model/range decision and
-revalidation. The observed variation envelope is not a confidence interval.
-See `../review_2026-10-22_n2_3/README.md`, saved tables and all-channel plots.
+On 22 October 2026 the author requested keeping only the original comparison:
+the linear-slope Q method against the clock-corrected MCP reference. The two
+new model/sensitivity slides have been removed from both slide versions.
+The nominal fits, reference, comparison plots and conclusions are unchanged.
+The N2-3 audit remains saved separately in `../review_2026-10-22_n2_3/`;
+its exported assets are retained for provenance but are not displayed in the
+note. Model adequacy remains an open review point, not a validated conclusion.
 
 The N1-6 packaging update also adds verified context/method references here.
 `publication_candidate_slides.pdf` and `publication_candidate_with_cover.pdf`
