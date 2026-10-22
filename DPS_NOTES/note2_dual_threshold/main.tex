@@ -234,9 +234,9 @@ removing unsupported intervals. The offset $B$ absorbs the arbitrary time zero.
 
 This is uniform-charge shape matching, not an event-weighted likelihood.
 It uses neither extrapolated tails nor a single central anchor point.
-\Review{N2-4}{Compare weighting alternatives and propagate reference-fit
-uncertainty. The current objective is a documented choice, not a uniquely
-optimal estimator.}
+Weighting sensitivity and correlated MCP-fit uncertainty are evaluated
+in the uncertainty check below. Uniform Q remains the nominal definition,
+not a uniquely optimal estimator.
 \end{frame}
 
 \FigureSlide{Channel 137: inverse-slope and MCP walk shapes}{comparison_ch137}{
@@ -247,7 +247,8 @@ Only jointly measured charge support is shown.
 The lower panel is the difference between the two curves. Its RMS is
 \ExampleRMS\,ps; this is not a single-event timing resolution.
 
-The band varies the run-4076 slope fit while holding the MCP curve fixed.
+The original band varies the run-4076 slope fit while holding the MCP curve
+fixed. The later uncertainty table also includes MCP-fit uncertainty.
 }{AWC = \ExampleAWC\,$\mu$A; conditional 16--84\% interval
 [\ExampleLow, \ExampleHigh]\,$\mu$A. Both curves share one display offset.}
 
@@ -325,10 +326,30 @@ alignment to the same fixed reference curve.\\
 \bottomrule
 \end{tabular}\par
 \medskip
-Not yet included: run-4399 quadratic uncertainty, cross-run response transfer,
-selection/model choices and all shared-feature/target correlations.
-\Review{N2-4}{These are conditional statistical intervals, not total
-calibration uncertainties. A small curve mismatch is not a resolution estimate.}
+These definitions refer to the original displayed bands and bars.
+The next table additionally propagates the run-4399 quadratic covariance.
+Cross-run response transfer, clock/fine-time calibration, selection/model
+choices and cross-channel correlations remain outside both prescriptions.
+Neither is a total calibration uncertainty or a timing-resolution estimate.
+\end{frame}
+
+\begin{frame}{MCP-fit uncertainty and charge weighting}
+\Caption
+For each slope-bootstrap replica, propagate the correlated MCP coefficient
+covariance through the AWC-plus-offset fit. The Gaussian mixture gives the
+16--84\% interval; central AWC values and comparison curves are unchanged.
+\par
+All table values are in $\mu$A. ``Both runs'' adds MCP-fit statistics, not
+cross-run or model systematics. The original plots retain slope-only bands.
+{\centering\input{data/n2_4_uncertainty_table.tex}\par}
+Maximum weighting shift: largest $|\Delta\mathrm{AWC}|$ using uniform $1/Q$
+or either run's charge population instead of uniform Q. Same overlap and
+free offset; these shifts are not statistical errors or added in quadrature.
+\par
+All 21 overlap channels were checked; channel 238 has no overlap.
+A shared reference-time offset affects only the fitted offset, not AWC.
+\Review{N2-4}{Requested audit complete. Accept conditional statistical intervals
+with separate weighting sensitivity; a total uncertainty budget remains outside this check.}
 \end{frame}
 
 \begin{frame}{Result and next validation step}
@@ -394,7 +415,7 @@ not a fitted result. No blanket 10\% precision claim is made.}
 ID & Decision or missing evidence\\
 \midrule
 N2-3 & Model adequacy remains open; sensitivity audit saved separately.\\
-N2-4 & Validate alignment objective and complete the uncertainty propagation.\\
+N2-4 & Audit complete; accept statistical scope and weighting-sensitivity reporting.\\
 N2-5 & Keep model closure distinct from event timing-resolution validation.\\
 N2-6 & Freeze channel eligibility independently of observed trend; publish exclusions.\\
 N2-7 & Decide whether internal prediction remains backup or gains enough validation for a main result.\\

@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "independently_reproduced_reference_covariances": 22,
+  "independently_recomputed_weighted_fits": 84,
+  "verified_combined_interval_channels": 21,
+  "original_results_unchanged": true,
+  "method": "fixed-calibration statistical propagation; not a total uncertainty budget"
+}

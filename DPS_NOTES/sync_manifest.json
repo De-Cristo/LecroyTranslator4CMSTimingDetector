@@ -10,7 +10,8 @@
     "N1-6": "Local citation and candidate-packaging work completed 22 October 2026. Official template, DP identifiers, cover handling and CMS approval remain pending with conveners; no submission.",
     "N2-1": "Closed 22 October 2026 under author-stated same-nominal-detector-setup assumption: run4399 MCP reference, run4076 dual-threshold timing. No independent run-condition verification. Cross-run and selection-dependent response effects remain unquantified; no numerical changes.",
     "N2-2": "Closed 22 October 2026 after original ROOT replay of all 22 frozen run4076 profiles: exact counts, histogram boundaries, bin statistics, coefficients/covariance and saved bootstrap summaries verified. Safe timing and threshold decoding documented. No newer 100 ps cut inherited. Selection sensitivity and channel quality remain N2-3/N2-6; no frozen numerical changes.",
-    "N2-3": "Author requested original comparison only on 22 October 2026. Two model/sensitivity slides removed; separate audit preserved. Nominal linear-slope versus clock-corrected MCP comparison and conclusions unchanged. Model adequacy remains open."
+    "N2-3": "Author requested original comparison only on 22 October 2026. Two model/sensitivity slides removed; separate audit preserved. Nominal linear-slope versus clock-corrected MCP comparison and conclusions unchanged. Model adequacy remains open.",
+    "N2-4": "Audit complete 22 October 2026: 22 reference covariances reproduced; 21 unchanged AWC fits and combined conditional intervals; 84 weighted fits checked. Original comparison and slope-only figures retained; new table separates both-run statistics and weighting sensitivity. Reporting scope awaits author acceptance; not a total calibration uncertainty."
   },
   "files": [
     {
@@ -25,8 +26,8 @@
     },
     {
       "path": "DPS_NOTES/README_DRAFTS.md",
-      "sha256": "dd58613f18cbb505fc6cae7170a52102d96361cd5017ebda7f6f8090931cb8a3",
-      "bytes": 9698
+      "sha256": "ce4c40e5cd209f25fe35a3def79d46be2f984c2653bd333f3b5e24929b4b94a4",
+      "bytes": 9927
     },
     {
       "path": "DPS_NOTES/REPOSITORY_WORKFLOW.md",
@@ -35,8 +36,8 @@
     },
     {
       "path": "DPS_NOTES/both_notes_review_v1.pdf",
-      "sha256": "786d2f75515921b3a001749bac6b130e2aaf95c76fe3d1b18b60ee18eee1001e",
-      "bytes": 6648924
+      "sha256": "e2bbbf932145547b22c63751727ce3434e659f04b4926977ba437cd0dda9d74e",
+      "bytes": 6655789
     },
     {
       "path": "DPS_NOTES/cms_dp_note_template/CMSlogo_black_label_1024.png",
@@ -80,8 +81,8 @@
     },
     {
       "path": "DPS_NOTES/draft_support/build_assets.py",
-      "sha256": "c9a1b299d09dad694a9cf9ff9ea3d814548d4bd49f6278ae0b4e3f916a894808",
-      "bytes": 19771
+      "sha256": "b1c92dbe311edeec2b5ee306b9b2d5a7b4f24f2a5c6ba848371e532deb1c1d97",
+      "bytes": 20445
     },
     {
       "path": "DPS_NOTES/draft_support/cover.tex",
@@ -515,28 +516,38 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/README.md",
-      "sha256": "0ed4d82e69b0230243a61f2dde12b8ea71b1b0a359fe5d536c168d8b7c02c72f",
-      "bytes": 4345
+      "sha256": "aad3aa456e8b15ac1c568ea83eb210d92fb6b9db419638f6238896dc17e0d2ef",
+      "bytes": 4929
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/build_report.json",
-      "sha256": "e57184c976a701521e855ac9930550d15788399e2d31cb19660fb79cde4b4866",
+      "sha256": "974ffcfece5e57eec9133cdea2866386e9514a174848d585e4bb515e3f1f9ca9",
       "bytes": 350
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/candidate_report.json",
-      "sha256": "78730a05f3259526730358d3d6ef0807aa90a7b245b7e93bebb9a16a394f35f2",
+      "sha256": "2b8418f5fd804e93da35f40531c4ae8a018edec930b164a126c1ddc321b5fb2a",
       "bytes": 548
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/cover.pdf",
-      "sha256": "520221b94e702e94a44e5e53e4417aef20109d82b54e6162b27eaf246289fb4d",
+      "sha256": "91ffa746300e16492d8f82348492ee0633f9567d9c236a3116121b2ab7cffa30",
       "bytes": 950156
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/cover.tex",
       "sha256": "6cb092a7fa9e30237b367b1c138258a926f101f34b970e44bd3fa8ad3fca7c2b",
       "bytes": 1297
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/n2_4_manifest.json",
+      "sha256": "b8f1d3376352e7ee659849ffacc00f8169a5aaf2552fb40723c80f625b4bb4a1",
+      "bytes": 1300
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/n2_4_uncertainty_table.tex",
+      "sha256": "36b7262be847b3ae8df2a83ca8d56bb6c0ef4729b8945e5bc64cbd69d276579e",
+      "bytes": 348
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/DPS_NOTES/review_2026-10-22_n2_3/channels.csv",
@@ -562,6 +573,31 @@
       "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/DPS_NOTES/review_2026-10-22_n2_3/variants.csv",
       "sha256": "8e389a0a02e58382cd402fd4717655141f513ad18bab6ef1f78634be701e3756",
       "bytes": 50315
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/DPS_NOTES/review_2026-10-22_n2_4/report.json",
+      "sha256": "0f55ea9f1893a80a6c3868c0f55550999c09760899e11cd6246cdb2411527da7",
+      "bytes": 23523
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/DPS_NOTES/review_2026-10-22_n2_4/study_definition.md",
+      "sha256": "4faa654169f8c8ce7eefe06a0a8b000ead7f39ffb21c5ab73726c656f6af6ca5",
+      "bytes": 2748
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/DPS_NOTES/review_2026-10-22_n2_4/uncertainties.csv",
+      "sha256": "24c8d59b3518a66f44e2e7122d9153246735de0960e3ca3e738cd0d0e885fc8e",
+      "bytes": 7669
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/DPS_NOTES/review_2026-10-22_n2_4/uncertainty_table.tex",
+      "sha256": "36b7262be847b3ae8df2a83ca8d56bb6c0ef4729b8945e5bc64cbd69d276579e",
+      "bytes": 348
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/DPS_NOTES/review_2026-10-22_n2_4/weighting.csv",
+      "sha256": "c01d2de7a4e9a2d4aec2e6292d282ef671a64511a4688cd9e142a2632ef5193d",
+      "bytes": 12345
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-09-24_measured_q_overlap/awc_summary_special_10_channels_no_ch240_linear.csv",
@@ -895,8 +931,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/main.tex",
-      "sha256": "7c3e02aba457e45458a00a23f827a9688e81e7230a891f32f9b694422189c1d4",
-      "bytes": 18970
+      "sha256": "5dfbf9c096259f4fb1c319b3f32f1fdbaa3a42ec475137b70954806dabe2c558",
+      "bytes": 20186
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/metadata.tex",
@@ -905,8 +941,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/note_with_cover.pdf",
-      "sha256": "d1b46a007b0c310cb276080c7a619946de79b4fb58e0a272b90a1a702a9d0ecf",
-      "bytes": 2031220
+      "sha256": "ff09da6faf6c717ba9f895930d67c0a79d5749c073798dc8f0ea69ab918436b6",
+      "bytes": 2038062
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate.tex",
@@ -915,13 +951,13 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate_slides.pdf",
-      "sha256": "522a5e06ddab44d256d999d5423a62f8d040f09d213e9736973469577ccac686",
-      "bytes": 990004
+      "sha256": "0371d877ebf37d09f9350b72692ad0c99a55d98137100c132516a185046cb344",
+      "bytes": 995849
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate_with_cover.pdf",
-      "sha256": "7ef2387f3933d299dc3b5e79ac00f3cbb40d805e70dec47d98a6de10786a8aec",
-      "bytes": 2009982
+      "sha256": "ebcb53a1dab5efb967364941e669a2b0c8145767be3a0df8ffbc2f69df15ee4d",
+      "bytes": 2016888
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/references.tex",
@@ -935,8 +971,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/slides.pdf",
-      "sha256": "f43abf373741e7ccd2b3a5ea843cb2706674c5aaf106d33323bb613e0cd1222e",
-      "bytes": 1010256
+      "sha256": "0e566443dc3c6a1381d19749c4dc955deca7f32f7203ceeb5b99d24d0921e395",
+      "bytes": 1016056
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/slides_preamble.tex",
@@ -1730,7 +1766,7 @@
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_clock_quality/verification.json",
-      "sha256": "aa8bc98342c380b39c5da49b958fe68ad5a1ef82dbb600d82872d220646e45ec",
+      "sha256": "259d69b83faa954a33b72c9bf3af16d94fdb1f5280f2e49138b1241242e2ffdd",
       "bytes": 1403
     },
     {
@@ -1964,19 +2000,194 @@
       "bytes": 4862
     },
     {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/README.md",
+      "sha256": "ecf95ad0788a33061ab2e056afa312dfd542f94635da2c75b5685db6019666a3",
+      "bytes": 7070
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/channel_130_propagation.npz",
+      "sha256": "8038cc8be09e9625cea81b4257ac25a47c7cb2406e2792a2c1c925b278612c60",
+      "bytes": 135384
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/channel_133_propagation.npz",
+      "sha256": "30d6502faa19060742836b34453afea45f65a05f67daf11eacbd2ab34aecd2d1",
+      "bytes": 132557
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/channel_134_propagation.npz",
+      "sha256": "21cde62fab2026d9a9de660202016de8246cfe4c8b2681934c17682c10b99c42",
+      "bytes": 131642
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/channel_135_propagation.npz",
+      "sha256": "c61dc8b39b933f70c97e09bd6f23f625cca0f84b40e1e303d93260ff0e705a4c",
+      "bytes": 131977
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/channel_136_propagation.npz",
+      "sha256": "e032941ec9a67c0637f94102ca40c8d0b50ba59f09224be16e260bccb15de148",
+      "bytes": 123639
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/channel_137_propagation.npz",
+      "sha256": "03157fd4976cc3680eef157a0032faef6d943a7c80c96e5a53d9f0dbee4354dc",
+      "bytes": 130993
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/channel_139_propagation.npz",
+      "sha256": "b4b4112a064b01d42f57c823b6d455b819bfd37527fc0ba63fc33287154e31b7",
+      "bytes": 129635
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/channel_149_propagation.npz",
+      "sha256": "2d98203bce1ab979f59cb402f5dbd94b6ea28014fc3c3a9fd650f396e55dae88",
+      "bytes": 127902
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/channel_150_propagation.npz",
+      "sha256": "dd51bb61a2f55862018bbc081a72855cd2006064806018d940ea887640f136a6",
+      "bytes": 129378
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/channel_151_propagation.npz",
+      "sha256": "07a3f28ece202a9eb8e06031657eaf7097398db5e12c386ed2dda6f9de4ab815",
+      "bytes": 120962
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/channel_154_propagation.npz",
+      "sha256": "b01933e879e68d51c0ba0bd7e41b3b6d456eac82c287053f142ad388703a8eb2",
+      "bytes": 130544
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/channel_155_propagation.npz",
+      "sha256": "9cd8be4b9a91a4cf87d04fd20d1809d994388be165064014d9d249a5c720d2fb",
+      "bytes": 130397
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/channel_156_propagation.npz",
+      "sha256": "e2bb366d0aa2f94f8d37dbab4e824d634819f76234577f508e9c153acc8d8432",
+      "bytes": 131698
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/channel_159_propagation.npz",
+      "sha256": "d7eebe07be5c7d6175dd349b87c227d8f485abe9e8ce6bbe6b57ed81d3218eb4",
+      "bytes": 122087
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/channel_235_propagation.npz",
+      "sha256": "48c25dc8a21aa8f7fe1da63025bf44467617078922369dc02dead056ccba693a",
+      "bytes": 122536
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/channel_236_propagation.npz",
+      "sha256": "a97035d356493e0f668da737ddadf08f27ee8b3a55e675d05ad78f703fd2681b",
+      "bytes": 130243
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/channel_239_propagation.npz",
+      "sha256": "e9de547ea8839dc9cca1f983aeee486b753b566ceda84c5a26b376d874a7ad94",
+      "bytes": 131991
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/channel_240_propagation.npz",
+      "sha256": "51717da07bde343b796be982a1dd0e2940f7d368708ec500299d6363434aeb09",
+      "bytes": 134811
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/channel_242_propagation.npz",
+      "sha256": "a1288869f6c590b230458215148a37c28fdf16dbe2abb24d3a8e46d5299191da",
+      "bytes": 130952
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/channel_244_propagation.npz",
+      "sha256": "b0c27744dac5ebcff41002922dd5bc09d063b4f7297e8760e79226e0970cfc99",
+      "bytes": 124551
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/channel_245_propagation.npz",
+      "sha256": "bbfcb4dfda84c128cebf5d27e7ffab4bd2f85dd2dec47c7d5f9e179481dcccd1",
+      "bytes": 127855
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/figures/uncertainty_budget_four_channels.pdf",
+      "sha256": "d9bdae751dd96015194676ed5d8591262818ad82a45c2fff298b0d1e2cf87a31",
+      "bytes": 26229
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/figures/weighting_sensitivity.pdf",
+      "sha256": "091acd3a8881ec2147341aff0e62d5b359ec6181c220ea735d221d0c1b849e2f",
+      "bytes": 36813
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/plot.py",
+      "sha256": "eaa578ef0e7e5c1904649b453c7d95d45a644013345bd30d316b1341df06a805",
+      "bytes": 4038
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/reference_checks.csv",
+      "sha256": "8b95832b6ec9fb92c85389be8aff73eaf921cf868bd7156b1b674f6e6145126e",
+      "bytes": 890
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/report.json",
+      "sha256": "0f55ea9f1893a80a6c3868c0f55550999c09760899e11cd6246cdb2411527da7",
+      "bytes": 23523
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/study.py",
+      "sha256": "d4e540f4a31333c6ef8ef624314ae1ffe45df5995e81160a6d1922acf172aa19",
+      "bytes": 11491
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/study_definition.md",
+      "sha256": "4faa654169f8c8ce7eefe06a0a8b000ead7f39ffb21c5ab73726c656f6af6ca5",
+      "bytes": 2748
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/test_uncertainty.py",
+      "sha256": "0884168139d749f0f3541e456fa2ba62e0f7033214aa12f199802c3c7fec37f4",
+      "bytes": 2797
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/uncertainties.csv",
+      "sha256": "24c8d59b3518a66f44e2e7122d9153246735de0960e3ca3e738cd0d0e885fc8e",
+      "bytes": 7669
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/uncertainty_table.tex",
+      "sha256": "36b7262be847b3ae8df2a83ca8d56bb6c0ef4729b8945e5bc64cbd69d276579e",
+      "bytes": 348
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/verification.json",
+      "sha256": "4f3f1160ee9dcef3f1e61259eebc4d1ab68037edbac5f331591d03b1a0a55821",
+      "bytes": 301
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/verify.py",
+      "sha256": "93683db676ec6772178a67a2a73c2165a47ab6e8bdd3266b39d05c6e223d436c",
+      "bytes": 5043
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_4/weighting.csv",
+      "sha256": "c01d2de7a4e9a2d4aec2e6292d282ef671a64511a4688cd9e142a2632ef5193d",
+      "bytes": 12345
+    },
+    {
       "path": "DPS_NOTES/review_2026-10-22_publication/citation_audit.md",
       "sha256": "763ae3943ec99298b13dd102c4eac8846ba9c4db1fb88a965b8df4f397dfc049",
       "bytes": 2945
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_publication/verification.json",
-      "sha256": "55fe1d3498f7b3232b8996961c6f6353a7fc5d0614fdada3c36b9c109a8e6f90",
-      "bytes": 1320
+      "sha256": "019f9f0a635953598d6baca4430cd8f44ce1d69c2bfa904dea9335f29c859458",
+      "bytes": 1358
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_publication/verify.py",
-      "sha256": "2dc921a1ab163f4d8e2d9bfafdadd0172086beb03a217bf76fb3bac3333286c5",
-      "bytes": 5155
+      "sha256": "5f366f81ffca1da13d1dbba27611ff506a606a8c1fe05f1b04ae0ce41964f6a0",
+      "bytes": 5631
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -3545,22 +3756,24 @@
     }
   ],
   "verification": {
-    "file_count": 706,
+    "file_count": 748,
     "all_source_hashes_match": true,
-    "combined_pages": 61,
+    "combined_pages": 62,
     "focused_tests_passed": 140,
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "Author scope decision: retain original Note2 comparison only. Review and candidate PDFs rebuilt and checked; combined review regenerated. All 12 original figure PDFs and original conclusion text verified unchanged against f5606bf. Separate N2-3 audit retained; no analysis rerun.",
+    "latest_change": "N2-4: six focused tests passed; independent reference covariance, weighted-fit and mixture-quantile verification passed in both working tree and repository. Note2 slide 23 added; original figures and conclusion text unchanged. Review/candidate/combined PDFs built and visually checked.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 27,
-      "note2_dual_threshold": 26
+      "note2_dual_threshold": 27
     },
     "n2_2_verification": "DPS_NOTES/review_2026-10-22_n2_2/verification.json",
     "n2_2_focused_tests_passed": 17,
     "n2_3_verification": "DPS_NOTES/review_2026-10-22_n2_3/verification.json",
-    "n2_3_focused_tests_passed": 4
+    "n2_3_focused_tests_passed": 4,
+    "n2_4_verification": "DPS_NOTES/review_2026-10-22_n2_4/verification.json",
+    "n2_4_focused_tests_passed": 6
   }
 }

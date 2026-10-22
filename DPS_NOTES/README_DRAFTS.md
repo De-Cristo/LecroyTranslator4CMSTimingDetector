@@ -54,7 +54,10 @@ versions, selections and uncertainties have already been reconciled.
    At the author's request, Note2 keeps only the original linear-slope versus
    clock-corrected MCP comparison; the two audit slides are removed. Nominal
    results and conclusions are unchanged. Model adequacy remains open.
-   N2-4: assess the matching objective and total uncertainty prescription.
+   N2-4: reference-covariance propagation and four-weighting audit complete;
+   see `review_2026-10-22_n2_4/`. A separate table reports expanded conditional
+   intervals without changing the original curves/bands. Acceptance of this
+   statistical scope and weighting-sensitivity reporting remains open.
 5. N1-5 is closed for this version: same-event timing validation with conditional
    statistical intervals. Intrinsic bar resolution and synchronization-jitter
    extraction are outside scope. N2-5 remains a separate review item.

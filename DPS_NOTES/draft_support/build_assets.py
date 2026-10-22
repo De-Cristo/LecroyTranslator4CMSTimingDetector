@@ -352,6 +352,18 @@ def n2_model_diagnostics():
              "N2-3 exploratory residual and selection/model sensitivity audit; nominal results unchanged")
 
 
+def n2_uncertainty_audit():
+    audit = DPS / "review_2026-10-22_n2_4"
+    sources = []
+    for name in ("uncertainties.csv", "weighting.csv", "report.json", "study_definition.md", "uncertainty_table.tex"):
+        path = audit / name
+        sources.append(dict(original=str(path.relative_to(ROOT.parent)),
+                            snapshot=str(snapshot(path, N2).relative_to(N2)),
+                            sha256=hashlib.sha256(path.read_bytes()).hexdigest()))
+    shutil.copy2(audit / "uncertainty_table.tex", N2 / "data/n2_4_uncertainty_table.tex")
+    (N2 / "data/n2_4_manifest.json").write_text(json.dumps(sources, indent=2) + "\n")
+
+
 def main():
     for note in (N1, N2):
         for folder in ("figures", "data", "build"):
@@ -380,6 +392,7 @@ def main():
     predictor()
     timing_validation()
     n2_model_diagnostics()
+    n2_uncertainty_audit()
     review_values()
     for note in (N1, N2):
         (note / "figure_manifest.json").write_text(json.dumps(

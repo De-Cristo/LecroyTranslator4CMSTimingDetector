@@ -1,0 +1,27 @@
+[
+  {
+    "original": "sandbox_test/DPS_NOTES/review_2026-10-22_n2_4/uncertainties.csv",
+    "snapshot": "data/sandbox_test/DPS_NOTES/review_2026-10-22_n2_4/uncertainties.csv",
+    "sha256": "24c8d59b3518a66f44e2e7122d9153246735de0960e3ca3e738cd0d0e885fc8e"
+  },
+  {
+    "original": "sandbox_test/DPS_NOTES/review_2026-10-22_n2_4/weighting.csv",
+    "snapshot": "data/sandbox_test/DPS_NOTES/review_2026-10-22_n2_4/weighting.csv",
+    "sha256": "c01d2de7a4e9a2d4aec2e6292d282ef671a64511a4688cd9e142a2632ef5193d"
+  },
+  {
+    "original": "sandbox_test/DPS_NOTES/review_2026-10-22_n2_4/report.json",
+    "snapshot": "data/sandbox_test/DPS_NOTES/review_2026-10-22_n2_4/report.json",
+    "sha256": "0f55ea9f1893a80a6c3868c0f55550999c09760899e11cd6246cdb2411527da7"
+  },
+  {
+    "original": "sandbox_test/DPS_NOTES/review_2026-10-22_n2_4/study_definition.md",
+    "snapshot": "data/sandbox_test/DPS_NOTES/review_2026-10-22_n2_4/study_definition.md",
+    "sha256": "4faa654169f8c8ce7eefe06a0a8b000ead7f39ffb21c5ab73726c656f6af6ca5"
+  },
+  {
+    "original": "sandbox_test/DPS_NOTES/review_2026-10-22_n2_4/uncertainty_table.tex",
+    "snapshot": "data/sandbox_test/DPS_NOTES/review_2026-10-22_n2_4/uncertainty_table.tex",
+    "sha256": "36b7262be847b3ae8df2a83ca8d56bb6c0ef4729b8945e5bc64cbd69d276579e"
+  }
+]

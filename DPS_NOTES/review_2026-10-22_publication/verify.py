@@ -63,6 +63,11 @@ def main():
                 assert removed not in candidate_text and removed not in review_text
             assert "Linear-model adequacy remains open" in " ".join(candidate_text.split())
             assert "Channel 137: inverse-slope and MCP walk shapes" in candidate_text
+            assert "MCP-fit uncertainty and charge weighting" in candidate_text
+            for entry in json.loads((note / "data/n2_4_manifest.json").read_text()):
+                assert hashlib.sha256((note / entry["snapshot"]).read_bytes()).hexdigest() == entry["sha256"]
+            assert (note / "data/n2_4_uncertainty_table.tex").read_bytes() == (
+                DPS / "review_2026-10-22_n2_4/uncertainty_table.tex").read_bytes()
         with zipfile.ZipFile(note / "source_bundle.zip") as bundle:
             for path in ("main.tex", "publication_candidate.tex", "references.tex",
                          "metadata.tex", "cover.tex", "slides_preamble.tex"):
@@ -81,7 +86,7 @@ def main():
                   combined_pages=len(PdfReader(combined).pages),
                   combined_sha256=hashlib.sha256(combined.read_bytes()).hexdigest(),
                   review_status="N1-6 local work complete; convener template, DP metadata, cover handling and release approval pending",
-                  note2_review_status="N2-1/N2-2 closed as documented; author retains original comparison only, with N2-3 audit saved separately and model adequacy open; N2-4 through N2-7 remain open",
+                  note2_review_status="N2-1/N2-2 closed as documented; original comparison retained; N2-3 model adequacy open; N2-4 covariance and weighting audit complete, reporting scope awaits acceptance; N2-5 through N2-7 remain open",
                   analysis_tests="previous clock-quality tests reused; N2-2 ROOT replay and 17 focused tests documented in review_2026-10-22_n2_2/README.md; frozen numerical results unchanged")
     (OUT / "verification.json").write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report, indent=2))

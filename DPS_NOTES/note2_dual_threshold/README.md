@@ -56,6 +56,15 @@ The N2-3 audit remains saved separately in `../review_2026-10-22_n2_3/`;
 its exported assets are retained for provenance but are not displayed in the
 note. Model adequacy remains an open review point, not a validated conclusion.
 
+N2-4 audit completed on 22 October 2026: all 22 MCP coefficient/covariance
+fits and 21 nominal AWC fits reproduce. A new table reports conditional
+intervals combining the slope bootstrap with the correlated Gaussian MCP
+coefficient uncertainty, alongside sensitivity to three alternative charge
+weights. Central curves, original slope-only plot bands and conclusions are
+unchanged. The expanded intervals are not total calibration uncertainties;
+weighting shifts are separate, not added in quadrature. See
+`../review_2026-10-22_n2_4/README.md`. N2-4 awaits acceptance of this scope.
+
 The N1-6 packaging update also adds verified context/method references here.
 `publication_candidate_slides.pdf` and `publication_candidate_with_cover.pdf`
 provide independent candidate deliverables for this note. They remain explicitly
