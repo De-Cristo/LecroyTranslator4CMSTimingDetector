@@ -30,6 +30,11 @@
     "sha256": "4fd4c3136396eba4a1a3a21fce4db6e502a5894028e5d76385c95a7345292794"
   },
   {
+    "file": "figures/original_figure5.pdf",
+    "source": "slides_v2_2026-10-22/assets/note2_figure5/figure5.pdf",
+    "sha256": "54a817714a014d401449880e97f1e139e930d204baefdc7bdd9eba30b23b9b5e"
+  },
+  {
     "file": "figures/slope_ch150.pdf",
     "source": "note2_dual_threshold/figures/slope_ch150.pdf",
     "sha256": "2e3ecfb14b07719139d4a1a8e1907dfdfe223d56e1b8728a14616728faf5a340"

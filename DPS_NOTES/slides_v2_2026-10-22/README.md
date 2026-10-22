@@ -1,6 +1,6 @@
 # Short slide drafts: version 2, draft 1
 
-Two notes: Note 1 has nine content slides and Note 2 has ten, each followed by one compact reference slide,
+Two notes: Note 1 has nine content slides and Note 2 has eleven, each followed by one compact reference slide,
 with no A4 cover pages. These are separate from the full
 notes, which remain unchanged. Each deck retains the CMS/contact title slide,
 a purpose slide on slide 2, labelled plots,
@@ -13,7 +13,7 @@ The titles follow the author's wording, including TOFHIR2C in Note 2.
   internal charge-to-slope mapping, benchmark the single-amplitude walk form,
   and explore AWC prediction from internal observables. One backup slide
   combines the physical predictor and its excluded-bar test.
-- `both_notes_slides_v2.pdf`: both decks, 21 landscape pages, no covers.
+- `both_notes_slides_v2.pdf`: both decks, 22 landscape pages, no covers.
 
 Each final reference slide uses two columns and preserves the original
 bibliography entries and numbering: eight entries in Note 1 and twelve in Note 2.
@@ -71,24 +71,36 @@ Slides 2--6 cover the HL-LHC calibration need, variation of the original
 quadratic coefficients, the dual-threshold physical model, internal slope
 profiles and the one-amplitude inverse-slope correction. The internal slope-profile
 example on slide 5 is channel 150 (19,312 selected hits). Slide 7 benchmarks
-the functional form with the existing MCP comparison curves. Slide 8 explains
+the functional form with the existing MCP comparison curves. Slide 8 reproduces
+original Note 2 Figure 5, channel 137 residuals after the AWC correction.
+Slide 9 explains
 the proposed internal-data procedure and the independent tests still needed.
 
-Slide 9 ends the main narrative with the original note's final observable,
+Slide 10 ends the main narrative with the original note's final observable,
 AWC versus inverse slope-to-charge coefficient (Figure 6), using the currently
 saved ten-channel figure. It distinguishes an informative trend from a
 validated precision predictor. The original Figure 6 caption incorrectly
 describes the points as charge-bin means: here they are explicitly channels,
 with slope-only conditional AWC bootstrap intervals.
 
-Slide 10 is the only backup. It combines the median-charge candidate
+Slide 11 is the only backup. It combines the median-charge candidate
 `A = K S(Q*)^2 / (c1 Q*)` with the saved leave-one-bar-out comparison:
 3.22 uA RMS AWC error, 14.1% RMS fractional error, ten channels and six bars.
 These are the same frozen clock-quality results used in the full note's
 backup, not new fits. Learning K uses reference-calibrated training bars;
 prediction inputs for an excluded bar are internal. Transfer to other
 configurations and full predictive uncertainty still need validation.
-Slide 11 retains the original compact bibliography.
+Slide 12 retains the original compact bibliography.
+
+The residual figure is the unaltered embedded JPEG from PDF page 12 (printed
+page 11) of the supplied `DPS_NOTES/Note2.pdf`, not a replacement refit.
+`assets/note2_figure5/provenance.json` records source and image hashes.
+`prepare_note2_figure5.py` extracts the image and adds the CMS label outside it;
+it can also rebuild from the saved JPEG when the supplied PDF is unavailable.
+Its original points, error bars and residual linear fit are preserved. The
+supplied caption does not specify the statistical definition of these error
+bars, so no SD/SEM or uncertainty claim is added. It is a residual-versus-charge
+illustration, not a single-hit resolution or a new reference-free validation.
 
 The original four-channel coefficient table is retained as historical context
 from Table 1 of the supplied detector note and `Q_Walk/empirical_walk_models.md`;

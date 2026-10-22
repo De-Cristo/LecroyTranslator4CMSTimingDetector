@@ -1,0 +1,11 @@
+{
+  "source": "DPS_NOTES/Note2.pdf",
+  "source_sha256": "38246c918948385bc5bedc75d92c9fad4b12f99406ece732dae029a14ae33f95",
+  "pdf_page": 12,
+  "printed_page": 11,
+  "figure": 5,
+  "image": "Im6.jpg",
+  "image_sha256": "1dd7ba2f577e1ee06cde3f59d6719579be347eafc64eff27f6da4f6eadf5f7f2",
+  "treatment": "Original embedded image unchanged; CMS label added outside image.",
+  "uncertainty": "Original error bars preserved; their statistical definition is not specified in the supplied Figure 5 caption. No numerical refit or uncertainty interpretation added."
+}
