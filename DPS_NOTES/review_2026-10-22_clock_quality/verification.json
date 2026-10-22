@@ -37,7 +37,8 @@
       "status": "internal review draft"
     }
   },
-  "combined_sha256": "b5c0770ffe8e9d69e6177958e5d1460837894b26627ebca70ba232aba42852f9",
+  "combined_sha256": "3b5db115b5b509a98a889d8ba1cfdd47222f35ddc2ca031fefebab5890efa8be",
   "test_results": "140 focused tests and 25 integration tests passed; 1 optional integration test skipped",
-  "review_status": "N1-5 closed by author for conditional timing-validation scope; intrinsic bar resolution and synchronization-jitter extraction excluded"
+  "review_status": "N1-5 closed by author for conditional timing-validation scope; intrinsic bar resolution and synchronization-jitter extraction excluded",
+  "latest_packaging_check": "N2-7 documentation-only closure: both compiled notes combined; prior successful numerical checks reused because numerical inputs are unchanged. Fresh numerical verifier encountered an AFS timeout reading input_sha256.json; no new event-analysis validation claimed."
 }

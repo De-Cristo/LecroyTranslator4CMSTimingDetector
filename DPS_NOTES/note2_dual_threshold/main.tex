@@ -416,8 +416,8 @@ when correcting individual events.
 
 The common $K$ is learned from MCP-calibrated training channels. Predicting
 a new channel uses internal features, but the model development is reference-based.
-\Review{N2-7}{Shared local derivative is a hypothesis. Test operating-condition
-dependence and avoid selecting $Q_*$ only after inspecting prediction scores.}
+The shared derivative and choice of $Q_*$ remain hypotheses requiring
+independent validation across operating conditions, without tuning to test scores.
 \end{frame}
 
 \FigureSlide{Backup: predict a bar excluded from the model fit}{internal_predictor}{
@@ -428,8 +428,8 @@ Ten upstream channels span six held-out bar groups.
 The RMS prediction error is \PredictorRMSE\,$\mu$A; the RMS fractional error is \PredictorFraction\%.
 Horizontal intervals are conditional reference-AWC intervals, not
 predictive intervals.
-\Review{N2-7}{Small selected sample; feature/target correlations and
-full prediction uncertainties remain unpropagated.}
+This small selected sample leaves feature/target correlations and full
+prediction uncertainties unpropagated. It does not demonstrate reference-free calibration.
 }{Exploratory median-$Q_*$ candidate. The dashed line indicates equality,
 not a fitted result. No blanket 10\% precision claim is made.}
 
@@ -444,7 +444,6 @@ ID & Decision or missing evidence\\
 \midrule
 N2-3 & Model adequacy remains open; sensitivity audit saved separately.\\
 N2-4 & Audit complete; accept statistical scope and weighting-sensitivity reporting.\\
-N2-7 & Decide whether internal prediction remains backup or gains enough validation for a main result.\\
 \bottomrule
 \end{tabular}\par
 \medskip

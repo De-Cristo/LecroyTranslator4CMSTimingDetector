@@ -68,7 +68,10 @@ versions, selections and uncertainties have already been reconciled.
    status table documents missing/narrow overlap and poorly constrained cases;
    no new quality cuts or population-level performance claim are introduced.
    See `review_2026-10-22_n2_6/` for the inventory and limitations.
-7. N2-7: decide whether internal prediction belongs in the main result.
+7. N2-7 is closed for exploratory backup scope. Both predictor slides remain
+   after the main conclusion, explicitly MCP-trained and not a demonstration
+   of reference-free calibration. Independent validation and full predictive
+   uncertainties remain future work; figures and numerical results are unchanged.
 8. N1-6: local references and candidate packaging completed; official template,
    DP metadata and cover/submission handling await convener confirmation.
 

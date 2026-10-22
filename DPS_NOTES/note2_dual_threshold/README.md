@@ -10,7 +10,7 @@ exploratory internal prediction. The 4076 and 4399 samples are different events.
 N2-1 is closed under the nominal-setup assumption below; N2-2 is closed after
 the ROOT replay documented below. N2-5 is closed for the documentation-only
 scope below. N2-6 is closed for the exploratory reporting scope below.
-N2-3, N2-4 and N2-7 remain open before release.
+N2-7 is closed for exploratory backup scope. N2-3 and N2-4 remain open before release.
 
 On 21 October 2026 the clock-corrected reference profiles were also added to
 Note1, closing the reference-version gap N1-4. This left the N2-1 question of
@@ -88,6 +88,18 @@ future performance sample, not validated by this closure. The full numerical
 channel inventory and closure scope are described in
 `../review_2026-10-22_n2_6/README.md`. All three inline comments and the review
 queue entry are removed; fits, figure files and conclusions are unchanged.
+
+N2-7 closed by author approval on 22 October 2026 for exploratory backup scope.
+Both internal-predictor slides remain after the main conclusion. The common
+coefficient K is trained on MCP-derived AWC; internal features at prediction
+time do not establish reference-free calibration. The saved held-out-bar
+comparison, ten-channel sample, median-Q feature, errors and numerical scores
+are unchanged. Permanent text retains the unvalidated shared-derivative
+hypothesis, need for independent operating-condition and feature-choice checks,
+small selected sample, unpropagated feature/target correlations and incomplete
+prediction uncertainties. The two inline comments and queue entry are removed.
+This closes placement and claim scope, not predictor validation or a claim of
+reference-free performance. No new analysis or figure generation is required.
 
 The N1-6 packaging update also adds verified context/method references here.
 `publication_candidate_slides.pdf` and `publication_candidate_with_cover.pdf`

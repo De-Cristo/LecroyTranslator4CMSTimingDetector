@@ -57,10 +57,20 @@ def main():
             assert "N2-2" not in review_text and "N2-2" not in candidate_text
             assert "Timing reconstruction and threshold scale" in candidate_text
             assert "Landau" in candidate_text and "does not set this cut" in candidate_text
-            for index in (3, 4, 7):
+            for index in (3, 4):
                 assert f"N2-{index}" in candidate_text
             assert "N2-5" not in review_text and "N2-5" not in candidate_text
             assert "N2-6" not in review_text and "N2-6" not in candidate_text
+            assert "N2-7" not in review_text and "N2-7" not in candidate_text
+            for deck in (review_text, candidate_text):
+                normalized = " ".join(deck.split())
+                assert "K is learned from MCP-calibrated training channels" in normalized
+                assert "does not demonstrate reference-free calibration" in normalized
+                assert "independent validation across operating conditions" in normalized
+                assert "prediction uncertainties unpropagated" in normalized
+                assert deck.index("Result and next validation step") < deck.index(
+                    "Backup: an internal predictor for channel AWC") < deck.index(
+                    "Backup: predict a bar excluded from the model fit")
             assert "Channel coverage and limitations" in candidate_text
             assert "AWC versus inverse slope coefficient: all completed fits" in candidate_text
             assert "A selected subset does not establish a universal law" in candidate_text
@@ -124,7 +134,7 @@ def main():
                   combined_pages=len(PdfReader(combined).pages),
                   combined_sha256=hashlib.sha256(combined.read_bytes()).hexdigest(),
                   review_status="N1-6 local work complete; convener template, DP metadata, cover handling and release approval pending",
-                  note2_review_status="N2-1/N2-2 closed as documented; N2-5 closed for documentation-only model-closure scope; N2-6 closed for exploratory reporting, all 21 and the original ten-channel results retained; N2-3/N2-4/N2-7 remain open; numerical results unchanged",
+                  note2_review_status="N2-1/N2-2 closed as documented; N2-5 closed for documentation-only model-closure scope; N2-6 closed for exploratory reporting, all 21 and the original ten-channel results retained; N2-7 closed for MCP-trained exploratory backup scope, not reference-free calibration; N2-3/N2-4 remain open; numerical results unchanged",
                   analysis_tests="previous clock-quality tests reused; N2-2 ROOT replay and 17 focused tests documented in review_2026-10-22_n2_2/README.md; frozen numerical results unchanged")
     (OUT / "verification.json").write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report, indent=2))

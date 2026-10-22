@@ -31,8 +31,8 @@
     }
   },
   "combined_pages": 63,
-  "combined_sha256": "b5c0770ffe8e9d69e6177958e5d1460837894b26627ebca70ba232aba42852f9",
+  "combined_sha256": "3b5db115b5b509a98a889d8ba1cfdd47222f35ddc2ca031fefebab5890efa8be",
   "review_status": "N1-6 local work complete; convener template, DP metadata, cover handling and release approval pending",
-  "note2_review_status": "N2-1/N2-2 closed as documented; N2-5 closed for documentation-only model-closure scope; N2-6 closed for exploratory reporting, all 21 and the original ten-channel results retained; N2-3/N2-4/N2-7 remain open; numerical results unchanged",
+  "note2_review_status": "N2-1/N2-2 closed as documented; N2-5 closed for documentation-only model-closure scope; N2-6 closed for exploratory reporting, all 21 and the original ten-channel results retained; N2-7 closed for MCP-trained exploratory backup scope, not reference-free calibration; N2-3/N2-4 remain open; numerical results unchanged",
   "analysis_tests": "previous clock-quality tests reused; N2-2 ROOT replay and 17 focused tests documented in review_2026-10-22_n2_2/README.md; frozen numerical results unchanged"
 }
