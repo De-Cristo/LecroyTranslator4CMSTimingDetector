@@ -38,10 +38,5 @@
     "file": "figures/threshold_walk_profiles.pdf",
     "source": "../Q_Walk/results/2026-10-22_bar_pair_by_threshold/vth1_3_vth2_60/upstream_walk_profiles.pdf",
     "sha256": "f5de28db5f142691e2ae10100b6b8742eda9a7914a0d09576841cd44bd04445b"
-  },
-  {
-    "file": "figures/threshold_width_summary.pdf",
-    "source": "../Q_Walk/results/2026-10-22_bar_pair_by_threshold/width_vs_threshold.pdf",
-    "sha256": "1b6a6df024d400e4060d4230e263cb6e388f4c5c7f46c198eb8294353db5cced"
   }
 ]

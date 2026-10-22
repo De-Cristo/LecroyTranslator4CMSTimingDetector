@@ -15,9 +15,8 @@
     "DPS_NOTES/note2_dual_threshold/note_with_cover.pdf",
     "DPS_NOTES/both_notes_review_v1.pdf"
   ],
-  "slides_each": 11,
   "cover_pages": 0,
-  "combined_pages": 22,
+  "combined_pages": 21,
   "exact_user_titles_verified": true,
   "github_links_verified": [
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/FEBD_Sync/simple_sync.py",
@@ -26,19 +25,26 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "Updated calibration examples, six-histogram timing slide and threshold summary inspected; no build overflow. Note 2 PDF text unchanged.",
+  "visual_review": "Final six-panel timing result inspected at slide 9/10; no overflow. First eight Note 1 pages unchanged except page-count footers; Note 2 PDF text unchanged.",
   "scientific_inputs": "Twenty-four newly fitted per-threshold channel corrections, six independent validation samples. Final histograms checked against the threshold reports. No pooled threshold timing distribution.",
-  "combined_sha256": "4d75ffc9b161a90f14f7ddb804e90e32cf4308c76866a22dfcf5bb2d4548692b",
-  "content_slides_each": 10,
+  "combined_sha256": "660e8b8cd2e0b2c5680c96545df0a16a5e7c556dafc4756efef05d8862e57f03",
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 8,
     "note2": 12
   },
   "note2_slide_content_unchanged": true,
-  "structure_review": "Six author points implemented; Purpose replaces short-deck abstract on slide 2; final physics slide is bar-pair timing, followed only by references.",
+  "structure_review": "One final threshold-separated bar-pair timing result on slide 9, followed by references on slide 10. MCP-check slide absent; separate width-summary slide removed. No scientific inputs changed.",
   "bar_pair_validation": "Q_Walk/results/2026-10-22_bar_pair_by_threshold/verification.json",
   "threshold_settings": 6,
   "threshold_channel_fits": 24,
-  "threshold_total_selected_events": 8672
+  "threshold_total_selected_events": 8672,
+  "slides": {
+    "note1": 10,
+    "note2": 11
+  },
+  "content_slides": {
+    "note1": 9,
+    "note2": 10
+  }
 }

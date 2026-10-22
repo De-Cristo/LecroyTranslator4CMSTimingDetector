@@ -12,6 +12,7 @@ from pypdf import PdfReader, PdfWriter
 
 ROOT = Path(__file__).resolve().parent
 NOTES = ("note1_mcp_reference", "note2_dual_threshold")
+EXPECTED_SLIDES = {"note1_mcp_reference": 10, "note2_dual_threshold": 11}
 THRESHOLD_FIGURES = {
     "figures/threshold_walk_profiles.pdf": "vth1_3_vth2_60/upstream_walk_profiles.pdf",
     "figures/threshold_histograms.pdf": "before_after_all_thresholds.pdf",
@@ -63,7 +64,7 @@ def main():
         assert not problems, (name, problems)
         shutil.copy2(note / "build/main.pdf", note / "slides.pdf")
         pdf = PdfReader(note / "slides.pdf")
-        assert len(pdf.pages) == 11, (name, len(pdf.pages))
+        assert len(pdf.pages) == EXPECTED_SLIDES[name], (name, len(pdf.pages))
         assert "References" in pdf.pages[-1].extract_text()
         assert sum("References" in page.extract_text() for page in pdf.pages) == 1
         entry_pattern = r"\\bibitem\[(\d+)\]\{([^}]+)\}([\s\S]*?)(?=\\bibitem|\\end\{thebibliography\})"
@@ -89,7 +90,7 @@ def main():
                     sheet.paste(img, (x, y))
                     draw.text((x, y - 19), f"Slide {start+i+1}", fill="black")
             sheet.save(preview / f"contact_sheet_{start//6+1}.png")
-        report[name] = dict(slides=len(pdf.pages), content_slides=10, reference_slides=1,
+        report[name] = dict(slides=len(pdf.pages), content_slides=len(pdf.pages)-1, reference_slides=1,
                             reference_entries=len(entries(note / "references.tex")),
                             cover_pages=0, figures=len(figures),
                             overflow=0, unresolved_citations=0,

@@ -109,24 +109,14 @@ Points show profile means with SEM; curves are SEM-weighted quadratics in $1/Q$.
 The +26\,ns display offset does not change the shape. Separate fits are made for every setting and all four channels.}
 \end{frame}
 
-\begin{frame}[t]{Measure bar-to-bar jitter separately at each threshold}
+\begin{frame}[t]{Final result: downstream-bar minus reference-bar timing}
 \centering
-\includegraphics[width=\linewidth,height=51mm,keepaspectratio]{figures/threshold_histograms.pdf}
+\includegraphics[width=\linewidth,height=48mm,keepaspectratio]{figures/threshold_histograms.pdf}
 \par\raggedright
-\Source{Downstream bar 3 minus upstream reference bar 8. Within each panel, the same events are used before and after four-channel correction, inside populated charge support.
-Histograms are median-centered for display only; no per-file offsets are removed. Dashed curves are truncated-normal core fits within median $\pm2.5(1.4826\,\mathrm{MAD})$.}
+\Source{Bar-average time difference: downstream bar 3 minus upstream bar 8. Core widths improve from 91--113 to 62--69\,ps.
+Thresholds are fitted separately; before/after samples are identical within each panel. Histograms are median-centered for display, without per-file offsets.
+Dashed curves: truncated-normal fits within median $\pm2.5(1.4826\,\mathrm{MAD})$.
+In-sample validation; the pair width alone does not determine either bar's resolution.}
 \end{frame}
-
-\PlotSlide{Final check: timing improves at fixed operating points}{threshold_width_summary}{
-\textbf{One point per threshold}
-
-Each setting has its own charge selection and four walk corrections.
-
-Compare the two corrected bar-average times. The shared MCP time cancels.
-
-\textbf{Do not pool thresholds.}
-Only the separately fitted widths enter an optional combined summary.
-}{Vertical intervals: 16th--84th percentiles from 400 paired file/segment-block bootstraps per setting, with fixed selection and calibrations.
-This is in-sample validation; calibration uncertainties and fit-window dependence are not included. The pair width does not by itself determine either bar's resolution.}
 \input{references.tex}
 \end{document}

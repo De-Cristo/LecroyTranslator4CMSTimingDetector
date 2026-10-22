@@ -2235,23 +2235,23 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/README.md",
-      "sha256": "382ed6af83999c92f41c71fe88fd6c1d2ff710cc71234a709a7d64036e0b4459",
-      "bytes": 3478
+      "sha256": "cd96f1bbb5379e9635b0ad47d7a5639b9917a01bb46c310d7fc9140d551de93e",
+      "bytes": 3686
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/both_notes_slides_v2.pdf",
-      "sha256": "4d75ffc9b161a90f14f7ddb804e90e32cf4308c76866a22dfcf5bb2d4548692b",
-      "bytes": 2897184
+      "sha256": "660e8b8cd2e0b2c5680c96545df0a16a5e7c556dafc4756efef05d8862e57f03",
+      "bytes": 2876833
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build.py",
-      "sha256": "2be18db151cdb67e889aa839015ced451991b60fa8f33b3958d400ec1c91583d",
-      "bytes": 5593
+      "sha256": "84b0252c8f80f881487e1a9bfa64be3a9c6d0500c7a55fd29f24f4ae7bcc37df",
+      "bytes": 5700
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_report.json",
-      "sha256": "5f41bffb4fcf90bd31d4fbec34c017497cb0f64f6d8f1f899b9848c477b82b5d",
-      "bytes": 680
+      "sha256": "70e08cacedf242557be2d3ed54fe6084adcab911a6309e42b91ddb409adae2db",
+      "bytes": 679
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/CMSlogo_black_label_1024.png",
@@ -2260,8 +2260,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/asset_manifest.json",
-      "sha256": "5063cbb3b3095d07231213942fc48721c547b8e96a35f36bae1efa84cf922c24",
-      "bytes": 1866
+      "sha256": "6051060ff3268e71eec6d9b07f5518781660dd112c339e8365bc82cf24de0e44",
+      "bytes": 1634
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/bar_pair_before_after.pdf",
@@ -2320,8 +2320,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/main.tex",
-      "sha256": "127daacc52e4ca59f658a0f87ce6985fc9000d5ffc980f4773ad5d6be77780ee",
-      "bytes": 5896
+      "sha256": "0ad4a5528d653d5814090b41ae0a9ae2f1800ad3bf95551f1a392a27a20a5b24",
+      "bytes": 5311
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/metadata.tex",
@@ -2340,8 +2340,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/slides.pdf",
-      "sha256": "ed0923042546465df7d258851c7f2fbc0813328066096dbc218ff3829fd2fddb",
-      "bytes": 2118180
+      "sha256": "480c32ae13fb1177db8806aee5f6b742291cad91602badfb2afd8b7051c54562",
+      "bytes": 2100358
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/CMSlogo_black_label_1024.png",
@@ -2405,7 +2405,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/slides.pdf",
-      "sha256": "939d7886c10a961ac56640923b063ddb3d34488a52fa5ec7363e031dce4cdab4",
+      "sha256": "5203e8b0f58a9102d446d9617bbe460da96475e05fbc565f0ba223cef5c2ea83",
       "bytes": 705960
     },
     {
@@ -2415,8 +2415,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
-      "sha256": "aae07858760761c655377aaa2f62ae1f6c90369cfd5ed718a82b81246902c73d",
-      "bytes": 2578
+      "sha256": "9a84ffd50e7a82ff0383606b5609c87e7d7e2f508528f0c9cb1f4c09fb729036",
+      "bytes": 2704
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -4597,7 +4597,7 @@
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "Replaced mixed-threshold short Note 1 results with six independently selected/calibrated operating points (24 channel fits, 8672 events). Includes per-setting histograms, widths and 400 paired block replicas each; optional width-only RMS summary. Prior mixed fits marked superseded. Full notes and Note 2 unchanged in content; builds and rendered pages verified.",
+    "latest_change": "Short Note 1 consolidated to one final six-panel threshold-separated timing result (slide 9/10), followed by references. Separate width-summary slide removed; MCP-check slide absent. No fits changed. Full notes and Note 2 unchanged; build and visual checks passed.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 26,
@@ -4617,21 +4617,24 @@
     "n2_3_n2_4_closure_changed_files_hash_checked": 17,
     "title_update_changed_files_hash_checked": 17,
     "github_link_verification": "DPS_NOTES/review_2026-10-22_publication/repository_links.json",
-    "latest_changed_files_hash_checked": 108,
+    "latest_changed_files_hash_checked": 9,
     "original_text_verification": "DPS_NOTES/review_2026-10-22_publication/original_text_check.json",
     "language_review_verification": "DPS_NOTES/review_2026-10-22_publication/language_review_verification.json",
     "short_slides_v2": {
       "directory": "DPS_NOTES/slides_v2_2026-10-22",
-      "note1_slides": 11,
+      "note1_slides": 10,
       "note2_slides": 11,
-      "combined_pages": 22,
+      "combined_pages": 21,
       "cover_pages": 0,
       "verification": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
-      "content_slides_each": 10,
       "reference_slides_each": 1,
       "note1_structure_review": "purpose -> parallel streams -> matching -> drift correction -> upstream walk calibration -> final bar-to-bar timing",
       "bar_pair_validation": "Q_Walk/results/2026-10-22_bar_pair_by_threshold/verification.json",
-      "threshold_settings": 6
+      "threshold_settings": 6,
+      "content_slides": {
+        "note1": 9,
+        "note2": 10
+      }
     }
   }
 }
