@@ -25,15 +25,15 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "New Note 2 slide 8/12 inspected against original Figure 5. No overflow. All existing slides unchanged apart from renumbering; Note 1 and full notes unchanged.",
+  "visual_review": "Note 1 final slide inspected with the quadrature-width relation and explicit independence assumption. No overflow; all other slide text unchanged after whitespace normalization; full notes unchanged.",
   "scientific_inputs": "Twenty-four newly fitted per-threshold channel corrections, six independent validation samples. Final histograms checked against the threshold reports. No pooled threshold timing distribution.",
-  "combined_sha256": "336ad38490a3b379e51f016319eca3168c1d22b0243050d5e8db29a1efadddfb",
+  "combined_sha256": "f5a728335f869516c1666009b0869afc918171edc656eb3fe471c84e16f2da6a",
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 8,
     "note2": 12
   },
-  "note2_slide_content_unchanged": false,
+  "note2_slide_content_unchanged": true,
   "structure_review": "Note 2 adds original Figure 5 after curve comparison: residual slide 8, internal procedure 9, final trend 10, one backup 11 and references 12.",
   "bar_pair_validation": "Q_Walk/results/2026-10-22_bar_pair_by_threshold/verification.json",
   "threshold_settings": 6,
@@ -47,7 +47,7 @@
     "note1": 9,
     "note2": 11
   },
-  "note1_slide_content_unchanged": true,
+  "note1_slide_content_unchanged": false,
   "note2_internal_prediction_review": {
     "no_refitting": true,
     "backup_slides": 1,
@@ -101,5 +101,18 @@
     "new_fits": false,
     "uncertainty_definition_not_inferred": true,
     "other_slides_unchanged_except_numbering": true
+  },
+  "bar_width_interpretation": {
+    "slide": 9,
+    "approximate_pair_width_ps": 65,
+    "measured_range_ps": [
+      62,
+      69
+    ],
+    "relation": "sigma_delta_t = sqrt(sigma_up^2 + sigma_down^2)",
+    "assumption": "independent timing fluctuations",
+    "individual_widths_separately_measured": false,
+    "equal_performance_not_assumed": true,
+    "no_new_fit": true
   }
 }

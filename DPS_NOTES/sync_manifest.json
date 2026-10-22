@@ -2235,8 +2235,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/README.md",
-      "sha256": "183d5725f7469691b953f59e5f833d75082e45d1262c5e5f28c066b6b5e6a41e",
-      "bytes": 6528
+      "sha256": "055cc491a3901244297bd6972af4ad28bea480a7bf508692bf161a4a9c8232dd",
+      "bytes": 6968
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note2_figure5/figure5.pdf",
@@ -2255,8 +2255,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/both_notes_slides_v2.pdf",
-      "sha256": "336ad38490a3b379e51f016319eca3168c1d22b0243050d5e8db29a1efadddfb",
-      "bytes": 3155586
+      "sha256": "f5a728335f869516c1666009b0869afc918171edc656eb3fe471c84e16f2da6a",
+      "bytes": 3182594
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build.py",
@@ -2265,7 +2265,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_report.json",
-      "sha256": "52ecd900c0622e3b152727b8ea9c1cb99d855ab3f89fcc26c84e43c7b6450dbc",
+      "sha256": "847c5adedf443bff02f00826c034adcbb5601fd7f4fd063eb88cac2f2225963e",
       "bytes": 679
     },
     {
@@ -2335,8 +2335,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/main.tex",
-      "sha256": "0ad4a5528d653d5814090b41ae0a9ae2f1800ad3bf95551f1a392a27a20a5b24",
-      "bytes": 5311
+      "sha256": "31bb4add2ed46e3f2fff7dc9fbb8d5f343fefbe0d81f79a7da590475c27dba20",
+      "bytes": 5372
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/metadata.tex",
@@ -2355,8 +2355,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/slides.pdf",
-      "sha256": "6b800710654db68d24bb4d8bed9e40ef741d2f0dd09c8f63cf9b54f83e4cebc6",
-      "bytes": 2100358
+      "sha256": "8f1db7cc7c5e1a640458a9b4870649fa3c829f1ddedd019122104de24f986bef",
+      "bytes": 2125703
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/CMSlogo_black_label_1024.png",
@@ -2435,7 +2435,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/slides.pdf",
-      "sha256": "e83e8d5f57be408438ef5af56ff6ecd886dd5da6193b8256e1a0b3f2886b56fe",
+      "sha256": "4977da0098c569e780e0664c2e848e9b0ddf69d0dffd728c703ab9098cf09cf1",
       "bytes": 982286
     },
     {
@@ -2450,8 +2450,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
-      "sha256": "07eb3237502b598adbd06505a8427c1a5f751fd318efa1bdcd7316bad6825d68",
-      "bytes": 4700
+      "sha256": "599168624f4767bdd077fde31b158b053ba98dce107d7c0d76e7b9382e2dae8b",
+      "bytes": 5122
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -4632,7 +4632,7 @@
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "Inserted original Note 2 Figure 5 as short-deck slide 8/12: channel 137 residual charge dependence after AWC correction. Original image and decoded pixels preserved; CMS label added. No refit or inferred uncertainty definition. Existing slides unchanged except numbering; full notes unchanged. Build and visual checks passed.",
+    "latest_change": "Short Note 1 final caption states sigma_delta_t = sqrt(sigma_up^2 + sigma_down^2), approximately 65 ps, assuming independent timing fluctuations. No individual bar width is assigned; the measured 62-69 ps range and separate thresholds remain. Built and visually checked; full notes and other slide content unchanged.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 26,
@@ -4652,7 +4652,7 @@
     "n2_3_n2_4_closure_changed_files_hash_checked": 17,
     "title_update_changed_files_hash_checked": 17,
     "github_link_verification": "DPS_NOTES/review_2026-10-22_publication/repository_links.json",
-    "latest_changed_files_hash_checked": 14,
+    "latest_changed_files_hash_checked": 7,
     "original_text_verification": "DPS_NOTES/review_2026-10-22_publication/original_text_check.json",
     "language_review_verification": "DPS_NOTES/review_2026-10-22_publication/language_review_verification.json",
     "short_slides_v2": {

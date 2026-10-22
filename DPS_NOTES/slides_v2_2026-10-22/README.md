@@ -61,6 +61,12 @@ Slide 8 now uses the lowest-threshold bar-8 profiles rather than mixed-threshold
 bar-7/bar-8 examples; slide 9 shows the six timing comparisons with a compact
 width-range summary. In-sample and single-bar-resolution limitations remain
 explicit; bootstrap intervals are retained in the saved analysis outputs.
+The final caption relates the approximately 65 ps pair width to the quadrature
+sum of the two bar widths, explicitly assuming independent timing fluctuations.
+It does not assign individual bar resolutions or assume equal performance.
+The 65 ps notation is an approximate scale for the 62--69 ps per-setting results,
+not an additional pooled fit. Correlations would add a covariance term and
+invalidate the simple quadrature interpretation.
 The full original notes are unchanged in content.
 
 ## Note 2 structure review
