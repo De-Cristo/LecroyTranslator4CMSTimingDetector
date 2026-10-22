@@ -31,7 +31,7 @@
     }
   },
   "combined_pages": 63,
-  "combined_sha256": "3a0512fc25611449e88cad81d4cbb8b47f3a3861fe673bb53a945d5edf03466d",
+  "combined_sha256": "f71f96142226d5c72ca5cab34bd242ff9891892d397febf1b81b4a749dca68c6",
   "review_status": "N1-6 local work complete; convener template, DP metadata, cover handling and release approval pending",
   "note2_review_status": "All current Note2 review items closed within documented scope. N2-3/N2-4 temporarily closed by author for exploratory linear model and conditional statistics with separate weighting sensitivity; permanent limitations retained, not precision-model validation or a total error budget. Next pass is page by page; numerical results unchanged.",
   "analysis_tests": "previous clock-quality tests reused; N2-2 ROOT replay and 17 focused tests documented in review_2026-10-22_n2_2/README.md; frozen numerical results unchanged"
