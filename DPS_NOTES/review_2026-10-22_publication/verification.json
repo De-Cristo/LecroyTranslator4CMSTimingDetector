@@ -31,7 +31,8 @@
     }
   },
   "combined_pages": 59,
-  "combined_sha256": "2ccdc10408358c0727a834989ab826ee73a3fc7c73e102d0a20f21f90feec730",
+  "combined_sha256": "0fd93fa0dfbb75b2446d25ea47dd4b52e51e107eff2fabbc9685f40b0e6dccce",
   "review_status": "N1-6 local work complete; convener template, DP metadata, cover handling and release approval pending",
+  "note2_review_status": "N2-1 closed under author's nominal-setup assumption, not independently verified; N2-2 through N2-7 remain open",
   "analysis_tests": "not rerun: calibration inputs, figures and analysis code unchanged; previous checks reused"
 }

@@ -50,7 +50,10 @@ def main():
             assert "Backup: comparing clock estimators" not in candidate_text
             assert "Backup: residual segment offsets" in candidate_text
         else:
-            for index in range(1, 8):
+            assert "N2-1" not in review_text and "N2-1" not in candidate_text
+            assert "same nominal detector setup" in candidate_text
+            assert "Cross-run response differences" in candidate_text
+            for index in range(2, 8):
                 assert f"N2-{index}" in candidate_text
         with zipfile.ZipFile(note / "source_bundle.zip") as bundle:
             for path in ("main.tex", "publication_candidate.tex", "references.tex",
@@ -70,6 +73,7 @@ def main():
                   combined_pages=len(PdfReader(combined).pages),
                   combined_sha256=hashlib.sha256(combined.read_bytes()).hexdigest(),
                   review_status="N1-6 local work complete; convener template, DP metadata, cover handling and release approval pending",
+                  note2_review_status="N2-1 closed under author's nominal-setup assumption, not independently verified; N2-2 through N2-7 remain open",
                   analysis_tests="not rerun: calibration inputs, figures and analysis code unchanged; previous checks reused")
     (OUT / "verification.json").write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report, indent=2))

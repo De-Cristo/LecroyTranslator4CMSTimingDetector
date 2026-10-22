@@ -21,9 +21,10 @@ The upstream and downstream modules each contain bars read out at two ends.
 Detector/readout context is given in Refs.~\cite{MTDTDR,TOFHIR2}.
 The channel/bar mapping determines the coincidence pairs; the same channel
 number is compared across the two runs.
-\Review{N2-1}{Document gain, bias, thresholds, temperature, firmware and charge
-calibration to justify cross-run transfer. The run-4399 reference is the
-clock-corrected version now also documented in Note1.}
+
+The comparison assumes the same nominal detector setup in both runs,
+with MCP reference timing in run 4399 and dual-threshold timing in run 4076.
+Cross-run response differences are not included in the quoted uncertainties.
 \end{frame}
 
 \begin{frame}{From two crossing times to a walk model}
@@ -228,8 +229,8 @@ the downstream target pair and MCP indicator.
 
 In run 4076, the target downstream pair is required, without fixing
 an upstream pair. The curves use only their common measured support.
-\Review{N2-1}{Verify the transfer conditions and selection-induced changes
-for downstream channels as well as upstream channels.}
+The same nominal-setup assumption is used for downstream channels.
+Selection-dependent response differences remain unquantified.
 }{The comparison is a per-channel shape calibration. The other module
 is not used as an internal timing reference to determine AWC here.}
 
@@ -341,7 +342,6 @@ not a fitted result. No blanket 10\% precision claim is made.}
 \toprule
 ID & Decision or missing evidence\\
 \midrule
-N2-1 & Freeze cross-run operating conditions and justify calibration transfer.\\
 N2-2 & Document safe-$t_2$, threshold conversion and exact selected populations.\\
 N2-3 & Check linear-profile adequacy and selection/model sensitivity.\\
 N2-4 & Validate alignment objective and complete the uncertainty propagation.\\

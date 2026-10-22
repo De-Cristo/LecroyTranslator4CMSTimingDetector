@@ -37,7 +37,7 @@
       "status": "internal review draft"
     }
   },
-  "combined_sha256": "2ccdc10408358c0727a834989ab826ee73a3fc7c73e102d0a20f21f90feec730",
+  "combined_sha256": "0fd93fa0dfbb75b2446d25ea47dd4b52e51e107eff2fabbc9685f40b0e6dccce",
   "test_results": "140 focused tests and 25 integration tests passed; 1 optional integration test skipped",
   "review_status": "N1-5 closed by author for conditional timing-validation scope; intrinsic bar resolution and synchronization-jitter extraction excluded"
 }

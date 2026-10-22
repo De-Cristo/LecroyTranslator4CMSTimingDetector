@@ -41,7 +41,10 @@ versions, selections and uncertainties have already been reconciled.
 ## Review sequence
 
 1. N1-4 is closed: Note1 now includes the clock-corrected reference used by Note2.
-   N2-1 remains open for the cross-run operating conditions and transfer justification.
+   N2-1 is closed under the author's same-nominal-setup assumption, with MCP
+   reference timing in run 4399 and dual-threshold timing in run 4076.
+   Cross-run stability is not independently verified; response-transfer and
+   selection effects remain unquantified.
 2. N2-2: freeze run configurations, time decoding and numerical cuts.
 3. N1-3 is closed: the note now explicitly follows the code's minus-sign convention.
 4. N2-3 / N2-4: assess slope-model adequacy, matching objective and uncertainties.

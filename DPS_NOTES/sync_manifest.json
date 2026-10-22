@@ -7,7 +7,8 @@
     "N1-3": "closed 2026-10-21: explicit minus-sign formula and single LOWESS contribution verified against code; documentation only",
     "N1-4": "closed 2026-10-21: author requested adding clock-corrected results to Note1; exact Note2 references shown alongside archived fits, with selections and shape comparison; no fit changes",
     "N1-5": "Closed by author on 22 October 2026 for this version: same-event conditional timing validation only; intrinsic bar resolution and synchronization-jitter extraction outside scope. Review comment and queue entry removed; physical limitations retained; no numerical changes.",
-    "N1-6": "Local citation and candidate-packaging work completed 22 October 2026. Official template, DP identifiers, cover handling and CMS approval remain pending with conveners; no submission."
+    "N1-6": "Local citation and candidate-packaging work completed 22 October 2026. Official template, DP identifiers, cover handling and CMS approval remain pending with conveners; no submission.",
+    "N2-1": "Closed 22 October 2026 under author-stated same-nominal-detector-setup assumption: run4399 MCP reference, run4076 dual-threshold timing. No independent run-condition verification. Cross-run and selection-dependent response effects remain unquantified; no numerical changes."
   },
   "files": [
     {
@@ -22,8 +23,8 @@
     },
     {
       "path": "DPS_NOTES/README_DRAFTS.md",
-      "sha256": "767b747df219d4e1503be9aed8a262fc57bbb7f3e97e3eba7a8f8c14a4d05d48",
-      "bytes": 9002
+      "sha256": "45ba8ab5ec821321961348fe69f4c028832bf0bafb1d7320b1bc9a2a3a19c76b",
+      "bytes": 9180
     },
     {
       "path": "DPS_NOTES/REPOSITORY_WORKFLOW.md",
@@ -32,8 +33,8 @@
     },
     {
       "path": "DPS_NOTES/both_notes_review_v1.pdf",
-      "sha256": "2ccdc10408358c0727a834989ab826ee73a3fc7c73e102d0a20f21f90feec730",
-      "bytes": 6619537
+      "sha256": "0fd93fa0dfbb75b2446d25ea47dd4b52e51e107eff2fabbc9685f40b0e6dccce",
+      "bytes": 6619302
     },
     {
       "path": "DPS_NOTES/cms_dp_note_template/CMSlogo_black_label_1024.png",
@@ -512,8 +513,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/README.md",
-      "sha256": "8c485bb52957bf500b86b095f2bc15fce9152861a158a4ca388810cc7c183b37",
-      "bytes": 2107
+      "sha256": "a917de031e59a363a684a48eeb496eb2e1d9350ec4346dfdf0c7c877c799166f",
+      "bytes": 2812
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/build_report.json",
@@ -522,12 +523,12 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/candidate_report.json",
-      "sha256": "3e887d586e924230fe6d7712f38842e3c5ad24e69912adef9744041a3285ac6e",
+      "sha256": "5aaa65e3db89bee4023518461ca86cc34ef05bb2fc03c9155fe1bad3b1b4c7b2",
       "bytes": 548
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/cover.pdf",
-      "sha256": "a35f2fd5bc265964a9da4c7f51e91129ac1801026f8bb864bd0fb36c286a4be9",
+      "sha256": "6488af49ec72258c7ade88467402affe451bf5be4ce49b63b22392b7789c4b4f",
       "bytes": 950156
     },
     {
@@ -862,8 +863,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/main.tex",
-      "sha256": "295287f4a07eb3f17b4c29792660d4e9f2c5250fccac30bf8bb82ab047e20522",
-      "bytes": 17036
+      "sha256": "a9ff0c7641f0ff57a4f8c9ca8c5430d284871c7a10d7e1cfab4eabddb7ee42bf",
+      "bytes": 16970
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/metadata.tex",
@@ -872,8 +873,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/note_with_cover.pdf",
-      "sha256": "9bf3a4ad97048bc2da66305fe86a5a7e7d1c4e9ac0def0f7ad1ce25ee370ed1e",
-      "bytes": 2001877
+      "sha256": "51f4e08eaa57eba5ebe14c5c92319d66f9f3e0ea609ff9e6b35a8392c2e7b759",
+      "bytes": 2001642
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate.tex",
@@ -882,13 +883,13 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate_slides.pdf",
-      "sha256": "6965bd1f14cd3551a55f69a98459cad0998db5c7a4baa0843a33d960b0563171",
-      "bytes": 961951
+      "sha256": "71640bc8bf20ea1590646b747fc23ae73e7893a344632acf2b7c597549a9b88c",
+      "bytes": 961767
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate_with_cover.pdf",
-      "sha256": "772b17f7643acb14fec0e04bdfe8458709fe18c1e7a7cd925ff61b3ecb7eb570",
-      "bytes": 1980355
+      "sha256": "1342ffb6f1f8b4cdb59ad254c7621e9cc40495fec05c1b14b7b7ff5ab628da40",
+      "bytes": 1980168
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/references.tex",
@@ -902,8 +903,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/slides.pdf",
-      "sha256": "741fbb63177be72b6cf7f0ca9defd8f5d0310bbfcf8c9f1b6852deeec520503c",
-      "bytes": 982495
+      "sha256": "19f054bb7bc9f26d8826dfa7fd68bbbaaecd98d5fc1e4ac0d88cfcbe62151a9d",
+      "bytes": 982270
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/slides_preamble.tex",
@@ -1697,7 +1698,7 @@
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_clock_quality/verification.json",
-      "sha256": "70e1b979157632bd07926f35bfab79b260770b431fdd3dcaeb1d02262139dafe",
+      "sha256": "59d330276820160f324380be0047df192e32edfd82a07c900aee7eeed0a92410",
       "bytes": 1403
     },
     {
@@ -1712,13 +1713,13 @@
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_publication/verification.json",
-      "sha256": "8b8eb3022953c3522540fa71729697263dea2e0810502843f5b99c6c187a0cca",
-      "bytes": 1064
+      "sha256": "356e9d446ea111d58c7c2ce1fa8e732d591025acb7ed1caa3deaab78a0d3817d",
+      "bytes": 1203
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_publication/verify.py",
-      "sha256": "e500618cfde36d4a6f85adcd30ff039a8dfa6fbd51c148e8d0cd094a341f1dc1",
-      "bytes": 3996
+      "sha256": "ff6c8afcf4fcafafb780f6cb03b7c6f880dfbe4579a9e9a76b3ee7514e7b9f7d",
+      "bytes": 4363
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -3274,7 +3275,7 @@
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "N1-6: verified primary references; separate candidate PDFs exclude four historical Note1 backups, retain Note2 review comments, and pass layout/citation/packaging checks. Combined review and changed pages inspected. Calibration inputs, figures and analysis code unchanged; previous analysis tests reused.",
+    "latest_change": "N2-1 assumption-based closure: Note2 review and candidate PDFs rebuilt without overflow or unresolved citations; changed slides visually checked; combined PDF and packaging verified. All source/repository hashes match. Numerical inputs, figures and analysis code unchanged; prior analysis tests reused.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 27,
