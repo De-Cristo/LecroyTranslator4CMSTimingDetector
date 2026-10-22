@@ -12,6 +12,11 @@ from pypdf import PdfReader, PdfWriter
 
 ROOT = Path(__file__).resolve().parent
 NOTES = ("note1_mcp_reference", "note2_dual_threshold")
+THRESHOLD_FIGURES = {
+    "figures/threshold_walk_profiles.pdf": "vth1_3_vth2_60/upstream_walk_profiles.pdf",
+    "figures/threshold_histograms.pdf": "before_after_all_thresholds.pdf",
+    "figures/threshold_width_summary.pdf": "width_vs_threshold.pdf",
+}
 
 
 def run(command, cwd):
@@ -36,8 +41,9 @@ def main():
         manifest = []
         for relative in assets:
             origin = original / relative
-            if name == "note1_mcp_reference" and relative == "figures/bar_pair_before_after.pdf":
-                origin = ROOT.parent.parent / "Q_Walk/results/2026-10-22_bar_pair_timing/bar_pair_before_after.pdf"
+            if name == "note1_mcp_reference" and relative in THRESHOLD_FIGURES:
+                origin = (ROOT.parent.parent / "Q_Walk/results/2026-10-22_bar_pair_by_threshold"
+                          / THRESHOLD_FIGURES[relative])
             target = note / relative
             shutil.copy2(origin, target)
             digest = hashlib.sha256(target.read_bytes()).hexdigest()

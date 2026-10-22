@@ -1,0 +1,34 @@
+[
+  {
+    "path": "Q_Walk/results/2026-10-22_bar_pair_by_threshold/run.py",
+    "sha256": "634b2abaa4fe91d14dce4cdccc355213d57189c65b2c38590878264401be76a4"
+  },
+  {
+    "path": "Q_Walk/results/2026-10-22_clock_quality/cache/upstream_bar8_aligned.csv.gz",
+    "sha256": "e6ae420d1b58f52704894835edc5f6adc34796c2e5f20840d121eee8ab3a8d95"
+  },
+  {
+    "path": "DPS_NOTES/review_2026-10-22_bar8_validation/validate.py",
+    "sha256": "34c59825dff84ca67bd40767d5ecaf59246de88d466b8894e849cc91fa077bed"
+  },
+  {
+    "path": "Q_Walk/qwalk_core.py",
+    "sha256": "ac270f44a8fe8b2805d8d5cc49253e09acea4b09051e0ab895b22ddc46e13a3d"
+  },
+  {
+    "path": "Q_Walk/qwalk_downstream_t0_reference.py",
+    "sha256": "6f7ae849b8be3bf678a1672724c5b842dfac5c0cdb30d963d3d520e4b8b200af"
+  },
+  {
+    "path": "Q_Walk/qwalk_extended_t0_reference.py",
+    "sha256": "eaebb69d62479b5b896d9d320ddc36775770ee9d496de5cb0221be7ecf9486bd"
+  },
+  {
+    "path": "Q_Walk/qwalk_run4076_safe_time2_scatter.py",
+    "sha256": "e6d204039e6380f3bd120b070e65fba483f18150c7c0185ffd2279ffae0b8ca1"
+  },
+  {
+    "path": "Q_Walk/qwalk_t0_models.py",
+    "sha256": "e5908c1c4e11a97cf12fef21666de470bfe31f61d43979f6535b59db53eda675"
+  }
+]

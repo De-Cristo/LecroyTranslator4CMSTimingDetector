@@ -1,5 +1,10 @@
 # Downstream/reference-bar calibration compatibility check
 
+**Superseded for operating-point calibration:** this audit's candidate fits
+pool six threshold settings. Use `../2026-10-22_bar_pair_by_threshold/` for
+separate calibrations and timing validation. The compatibility calculations
+below remain historical diagnostics, not the current calibration choice.
+
 22 October 2026. This is a separate audit, not a change to the note or its
 frozen calibrations. The candidate fits are sufficient to proceed to a
 bar-to-bar timing validation; no timing-resolution result is established here.

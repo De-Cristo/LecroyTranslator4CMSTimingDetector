@@ -10,21 +10,6 @@
     "sha256": "c32474f7dd29d949165ff43ad6d595b815a8611abedd73ca7769cfe781b66d15"
   },
   {
-    "file": "figures/bar_pair_before_after.pdf",
-    "source": "../Q_Walk/results/2026-10-22_bar_pair_timing/bar_pair_before_after.pdf",
-    "sha256": "4a6e261755e57b28a386a5bdb8ea6e960519629742f803075538d4ca82fb8a2e"
-  },
-  {
-    "file": "figures/clock_reference_ch137.pdf",
-    "source": "note1_mcp_reference/figures/clock_reference_ch137.pdf",
-    "sha256": "cbaff61c263dcfd18afa1e75a11cfd862ffebd29424580d4ff1ce29073ee507f"
-  },
-  {
-    "file": "figures/clock_reference_ch154.pdf",
-    "source": "note1_mcp_reference/figures/clock_reference_ch154.pdf",
-    "sha256": "3f50d2c7ddc16530c977c654a0423e205dcefc0c55e8b0c692de1f50320a6a74"
-  },
-  {
     "file": "figures/clock_residuals.pdf",
     "source": "note1_mcp_reference/figures/clock_residuals.pdf",
     "sha256": "d4e026a5524297e2ac009659533d943c42aa53335ffe438ab09c4bd0d0f5eff1"
@@ -45,8 +30,18 @@
     "sha256": "b65b58150754e55709af694e7e5b92baa68fcd470b7ec5af6ddc3e4e8cec5b8b"
   },
   {
-    "file": "figures/validated_bar_mcp.pdf",
-    "source": "note1_mcp_reference/figures/validated_bar_mcp.pdf",
-    "sha256": "f2235e7961772ea9592607ad631b95f8b960ea0482edb8776c23e1b9e5b6719f"
+    "file": "figures/threshold_histograms.pdf",
+    "source": "../Q_Walk/results/2026-10-22_bar_pair_by_threshold/before_after_all_thresholds.pdf",
+    "sha256": "6aa614e5b16453085c5dd9106efa507dce79920a4454fe768054ed3ae8d5cc72"
+  },
+  {
+    "file": "figures/threshold_walk_profiles.pdf",
+    "source": "../Q_Walk/results/2026-10-22_bar_pair_by_threshold/vth1_3_vth2_60/upstream_walk_profiles.pdf",
+    "sha256": "f5de28db5f142691e2ae10100b6b8742eda9a7914a0d09576841cd44bd04445b"
+  },
+  {
+    "file": "figures/threshold_width_summary.pdf",
+    "source": "../Q_Walk/results/2026-10-22_bar_pair_by_threshold/width_vs_threshold.pdf",
+    "sha256": "1b6a6df024d400e4060d4230e263cb6e388f4c5c7f46c198eb8294353db5cced"
   }
 ]

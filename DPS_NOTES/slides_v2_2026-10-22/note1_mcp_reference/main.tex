@@ -78,12 +78,12 @@ A fixed cable/geometry offset is irrelevant to the shape; clock-rate conversion 
 
 \begin{frame}{Measure the upstream channels' time walk versus charge}
 \small
-Measure the charge-dependent threshold delay relative to the synchronized MCP.
+\textbf{Separate threshold settings before selection and fitting.}
 \begin{enumerate}
 \item In run 4399, require exactly five TOFHIR hits and a unique MCP match:
-the target upstream pair, downstream channels 234 and 243, and channel 192.
-\item Require waveform and clock quality, finite positive charge and slope-quality quantities.
-Keep charge at or above the spectrum's left half-maximum boundary.
+upstream channels 137 and 150, downstream channels 234 and 243, and channel 192.
+\item Within each setting, require clock quality and finite positive charge,
+$\Delta I$ and threshold-rise time. Keep charge above the spectrum's left half-maximum boundary.
 \item Form 20 uniform $1/Q$ bins. Clip timing outliers at
 $5(1.4826\,\mathrm{MAD})$ from each bin's median; require at least five entries.
 \item Fit the bin means with weights $1/\mathrm{SEM}^2$:
@@ -93,59 +93,40 @@ W_i(Q)=a_i+b_i/Q+c_i/Q^2.
 \end{enumerate}
 $Q$ is the measured ADC charge proxy, not energy in MeV.
 SEM denotes the standard error of the mean.
-\Source{Reference pairs: bar 7 = channels 133 and 154; bar 8 = channels 137 and 150.
+\Source{Upstream bar 8 and downstream bar 3. Combine files only at identical scan settings.
 \Code{Q_Walk/qwalk_t0_data.py}{GitHub: selected reference sample}.}
 \end{frame}
 
 \begin{frame}[t]{Walk-corrected upstream bars provide the time reference}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{.49\textwidth}
-\centering\textbf{Bar 7: channel 154}\par
-\includegraphics[width=\linewidth,height=43mm,keepaspectratio]{figures/clock_reference_ch154.pdf}
-\end{column}
-\begin{column}{.49\textwidth}
-\centering\textbf{Bar 8: channel 137}\par
-\includegraphics[width=\linewidth,height=43mm,keepaspectratio]{figures/clock_reference_ch137.pdf}
-\end{column}
-\end{columns}
+\centering
+\includegraphics[width=.95\linewidth,height=43mm,keepaspectratio]{figures/threshold_walk_profiles.pdf}
+\par\raggedright
 \small
 Correct each end: $t_i^{\rm corr}=t_i-W_i(Q_i)$.
 Use the bar average: $t_{\rm ref}=(t_L^{\rm corr}+t_R^{\rm corr})/2$.
-\Source{Run 4399 examples. Points show mean time differences with SEM; red curves are SEM-weighted quadratics in $1/Q$.
-Only populated charge support is shown. The +26\,ns display offset does not change the walk shape.
-The full note also shows channels 133 and 150.}
+\Source{Upstream bar 8, lowest scanned setting: $T_1=3$, $T_2=60$ (DAC settings).
+Points show profile means with SEM; curves are SEM-weighted quadratics in $1/Q$.
+The +26\,ns display offset does not change the shape. Separate fits are made for every setting and all four channels.}
 \end{frame}
 
-\PlotSlide{Check the calibrated reference bar against the MCP}{validated_bar_mcp}{
-\textbf{\TimingCount{} common events}
+\begin{frame}[t]{Measure bar-to-bar jitter separately at each threshold}
+\centering
+\includegraphics[width=\linewidth,height=51mm,keepaspectratio]{figures/threshold_histograms.pdf}
+\par\raggedright
+\Source{Downstream bar 3 minus upstream reference bar 8. Within each panel, the same events are used before and after four-channel correction, inside populated charge support.
+Histograms are median-centered for display only; no per-file offsets are removed. Dashed curves are truncated-normal core fits within median $\pm2.5(1.4826\,\mathrm{MAD})$.}
+\end{frame}
 
-Subtract each channel's fitted walk, then form the bar-average time minus MCP time.
+\PlotSlide{Final check: timing improves at fixed operating points}{threshold_width_summary}{
+\textbf{One point per threshold}
 
-\textbf{Core width}
-\[
-\RBefore\ \longrightarrow\ \RAfter\ \mathrm{ps}
-\]
-Corrected full-sample SD: \RSD\,ps.
+Each setting has its own charge selection and four walk corrections.
 
-This is not the intrinsic bar resolution.
-}{Fixed clock mapping; a truncated-normal core fit uses median $\pm2.5(1.4826\,\mathrm{MAD})$.
-The corrected-width 16--84\% interval is [\RLow, \RHigh]\,ps from 400 file/segment-block bootstraps with fixed calibrations.}
+Compare the two corrected bar-average times. The shared MCP time cancels.
 
-\PlotSlide{Final check: downstream--reference-bar timing}{bar_pair_before_after}{
-\textbf{8,737 common events}
-
-Bar 3 (234, 243) minus reference bar 8 (137, 150).
-
-All four channels are walk corrected before averaging each bar's ends.
-
-\textbf{Core width}
-\[
-161.7\ \longrightarrow\ 141.8\ \mathrm{ps}
-\]
-\textbf{12.3\% narrower.}
-The MCP time cancels from this difference.
-}{Same events and populated charge support; histograms median-centered for display.
-Same core-fit definition as the preceding slide; fixed-calibration 68\% block interval: [138.0, 145.6]\,ps after correction.
-In-sample, asymmetric and fit-window dependent; not a single-bar resolution measurement.}
+\textbf{Do not pool thresholds.}
+Only the separately fitted widths enter an optional combined summary.
+}{Vertical intervals: 16th--84th percentiles from 400 paired file/segment-block bootstraps per setting, with fixed selection and calibrations.
+This is in-sample validation; calibration uncertainties and fit-window dependence are not included. The pair width does not by itself determine either bar's resolution.}
 \input{references.tex}
 \end{document}

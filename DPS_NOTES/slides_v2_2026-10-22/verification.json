@@ -26,9 +26,9 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "All Note 1 slides inspected via contact sheets, and new final timing slide inspected individually; zero build overflow. Note 2 text unchanged on all eleven pages.",
-  "scientific_inputs": "Existing figures retained; previously saved bar-pair validation added unchanged. Final-slide numbers checked against report.json; no analysis rerun.",
-  "combined_sha256": "e3c4983172071b04bee14d843d8ff24eeb8b3a22684387a1f47fa28d5f68a73e",
+  "visual_review": "Updated calibration examples, six-histogram timing slide and threshold summary inspected; no build overflow. Note 2 PDF text unchanged.",
+  "scientific_inputs": "Twenty-four newly fitted per-threshold channel corrections, six independent validation samples. Final histograms checked against the threshold reports. No pooled threshold timing distribution.",
+  "combined_sha256": "4d75ffc9b161a90f14f7ddb804e90e32cf4308c76866a22dfcf5bb2d4548692b",
   "content_slides_each": 10,
   "reference_slides_each": 1,
   "reference_entries": {
@@ -37,5 +37,8 @@
   },
   "note2_slide_content_unchanged": true,
   "structure_review": "Six author points implemented; Purpose replaces short-deck abstract on slide 2; final physics slide is bar-pair timing, followed only by references.",
-  "bar_pair_validation": "Q_Walk/results/2026-10-22_bar_pair_timing/verification.json"
+  "bar_pair_validation": "Q_Walk/results/2026-10-22_bar_pair_by_threshold/verification.json",
+  "threshold_settings": 6,
+  "threshold_channel_fits": 24,
+  "threshold_total_selected_events": 8672
 }

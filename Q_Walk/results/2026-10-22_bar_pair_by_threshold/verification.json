@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "settings": 6,
+  "channel_fits": 24,
+  "events": 8672,
+  "bootstrap_replicas_each": 400,
+  "checks": [
+    "one scan setting per selected event and file",
+    "disjoint selected events across thresholds",
+    "all four charges within own setting fit support and occupied bins",
+    "correction algebra",
+    "histogram accounting including overflow",
+    "all 400 paired replicas finite",
+    "width-only RMS independently recomputed",
+    "input hashes",
+    "six-panel histogram and slide render inspected"
+  ]
+}

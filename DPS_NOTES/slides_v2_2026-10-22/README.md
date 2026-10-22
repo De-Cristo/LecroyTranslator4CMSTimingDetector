@@ -19,8 +19,8 @@ bibliography entries and numbering: eight entries in Note 1 and twelve in Note 2
 The build checks that these entries match the full notes exactly.
 
 Existing figures and numerical macros are copied unchanged from the full notes.
-The new final bar-to-bar figure is copied from the separate, saved
-`Q_Walk/results/2026-10-22_bar_pair_timing/` validation, with its inputs and
+The new threshold-separated figures are copied from the separate, saved
+`Q_Walk/results/2026-10-22_bar_pair_by_threshold/` validation, with its inputs and
 uncertainties documented there. The build does not rerun that analysis.
 `asset_manifest.json` records each source and hash. No ROOT inputs are read
 and no fits are rerun. The full notes retain the complete bibliographies,
@@ -45,11 +45,17 @@ purpose; parallel MCP/scope stream; FEBd synchronization; correlated events
 with low-frequency clock drift; corrected upstream reference bars; final
 downstream-minus-reference-bar timing comparison. The setup slide explicitly
 distinguishes this test-beam synchronization from the final HL-LHC scheme.
-The bar-MCP histogram remains as an intermediate check. The bar-to-bar
-histogram replaces the generic concluding slide, immediately before references.
+Threshold-separated bar-to-bar histograms and a width-versus-threshold summary
+now end the narrative, immediately before references.
 There are still ten content slides and one reference slide.
 
-The new final result is the saved 8,737-event comparison, 161.7 to 141.8 ps
-fitted width (12.3% reduction), not a refit or a single-bar resolution claim.
-The conditional interval, in-sample scope, asymmetry and fit-window dependence
-remain explicit. Note 2 and the full original notes are unchanged in content.
+The former 8,737-event, 141.8 ps mixed-threshold result is superseded. Each of
+six thresholds now has independent four-channel fits and same-event validation;
+8,672 selected events are distributed across the six settings. Corrected widths
+range from 62.1 to 69.4 ps. No combined event histogram or per-setting alignment
+is used. The optional event-weighted RMS of fitted widths (65.7 ps after
+correction) is saved as a descriptive summary, not an operating-point resolution.
+Slide 8 now uses the lowest-threshold bar-8 profiles rather than mixed-threshold
+bar-7/bar-8 examples; slides 9 and 10 show the six timing comparisons and their
+width summary. Fixed-calibration intervals and in-sample limitations remain
+explicit. Note 2 and the full original notes are unchanged in content.

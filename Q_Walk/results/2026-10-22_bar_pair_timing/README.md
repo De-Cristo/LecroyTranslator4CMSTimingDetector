@@ -1,5 +1,11 @@
 # Same-event bar-to-bar walk-correction validation
 
+**Superseded as a resolution result:** this sample mixes six first-threshold
+settings. Their displaced timing means broaden the combined distribution.
+Use `../2026-10-22_bar_pair_by_threshold/` for independently selected, calibrated
+and fitted operating points. The original numerical artifacts below are kept
+unchanged for traceability, not as a fixed-operating-point resolution.
+
 22 October 2026. Separate diagnostic result; no note slides or prior calibration
 files changed. Use `bar_pair_before_after.pdf` for the histogram and
 `charge_dependence.pdf` for the four charge profiles. PNG versions are included.

@@ -1,0 +1,30 @@
+{
+  "before": {
+    "width_rms_ps": 98.45940384451228,
+    "interval": {
+      "p16": 97.6225326132753,
+      "p84": 99.47902286945857,
+      "std_ps": 0.9587514092773362,
+      "successful": 400
+    }
+  },
+  "after": {
+    "width_rms_ps": 65.70792821275724,
+    "interval": {
+      "p16": 65.0584116082366,
+      "p84": 66.26222652278294,
+      "std_ps": 0.590980923058728,
+      "successful": 400
+    }
+  },
+  "definition": "sqrt(sum((N_k-1)*sigma_k^2)/sum(N_k-1)); descriptive within-setting RMS, not a common operating-point resolution",
+  "weights": [
+    0.16847449803831063,
+    0.1594738056773598,
+    0.17459035310408494,
+    0.15878144472651742,
+    0.1622432494807293,
+    0.17643664897299793
+  ],
+  "uncertainty": "Independent per-setting block-bootstrap replicas combined with fixed event weights; selection/calibration fixed. No calibration/systematic uncertainty."
+}
