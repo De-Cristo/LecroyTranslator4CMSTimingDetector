@@ -47,12 +47,14 @@ changes. Do not delete unrelated files while synchronizing.
 
 Use the shared `RepoFile` LaTeX helper for direct implementation-script citations.
 It links to GitHub at `AnalysisRevision`, not to a moving branch or a local
-path. The displayed reference slide identifies the pinned revision. Before
+path. The URL identifies the pinned revision. Before
 changing that revision, check all linked targets and verify cited script bytes
 against both the working analysis files and the committed Git objects. Push
 code changes before pointing the note at a new code revision. A later note-only
 commit need not change this pin if the cited code is unchanged. Do not include
 directory links or results-folder names in rendered notes or captions.
+The original manuscripts' bibliographic entries citing the GitHub repository
+itself are retained; they do not replace direct, pinned implementation links.
 
 After compiling, check PDF citations and matching committed/local script bytes:
 `python DPS_NOTES/review_2026-10-22_publication/verify_repository_links.py --repository /path/to/LecroyTranslator4CMSTimingDetector`.

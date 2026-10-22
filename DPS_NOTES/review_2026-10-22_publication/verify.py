@@ -23,10 +23,12 @@ def main():
         note = DPS / name
         source = (note / "main.tex").read_text()
         references = (note / "references.tex").read_text()
-        assert references == (DPS / "draft_support/references.tex").read_text()
         cited = {key for group in re.findall(r"\\cite\{([^}]+)\}", source)
                  for key in group.split(",")}
-        assert cited == set(re.findall(r"\\bibitem\{([^}]+)\}", references))
+        entries = re.findall(r"\\bibitem\[(\d+)\]\{([^}]+)\}", references)
+        count = 8 if name == "note1_mcp_reference" else 12
+        assert [int(number) for number, _ in entries] == list(range(1, count + 1))
+        assert cited <= {key for _, key in entries}
         review = PdfReader(note / "slides.pdf")
         candidate = PdfReader(note / "publication_candidate_slides.pdf")
         review_text = "\n".join(map(text, review.pages))
@@ -35,7 +37,8 @@ def main():
         assert preamble == (DPS / "draft_support/slides_preamble.tex").read_text()
         repo = re.search(r"\\newcommand\{\\AnalysisRepo\}\{([^}]+)\}", preamble).group(1)
         revision = re.search(r"\\newcommand\{\\AnalysisRevision\}\{([0-9a-f]{40})\}", preamble).group(1)
-        expected_links = set()
+        # The original bibliography also cites the repository itself.
+        expected_links = {repo}
         assert r"\RepoDir" not in source
         for path in re.findall(r"\\RepoFile\{([^}]+)\}", source):
             path = path.replace(r"\#", "#")
@@ -44,12 +47,11 @@ def main():
             urls = {str(a.get_object().get("/A", {}).get("/URI", ""))
                     for page in deck.pages for a in page.get("/Annots", [])}
             assert {u for u in urls if u.startswith(repo)} == expected_links
-            assert f"fixed code revision {revision[:7]}" in " ".join(content.split())
             for local_path in ("FEBD_Sync/", "TimeCalibration/", "Q_Walk/", "DPS_NOTES/",
                                "/afs/", "repository-relative", "CMS-Note/cmsnote",
                                "2026-10-22_clock_quality"):
                 assert local_path not in content
-        assert "Review queue before publication" in review_text
+        assert ("Review queue before publication" in review_text) == (name == "note2_dual_threshold")
         assert "Review queue before publication" not in candidate_text
         assert "not approved for public release" in text(candidate.pages[0])
         for index in (0, 1):
@@ -71,7 +73,10 @@ def main():
                 assert "Same core-fit definition as the end difference" not in content
             assert "Backup: comparing clock estimators" in review_text
             assert "Backup: comparing clock estimators" not in candidate_text
-            assert "Backup: residual segment offsets" in candidate_text
+            assert "Backup: residual segment offsets" not in candidate_text
+            assert "Backup: residual segment offsets" not in review_text
+            assert "Backup: historical end-difference illustration" not in review_text
+            assert "Backup: historical bar" not in review_text
         else:
             assert "N2-1" not in review_text and "N2-1" not in candidate_text
             assert "same nominal detector setup" in candidate_text
@@ -156,6 +161,7 @@ def main():
                              candidate_slides=len(candidate.pages),
                              candidate_with_cover_pages=len(packaged.pages),
                              citations=sorted(cited), source_bundle_checked=True,
+                             original_bibliography_entries=count,
                              github_revision=revision, github_links_checked=len(expected_links),
                              layout_overflow=0, unresolved_citations=0)
     combined = DPS / "both_notes_review_v1.pdf"

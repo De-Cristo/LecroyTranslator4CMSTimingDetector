@@ -14,7 +14,7 @@ can also be recorded by the scope.
 
 The highlighted lower readout path is used for the reference-bar calibration.
 }{Legacy setup illustration. Detector/readout context:
-Refs.~\cite{MTDTDR,TOFHIR2}; run-specific setup from this study.}
+Ref.~\cite{MTDTDR}; run-specific setup from this study.}
 
 \FigureSlide{Reconstructing the MCP pulse time}{mcp_waveform}{
 An example Hamamatsu MCP waveform is shown with its fitted pulse template.
@@ -280,7 +280,7 @@ The core width changes from \RBefore{} to \RAfter\,ps.
 The corrected full-sample SD is \RSD\,ps; \RTail\% lie outside the fit window.
 
 The conditional 16--84\% interval is [\RLow, \RHigh]\,ps
-(400 file/segment-block bootstraps, fixed calibrations)~\cite{Bootstrap}.
+(400 file/segment-block bootstraps, fixed calibrations).
 Includes detector, MCP and residual clock contributions.
 }{Truncated-normal fit: median $\pm2.5(1.4826\,\mathrm{MAD})$.
 Median-centered display; full-sample SD; no segment-wise recentering.}
@@ -330,54 +330,6 @@ not an intrinsic-resolution measurement or a complete uncertainty budget.
 \input{references.tex}
 
 \ifdefined\PublicationCandidate\else
-\begin{frame}{Review queue before publication}
-\footnotesize
-\begin{tabular}{l>{\raggedright\arraybackslash}p{11cm}}
-\toprule
-ID & Decision or missing evidence\\
-\midrule
-N1-6 & Local citations and candidate packaging checked; conveners must confirm template, DP metadata and cover handling.\\
-\bottomrule
-\end{tabular}\par
-\medskip
-Sources: the supplied original manuscript and the calibration tables used in this study.
-\par\smallskip
-The figure manifest records the exact copied inputs and checksums.
-This review slide is removed from a public release.
-\end{frame}
-\fi
-
-\FigureSlide{Backup: residual segment offsets}{validated_segment_stability}{
-Points show median end differences ($D$) and bar-minus-MCP differences ($R$)
-for groups containing at least 30 selected events.
-
-Clock-quality selection removes gross reconstruction failures, but smaller
-group offsets remain. They contribute to the aggregate timing distribution.
-
-The main timing figures do not subtract these medians. Their effect must
-be understood before extracting a synchronization contribution.
-}{Group medians are descriptive point estimates, not independent resolution
-measurements. Identifiers and event counts accompany the numerical data.}
-
-\ifdefined\PublicationCandidate\else
-\FigureSlide{Backup: historical end-difference illustration}{bar_end_difference}{
-This archived figure displays a width of 52.87\,ps. Its exact event sample,
-histogram inputs and fit definition have not been recovered.
-
-It is retained only to identify the historical result. The reproducible
-clock-qualified before/after comparison replaces it in the main result.
-No intrinsic 26\,ps bar-resolution claim is made from this image.
-}{Historical illustration, not the current calibration result.}
-
-\FigureSlide{Backup: historical bar--MCP illustration}{bar_mcp_difference}{
-The archived panel reports 46.8\,ps. Whether this denotes a fitted core width
-or a sample RMS, and the original selection, have not been established.
-
-It is not combined with the current end-difference result. The new
-bar--MCP plot specifies its common event sample, core fit, full-sample SD
-and conditional statistical interval.
-}{Historical illustration; not independently reproduced by the documented full-run pipeline.}
-
 \FigureSlide{Backup: clock-phase reconstruction}{clock_edges}{
 The reference clock is sampled by the oscilloscope. Several rising-edge
 crossings can be reconstructed within a waveform.

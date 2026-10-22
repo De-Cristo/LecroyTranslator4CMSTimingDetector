@@ -2,40 +2,39 @@
   "status": "passed",
   "notes": {
     "note1_mcp_reference": {
-      "review_slides": 31,
+      "review_slides": 28,
       "candidate_slides": 26,
       "candidate_with_cover_pages": 27,
       "citations": [
-        "Bootstrap",
         "LOWESS",
-        "MTDTDR",
-        "TOFHIR2"
+        "MTDTDR"
       ],
       "source_bundle_checked": true,
+      "original_bibliography_entries": 8,
       "github_revision": "45a907c422d6c8afbe0cdf44cd2827d3433d0f97",
-      "github_links_checked": 8,
+      "github_links_checked": 9,
       "layout_overflow": 0,
       "unresolved_citations": 0
     },
     "note2_dual_threshold": {
-      "review_slides": 29,
-      "candidate_slides": 28,
-      "candidate_with_cover_pages": 29,
+      "review_slides": 30,
+      "candidate_slides": 29,
+      "candidate_with_cover_pages": 30,
       "citations": [
-        "Bootstrap",
         "LOWESS",
         "MTDTDR",
         "TOFHIR2"
       ],
       "source_bundle_checked": true,
+      "original_bibliography_entries": 12,
       "github_revision": "45a907c422d6c8afbe0cdf44cd2827d3433d0f97",
-      "github_links_checked": 2,
+      "github_links_checked": 3,
       "layout_overflow": 0,
       "unresolved_citations": 0
     }
   },
-  "combined_pages": 62,
-  "combined_sha256": "1521e7430c781213bcc2d46bb20a3908e018a2002af95eb60767153975efb217",
+  "combined_pages": 60,
+  "combined_sha256": "819d178e56039b9f06e3db28502657402668c146a38b6dae64e05fea51108a39",
   "review_status": "N1-6 local work complete; convener template, DP metadata, cover handling and release approval pending",
   "note2_review_status": "All current Note2 review items closed within documented scope. N2-3/N2-4 temporarily closed by author for exploratory linear model and conditional statistics with separate weighting sensitivity; permanent limitations retained, not precision-model validation or a total error budget. Next pass is page by page; numerical results unchanged.",
   "analysis_tests": "previous clock-quality tests reused; N2-2 ROOT replay and 17 focused tests documented in review_2026-10-22_n2_2/README.md; frozen numerical results unchanged"

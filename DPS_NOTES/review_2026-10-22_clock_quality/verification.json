@@ -3,12 +3,12 @@
   "reference_channels": 22,
   "overlap_fits": 21,
   "bar8_events": 10127,
-  "combined_pages": 62,
+  "combined_pages": 60,
   "builds": {
     "note1_mcp_reference": {
-      "slides": 31,
+      "slides": 28,
       "cover_pages": 1,
-      "combined_pages": 32,
+      "combined_pages": 29,
       "labelled_figures": 21,
       "overfull_boxes": 0,
       "preview_sheets": [
@@ -16,15 +16,14 @@
         "preview/contact_sheet_2.png",
         "preview/contact_sheet_3.png",
         "preview/contact_sheet_4.png",
-        "preview/contact_sheet_5.png",
-        "preview/contact_sheet_6.png"
+        "preview/contact_sheet_5.png"
       ],
       "status": "internal review draft"
     },
     "note2_dual_threshold": {
-      "slides": 29,
+      "slides": 30,
       "cover_pages": 1,
-      "combined_pages": 30,
+      "combined_pages": 31,
       "labelled_figures": 13,
       "overfull_boxes": 0,
       "preview_sheets": [
@@ -37,8 +36,8 @@
       "status": "internal review draft"
     }
   },
-  "combined_sha256": "1521e7430c781213bcc2d46bb20a3908e018a2002af95eb60767153975efb217",
+  "combined_sha256": "819d178e56039b9f06e3db28502657402668c146a38b6dae64e05fea51108a39",
   "test_results": "140 focused tests and 25 integration tests passed; 1 optional integration test skipped",
   "review_status": "N1-5 closed by author for conditional timing-validation scope; intrinsic bar resolution and synchronization-jitter extraction excluded",
-  "latest_packaging_check": "Direct commit-pinned GitHub script citations replace local code paths; directory/result-folder citations removed. Note1 end-difference slide removed at author request; retained MCP slide is self-contained. Figures, numerical macros, manifests and title/abstract metadata unchanged. Prior numerical checks reused; both note versions rebuilt."
+  "latest_packaging_check": "Original per-note bibliographies and A4 cover abstracts restored; slide abstracts unchanged. Note1 review queue, residual-segment-offset backup and two historical timing illustrations removed by author. Fits and figures unchanged; previous numerical checks reused."
 }

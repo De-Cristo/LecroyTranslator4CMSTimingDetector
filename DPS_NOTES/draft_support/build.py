@@ -28,7 +28,7 @@ def run(command, cwd):
 def build(note):
     out = note / "build"
     out.mkdir(exist_ok=True)
-    for filename in ("slides_preamble.tex", "cover.tex", "references.tex"):
+    for filename in ("slides_preamble.tex", "cover.tex"):
         shutil.copy2(DPS / "draft_support" / filename, note / filename)
     for stem in ("main", "cover"):
         for _ in range(2):
@@ -114,7 +114,7 @@ def build_candidate(note):
         forbidden = ("Backup: comparing clock estimators", "Backup: clock-phase reconstruction",
                      "Backup: historical end-difference", "Backup: historical bar")
         assert not any(title in text for title in forbidden for text in texts)
-        assert any("Backup: residual segment offsets" in text for text in texts)
+        assert not any("Backup: residual segment offsets" in text for text in texts)
     # An optional local cover preview is separate from the slides-only deliverable.
     writer = PdfWriter()
     for path in (note / "cover.pdf", slides_path):

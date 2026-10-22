@@ -135,8 +135,7 @@ Intrinsic-resolution and synchronization-jitter extraction are outside scope;
 the existing position, covariance, segment-offset and calibration-systematic
 limitations remain explicit. This closure changes no numerical results.
 
-N1-6 local update: both notes now cite verified primary sources for the detector,
-readout, LOWESS and the bootstrap principle. Each has separate unapproved
+N1-6 local update: each note has separate unapproved
 publication-candidate PDFs, with and without the optional local A4 cover.
 The Note1 candidate excludes the four unvalidated historical timing/clock
 backups, including the clock-estimator comparison; full internal review decks
@@ -171,8 +170,8 @@ changes. `figure_manifest.json` records source paths, copies and SHA-256 hashes;
 numerical sources are retained under `data/`.
 
 Add `--candidates` to build the separately numbered publication-candidate
-variants. `references.tex` is copied from `draft_support/` into each note; both
-builds reject unresolved LaTeX citations. The combined review PDF is not a
+variants. Each note owns its `references.tex`; both builds reject unresolved
+LaTeX citations. The combined review PDF is not a
 submission package. Candidate PDF hashes and pending approval status are in
 each note's `candidate_report.json`.
 
@@ -181,3 +180,28 @@ synchronization and the authorized commit/push are a separate step after each
 accepted review point. This is not authorization to submit an official CMS note.
 Source archives can compile on their own using
 `pdflatex main.tex` twice and `pdflatex cover.tex`.
+
+## Original abstracts and bibliographies restored (22 October 2026)
+
+At the author's request, the A4 cover abstracts now reproduce the supplied
+`Note1.pdf` and `Note2.pdf` abstracts. `DPCoverAbstract` is separate from
+`DPAbstract`; the slide abstracts remain unchanged. The shortened titles and
+all previously agreed scientific qualifications in the slides are retained.
+The original abstract claims are restored verbatim, not newly validated here.
+
+The bibliographies now reproduce the originals' entries and order: 8 for Note1
+and 12 for Note2, each split across two slides. Typography and line wrapping
+are adapted to the slide format. Added bibliography entries absent from the
+originals were removed, with dependent inline citations adjusted. Original
+GitHub repository citations are retained alongside the direct pinned script
+links used elsewhere. No data, fitted values or plotted results changed.
+
+The author also removed Note1's "Review queue before publication" slide
+(27/32 before removal). Pending template, DP metadata and CMS approval matters
+remain tracked in the publication checklist; removing the slide does not close them.
+The "Backup: residual segment offsets" slide (28/32 in the same version)
+was also removed from both Note1 variants. Its underlying saved data are retained.
+The "Backup: historical end-difference illustration" slide (29/32) was removed
+from the review deck as well; it was already excluded from the candidate.
+The "Backup: historical bar--MCP illustration" slide (30/32) was likewise
+removed from the review deck. The validated main MCP result is retained.

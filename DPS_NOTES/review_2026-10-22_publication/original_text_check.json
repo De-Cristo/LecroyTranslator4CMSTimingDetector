@@ -1,0 +1,16 @@
+{
+  "note1_mcp_reference": {
+    "source_pdf_sha256": "efff65824cd9f580fa6faea3eb8bce955880c70083359701c0f2ee14a171a9ab",
+    "cover_abstract_matches_original": true,
+    "bibliography_matches_original": true,
+    "slide_abstract_unchanged": true,
+    "normalization": "Whitespace, line-wrap hyphenation, quotation typography and visually checked original PDF font-map defects only"
+  },
+  "note2_dual_threshold": {
+    "source_pdf_sha256": "38246c918948385bc5bedc75d92c9fad4b12f99406ece732dae029a14ae33f95",
+    "cover_abstract_matches_original": true,
+    "bibliography_matches_original": true,
+    "slide_abstract_unchanged": true,
+    "normalization": "Whitespace, line-wrap hyphenation, quotation typography and visually checked original PDF font-map defects only"
+  }
+}
