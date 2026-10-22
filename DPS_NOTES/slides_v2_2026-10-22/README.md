@@ -3,15 +3,16 @@
 Two notes: Note 1 has nine content slides and Note 2 has ten, each followed by one compact reference slide,
 with no A4 cover pages. These are separate from the full
 notes, which remain unchanged. Each deck retains the CMS/contact title slide,
-a purpose slide (Note 1) or short abstract (Note 2) on slide 2, labelled plots,
+a purpose slide on slide 2, labelled plots,
 and concise procedural captions.
 The titles follow the author's wording, including TOFHIR2C in Note 2.
 
 - `note1_mcp_reference/slides.pdf`: synchronize MCP/FEBd records, construct
   the reference time, fit inverse-charge profiles, and check timing correction.
-- `note2_dual_threshold/slides.pdf`: measure the slope proxy, select/profile
-  hits, construct the inverse-slope correction, calibrate AWC against MCP,
-  and summarize channel dependence and limitations.
+- `note2_dual_threshold/slides.pdf`: motivate rapid calibration, measure the
+  internal charge-to-slope mapping, benchmark the single-amplitude walk form,
+  and explore AWC prediction from internal observables. One backup slide
+  combines the physical predictor and its excluded-bar test.
 - `both_notes_slides_v2.pdf`: both decks, 21 landscape pages, no covers.
 
 Each final reference slide uses two columns and preserves the original
@@ -60,4 +61,36 @@ Slide 8 now uses the lowest-threshold bar-8 profiles rather than mixed-threshold
 bar-7/bar-8 examples; slide 9 shows the six timing comparisons with a compact
 width-range summary. In-sample and single-bar-resolution limitations remain
 explicit; bootstrap intervals are retained in the saved analysis outputs.
-Note 2 and the full original notes are unchanged in content.
+The full original notes are unchanged in content.
+
+## Note 2 structure review
+
+The short deck follows the authors' eight-point narrative. The goal is a
+repeatable internal-data calibration, not a catalogue of MCP-fitted amplitudes.
+Slides 2--6 cover the HL-LHC calibration need, variation of the original
+quadratic coefficients, the dual-threshold physical model, internal slope
+profiles and the one-amplitude inverse-slope correction. Slide 7 benchmarks
+the functional form with the existing MCP comparison curves. Slide 8 explains
+the proposed internal-data procedure and the independent tests still needed.
+
+Slide 9 ends the main narrative with the original note's final observable,
+AWC versus inverse slope-to-charge coefficient (Figure 6), using the currently
+saved ten-channel figure. It distinguishes an informative trend from a
+validated precision predictor. The original Figure 6 caption incorrectly
+describes the points as charge-bin means: here they are explicitly channels,
+with slope-only conditional AWC bootstrap intervals.
+
+Slide 10 is the only backup. It combines the median-charge candidate
+`A = K S(Q*)^2 / (c1 Q*)` with the saved leave-one-bar-out comparison:
+3.22 uA RMS AWC error, 14.1% RMS fractional error, ten channels and six bars.
+These are the same frozen clock-quality results used in the full note's
+backup, not new fits. Learning K uses reference-calibrated training bars;
+prediction inputs for an excluded bar are internal. Transfer to other
+configurations and full predictive uncertainty still need validation.
+Slide 11 retains the original compact bibliography.
+
+The original four-channel coefficient table is retained as historical context
+from Table 1 of the supplied detector note and `Q_Walk/empirical_walk_models.md`;
+it is not presented as the input to the current comparison curves. The latter
+retain their existing provenance. Note 1, cover abstracts, full notes and all
+numerical analysis results are unchanged by this narrative update.

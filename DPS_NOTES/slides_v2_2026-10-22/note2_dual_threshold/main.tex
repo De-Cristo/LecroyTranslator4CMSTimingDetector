@@ -2,150 +2,166 @@
 \begin{document}
 \TitleSlide
 
-\begin{frame}{Abstract}
+\begin{frame}{Purpose: rapid, repeatable walk calibration at HL-LHC}
 \large
-Two discriminator thresholds measure a finite-interval slope on the pulse's
-leading edge. A linear fit describes the mean slope as a function of charge.
-Its inverse provides a time-walk model with one amplitude, AWC, per channel.
+BTL needs frequent recalibration as detector response evolves.
+For about 330\,000 channels, a consistent physical parametrization matters.
 \medskip
 
-This study measures slopes in run 4076 and determines AWC by comparison with
-independent MCP calibration curves from run 4399. The fit uses only charge
-intervals populated in both runs.
+\textbf{Goal:} predict each channel's walk correction from simple internal
+charge and dual-threshold measurements, without a dedicated $t_0$ reference
+for every calibration.
 \medskip
 
-The comparison tests calibration shapes, not corrected-event timing resolution.
-The present AWC calibration still needs the MCP reference; reference-free
-determination remains a future step.
+\normalsize
+TOFHIR2C measures the leading-edge slope. This gives a common correction
+form and internal observables with which to predict its amplitude, AWC.
+The MCP study benchmarks this approach; transfer to new data and operating
+conditions is the next test.
+\Source{BTL and TOFHIR2C: Refs.~\cite{MTDTDR,TOFHIR2}; dual-threshold motivation and bench study: Ref.~\cite{DualThreshold}.}
 \end{frame}
 
-\begin{frame}{Two thresholds measure how fast the pulse rises}
-\large
-\textbf{Problem:} a fixed threshold gives an amplitude-dependent timestamp.
-A steeper leading edge generally crosses the threshold earlier.
-\medskip
+\begin{frame}{Charge-based calibration works, but its coefficients vary}
+\normalsize
+The MCP reference note obtains good walk descriptions with a quadratic in
+inverse charge~\cite{ReferenceNote}:
+\[
+W_i(Q)=a_i+b_i/Q+c_i/Q^2.
+\]
+\centering
+\small
+\begin{tabular}{rrrrr}
+\toprule
+Bar & Channel & $a_i$ [ns] & $b_i$ [ns ADC] & $c_i$ [ns ADC$^2$]\\
+\midrule
+7 & 133 & 0.0796 & 238.3 & $-2.156\times10^4$\\
+7 & 154 & $-0.5155$ & 422.6 & $-5.583\times10^4$\\
+8 & 137 & 0.1218 & 198.5 & $-1.523\times10^4$\\
+8 & 150 & $-0.2292$ & 388.9 & $-5.132\times10^4$\\
+\bottomrule
+\end{tabular}
+\par\raggedright
+\normalsize
+The shape coefficients vary substantially even among four channels.
+Use pulse slope to seek a more consistent physical description.
+\Source{Original reference coefficients, also reproduced in Table 1 of the detector note.
+$Q$ is the ADC charge proxy; $a_i$ includes an arbitrary timing offset.
+Coefficient variation alone is not a measure of calibration precision.}
+\end{frame}
+
+\begin{frame}{TOFHIR2C measures the leading-edge slope with two thresholds}
+\normalsize
+Larger pulses cross a fixed threshold earlier: the timestamp depends on amplitude.
+Two thresholds also measure how fast the pulse rises~\cite{TOFHIR2,DualThreshold}.
 \[
 I_1<I_2,\qquad t_1<t_2,\qquad
 S=\frac{I_2-I_1}{t_2-t_1}\quad[\mu\mathrm{A/ns}].
 \]
-\normalsize
-\begin{enumerate}
-\item Reconstruct both threshold-crossing times with consistent coarse and fine timing.
-\item Divide the threshold-current separation by the crossing-time separation.
-\item Use charge $Q$ to describe the mean slope for each channel.
-\end{enumerate}
-$S$ is a finite-interval proxy, not the instantaneous derivative or the current difference itself.
-\Source{Run 4076 uses $\Delta I=7.8125\,\mu$A from the implemented threshold conversion.
+Locally, an approximately linear leading edge gives
+\[
+\Delta t\simeq\frac{\Delta I}{S}.
+\]
+\textbf{Physical model:} describe amplitude walk with an inverse slope,
+rather than an independent polynomial shape for every channel.
+\Source{$S$ is a finite-interval slope proxy, not the instantaneous derivative.
+Run 4076 uses $\Delta I=7.8125\,\mu$A from the implemented threshold conversion.
+The fitted AWC need not equal this threshold separation.
 \Code{Q_Walk/qwalk_core.py}{GitHub: timing and threshold reconstruction}.}
 \end{frame}
 
-\PlotSlide{1. Select the prompt population and the charge peak region}{q_spectra_ch137}{
-\begin{enumerate}
-\item Require one hit per target-bar end; no other hit in that module.
-\item Leave the other module unconstrained; ignore channel 192.
-\item Require finite $Q,S$, positive threshold and time separations, and the same coarse bin.
-\item Keep $Q\geq Q_{\rm left}$.
-\end{enumerate}
-}{Channel 137: lines show quality-selected charge spectra; shading adds the charge selection.
-$Q_{\rm left}$ is the smoothed histogram's left half-height boundary, not a Landau-fit boundary.
-Run 4076 starts at about 184.9 ADC; no extra upper-charge or 100\,ps minimum-rise cut is applied.}
+\PlotSlide{Measure the charge-to-slope mapping using internal hits}{slope_ch137}{
+Select both ends of one bar; leave the other module unconstrained.
 
-\PlotSlide{2. Fit the mean slope as a function of charge}{slope_ch137}{
-Group the selected run-4076 hits into ten charge bins.
+Use physical threshold crossings and the peak-right charge region.
 
-Fit profile means with SEM weights:
+Fit ten profile means with SEM weights:
 \[
-\overline S(Q)=c_0+c_1Q.
+\overline S_i(Q)=c_{0,i}+c_{1,i}Q.
 \]
-Use all selected hits, without a training/test split.
+No MCP time enters this fit.
+}{Channel 137, run 4076: 19\,126 selected hits. Points are mean slopes; bars show hit SD, not uncertainty on the mean.
+The band is the conditional 68\% interval from 1000 hit-bootstrap refits with fixed bins.
+The profile averages the noisy single-hit slope measurements.}
 
-Resample hits and refit 1000 times with fixed bin edges.
-}{Channel 137 has 19\,126 selected hits. Points show mean slope; bars show the hit standard deviation (SD).
-SEM is the standard error of the mean. The band is the conditional 68\% bootstrap interval of the fitted mean.
-Linearity remains a working approximation.}
-
-\begin{frame}{3. Convert the fitted slope into a walk correction}
+\begin{frame}{One amplitude describes walk once the slope is calibrated}
 \large
 \[
-W_Q(Q)=\frac{A}{c_0+c_1Q},\qquad
-t_{\rm corr}=t_{\rm measured}-W_Q(Q).
+W_i(Q)=\frac{A_i}{c_{0,i}+c_{1,i}Q},\qquad
+t_{\rm corr}=t_{\rm measured}-W_i(Q).
 \]
+\normalsize
 \begin{itemize}
-\item $A$ is AWC, a current amplitude in $\mu$A.
-\item $A$ is constant for one channel and operating configuration.
-\item The correction changes event by event through $Q$.
+\item Internal hits determine $c_{0,i}$ and $c_{1,i}$, the charge-to-slope mapping.
+\item One amplitude $A_i$ (AWC, in $\mu$A) then sets the walk magnitude.
+\item AWC is constant per channel and configuration; the correction varies with $Q$.
+\item Channel timing offsets are a separate calibration.
 \end{itemize}
 \medskip
-\normalsize
-The slope fit determines the charge dependence, but does not determine AWC.
-The present calibration obtains AWC from an external MCP reference.
-Use the model only over its calibrated charge range with a positive slope denominator.
-\Source{The model concerns the mean pulse slope. Its band is not a single-hit timing uncertainty.}
+\textbf{The remaining task is to predict AWC from internal observables.}
+Use the MCP-calibrated channels to develop and test that prediction.
+\Source{Apply the model within its calibrated charge range, with $c_{0,i}+c_{1,i}Q>0$.
+The slope fit alone does not fix AWC. The common functional form follows the dual-threshold model in Ref.~\cite{DualThreshold}.}
 \end{frame}
 
-\PlotSlide{4. Determine AWC where both runs have measured charge support}{comparison_ch137}{
-\textbf{Run 4076:} slope model.
-
-\textbf{Run 4399:} MCP quadratic
-$W_{\rm MCP}=a+b/Q+c/Q^2$.
-
-Fit $A$ and a free offset $B$ to match
-\[
-\frac{A}{c_0+c_1Q}+B
-\]
-to the MCP curve.
-
-Use a uniform charge grid within their populated overlap only.
-}{Channel 137: black = MCP reference; red = fitted slope model. The runs contain different events and assume the same nominal setup.
-AWC = \ExampleAWC\,$\mu$A. The lower panel shows model differences, not event times; RMS mismatch = \ExampleRMS\,ps.}
-
-\begin{frame}[t]{Apply the same comparison to both detector modules}
+\begin{frame}[t]{The single-amplitude model closely follows the MCP curves}
 \begin{columns}[T,onlytextwidth]
 \begin{column}{.49\textwidth}
-\centering\textbf{Upstream: channel 154}\par
-\includegraphics[width=\linewidth,height=43mm,keepaspectratio]{figures/comparison_ch154.pdf}
+\centering\textbf{Channel 137}\par
+\includegraphics[width=\linewidth,height=43mm,keepaspectratio]{figures/comparison_ch137.pdf}
 \end{column}
 \begin{column}{.49\textwidth}
-\centering\textbf{Downstream: channel 242}\par
-\includegraphics[width=\linewidth,height=43mm,keepaspectratio]{figures/comparison_ch242.pdf}
+\centering\textbf{Channel 154}\par
+\includegraphics[width=\linewidth,height=43mm,keepaspectratio]{figures/comparison_ch154.pdf}
 \end{column}
 \end{columns}
-\Source{Each fit uses a separate AWC and offset over the measured overlap. Bands propagate run-4076 slope replicas with the MCP curve fixed.
-In run 4399, downstream channels require upstream bar 8 in coincidence. Run 4076 leaves the opposite module unconstrained.
-The opposite module does not supply a timing reference for this fit.}
+\Source{Black: MCP quadratic (run 4399); red: inverse-slope model (run 4076).
+AWC and an offset are fitted over charge intervals populated in both runs, which contain different events.
+Channel 137 has \ExampleRMS\,ps RMS curve mismatch. Lower panels show curve differences, not event resolution.
+Bands propagate slope-fit statistics with the MCP curve fixed. This tests the functional form, before predicting AWC.}
 \end{frame}
 
-\PlotSlide{AWC varies between channels beyond a simple slope-coefficient trend}{awc_summary_selected}{
-Each point represents one of ten selected upstream channels.
-
-Horizontal coordinate: $1/c_1$.
-
-Vertical coordinate: MCP-calibrated AWC.
-
-The fitted line gives
-$\chi^2/\mathrm{ndf}=\SummaryChi/8$.
-
-A straight line does not adequately describe this illustrative subset.
-}{Bars are slope-only 16--84\% bootstrap intervals. The fit treats x as fixed and uses half the AWC interval as its symmetric error.
-Reference errors and correlations are omitted. The ten channels were selected for discussion, not by a derived quality rule.}
-
-\begin{frame}{The slope gives the shape; the present AWC still uses MCP}
-\large
-\begin{enumerate}
-\item Select prompt hits and fit the mean slope versus charge.
-\item Form the inverse-slope walk model.
-\item Fit AWC and an offset to MCP curves within measured overlap.
-\item Apply the charge-dependent correction within the calibrated range.
-\end{enumerate}
+\begin{frame}{Toward calibration from internal data alone}
 \normalsize
-\textbf{Uncertainties:} displayed bands propagate slope-fit statistics with the MCP curve fixed.
-They exclude reference-fit, model, selection and cross-run uncertainties.
+\begin{enumerate}
+\item Accumulate internal hits and fit $\overline S_i(Q)=c_{0,i}+c_{1,i}Q$.
+\item Use the slope coefficients and charge spectrum to predict one AWC per channel.
+\item Construct $W_i(Q)=A_i/\overline S_i(Q)$ and correct each timestamp.
+\end{enumerate}
+\medskip
+\textbf{Present evidence:} internal observables carry information about AWC.
+An exploratory model tested on excluded bars gives a \PredictorFraction\% RMS
+fractional prediction error in ten selected channels (backup).
+\medskip
 
-\textbf{Next step:} validate corrected-event timing and determine AWC from internal information.
-Shape agreement alone does not demonstrate reference-free calibration.
-\Source{The full dual-threshold note includes the additional MCP-covariance and charge-weighting checks.
-\Code{Q_Walk/qwalk_two_hit_pair_profile.py}{GitHub: selection and profiles};
-\Code{Q_Walk/qwalk_t0_data.py}{GitHub: MCP reference sample}.}
+\textbf{Next:} freeze the predictor and test additional channels, independent
+runs and operating conditions; assess the corrected timing resolution.
+Cosmic-ray data are a possible calibration source to investigate.
+\Source{Model development uses MCP-derived AWC targets. Once trained, prediction inputs are internal;
+portability of the learned relation is not yet established. The current test is not a universal precision guarantee.}
 \end{frame}
+
+\begin{frame}[t]{Final result: internal slope information constrains AWC}
+\centering
+\includegraphics[width=\linewidth,height=48mm,keepaspectratio]{figures/awc_summary_selected.pdf}
+\par\raggedright
+\Source{The final observable of the original detector note: AWC versus $1/c_1$, the inverse slope-to-charge coefficient.
+Each point is one channel, not a charge bin. AWC is benchmarked against MCP; $c_1$ uses internal hits.
+The ten-channel trend motivates prediction, but the line is not a precision calibration ($\chi^2/\mathrm{ndf}=\SummaryChi/8$).
+Bars: slope-only 16--84\% bootstrap intervals; reference errors and correlations are omitted. More independent data are needed.}
+\end{frame}
+
+\PlotSlide{Backup: a physics-motivated predictor tested on excluded bars}{internal_predictor}{
+Assume a shared local derivative $K\simeq-dW/d\ln Q$ at $Q_*$:
+\[
+A_i=K\,\frac{\overline S_i(Q_*)^2}{c_{1,i}Q_*}.
+\]
+$Q_*$: selected-charge median per channel.
+
+Learn $K$ from other bars; predict the excluded bar.
+
+RMS error: \PredictorRMSE\,$\mu$A; fractional RMS: \PredictorFraction\%.
+}{Ten upstream channels, six held-out bars. Learn $K$ from other bars' MCP-calibrated AWC; predict with internal observables.
+Horizontal bars: reference-AWC intervals, not prediction errors. Input--target correlations and full prediction uncertainties are unpropagated;
+transfer needs independent tests.}
 \input{references.tex}
 \end{document}

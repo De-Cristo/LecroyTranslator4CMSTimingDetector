@@ -25,16 +25,16 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "Final six-panel timing result inspected at slide 9/10; no overflow. First eight Note 1 pages unchanged except page-count footers; Note 2 PDF text unchanged.",
+  "visual_review": "All Note 2 slides inspected in rendered contact sheets. No layout overflow or unresolved citations. Note 1 PDF text and full original notes unchanged.",
   "scientific_inputs": "Twenty-four newly fitted per-threshold channel corrections, six independent validation samples. Final histograms checked against the threshold reports. No pooled threshold timing distribution.",
-  "combined_sha256": "660e8b8cd2e0b2c5680c96545df0a16a5e7c556dafc4756efef05d8862e57f03",
+  "combined_sha256": "ba71a8a35505871d0118069461a76c49b7161c7b424e180b18e128c941fb5880",
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 8,
     "note2": 12
   },
-  "note2_slide_content_unchanged": true,
-  "structure_review": "One final threshold-separated bar-pair timing result on slide 9, followed by references on slide 10. MCP-check slide absent; separate width-summary slide removed. No scientific inputs changed.",
+  "note2_slide_content_unchanged": false,
+  "structure_review": "Note 1 ends with threshold-separated pair timing. Note 2 follows the authors eight-point internal-calibration narrative: final AWC versus 1/c1 result on slide 9, one predictor backup on slide 10, references on slide 11.",
   "bar_pair_validation": "Q_Walk/results/2026-10-22_bar_pair_by_threshold/verification.json",
   "threshold_settings": 6,
   "threshold_channel_fits": 24,
@@ -46,5 +46,40 @@
   "content_slides": {
     "note1": 9,
     "note2": 10
+  },
+  "note1_slide_content_unchanged": true,
+  "note2_internal_prediction_review": {
+    "no_refitting": true,
+    "backup_slides": 1,
+    "final_main_result_slide": 9,
+    "original_final_observable": "Figure 6: AWC versus inverse slope-to-charge coefficient; existing ten-channel redraw retained",
+    "historical_coefficient_table_source": "Q_Walk/empirical_walk_models.md; supplied Note2.pdf Table 1",
+    "predictor_source": "Q_Walk/results/2026-10-22_clock_quality/physical_candidate_quick_test",
+    "predictor_channels": 10,
+    "held_out_bar_groups": 6,
+    "awc_rmse_ua": 3.2160786110095962,
+    "fractional_rmse": 0.14121008611047828,
+    "prediction_table_and_model_formula_verified": true,
+    "reference_training_and_transfer_limitations_explicit": true,
+    "original_bibliography_preserved": true,
+    "all_figure_sources_hash_checked": true,
+    "cited_code_matches_pinned_commit_and_local_checkout": true,
+    "authors_outline_slides": {
+      "1_rapid_frequent_calibration": 2,
+      "2_consistent_330k_channel_model": 2,
+      "3_quadratic_reference": 3,
+      "4_channel_variation": 3,
+      "5_threshold_slope": 4,
+      "6_physical_common_model": [
+        5,
+        6
+      ],
+      "7_internal_prediction": [
+        8,
+        9,
+        10
+      ],
+      "8_agreement_with_reference": 7
+    }
   }
 }

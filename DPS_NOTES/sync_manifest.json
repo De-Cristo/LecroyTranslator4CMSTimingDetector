@@ -2235,22 +2235,22 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/README.md",
-      "sha256": "cd96f1bbb5379e9635b0ad47d7a5639b9917a01bb46c310d7fc9140d551de93e",
-      "bytes": 3686
+      "sha256": "6a1c376cb3084bcaf62cae2e86a24c5c895d006966270e01459f993ce842e719",
+      "bytes": 5654
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/both_notes_slides_v2.pdf",
-      "sha256": "660e8b8cd2e0b2c5680c96545df0a16a5e7c556dafc4756efef05d8862e57f03",
-      "bytes": 2876833
+      "sha256": "ba71a8a35505871d0118069461a76c49b7161c7b424e180b18e128c941fb5880",
+      "bytes": 2754034
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build.py",
-      "sha256": "84b0252c8f80f881487e1a9bfa64be3a9c6d0500c7a55fd29f24f4ae7bcc37df",
-      "bytes": 5700
+      "sha256": "aed89dc00c271bb43efbc2383e4ec61690f80672033e45d743ca318204b7dfe4",
+      "bytes": 5649
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_report.json",
-      "sha256": "70e08cacedf242557be2d3ed54fe6084adcab911a6309e42b91ddb409adae2db",
+      "sha256": "496cd761176eb82ebb472c28513cd572c705170a74da7a07bca2c256824ac972",
       "bytes": 679
     },
     {
@@ -2340,7 +2340,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/slides.pdf",
-      "sha256": "480c32ae13fb1177db8806aee5f6b742291cad91602badfb2afd8b7051c54562",
+      "sha256": "37a92a7813ecb8c6192285f9196ffb6a23949d4c4e4c0b9ea770a1c4de9816a1",
       "bytes": 2100358
     },
     {
@@ -2350,8 +2350,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/asset_manifest.json",
-      "sha256": "800b501d99783ad53fc47edcb04597c5835e1dfdca47a19deba79f772ee1cb01",
-      "bytes": 1585
+      "sha256": "b712f975e189acab188891d912ff6dec705a7a0fc96111bd67d4a07006f92bf7",
+      "bytes": 1390
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/figures/awc_summary_selected.pdf",
@@ -2374,6 +2374,11 @@
       "bytes": 83704
     },
     {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/figures/internal_predictor.pdf",
+      "sha256": "4fd4c3136396eba4a1a3a21fce4db6e502a5894028e5d76385c95a7345292794",
+      "bytes": 23584
+    },
+    {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/figures/q_spectra_ch137.pdf",
       "sha256": "9e5c640d8813a8f728cde965091c7f8addb7f60789f2ef5eda925ad0ee462f52",
       "bytes": 20964
@@ -2385,8 +2390,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/main.tex",
-      "sha256": "8f23e6a9ebce06830bb7542d25c154ce1e3281a9b0aa93c8c99fb876f705be99",
-      "bytes": 6606
+      "sha256": "9ff9efb0b34df7e39da25842f7cd97349cb6f92247a639f924caedddcf5ec18e",
+      "bytes": 7554
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/metadata.tex",
@@ -2405,8 +2410,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/slides.pdf",
-      "sha256": "5203e8b0f58a9102d446d9617bbe460da96475e05fbc565f0ba223cef5c2ea83",
-      "bytes": 705960
+      "sha256": "d34fcdfb45a268057c9028578233ad7d587559ca48e9a11767634e355a270dfc",
+      "bytes": 584270
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/slides_preamble.tex",
@@ -2415,8 +2420,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
-      "sha256": "9a84ffd50e7a82ff0383606b5609c87e7d7e2f508528f0c9cb1f4c09fb729036",
-      "bytes": 2704
+      "sha256": "9cbbe947ef070a084ec9122efbc25080d4d836dd34c8ee477dbe1aa43d467816",
+      "bytes": 4048
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -4590,14 +4595,14 @@
     }
   ],
   "verification": {
-    "file_count": 914,
+    "file_count": 915,
     "all_source_hashes_match": true,
     "combined_pages": 57,
     "focused_tests_passed": 140,
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "Short Note 1 consolidated to one final six-panel threshold-separated timing result (slide 9/10), followed by references. Separate width-summary slide removed; MCP-check slide absent. No fits changed. Full notes and Note 2 unchanged; build and visual checks passed.",
+    "latest_change": "Reframed short Note 2 around rapid internal-data calibration and AWC prediction, following the authors eight-point outline. Final main slide is AWC versus inverse slope coefficient; one backup combines the physical predictor and held-out-bar test (3.22 uA, 14.1% fractional RMS). Existing figures and fits retained. Note 1 and full notes unchanged in content. Rendered slides, citations, frozen inputs and prediction metrics verified.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 26,
@@ -4617,7 +4622,7 @@
     "n2_3_n2_4_closure_changed_files_hash_checked": 17,
     "title_update_changed_files_hash_checked": 17,
     "github_link_verification": "DPS_NOTES/review_2026-10-22_publication/repository_links.json",
-    "latest_changed_files_hash_checked": 9,
+    "latest_changed_files_hash_checked": 10,
     "original_text_verification": "DPS_NOTES/review_2026-10-22_publication/original_text_check.json",
     "language_review_verification": "DPS_NOTES/review_2026-10-22_publication/language_review_verification.json",
     "short_slides_v2": {
@@ -4634,7 +4639,9 @@
       "content_slides": {
         "note1": 9,
         "note2": 10
-      }
+      },
+      "note2_structure_review": "purpose -> variable quadratic coefficients -> dual-threshold physics -> internal slope calibration -> one-amplitude model -> MCP shape benchmark -> internal prediction -> AWC trend -> single predictor backup -> references",
+      "note2_backup_slides": 1
     }
   }
 }
