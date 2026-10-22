@@ -11,8 +11,8 @@
   },
   {
     "file": "figures/awc_summary_selected.pdf",
-    "source": "note2_dual_threshold/figures/awc_summary_selected.pdf",
-    "sha256": "01a382c3bf216fc897a05666eecd70712da63ea22ad6420196d2737e44949279"
+    "source": "slides_v2_2026-10-22/assets/note2_internal_backups/awc_summary_selected.pdf",
+    "sha256": "3fd3415717ab0ffe5c5d6553f86f65be16718d1196002408ab683216acea0fa0"
   },
   {
     "file": "figures/comparison_ch137.pdf",
@@ -26,8 +26,8 @@
   },
   {
     "file": "figures/internal_predictor.pdf",
-    "source": "note2_dual_threshold/figures/internal_predictor.pdf",
-    "sha256": "4fd4c3136396eba4a1a3a21fce4db6e502a5894028e5d76385c95a7345292794"
+    "source": "slides_v2_2026-10-22/assets/note2_internal_backups/internal_predictor.pdf",
+    "sha256": "4b6962f4df338123524a61a3627f2e7b2cefef425e2bf676d9dc65a8f6f7baef"
   },
   {
     "file": "figures/original_figure5.pdf",

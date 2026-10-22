@@ -9,10 +9,11 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw
 from pypdf import PdfReader, PdfWriter
+from prepare_note2_backups import NAMES as BACKUP_FIGURES, prepare as prepare_backups
 
 ROOT = Path(__file__).resolve().parent
 NOTES = ("note1_mcp_reference", "note2_dual_threshold")
-EXPECTED_SLIDES = {"note1_mcp_reference": 10, "note2_dual_threshold": 12}
+EXPECTED_SLIDES = {"note1_mcp_reference": 10, "note2_dual_threshold": 11}
 THRESHOLD_FIGURES = {
     "figures/threshold_walk_profiles.pdf": "vth1_3_vth2_60/upstream_walk_profiles.pdf",
     "figures/threshold_histograms.pdf": "before_after_all_thresholds.pdf",
@@ -28,6 +29,7 @@ def run(command, cwd):
 
 
 def main():
+    prepare_backups()
     combined = PdfWriter()
     report = {}
     for name in NOTES:
@@ -47,13 +49,17 @@ def main():
                           / THRESHOLD_FIGURES[relative])
             if name == "note2_dual_threshold" and relative == "figures/original_figure5.pdf":
                 origin = ROOT / "assets/note2_figure5/figure5.pdf"
+            is_backup = name == "note2_dual_threshold" and Path(relative).stem in BACKUP_FIGURES
+            if is_backup:
+                origin = ROOT / "assets/note2_internal_backups" / Path(relative).name
             target = note / relative
             shutil.copy2(origin, target)
             digest = hashlib.sha256(target.read_bytes()).hexdigest()
             assert digest == hashlib.sha256(origin.read_bytes()).hexdigest()
             manifest.append(dict(file=relative, source=os.path.relpath(origin, ROOT.parent), sha256=digest))
             if relative.startswith("figures/"):
-                assert "Preliminary Phase 2" in PdfReader(target).pages[0].extract_text()
+                figure_text = PdfReader(target).pages[0].extract_text()
+                assert ("Preliminary Phase 2" in figure_text) != is_backup
         (note / "asset_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
         (note / "build").mkdir(exist_ok=True)
         for _ in range(2):
@@ -67,7 +73,12 @@ def main():
         shutil.copy2(note / "build/main.pdf", note / "slides.pdf")
         pdf = PdfReader(note / "slides.pdf")
         assert len(pdf.pages) == EXPECTED_SLIDES[name], (name, len(pdf.pages))
-        assert "References" in pdf.pages[-1].extract_text()
+        reference_index = 9 if name == "note1_mcp_reference" else 8
+        assert "References" in pdf.pages[reference_index].extract_text()
+        for page in pdf.pages[reference_index + 1:]:
+            text = page.extract_text()
+            assert "Backup:" in text and "Internal discussion only" in text
+            assert "Preliminary" not in text
         assert sum("References" in page.extract_text() for page in pdf.pages) == 1
         entry_pattern = r"\\bibitem\[(\d+)\]\{([^}]+)\}([\s\S]*?)(?=\\bibitem|\\end\{thebibliography\})"
         entries = lambda path: [(number, key, " ".join(body.split()))
@@ -93,6 +104,7 @@ def main():
                     draw.text((x, y - 19), f"Slide {start+i+1}", fill="black")
             sheet.save(preview / f"contact_sheet_{start//6+1}.png")
         report[name] = dict(slides=len(pdf.pages), content_slides=len(pdf.pages)-1, reference_slides=1,
+                            main_slides=reference_index, backup_slides=len(pdf.pages)-reference_index-1,
                             reference_entries=len(entries(note / "references.tex")),
                             cover_pages=0, figures=len(figures),
                             overflow=0, unresolved_citations=0,

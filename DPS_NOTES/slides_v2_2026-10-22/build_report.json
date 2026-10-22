@@ -3,24 +3,28 @@
     "slides": 10,
     "content_slides": 9,
     "reference_slides": 1,
+    "main_slides": 9,
+    "backup_slides": 0,
     "reference_entries": 8,
     "cover_pages": 0,
     "figures": 6,
     "overflow": 0,
     "unresolved_citations": 0,
-    "sha256": "8f1db7cc7c5e1a640458a9b4870649fa3c829f1ddedd019122104de24f986bef"
+    "sha256": "41516c86df0a7951c6f7c0e861fdc63d508df616c74a46cb488677690e7a6999"
   },
   "note2_dual_threshold": {
-    "slides": 12,
-    "content_slides": 11,
+    "slides": 11,
+    "content_slides": 10,
     "reference_slides": 1,
+    "main_slides": 8,
+    "backup_slides": 2,
     "reference_entries": 12,
     "cover_pages": 0,
     "figures": 6,
     "overflow": 0,
     "unresolved_citations": 0,
-    "sha256": "4977da0098c569e780e0664c2e848e9b0ddf69d0dffd728c703ab9098cf09cf1"
+    "sha256": "50293ea22469df38306d299b5e96c070a22bc6fe96ecb6a7edbd5115608c0b2b"
   },
-  "combined_pages": 22,
+  "combined_pages": 21,
   "status": "compiled; internal review draft"
 }

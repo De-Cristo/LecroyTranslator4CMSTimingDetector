@@ -134,27 +134,13 @@ This is not a single-hit timing-resolution measurement.
 Points and error bars are reproduced unchanged; the line is the original residual linear fit.
 This historical figure complements the curve-to-curve comparison on the preceding slide.}
 
-\begin{frame}{Toward calibration from internal data alone}
-\normalsize
-\begin{enumerate}
-\item Accumulate internal hits and fit $\overline S_i(Q)=c_{0,i}+c_{1,i}Q$.
-\item Use the slope coefficients and charge spectrum to predict one AWC per channel.
-\item Construct $W_i(Q)=A_i/\overline S_i(Q)$ and correct each timestamp.
-\end{enumerate}
-\medskip
-\textbf{Present evidence:} internal observables carry information about AWC.
-An exploratory model tested on excluded bars gives a \PredictorFraction\% RMS
-fractional prediction error in ten selected channels (backup).
-\medskip
+\input{references.tex}
 
-\textbf{Next:} freeze the predictor and test additional channels, independent
-runs and operating conditions; assess the corrected timing resolution.
-Cosmic-ray data are a possible calibration source to investigate.
-\Source{Model development uses MCP-derived AWC targets. Once trained, prediction inputs are internal;
-portability of the learned relation is not yet established. The current test is not a universal precision guarantee.}
-\end{frame}
+\begingroup
+\setbeamertemplate{headline}{%
+  \hbox to \paperwidth{\hspace{7mm}\scriptsize\color{black!55}Internal discussion only -- exploratory, not for public presentation\hfill\hspace{7mm}}\vspace{4mm}}
 
-\begin{frame}[t]{Final result: internal slope information constrains AWC}
+\begin{frame}[t]{Backup: empirical AWC trend with inverse slope coefficient}
 \centering
 \includegraphics[width=\linewidth,height=48mm,keepaspectratio]{figures/awc_summary_selected.pdf}
 \par\raggedright
@@ -164,18 +150,17 @@ The ten-channel trend motivates prediction, but the line is not a precision cali
 Bars: slope-only 16--84\% bootstrap intervals; reference errors and correlations are omitted. More independent data are needed.}
 \end{frame}
 
-\PlotSlide{Backup: a physics-motivated predictor tested on excluded bars}{internal_predictor}{
-Assume a shared local derivative $K\simeq-dW/d\ln Q$ at $Q_*$:
+\PlotSlide{Backup: a shared fractional-charge response hypothesis}{internal_predictor}{
+Hypothesis: common $K\simeq-dW/d\ln Q$ at $Q_*$, not a derived law.
 \[
 A_i=K\,\frac{\overline S_i(Q_*)^2}{c_{1,i}Q_*}.
 \]
 $Q_*$: selected-charge median per channel.
 
-Learn $K$ from other bars; predict the excluded bar.
+Learn $K$ on other bars; predict the excluded bar.
 
 RMS error: \PredictorRMSE\,$\mu$A; fractional RMS: \PredictorFraction\%.
-}{Ten upstream channels, six held-out bars. Learn $K$ from other bars' MCP-calibrated AWC; predict with internal observables.
-Horizontal bars: reference-AWC intervals, not prediction errors. Input--target correlations and full prediction uncertainties are unpropagated;
-transfer needs independent tests.}
-\input{references.tex}
+}{Ten channels, six held-out bars. $K$ uses other bars' MCP-calibrated AWC. Horizontal bars: reference-AWC intervals.
+Empirical hypothesis only: full prediction uncertainties, correlations and transfer to new configurations remain unvalidated.}
+\endgroup
 \end{document}
