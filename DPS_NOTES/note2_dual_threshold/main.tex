@@ -42,27 +42,78 @@ derivative at the first threshold.
 \]
 The amplitude $A$ (AWC) has units of current and is constant for a channel
 and operating configuration. The correction varies event by event through $Q$.
-\Review{N2-2}{Freeze the safe-$t_2$ decoding, threshold conversion and physical
-timing cuts. This is an effective pulse model, not an exact waveform identity.}
+\end{frame}
+
+\begin{frame}{Timing reconstruction and threshold scale}
+\small
+The run-4076 sample is file \texttt{23\_e.root}. For coarse codes $C_1,C_2$,
+\[
+ d_c=(C_2-C_1)\bmod1024,\qquad
+ t_2=t_1+(6250\,\mathrm{ps})d_c-f_1+f_2.
+\]
+The coarse codes use signed 64-bit arithmetic before subtraction; the coarse
+time term uses floating point, avoiding the old 16-bit multiplication overflow.
+
+The fine-time lookup stores the mean of $t_1\bmod6250\,\mathrm{ps}$ for each
+(channel, TAC, fine-code) key, using all input hits. The same lookup supplies
+$f_1$ and $f_2$. No selected hit in the 22 audited channels has a missing entry.
+
+All selected hits have threshold register \texttt{step2=113621}, decoded as
+DAC codes 10 and 35. The implemented scale gives
+\[
+ \Delta I=(35-10)\times0.3125\,\mu\mathrm{A}=7.8125\,\mu\mathrm{A},\qquad
+ \frac{S}{\mu\mathrm{A/ns}}=1000\,\frac{\Delta I/\mu\mathrm{A}}{(t_2-t_1)/\mathrm{ps}}.
+\]
+{\scriptsize Implementation: \texttt{Q\_Walk/qwalk\_core.py}. This checks the
+implemented conversion, not an independent hardware-threshold calibration.}
 \end{frame}
 
 \begin{frame}{Selection and profile construction}
 \small
 \begin{itemize}
-\item Run 4076: require exactly the two hits of the target bar in its module.
-Hits in the other module are not constrained; channel 192 is ignored.
-\item Retain valid rising-edge timing and the selected prompt-slope population,
-removing unphysical and slow-slope events before profiling.
-\item Retain charge above the lower half-maximum boundary of the fitted
-Landau--Gaussian peak. The selected data extend to the right of the peak.
-\item Form ten charge bins. Plot the mean $S$ and the hit standard deviation
-(SD); use the standard error of the mean (SEM) for the linear-fit weights.
-\item Bootstrap the selected hits with fixed charge-bin edges and refit.
-The central 68\% interval uses the 16th and 84th percentiles of 1000 fits;
-Ref.~\cite{Bootstrap} describes the general resampling principle.
+\item Require one hit at each end of the target bar and no other hit in that
+module. The other module is unconstrained; channel 192 is ignored.
+\item Require finite $Q,S$, $\Delta I>0$, $t_2-t_1>0$ and $d_c=0$.
+This selects the same-coarse-bin prompt population.
+\item Require $Q\geq Q_{\rm left}$, the left half-height boundary of the
+smoothed charge histogram. The Landau--Gaussian fit does not set this cut.
+There is no additional upper-charge cut or 100\,ps minimum-rise cut.
+\item Form ten equal-width bins over the selected charge range. Plot mean $S$
+and hit SD; fit with SEM weights. Bins with undefined or negligible SEM are omitted.
+\item Bootstrap selected hits with fixed bin edges and refit 1000 times.
+Quote the 16th--84th percentiles; Ref.~\cite{Bootstrap} gives the general principle.
 \end{itemize}
-\Review{N2-2}{Use the frozen extended-profile metadata. Do not silently inherit
-newer code defaults. These full-statistics profiles are not train/test splits.}
+{\scriptsize All selected hits are used; there is no train/test split.
+Implementation: \texttt{Q\_Walk/qwalk\_two\_hit\_pair\_profile.py},
+with the newer optional minimum-rise cut disabled.}
+\end{frame}
+
+\begin{frame}{Reproducing the frozen run-4076 profiles}
+\small
+Replaying \texttt{23\_e.root} reproduces the selected counts, ten-bin profiles
+and linear-fit coefficients for all 22 channels. Saved bootstrap coefficients
+reproduce their reported percentile intervals.
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+Channel & Target-pair hits & Prompt hits & Peak-right hits\\
+\midrule
+137 & 25979 & 20789 & 19126\\
+\bottomrule
+\end{tabular}
+\end{center}
+For channel 137, the histogram-derived boundary is $Q_{\rm left}=184.9163$ ADC.
+Charge-bin centers are the mean measured $Q$, not the geometric bin centers.
+
+The frozen selection retains rises below 100\,ps in channels 130, 139, 151,
+159, 236 and 238. These events were not removed retrospectively. Their effect
+belongs to the selection-sensitivity and channel-quality studies.
+
+Channel 135 has one singleton bin: its SEM is undefined and only nine bins
+enter that channel's linear fit. No fit or plotted data changed in this audit.
+
+{\scriptsize Audit, input/code hashes and per-channel counts:
+\texttt{DPS\_NOTES/review\_2026-10-22\_n2\_2/}.}
 \end{frame}
 
 \begin{frame}{Reference version shared with Note 1}
@@ -342,7 +393,6 @@ not a fitted result. No blanket 10\% precision claim is made.}
 \toprule
 ID & Decision or missing evidence\\
 \midrule
-N2-2 & Document safe-$t_2$, threshold conversion and exact selected populations.\\
 N2-3 & Check linear-profile adequacy and selection/model sensitivity.\\
 N2-4 & Validate alignment objective and complete the uncertainty propagation.\\
 N2-5 & Keep model closure distinct from event timing-resolution validation.\\

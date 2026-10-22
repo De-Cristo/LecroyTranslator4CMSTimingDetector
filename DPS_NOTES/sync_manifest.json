@@ -8,7 +8,8 @@
     "N1-4": "closed 2026-10-21: author requested adding clock-corrected results to Note1; exact Note2 references shown alongside archived fits, with selections and shape comparison; no fit changes",
     "N1-5": "Closed by author on 22 October 2026 for this version: same-event conditional timing validation only; intrinsic bar resolution and synchronization-jitter extraction outside scope. Review comment and queue entry removed; physical limitations retained; no numerical changes.",
     "N1-6": "Local citation and candidate-packaging work completed 22 October 2026. Official template, DP identifiers, cover handling and CMS approval remain pending with conveners; no submission.",
-    "N2-1": "Closed 22 October 2026 under author-stated same-nominal-detector-setup assumption: run4399 MCP reference, run4076 dual-threshold timing. No independent run-condition verification. Cross-run and selection-dependent response effects remain unquantified; no numerical changes."
+    "N2-1": "Closed 22 October 2026 under author-stated same-nominal-detector-setup assumption: run4399 MCP reference, run4076 dual-threshold timing. No independent run-condition verification. Cross-run and selection-dependent response effects remain unquantified; no numerical changes.",
+    "N2-2": "Closed 22 October 2026 after original ROOT replay of all 22 frozen run4076 profiles: exact counts, histogram boundaries, bin statistics, coefficients/covariance and saved bootstrap summaries verified. Safe timing and threshold decoding documented. No newer 100 ps cut inherited. Selection sensitivity and channel quality remain N2-3/N2-6; no frozen numerical changes."
   },
   "files": [
     {
@@ -23,18 +24,18 @@
     },
     {
       "path": "DPS_NOTES/README_DRAFTS.md",
-      "sha256": "45ba8ab5ec821321961348fe69f4c028832bf0bafb1d7320b1bc9a2a3a19c76b",
-      "bytes": 9180
+      "sha256": "8fce0a6175baa4f0587841809a26c471987102515d8b409d5dc184689e24fb1e",
+      "bytes": 9405
     },
     {
       "path": "DPS_NOTES/REPOSITORY_WORKFLOW.md",
-      "sha256": "4af6ddd5df85fcab59b6b9885ec89dd5bcb9ee2fb9fc632c92049245ae780fad",
-      "bytes": 3507
+      "sha256": "4df257a244825aba3cf708a9552535100b65dcf83cc0bfcc4b7097165b36e9c1",
+      "bytes": 3957
     },
     {
       "path": "DPS_NOTES/both_notes_review_v1.pdf",
-      "sha256": "0fd93fa0dfbb75b2446d25ea47dd4b52e51e107eff2fabbc9685f40b0e6dccce",
-      "bytes": 6619302
+      "sha256": "b3e5c67d120b6acf3402ae23582f7a2eda35b5dc5b0d6123dd2676b3ebe2bf57",
+      "bytes": 6648904
     },
     {
       "path": "DPS_NOTES/cms_dp_note_template/CMSlogo_black_label_1024.png",
@@ -513,22 +514,22 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/README.md",
-      "sha256": "a917de031e59a363a684a48eeb496eb2e1d9350ec4346dfdf0c7c877c799166f",
-      "bytes": 2812
+      "sha256": "0d099005d9b8ddd5a983df870259e5f16cef38fc2fbc47eb79bc4288f97d4510",
+      "bytes": 3810
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/build_report.json",
-      "sha256": "f5a82420a19d5afca18d7e3d6673ef6d96bb064539c55747773653cc949c7c0a",
+      "sha256": "828b1d77ef03e59c46d6c0ed6291c07ae660a5861ac05f595b60df56835f9e44",
       "bytes": 350
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/candidate_report.json",
-      "sha256": "5aaa65e3db89bee4023518461ca86cc34ef05bb2fc03c9155fe1bad3b1b4c7b2",
+      "sha256": "520447e918d59740bf02cd32e56014ffc025a417319c5e7b82b6ab8e5502c4d2",
       "bytes": 548
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/cover.pdf",
-      "sha256": "6488af49ec72258c7ade88467402affe451bf5be4ce49b63b22392b7789c4b4f",
+      "sha256": "50ad60530a8efc8391583eb3b6ed1a833e390418213ebb86e7fc0137e05c460f",
       "bytes": 950156
     },
     {
@@ -863,8 +864,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/main.tex",
-      "sha256": "a9ff0c7641f0ff57a4f8c9ca8c5430d284871c7a10d7e1cfab4eabddb7ee42bf",
-      "bytes": 16970
+      "sha256": "1de121e97146be6a9516aab43e69d7f680d591598f5370db85af5d372c4b4236",
+      "bytes": 18943
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/metadata.tex",
@@ -873,8 +874,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/note_with_cover.pdf",
-      "sha256": "51f4e08eaa57eba5ebe14c5c92319d66f9f3e0ea609ff9e6b35a8392c2e7b759",
-      "bytes": 2001642
+      "sha256": "a3d0ca287f03447e4f55be8abf1dea3638f9a065c3546b26bc1e16c4adb308a7",
+      "bytes": 2031200
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate.tex",
@@ -883,13 +884,13 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate_slides.pdf",
-      "sha256": "71640bc8bf20ea1590646b747fc23ae73e7893a344632acf2b7c597549a9b88c",
-      "bytes": 961767
+      "sha256": "ec37f89f7d307e1d260ed86f2e75d9cbc8095334d12a464db2affaa5aaee45a4",
+      "bytes": 989979
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate_with_cover.pdf",
-      "sha256": "1342ffb6f1f8b4cdb59ad254c7621e9cc40495fec05c1b14b7b7ff5ab628da40",
-      "bytes": 1980168
+      "sha256": "3b8479b6637f75920408fa43d020f7bb71fe0f996e219a7b6d2b1ffe7d7b0155",
+      "bytes": 2009969
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/references.tex",
@@ -903,8 +904,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/slides.pdf",
-      "sha256": "19f054bb7bc9f26d8826dfa7fd68bbbaaecd98d5fc1e4ac0d88cfcbe62151a9d",
-      "bytes": 982270
+      "sha256": "dd54cc69f82850f54ca1099b09c25b47265a7d03b5766f3e3cf88647a878174c",
+      "bytes": 1010237
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/slides_preamble.tex",
@@ -1698,7 +1699,7 @@
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_clock_quality/verification.json",
-      "sha256": "59d330276820160f324380be0047df192e32edfd82a07c900aee7eeed0a92410",
+      "sha256": "a99a05687d08e6ac340cec3671599d27d05bc0d5458fd8a9c5b9ce4381a0bec8",
       "bytes": 1403
     },
     {
@@ -1707,19 +1708,54 @@
       "bytes": 4095
     },
     {
+      "path": "DPS_NOTES/review_2026-10-22_n2_2/README.md",
+      "sha256": "55ba77a6ac4161bce79814daee646760553a44a0fdb230643d87301884f0a889",
+      "bytes": 7278
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_2/audit.json",
+      "sha256": "43bba8176e8fa7cf3e15527825d83e97488c95ae97adef277cbb03fe8cc244a6",
+      "bytes": 41372
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_2/audit.py",
+      "sha256": "de17dde021fc0dcc73c0f38de39f0af3d5b87970c0ea03862978104f25e118f7",
+      "bytes": 7548
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_2/channel_counts.csv",
+      "sha256": "68d6b145cfbaf0370ab9461cde0ad35393acaa780d946fc5a1378df8188b31d4",
+      "bytes": 1781
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_2/test_semantics.py",
+      "sha256": "4b4ba33470087a3529ebcaf804edb0d4e4ec056b53f8809c78870345d869d67a",
+      "bytes": 1570
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_2/verification.json",
+      "sha256": "c9a32d9d12bf926494ab23bd49d01dc0055fa0a1f0cdd8dd2a19a7028920ec5c",
+      "bytes": 371
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_n2_2/verify.py",
+      "sha256": "427a697b921a2631a095aa716e85734070d4b893fbb1034a10fa6e7c640a61de",
+      "bytes": 2554
+    },
+    {
       "path": "DPS_NOTES/review_2026-10-22_publication/citation_audit.md",
       "sha256": "763ae3943ec99298b13dd102c4eac8846ba9c4db1fb88a965b8df4f397dfc049",
       "bytes": 2945
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_publication/verification.json",
-      "sha256": "356e9d446ea111d58c7c2ce1fa8e732d591025acb7ed1caa3deaab78a0d3817d",
-      "bytes": 1203
+      "sha256": "5c9079fbf1090076f402a3a527f3c0f7fc6362e467c889c45f47266197105ee1",
+      "bytes": 1284
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_publication/verify.py",
-      "sha256": "ff6c8afcf4fcafafb780f6cb03b7c6f880dfbe4579a9e9a76b3ee7514e7b9f7d",
-      "bytes": 4363
+      "sha256": "41177ce078dd4dce0d2c1892d61ba50854b7ed845b47b96b7db8539a0e93ae76",
+      "bytes": 4695
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -1757,6 +1793,11 @@
       "bytes": 13717
     },
     {
+      "path": "Q_Walk/qwalk_run4076_peak_right_profile.py",
+      "sha256": "5cf4465cfcd53a1fc9269152f8882ab5c44e55e72a55da92d3b3812dd6edd152",
+      "bytes": 8851
+    },
+    {
       "path": "Q_Walk/qwalk_run4076_safe_time2_scatter.py",
       "sha256": "e6d204039e6380f3bd120b070e65fba483f18150c7c0185ffd2279ffae0b8ca1",
       "bytes": 16416
@@ -1770,6 +1811,11 @@
       "path": "Q_Walk/qwalk_t0_models.py",
       "sha256": "e5908c1c4e11a97cf12fef21666de470bfe31f61d43979f6535b59db53eda675",
       "bytes": 74473
+    },
+    {
+      "path": "Q_Walk/qwalk_two_hit_pair_profile.py",
+      "sha256": "5327ead6e3fb244cf27b8096b4367b216e2f8dc85a72b1ce3f1af123a1fb0105",
+      "bytes": 21622
     },
     {
       "path": "Q_Walk/results/2026-09-24_measured_q_overlap/plot_special_channels.py",
@@ -3237,6 +3283,11 @@
       "bytes": 6557
     },
     {
+      "path": "Q_Walk/tests/test_qwalk_core.py",
+      "sha256": "38e114a1cfd7949ca3ed10004e269b6a903a32c3b33ff1dcc7f527bffb279178",
+      "bytes": 5846
+    },
+    {
       "path": "Q_Walk/tests/test_qwalk_extended_t0_reference.py",
       "sha256": "925cd09f4d5e64615dce0ee6b9a9d5132cc39adc324fdf105f581eb6dbc7b7f6",
       "bytes": 1208
@@ -3250,6 +3301,11 @@
       "path": "Q_Walk/tests/test_qwalk_t0_models.py",
       "sha256": "97a9593c4bd0086c8f06a43644ce047f3f07fa61cbfc46621c49a4a548b071fd",
       "bytes": 49389
+    },
+    {
+      "path": "Q_Walk/tests/test_qwalk_two_hit_pair_profile.py",
+      "sha256": "56901712bcd623c9366dc9fc721bb268fb474f9be230b0d60a080044eba7ef41",
+      "bytes": 1431
     },
     {
       "path": "TimeCalibration/bar_processing.py",
@@ -3268,18 +3324,20 @@
     }
   ],
   "verification": {
-    "file_count": 651,
+    "file_count": 662,
     "all_source_hashes_match": true,
-    "combined_pages": 59,
+    "combined_pages": 61,
     "focused_tests_passed": 140,
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "N2-1 assumption-based closure: Note2 review and candidate PDFs rebuilt without overflow or unresolved citations; changed slides visually checked; combined PDF and packaging verified. All source/repository hashes match. Numerical inputs, figures and analysis code unchanged; prior analysis tests reused.",
+    "latest_change": "N2-2: 22-channel ROOT replay and 17 focused tests passed; documentation corrected and closure recorded; Note2 review/candidate and combined PDFs rebuilt and visually checked. Frozen numerical inputs, figures and production analysis code unchanged. Existing local profile helpers/tests added for audit reproducibility.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 27,
-      "note2_dual_threshold": 24
-    }
+      "note2_dual_threshold": 26
+    },
+    "n2_2_verification": "DPS_NOTES/review_2026-10-22_n2_2/verification.json",
+    "n2_2_focused_tests_passed": 17
   }
 }

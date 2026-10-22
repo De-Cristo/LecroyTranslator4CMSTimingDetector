@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "replayed_channels": 22,
+  "selected_missing_calibration": 0,
+  "review_status": "N2-2 closed; exact frozen definitions reproduced; selection/model sensitivity remains N2-3/N2-6",
+  "note2_slides": 27,
+  "note2_candidate_slides": 26,
+  "combined_pages": 61,
+  "audit_sha256": "43bba8176e8fa7cf3e15527825d83e97488c95ae97adef277cbb03fe8cc244a6"
+}

@@ -45,7 +45,10 @@ versions, selections and uncertainties have already been reconciled.
    reference timing in run 4399 and dual-threshold timing in run 4076.
    Cross-run stability is not independently verified; response-transfer and
    selection effects remain unquantified.
-2. N2-2: freeze run configurations, time decoding and numerical cuts.
+2. N2-2 is closed: all 22 frozen profiles replayed from the run4076 ROOT input.
+   Exact timing/threshold decoding and cuts are documented, including the
+   histogram-derived charge boundary and absence of the newer 100 ps cut.
+   See `review_2026-10-22_n2_2/`; numerical results are unchanged.
 3. N1-3 is closed: the note now explicitly follows the code's minus-sign convention.
 4. N2-3 / N2-4: assess slope-model adequacy, matching objective and uncertainties.
 5. N1-5 is closed for this version: same-event timing validation with conditional

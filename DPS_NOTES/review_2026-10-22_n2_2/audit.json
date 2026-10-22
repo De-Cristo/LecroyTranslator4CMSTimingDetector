@@ -1,0 +1,1096 @@
+{
+  "status": "passed",
+  "input": "/eos/cms/store/group/dpg_mtd/comm_mtd/TB/MTDTB_H8_Sep2025/TOFHIR/reco/4076/23_e.root",
+  "input_sha256": "febf0aeb14eea3349059a6ee88735174c3e5dbc3798c08ffa97404caf7d3ee93",
+  "total_hits": 1589882,
+  "total_events": 230113,
+  "channels": [
+    {
+      "channel": 130,
+      "module": "upstream",
+      "pair": [
+        130,
+        159
+      ],
+      "pair_hits": 10969,
+      "prompt_hits": 6884,
+      "selected_hits": 6424,
+      "q_cut_adc": 235.55755829625136,
+      "threshold_settings": [
+        [
+          113621.0,
+          10,
+          35,
+          7.8125
+        ]
+      ],
+      "selected_dt_min_ps": 13.0,
+      "selected_dt_max_ps": 380.0,
+      "selected_missing_fine_calibration": 0,
+      "prompt_missing_fine_calibration": 0,
+      "prompt_below_100ps": 2197,
+      "selected_below_100ps": 2161,
+      "populated_profile_bins": 10,
+      "fitted_profile_bins": 10,
+      "checks": {
+        "safe_mode": true,
+        "pair_count": true,
+        "prompt_count": true,
+        "selected_count": true,
+        "histogram_boundary": true,
+        "profile_replay": true,
+        "csv_matches_summary": true,
+        "linear_coefficients": true,
+        "linear_covariance": true,
+        "undefined_sem_only_singletons": true,
+        "fit_bin_count": true,
+        "independent_weighted_fit": true,
+        "bootstrap_replicas": true,
+        "bootstrap_percentiles": true,
+        "fixed_bootstrap_edges": true,
+        "selected_calibration_coverage": true
+      }
+    },
+    {
+      "channel": 133,
+      "module": "upstream",
+      "pair": [
+        133,
+        154
+      ],
+      "pair_hits": 23244,
+      "prompt_hits": 18329,
+      "selected_hits": 17230,
+      "q_cut_adc": 204.39703451232913,
+      "threshold_settings": [
+        [
+          113621.0,
+          10,
+          35,
+          7.8125
+        ]
+      ],
+      "selected_dt_min_ps": 204.0,
+      "selected_dt_max_ps": 748.0,
+      "selected_missing_fine_calibration": 0,
+      "prompt_missing_fine_calibration": 0,
+      "prompt_below_100ps": 0,
+      "selected_below_100ps": 0,
+      "populated_profile_bins": 10,
+      "fitted_profile_bins": 10,
+      "checks": {
+        "safe_mode": true,
+        "pair_count": true,
+        "prompt_count": true,
+        "selected_count": true,
+        "histogram_boundary": true,
+        "profile_replay": true,
+        "csv_matches_summary": true,
+        "linear_coefficients": true,
+        "linear_covariance": true,
+        "undefined_sem_only_singletons": true,
+        "fit_bin_count": true,
+        "independent_weighted_fit": true,
+        "bootstrap_replicas": true,
+        "bootstrap_percentiles": true,
+        "fixed_bootstrap_edges": true,
+        "selected_calibration_coverage": true
+      }
+    },
+    {
+      "channel": 134,
+      "module": "upstream",
+      "pair": [
+        134,
+        156
+      ],
+      "pair_hits": 17948,
+      "prompt_hits": 14573,
+      "selected_hits": 13783,
+      "q_cut_adc": 209.57450308418223,
+      "threshold_settings": [
+        [
+          113621.0,
+          10,
+          35,
+          7.8125
+        ]
+      ],
+      "selected_dt_min_ps": 286.0,
+      "selected_dt_max_ps": 733.0,
+      "selected_missing_fine_calibration": 0,
+      "prompt_missing_fine_calibration": 0,
+      "prompt_below_100ps": 0,
+      "selected_below_100ps": 0,
+      "populated_profile_bins": 10,
+      "fitted_profile_bins": 10,
+      "checks": {
+        "safe_mode": true,
+        "pair_count": true,
+        "prompt_count": true,
+        "selected_count": true,
+        "histogram_boundary": true,
+        "profile_replay": true,
+        "csv_matches_summary": true,
+        "linear_coefficients": true,
+        "linear_covariance": true,
+        "undefined_sem_only_singletons": true,
+        "fit_bin_count": true,
+        "independent_weighted_fit": true,
+        "bootstrap_replicas": true,
+        "bootstrap_percentiles": true,
+        "fixed_bootstrap_edges": true,
+        "selected_calibration_coverage": true
+      }
+    },
+    {
+      "channel": 135,
+      "module": "upstream",
+      "pair": [
+        135,
+        155
+      ],
+      "pair_hits": 14111,
+      "prompt_hits": 11510,
+      "selected_hits": 10771,
+      "q_cut_adc": 130.25049700984954,
+      "threshold_settings": [
+        [
+          113621.0,
+          10,
+          35,
+          7.8125
+        ]
+      ],
+      "selected_dt_min_ps": 149.0,
+      "selected_dt_max_ps": 554.0,
+      "selected_missing_fine_calibration": 0,
+      "prompt_missing_fine_calibration": 0,
+      "prompt_below_100ps": 0,
+      "selected_below_100ps": 0,
+      "populated_profile_bins": 10,
+      "fitted_profile_bins": 9,
+      "checks": {
+        "safe_mode": true,
+        "pair_count": true,
+        "prompt_count": true,
+        "selected_count": true,
+        "histogram_boundary": true,
+        "profile_replay": true,
+        "csv_matches_summary": true,
+        "linear_coefficients": true,
+        "linear_covariance": true,
+        "undefined_sem_only_singletons": true,
+        "fit_bin_count": true,
+        "independent_weighted_fit": true,
+        "bootstrap_replicas": true,
+        "bootstrap_percentiles": true,
+        "fixed_bootstrap_edges": true,
+        "selected_calibration_coverage": true
+      }
+    },
+    {
+      "channel": 136,
+      "module": "upstream",
+      "pair": [
+        136,
+        151
+      ],
+      "pair_hits": 12421,
+      "prompt_hits": 10070,
+      "selected_hits": 9377,
+      "q_cut_adc": 163.76829795990002,
+      "threshold_settings": [
+        [
+          113621.0,
+          10,
+          35,
+          7.8125
+        ]
+      ],
+      "selected_dt_min_ps": 214.0,
+      "selected_dt_max_ps": 692.0,
+      "selected_missing_fine_calibration": 0,
+      "prompt_missing_fine_calibration": 0,
+      "prompt_below_100ps": 0,
+      "selected_below_100ps": 0,
+      "populated_profile_bins": 10,
+      "fitted_profile_bins": 10,
+      "checks": {
+        "safe_mode": true,
+        "pair_count": true,
+        "prompt_count": true,
+        "selected_count": true,
+        "histogram_boundary": true,
+        "profile_replay": true,
+        "csv_matches_summary": true,
+        "linear_coefficients": true,
+        "linear_covariance": true,
+        "undefined_sem_only_singletons": true,
+        "fit_bin_count": true,
+        "independent_weighted_fit": true,
+        "bootstrap_replicas": true,
+        "bootstrap_percentiles": true,
+        "fixed_bootstrap_edges": true,
+        "selected_calibration_coverage": true
+      }
+    },
+    {
+      "channel": 137,
+      "module": "upstream",
+      "pair": [
+        137,
+        150
+      ],
+      "pair_hits": 25979,
+      "prompt_hits": 20789,
+      "selected_hits": 19126,
+      "q_cut_adc": 184.91628556995408,
+      "threshold_settings": [
+        [
+          113621.0,
+          10,
+          35,
+          7.8125
+        ]
+      ],
+      "selected_dt_min_ps": 116.0,
+      "selected_dt_max_ps": 1063.0,
+      "selected_missing_fine_calibration": 0,
+      "prompt_missing_fine_calibration": 0,
+      "prompt_below_100ps": 0,
+      "selected_below_100ps": 0,
+      "populated_profile_bins": 10,
+      "fitted_profile_bins": 10,
+      "checks": {
+        "safe_mode": true,
+        "pair_count": true,
+        "prompt_count": true,
+        "selected_count": true,
+        "histogram_boundary": true,
+        "profile_replay": true,
+        "csv_matches_summary": true,
+        "linear_coefficients": true,
+        "linear_covariance": true,
+        "undefined_sem_only_singletons": true,
+        "fit_bin_count": true,
+        "independent_weighted_fit": true,
+        "bootstrap_replicas": true,
+        "bootstrap_percentiles": true,
+        "fixed_bootstrap_edges": true,
+        "selected_calibration_coverage": true
+      }
+    },
+    {
+      "channel": 139,
+      "module": "upstream",
+      "pair": [
+        139,
+        149
+      ],
+      "pair_hits": 18805,
+      "prompt_hits": 13538,
+      "selected_hits": 12529,
+      "q_cut_adc": 177.81695127620716,
+      "threshold_settings": [
+        [
+          113621.0,
+          10,
+          35,
+          7.8125
+        ]
+      ],
+      "selected_dt_min_ps": 13.0,
+      "selected_dt_max_ps": 428.0,
+      "selected_missing_fine_calibration": 0,
+      "prompt_missing_fine_calibration": 0,
+      "prompt_below_100ps": 3934,
+      "selected_below_100ps": 3845,
+      "populated_profile_bins": 10,
+      "fitted_profile_bins": 10,
+      "checks": {
+        "safe_mode": true,
+        "pair_count": true,
+        "prompt_count": true,
+        "selected_count": true,
+        "histogram_boundary": true,
+        "profile_replay": true,
+        "csv_matches_summary": true,
+        "linear_coefficients": true,
+        "linear_covariance": true,
+        "undefined_sem_only_singletons": true,
+        "fit_bin_count": true,
+        "independent_weighted_fit": true,
+        "bootstrap_replicas": true,
+        "bootstrap_percentiles": true,
+        "fixed_bootstrap_edges": true,
+        "selected_calibration_coverage": true
+      }
+    },
+    {
+      "channel": 149,
+      "module": "upstream",
+      "pair": [
+        139,
+        149
+      ],
+      "pair_hits": 18805,
+      "prompt_hits": 15487,
+      "selected_hits": 14523,
+      "q_cut_adc": 246.3234994865417,
+      "threshold_settings": [
+        [
+          113621.0,
+          10,
+          35,
+          7.8125
+        ]
+      ],
+      "selected_dt_min_ps": 119.0,
+      "selected_dt_max_ps": 570.0,
+      "selected_missing_fine_calibration": 0,
+      "prompt_missing_fine_calibration": 0,
+      "prompt_below_100ps": 0,
+      "selected_below_100ps": 0,
+      "populated_profile_bins": 10,
+      "fitted_profile_bins": 10,
+      "checks": {
+        "safe_mode": true,
+        "pair_count": true,
+        "prompt_count": true,
+        "selected_count": true,
+        "histogram_boundary": true,
+        "profile_replay": true,
+        "csv_matches_summary": true,
+        "linear_coefficients": true,
+        "linear_covariance": true,
+        "undefined_sem_only_singletons": true,
+        "fit_bin_count": true,
+        "independent_weighted_fit": true,
+        "bootstrap_replicas": true,
+        "bootstrap_percentiles": true,
+        "fixed_bootstrap_edges": true,
+        "selected_calibration_coverage": true
+      }
+    },
+    {
+      "channel": 150,
+      "module": "upstream",
+      "pair": [
+        137,
+        150
+      ],
+      "pair_hits": 25979,
+      "prompt_hits": 20867,
+      "selected_hits": 19312,
+      "q_cut_adc": 283.90867671704257,
+      "threshold_settings": [
+        [
+          113621.0,
+          10,
+          35,
+          7.8125
+        ]
+      ],
+      "selected_dt_min_ps": 247.0,
+      "selected_dt_max_ps": 1760.0,
+      "selected_missing_fine_calibration": 0,
+      "prompt_missing_fine_calibration": 0,
+      "prompt_below_100ps": 0,
+      "selected_below_100ps": 0,
+      "populated_profile_bins": 10,
+      "fitted_profile_bins": 10,
+      "checks": {
+        "safe_mode": true,
+        "pair_count": true,
+        "prompt_count": true,
+        "selected_count": true,
+        "histogram_boundary": true,
+        "profile_replay": true,
+        "csv_matches_summary": true,
+        "linear_coefficients": true,
+        "linear_covariance": true,
+        "undefined_sem_only_singletons": true,
+        "fit_bin_count": true,
+        "independent_weighted_fit": true,
+        "bootstrap_replicas": true,
+        "bootstrap_percentiles": true,
+        "fixed_bootstrap_edges": true,
+        "selected_calibration_coverage": true
+      }
+    },
+    {
+      "channel": 151,
+      "module": "upstream",
+      "pair": [
+        136,
+        151
+      ],
+      "pair_hits": 12421,
+      "prompt_hits": 10433,
+      "selected_hits": 9780,
+      "q_cut_adc": 248.06794703369144,
+      "threshold_settings": [
+        [
+          113621.0,
+          10,
+          35,
+          7.8125
+        ]
+      ],
+      "selected_dt_min_ps": 12.0,
+      "selected_dt_max_ps": 1495.0,
+      "selected_missing_fine_calibration": 0,
+      "prompt_missing_fine_calibration": 0,
+      "prompt_below_100ps": 1649,
+      "selected_below_100ps": 1626,
+      "populated_profile_bins": 10,
+      "fitted_profile_bins": 10,
+      "checks": {
+        "safe_mode": true,
+        "pair_count": true,
+        "prompt_count": true,
+        "selected_count": true,
+        "histogram_boundary": true,
+        "profile_replay": true,
+        "csv_matches_summary": true,
+        "linear_coefficients": true,
+        "linear_covariance": true,
+        "undefined_sem_only_singletons": true,
+        "fit_bin_count": true,
+        "independent_weighted_fit": true,
+        "bootstrap_replicas": true,
+        "bootstrap_percentiles": true,
+        "fixed_bootstrap_edges": true,
+        "selected_calibration_coverage": true
+      }
+    },
+    {
+      "channel": 154,
+      "module": "upstream",
+      "pair": [
+        133,
+        154
+      ],
+      "pair_hits": 23244,
+      "prompt_hits": 18071,
+      "selected_hits": 16846,
+      "q_cut_adc": 275.7232214164736,
+      "threshold_settings": [
+        [
+          113621.0,
+          10,
+          35,
+          7.8125
+        ]
+      ],
+      "selected_dt_min_ps": 422.0,
+      "selected_dt_max_ps": 881.0,
+      "selected_missing_fine_calibration": 0,
+      "prompt_missing_fine_calibration": 0,
+      "prompt_below_100ps": 0,
+      "selected_below_100ps": 0,
+      "populated_profile_bins": 10,
+      "fitted_profile_bins": 10,
+      "checks": {
+        "safe_mode": true,
+        "pair_count": true,
+        "prompt_count": true,
+        "selected_count": true,
+        "histogram_boundary": true,
+        "profile_replay": true,
+        "csv_matches_summary": true,
+        "linear_coefficients": true,
+        "linear_covariance": true,
+        "undefined_sem_only_singletons": true,
+        "fit_bin_count": true,
+        "independent_weighted_fit": true,
+        "bootstrap_replicas": true,
+        "bootstrap_percentiles": true,
+        "fixed_bootstrap_edges": true,
+        "selected_calibration_coverage": true
+      }
+    },
+    {
+      "channel": 155,
+      "module": "upstream",
+      "pair": [
+        135,
+        155
+      ],
+      "pair_hits": 14111,
+      "prompt_hits": 11721,
+      "selected_hits": 10959,
+      "q_cut_adc": 235.85959303474414,
+      "threshold_settings": [
+        [
+          113621.0,
+          10,
+          35,
+          7.8125
+        ]
+      ],
+      "selected_dt_min_ps": 322.0,
+      "selected_dt_max_ps": 694.0,
+      "selected_missing_fine_calibration": 0,
+      "prompt_missing_fine_calibration": 0,
+      "prompt_below_100ps": 0,
+      "selected_below_100ps": 0,
+      "populated_profile_bins": 10,
+      "fitted_profile_bins": 10,
+      "checks": {
+        "safe_mode": true,
+        "pair_count": true,
+        "prompt_count": true,
+        "selected_count": true,
+        "histogram_boundary": true,
+        "profile_replay": true,
+        "csv_matches_summary": true,
+        "linear_coefficients": true,
+        "linear_covariance": true,
+        "undefined_sem_only_singletons": true,
+        "fit_bin_count": true,
+        "independent_weighted_fit": true,
+        "bootstrap_replicas": true,
+        "bootstrap_percentiles": true,
+        "fixed_bootstrap_edges": true,
+        "selected_calibration_coverage": true
+      }
+    },
+    {
+      "channel": 156,
+      "module": "upstream",
+      "pair": [
+        134,
+        156
+      ],
+      "pair_hits": 17948,
+      "prompt_hits": 14378,
+      "selected_hits": 13180,
+      "q_cut_adc": 248.23184776544568,
+      "threshold_settings": [
+        [
+          113621.0,
+          10,
+          35,
+          7.8125
+        ]
+      ],
+      "selected_dt_min_ps": 306.0,
+      "selected_dt_max_ps": 1212.0,
+      "selected_missing_fine_calibration": 0,
+      "prompt_missing_fine_calibration": 0,
+      "prompt_below_100ps": 0,
+      "selected_below_100ps": 0,
+      "populated_profile_bins": 10,
+      "fitted_profile_bins": 10,
+      "checks": {
+        "safe_mode": true,
+        "pair_count": true,
+        "prompt_count": true,
+        "selected_count": true,
+        "histogram_boundary": true,
+        "profile_replay": true,
+        "csv_matches_summary": true,
+        "linear_coefficients": true,
+        "linear_covariance": true,
+        "undefined_sem_only_singletons": true,
+        "fit_bin_count": true,
+        "independent_weighted_fit": true,
+        "bootstrap_replicas": true,
+        "bootstrap_percentiles": true,
+        "fixed_bootstrap_edges": true,
+        "selected_calibration_coverage": true
+      }
+    },
+    {
+      "channel": 159,
+      "module": "upstream",
+      "pair": [
+        130,
+        159
+      ],
+      "pair_hits": 10969,
+      "prompt_hits": 9081,
+      "selected_hits": 8459,
+      "q_cut_adc": 225.24750066375748,
+      "threshold_settings": [
+        [
+          113621.0,
+          10,
+          35,
+          7.8125
+        ]
+      ],
+      "selected_dt_min_ps": 88.0,
+      "selected_dt_max_ps": 656.0,
+      "selected_missing_fine_calibration": 0,
+      "prompt_missing_fine_calibration": 0,
+      "prompt_below_100ps": 1,
+      "selected_below_100ps": 1,
+      "populated_profile_bins": 10,
+      "fitted_profile_bins": 10,
+      "checks": {
+        "safe_mode": true,
+        "pair_count": true,
+        "prompt_count": true,
+        "selected_count": true,
+        "histogram_boundary": true,
+        "profile_replay": true,
+        "csv_matches_summary": true,
+        "linear_coefficients": true,
+        "linear_covariance": true,
+        "undefined_sem_only_singletons": true,
+        "fit_bin_count": true,
+        "independent_weighted_fit": true,
+        "bootstrap_replicas": true,
+        "bootstrap_percentiles": true,
+        "fixed_bootstrap_edges": true,
+        "selected_calibration_coverage": true
+      }
+    },
+    {
+      "channel": 235,
+      "module": "downstream",
+      "pair": [
+        235,
+        245
+      ],
+      "pair_hits": 11147,
+      "prompt_hits": 9144,
+      "selected_hits": 8297,
+      "q_cut_adc": 320.92558754539476,
+      "threshold_settings": [
+        [
+          113621.0,
+          10,
+          35,
+          7.8125
+        ]
+      ],
+      "selected_dt_min_ps": 251.0,
+      "selected_dt_max_ps": 832.0,
+      "selected_missing_fine_calibration": 0,
+      "prompt_missing_fine_calibration": 0,
+      "prompt_below_100ps": 0,
+      "selected_below_100ps": 0,
+      "populated_profile_bins": 10,
+      "fitted_profile_bins": 10,
+      "checks": {
+        "safe_mode": true,
+        "pair_count": true,
+        "prompt_count": true,
+        "selected_count": true,
+        "histogram_boundary": true,
+        "profile_replay": true,
+        "csv_matches_summary": true,
+        "linear_coefficients": true,
+        "linear_covariance": true,
+        "undefined_sem_only_singletons": true,
+        "fit_bin_count": true,
+        "independent_weighted_fit": true,
+        "bootstrap_replicas": true,
+        "bootstrap_percentiles": true,
+        "fixed_bootstrap_edges": true,
+        "selected_calibration_coverage": true
+      }
+    },
+    {
+      "channel": 236,
+      "module": "downstream",
+      "pair": [
+        236,
+        244
+      ],
+      "pair_hits": 11311,
+      "prompt_hits": 8909,
+      "selected_hits": 8236,
+      "q_cut_adc": 246.7275222587583,
+      "threshold_settings": [
+        [
+          113621.0,
+          10,
+          35,
+          7.8125
+        ]
+      ],
+      "selected_dt_min_ps": 79.0,
+      "selected_dt_max_ps": 1744.0,
+      "selected_missing_fine_calibration": 0,
+      "prompt_missing_fine_calibration": 0,
+      "prompt_below_100ps": 1,
+      "selected_below_100ps": 1,
+      "populated_profile_bins": 10,
+      "fitted_profile_bins": 10,
+      "checks": {
+        "safe_mode": true,
+        "pair_count": true,
+        "prompt_count": true,
+        "selected_count": true,
+        "histogram_boundary": true,
+        "profile_replay": true,
+        "csv_matches_summary": true,
+        "linear_coefficients": true,
+        "linear_covariance": true,
+        "undefined_sem_only_singletons": true,
+        "fit_bin_count": true,
+        "independent_weighted_fit": true,
+        "bootstrap_replicas": true,
+        "bootstrap_percentiles": true,
+        "fixed_bootstrap_edges": true,
+        "selected_calibration_coverage": true
+      }
+    },
+    {
+      "channel": 238,
+      "module": "downstream",
+      "pair": [
+        238,
+        242
+      ],
+      "pair_hits": 10701,
+      "prompt_hits": 9138,
+      "selected_hits": 8195,
+      "q_cut_adc": 310.8365017207623,
+      "threshold_settings": [
+        [
+          113621.0,
+          10,
+          35,
+          7.8125
+        ]
+      ],
+      "selected_dt_min_ps": 51.0,
+      "selected_dt_max_ps": 596.0,
+      "selected_missing_fine_calibration": 0,
+      "prompt_missing_fine_calibration": 0,
+      "prompt_below_100ps": 41,
+      "selected_below_100ps": 41,
+      "populated_profile_bins": 10,
+      "fitted_profile_bins": 10,
+      "checks": {
+        "safe_mode": true,
+        "pair_count": true,
+        "prompt_count": true,
+        "selected_count": true,
+        "histogram_boundary": true,
+        "profile_replay": true,
+        "csv_matches_summary": true,
+        "linear_coefficients": true,
+        "linear_covariance": true,
+        "undefined_sem_only_singletons": true,
+        "fit_bin_count": true,
+        "independent_weighted_fit": true,
+        "bootstrap_replicas": true,
+        "bootstrap_percentiles": true,
+        "fixed_bootstrap_edges": true,
+        "selected_calibration_coverage": true
+      }
+    },
+    {
+      "channel": 239,
+      "module": "downstream",
+      "pair": [
+        239,
+        240
+      ],
+      "pair_hits": 9966,
+      "prompt_hits": 7170,
+      "selected_hits": 6713,
+      "q_cut_adc": 270.0866445148468,
+      "threshold_settings": [
+        [
+          113621.0,
+          10,
+          35,
+          7.8125
+        ]
+      ],
+      "selected_dt_min_ps": 655.0,
+      "selected_dt_max_ps": 1203.0,
+      "selected_missing_fine_calibration": 0,
+      "prompt_missing_fine_calibration": 0,
+      "prompt_below_100ps": 0,
+      "selected_below_100ps": 0,
+      "populated_profile_bins": 10,
+      "fitted_profile_bins": 10,
+      "checks": {
+        "safe_mode": true,
+        "pair_count": true,
+        "prompt_count": true,
+        "selected_count": true,
+        "histogram_boundary": true,
+        "profile_replay": true,
+        "csv_matches_summary": true,
+        "linear_coefficients": true,
+        "linear_covariance": true,
+        "undefined_sem_only_singletons": true,
+        "fit_bin_count": true,
+        "independent_weighted_fit": true,
+        "bootstrap_replicas": true,
+        "bootstrap_percentiles": true,
+        "fixed_bootstrap_edges": true,
+        "selected_calibration_coverage": true
+      }
+    },
+    {
+      "channel": 240,
+      "module": "downstream",
+      "pair": [
+        239,
+        240
+      ],
+      "pair_hits": 9966,
+      "prompt_hits": 7627,
+      "selected_hits": 7144,
+      "q_cut_adc": 203.90886070556635,
+      "threshold_settings": [
+        [
+          113621.0,
+          10,
+          35,
+          7.8125
+        ]
+      ],
+      "selected_dt_min_ps": 442.0,
+      "selected_dt_max_ps": 1008.0,
+      "selected_missing_fine_calibration": 0,
+      "prompt_missing_fine_calibration": 0,
+      "prompt_below_100ps": 0,
+      "selected_below_100ps": 0,
+      "populated_profile_bins": 10,
+      "fitted_profile_bins": 10,
+      "checks": {
+        "safe_mode": true,
+        "pair_count": true,
+        "prompt_count": true,
+        "selected_count": true,
+        "histogram_boundary": true,
+        "profile_replay": true,
+        "csv_matches_summary": true,
+        "linear_coefficients": true,
+        "linear_covariance": true,
+        "undefined_sem_only_singletons": true,
+        "fit_bin_count": true,
+        "independent_weighted_fit": true,
+        "bootstrap_replicas": true,
+        "bootstrap_percentiles": true,
+        "fixed_bootstrap_edges": true,
+        "selected_calibration_coverage": true
+      }
+    },
+    {
+      "channel": 242,
+      "module": "downstream",
+      "pair": [
+        238,
+        242
+      ],
+      "pair_hits": 10701,
+      "prompt_hits": 7793,
+      "selected_hits": 7164,
+      "q_cut_adc": 284.54339243240355,
+      "threshold_settings": [
+        [
+          113621.0,
+          10,
+          35,
+          7.8125
+        ]
+      ],
+      "selected_dt_min_ps": 624.0,
+      "selected_dt_max_ps": 2397.0,
+      "selected_missing_fine_calibration": 0,
+      "prompt_missing_fine_calibration": 0,
+      "prompt_below_100ps": 0,
+      "selected_below_100ps": 0,
+      "populated_profile_bins": 10,
+      "fitted_profile_bins": 10,
+      "checks": {
+        "safe_mode": true,
+        "pair_count": true,
+        "prompt_count": true,
+        "selected_count": true,
+        "histogram_boundary": true,
+        "profile_replay": true,
+        "csv_matches_summary": true,
+        "linear_coefficients": true,
+        "linear_covariance": true,
+        "undefined_sem_only_singletons": true,
+        "fit_bin_count": true,
+        "independent_weighted_fit": true,
+        "bootstrap_replicas": true,
+        "bootstrap_percentiles": true,
+        "fixed_bootstrap_edges": true,
+        "selected_calibration_coverage": true
+      }
+    },
+    {
+      "channel": 244,
+      "module": "downstream",
+      "pair": [
+        236,
+        244
+      ],
+      "pair_hits": 11311,
+      "prompt_hits": 8524,
+      "selected_hits": 7749,
+      "q_cut_adc": 325.19735195221915,
+      "threshold_settings": [
+        [
+          113621.0,
+          10,
+          35,
+          7.8125
+        ]
+      ],
+      "selected_dt_min_ps": 442.0,
+      "selected_dt_max_ps": 1059.0,
+      "selected_missing_fine_calibration": 0,
+      "prompt_missing_fine_calibration": 0,
+      "prompt_below_100ps": 0,
+      "selected_below_100ps": 0,
+      "populated_profile_bins": 10,
+      "fitted_profile_bins": 10,
+      "checks": {
+        "safe_mode": true,
+        "pair_count": true,
+        "prompt_count": true,
+        "selected_count": true,
+        "histogram_boundary": true,
+        "profile_replay": true,
+        "csv_matches_summary": true,
+        "linear_coefficients": true,
+        "linear_covariance": true,
+        "undefined_sem_only_singletons": true,
+        "fit_bin_count": true,
+        "independent_weighted_fit": true,
+        "bootstrap_replicas": true,
+        "bootstrap_percentiles": true,
+        "fixed_bootstrap_edges": true,
+        "selected_calibration_coverage": true
+      }
+    },
+    {
+      "channel": 245,
+      "module": "downstream",
+      "pair": [
+        235,
+        245
+      ],
+      "pair_hits": 11147,
+      "prompt_hits": 6510,
+      "selected_hits": 5977,
+      "q_cut_adc": 336.04425664448735,
+      "threshold_settings": [
+        [
+          113621.0,
+          10,
+          35,
+          7.8125
+        ]
+      ],
+      "selected_dt_min_ps": 998.0,
+      "selected_dt_max_ps": 1818.0,
+      "selected_missing_fine_calibration": 0,
+      "prompt_missing_fine_calibration": 0,
+      "prompt_below_100ps": 0,
+      "selected_below_100ps": 0,
+      "populated_profile_bins": 10,
+      "fitted_profile_bins": 10,
+      "checks": {
+        "safe_mode": true,
+        "pair_count": true,
+        "prompt_count": true,
+        "selected_count": true,
+        "histogram_boundary": true,
+        "profile_replay": true,
+        "csv_matches_summary": true,
+        "linear_coefficients": true,
+        "linear_covariance": true,
+        "undefined_sem_only_singletons": true,
+        "fit_bin_count": true,
+        "independent_weighted_fit": true,
+        "bootstrap_replicas": true,
+        "bootstrap_percentiles": true,
+        "fixed_bootstrap_edges": true,
+        "selected_calibration_coverage": true
+      }
+    }
+  ],
+  "input_hashes": {
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_130/channel_130_safe_time2_two_upstream_peak_right_profile_linear_summary.json": "ea86748f395faf0d9372284728450ba01c6291943c6f23672c370bbc552decf5",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_130/run4076_profile.csv": "25c1cdc9342eaa45abbe6a9903ef379e03f82967e8a106dca8886346f7f289fe",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_130/channel_130_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz": "65bd48e576bf14a047980eb5b0e6bcc87df12e43f1edb12334b5d1890de95003",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_133/channel_133_safe_time2_two_upstream_peak_right_profile_linear_summary.json": "bb58d94d60da0ac37c2a3f3a1b5d3e534a6199d5c70b6ec81946e4960358c4e4",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_133/run4076_profile.csv": "2ff2c1b7308756c6356f8d197036f0c13a5f925fc3ec052ca7e632905074bfd9",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_133/channel_133_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz": "5541bb4d4097c90fa14185ef755de3576fd214b42006f75e315cce22dcf60070",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_134/channel_134_safe_time2_two_upstream_peak_right_profile_linear_summary.json": "3e8637707cfd89d243b02632b9b48b0690044fdcb6f9f286e89d0157f1aa7abd",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_134/run4076_profile.csv": "e5492cdd42499a0f9c1fdd4a4244bb358a531f28ef87433aa3d59f0f6e295b43",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_134/channel_134_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz": "49661d7e3626d6c9c1a7041a390ddc93cf64561ee5c32f800e32fdef5847de19",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_135/channel_135_safe_time2_two_upstream_peak_right_profile_linear_summary.json": "8957c42e8ec4584dd4a07d41ceb1226538de17bd2799b3c1da70f7a685d07dc4",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_135/run4076_profile.csv": "d6a6e87308c649a2ce5b4931fc1f4c44c9a42602dffddc37660921d54da46dab",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_135/channel_135_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz": "5282f8e44541111a51ab8d71ae38f744b641a63a11abed739956154500619d01",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_136/channel_136_safe_time2_two_upstream_peak_right_profile_linear_summary.json": "573d196468560bf3ec93c520b1088a5d1868b86a28627f93da5a62aa374fb2e3",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_136/run4076_profile.csv": "6c2ceb2ae8974835f28a040b68b4756780c6231e4061a5a032030c204fd854b7",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_136/channel_136_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz": "2c7ebd9313579ab287b7985d623030f2a21f85d21eee3a8dc0ecb2663b04f6c4",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_137/channel_137_safe_time2_two_upstream_peak_right_profile_linear_summary.json": "b3d42f2904b04829243da70efccff8417066dc6ecea09b382e413082e9a52d72",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_137/run4076_profile.csv": "83b8f263564a1a050a7d546a8987a2d9f131374716f0b4279cd74de903c3d685",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_137/channel_137_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz": "b57f0ced468f7c59ee15ea7c30793522d135f044925ec7cf9aeca817d2aded0d",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_139/channel_139_safe_time2_two_upstream_peak_right_profile_linear_summary.json": "e62876959ae78c20ffbf2bc86e57c59a32c72ebf2c2b8f7206a25aba1e1eb513",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_139/run4076_profile.csv": "47b3a5229b76dd73462df63405fecbfa3a2defe7bef261ca16bac67a245d9361",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_139/channel_139_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz": "2249905fc20eb401202dee0968bf00f2f71359dc73565bcc67801f290f8da431",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_149/channel_149_safe_time2_two_upstream_peak_right_profile_linear_summary.json": "7d9fb48203ff3d92908aaf805a8e27379b0b22e9b2c2d610f87b4fa47931f8af",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_149/run4076_profile.csv": "d4634f70b6bd588657e660c24030e9ff05113b5cd07c3e2a8e7689e02906d51f",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_149/channel_149_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz": "8d2f2d03dcdb9ee58af42e2825a8ba02a0bb6f1cb2882a0b1b964f3bf33e0569",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_150/channel_150_safe_time2_two_upstream_peak_right_profile_linear_summary.json": "89edacff189f943c3af679f998c786a9b6c352282394856e12beb9eec82a3bb9",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_150/run4076_profile.csv": "5066265cd9fdb530f5cadfd01f260d30d8443384729de76a9ef7135bea266093",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_150/channel_150_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz": "c5128f06650bf9889daaaf5f621a650fabd716050ea1a0c08b8af27cc0120697",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_151/channel_151_safe_time2_two_upstream_peak_right_profile_linear_summary.json": "fb2611e2825340a6f37ef5dc83b103d994c586a7f7c66f9aecf242429c3cd845",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_151/run4076_profile.csv": "54255cb99dc05cce4daea15741df9f410b3dde344c9b7c0ad801a297a91b3632",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_151/channel_151_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz": "423f06230907fc776ff68c59abcb7e470533d45b2a31dfc28a12076a8ecf872a",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_154/channel_154_safe_time2_two_upstream_peak_right_profile_linear_summary.json": "09b759904b2fd723276cbd80f4e89c33c62705733082061aba659542aec8f202",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_154/run4076_profile.csv": "7e6189b9de837f891d57dc32857fdba228e43c846d1a737e8cc638a4737c5b6f",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_154/channel_154_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz": "799314108cd210e46be18304222549a9cac2197af4058c04215f404edb9fdf2f",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_155/channel_155_safe_time2_two_upstream_peak_right_profile_linear_summary.json": "1a8bca3a0a1bfe3ce18c946170dee6466c63e235d155475c18b444805cbc0a00",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_155/run4076_profile.csv": "84b188d5d562d02eb82d43fbc3fefaa00856ca6e4f80fe131e4d556dde7f5d17",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_155/channel_155_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz": "d0d91a09c92e2139dbf446b3718f41cd76e24c25cc04883417ff111755c4c6bd",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_156/channel_156_safe_time2_two_upstream_peak_right_profile_linear_summary.json": "1a662531789ef315d93f5bf9e415a5f6c9e560b8d6468211f1f333f8cbf415fe",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_156/run4076_profile.csv": "b51a615971c55e12ee86a178ed63188c2fd82cdad0f8c31b2ea066071f45e4ab",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_156/channel_156_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz": "c78fd873929a12e427d939f8e24dcaa0fed86733f6267a5f56b64589d532d7d1",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_159/channel_159_safe_time2_two_upstream_peak_right_profile_linear_summary.json": "3e6d90f7dff22335a32747a0a522104dcae2c1b1a3cb65f84f243d0c01f9bcc3",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_159/run4076_profile.csv": "2bf58705d2fe6e2faf76b89943a582b700d85822998616290ab6e5c9cf6bf52f",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_159/channel_159_safe_time2_two_upstream_peak_right_profile_linear_bootstrap_coefficients.npz": "9375de088df0b78148e365d85401084b59ebe2ec4861eaee460109fe0030baae",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_235/channel_235_safe_time2_two_downstream_peak_right_profile_linear_summary.json": "82d8b5e9677a16e865d5183ea6acddcca396d71fff8630a6cd2836dfd8f6356d",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_235/run4076_profile.csv": "535b863fd22e989e583dc64494ce6940361e125d887e429fc89d4ed622acd306",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_235/channel_235_safe_time2_two_downstream_peak_right_profile_linear_bootstrap_coefficients.npz": "5e952f9165fcbab5a717d739e127c4cdd14abc96a22f5a17e38c7af4a7feae8a",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_236/channel_236_safe_time2_two_downstream_peak_right_profile_linear_summary.json": "851a09af4ea2828aba2520cb1306d287b4585e9d444578ddad96b499001f1f5d",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_236/run4076_profile.csv": "60f1fd792100441a3cc37f925d5379559f894aadaf285667c65f26d195d7595a",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_236/channel_236_safe_time2_two_downstream_peak_right_profile_linear_bootstrap_coefficients.npz": "b8efe54d06672310d9f7b8986b03ee77b6eebe553052140a27ee2af984c3786a",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_238/channel_238_safe_time2_two_downstream_peak_right_profile_linear_summary.json": "3bb214e5cdd8b4c2f11d3e425e98421c7719316095556b0b9582c21200242738",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_238/run4076_profile.csv": "d469271ec0b99762682820f5994d29f5231ffa5671ee6bfe25676f693f8c386b",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_238/channel_238_safe_time2_two_downstream_peak_right_profile_linear_bootstrap_coefficients.npz": "afde3d30bff9ac10c6ff1b0bb1cd5b68fb8af3df042a6b2a409a4ea75ef6c3e7",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_239/channel_239_safe_time2_two_downstream_peak_right_profile_linear_summary.json": "40cdb2bd9720ba0a628030235f77c92dab89470d3101e99316fb1b1e3724cac7",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_239/run4076_profile.csv": "1f4b0377cc4c6addb25e1495bbcff4f94566bfda4898dc4fe2f86cbc2c3e4797",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_239/channel_239_safe_time2_two_downstream_peak_right_profile_linear_bootstrap_coefficients.npz": "d32c6ab05a9946c15981febe328aa52c9dbe488678926e9dc5e42095c6f2e044",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_240/channel_240_safe_time2_two_downstream_peak_right_profile_linear_summary.json": "c985cff8aa2674a110111e66bdabf6b137f911a5a8c3f7870011453fd00ef777",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_240/run4076_profile.csv": "8d2050183815fa8518d89e479e78c99b9805198463dea2dc124fd363f80f8b95",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_240/channel_240_safe_time2_two_downstream_peak_right_profile_linear_bootstrap_coefficients.npz": "efa1ea2137c3c2eabef2f462d73024feafec8507f91e2a2370d3f8c5bb2b05bf",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_242/channel_242_safe_time2_two_downstream_peak_right_profile_linear_summary.json": "709e8f65e8e9d20bf025081d50a8a7c452a1977144c5c2879ab7f926f518daa5",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_242/run4076_profile.csv": "89a4e8b9cdd4b3ac6b792c227fe2441073865c26b0eccca9c64b71aac2131322",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_242/channel_242_safe_time2_two_downstream_peak_right_profile_linear_bootstrap_coefficients.npz": "f6d50c35a58f8410014daf2519c085df283cf4bcbd219bb1f9e31208eba4ab76",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_244/channel_244_safe_time2_two_downstream_peak_right_profile_linear_summary.json": "66ec29fa840d208a619f2909e6e515481b1aa9294761984a905e6e3041e4a563",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_244/run4076_profile.csv": "2d861c418ba6a89826a5852c00f5acc7648b75574921a83d3e027842d9be1212",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_244/channel_244_safe_time2_two_downstream_peak_right_profile_linear_bootstrap_coefficients.npz": "38072154fb0fb6882be9ba9217a1e9533d384b6f9d0d0f3878078223cd599c49",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_245/channel_245_safe_time2_two_downstream_peak_right_profile_linear_summary.json": "5b1b1359a1f6ebb18768a5f97df07c195181620e033037c50d8f91ade7379e39",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_245/run4076_profile.csv": "e8e33548df73eb59f9f7fc67dd1f542c973417b316f27e8a7fcc9622d62b1b9f",
+    "Q_Walk/results/2026-10-22_clock_quality/inputs/channel_245/channel_245_safe_time2_two_downstream_peak_right_profile_linear_bootstrap_coefficients.npz": "77b2b63736c5d279da6cdb59c9c4a8d4a24d22387cb39763b2afa021253c1df3"
+  },
+  "code_hashes": {
+    "Q_Walk/qwalk_core.py": "ac270f44a8fe8b2805d8d5cc49253e09acea4b09051e0ab895b22ddc46e13a3d",
+    "Q_Walk/qwalk_channels.py": "2c71215d0fcd9606ebf485157163ab715f8e51ef02adea07f6e87ce0435d59af",
+    "Q_Walk/qwalk_two_hit_pair_profile.py": "5327ead6e3fb244cf27b8096b4367b216e2f8dc85a72b1ce3f1af123a1fb0105",
+    "Q_Walk/qwalk_run4076_peak_right_profile.py": "5cf4465cfcd53a1fc9269152f8882ab5c44e55e72a55da92d3b3812dd6edd152",
+    "Q_Walk/qwalk_run4076_safe_time2_scatter.py": "e6d204039e6380f3bd120b070e65fba483f18150c7c0185ffd2279ffae0b8ca1"
+  }
+}

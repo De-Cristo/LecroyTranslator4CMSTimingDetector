@@ -59,6 +59,13 @@ ROOT inputs remain local. Full event regeneration still requires the documented
 EOS inputs and analysis environment. Numerical snapshots permit verification of
 the displayed results without those ROOT files.
 
+The N2-2 closure also includes the run4076 pair/profile helpers, focused tests
+and `review_2026-10-22_n2_2/` audit. Its ROOT replay reproduces the frozen
+selection without inheriting the newer 100 ps minimum-rise default. No
+production analysis code or frozen numerical input was changed for that closure;
+the added helpers are copies of the existing local implementations. Full replay
+still requires the documented run4076 `23_e.root` file on EOS.
+
 The current notes remain marked as review drafts. Publishing them in the
 repository does not remove any unresolved scientific review item or imply CMS
 approval.

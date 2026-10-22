@@ -53,7 +53,10 @@ def main():
             assert "N2-1" not in review_text and "N2-1" not in candidate_text
             assert "same nominal detector setup" in candidate_text
             assert "Cross-run response differences" in candidate_text
-            for index in range(2, 8):
+            assert "N2-2" not in review_text and "N2-2" not in candidate_text
+            assert "Timing reconstruction and threshold scale" in candidate_text
+            assert "Landau" in candidate_text and "does not set this cut" in candidate_text
+            for index in range(3, 8):
                 assert f"N2-{index}" in candidate_text
         with zipfile.ZipFile(note / "source_bundle.zip") as bundle:
             for path in ("main.tex", "publication_candidate.tex", "references.tex",
@@ -73,8 +76,8 @@ def main():
                   combined_pages=len(PdfReader(combined).pages),
                   combined_sha256=hashlib.sha256(combined.read_bytes()).hexdigest(),
                   review_status="N1-6 local work complete; convener template, DP metadata, cover handling and release approval pending",
-                  note2_review_status="N2-1 closed under author's nominal-setup assumption, not independently verified; N2-2 through N2-7 remain open",
-                  analysis_tests="not rerun: calibration inputs, figures and analysis code unchanged; previous checks reused")
+                  note2_review_status="N2-1 closed under author's nominal-setup assumption; N2-2 closed after 22-channel ROOT replay; N2-3 through N2-7 remain open",
+                  analysis_tests="previous clock-quality tests reused; N2-2 ROOT replay and 17 focused tests documented in review_2026-10-22_n2_2/README.md; frozen numerical results unchanged")
     (OUT / "verification.json").write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report, indent=2))
 

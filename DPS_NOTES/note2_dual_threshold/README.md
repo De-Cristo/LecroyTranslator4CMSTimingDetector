@@ -7,8 +7,8 @@ Open `slides.pdf` or `note_with_cover.pdf`. Edit `main.tex` and `metadata.tex`.
 This draft uses the measured-overlap comparison refreshed on 22 October 2026.
 It explicitly distinguishes reference-fitted AWC, model-shape closure and
 exploratory internal prediction. The 4076 and 4399 samples are different events.
-N2-1 is closed under the nominal-setup assumption below. Review items N2-2
-through N2-7 remain open before any public release.
+N2-1 is closed under the nominal-setup assumption below; N2-2 is closed after
+the ROOT replay documented below. N2-3 through N2-7 remain open before release.
 
 On 21 October 2026 the clock-corrected reference profiles were also added to
 Note1, closing the reference-version gap N1-4. This left the N2-1 question of
@@ -33,6 +33,20 @@ state the assumption and retain the unquantified cross-run and
 selection-dependent response limitations. No fit, data, figure or numerical
 uncertainty changed. The two inline N2-1 comments and queue entry were removed;
 the other N2 review items remain open.
+
+N2-2 closed on 22 October 2026 after replaying the run4076 `23_e.root` input
+for all 22 frozen channel profiles. Counts, histogram charge boundaries, bin
+statistics, SEM-weighted coefficients and covariance agree with the saved
+summaries; CSVs and bootstrap percentiles are consistent. All selected hits
+have fine-time lookup coverage. The note now specifies the safe reconstruction,
+threshold decoding, exact module-pair topology and prompt cuts. The charge cut
+is histogram-derived, not obtained from the Landau--Gaussian fit. The frozen
+selection has no 100 ps minimum-rise cut; newer defaults must not be inherited.
+Channel 135's singleton bin has undefined SEM and is excluded from its fit.
+See `../review_2026-10-22_n2_2/README.md` and `audit.json` for evidence and
+limitations. The audit changes no saved fit, bootstrap replica, spectrum or
+AWC value. N2-3/N2-6 still cover selection sensitivity and channel quality;
+N2-4 still covers the uncertainty budget.
 
 The N1-6 packaging update also adds verified context/method references here.
 `publication_candidate_slides.pdf` and `publication_candidate_with_cover.pdf`
