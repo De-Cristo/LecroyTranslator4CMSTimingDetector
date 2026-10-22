@@ -25,9 +25,9 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "All Note 2 slides inspected in rendered contact sheets. No layout overflow or unresolved citations. Note 1 PDF text and full original notes unchanged.",
+  "visual_review": "Channel 150 profile on Note 2 slide 5 inspected; no overflow. All other slide text, Note 1 and full notes unchanged.",
   "scientific_inputs": "Twenty-four newly fitted per-threshold channel corrections, six independent validation samples. Final histograms checked against the threshold reports. No pooled threshold timing distribution.",
-  "combined_sha256": "ba71a8a35505871d0118069461a76c49b7161c7b424e180b18e128c941fb5880",
+  "combined_sha256": "5e6b15682f9dd217212019bd11e2f230f5cfbb0877501bb7c50cc5ad34f0153c",
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 8,
@@ -81,5 +81,13 @@
       ],
       "8_agreement_with_reference": 7
     }
+  },
+  "note2_profile_update": {
+    "slide": 5,
+    "channel": 150,
+    "selected_hits": 19312,
+    "source": "DPS_NOTES/note2_dual_threshold/figures/slope_ch150.pdf",
+    "sha256": "2e3ecfb14b07719139d4a1a8e1907dfdfe223d56e1b8728a14616728faf5a340",
+    "other_pages_unchanged": true
   }
 }

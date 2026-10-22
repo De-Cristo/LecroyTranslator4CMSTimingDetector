@@ -69,7 +69,8 @@ The short deck follows the authors' eight-point narrative. The goal is a
 repeatable internal-data calibration, not a catalogue of MCP-fitted amplitudes.
 Slides 2--6 cover the HL-LHC calibration need, variation of the original
 quadratic coefficients, the dual-threshold physical model, internal slope
-profiles and the one-amplitude inverse-slope correction. Slide 7 benchmarks
+profiles and the one-amplitude inverse-slope correction. The internal slope-profile
+example on slide 5 is channel 150 (19,312 selected hits). Slide 7 benchmarks
 the functional form with the existing MCP comparison curves. Slide 8 explains
 the proposed internal-data procedure and the independent tests still needed.
 
