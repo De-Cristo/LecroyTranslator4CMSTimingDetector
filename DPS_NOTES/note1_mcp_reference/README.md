@@ -70,6 +70,20 @@ covariance, residual segment offsets and calibration systematics are not
 included in the quoted intervals. This closure does not validate those broader
 claims or close any Note2 review item. No data, fit, selection or figure changed.
 
+N1-6 local work completed on 22 October 2026: verified primary references are
+cited in the relevant slides and listed in `references.tex`. The separate
+`publication_candidate_slides.pdf` excludes the internal review queue and the
+four unvalidated historical timing/clock backups. Full review slides preserve
+them, explicitly marked as historical/internal. The validated segment-offset
+diagnostic remains. `publication_candidate_with_cover.pdf` is an optional local
+preview, not an instruction to upload an extra cover.
+
+N1-6 remains pending only for convener confirmation of template, DP identifiers,
+metadata and cover/submission handling. No official template validation, DP
+assignment, CMS approval or submission is claimed. See
+`../PUBLICATION_CHECKLIST.md` and `../review_2026-10-22_publication/citation_audit.md`.
+No analysis result changed in this citation/packaging update.
+
 The standalone source archive compiles with pdfLaTeX. Within the repository,
 use the shared builder described in `../README_DRAFTS.md`. No CMS DP identifier
 has been assigned in this draft.

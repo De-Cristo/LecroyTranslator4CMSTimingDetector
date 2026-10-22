@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "notes": {
+    "note1_mcp_reference": {
+      "review_slides": 32,
+      "candidate_slides": 27,
+      "candidate_with_cover_pages": 28,
+      "citations": [
+        "Bootstrap",
+        "LOWESS",
+        "MTDTDR",
+        "TOFHIR2"
+      ],
+      "source_bundle_checked": true,
+      "layout_overflow": 0,
+      "unresolved_citations": 0
+    },
+    "note2_dual_threshold": {
+      "review_slides": 25,
+      "candidate_slides": 24,
+      "candidate_with_cover_pages": 25,
+      "citations": [
+        "Bootstrap",
+        "LOWESS",
+        "MTDTDR",
+        "TOFHIR2"
+      ],
+      "source_bundle_checked": true,
+      "layout_overflow": 0,
+      "unresolved_citations": 0
+    }
+  },
+  "combined_pages": 59,
+  "combined_sha256": "2ccdc10408358c0727a834989ab826ee73a3fc7c73e102d0a20f21f90feec730",
+  "review_status": "N1-6 local work complete; convener template, DP metadata, cover handling and release approval pending",
+  "analysis_tests": "not rerun: calibration inputs, figures and analysis code unchanged; previous checks reused"
+}

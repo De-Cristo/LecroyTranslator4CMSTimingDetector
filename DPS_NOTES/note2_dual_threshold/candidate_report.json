@@ -1,0 +1,15 @@
+{
+  "status": "unapproved candidate; convener confirmation pending",
+  "slides": 24,
+  "with_cover_pages": 25,
+  "overfull_boxes": 0,
+  "unresolved_citations": 0,
+  "dp_number": null,
+  "template_officially_confirmed": false,
+  "cover_handling_confirmed": false,
+  "scientific_review_comments_retained": true,
+  "files": {
+    "publication_candidate_slides.pdf": "6965bd1f14cd3551a55f69a98459cad0998db5c7a4baa0843a33d960b0563171",
+    "publication_candidate_with_cover.pdf": "772b17f7643acb14fec0e04bdfe8458709fe18c1e7a7cd925ff61b3ecb7eb570"
+  }
+}

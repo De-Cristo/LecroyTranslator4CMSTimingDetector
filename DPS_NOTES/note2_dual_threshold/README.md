@@ -23,6 +23,13 @@ old September results are preserved. `reference_update_awc_impact.csv` records
 the per-channel change. The quoted intervals still hold the reference fixed.
 No cross-run or reference-fit systematic has been added to those intervals.
 
+The N1-6 packaging update also adds verified context/method references here.
+`publication_candidate_slides.pdf` and `publication_candidate_with_cover.pdf`
+provide independent candidate deliverables for this note. They remain explicitly
+unapproved and retain the scientific review comments; only the closing queue is
+omitted. No N2 review item is closed by this formatting change. See
+`../PUBLICATION_CHECKLIST.md` for pending convener decisions and cover handling.
+
 The standalone source archive compiles with pdfLaTeX. Within the repository,
 use the shared builder described in `../README_DRAFTS.md`. No CMS DP identifier
 has been assigned in this draft.

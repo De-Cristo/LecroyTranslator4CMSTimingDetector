@@ -6,7 +6,8 @@
     "N1-2": "comments replaced with verified current code locations",
     "N1-3": "closed 2026-10-21: explicit minus-sign formula and single LOWESS contribution verified against code; documentation only",
     "N1-4": "closed 2026-10-21: author requested adding clock-corrected results to Note1; exact Note2 references shown alongside archived fits, with selections and shape comparison; no fit changes",
-    "N1-5": "Closed by author on 22 October 2026 for this version: same-event conditional timing validation only; intrinsic bar resolution and synchronization-jitter extraction outside scope. Review comment and queue entry removed; physical limitations retained; no numerical changes."
+    "N1-5": "Closed by author on 22 October 2026 for this version: same-event conditional timing validation only; intrinsic bar resolution and synchronization-jitter extraction outside scope. Review comment and queue entry removed; physical limitations retained; no numerical changes.",
+    "N1-6": "Local citation and candidate-packaging work completed 22 October 2026. Official template, DP identifiers, cover handling and CMS approval remain pending with conveners; no submission."
   },
   "files": [
     {
@@ -15,9 +16,14 @@
       "bytes": 1003
     },
     {
+      "path": "DPS_NOTES/PUBLICATION_CHECKLIST.md",
+      "sha256": "ea6ee2c27747efb21090fc4e99576164bf5755bd19d55c7d4d7bf7a52666cf54",
+      "bytes": 3133
+    },
+    {
       "path": "DPS_NOTES/README_DRAFTS.md",
-      "sha256": "9503cc5aa88e55d0f71064a6fe6f78eb8bd1f9fa6e0294668e871a0d5f0011ae",
-      "bytes": 7882
+      "sha256": "767b747df219d4e1503be9aed8a262fc57bbb7f3e97e3eba7a8f8c14a4d05d48",
+      "bytes": 9002
     },
     {
       "path": "DPS_NOTES/REPOSITORY_WORKFLOW.md",
@@ -26,8 +32,8 @@
     },
     {
       "path": "DPS_NOTES/both_notes_review_v1.pdf",
-      "sha256": "332a9a63b7efeb218ff44b8848ded612a8df8803b805b18d24d41d8449d5477e",
-      "bytes": 6597502
+      "sha256": "2ccdc10408358c0727a834989ab826ee73a3fc7c73e102d0a20f21f90feec730",
+      "bytes": 6619537
     },
     {
       "path": "DPS_NOTES/cms_dp_note_template/CMSlogo_black_label_1024.png",
@@ -66,8 +72,8 @@
     },
     {
       "path": "DPS_NOTES/draft_support/build.py",
-      "sha256": "4c1b31476e0285ffc1dbee03c0dc49ed4051307790530ae5e7c8d4d06c2622b2",
-      "bytes": 4497
+      "sha256": "11b4f77d1974ca3f83a2dc0a8d0156a6c08a0a98ed9dc3f2e8e9057dc0ec9c69",
+      "bytes": 7614
     },
     {
       "path": "DPS_NOTES/draft_support/build_assets.py",
@@ -78,6 +84,11 @@
       "path": "DPS_NOTES/draft_support/cover.tex",
       "sha256": "6cb092a7fa9e30237b367b1c138258a926f101f34b970e44bd3fa8ad3fca7c2b",
       "bytes": 1297
+    },
+    {
+      "path": "DPS_NOTES/draft_support/references.tex",
+      "sha256": "dc93796a763e81eebbf279621c090bc403c42b25b8161321661f3f79707993f3",
+      "bytes": 1226
     },
     {
       "path": "DPS_NOTES/draft_support/slides_preamble.tex",
@@ -96,17 +107,22 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/README.md",
-      "sha256": "81d66643ee11852a45526042370e069746a07a3c78bf4544a58cb3c358301a62",
-      "bytes": 4729
+      "sha256": "e802289f7bd41f5a2cf76c526547eb9b48cc8e286d28bdda5f6818b43ed9f29c",
+      "bytes": 5612
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/build_report.json",
-      "sha256": "adbbf7defda0c329d381603a74b5945c31874ce2a9581835fa44bc628bcb5011",
+      "sha256": "ae45c8b9ee37d3111ab542f4885298e8742effeb9d0b4a7b785afe625ded6165",
       "bytes": 385
     },
     {
+      "path": "DPS_NOTES/note1_mcp_reference/candidate_report.json",
+      "sha256": "b4e97d329d3a02e6007644b15b78b58b37cff276a69ac08b6f9781812c351d61",
+      "bytes": 549
+    },
+    {
       "path": "DPS_NOTES/note1_mcp_reference/cover.pdf",
-      "sha256": "c243a3c856b5d46e9dd9d9950ed547e075ce8ef14e7435e0879b4e527ee0214d",
+      "sha256": "797417abfca7ff18ef56134b80544405cf6bd017c978b8a7e00781e850be6679",
       "bytes": 949770
     },
     {
@@ -436,8 +452,8 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/main.tex",
-      "sha256": "756f0acbce23170df960845c2e92c01e45f31f4ce66a9c6e0afb3e230378c518",
-      "bytes": 20090
+      "sha256": "ef5970e63a49882dcf572964f7a807d4f477292eb59ca9a48deab15a1b869140",
+      "bytes": 20322
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/metadata.tex",
@@ -446,8 +462,28 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/note_with_cover.pdf",
-      "sha256": "26275c5ebbcf3431f2790e074922a5987bcd9cf9a2967211d38ce752bedd1de4",
-      "bytes": 4608907
+      "sha256": "ebaa6ce61a57d843d0450dee5891caaecf473dc6aa4fb19d060b828e0dfc378b",
+      "bytes": 4617469
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/publication_candidate.tex",
+      "sha256": "f97d1a1ab8c81941287a7ec74275b2751e006b9ef03a47c592a807bd6d00791a",
+      "bytes": 112
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/publication_candidate_slides.pdf",
+      "sha256": "154a0d00bd3acad37ea1bff3cba46942b8097d0b02f254b43afb005ec3d44f3a",
+      "bytes": 2875811
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/publication_candidate_with_cover.pdf",
+      "sha256": "ab7b3fa5309c79d63510e5f400fe51664c29058ca2976f672bf08cde911eada7",
+      "bytes": 3902399
+    },
+    {
+      "path": "DPS_NOTES/note1_mcp_reference/references.tex",
+      "sha256": "dc93796a763e81eebbf279621c090bc403c42b25b8161321661f3f79707993f3",
+      "bytes": 1226
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/review_values.tex",
@@ -456,8 +492,8 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/slides.pdf",
-      "sha256": "2534bf2ecd0276685ea0f07797110a9284f9061abfd9b7c73ca0e9033e95050f",
-      "bytes": 3575092
+      "sha256": "c2bcc819458f1bfb3eb35d571ad94729e7389d36a573f54f80d6b092745d8ab0",
+      "bytes": 3581441
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/slides_preamble.tex",
@@ -476,17 +512,22 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/README.md",
-      "sha256": "6d0ad68b726642ce8f327dc1b70d6fa7d0e76ff25135e6a521e442f0120f2d5f",
-      "bytes": 1641
+      "sha256": "8c485bb52957bf500b86b095f2bc15fce9152861a158a4ca388810cc7c183b37",
+      "bytes": 2107
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/build_report.json",
-      "sha256": "9a7c42343d00d40fb2ac96b0de3fc75ce3fe499b31f986959dd3ec2f0f25ad72",
-      "bytes": 315
+      "sha256": "f5a82420a19d5afca18d7e3d6673ef6d96bb064539c55747773653cc949c7c0a",
+      "bytes": 350
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/candidate_report.json",
+      "sha256": "3e887d586e924230fe6d7712f38842e3c5ad24e69912adef9744041a3285ac6e",
+      "bytes": 548
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/cover.pdf",
-      "sha256": "938a680582896533f364a9e6e1898fcbd2ffb622f9d91ff8a836200b11f18998",
+      "sha256": "a35f2fd5bc265964a9da4c7f51e91129ac1801026f8bb864bd0fb36c286a4be9",
       "bytes": 950156
     },
     {
@@ -821,8 +862,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/main.tex",
-      "sha256": "bd7668659a5f5d8d02b7232dbc9f89136b5c9c3e0350dddc0df416c8cbd72097",
-      "bytes": 16768
+      "sha256": "295287f4a07eb3f17b4c29792660d4e9f2c5250fccac30bf8bb82ab047e20522",
+      "bytes": 17036
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/metadata.tex",
@@ -831,8 +872,28 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/note_with_cover.pdf",
-      "sha256": "2c3ddfdf07c4ff23e5f393599712f439c3c0a6067285894a061e0f629d744ff2",
-      "bytes": 1987908
+      "sha256": "9bf3a4ad97048bc2da66305fe86a5a7e7d1c4e9ac0def0f7ad1ce25ee370ed1e",
+      "bytes": 2001877
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/publication_candidate.tex",
+      "sha256": "c79ba371c13b84d24de9628e88bac547175298590a975910909eb7de3119a988",
+      "bytes": 125
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/publication_candidate_slides.pdf",
+      "sha256": "6965bd1f14cd3551a55f69a98459cad0998db5c7a4baa0843a33d960b0563171",
+      "bytes": 961951
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/publication_candidate_with_cover.pdf",
+      "sha256": "772b17f7643acb14fec0e04bdfe8458709fe18c1e7a7cd925ff61b3ecb7eb570",
+      "bytes": 1980355
+    },
+    {
+      "path": "DPS_NOTES/note2_dual_threshold/references.tex",
+      "sha256": "dc93796a763e81eebbf279621c090bc403c42b25b8161321661f3f79707993f3",
+      "bytes": 1226
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/review_values.tex",
@@ -841,8 +902,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/slides.pdf",
-      "sha256": "00b3d9dddcb480dcaa6818b34fc3c4cd5802a9d97355e807b279d92d5a845944",
-      "bytes": 970618
+      "sha256": "741fbb63177be72b6cf7f0ca9defd8f5d0310bbfcf8c9f1b6852deeec520503c",
+      "bytes": 982495
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/slides_preamble.tex",
@@ -1636,13 +1697,28 @@
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_clock_quality/verification.json",
-      "sha256": "382589f8a079d95b82a10b140de4ec55c548f287b6f7e69594da84ff0135af4e",
-      "bytes": 1364
+      "sha256": "70e1b979157632bd07926f35bfab79b260770b431fdd3dcaeb1d02262139dafe",
+      "bytes": 1403
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_clock_quality/verify.py",
       "sha256": "0ffd2b05a0b6f83bbc7eb4ff856c43fdf2cfd1cc8bbc757d2a401861fb6059ac",
       "bytes": 4095
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_publication/citation_audit.md",
+      "sha256": "763ae3943ec99298b13dd102c4eac8846ba9c4db1fb88a965b8df4f397dfc049",
+      "bytes": 2945
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_publication/verification.json",
+      "sha256": "8b8eb3022953c3522540fa71729697263dea2e0810502843f5b99c6c187a0cca",
+      "bytes": 1064
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_publication/verify.py",
+      "sha256": "e500618cfde36d4a6f85adcd30ff039a8dfa6fbd51c148e8d0cd094a341f1dc1",
+      "bytes": 3996
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -3191,13 +3267,18 @@
     }
   ],
   "verification": {
-    "file_count": 636,
+    "file_count": 651,
     "all_source_hashes_match": true,
-    "combined_pages": 57,
+    "combined_pages": 59,
     "focused_tests_passed": 140,
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "N1-5 scope closure: Note1 rebuilt without overflow, slides visually inspected, combined PDF verified; numerical inputs, figures and analysis code unchanged; previous tests reused."
+    "latest_change": "N1-6: verified primary references; separate candidate PDFs exclude four historical Note1 backups, retain Note2 review comments, and pass layout/citation/packaging checks. Combined review and changed pages inspected. Calibration inputs, figures and analysis code unchanged; previous analysis tests reused.",
+    "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
+    "candidate_slides": {
+      "note1_mcp_reference": 27,
+      "note2_dual_threshold": 24
+    }
   }
 }

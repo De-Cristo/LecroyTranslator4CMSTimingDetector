@@ -13,8 +13,8 @@ The scope trigger reaches TOFHIR channel 192; a separate 160\,MHz clock link
 can also be recorded by the scope.
 
 The highlighted lower readout path is used for the reference-bar calibration.
-}{Legacy setup illustration from the supplied Note1 source. Acronyms inside the
-illustration will be simplified in the final redraw.}
+}{Legacy setup illustration. Detector/readout context:
+Refs.~\cite{MTDTDR,TOFHIR2}; run-specific setup from this study.}
 
 \FigureSlide{Reconstructing the MCP pulse time}{mcp_waveform}{
 An example Hamamatsu MCP waveform is shown with its fitted pulse template.
@@ -63,7 +63,7 @@ charge-dependent time walk.}
 \FigureSlide{Correcting smooth residual clock drift}{clock_residuals}{
 After the linear clock-rate correction, the time residual still changes
 within each of three segments. Points are matched events; red curves show
-the smooth trend estimated by LOWESS, a locally weighted regression.
+the smooth trend estimated by LOWESS, a locally weighted regression~\cite{LOWESS}.
 
 The fitted trend is added to the linear prediction to reconstruct the
 expected channel-192 trigger time. This expected time is subtracted once
@@ -282,6 +282,7 @@ The corrected full-sample SD is \DSD\,ps; \DTail\% lie outside the core window.
 
 The 16th--84th percentile interval is [\DLow, \DHigh]\,ps from 400
 file/segment-block bootstrap replicas, with calibrations held fixed.
+Ref.~\cite{Bootstrap} gives the general resampling principle.
 }{Truncated-normal likelihood within median $\pm2.5(1.4826\,\mathrm{MAD})$.
 Each histogram is median-centered for display only; the SD includes all events.}
 
@@ -339,13 +340,16 @@ from \RBefore{} to \RAfter\,ps. This is a conditional timing-validation result,
 not an intrinsic-resolution measurement or a complete uncertainty budget.
 \end{frame}
 
+\input{references.tex}
+
+\ifdefined\PublicationCandidate\else
 \begin{frame}{Review queue before publication}
 \footnotesize
 \begin{tabular}{l>{\raggedright\arraybackslash}p{11cm}}
 \toprule
 ID & Decision or missing evidence\\
 \midrule
-N1-6 & Verify citations, official template/DP metadata and final publication packaging.\\
+N1-6 & Local citations and candidate packaging checked; conveners must confirm template, DP metadata and cover handling.\\
 \bottomrule
 \end{tabular}\par
 \medskip
@@ -356,6 +360,7 @@ Sources: supplied \texttt{Note1.pdf}; candidate editable manuscript
 The figure manifest records the exact copied inputs and checksums.
 This review slide is removed from a public release.
 \end{frame}
+\fi
 
 \FigureSlide{Backup: residual segment offsets}{validated_segment_stability}{
 Points show median end differences ($D$) and bar-minus-MCP differences ($R$)
@@ -369,6 +374,7 @@ be understood before extracting a synchronization contribution.
 }{Group medians are descriptive point estimates, not independent resolution
 measurements. Identifiers and event counts accompany the numerical data.}
 
+\ifdefined\PublicationCandidate\else
 \FigureSlide{Backup: historical end-difference illustration}{bar_end_difference}{
 This archived figure displays a width of 52.87\,ps. Its exact event sample,
 histogram inputs and fit definition have not been recovered.
@@ -408,8 +414,9 @@ edge index.
 The distributions illustrate estimator dependence. Their widths contain
 the contributions present in this specific measurement and are not
 automatically an absolute clock-accuracy measurement.
-\Review{N1-6}{Recover source arrays and confirm common selections and
-width definitions before using numerical improvements.}
+The source arrays, common selections and width definitions are not established.
+This internal discussion figure is excluded from the publication candidate.
 }{Legacy clock-estimator diagnostic, retained as a discussion backup.}
+\fi
 
 \end{document}

@@ -50,7 +50,8 @@ versions, selections and uncertainties have already been reconciled.
    extraction are outside scope. N2-5 remains a separate review item.
 6. N2-6: define channel eligibility independently of the observed summary trend.
 7. N2-7: decide whether internal prediction belongs in the main result.
-8. N1-6: bibliography, official template, metadata and release packaging.
+8. N1-6: local references and candidate packaging completed; official template,
+   DP metadata and cover/submission handling await convener confirmation.
 
 Before publication, synchronize the relevant local code and documentation with
 the intended online repository. Verify that every code path cited in the slides
@@ -106,6 +107,16 @@ Intrinsic-resolution and synchronization-jitter extraction are outside scope;
 the existing position, covariance, segment-offset and calibration-systematic
 limitations remain explicit. This closure changes no numerical results.
 
+N1-6 local update: both notes now cite verified primary sources for the detector,
+readout, LOWESS and the bootstrap principle. Each has separate unapproved
+publication-candidate PDFs, with and without the optional local A4 cover.
+The Note1 candidate excludes the four unvalidated historical timing/clock
+backups, including the clock-estimator comparison; full internal review decks
+retain them. Note2's unresolved scientific comments remain visible. No fits,
+plots or scientific review decisions changed. See `PUBLICATION_CHECKLIST.md`
+and `review_2026-10-22_publication/citation_audit.md`. N1-6 is not fully closed:
+the conveners must still confirm official format, metadata and cover handling.
+
 ## Edit and rebuild
 
 Edit each note's `main.tex` and `metadata.tex`. Shared layout and cover source:
@@ -129,6 +140,12 @@ The build checks title/abstract placement, one-page covers, figure labels and
 LaTeX overflow. Rendered previews still need visual inspection after layout
 changes. `figure_manifest.json` records source paths, copies and SHA-256 hashes;
 numerical sources are retained under `data/`.
+
+Add `--candidates` to build the separately numbered publication-candidate
+variants. `references.tex` is copied from `draft_support/` into each note; both
+builds reject unresolved LaTeX citations. The combined review PDF is not a
+submission package. Candidate PDF hashes and pending approval status are in
+each note's `candidate_report.json`.
 
 The draft builder produces only files under `DPS_NOTES/`; repository
 synchronization and the authorized commit/push are a separate step after each
