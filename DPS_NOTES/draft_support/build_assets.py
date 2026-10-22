@@ -202,7 +202,7 @@ def comparison(ch):
     ax.legend(loc="best", fontsize=9)
     residual.axhline(0, color="black", lw=.8)
     residual.plot(x, gapped(1000*(p["mapped_ns"]-p["reference_ns"])), color="#c03937")
-    residual.set(xlabel="Q [ADC]", ylabel="Difference\n[ps]")
+    residual.set(xlabel="Q [ADC]", ylabel="Model difference\n[ps]")
     for axis in (ax, residual):
         axis.grid(alpha=.2)
     save(fig, N2, f"comparison_ch{ch}", [path, rp],

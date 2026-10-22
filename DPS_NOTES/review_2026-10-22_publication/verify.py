@@ -56,8 +56,16 @@ def main():
             assert "N2-2" not in review_text and "N2-2" not in candidate_text
             assert "Timing reconstruction and threshold scale" in candidate_text
             assert "Landau" in candidate_text and "does not set this cut" in candidate_text
-            for index in range(3, 8):
+            for index in (3, 4, 6, 7):
                 assert f"N2-{index}" in candidate_text
+            assert "N2-5" not in review_text and "N2-5" not in candidate_text
+            for ch in (137, 154, 159, 242):
+                figure = PdfReader(note / f"figures/comparison_ch{ch}.pdf")
+                assert "Model difference" in " ".join(text(figure.pages[0]).split())
+            assert "RMS shape mismatch" in " ".join(candidate_text.split())
+            assert "not corrected-event timing resolution" in " ".join(candidate_text.split())
+            assert "not an event-time distribution" in " ".join(candidate_text.split())
+            assert "not a timing-resolution measurement" in " ".join(candidate_text.split())
             for removed in ("Residual check: is a straight line sufficient?",
                             "Model and selection choices change the inferred AWC"):
                 assert removed not in candidate_text and removed not in review_text
@@ -86,7 +94,7 @@ def main():
                   combined_pages=len(PdfReader(combined).pages),
                   combined_sha256=hashlib.sha256(combined.read_bytes()).hexdigest(),
                   review_status="N1-6 local work complete; convener template, DP metadata, cover handling and release approval pending",
-                  note2_review_status="N2-1/N2-2 closed as documented; original comparison retained; N2-3 model adequacy open; N2-4 covariance and weighting audit complete, reporting scope awaits acceptance; N2-5 through N2-7 remain open",
+                  note2_review_status="N2-1/N2-2 closed as documented; N2-5 closed by author for documentation-only model-closure scope; N2-3/N2-4/N2-6/N2-7 remain open; original comparison and numerical results retained",
                   analysis_tests="previous clock-quality tests reused; N2-2 ROOT replay and 17 focused tests documented in review_2026-10-22_n2_2/README.md; frozen numerical results unchanged")
     (OUT / "verification.json").write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report, indent=2))

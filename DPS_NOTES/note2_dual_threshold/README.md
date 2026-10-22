@@ -8,7 +8,8 @@ This draft uses the measured-overlap comparison refreshed on 22 October 2026.
 It explicitly distinguishes reference-fitted AWC, model-shape closure and
 exploratory internal prediction. The 4076 and 4399 samples are different events.
 N2-1 is closed under the nominal-setup assumption below; N2-2 is closed after
-the ROOT replay documented below. N2-3 through N2-7 remain open before release.
+the ROOT replay documented below. N2-5 is closed for the documentation-only
+scope below. N2-3, N2-4, N2-6 and N2-7 remain open before release.
 
 On 21 October 2026 the clock-corrected reference profiles were also added to
 Note1, closing the reference-version gap N1-4. This left the N2-1 question of
@@ -64,6 +65,16 @@ weights. Central curves, original slope-only plot bands and conclusions are
 unchanged. The expanded intervals are not total calibration uncertainties;
 weighting shifts are separate, not added in quadrature. See
 `../review_2026-10-22_n2_4/README.md`. N2-4 awaits acceptance of this scope.
+
+N2-5 closed by author approval on 22 October 2026 for this version. All four
+comparison captions distinguish model-shape closure from event timing
+resolution, and the lower axes now read "Model difference [ps]". The signed
+difference is run4076 inverse-slope model minus run4399 MCP model. Its RMS is
+computed on the uniform-Q grid after unsupported intervals are removed, not
+from an event-time distribution. No corrected-event resolution or resolution
+improvement is established by these plots. The comment and queue entry are
+removed; numerical data, curves, intervals and conclusions are unchanged.
+See `../review_2026-10-22_n2_5/README.md` for the closure record.
 
 The N1-6 packaging update also adds verified context/method references here.
 `publication_candidate_slides.pdf` and `publication_candidate_with_cover.pdf`

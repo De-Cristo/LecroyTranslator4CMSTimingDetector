@@ -244,8 +244,8 @@ The black curve is the run-4399 MCP quadratic. The red curve is the
 run-4076 inverse-slope model after fitting AWC and a constant offset.
 Only jointly measured charge support is shown.
 
-The lower panel is the difference between the two curves. Its RMS is
-\ExampleRMS\,ps; this is not a single-event timing resolution.
+Lower panel: run-4076 model minus MCP model. Its RMS shape mismatch is
+\ExampleRMS\,ps on the supported uniform-Q grid, not an event timing resolution.
 
 The original band varies the run-4076 slope fit while holding the MCP curve
 fixed. The later uncertainty table also includes MCP-fit uncertainty.
@@ -258,9 +258,8 @@ channel 154. Both plotted curves are calibrated models, not matched
 events from different runs.
 
 The lower panel directly displays the remaining shape mismatch, with
-no additional line subtracted.
-\Review{N2-5}{This replaces the ambiguous old residual illustration.
-It must be described as model closure, not a corrected-event resolution.}
+no additional line subtracted. This measures model-shape closure,
+not corrected-event timing resolution.
 }{Conditional bootstrap band: 4076 slope replicas, refitted AWC and
 offset, fixed 4399 quadratic.}
 
@@ -271,6 +270,7 @@ They do not represent discontinuities in either analytic model.
 
 The lower panel uses exactly the same supported points. All displayed
 intervals participate in the common AWC-and-offset fit.
+It is a model difference, not an event-time distribution.
 }{The stored comparison excludes \GapCount{} of the 3000 initial grid points
 for this channel. No line is drawn through those gaps.}
 
@@ -283,8 +283,8 @@ In run 4076, the target downstream pair is required, without fixing
 an upstream pair. The curves use only their common measured support.
 The same nominal-setup assumption is used for downstream channels.
 Selection-dependent response differences remain unquantified.
-}{The comparison is a per-channel shape calibration. The other module
-is not used as an internal timing reference to determine AWC here.}
+}{The lower panel is a model difference, not a timing-resolution measurement.
+The other module is not used as an internal timing reference to determine AWC here.}
 
 \FigureSlide{AWC versus inverse slope coefficient: all completed fits}{awc_summary_all}{
 Each point is one channel, not one charge bin.
@@ -416,7 +416,6 @@ ID & Decision or missing evidence\\
 \midrule
 N2-3 & Model adequacy remains open; sensitivity audit saved separately.\\
 N2-4 & Audit complete; accept statistical scope and weighting-sensitivity reporting.\\
-N2-5 & Keep model closure distinct from event timing-resolution validation.\\
 N2-6 & Freeze channel eligibility independently of observed trend; publish exclusions.\\
 N2-7 & Decide whether internal prediction remains backup or gains enough validation for a main result.\\
 \bottomrule

@@ -60,7 +60,9 @@ versions, selections and uncertainties have already been reconciled.
    statistical scope and weighting-sensitivity reporting remains open.
 5. N1-5 is closed for this version: same-event timing validation with conditional
    statistical intervals. Intrinsic bar resolution and synchronization-jitter
-   extraction are outside scope. N2-5 remains a separate review item.
+   extraction are outside scope. N2-5 is closed for documentation-only scope:
+   all four Note2 comparison captions and lower axes explicitly identify a
+   model difference, not event timing resolution; no numerical changes.
 6. N2-6: define channel eligibility independently of the observed summary trend.
 7. N2-7: decide whether internal prediction belongs in the main result.
 8. N1-6: local references and candidate packaging completed; official template,

@@ -31,8 +31,8 @@
     }
   },
   "combined_pages": 62,
-  "combined_sha256": "e2bbbf932145547b22c63751727ce3434e659f04b4926977ba437cd0dda9d74e",
+  "combined_sha256": "28e80fbbe5837b937d17d9562a1b1070d6d80ca65ade8025c525bc1cc7577b92",
   "review_status": "N1-6 local work complete; convener template, DP metadata, cover handling and release approval pending",
-  "note2_review_status": "N2-1/N2-2 closed as documented; original comparison retained; N2-3 model adequacy open; N2-4 covariance and weighting audit complete, reporting scope awaits acceptance; N2-5 through N2-7 remain open",
+  "note2_review_status": "N2-1/N2-2 closed as documented; N2-5 closed by author for documentation-only model-closure scope; N2-3/N2-4/N2-6/N2-7 remain open; original comparison and numerical results retained",
   "analysis_tests": "previous clock-quality tests reused; N2-2 ROOT replay and 17 focused tests documented in review_2026-10-22_n2_2/README.md; frozen numerical results unchanged"
 }
