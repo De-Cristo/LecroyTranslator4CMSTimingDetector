@@ -51,7 +51,7 @@ def main():
                                "/afs/", "repository-relative", "CMS-Note/cmsnote",
                                "2026-10-22_clock_quality"):
                 assert local_path not in content
-        assert ("Review queue before publication" in review_text) == (name == "note2_dual_threshold")
+        assert "Review queue before publication" not in review_text
         assert "Review queue before publication" not in candidate_text
         assert "not approved for public release" in text(candidate.pages[0])
         for index in (0, 1):
@@ -100,7 +100,13 @@ def main():
                     "Backup: an internal predictor for channel AWC") < deck.index(
                     "Backup: predict a bar excluded from the model fit")
             assert "Channel coverage and limitations" in candidate_text
-            assert "AWC versus inverse slope coefficient: all completed fits" in candidate_text
+            for deck in (review_text, candidate_text):
+                normalized = " ".join(deck.split())
+                assert "AWC versus inverse slope coefficient: all completed fits" not in deck
+                assert "Sensitivity to the refreshed reference" not in deck
+                assert "Reference version shared with the MCP reference note [6]" in normalized
+                assert "What the present uncertainties do and do not include" not in deck
+                assert "Uncertainties" in deck
             assert "A selected subset does not establish a universal law" in candidate_text
             assert "illustrative, not quality-selected" in " ".join(candidate_text.split())
             snapshot = note / "data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality"
@@ -143,7 +149,6 @@ def main():
                 assert "Model and selection dependence are excluded from the quoted errors" in normalized
                 assert "slope-only statistical" in normalized
                 assert "reported separately, not total calibration uncertainties" in normalized
-            assert "The current review items are closed for this exploratory version" in " ".join(review_text.split())
             assert "Channel 137: inverse-slope and MCP walk shapes" in candidate_text
             assert "MCP-fit uncertainty and charge weighting" in candidate_text
             for entry in json.loads((note / "data/n2_4_manifest.json").read_text()):

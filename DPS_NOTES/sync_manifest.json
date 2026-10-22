@@ -29,8 +29,8 @@
     },
     {
       "path": "DPS_NOTES/README_DRAFTS.md",
-      "sha256": "b34f7f64129fe021c8058b043755c8c27fba7dd3503481ea2c14c2b33164289f",
-      "bytes": 12617
+      "sha256": "38e9049f82bfa5de5b78ed99b2d7eb94f4114f79a076da19217c82752b63f5ce",
+      "bytes": 13211
     },
     {
       "path": "DPS_NOTES/REPOSITORY_WORKFLOW.md",
@@ -39,8 +39,8 @@
     },
     {
       "path": "DPS_NOTES/both_notes_review_v1.pdf",
-      "sha256": "819d178e56039b9f06e3db28502657402668c146a38b6dae64e05fea51108a39",
-      "bytes": 6272037
+      "sha256": "824ea078664d2310e87048c0d7f12bdd09b0d7d131ccfc39365fd93ca0cee66d",
+      "bytes": 6235808
     },
     {
       "path": "DPS_NOTES/cms_dp_note_template/CMSlogo_black_label_1024.png",
@@ -124,12 +124,12 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/candidate_report.json",
-      "sha256": "569a83e8219cad0ff219d6ee3c80bffcd6ff81c40f6970375c39453d73a3c3b9",
+      "sha256": "f6ac68f22a044c402b816a8e4c87a019a96f3de48f9597d1f27857bbbb9287c0",
       "bytes": 549
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/cover.pdf",
-      "sha256": "218222374591781349470983c9c70df9c3f450c636f206072908e1a54c9e11dc",
+      "sha256": "4b9cf33f5e3c5f527fe16d06d806ce91025c295b03e92daacfaeef5a3c7271c1",
       "bytes": 969620
     },
     {
@@ -459,18 +459,18 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/main.tex",
-      "sha256": "81fab5b58da90c89c2a21d8745111def91a70b9c3015dd684f603fe9c6f31cbb",
-      "bytes": 17282
+      "sha256": "59cfac8ccf5fa2d07eb050e914ba1f0534531ff119d6ea387b43e6dab0c8592a",
+      "bytes": 17395
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/metadata.tex",
-      "sha256": "cd787b09ccce39695c7121b9bc9fb4fade7bbb9cb656e1e725a15bc5445994bf",
-      "bytes": 2112
+      "sha256": "5b39f136489bc652b0b021daba31c302d1bc77533700d757da4e0ed77d1673ee",
+      "bytes": 2066
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/note_with_cover.pdf",
-      "sha256": "db3695bf22ef8908137680f6a5221a9a7baa35072c01f28abf399c4925d302d5",
-      "bytes": 4236065
+      "sha256": "2fe3fa8b673debc632abcc2ecfc839d51f33003ec3fb8d91b3b1c24099b894f4",
+      "bytes": 4235974
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/publication_candidate.tex",
@@ -479,13 +479,13 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/publication_candidate_slides.pdf",
-      "sha256": "038933177f238727dd2a41a555c8c80a3bc10abfb468da98eea62c275622d81f",
-      "bytes": 2841909
+      "sha256": "091ca4bb55fcc4162f46b73e5791a7cac7f5112db60c5de6a51963b5c40dcfc7",
+      "bytes": 2841842
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/publication_candidate_with_cover.pdf",
-      "sha256": "216040291d94fd44ce7db77391b8b92b4aca51a1f2e74255a99aa7a8f9b80387",
-      "bytes": 3886928
+      "sha256": "b9d0398fdc4b2b4d90e7323a08218fcecf5c30a156c9f0ea91e737773090441d",
+      "bytes": 3886834
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/references.tex",
@@ -499,8 +499,8 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/slides.pdf",
-      "sha256": "19766f6a3d114a768e631c280cca7fb40822476313c52b15af7fca61035372db",
-      "bytes": 3186342
+      "sha256": "e74f96a793e75f940394de8524df45815ece3df05e07912f2eb6155e28cddefc",
+      "bytes": 3186261
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/slides_preamble.tex",
@@ -524,17 +524,17 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/build_report.json",
-      "sha256": "32eed561f8681b49cdfaa356d9b9f054349fb5a4db625d13deead807bd39d647",
+      "sha256": "e57184c976a701521e855ac9930550d15788399e2d31cb19660fb79cde4b4866",
       "bytes": 350
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/candidate_report.json",
-      "sha256": "388fdca16b57d56c9a42663a3200871c4562f3aef3bfff32eff9d67f529c8b67",
+      "sha256": "cc9bdd03797130f2930543cf2883872fd09d27658a2f4f0f29c086d7b1bf21a9",
       "bytes": 549
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/cover.pdf",
-      "sha256": "196babd7aa3c0c4b7c06420de80130ab08aa60839a43864267a3d56c4464fb6c",
+      "sha256": "fa6f5b82214c27c31fef198c37826f2ad295842ce41625d0059206d9bdfd30e9",
       "bytes": 971943
     },
     {
@@ -934,18 +934,18 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/main.tex",
-      "sha256": "988b5c061438803e801ac190c081d29825906bfffaf73b5f88c5073187070e32",
-      "bytes": 21280
+      "sha256": "5613c2210c913075b6653e51e2e2e260af94375cf793374bf0ca1e2a6ad4955e",
+      "bytes": 18841
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/metadata.tex",
-      "sha256": "d7c68b08be84d1cfc89849c76fd37c0ecbe9549d3bac5a8f48430ea468767e83",
-      "bytes": 2520
+      "sha256": "f511b1447b2deb806c41fb2fe49c2f71f314f6670173fa574c022d56bde882cc",
+      "bytes": 2516
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/note_with_cover.pdf",
-      "sha256": "8a29bd09581212a6cf993a32d69d3a110d048b09845663f040360b9147ddbffa",
-      "bytes": 2035606
+      "sha256": "e8ce523cf551b08ab759572397d360e7f77573a93b71e7766896fb383c0799f6",
+      "bytes": 1999582
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate.tex",
@@ -954,13 +954,13 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate_slides.pdf",
-      "sha256": "b6eede6a569b7ed23589354518f086be385dfd9bffcd2e4f520750a682c28408",
-      "bytes": 989644
+      "sha256": "1cf12e9d1a7dc8945e9e3b480aed2da81026fef77f80f34dca7fe24016932493",
+      "bytes": 959094
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/publication_candidate_with_cover.pdf",
-      "sha256": "172b65ccde9a7bab66ccee47808eb20e15f9c9c7dd452a44147c78438a13224a",
-      "bytes": 2034120
+      "sha256": "8aef039f64e3ffeb449ef5384f90d7062cd037ba15a874b5e5bb252fb1a6b11e",
+      "bytes": 1999621
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/references.tex",
@@ -974,8 +974,8 @@
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/slides.pdf",
-      "sha256": "8e84ed1859134f50796ec5b201c4da12b61bd2190ded5bcb309ad2da1af37d0f",
-      "bytes": 990848
+      "sha256": "d81b01d7f3c646f10e665b75a16a0f6bdc38af7c233512c2d6587bc94fa67c49",
+      "bytes": 959094
     },
     {
       "path": "DPS_NOTES/note2_dual_threshold/slides_preamble.tex",
@@ -1769,8 +1769,8 @@
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_clock_quality/verification.json",
-      "sha256": "3cf8f313bebdebb3f49895014123d3dc87dd5283a7c71661ccde4529fab8c3a4",
-      "bytes": 1660
+      "sha256": "dbd76e0c460dba8606b02cd45dd2bff9be0ff440a251a76c5ed268fb6e1ed2d5",
+      "bytes": 1711
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_clock_quality/verify.py",
@@ -2198,6 +2198,16 @@
       "bytes": 2945
     },
     {
+      "path": "DPS_NOTES/review_2026-10-22_publication/language_review.md",
+      "sha256": "3bc619052ee994fe1bf419182d8b02212f264500b9599687100497f68949f8ce",
+      "bytes": 3103
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-22_publication/language_review_verification.json",
+      "sha256": "4c85e3f124f0ef89da705b3db481c13674b6b15ab0b1e446f0ca236254899359",
+      "bytes": 7678
+    },
+    {
       "path": "DPS_NOTES/review_2026-10-22_publication/original_text_check.json",
       "sha256": "3d46d2a6c1d598851006a890d7d9603f1dbbe1abee851f2bc37b249acc1c1037",
       "bytes": 776
@@ -2209,13 +2219,13 @@
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_publication/verification.json",
-      "sha256": "2c3673c7d9b2e86736d1c866a9214d9035570f35894240b427cecc313d8a89f4",
-      "bytes": 1726
+      "sha256": "b897961cdf078d36358b6972320597085c39d1be9c1104ab573be98ee926af2c",
+      "bytes": 1751
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_publication/verify.py",
-      "sha256": "27bbf7d3d32feecbbd1c129b8f53b5f832e7b66e1c83d72d3a77a96eaaf4f98b",
-      "bytes": 12004
+      "sha256": "38907edea9d5d627e2c96fbd88089bc08ef9bffb4ffb55e91544d20c52d68375",
+      "bytes": 12265
     },
     {
       "path": "DPS_NOTES/review_2026-10-22_publication/verify_repository_links.py",
@@ -3789,18 +3799,18 @@
     }
   ],
   "verification": {
-    "file_count": 754,
+    "file_count": 756,
     "all_source_hashes_match": true,
-    "combined_pages": 60,
+    "combined_pages": 57,
     "focused_tests_passed": 140,
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "Original 8/12-entry bibliographies and A4 cover abstracts restored and compared with supplied manuscripts; slide abstracts unchanged. Note1 review queue, residual segment offsets, historical end-difference and historical bar-MCP slides removed at author request. Review decks now 28/30 slides; combined PDF 60 pages. Figures and numerical results unchanged; previous numerical checks reused. All layout, citation, packaging and GitHub code-link checks passed; changed files verified byte-for-byte.",
+    "latest_change": "Language polishing with hep-text-review at 1c18008. Cover source/text/rendering, reference entries, retained math/numbers, figures and numerical inputs verified unchanged. Note2 MCP-note title with Ref. [6] and Uncertainties title applied; sensitivity, all-channel AWC and review-queue slides removed, ten-channel result retained. Review decks have 28 and 27 slides; combined PDF 57 pages. Builds, citations, rendered-page checks and code links passed. No numerical analysis rerun.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 26,
-      "note2_dual_threshold": 29
+      "note2_dual_threshold": 27
     },
     "n2_2_verification": "DPS_NOTES/review_2026-10-22_n2_2/verification.json",
     "n2_2_focused_tests_passed": 17,
@@ -3816,7 +3826,8 @@
     "n2_3_n2_4_closure_changed_files_hash_checked": 17,
     "title_update_changed_files_hash_checked": 17,
     "github_link_verification": "DPS_NOTES/review_2026-10-22_publication/repository_links.json",
-    "latest_changed_files_hash_checked": 32,
-    "original_text_verification": "DPS_NOTES/review_2026-10-22_publication/original_text_check.json"
+    "latest_changed_files_hash_checked": 24,
+    "original_text_verification": "DPS_NOTES/review_2026-10-22_publication/original_text_check.json",
+    "language_review_verification": "DPS_NOTES/review_2026-10-22_publication/language_review_verification.json"
   }
 }

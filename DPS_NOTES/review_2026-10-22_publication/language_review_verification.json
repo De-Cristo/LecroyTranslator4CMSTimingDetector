@@ -1,0 +1,87 @@
+{
+  "baseline": "37eded538cf3e3f2293ad1806b2f4f7b1e733586",
+  "skill_revision": "1c1800886839b3800d64fc7593b0f4023db5fdb1",
+  "scope": "Language only, plus explicit Note2 slide removals and title changes",
+  "notes": {
+    "note1_mcp_reference": {
+      "cover_abstract_source_unchanged": true,
+      "cover_rendered_text_and_content_stream_unchanged": true,
+      "retained_math_unchanged": true,
+      "retained_numeric_tokens_unchanged": true,
+      "numeric_macro_usage_unchanged": true,
+      "unchanged_protected_files": {
+        "DPS_NOTES/note1_mcp_reference/cover.tex": "dd957ef021aaa5e3d418745614e989c433260922f1bf4d2c007347d5af17ff16",
+        "DPS_NOTES/note1_mcp_reference/data/reference_shape_table.tex": "3b1799d46d86e3497e4539f67e258e84b39cdabdb6288619be312f9fb6302d33",
+        "DPS_NOTES/note1_mcp_reference/figure_manifest.json": "49724daeae654a161e4624034846aa7567bc8caa6d834dab6e76a13644748f8a",
+        "DPS_NOTES/note1_mcp_reference/figures/bar_end_difference.pdf": "b2dbe3b8d22c955b06c4e94b56139ba3fea93942bad654ba67d3e3eba1a3aff7",
+        "DPS_NOTES/note1_mcp_reference/figures/bar_mcp_difference.pdf": "624252c76ea870a945e82f8265702e55c9a64c09be8d3cd7ed166889cb648c12",
+        "DPS_NOTES/note1_mcp_reference/figures/clock_edges.pdf": "f74deaec3b5a1c50d249f18ebc11e2d1dd34469fe97e3aacd2d78b7c28a5f616",
+        "DPS_NOTES/note1_mcp_reference/figures/clock_estimators.pdf": "9cf0cac9924127fffae0bc3e7000a9a65a243e4d90f3ccb8f1e55de759a1cc7a",
+        "DPS_NOTES/note1_mcp_reference/figures/clock_reference_ch133.pdf": "4840b25702dedaba6de50066b892803bb5c97ad2f9db1f216481dd7487e78aac",
+        "DPS_NOTES/note1_mcp_reference/figures/clock_reference_ch137.pdf": "cbaff61c263dcfd18afa1e75a11cfd862ffebd29424580d4ff1ce29073ee507f",
+        "DPS_NOTES/note1_mcp_reference/figures/clock_reference_ch150.pdf": "161f436a397f6bb9cf8a8f280b7a7cf7ab1332dc80e938cdbffa8bde688e4565",
+        "DPS_NOTES/note1_mcp_reference/figures/clock_reference_ch154.pdf": "3f50d2c7ddc16530c977c654a0423e205dcefc0c55e8b0c692de1f50320a6a74",
+        "DPS_NOTES/note1_mcp_reference/figures/clock_relation.pdf": "39d15dee9f103daf986ea92d554899b79d5ecf7ac6a6228a731fe6a530caf5f4",
+        "DPS_NOTES/note1_mcp_reference/figures/clock_residuals.pdf": "d4e026a5524297e2ac009659533d943c42aa53335ffe438ab09c4bd0d0f5eff1",
+        "DPS_NOTES/note1_mcp_reference/figures/event_matching.pdf": "514f9fa74bd1340800acdf6f8a67f0fcc454ad60094e90d29dafc4d2891f137e",
+        "DPS_NOTES/note1_mcp_reference/figures/mcp_pair_timing.pdf": "8899006093bf1e65866513748e40dcf44376fdc9865fc64484252bbbbfa0438d",
+        "DPS_NOTES/note1_mcp_reference/figures/mcp_waveform.pdf": "9218bced7b74687b1a9a689df49b21a0a18a02ed85b4241c78b7a2e1a8c23544",
+        "DPS_NOTES/note1_mcp_reference/figures/reference_ch133.pdf": "a71867dfba0a45b80a3a6485611ec88492b353c75f8cc634bd43248021168f84",
+        "DPS_NOTES/note1_mcp_reference/figures/reference_ch137.pdf": "5cde0f52ed2c742418b778a00f45c7b4ce5c5f2291959fe4afa05055e42f748d",
+        "DPS_NOTES/note1_mcp_reference/figures/reference_ch150.pdf": "ce9d34b249abbf7e7c13365b9d39ca4d4d03e7847a8f4360c2ae328917b95449",
+        "DPS_NOTES/note1_mcp_reference/figures/reference_ch154.pdf": "64c3dd3b7d226393812f9037a03f32bbe2cbb46dada7284169bebc70c980f9a5",
+        "DPS_NOTES/note1_mcp_reference/figures/setup.pdf": "b65b58150754e55709af694e7e5b92baa68fcd470b7ec5af6ddc3e4e8cec5b8b",
+        "DPS_NOTES/note1_mcp_reference/figures/validated_bar_mcp.pdf": "f2235e7961772ea9592607ad631b95f8b960ea0482edb8776c23e1b9e5b6719f",
+        "DPS_NOTES/note1_mcp_reference/figures/validated_end_difference.pdf": "27ebca0b63ac7fc434c14f15e333da34269e4fddb1d039217746146813ae5abb",
+        "DPS_NOTES/note1_mcp_reference/figures/validated_segment_stability.pdf": "db4d3fa5efbf0d3270ddd09845d8669599cddca0afdf50b7e640c541096dd4f8",
+        "DPS_NOTES/note1_mcp_reference/references.tex": "d14c72ea486e8c82a01032095500863a8dd11d907ef69da4f06f36a719ecef95",
+        "DPS_NOTES/note1_mcp_reference/review_values.tex": "c32474f7dd29d949165ff43ad6d595b815a8611abedd73ca7769cfe781b66d15"
+      }
+    },
+    "note2_dual_threshold": {
+      "cover_abstract_source_unchanged": true,
+      "cover_rendered_text_and_content_stream_unchanged": true,
+      "retained_math_unchanged": true,
+      "retained_numeric_tokens_unchanged": true,
+      "numeric_macro_usage_unchanged": true,
+      "unchanged_protected_files": {
+        "DPS_NOTES/note2_dual_threshold/cover.tex": "dd957ef021aaa5e3d418745614e989c433260922f1bf4d2c007347d5af17ff16",
+        "DPS_NOTES/note2_dual_threshold/data/n2_4_uncertainty_table.tex": "36b7262be847b3ae8df2a83ca8d56bb6c0ef4729b8945e5bc64cbd69d276579e",
+        "DPS_NOTES/note2_dual_threshold/figure_manifest.json": "014dfabc8656001bef49096f25fd63b326f467ab41d33b4c949c4853359a6820",
+        "DPS_NOTES/note2_dual_threshold/figures/awc_summary_all.pdf": "ea1adb15859c1634145aee4a9744b44dc6d905101f856d14faca83ae1b35704e",
+        "DPS_NOTES/note2_dual_threshold/figures/awc_summary_selected.pdf": "01a382c3bf216fc897a05666eecd70712da63ea22ad6420196d2737e44949279",
+        "DPS_NOTES/note2_dual_threshold/figures/comparison_ch137.pdf": "8c1d4a7f8d8a44b6cdb12e292998b24e8b9bd900989fb04fefc468872c73a530",
+        "DPS_NOTES/note2_dual_threshold/figures/comparison_ch154.pdf": "bce6aabfeecc73eed74599dd3f42a387ee2c83ccdb45e70563ca05e8bef5fbfb",
+        "DPS_NOTES/note2_dual_threshold/figures/comparison_ch159.pdf": "f67c52d9cc7b77a23a69c2d20f0b6db6813098b2214701338dd36dae58155e2b",
+        "DPS_NOTES/note2_dual_threshold/figures/comparison_ch242.pdf": "84d958f2280c8a3b85915889297cbe3250d95b58795cbd3180a9a73bf7d55f30",
+        "DPS_NOTES/note2_dual_threshold/figures/internal_predictor.pdf": "4fd4c3136396eba4a1a3a21fce4db6e502a5894028e5d76385c95a7345292794",
+        "DPS_NOTES/note2_dual_threshold/figures/profile_residuals_ch137.pdf": "ebd006ddb8c4163010ac9bf845e412b198978d32ba5338e2ec9cb003e5c1ba4b",
+        "DPS_NOTES/note2_dual_threshold/figures/q_spectra_ch137.pdf": "9e5c640d8813a8f728cde965091c7f8addb7f60789f2ef5eda925ad0ee462f52",
+        "DPS_NOTES/note2_dual_threshold/figures/slope_ch133.pdf": "b541a14c377a6b6e4649cbbcf4b569c6545cc473a53b709d58dadef2bfed2010",
+        "DPS_NOTES/note2_dual_threshold/figures/slope_ch137.pdf": "26552309620d8384fbd474bc8d37c813ab87d8bebda3a4cc6f3d65bd2cae2237",
+        "DPS_NOTES/note2_dual_threshold/figures/slope_ch150.pdf": "2e3ecfb14b07719139d4a1a8e1907dfdfe223d56e1b8728a14616728faf5a340",
+        "DPS_NOTES/note2_dual_threshold/figures/slope_ch154.pdf": "5830668d54940ba583f3d66d7804e95d056abd27d829faca384cd7b924d50334",
+        "DPS_NOTES/note2_dual_threshold/references.tex": "896c11c596413a64f02055d9c061c55e51ec6f0592092d63b5aedce6559ebf31",
+        "DPS_NOTES/note2_dual_threshold/review_values.tex": "c32474f7dd29d949165ff43ad6d595b815a8611abedd73ca7769cfe781b66d15"
+      }
+    }
+  },
+  "status": "passed",
+  "visual_review": "All ten rendered contact sheets inspected; text fits without overlap. Requested reference title/citation and Uncertainties title confirmed.",
+  "build_verification": "Both review and candidate variants passed; no overflow, missing-character/font warnings or unresolved citations.",
+  "combined_pages": 57,
+  "combined_sha256": "824ea078664d2310e87048c0d7f12bdd09b0d7d131ccfc39365fd93ca0cee66d",
+  "review_slides": {
+    "note1_mcp_reference": 28,
+    "note2_dual_threshold": 27
+  },
+  "candidate_slides": {
+    "note1_mcp_reference": 26,
+    "note2_dual_threshold": 27
+  },
+  "additional_author_removed_slides": [
+    "Sensitivity to the refreshed reference",
+    "AWC versus inverse slope coefficient: all completed fits",
+    "Review queue before publication"
+  ]
+}

@@ -14,12 +14,12 @@ Run 4399 & MCP-associated reference timing and charge & Measure the empirical wa
 \bottomrule
 \end{tabular}\par
 \medskip
-The runs contain different particles and are never matched event by event.
+The runs contain different events; no event-by-event matching is performed.
 The comparison transfers a channel-response model between runs.
 
 The upstream and downstream modules each contain bars read out at two ends.
 Detector/readout context is given in Refs.~\cite{MTDTDR,TOFHIR2}.
-The channel/bar mapping determines the coincidence pairs; the same channel
+The channel-to-bar mapping determines the coincidence pairs; the same channel
 number is compared across the two runs.
 
 The comparison assumes the same nominal detector setup in both runs,
@@ -51,12 +51,12 @@ The run-4076 sample is file \texttt{23\_e.root}. For coarse codes $C_1,C_2$,
  d_c=(C_2-C_1)\bmod1024,\qquad
  t_2=t_1+(6250\,\mathrm{ps})d_c-f_1+f_2.
 \]
-The coarse codes use signed 64-bit arithmetic before subtraction; the coarse
-time term uses floating point, avoiding the old 16-bit multiplication overflow.
+Subtraction uses signed 64-bit coarse codes. The coarse-time term uses
+floating-point arithmetic to avoid the previous 16-bit multiplication overflow.
 
 The fine-time lookup stores the mean of $t_1\bmod6250\,\mathrm{ps}$ for each
-(channel, TAC, fine-code) key, using all input hits. The same lookup supplies
-$f_1$ and $f_2$. No selected hit in the 22 audited channels has a missing entry.
+(channel, TAC, fine-code) combination, using all input hits. This lookup supplies
+$f_1$ and $f_2$, with entries for every selected hit in the 22 audited channels.
 
 All selected hits have threshold register \texttt{step2=113621}, decoded as
 DAC codes 10 and 35. The implemented scale gives
@@ -64,8 +64,8 @@ DAC codes 10 and 35. The implemented scale gives
  \Delta I=(35-10)\times0.3125\,\mu\mathrm{A}=7.8125\,\mu\mathrm{A},\qquad
  \frac{S}{\mu\mathrm{A/ns}}=1000\,\frac{\Delta I/\mu\mathrm{A}}{(t_2-t_1)/\mathrm{ps}}.
 \]
-{\scriptsize \RepoFile{Q_Walk/qwalk_core.py}{GitHub: timing and threshold reconstruction}. This checks the
-implemented conversion, not an independent hardware-threshold calibration.}
+{\scriptsize \RepoFile{Q_Walk/qwalk_core.py}{GitHub: timing and threshold reconstruction}.
+This verifies the implemented conversion, not an independent calibration of the hardware thresholds.}
 \end{frame}
 
 \begin{frame}{Selection and profile construction}
@@ -83,16 +83,16 @@ and hit SD; fit with SEM weights. Bins with undefined or negligible SEM are omit
 \item Bootstrap selected hits with fixed bin edges and refit 1000 times.
 Quote the 16th--84th percentiles.
 \end{itemize}
-{\scriptsize All selected hits are used; there is no train/test split.
+{\scriptsize All selected hits are used; there is no training or test split.
 \RepoFile{Q_Walk/qwalk_two_hit_pair_profile.py}{GitHub: pair selection and profiling},
 with the newer optional minimum-rise cut disabled.}
 \end{frame}
 
 \begin{frame}{Reproducing the frozen run-4076 profiles}
 \small
-Replaying \texttt{23\_e.root} reproduces the selected counts, ten-bin profiles
-and linear-fit coefficients for all 22 channels. Saved bootstrap coefficients
-reproduce their reported percentile intervals.
+Reprocessing \texttt{23\_e.root} reproduces the selected counts, ten-bin profiles
+and linear-fit coefficients for all 22 channels. The saved bootstrap coefficients
+reproduce the reported percentile intervals.
 \begin{center}
 \begin{tabular}{lrrr}
 \toprule
@@ -103,97 +103,70 @@ Channel & Target-pair hits & Prompt hits & Peak-right hits\\
 \end{tabular}
 \end{center}
 For channel 137, the histogram-derived boundary is $Q_{\rm left}=184.9163$ ADC.
-Charge-bin centers are the mean measured $Q$, not the geometric bin centers.
+Each profile point is placed at the mean measured $Q$ in its bin,
+not at the geometric bin center.
 
 The frozen selection retains rises below 100\,ps in channels 130, 139, 151,
-159, 236 and 238. These events were not removed retrospectively. Their effect
-belongs to the selection-sensitivity and channel-quality studies.
+159, 236 and 238. These events remain in the sample. Their effect
+requires selection-sensitivity and channel-quality studies.
 
-Channel 135 has one singleton bin: its SEM is undefined and only nine bins
-enter that channel's linear fit. No fit or plotted data changed in this audit.
+Channel 135 has one bin with a single entry. Its SEM is undefined, so only nine
+bins enter the linear fit. The audit changed neither the fits nor the plotted data.
 
 \end{frame}
 
-\begin{frame}{Reference version shared with Note 1}
+\begin{frame}{Reference version shared with the MCP reference note~\cite{ReferenceNote}}
 \small
-The run-4399 MCP functions were refitted on 22 October 2026 after correcting
-segment detection across missing trigger timestamps and excluding invalid
-clock groups. Note 1 documents the timing validation and remaining limitations.
+The run-4399 MCP functions were refitted on 22 October 2026. The updated procedure
+detects segment boundaries across missing trigger timestamps and excludes invalid
+clock groups. The MCP reference note documents the timing validation and remaining limitations.
 
 For each topology, file and segment, the scaled MAD of the channel-192
 versus scope-trigger line residuals must not exceed 1\,ns before LOWESS~\cite{LOWESS}.
 The selection uses clock information, not SiPM timing residuals.
-Suspect event associations are excluded; no MCP rows are shifted.
+Suspected incorrect event associations are excluded; MCP rows are not shifted.
 
-All AWC-and-offset fits in this note use these refreshed references.
+All AWC-and-offset fits in this note use these updated references.
 The run-4076 slope fits, bootstrap replicas and measured-support matching
 definition are unchanged. The charge spectra use the updated reference sample.
 
-The original plotted AWC intervals hold the reference fixed. They exclude
-reference-fit uncertainty, clock-selection uncertainty and cross-run transfer.
-The later table adds reference-fit statistics separately.
+The plotted AWC intervals hold the reference fixed. They exclude reference-fit
+uncertainty, clock-selection uncertainty and uncertainty in transfer between runs.
+The uncertainty table later in this note adds reference-fit statistics separately.
 
-\end{frame}
-
-\begin{frame}{Sensitivity to the refreshed reference}
-\small
-The run-4076 input is fixed; these changes arise from the reference rerun,
-including its automatically determined charge selection and measured support.
-\begin{center}
-\begin{tabular}{lrr}
-\toprule
-Channel & Previous AWC [$\mu$A] & Refreshed AWC [$\mu$A]\\
-\midrule
-137 & 18.513 & 18.332\\
-136 & 27.899 & -4.240\\
-151 & 7.649 & 9.354\\
-\bottomrule
-\end{tabular}
-\end{center}
-Channel 136 has only 210 selected reference hits. Its sign change, and the
-22\% shift for channel 151, expose sensitivity not covered by slope-only errors.
-They are retained in the exploratory summary, not accepted as robust calibrations.
-
-Sparse clock groups retain the existing line-only fallback when fewer than ten
-alignment inliers are available. A small residual scale in such a group does
-not independently validate its event association.
-Reference stability and adequate clock statistics remain prerequisites for
-a future quality-selected performance sample; this note reports exploratory fits.
 \end{frame}
 
 \FigureSlide{Charge spectra define the available comparison sample}{q_spectra_ch137}{
-Channel 137 charge spectra are shown for the two independent runs.
-Lines show quality-selected hits; shaded spectra retain the additional
-charge-peak selection. Each run is normalized to its own quality-sample count.
+The spectra show the channel-137 charge distributions in the two independent runs.
+Lines show hits passing the quality selection; shaded spectra also require
+the charge-peak selection. Each run is normalized to its own quality-selected count.
 
-The charge proxy is in ADC units, not MeV. Different populations and
-acceptances motivate restricting the curve alignment to jointly supported
-charge values.
+The charge proxy is in ADC units, not MeV. The samples differ in population and
+acceptance, so the curve alignment uses only charge intervals populated in both runs.
 }{Recovered histogram counts, not a new peak fit.
 Run-4076 profile selection starts at about 184.9 ADC for this channel.}
 
 \FigureSlide{Channel 133: fitting the slope profile}{slope_ch133}{
 Run 4076 channel-133 hits are grouped into ten charge bins.
 Points show mean $S$; bars show the SD of individual selected hits.
-The line is the saved SEM-weighted fit $c_0+c_1Q$.
+The line is the SEM-weighted fit $c_0+c_1Q$.
 
 The shaded interval is the central 68\% bootstrap interval of the fitted
-mean curve. It is shown at its true size, without visual enlargement.
-}{Extended-profile snapshot. SD describes hit spread; SEM and the fit band
-describe different statistical quantities.}
+mean curve, shown without enlargement.
+}{SD is the hit standard deviation; SEM is the standard error of the mean.
+The band describes uncertainty on the fitted mean curve.}
 
 \FigureSlide{Channel 154: the opposite end of bar 7}{slope_ch154}{
-The same selection and profile procedure is applied to channel 154.
+Channel 154 uses the same selection and profiling procedure.
 The mean slope increases with charge, but the response is calibrated
 independently at each bar end.
 
-Bars show hit SD. The line uses SEM weights and the band propagates the
-saved bootstrap coefficient replicas, including their correlation.
+Bars show the hit SD. The line uses SEM weights. The band propagates the
+bootstrap coefficient replicas, including their correlation.
 Linearity is a working approximation, not a validated precision model.
 Model and selection dependence are excluded from the quoted errors;
 the separate sensitivity study is retained outside this note.
-}{Run 4076, extended-profile snapshot. No model refit is performed for
-the slide rendering.}
+}{Run 4076, saved profile result, displayed without refitting.}
 
 \FigureSlide{Channel 137: pulse slope and charge}{slope_ch137}{
 The selected run-4076 sample contains 19\,126 channel-137 hits.
@@ -203,18 +176,18 @@ charge range.
 The SD bars show event-to-event spread, while SEM weights determine the fit.
 The narrow shaded band is the conditional 68\% bootstrap interval of the
 mean prediction, not a single-hit uncertainty.
-}{Selected count and fit are read from the saved extended-profile metadata.
-No uncertainty band is magnified.}
+}{The count and fit come from the saved profile results.
+Uncertainty bands are shown without enlargement.}
 
 \FigureSlide{Channel 150: the opposite end of bar 8}{slope_ch150}{
-Channel 150 is treated with the same profiling procedure.
+Channel 150 uses the same profiling procedure.
 The charge-dependent slope provides the denominator of the proposed walk
 function; a separate amplitude $A$ determines the correction strength.
 
 The line and shaded interval describe the fitted mean. Points and SD bars
-retain information on the spread within the selected charge bins.
-}{Run 4076, extended-profile snapshot. Constant AWC does not mean a
-constant timing correction.}
+show the spread within the selected charge bins.
+}{Run 4076, saved profile result. A constant AWC gives a
+charge-dependent timing correction.}
 
 \begin{frame}{Determine AWC using only jointly measured support}
 \small
@@ -228,35 +201,35 @@ restricted to charge bins populated in both runs. Fit
  (A,B)=\arg\min_{A,B}\sum_{Q_k\in\Omega}
  \left[\frac{A}{c_0+c_1Q_k}+B-W_{\rm MCP}(Q_k)\right]^2.
 \]
-The saved implementation samples a uniform 3000-point charge grid before
-removing unsupported intervals. The offset $B$ absorbs the arbitrary time zero.
+The fit samples a uniform 3000-point charge grid, then removes intervals
+without data support. The offset $B$ absorbs the arbitrary time zero.
 
 This is uniform-charge shape matching, not an event-weighted likelihood.
 It uses neither extrapolated tails nor a single central anchor point.
-Weighting sensitivity and correlated MCP-fit uncertainty are evaluated
-in the uncertainty check below. Uniform Q remains the nominal definition,
-not a uniquely optimal estimator.
+The uncertainty study below evaluates sensitivity to charge weighting and
+correlated MCP-fit uncertainty. Uniform Q is the nominal choice;
+it has not been established as uniquely optimal.
 \end{frame}
 
 \FigureSlide{Channel 137: inverse-slope and MCP walk shapes}{comparison_ch137}{
 The black curve is the run-4399 MCP quadratic. The red curve is the
 run-4076 inverse-slope model after fitting AWC and a constant offset.
-Only jointly measured charge support is shown.
+The curves are shown only in charge intervals populated in both runs.
 
 Lower panel: run-4076 model minus MCP model. Its RMS shape mismatch is
 \ExampleRMS\,ps on the supported uniform-Q grid, not an event timing resolution.
 
-The original band varies the run-4076 slope fit while holding the MCP curve
-fixed. The later uncertainty table also includes MCP-fit uncertainty.
+The band varies the run-4076 slope fit while holding the MCP curve fixed.
+The uncertainty table later in this note also includes MCP-fit uncertainty.
 }{AWC = \ExampleAWC\,$\mu$A; conditional 16--84\% interval
 [\ExampleLow, \ExampleHigh]\,$\mu$A. Both curves share one display offset.}
 
 \FigureSlide{Channel 154: a second shape-comparison example}{comparison_ch154}{
-The same overlap-only objective determines AWC and the offset for
+The same objective, restricted to the measured overlap, determines AWC and the offset for
 channel 154. Both plotted curves are calibrated models, not matched
 events from different runs.
 
-The lower panel directly displays the remaining shape mismatch, with
+The lower panel shows the remaining shape mismatch, with
 no additional line subtracted. This measures model-shape closure,
 not corrected-event timing resolution.
 }{Conditional bootstrap band: 4076 slope replicas, refitted AWC and
@@ -267,43 +240,30 @@ Only intervals with populated profile bins in both runs contribute to
 the alignment. Breaks in the displayed curves mark excluded charge intervals.
 They do not represent discontinuities in either analytic model.
 
-The lower panel uses exactly the same supported points. All displayed
+The lower panel uses the same supported points. All displayed
 intervals participate in the common AWC-and-offset fit.
 It is a model difference, not an event-time distribution.
-}{The stored comparison excludes \GapCount{} of the 3000 initial grid points
+}{The comparison excludes \GapCount{} of the 3000 initial grid points
 for this channel. No line is drawn through those gaps.}
 
 \FigureSlide{Downstream example: channel 242}{comparison_ch242}{
-The method is also applied to a downstream channel.
+This example applies the method to a downstream channel.
 In run 4399, upstream bar 8 supplies the coincidence pair alongside
 the downstream target pair and MCP indicator.
 
 In run 4076, the target downstream pair is required, without fixing
 an upstream pair. The curves use only their common measured support.
-The same nominal-setup assumption is used for downstream channels.
+Downstream comparisons also assume the same nominal detector setup in both runs.
 Selection-dependent response differences remain unquantified.
 }{The lower panel is a model difference, not a timing-resolution measurement.
 The other module is not used as an internal timing reference to determine AWC here.}
-
-\FigureSlide{AWC versus inverse slope coefficient: all completed fits}{awc_summary_all}{
-Each point is one channel, not one charge bin.
-Blue circles are upstream and red squares downstream.
-The x coordinate is $1/c_1$, the inverse coefficient of the linear
-$S(Q)$ fit; the y coordinate is reference-fitted AWC.
-
-Bars span the slope-only statistical 16th--84th bootstrap percentiles.
-There are 21 completed fits; channel 238 has no measured overlap.
-All completed fits are retained, including limited-support and poorly
-constrained cases documented in the channel-status table below.
-}{Linear axes. Large intervals and negative coefficients are retained;
-this is not a final quality-selected performance sample.}
 
 \FigureSlide{A selected subset does not establish a universal law}{awc_summary_selected}{
 The ten-channel upstream subset previously selected for discussion is
 shown on linear axes. Bars are slope-only statistical AWC bootstrap intervals;
 channel numbers identify the points.
 
-The saved weighted straight line has $\chi^2/{\rm ndf}=\SummaryChi/8$ under its
+The weighted straight-line fit has $\chi^2/{\rm ndf}=\SummaryChi/8$ under its
 limited error model. It does not adequately describe the variation.
 The subset was selected interactively and is illustrative, not quality-selected
 or an unbiased population-level validation.
@@ -312,8 +272,8 @@ its symmetric uncertainty. Correlations and reference errors are omitted.}
 
 \begin{frame}{Channel coverage and limitations}
 \footnotesize
-The explored set contains 14 upstream and 8 downstream channels. All 21
-completed alignments are shown; only channel 238 lacks measured overlap.
+The explored set contains 14 upstream and 8 downstream channels, with 21
+completed alignments. Only channel 238 lacks measured overlap.
 No additional quality cut is applied to this summary.
 \begin{center}
 \begin{tabular}{l>{\raggedright\arraybackslash}p{9.4cm}}
@@ -331,14 +291,14 @@ as validated positive-amplitude calibrations.\\
 \end{tabular}
 \end{center}
 The ten-channel illustration is unchanged: 133, 134, 135, 137, 150, 151,
-154, 155, 156 and 159. Its membership is not a derived eligibility rule.
+154, 155, 156 and 159. This subset does not define a channel-selection criterion.
 
 {\scriptsize Table entries are diagnostic examples, not additional exclusions.
 Small curve mismatch over narrow support does not validate a calibration.
 The full per-channel support and interval table is saved with the figure data.}
 \end{frame}
 
-\begin{frame}{What the present uncertainties do and do not include}
+\begin{frame}{Uncertainties}
 \small
 \begin{tabular}{l>{\raggedright\arraybackslash}p{9.1cm}}
 \toprule
@@ -355,8 +315,8 @@ alignment to the same fixed reference curve.\\
 \medskip
 These definitions refer to the original displayed bands and bars.
 The next table additionally propagates the run-4399 quadratic covariance.
-Cross-run response transfer, clock/fine-time calibration, selection/model
-choices and cross-channel correlations remain outside both prescriptions.
+Both prescriptions exclude uncertainty in response transfer between runs,
+clock and fine-time calibration, selection and model choices, and cross-channel correlations.
 Neither is a total calibration uncertainty or a timing-resolution estimate.
 \end{frame}
 
@@ -370,8 +330,8 @@ All table values are in $\mu$A. ``Both runs'' adds MCP-fit statistics, not
 cross-run or model systematics. The original plots retain slope-only statistical bands.
 {\centering\input{data/n2_4_uncertainty_table.tex}\par}
 Maximum weighting shift: largest $|\Delta\mathrm{AWC}|$ using uniform $1/Q$
-or either run's charge population instead of uniform Q. Same overlap and
-free offset; these shifts are not statistical errors or added in quadrature.
+or either run's charge population instead of uniform Q. The overlap and free
+offset are unchanged. These shifts are not statistical errors and are not added in quadrature.
 \par
 All 21 overlap channels were checked; channel 238 has no overlap.
 A shared reference-time offset affects only the fitted offset, not AWC.
@@ -390,8 +350,8 @@ determining AWC from extrapolation.
 against $1/c_1$ is insufficient for the explored subset.
 \item The present calibration still uses the MCP to determine AWC.
 It does not establish reference-free AWC extraction by itself.
-\item An internal predictor must be tested on held-out bars/configurations
-with transfer and target uncertainties included before use without MCP.
+\item Before use without MCP, an internal predictor must be tested on held-out
+bars and configurations, including uncertainties in transfer and in the target AWC values.
 \end{itemize}
 \medskip
 The following backup explores such a predictor; it is not a final
@@ -413,10 +373,10 @@ Here $Q_*$ is the median charge of the run-4076 quality- and peak-right-selected
 sample. It is computed once per channel; $A_{\rm pred}$ remains constant
 when correcting individual events.
 
-The common $K$ is learned from MCP-calibrated training channels. Predicting
-a new channel uses internal features, but the model development is reference-based.
+The common $K$ is learned from MCP-calibrated training channels. Predictions
+for new channels use internal measurements, but model development uses the reference.
 The shared derivative and choice of $Q_*$ remain hypotheses requiring
-independent validation across operating conditions, without tuning to test scores.
+independent validation across operating conditions, without tuning to the test results.
 \end{frame}
 
 \FigureSlide{Backup: predict a bar excluded from the model fit}{internal_predictor}{
@@ -427,29 +387,11 @@ Ten upstream channels span six held-out bar groups.
 The RMS prediction error is \PredictorRMSE\,$\mu$A; the RMS fractional error is \PredictorFraction\%.
 Horizontal intervals are conditional reference-AWC intervals, not
 predictive intervals.
-This small selected sample leaves feature/target correlations and full
+This small selected sample leaves input--target correlations and full
 prediction uncertainties unpropagated. It does not demonstrate reference-free calibration.
 }{Exploratory median-$Q_*$ candidate. The dashed line indicates equality,
-not a fitted result. No blanket 10\% precision claim is made.}
+not a fitted result. A general 10\% precision claim is not established.}
 
 \input{references.tex}
 
-\ifdefined\PublicationCandidate\else
-\begin{frame}{Review queue before publication}
-\footnotesize
-The current review items are closed for this exploratory version.
-Permanent qualifications remain beside the results; closure does not validate
-the linear model for precision calibration or establish a total uncertainty budget.
-\par\medskip
-The next review pass is page by page. Model choice, uncertainty treatment and
-claims can be revisited; the numerical results are unchanged.
-\medskip
-Sources: the supplied original manuscript and the profile and measured-overlap results.
-All plotted tables and checksums accompany this draft.
-\par\smallskip
-Primary-source references are included. Official template, DP metadata and
-cover handling still require convener confirmation.
-This review slide is removed from a public release.
-\end{frame}
-\fi
 \end{document}

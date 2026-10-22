@@ -17,12 +17,13 @@
       "unresolved_citations": 0
     },
     "note2_dual_threshold": {
-      "review_slides": 30,
-      "candidate_slides": 29,
-      "candidate_with_cover_pages": 30,
+      "review_slides": 27,
+      "candidate_slides": 27,
+      "candidate_with_cover_pages": 28,
       "citations": [
         "LOWESS",
         "MTDTDR",
+        "ReferenceNote",
         "TOFHIR2"
       ],
       "source_bundle_checked": true,
@@ -33,8 +34,8 @@
       "unresolved_citations": 0
     }
   },
-  "combined_pages": 60,
-  "combined_sha256": "819d178e56039b9f06e3db28502657402668c146a38b6dae64e05fea51108a39",
+  "combined_pages": 57,
+  "combined_sha256": "824ea078664d2310e87048c0d7f12bdd09b0d7d131ccfc39365fd93ca0cee66d",
   "review_status": "N1-6 local work complete; convener template, DP metadata, cover handling and release approval pending",
   "note2_review_status": "All current Note2 review items closed within documented scope. N2-3/N2-4 temporarily closed by author for exploratory linear model and conditional statistics with separate weighting sensitivity; permanent limitations retained, not precision-model validation or a total error budget. Next pass is page by page; numerical results unchanged.",
   "analysis_tests": "previous clock-quality tests reused; N2-2 ROOT replay and 17 focused tests documented in review_2026-10-22_n2_2/README.md; frozen numerical results unchanged"

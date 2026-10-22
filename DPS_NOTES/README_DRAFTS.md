@@ -205,3 +205,13 @@ The "Backup: historical end-difference illustration" slide (29/32) was removed
 from the review deck as well; it was already excluded from the candidate.
 The "Backup: historical bar--MCP illustration" slide (30/32) was likewise
 removed from the review deck. The validated main MCP result is retained.
+
+## Language review (22 October 2026)
+
+Slide prose, captions and slide abstracts were polished using the author's
+requested `hep-skills` text-review guidance. A4 cover abstracts and original
+bibliographies remain unchanged. The pass preserves equations, selections,
+retained numerical results and all figure assets. Note 2 also incorporates
+the author's requested MCP-note title citation and removal of the reference
+sensitivity, all-channel AWC summary and review-queue slides. The ten-channel result remains.
+See `review_2026-10-22_publication/language_review.md` for scope and verification.
