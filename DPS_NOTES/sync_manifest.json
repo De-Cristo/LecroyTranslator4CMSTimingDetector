@@ -2235,13 +2235,13 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/AWC_PREDICTOR_DISCUSSION.md",
-      "sha256": "73d62c5b9530e21ac4deaecc0cf09327fd4be94dae14e2c68f74174729bc2226",
-      "bytes": 3307
+      "sha256": "ade751261a3bad932f2991bfe2bc27682e316fab564b664a8e4306f3dbab98e8",
+      "bytes": 3385
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/README.md",
-      "sha256": "ea024743d8739b23490c0018fef07357609f48bf0e7dbd4e28ca932a17af557f",
-      "bytes": 7640
+      "sha256": "63c6f49c8508c59f5786309a930e716aaacfb97fb1080aec8c6f0179acc27d22",
+      "bytes": 7372
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note2_figure5/figure5.pdf",
@@ -2275,18 +2275,18 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/both_notes_slides_v2.pdf",
-      "sha256": "da8a5eeb083999a745d7bcc06e3b663e5301cd6f2519619513a72fc769257d71",
-      "bytes": 3193240
+      "sha256": "c85cd74c43412b2ebb05aef2cf910ba9868b6f8834a5c91a891e467617fe26b1",
+      "bytes": 3156771
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build.py",
-      "sha256": "a30b514f9ee77964d2800f325ef27a3e55d01721a84dd035241efa1e06aee03b",
+      "sha256": "0b23a0715442234e66afc0dbae15c83d163c5d90635716152b9d88a8e80d9df1",
       "bytes": 6583
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_report.json",
-      "sha256": "1003e995c5fb2e3dc4a496d22df83cdda580118f9ca6e9ea5ef61613d45a1926",
-      "bytes": 771
+      "sha256": "f46ae9a6cd48bd678781415b79c968d7c8a165187d7bdfc1c682fc87a4949073",
+      "bytes": 770
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/CMSlogo_black_label_1024.png",
@@ -2375,7 +2375,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/slides.pdf",
-      "sha256": "41516c86df0a7951c6f7c0e861fdc63d508df616c74a46cb488677690e7a6999",
+      "sha256": "0d0c962ed2e8d8802af820926d8b8a4dfd22bf4ffa8b766c35b66a84e32a6d04",
       "bytes": 2125703
     },
     {
@@ -2385,8 +2385,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/asset_manifest.json",
-      "sha256": "25a7ee44c4cc53cae5283ad791280ccd6681acc19c2bda6ea30dfe324bb2556f",
-      "bytes": 1639
+      "sha256": "4375b22b42d684f31ecdf44e76e5c0fa3606f278de1d13211bc0d5a6f4a4151a",
+      "bytes": 1412
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/figures/awc_summary_selected.pdf",
@@ -2435,8 +2435,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/main.tex",
-      "sha256": "39ea9d5817982484d10cb643187ea9f3427de63cfb4cf1a96665495fc3e5feea",
-      "bytes": 7350
+      "sha256": "cb4795e3063f8c46267b6271507106f66ebd01218be2a8680bec4a89427ff179",
+      "bytes": 6726
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/metadata.tex",
@@ -2455,8 +2455,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/slides.pdf",
-      "sha256": "50293ea22469df38306d299b5e96c070a22bc6fe96ecb6a7edbd5115608c0b2b",
-      "bytes": 995099
+      "sha256": "fee7e57ad0771dcc38f695b927d85868c72deb14baa9596e6b0afc735ae3414e",
+      "bytes": 961917
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/prepare_note2_backups.py",
@@ -2475,8 +2475,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
-      "sha256": "1244da43a22e830dade7fba642ac04ef46585ebd3de9bbd7f3397a3c0fab0fce",
-      "bytes": 5790
+      "sha256": "1a3157708bcd8f125c36f56ddee2a3d90e9263c0b9bc8c7a897df74ddaea5279",
+      "bytes": 5947
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -4657,7 +4657,7 @@
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "Short Note 2 main presentation ends on slide 8 corrected residuals; references 9; AWC candidate approaches on internal backup slides 10-11. Removed CMS Preliminary labels and CMS backup logos, preserved plot content, and added coauthor discussion distinguishing exact derivative identity from the shared-response hypothesis. No fits changed; Note 1 and full notes unchanged.",
+    "latest_change": "Removed the new shared-response AWC model page from short Note 2. Deck is now 10 pages: main result 8, references 9, empirical AWC-trend backup 10. Discussion and artifacts retained; all remaining slide content unchanged apart from numbering. Build and visual checks passed.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 26,
@@ -4677,14 +4677,14 @@
     "n2_3_n2_4_closure_changed_files_hash_checked": 17,
     "title_update_changed_files_hash_checked": 17,
     "github_link_verification": "DPS_NOTES/review_2026-10-22_publication/repository_links.json",
-    "latest_changed_files_hash_checked": 16,
+    "latest_changed_files_hash_checked": 10,
     "original_text_verification": "DPS_NOTES/review_2026-10-22_publication/original_text_check.json",
     "language_review_verification": "DPS_NOTES/review_2026-10-22_publication/language_review_verification.json",
     "short_slides_v2": {
       "directory": "DPS_NOTES/slides_v2_2026-10-22",
       "note1_slides": 10,
-      "note2_slides": 11,
-      "combined_pages": 21,
+      "note2_slides": 10,
+      "combined_pages": 20,
       "cover_pages": 0,
       "verification": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
       "reference_slides_each": 1,
@@ -4693,10 +4693,10 @@
       "threshold_settings": 6,
       "content_slides": {
         "note1": 9,
-        "note2": 10
+        "note2": 9
       },
-      "note2_structure_review": "Main ends with original Figure 5 residuals on 8; references 9; two internal discussion backups on 10-11.",
-      "note2_backup_slides": 2,
+      "note2_structure_review": "Main result 8; references 9; empirical AWC trend as sole internal backup 10. New shared-response model deferred and removed.",
+      "note2_backup_slides": 1,
       "note2_profile_channel": 150,
       "note2_residual_figure_slide": 8,
       "note2_reference_slide": 9,

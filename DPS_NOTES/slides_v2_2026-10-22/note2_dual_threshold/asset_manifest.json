@@ -25,11 +25,6 @@
     "sha256": "bce6aabfeecc73eed74599dd3f42a387ee2c83ccdb45e70563ca05e8bef5fbfb"
   },
   {
-    "file": "figures/internal_predictor.pdf",
-    "source": "slides_v2_2026-10-22/assets/note2_internal_backups/internal_predictor.pdf",
-    "sha256": "4b6962f4df338123524a61a3627f2e7b2cefef425e2bf676d9dc65a8f6f7baef"
-  },
-  {
     "file": "figures/original_figure5.pdf",
     "source": "slides_v2_2026-10-22/assets/note2_figure5/figure5.pdf",
     "sha256": "54a817714a014d401449880e97f1e139e930d204baefdc7bdd9eba30b23b9b5e"

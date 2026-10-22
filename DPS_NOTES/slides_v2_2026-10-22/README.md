@@ -1,7 +1,7 @@
 # Short slide drafts: version 2, draft 1
 
 Note 1 has nine content slides and one reference slide. Note 2 has eight main
-slides, one reference slide and two exploratory backup slides,
+slides, one reference slide and one exploratory backup slide,
 with no A4 cover pages. These are separate from the full
 notes, which remain unchanged. Each deck retains the CMS/contact title slide,
 a purpose slide on slide 2, labelled plots,
@@ -12,9 +12,9 @@ The titles follow the author's wording, including TOFHIR2C in Note 2.
   the reference time, fit inverse-charge profiles, and check timing correction.
 - `note2_dual_threshold/slides.pdf`: motivate rapid calibration, measure the
   internal charge-to-slope mapping, benchmark the single-amplitude walk form,
-  ending on corrected timing residuals. Two post-reference backup slides
-  explore possible routes to AWC from internal observables.
-- `both_notes_slides_v2.pdf`: both decks, 21 landscape pages, no covers.
+  ending on corrected timing residuals. One post-reference backup slide
+  retains the empirical AWC trend with inverse slope coefficient.
+- `both_notes_slides_v2.pdf`: both decks, 20 landscape pages, no covers.
 
 Each reference slide uses two columns and preserves the original
 bibliography entries and numbering: eight entries in Note 1 and twelve in Note 2.
@@ -91,19 +91,15 @@ validated precision predictor. The original Figure 6 caption incorrectly
 describes the points as charge-bin means: here they are explicitly channels,
 with slope-only conditional AWC bootstrap intervals.
 
-Slide 11 is the second internal backup. It combines the median-charge candidate
-`A = K S(Q*)^2 / (c1 Q*)` with the saved leave-one-bar-out comparison:
-3.22 uA RMS AWC error, 14.1% RMS fractional error, ten channels and six bars.
-These are the same frozen clock-quality results used in the full note's
-backup, not new fits. Learning K uses reference-calibrated training bars;
-prediction inputs for an excluded bar are internal. Transfer to other
-configurations and full predictive uncertainty still need validation.
-Both backups are labelled internal discussion only, not for public presentation.
-Their plot drawing operations and numerical results are unchanged; only the
+The new shared-response model and its prediction plot (former slide 11) are
+deferred and removed from the current deck. Its discussion document and saved
+analysis artifacts are retained for future consideration; no data are deleted.
+The remaining backup is labelled internal discussion only, not for public presentation.
+Its plot drawing operations and numerical results are unchanged; only the
 CMS Preliminary text object is removed from short-deck figure copies by
 `prepare_note2_backups.py`. The full-note figures are untouched. The backup
 headline also omits the CMS logo. The build checks reference placement and
-the absence of Preliminary labels on the two backup pages.
+the absence of Preliminary labels on the remaining backup page.
 
 `AWC_PREDICTOR_DISCUSSION.md` separates the derivative identity from the
 empirical shared-response hypothesis and provides a suggested coauthor reply.

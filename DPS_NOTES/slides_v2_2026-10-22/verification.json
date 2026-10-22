@@ -16,7 +16,7 @@
     "DPS_NOTES/both_notes_review_v1.pdf"
   ],
   "cover_pages": 0,
-  "combined_pages": 21,
+  "combined_pages": 20,
   "exact_user_titles_verified": true,
   "github_links_verified": [
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/FEBD_Sync/simple_sync.py",
@@ -25,32 +25,32 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "Note 2 slides 7-11 inspected. Main result ends on 8; references 9; two visibly internal backups 10-11 with no CMS logo or Preliminary labels. Zero overflow. First eight slides and Note 1 unchanged except numbering/whitespace.",
+  "visual_review": "Note 2 final contact sheet inspected: residual result 8, references 9, sole empirical-trend backup 10. Shared-response predictor page absent. All retained pages unchanged apart from numbering; full notes unchanged.",
   "scientific_inputs": "Twenty-four newly fitted per-threshold channel corrections, six independent validation samples. Final histograms checked against the threshold reports. No pooled threshold timing distribution.",
-  "combined_sha256": "da8a5eeb083999a745d7bcc06e3b663e5301cd6f2519619513a72fc769257d71",
+  "combined_sha256": "c85cd74c43412b2ebb05aef2cf910ba9868b6f8834a5c91a891e467617fe26b1",
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 8,
     "note2": 12
   },
   "note2_slide_content_unchanged": false,
-  "structure_review": "Main presentation ends on original Figure 5 residuals (slide 8). References on 9; AWC approaches on internal backup slides 10 and 11. Separate future-procedure slide removed; future-validation discussion retained in backups and coauthor explanation.",
+  "structure_review": "Main result on slide 8; references 9; only empirical AWC-trend backup on 10. New shared-response model deferred and removed.",
   "bar_pair_validation": "Q_Walk/results/2026-10-22_bar_pair_by_threshold/verification.json",
   "threshold_settings": 6,
   "threshold_channel_fits": 24,
   "threshold_total_selected_events": 8672,
   "slides": {
     "note1": 10,
-    "note2": 11
+    "note2": 10
   },
   "content_slides": {
     "note1": 9,
-    "note2": 10
+    "note2": 9
   },
   "note1_slide_content_unchanged": true,
   "note2_internal_prediction_review": {
     "no_refitting": true,
-    "backup_slides": 2,
+    "backup_slides": 1,
     "final_main_result_slide": 8,
     "original_final_observable": "AWC versus 1/c1 retained as exploratory backup on slide 10, not the main conclusion",
     "historical_coefficient_table_source": "Q_Walk/empirical_walk_models.md; supplied Note2.pdf Table 1",
@@ -75,11 +75,11 @@
         6
       ],
       "7_internal_prediction": [
-        10,
-        11
+        10
       ],
       "8_agreement_with_reference": 7
-    }
+    },
+    "shared_response_model_status": "Deferred; removed from short deck, saved analysis and discussion retained."
   },
   "note2_profile_update": {
     "slide": 5,
@@ -120,13 +120,12 @@
   },
   "backup_slides": {
     "note1": 0,
-    "note2": 2
+    "note2": 1
   },
   "note2_backup_reorganization": {
     "references_slide": 9,
     "backup_slides": [
-      10,
-      11
+      10
     ],
     "main_slides_unchanged_except_numbering": true,
     "plot_graphics_preserved_to_pdf_serialization_tolerance": 1e-06,
@@ -134,5 +133,11 @@
     "cms_logo_omitted_from_backup_header": true,
     "new_fits": false,
     "explanation": "DPS_NOTES/slides_v2_2026-10-22/AWC_PREDICTOR_DISCUSSION.md"
+  },
+  "note2_new_model_removal": {
+    "removed_former_slide": 11,
+    "retained_backup_slide": 10,
+    "all_remaining_pages_unchanged_except_numbering": true,
+    "discussion_and_data_retained": true
   }
 }

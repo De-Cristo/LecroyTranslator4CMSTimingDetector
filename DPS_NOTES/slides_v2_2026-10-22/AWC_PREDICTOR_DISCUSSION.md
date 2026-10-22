@@ -1,8 +1,9 @@
 # Internal discussion: what justifies the second AWC candidate?
 
 This is an exploratory model, not an established CMS result or a
-first-principles determination of AWC. The main presentation ends with the
-corrected residuals. Both AWC-prediction approaches belong behind references.
+first-principles determination of AWC. This candidate is deferred and its page
+has been removed from the current short deck. The discussion is retained for
+future consideration; only the empirical AWC trend remains as backup.
 
 ## Exact algebra versus the additional hypothesis
 
@@ -60,8 +61,8 @@ rewrites AWC in terms of the local change of walk with fractional charge. We
 then assume that change is approximately shared across channels. That extra
 assumption, and the choice of typical charge, need discussion and independent
 tests. The encouraging held-out-bar result is a reason to investigate it, not
-yet a public performance claim. Both candidate approaches are now internal
-backup material after the references, with CMS Preliminary labels removed.
+yet a public performance claim. This candidate has now been removed from the
+short deck; the empirical trend remains internal backup after the references.
 
 ## Provenance
 
