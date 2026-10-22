@@ -1,0 +1,20 @@
+{
+  "note1_mcp_reference": {
+    "slides": 10,
+    "cover_pages": 0,
+    "figures": 7,
+    "overflow": 0,
+    "unresolved_citations": 0,
+    "sha256": "66272bcd39ab6108ded20220e13fe624850defa491ae1523918993da979f9689"
+  },
+  "note2_dual_threshold": {
+    "slides": 10,
+    "cover_pages": 0,
+    "figures": 6,
+    "overflow": 0,
+    "unresolved_citations": 0,
+    "sha256": "96de7dc7161883ee9ab415e46e37d8a2542a391f1f289cb7f2388b81b818ebd5"
+  },
+  "combined_pages": 20,
+  "status": "compiled; internal review draft"
+}

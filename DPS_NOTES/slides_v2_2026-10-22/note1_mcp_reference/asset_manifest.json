@@ -1,0 +1,47 @@
+[
+  {
+    "file": "CMSlogo_black_label_1024.png",
+    "source": "note1_mcp_reference/CMSlogo_black_label_1024.png",
+    "sha256": "d1f729beb4ca25a205044cf0aeb782a227dd2d8c3f800ef9f24dca45b87a3053"
+  },
+  {
+    "file": "review_values.tex",
+    "source": "note1_mcp_reference/review_values.tex",
+    "sha256": "c32474f7dd29d949165ff43ad6d595b815a8611abedd73ca7769cfe781b66d15"
+  },
+  {
+    "file": "figures/clock_reference_ch137.pdf",
+    "source": "note1_mcp_reference/figures/clock_reference_ch137.pdf",
+    "sha256": "cbaff61c263dcfd18afa1e75a11cfd862ffebd29424580d4ff1ce29073ee507f"
+  },
+  {
+    "file": "figures/clock_reference_ch154.pdf",
+    "source": "note1_mcp_reference/figures/clock_reference_ch154.pdf",
+    "sha256": "3f50d2c7ddc16530c977c654a0423e205dcefc0c55e8b0c692de1f50320a6a74"
+  },
+  {
+    "file": "figures/clock_residuals.pdf",
+    "source": "note1_mcp_reference/figures/clock_residuals.pdf",
+    "sha256": "d4e026a5524297e2ac009659533d943c42aa53335ffe438ab09c4bd0d0f5eff1"
+  },
+  {
+    "file": "figures/event_matching.pdf",
+    "source": "note1_mcp_reference/figures/event_matching.pdf",
+    "sha256": "514f9fa74bd1340800acdf6f8a67f0fcc454ad60094e90d29dafc4d2891f137e"
+  },
+  {
+    "file": "figures/mcp_waveform.pdf",
+    "source": "note1_mcp_reference/figures/mcp_waveform.pdf",
+    "sha256": "9218bced7b74687b1a9a689df49b21a0a18a02ed85b4241c78b7a2e1a8c23544"
+  },
+  {
+    "file": "figures/setup.pdf",
+    "source": "note1_mcp_reference/figures/setup.pdf",
+    "sha256": "b65b58150754e55709af694e7e5b92baa68fcd470b7ec5af6ddc3e4e8cec5b8b"
+  },
+  {
+    "file": "figures/validated_bar_mcp.pdf",
+    "source": "note1_mcp_reference/figures/validated_bar_mcp.pdf",
+    "sha256": "f2235e7961772ea9592607ad631b95f8b960ea0482edb8776c23e1b9e5b6719f"
+  }
+]

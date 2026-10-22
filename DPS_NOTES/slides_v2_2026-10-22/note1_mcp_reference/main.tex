@@ -1,0 +1,142 @@
+\input{../slides_preamble.tex}
+\begin{document}
+\TitleSlide
+
+\begin{frame}{Abstract}
+\large
+Fixed-threshold timing depends on signal amplitude. An external
+microchannel-plate photomultiplier (MCP-PMT) provides a reference for measuring
+this time walk in BTL channels.
+\medskip
+
+The MCP oscilloscope and BTL readout use independent clocks. Trigger matching,
+segment-wise clock alignment and LOWESS smoothing bring their times into a
+common coordinate. Quadratic fits in inverse charge then describe the walk.
+\medskip
+
+For the same selected events, correction reduces the bar--MCP core width
+from \RBefore{} to \RAfter\,ps. This validates the correction under fixed
+selections; the width still includes detector, MCP and residual clock effects.
+\end{frame}
+
+\PlotSlide{The reference and BTL readout must share a time coordinate}{setup}{
+\textbf{Problem}
+
+Smaller pulses cross a fixed threshold later. Measuring this delay requires
+an independent arrival-time reference.
+
+\textbf{Readout}
+
+The scope records the MCP pulse. Its trigger also reaches TOFHIR channel 192
+in the FEBd readout.
+}{September 2025 beam test. The highlighted lower path provides the reference-bar data.
+The trigger link identifies coincident records; the clocks still need alignment.}
+
+\PlotSlide{1. Match events using the intervals between triggers}{event_matching}{
+\begin{enumerate}
+\item Compare consecutive trigger intervals in channel 192 and the scope.
+\item Find consistent interval patterns.
+\item Keep only unique event matches.
+\end{enumerate}
+
+Matching identifies the same particle. It does not yet establish picosecond timing.
+}{The correlated intervals and their ratio test event matching, not detector resolution.
+\Code{FEBD_Sync/simple_sync.py}{GitHub: trigger matching}.}
+
+\PlotSlide{2. Correct clock-rate differences and smooth drift}{clock_residuals}{
+\begin{enumerate}
+\item Split data at clock resets.
+\item Fit a line between matched trigger times in each segment.
+\item Fit the remaining drift with LOWESS.
+\end{enumerate}
+
+Add the drift to the line prediction to obtain $g(u)$, the expected TOFHIR trigger time.
+}{Points show residuals before LOWESS; red curves describe smooth drift.
+Reject groups with pre-LOWESS residual scale $1.4826\,\mathrm{MAD}>1$\,ns.
+\Code{TimeCalibration/ch192_vs_trigger_lowess.py}{GitHub: clock reconstruction}.}
+
+\PlotSlide{3. Use the MCP pulse to define the reference time}{mcp_waveform}{
+Fit the MCP waveform to estimate its pulse time.
+
+Within the scope waveform, define
+\[
+\delta_{\rm MCP}=t_{\rm peak}-t_{\rm trigger}.
+\]
+For SiPM channel $i$, use
+\[
+\Delta t_i=t_i-g(u)-\delta_{\rm MCP}.
+\]
+The charge-dependent part of this difference is the walk.
+}{The waveform and fitted template determine the MCP pulse time. $u$ is the scope-trigger timestamp.
+A fixed cable/geometry offset is irrelevant to the shape; clock-rate conversion over the short waveform interval is neglected.}
+
+\begin{frame}{4. Build charge profiles from a common selected sample}
+\small
+\begin{enumerate}
+\item In run 4399, require exactly five TOFHIR hits and a unique MCP match:
+the target upstream pair, downstream channels 234 and 243, and channel 192.
+\item Require waveform and clock quality, finite positive charge and slope-quality quantities.
+Keep charge at or above the spectrum's left half-maximum boundary.
+\item Form 20 uniform $1/Q$ bins. Clip timing outliers at
+$5(1.4826\,\mathrm{MAD})$ from each bin's median; require at least five entries.
+\item Fit the bin means with weights $1/\mathrm{SEM}^2$:
+\[
+W_i(Q)=a_i+b_i/Q+c_i/Q^2.
+\]
+\end{enumerate}
+$Q$ is the measured ADC charge proxy, not energy in MeV.
+SEM denotes the standard error of the mean.
+\Source{Reference pairs: bar 7 = channels 133 and 154; bar 8 = channels 137 and 150.
+\Code{Q_Walk/qwalk_t0_data.py}{GitHub: selected reference sample}.}
+\end{frame}
+
+\begin{frame}[t]{Each channel needs its own walk calibration}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.49\textwidth}
+\centering\textbf{Bar 7: channel 154}\par
+\includegraphics[width=\linewidth,height=43mm,keepaspectratio]{figures/clock_reference_ch154.pdf}
+\end{column}
+\begin{column}{.49\textwidth}
+\centering\textbf{Bar 8: channel 137}\par
+\includegraphics[width=\linewidth,height=43mm,keepaspectratio]{figures/clock_reference_ch137.pdf}
+\end{column}
+\end{columns}
+\Source{Run 4399 examples. Points show mean time differences with SEM; red curves are SEM-weighted quadratics in $1/Q$.
+Only populated charge support is shown. The +26\,ns display offset does not change the walk shape.
+The full note also shows channels 133 and 150.}
+\end{frame}
+
+\PlotSlide{5. Check the correction on the same selected events}{validated_bar_mcp}{
+\textbf{\TimingCount{} common events}
+
+Subtract each channel's fitted walk, then form the bar-average time minus MCP time.
+
+\textbf{Core width}
+\[
+\RBefore\ \longrightarrow\ \RAfter\ \mathrm{ps}
+\]
+Corrected full-sample SD: \RSD\,ps.
+
+This is not the intrinsic bar resolution.
+}{Fixed clock mapping; a truncated-normal core fit uses median $\pm2.5(1.4826\,\mathrm{MAD})$.
+The corrected-width 16--84\% interval is [\RLow, \RHigh]\,ps from 400 file/segment-block bootstraps with fixed calibrations.}
+
+\begin{frame}{Use synchronized MCP timing to calibrate the walk shape}
+\large
+\begin{enumerate}
+\item Match events and reject poor clock groups.
+\item Reconstruct the reference time with a line plus LOWESS drift.
+\item Fit each channel's timing profile versus inverse charge.
+\item Subtract the fitted walk within its measured charge range.
+\end{enumerate}
+\medskip
+\normalsize
+\textbf{Result:} the same-event bar--MCP distribution becomes narrower.
+
+\textbf{Scope:} quoted intervals are conditional statistics. Position,
+correlations, residual clock offsets and calibration systematics remain outside them.
+\Source{The full MCP reference note retains the detailed selections, bibliography and uncertainty discussion.
+\Code{TimeCalibration/ch192_vs_trigger_lowess.py}{GitHub: timing correction};
+\Code{Q_Walk/qwalk_t0_data.py}{GitHub: reference selection}.}
+\end{frame}
+\end{document}

@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "original_notes_unchanged": [
+    "DPS_NOTES/note1_mcp_reference/main.tex",
+    "DPS_NOTES/note1_mcp_reference/metadata.tex",
+    "DPS_NOTES/note1_mcp_reference/references.tex",
+    "DPS_NOTES/note1_mcp_reference/cover.pdf",
+    "DPS_NOTES/note1_mcp_reference/slides.pdf",
+    "DPS_NOTES/note1_mcp_reference/note_with_cover.pdf",
+    "DPS_NOTES/note2_dual_threshold/main.tex",
+    "DPS_NOTES/note2_dual_threshold/metadata.tex",
+    "DPS_NOTES/note2_dual_threshold/references.tex",
+    "DPS_NOTES/note2_dual_threshold/cover.pdf",
+    "DPS_NOTES/note2_dual_threshold/slides.pdf",
+    "DPS_NOTES/note2_dual_threshold/note_with_cover.pdf",
+    "DPS_NOTES/both_notes_review_v1.pdf"
+  ],
+  "slides_each": 10,
+  "cover_pages": 0,
+  "combined_pages": 20,
+  "exact_user_titles_verified": true,
+  "github_links_verified": [
+    "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/FEBD_Sync/simple_sync.py",
+    "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_core.py",
+    "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_t0_data.py",
+    "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
+    "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
+  ],
+  "visual_review": "All twenty slides inspected via contact sheets; final enlarged Note1 reference-plot slide inspected individually.",
+  "scientific_inputs": "Existing labelled figure PDFs and numerical macros copied unchanged; no refits.",
+  "combined_sha256": "8bca8177fe0a38a72c91a0f75998ed432fc11ac67342ad1c2e7d4a454c4f75e5"
+}

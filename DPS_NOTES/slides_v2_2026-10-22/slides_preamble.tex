@@ -1,0 +1,42 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\input{metadata.tex}
+\input{review_values.tex}
+\usetheme{default}
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{structure}{fg=black}
+\setbeamersize{text margin left=7mm,text margin right=7mm}
+\setbeamertemplate{navigation symbols}{}
+\setbeamerfont{frametitle}{size=\large,series=\bfseries}
+\setbeamertemplate{headline}{%
+  \hbox to \paperwidth{\hspace{7mm}\scriptsize\color{black!55}Internal review draft -- 22 October 2026
+  \hfill\raisebox{0pt}[9mm][1mm]{\includegraphics[height=7mm]{CMSlogo_black_label_1024.png}}\hspace{6mm}}}
+\setbeamertemplate{footline}{%
+  \hbox to \paperwidth{\hspace{7mm}\scriptsize\ShortTitle
+  \hfill V2 slides -- draft 1\quad\insertframenumber/\inserttotalframenumber\hspace{7mm}}\vspace{2mm}}
+\setbeamertemplate{frametitle}{\vspace{-1mm}\insertframetitle\par\vspace{1mm}}
+\setlength{\parskip}{4pt}
+\newcommand{\Code}[2]{\href{https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/#1}{#2}}
+\newcommand{\Source}[1]{\par\smallskip{\fontsize{8}{9.5}\selectfont\color{black!65}#1\par}}
+\newcommand{\PlotSlide}[4]{%
+  \begin{frame}[t]{#1}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{.63\textwidth}
+      \centering\includegraphics[width=\linewidth,height=51mm,keepaspectratio]{figures/#2.pdf}
+    \end{column}
+    \begin{column}{.35\textwidth}\fontsize{10}{12}\selectfont #3\end{column}
+  \end{columns}
+  \Source{#4}
+  \end{frame}}
+\newcommand{\TitleSlide}{%
+  \begin{frame}
+    \centering{\Large\TitleMain\par}\vspace{3mm}
+    {\large\TitleSub\par}\vspace{8mm}
+    {\large CMS\par}\vspace{2mm}
+    \href{mailto:cms-dpg-conveners-mtd@cern.ch}{cms-dpg-conveners-mtd@cern.ch}
+    \vspace{7mm}\par{\small Discussion draft; not approved for public release.}
+  \end{frame}}
+\hypersetup{pdftitle={\TitleMain\space\TitleSub},pdfauthor={CMS}}
