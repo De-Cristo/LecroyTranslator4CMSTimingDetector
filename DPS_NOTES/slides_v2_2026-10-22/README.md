@@ -209,3 +209,10 @@ Note 1 describes the selected coincidence in physical terms: both ends of the
 upstream reference bar and downstream bar under test, plus the dedicated
 trigger channel. This is a wording-only change; the five-hit selection and
 unique MCP matching in the analysis remain unchanged.
+
+## Slide 8 time-difference labels (23 October 2026)
+
+The two profile axes now identify left/right bar-end time minus the clock-aligned
+MCP time, in ns. The caption defines the MCP clock mapping and retains the
+existing +26 ns display-offset explanation. Labels only: plotted data, fits,
+and numerical results are unchanged.

@@ -21,7 +21,8 @@
     "short_note1_matching_ns": "Superseded by author: ns residual plot archived; slide 4 restored to interval ratio minus one.",
     "short_note1_matching_ratio": "23 October: restored dimensionless ratio-minus-one plots and histogram; caption clarifies subsets and distinction from slide 5.",
     "short_note1_lowess_panels": "23 October: consistent three-panel drift illustration and on-slide LOWESS citation; numerical and visual checks passed.",
-    "short_note1_coincidence_wording": "23 October: slide 7 describes four coincident bar-end channels plus trigger in physical terms; analysis selection unchanged."
+    "short_note1_coincidence_wording": "23 October: slide 7 describes four coincident bar-end channels plus trigger in physical terms; analysis selection unchanged.",
+    "short_note1_walk_axis_definition": "23 October: slide 8 labels define each bar-end time minus clock-aligned MCP time. Existing display offset retained; points and fits unchanged."
   },
   "files": [
     {
@@ -2246,12 +2247,12 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/README.md",
-      "sha256": "91207c1b13691f21598eb5be4ee1227c1c1c0aebebf9d239878a62201e2cbe97",
-      "bytes": 12910
+      "sha256": "e69c8e1d59274157baeed415bba3ca024c339b554bb99e0cbec9c33975c66750",
+      "bytes": 13235
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_drift/clock_residuals.pdf",
-      "sha256": "6c3fea73cda0e8d393625860594ef91273945b942db37dbdda592f7921b2dcd0",
+      "sha256": "7f22c22de28dbd59e516f8c7825278c717ea54018f0e715269814e5a9bb80ead",
       "bytes": 88521
     },
     {
@@ -2296,7 +2297,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_matching_ratio/event_matching.pdf",
-      "sha256": "cf9a0279c6c08f207db7269b4b396ad4e2c90091b32050b432fc5ef181340360",
+      "sha256": "ae9b2f89d7940caac9720e5c0022d205a114945e8eb8eb7d5060d6fbf987e150",
       "bytes": 40739
     },
     {
@@ -2321,8 +2322,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_public_labels/provenance.json",
-      "sha256": "27cee21dbd02f08412a789a74b231f271f216761099b728a80e1b26b6ef7cbd4",
-      "bytes": 3191
+      "sha256": "e37de4a0d0e68e92d720859796c74a0dd62eb93c2a436bbea25e46653b90da05",
+      "bytes": 3305
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_public_labels/setup.pdf",
@@ -2336,12 +2337,12 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_public_labels/threshold_walk_profiles.pdf",
-      "sha256": "f468af17e0e58f65ef6048248cd776203f0a58bbd2c287b581e1b99b1b20c1c5",
-      "bytes": 53940
+      "sha256": "2f7b7ff664939c832271b94710d744ba05278f20000e5256565a7c28abdd7502",
+      "bytes": 57115
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_setup/setup.pdf",
-      "sha256": "8969d13beff2d572e85736af8aec38b15eab5109394727c8785d92c282396663",
+      "sha256": "7e72987e83376b546a8d0e7daad641a659b9274ca3bf7fc345a8f5f0f320aeea",
       "bytes": 53217
     },
     {
@@ -2381,8 +2382,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/both_notes_slides_v2.pdf",
-      "sha256": "4701d56994b117eb105bdface35c476f45cf883bc18c5b4543b822b2716617b4",
-      "bytes": 1856098
+      "sha256": "30e76856ed0b89def709117289aa5d19fb3424ab8ee6d0fb6db0de7296e6aeb9",
+      "bytes": 1860126
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build.py",
@@ -2391,7 +2392,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_report.json",
-      "sha256": "6bcc301bdbc7edfc7f4664b634eaf12ce11680e2973168014d9282d3663be6e4",
+      "sha256": "2c984e21acbf0fb42b7cfc16dce189a4c871403825eafa313ee68536524659c3",
       "bytes": 770
     },
     {
@@ -2401,7 +2402,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/asset_manifest.json",
-      "sha256": "0fa5193016da80dc752c81226f529048b680f50b60a4eef1910a6e4421bad51a",
+      "sha256": "138e87dd32ca0277298aa2438740603ac31d1015a270dcb48b9a1e87c5efd346",
       "bytes": 1652
     },
     {
@@ -2421,12 +2422,12 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/clock_residuals.pdf",
-      "sha256": "6c3fea73cda0e8d393625860594ef91273945b942db37dbdda592f7921b2dcd0",
+      "sha256": "7f22c22de28dbd59e516f8c7825278c717ea54018f0e715269814e5a9bb80ead",
       "bytes": 88521
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/event_matching.pdf",
-      "sha256": "cf9a0279c6c08f207db7269b4b396ad4e2c90091b32050b432fc5ef181340360",
+      "sha256": "ae9b2f89d7940caac9720e5c0022d205a114945e8eb8eb7d5060d6fbf987e150",
       "bytes": 40739
     },
     {
@@ -2436,7 +2437,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/setup.pdf",
-      "sha256": "8969d13beff2d572e85736af8aec38b15eab5109394727c8785d92c282396663",
+      "sha256": "7e72987e83376b546a8d0e7daad641a659b9274ca3bf7fc345a8f5f0f320aeea",
       "bytes": 53217
     },
     {
@@ -2446,8 +2447,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/threshold_walk_profiles.pdf",
-      "sha256": "f468af17e0e58f65ef6048248cd776203f0a58bbd2c287b581e1b99b1b20c1c5",
-      "bytes": 53940
+      "sha256": "2f7b7ff664939c832271b94710d744ba05278f20000e5256565a7c28abdd7502",
+      "bytes": 57115
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/threshold_width_summary.pdf",
@@ -2461,8 +2462,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/main.tex",
-      "sha256": "5bcd6116a31a453cdecf5d516666f3a87dcbfed0cd7166b8f008be635da32ebf",
-      "bytes": 6585
+      "sha256": "016e676095d1d44590c6aa8fe95f056aabdee5a071fabd583328a340f99337b3",
+      "bytes": 6647
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/metadata.tex",
@@ -2481,8 +2482,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/slides.pdf",
-      "sha256": "13aea94597b93be4e14f227c42f55e968df6a2e7eb16460f638e742166efb5cd",
-      "bytes": 819547
+      "sha256": "02f5eb67a8c653ab8f3b4be53fe039de4dc9567c9c6a8476af299ebb9f02b42a",
+      "bytes": 821991
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/CMSlogo_black_label_1024.png",
@@ -2561,7 +2562,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/slides.pdf",
-      "sha256": "4ae1263f3471ebc6111e945177402e2e70c62d15e17c746acc2a63ee2998134b",
+      "sha256": "d3f20b8fd1ac96cd719947ae0d9ffea0729ce31af08361f00c88606fae34cad5",
       "bytes": 961917
     },
     {
@@ -2571,8 +2572,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/prepare_note1_labels.py",
-      "sha256": "212b61b541fa94880aab5dd8494d52036442b7eaf2cbfe8685978edad1b1e899",
-      "bytes": 6020
+      "sha256": "db4fc5eae07c225a3d94bdfc0f5b4f1a65e3fa4862f5f2f7239d0a9f0d983c59",
+      "bytes": 6726
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/prepare_note1_matching.py",
@@ -2601,8 +2602,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
-      "sha256": "f9bc13a818a0a6fe81c692df523e9287237206a418bbe4effb0499a0b6ed23f5",
-      "bytes": 9368
+      "sha256": "f1b3175de2e93ebbf0cf265705cb5cad4d0e62ea3670dd96f66744d1ad8496c1",
+      "bytes": 9814
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -4783,7 +4784,7 @@
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "Note 1 slide 7 coincidence wording simplified. Rebuilt both decks and combined PDF; changed slide visually checked and all other slide text unchanged.",
+    "latest_change": "Note 1 slide 8 axis definitions and MCP clock-mapping caption. Rebuilt both decks and combined PDF; changed slide visually checked; all other slide text unchanged.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 26,

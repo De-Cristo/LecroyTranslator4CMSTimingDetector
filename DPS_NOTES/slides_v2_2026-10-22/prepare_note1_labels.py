@@ -27,6 +27,9 @@ def remove_labels(page, replacements):
     positions = []
 
     def visit(text, cm, tm, font, size):
+        # This source PDF stores the rotated label's ff ligature separately.
+        if text.strip() == "Time di" and "Time difference [ns]" in replacements:
+            text = "Time difference [ns]"
         if text.strip() in replacements:
             x = tm[4] * cm[0] + tm[5] * cm[2] + cm[4]
             y = tm[4] * cm[1] + tm[5] * cm[3] + cm[5]
@@ -44,6 +47,8 @@ def remove_labels(page, replacements):
         elif start is not None and operator == b"TJ":
             text += "".join(str(item) for item in args[0] if isinstance(item, str))
         elif operator == b"ET" and start is not None:
+            if text.strip() == "Time dierence [ns]":
+                text = "Time difference [ns]"
             if text.strip() in replacements:
                 remove.append((start, index + 1))
             start = None
@@ -69,6 +74,7 @@ def prepare():
                 replacements = {
                     "Channel 137": "Channel left",
                     "Channel 150": "Channel right",
+                    "Time difference [ns]": "bar-end time minus clock-aligned MCP time [ns]",
                     "CMS Preliminary Phase 2 | Upstream bar 8 | T1=3, T2=60 DAC":
                     "CMS Preliminary Phase 2 | Reference module, bar 8 | T1=3, T2=60 DAC",
                 }
@@ -80,6 +86,11 @@ def prepare():
                     "CMS Preliminary Phase 2 | T2=60 DAC",
                 }
             for old, x, y, size in remove_labels(page, replacements):
+                if old == "Time difference [ns]":
+                    side = "left" if x < width / 2 else "right"
+                    fig.text(x / width, .5, rf"$t_{{\rm {side}}}-t_{{\rm MCP}}$ [ns]",
+                             ha="center", va="center", rotation=90, fontsize=size)
+                    continue
                 title = old.startswith("CMS")
                 fig.text(.5 if title else x / width, y / height, replacements[old],
                          ha="center" if title else "left", va="baseline",

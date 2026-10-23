@@ -243,5 +243,16 @@
     "all_other_slides_text_unchanged": true,
     "visual_check": "Passed; no overlap or clipping",
     "analysis_selection_unchanged": true
+  },
+  "note1_walk_axis_definition_review": {
+    "date": "2026-10-23",
+    "slide": 8,
+    "labels": "t_left - t_MCP [ns]; t_right - t_MCP [ns]",
+    "mcp_definition": "MCP pulse time mapped to FEBd clock",
+    "display_offset_ns": 26,
+    "labels_only_no_refit": true,
+    "all_other_slides_text_unchanged": true,
+    "visual_check": "Passed; no overlap or clipping",
+    "definition_verified_against": "Q_Walk/qwalk_t0_data.py:delta_t_ref_ps"
   }
 }

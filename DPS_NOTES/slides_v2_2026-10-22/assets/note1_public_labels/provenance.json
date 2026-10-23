@@ -78,7 +78,7 @@
       "figure": "threshold_walk_profiles.pdf",
       "source": "Q_Walk/results/2026-10-22_bar_pair_by_threshold/vth1_3_vth2_60/upstream_walk_profiles.pdf",
       "source_sha256": "f5de28db5f142691e2ae10100b6b8742eda9a7914a0d09576841cd44bd04445b",
-      "sha256": "f468af17e0e58f65ef6048248cd776203f0a58bbd2c287b581e1b99b1b20c1c5",
+      "sha256": "2f7b7ff664939c832271b94710d744ba05278f20000e5256565a7c28abdd7502",
       "changes": [
         [
           "Channel 137",
@@ -87,6 +87,10 @@
         [
           "Channel 150",
           "Channel right"
+        ],
+        [
+          "Time difference [ns]",
+          "bar-end time minus clock-aligned MCP time [ns]"
         ],
         [
           "CMS Preliminary Phase 2 | Upstream bar 8 | T1=3, T2=60 DAC",
