@@ -1,0 +1,25 @@
+{
+  "pages": 11,
+  "reference_page": 11,
+  "backup_pages": 0,
+  "cover_pages": 0,
+  "review_notices_removed": true,
+  "scientific_content_unchanged": true,
+  "cms_preliminary_labels_retained": true,
+  "citation_destinations": {
+    "beamerbibDualThreshold": 11,
+    "beamerbibLOWESS": 11,
+    "beamerbibLeo": 11,
+    "beamerbibMTDTDR": 11,
+    "beamerbibWhitePresentation": 11,
+    "beamerbibgithub_repo": 11,
+    "beamerbibpicosec": 11
+  },
+  "overflow": 0,
+  "undefined_citations": 0,
+  "sha256": "41e4486a4749d2c75caaa222b82944f9677237ec02795f126a0bc5f22e24163e",
+  "source": "note1_mcp_reference/submission.tex",
+  "review_pdfs_unchanged": true,
+  "all_seven_body_citation_links_checked": true,
+  "visual_review": "Title, closure result and references inspected; no overlap or clipping."
+}

@@ -1,5 +1,18 @@
 # Short slide drafts: version 2, draft 1
 
+## Note 1 Submission Presentation
+
+`submission/note1_mcp_reference.pdf` is the 11-slide submission-format copy:
+title, abstract, main results, and references. Draft/review notices and the
+internal backup are omitted; CMS Preliminary Phase 2 labels and scientific
+qualifications are retained. It shares the reviewed source and figures.
+
+Rebuild with `python build_note1_submission.py`. This compiles the saved assets
+without rerunning analysis or overwriting either review deck. The accompanying
+`submission/verification.json` checks the unchanged scientific content, layout,
+page count and citation destinations. Preparing this file does not submit it
+to CMS or establish publication approval.
+
 Note 1 has ten main slides, one reference slide and one diagnostic backup slide. Note 2 has eight main
 slides, one reference slide and one exploratory backup slide,
 with no A4 cover pages. These are separate from the full

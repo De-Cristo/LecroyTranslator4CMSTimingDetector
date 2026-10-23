@@ -148,6 +148,7 @@ Cuts and calibrations fixed; no calibration or systematic uncertainty included. 
 
 \input{references.tex}
 
+\ifdefined\SubmissionVersion\else
 \begingroup
 \setbeamertemplate{headline}{%
   \hbox to \paperwidth{\hspace{7mm}\scriptsize\color{black!55}Internal discussion only -- diagnostic, not for public presentation\hfill\hspace{7mm}}\vspace{4mm}}
@@ -166,4 +167,5 @@ and negligible position spread; quadrature also assumes independent bars.
 Common timing fluctuations cancel in the half-difference. Correlations and position effects require further study to explain the 65\,ps width.}
 \end{frame}
 \endgroup
+\fi
 \end{document}

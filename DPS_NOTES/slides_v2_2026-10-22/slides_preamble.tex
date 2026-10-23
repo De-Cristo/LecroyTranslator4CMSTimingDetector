@@ -12,11 +12,11 @@
 \setbeamertemplate{navigation symbols}{}
 \setbeamerfont{frametitle}{size=\large,series=\bfseries}
 \setbeamertemplate{headline}{%
-  \hbox to \paperwidth{\hspace{7mm}\scriptsize\color{black!55}Internal review draft -- 22 October 2026
+  \hbox to \paperwidth{\hspace{7mm}\scriptsize\color{black!55}\ifdefined\SubmissionVersion\else Internal review draft -- 22 October 2026\fi
   \hfill\raisebox{0pt}[9mm][1mm]{\includegraphics[height=7mm]{CMSlogo_black_label_1024.png}}\hspace{6mm}}}
 \setbeamertemplate{footline}{%
   \hbox to \paperwidth{\hspace{7mm}\scriptsize\ShortTitle
-  \hfill V2 slides -- draft 1\quad\insertframenumber/\inserttotalframenumber\hspace{7mm}}\vspace{2mm}}
+  \hfill\ifdefined\SubmissionVersion\else V2 slides -- draft 1\quad\fi\insertframenumber/\inserttotalframenumber\hspace{7mm}}\vspace{2mm}}
 \setbeamertemplate{frametitle}{\vspace{-1mm}\insertframetitle\par\vspace{1mm}}
 \setlength{\parskip}{4pt}
 \newcommand{\Code}[2]{\href{https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/#1}{#2}}
@@ -37,6 +37,8 @@
     {\large\TitleSub\par}\vspace{8mm}
     {\large CMS\par}\vspace{2mm}
     \href{mailto:cms-dpg-conveners-mtd@cern.ch}{cms-dpg-conveners-mtd@cern.ch}
+    \ifdefined\SubmissionVersion\else
     \vspace{7mm}\par{\small Discussion draft; not approved for public release.}
+    \fi
   \end{frame}}
 \hypersetup{pdftitle={\TitleMain\space\TitleSub},pdfauthor={CMS}}

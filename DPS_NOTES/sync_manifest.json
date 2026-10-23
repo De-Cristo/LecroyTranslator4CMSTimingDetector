@@ -27,7 +27,8 @@
     "short_note1_single_closure_panel": "23 October: removed auxiliary DUT-minus-MCP panel from slide 10; enlarged DUT-minus-reference comparison with explicit three-case legend. Numerical results unchanged; original two-panel figure retained in analysis.",
     "short_note1_half_difference_convention": "23 October: slide 11 plots (tL-tR)/2, with exactly halved widths, fit curves, bin edges and bootstrap intervals. Bar estimates 27.0 and 44.3 ps combine to 51.9 ps; assumptions retained. No refitting.",
     "short_note1_body_citations": "23 October: removed Saclay source at author request; seven remaining references renumbered and cited in main slide text/captions. Clickable PDF destinations verified. Full notes and Note 2 unchanged.",
-    "short_note1_backup_reorganization": "23 October: moved left-minus-right diagnostic behind references as internal backup. Main result remains closure on slide 10; references 11; backup 12. Main results, full notes and Note 2 content unchanged."
+    "short_note1_backup_reorganization": "23 October: moved left-minus-right diagnostic behind references as internal backup. Main result remains closure on slide 10; references 11; backup 12. Main results, full notes and Note 2 content unchanged.",
+    "note1_submission_format": "23 October: prepared separate 11-page Note 1 submission-format PDF, without review notices or internal backup. Scientific content and CMS Preliminary labels retained; review PDFs unchanged."
   },
   "files": [
     {
@@ -2427,8 +2428,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/README.md",
-      "sha256": "aa6f1cf5ce1f746ceefd2a2b247cb30b99e56db1935783412ec84dd9a1b212dc",
-      "bytes": 16179
+      "sha256": "508e67493232a78fb0dff2a3df16e15458ab0ed99151d9ab7a2f006eb3c37d59",
+      "bytes": 16874
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_drift/clock_residuals.pdf",
@@ -2581,6 +2582,11 @@
       "bytes": 9738
     },
     {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/build_note1_submission.py",
+      "sha256": "d497f5d68ecd195623036b34dd20de3326f020e46f5a42f1dfcf8b8dcdac6b3f",
+      "bytes": 3309
+    },
+    {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_report.json",
       "sha256": "a638c91976cbe148ab1e0f1384c29a0dd2cdc04a3909401b670cf4ead831a762",
       "bytes": 772
@@ -2682,8 +2688,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/main.tex",
-      "sha256": "0ced2a12ce66163047493809527e4b69bc02658b8749112b3327021f1a756440",
-      "bytes": 9067
+      "sha256": "1adfa28d4a08c49b703330e8148db307aa7ecbc3bf2c91d2dfc03a65e2e8c2fa",
+      "bytes": 9105
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/metadata.tex",
@@ -2704,6 +2710,11 @@
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/slides.pdf",
       "sha256": "529c14e2924413b130ac1ee6bf1087dba94b5bdd4c57901157097aaa9624cf0d",
       "bytes": 794279
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/submission.tex",
+      "sha256": "64cfb7291cdc36be7bb1833e9f2c595a3df9221779bc6b38e7981a83de581b7d",
+      "bytes": 43
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_transfer_review.pdf",
@@ -2822,8 +2833,18 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/slides_preamble.tex",
-      "sha256": "314a90d206a3407a3d64eb2cc6654d9e8041ecd552a938139c3baf752c50a060",
-      "bytes": 1978
+      "sha256": "c9633eed45f8c411856d4584bfeaa23c632b1f9792a205c41da557ab0d846518",
+      "bytes": 2097
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/submission/note1_mcp_reference.pdf",
+      "sha256": "41e4486a4749d2c75caaa222b82944f9677237ec02795f126a0bc5f22e24163e",
+      "bytes": 730567
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/submission/verification.json",
+      "sha256": "1d6d51912f5813056bb0487d970eb25be5333d74617dfd0896945206720764d1",
+      "bytes": 794
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
@@ -5002,14 +5023,14 @@
     }
   ],
   "verification": {
-    "file_count": 994,
+    "file_count": 998,
     "all_source_hashes_match": true,
     "combined_pages": 57,
     "focused_tests_passed": 140,
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "23 October: moved left-minus-right diagnostic behind references as internal backup. Main result remains closure on slide 10; references 11; backup 12. Main results, full notes and Note 2 content unchanged.",
+    "latest_change": "23 October: prepared separate 11-page Note 1 submission-format PDF, without review notices or internal backup. Scientific content and CMS Preliminary labels retained; review PDFs unchanged.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 26,
@@ -5029,7 +5050,7 @@
     "n2_3_n2_4_closure_changed_files_hash_checked": 17,
     "title_update_changed_files_hash_checked": 17,
     "github_link_verification": "DPS_NOTES/review_2026-10-22_publication/repository_links.json",
-    "latest_changed_files_hash_checked": 22,
+    "latest_changed_files_hash_checked": 7,
     "original_text_verification": "DPS_NOTES/review_2026-10-22_publication/original_text_check.json",
     "language_review_verification": "DPS_NOTES/review_2026-10-22_publication/language_review_verification.json",
     "short_slides_v2": {
@@ -5063,6 +5084,11 @@
       "citation_audit": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/citation_audit.json",
       "note1_main_slides": 10,
       "note1_backup_slides": 1
+    },
+    "note1_submission": {
+      "pdf": "DPS_NOTES/slides_v2_2026-10-22/submission/note1_mcp_reference.pdf",
+      "pages": 11,
+      "verification": "DPS_NOTES/slides_v2_2026-10-22/submission/verification.json"
     }
   }
 }
