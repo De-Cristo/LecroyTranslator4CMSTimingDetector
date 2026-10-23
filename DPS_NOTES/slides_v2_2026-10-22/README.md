@@ -4,7 +4,7 @@ Note 1 has nine content slides and one reference slide. Note 2 has eight main
 slides, one reference slide and one exploratory backup slide,
 with no A4 cover pages. These are separate from the full
 notes, which remain unchanged. Each deck retains the CMS/contact title slide,
-a purpose slide on slide 2, labelled plots,
+an abstract on Note 1 slide 2 and a purpose slide on Note 2 slide 2, labelled plots,
 and concise procedural captions.
 The titles follow the author's wording, including TOFHIR2C in Note 2.
 
@@ -20,7 +20,8 @@ Each reference slide uses two columns and preserves the original
 bibliography entries and numbering: eight entries in Note 1 and twelve in Note 2.
 The build checks that these entries match the full notes exactly.
 
-Existing figures and numerical macros are copied unchanged from the full notes.
+Existing numerical macros are copied unchanged from the full notes. Figures
+retain their data and fits; the Note 1 terminology-only adaptations are described below.
 The new threshold-separated figures are copied from the separate, saved
 `Q_Walk/results/2026-10-22_bar_pair_by_threshold/` validation, with its inputs and
 uncertainties documented there. The build does not rerun that analysis.
@@ -35,15 +36,32 @@ Rebuild from the workspace or repository root:
 python3 DPS_NOTES/slides_v2_2026-10-22/build.py
 ```
 
-Requires pdfLaTeX, Poppler, Pillow and pypdf. Previews are generated locally
+Requires pdfLaTeX, Poppler, Pillow, pypdf and Matplotlib. Previews are generated locally
 under each note's `preview/` directory. The builder rejects layout overflow,
 missing fonts, unresolved citations, unexpected page counts and portrait pages.
 These are first discussion drafts, not approved CMS submissions.
 
 ## Note 1 structure review
 
+### 23 October: abstract and audience-facing terminology
+
+Note 1 slide 2 is now an abstract, adapted from the earlier abstract and the
+purpose-page logic. The full-note cover abstract is unchanged. Public slide text
+uses reference module, module under test, and left/right channels; bar 8 and bar 3
+remain secondary identifiers. Internal mapping: reference left/right = 137/150;
+module-under-test left/right = 234/243, verified against
+`TimeCalibration/channel_mapping.py`.
+
+`prepare_note1_labels.py` changes only figure labels. It replaces selected PDF
+text objects in the profile and histogram figures and overlays label-only regions
+of the retained setup and matching rasters. No data, fits, selections, or full-note
+figures change. Source hashes and changes are recorded in
+`assets/note1_public_labels/provenance.json`. The schematic's two module labels
+now distinguish the reference module and module under test; further schematic
+simplification remains for the page-by-page review.
+
 The author's six-point structure comment is implemented in the short deck:
-purpose; parallel MCP/scope stream; FEBd synchronization; correlated events
+abstract with the calibration purpose; parallel MCP/scope stream; FEBd synchronization; correlated events
 with low-frequency clock drift; corrected upstream reference bars; final
 downstream-minus-reference-bar timing comparison. The setup slide explicitly
 distinguishes this test-beam synchronization from the final HL-LHC scheme.

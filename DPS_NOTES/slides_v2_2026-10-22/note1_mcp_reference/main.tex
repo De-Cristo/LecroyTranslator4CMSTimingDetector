@@ -2,23 +2,24 @@
 \begin{document}
 \TitleSlide
 
-\begin{frame}{Purpose: provide a reliable time reference for BTL analyses}
-\large
-Several BTL test-beam analyses need a reliable particle-arrival time reference.
-\medskip
-
-For a subset of the data, a digital oscilloscope recorded MCP-PMT signals
-in parallel with the BTL readout.
-\medskip
-
-\textbf{Approach:} synchronize the two streams, use the MCP to calibrate
-upstream reference bars, then use their corrected times as the reference
-for downstream timing.
-\medskip
-
+\begin{frame}{Abstract}
 \normalsize
-\textbf{Final check:} the time difference between downstream and reference bars
-before and after walk correction.
+Several analyses of the 2025 CMS barrel timing layer (BTL) test-beam data
+benefit from a reliable particle-arrival time reference. A Hamamatsu
+microchannel-plate photomultiplier (MCP-PMT), digitized by a digital oscilloscope,
+provides an external reference for a subset of the data. Its limited acceptance
+and acquisition rate motivate transferring the timing calibration to a BTL
+reference module.
+
+A trigger link through the FEBd readout correlates events in the two streams.
+Clock alignment and locally weighted smoothing correct their low-frequency
+relative drift. Quadratic functions of inverse charge then describe the
+time walk of the left and right channels of a bar.
+
+The calibrated reference bar provides a time reference for BTL analyses.
+The time difference between a bar in the module under test and the reference
+bar, before and after walk correction, tests the calibration. This FEBd-based
+synchronization procedure is specific to the test-beam setup.
 \end{frame}
 
 \PlotSlide{Parallel MCP and BTL streams are linked through FEBd}{setup}{
@@ -28,7 +29,7 @@ The scope records the MCP-PMT pulse. FEBd records the BTL SiPM signals.
 
 \textbf{Synchronization link}
 
-The scope trigger also reaches TOFHIR channel 192 in FEBd.
+The scope trigger also reaches a dedicated TOFHIR trigger channel in FEBd.
 
 This link connects independently clocked records of the same particle.
 }{September 2025 beam test. The highlighted lower path provides the reference-bar data.
@@ -36,7 +37,7 @@ This FEBd-based synchronization is specific to the test-beam setup, not the fina
 
 \PlotSlide{Events are correlated using the intervals between triggers}{event_matching}{
 \begin{enumerate}
-\item Compare consecutive trigger intervals in channel 192 and the scope.
+\item Compare consecutive trigger intervals in FEBd and the scope.
 \item Find consistent interval patterns.
 \item Keep only unique event matches.
 \end{enumerate}
@@ -76,12 +77,13 @@ The charge-dependent part of this difference is the walk.
 }{The waveform and fitted template determine the MCP pulse time. $u$ is the scope-trigger timestamp.
 A fixed cable/geometry offset is irrelevant to the shape; clock-rate conversion over the short waveform interval is neglected.}
 
-\begin{frame}{Measure the upstream channels' time walk versus charge}
-\small
+\begin{frame}{Measure the reference-module channels' time walk versus charge}
+\fontsize{9.5}{11}\selectfont
 \textbf{Separate threshold settings before selection and fitting.}
 \begin{enumerate}
-\item In run 4399, require exactly five TOFHIR hits and a unique MCP match:
-upstream channels 137 and 150, downstream channels 234 and 243, and channel 192.
+\item Require exactly five TOFHIR hits and a unique MCP match:
+the left and right channels of one bar in the reference module and one bar
+in the module under test, plus the dedicated trigger channel.
 \item Within each setting, require clock quality and finite positive charge,
 $\Delta I$ and threshold-rise time. Keep charge above the spectrum's left half-maximum boundary.
 \item Form 20 uniform $1/Q$ bins. Clip timing outliers at
@@ -93,28 +95,28 @@ W_i(Q)=a_i+b_i/Q+c_i/Q^2.
 \end{enumerate}
 $Q$ is the measured ADC charge proxy, not energy in MeV.
 SEM denotes the standard error of the mean.
-\Source{Upstream bar 8 and downstream bar 3. Combine files only at identical scan settings.
+\Source{Reference module: bar 8; module under test: bar 3. Combine files only at identical scan settings.
 \Code{Q_Walk/qwalk_t0_data.py}{GitHub: selected reference sample}.}
 \end{frame}
 
-\begin{frame}[t]{Walk-corrected upstream bars provide the time reference}
+\begin{frame}[t]{The walk-corrected reference bar provides the time reference}
 \centering
 \includegraphics[width=.95\linewidth,height=43mm,keepaspectratio]{figures/threshold_walk_profiles.pdf}
 \par\raggedright
 \small
 Correct each end: $t_i^{\rm corr}=t_i-W_i(Q_i)$.
 Use the bar average: $t_{\rm ref}=(t_L^{\rm corr}+t_R^{\rm corr})/2$.
-\Source{Upstream bar 8, lowest scanned setting: $T_1=3$, $T_2=60$ (DAC settings).
+\Source{Reference module, bar 8: left and right channels at $T_1=3$, $T_2=60$ (lowest scanned DAC setting).
 Points show profile means with SEM; curves are SEM-weighted quadratics in $1/Q$.
 The +26\,ns display offset does not change the shape. Separate fits are made for every setting and all four channels.}
 \end{frame}
 
-\begin{frame}[t]{Final result: downstream-bar minus reference-bar timing}
+\begin{frame}[t]{Final result: module-under-test bar minus reference bar}
 \centering
 \includegraphics[width=\linewidth,height=47mm,keepaspectratio]{figures/threshold_histograms.pdf}
 \par\raggedright
-\Source{Difference of bar-average times: downstream bar 3 minus upstream bar 8. Corrected core widths: 62--69\,ps.
-For independent timing fluctuations, $\sigma_{\Delta t}=\sqrt{\sigma_{\rm up}^2+\sigma_{\rm down}^2}\approx65\,\mathrm{ps}$; individual widths are not separately measured.
+\Source{Difference of bar-average times: module under test (bar 3) minus reference module (bar 8). Corrected core widths: 62--69\,ps.
+For independent timing fluctuations, $\sigma_{\Delta t}=\sqrt{\sigma_{\rm ref}^2+\sigma_{\rm test}^2}\approx65\,\mathrm{ps}$; individual widths are not separately measured.
 Thresholds are fitted separately with identical before/after events. Display-only median centering; no per-file offsets.
 Dashed curves: truncated-normal fits within median $\pm2.5(1.4826\,\mathrm{MAD})$. In-sample validation.}
 \end{frame}

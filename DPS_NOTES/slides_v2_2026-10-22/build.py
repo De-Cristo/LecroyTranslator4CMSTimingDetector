@@ -10,6 +10,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw
 from pypdf import PdfReader, PdfWriter
 from prepare_note2_backups import NAMES as BACKUP_FIGURES, prepare as prepare_backups
+from prepare_note1_labels import NAMES as NOTE1_LABELS, prepare as prepare_note1_labels
 
 ROOT = Path(__file__).resolve().parent
 NOTES = ("note1_mcp_reference", "note2_dual_threshold")
@@ -30,6 +31,7 @@ def run(command, cwd):
 
 def main():
     prepare_backups()
+    prepare_note1_labels()
     combined = PdfWriter()
     report = {}
     for name in NOTES:
@@ -49,6 +51,8 @@ def main():
                           / THRESHOLD_FIGURES[relative])
             if name == "note2_dual_threshold" and relative == "figures/original_figure5.pdf":
                 origin = ROOT / "assets/note2_figure5/figure5.pdf"
+            if name == "note1_mcp_reference" and Path(relative).stem in NOTE1_LABELS:
+                origin = ROOT / "assets/note1_public_labels" / Path(relative).name
             is_backup = name == "note2_dual_threshold" and Path(relative).stem in BACKUP_FIGURES
             if is_backup:
                 origin = ROOT / "assets/note2_internal_backups" / Path(relative).name
@@ -85,7 +89,7 @@ def main():
                                 for number, key, body in re.findall(entry_pattern, path.read_text())]
         assert entries(note / "references.tex") == entries(original / "references.tex")
         assert "cms-dpg-conveners-mtd@cern.ch" in pdf.pages[0].extract_text()
-        assert "Purpose" in pdf.pages[1].extract_text()
+        assert ("Abstract" if name == "note1_mcp_reference" else "Purpose") in pdf.pages[1].extract_text()
         for page in pdf.pages:
             assert float(page.mediabox.width) > float(page.mediabox.height)
             combined.add_page(page)
