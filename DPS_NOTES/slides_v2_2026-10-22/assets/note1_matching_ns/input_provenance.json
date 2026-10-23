@@ -1,0 +1,16 @@
+{
+  "source": "/eos/user/l/lichengz/MTD/TB2025/sync_out_4399_example/4399_1_e_matched.csv",
+  "source_sha256": "e9cc57048fccd5712b3a448da750a140656561c046bf3668e9a6c75d89613866",
+  "matched_events": 7206,
+  "subset_counts": {
+    "1": 2405,
+    "2": 2396,
+    "3": 2405
+  },
+  "selection": "Finite matched FEBd/scope timestamps; no detector topology or charge cuts.",
+  "original_ratio_plot_pair_counts": [
+    2404,
+    2395,
+    2404
+  ]
+}

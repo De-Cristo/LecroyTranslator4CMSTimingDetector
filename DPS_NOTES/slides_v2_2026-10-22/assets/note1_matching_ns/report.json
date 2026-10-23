@@ -1,0 +1,69 @@
+{
+  "events": 7206,
+  "linear_fits": [
+    {
+      "subset": 1,
+      "events": 2405,
+      "slope": 0.9999909880522575,
+      "centered_intercept_ns": -0.01631804711519663,
+      "scope_origin_ps": 0.0,
+      "febd_origin_ps": 16014243789690.0
+    },
+    {
+      "subset": 2,
+      "events": 2396,
+      "slope": 0.9999909981138754,
+      "centered_intercept_ns": 0.213486747660099,
+      "scope_origin_ps": 0.0,
+      "febd_origin_ps": 17791523421608.0
+    },
+    {
+      "subset": 3,
+      "events": 2405,
+      "slope": 0.9999909848121733,
+      "centered_intercept_ns": 0.2651022768005492,
+      "scope_origin_ps": 0.0,
+      "febd_origin_ps": 19519478703856.0
+    }
+  ],
+  "residual_definition": "(t_FEBd - (a_s*t_scope + b_s)) in ns; per-subset linear fit; no LOWESS",
+  "gaussian_amplitude": 256.8113911507437,
+  "gaussian_mean_ns": 0.00048178163623581493,
+  "gaussian_sigma_ns": 0.06563776426997545,
+  "covariance": [
+    [
+      21.76788415385874,
+      -0.00046203531012374495,
+      -0.003666910649776909
+    ],
+    [
+      -0.000462035310123745,
+      1.1211968504743937e-06,
+      1.7971982519876141e-07
+    ],
+    [
+      -0.003666910649776909,
+      1.7971982519876136e-07,
+      1.3417542319994022e-06
+    ]
+  ],
+  "gaussian_fit_window_ns": [
+    -0.11662361823916434,
+    0.11982784473299979
+  ],
+  "gaussian_fit_method": "Poisson-error-weighted fit to histogram bins within median +/- 1.5 scaled MAD",
+  "histogram_bins": 80,
+  "histogram_events": 7206,
+  "histogram_clipping": false,
+  "noise_interpretation": "Core is an effective synchronization width, not an isolated intrinsic component.",
+  "slow_structure_diagnostic": {
+    "window_events": 201,
+    "edge_events_excluded_per_end": 100,
+    "threshold_ns": 0.19691329280992634,
+    "events": 6606,
+    "tail_fraction_before": 0.009536784741144414,
+    "tail_fraction_after_rolling_mean_subtraction": 0.0,
+    "note": "Diagnostic only, not applied to displayed points; not proof that all tails are drift."
+  },
+  "input_sha256": "6354d414bcdcb0aabbd6e548e33ed885fb725400856c705bf0be91ebdde04057"
+}

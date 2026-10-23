@@ -11,6 +11,7 @@ from PIL import Image, ImageDraw
 from pypdf import PdfReader, PdfWriter
 from prepare_note2_backups import NAMES as BACKUP_FIGURES, prepare as prepare_backups
 from prepare_note1_labels import NAMES as NOTE1_LABELS, prepare as prepare_note1_labels
+from prepare_note1_matching import prepare as prepare_note1_matching
 
 ROOT = Path(__file__).resolve().parent
 NOTES = ("note1_mcp_reference", "note2_dual_threshold")
@@ -32,6 +33,7 @@ def run(command, cwd):
 def main():
     prepare_backups()
     prepare_note1_labels()
+    prepare_note1_matching()
     setup = ROOT / "assets/note1_setup"
     (setup / "build").mkdir(exist_ok=True)
     run(["pdflatex", "-interaction=nonstopmode", "-halt-on-error",
@@ -62,6 +64,8 @@ def main():
                 origin = ROOT / "assets/note1_public_labels" / Path(relative).name
             if name == "note1_mcp_reference" and relative == "figures/setup.pdf":
                 origin = setup / "setup.pdf"
+            if name == "note1_mcp_reference" and relative == "figures/event_matching.pdf":
+                origin = ROOT / "assets/note1_matching_ns/event_matching.pdf"
             is_backup = name == "note2_dual_threshold" and Path(relative).stem in BACKUP_FIGURES
             if is_backup:
                 origin = ROOT / "assets/note2_internal_backups" / Path(relative).name

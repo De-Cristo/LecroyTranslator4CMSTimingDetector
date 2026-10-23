@@ -17,7 +17,8 @@
     "N2-7": "Closed by author on 22 October 2026 for exploratory backup scope. Both MCP-trained predictor slides retained after the conclusion, not a demonstration of reference-free calibration. Independent validation, feature/target correlations and full prediction uncertainties remain future work. No numerical changes.",
     "short_note1_threshold_separation": "Accepted author direction: no mixing scan settings before fitting. Calibrations/widths separated; only measured widths enter descriptive aggregate.",
     "short_note1_abstract_terminology": "Accepted 23 October 2026: abstract and physical identifiers; no numerical changes.",
-    "short_note1_setup": "Accepted 23 October: simplified beamline schematic; no angle annotations per author request."
+    "short_note1_setup": "Accepted 23 October: simplified beamline schematic; no angle annotations per author request.",
+    "short_note1_matching_ns": "23 October: timing residuals in ns, dataset-subset caption, qualified Gaussian-core and drift interpretation; saved timestamp snapshot and plotting script."
   },
   "files": [
     {
@@ -2242,8 +2243,38 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/README.md",
-      "sha256": "5b57973f4a0d3bfc7358de42c12768eba237cc09410360ff47749b50da20bfb1",
-      "bytes": 9301
+      "sha256": "d6a83c88413d0d71dc5cc74ba7aa2b45cc4446cfc04099c4b55a1ccc964db045",
+      "bytes": 10662
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_matching_ns/event_matching.pdf",
+      "sha256": "2f61a5d33f198e169aff4175f40d01a34ce4476545341d193a70cef75e6cc65e",
+      "bytes": 67413
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_matching_ns/histogram.csv",
+      "sha256": "0535bd8dca663c281db2066fa7371495eda76eaa3a81c09b883348a1bc2818bb",
+      "bytes": 3295
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_matching_ns/input_provenance.json",
+      "sha256": "cab789ba99637b80c2010b1c4fb35f7fe808a04feb78aef8b1c7dc9451dfbf76",
+      "bytes": 442
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_matching_ns/matched_timestamps.csv",
+      "sha256": "6354d414bcdcb0aabbd6e548e33ed885fb725400856c705bf0be91ebdde04057",
+      "bytes": 579399
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_matching_ns/report.json",
+      "sha256": "db3f619759bd52cb1002915560bf8259df949bb75cd014297653fa75cf51c952",
+      "bytes": 2074
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_matching_ns/residuals.csv",
+      "sha256": "06389580dbe8adc949c9d0d87fffd16468e905f50c557bfe1270fb89cabeb123",
+      "bytes": 1039940
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_public_labels/event_matching.pdf",
@@ -2272,7 +2303,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_setup/setup.pdf",
-      "sha256": "65e6337fd5adef8b565389c84f6ba690ab525a86deecb0ebfaa3d69a6504b43b",
+      "sha256": "b97039e14e5aef6d7d8742b59824e3107d325fd57ac057b82fcc9b91ba406aab",
       "bytes": 53217
     },
     {
@@ -2312,17 +2343,17 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/both_notes_slides_v2.pdf",
-      "sha256": "ba80ae88f1026f6ef49cd5303fdb313cd42743fbf6a29fb4f8a1d7f657be799e",
-      "bytes": 2817704
+      "sha256": "acc9a6c9e0ba0c9ffc8f8e6beddbc14052a3988dd4c49acd63e31393e62e7eea",
+      "bytes": 2262970
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build.py",
-      "sha256": "57a555be6b98344944bc940fec03345e3f490b6f4e1e20ba83ab5b497cea0984",
-      "bytes": 7491
+      "sha256": "44add9b7679a955ec6f5517fef26a007634fe3d56ffc722a37229b1d3687e620",
+      "bytes": 7758
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_report.json",
-      "sha256": "be0c0b47ea6bce424b22e862690a9253f832698d6ee98c421bf14afa63bc6b5f",
+      "sha256": "04fadae5e8d1e7c9ca2892e6ea54843677d02fc8f3bb5a35a2b99623b9dd35f7",
       "bytes": 770
     },
     {
@@ -2332,8 +2363,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/asset_manifest.json",
-      "sha256": "6c2cf743600bf0ba92a8c44933bb4c902be27864a426465430cb44255d2fb9d2",
-      "bytes": 1639
+      "sha256": "91bdf24bebd29af9b7610c7b44cde25286bc5b7b6519b170c48263ab2888c4f0",
+      "bytes": 1637
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/bar_pair_before_after.pdf",
@@ -2357,8 +2388,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/event_matching.pdf",
-      "sha256": "f5ce9e73db2c505b4f1f155fae824a4cbeec05670671a71fd3cfaaf52237d37d",
-      "bytes": 622529
+      "sha256": "2f61a5d33f198e169aff4175f40d01a34ce4476545341d193a70cef75e6cc65e",
+      "bytes": 67413
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/mcp_waveform.pdf",
@@ -2367,7 +2398,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/setup.pdf",
-      "sha256": "65e6337fd5adef8b565389c84f6ba690ab525a86deecb0ebfaa3d69a6504b43b",
+      "sha256": "b97039e14e5aef6d7d8742b59824e3107d325fd57ac057b82fcc9b91ba406aab",
       "bytes": 53217
     },
     {
@@ -2392,8 +2423,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/main.tex",
-      "sha256": "de95ad1d8bd82f472865590c886732b2e6fc659297e6ca5248f758c59c478a4f",
-      "bytes": 6016
+      "sha256": "18781a79d68370229aa1f8898753f05677d76ef67749764365739f38bf952bc1",
+      "bytes": 6298
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/metadata.tex",
@@ -2412,8 +2443,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/slides.pdf",
-      "sha256": "cf87824cf46973449314ccc9fda6c7b7c2ea6c3bc11dbe0fc630dbd2464cf699",
-      "bytes": 1780915
+      "sha256": "8748fdf834622a7f975760f9b2a6850e77a0077db4fbed707db5db3cd70b96b9",
+      "bytes": 1227175
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/CMSlogo_black_label_1024.png",
@@ -2492,13 +2523,18 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/slides.pdf",
-      "sha256": "4bf0f1615867cd004373617e67858184c150b1e0e6f068cc45fbfcdbd0106946",
+      "sha256": "8d34b6f4e851a21023a01938a8d86a21eb03f06f4e581dadcded05651cae8d8c",
       "bytes": 961917
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/prepare_note1_labels.py",
       "sha256": "212b61b541fa94880aab5dd8494d52036442b7eaf2cbfe8685978edad1b1e899",
       "bytes": 6020
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/prepare_note1_matching.py",
+      "sha256": "5197529be0b08b9f58d180a8ed2a24992641989b890427eb33d60dc27bc71510",
+      "bytes": 7600
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/prepare_note2_backups.py",
@@ -2517,8 +2553,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
-      "sha256": "bc7553858361a5611868e48a4c74f95abeabf6519577627f5181efb1be229c98",
-      "bytes": 7160
+      "sha256": "c3f76ea02fb3bff83b84c12ba18fc7603e27a46b77176f42dd09f6f2bd4d5f97",
+      "bytes": 7788
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -4692,14 +4728,14 @@
     }
   ],
   "verification": {
-    "file_count": 934,
+    "file_count": 941,
     "all_source_hashes_match": true,
     "combined_pages": 57,
     "focused_tests_passed": 140,
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "Note 1 slide 3: new editable top-view beamline schematic showing reference module, tilted module under test, and MCP only. No angle annotations. Caption updated; other slides and scientific results unchanged.",
+    "latest_change": "Note 1 slide 4: author-approved replacement of interval ratios by pre-LOWESS linear-alignment residuals in ns. All 7,206 matched events retained, Gaussian core fitted, subsets and slow-drift tails explained. Core width explicitly effective, not isolated intrinsic noise. Other slides and detector calibrations unchanged.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 26,
@@ -4719,7 +4755,7 @@
     "n2_3_n2_4_closure_changed_files_hash_checked": 17,
     "title_update_changed_files_hash_checked": 17,
     "github_link_verification": "DPS_NOTES/review_2026-10-22_publication/repository_links.json",
-    "latest_changed_files_hash_checked": 57,
+    "latest_changed_files_hash_checked": 64,
     "original_text_verification": "DPS_NOTES/review_2026-10-22_publication/original_text_check.json",
     "language_review_verification": "DPS_NOTES/review_2026-10-22_publication/language_review_verification.json",
     "short_slides_v2": {

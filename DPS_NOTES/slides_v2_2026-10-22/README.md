@@ -36,12 +36,34 @@ Rebuild from the workspace or repository root:
 python3 DPS_NOTES/slides_v2_2026-10-22/build.py
 ```
 
-Requires pdfLaTeX, Poppler, Pillow, pypdf and Matplotlib. Previews are generated locally
+Requires pdfLaTeX with TikZ, Poppler, Pillow, pypdf, Matplotlib, NumPy, pandas
+and SciPy. Previews are generated locally
 under each note's `preview/` directory. The builder rejects layout overflow,
 missing fonts, unresolved citations, unexpected page counts and portrait pages.
 These are first discussion drafts, not approved CMS submissions.
 
 ## Note 1 structure review
+
+### 23 October: matching residuals in ns
+
+Slide 4 replaces the dimensionless interval-ratio figure with timing residuals
+in ns, as explicitly selected by the author. `prepare_note1_matching.py` reads
+the frozen timestamp snapshot in `assets/note1_matching_ns/`. It uses the same
+three matched subsets as the old ratio figure: 2,405, 2,396 and 2,405 events
+(one fewer consecutive interval per subset in the original ratio plot).
+An independent linear fit aligns each subset's clocks; no LOWESS, topology,
+charge cut, or residual clipping is applied to the displayed 7,206 events.
+
+The 80-bin histogram retains all events. A Poisson-error-weighted Gaussian fit
+uses bins within median +/- 1.5 scaled MAD; its effective core width is about
+0.066 ns. This is not a pure intrinsic synchronization-noise measurement:
+the pre-LOWESS residuals still contain slow drift. The caption defines a segment
+as a dataset subset and links the tails to the following drift-correction slide.
+A saved 201-event rolling-mean diagnostic supports a slow-structure contribution
+to the tails; it is not applied to the displayed data and does not establish
+that every tail event is caused by drift. Data, histogram counts, fit parameters,
+and input provenance are saved alongside the figure. Detector calibration fits
+and the other slides are unchanged.
 
 ### 23 October: simplified beam-test schematic
 
