@@ -18,9 +18,18 @@ Note 1 has ten main slides, one reference slide and one diagnostic backup slide.
 slides, one reference slide and one exploratory backup slide,
 with no A4 cover pages. These are separate from the full
 notes, which remain unchanged. Each deck retains the CMS/contact title slide,
-an abstract on Note 1 slide 2 and a purpose slide on Note 2 slide 2, labelled plots,
+an abstract on slide 2 of both notes, labelled plots,
 and concise procedural captions.
 The titles follow the author's wording, including TOFHIR2C in Note 2.
+
+## Note 2 Abstract (23 October)
+
+Slide 2 now adapts the original abstract to the presentation's calibration
+motivation: high-pileup operation, internal dual-threshold measurements, a
+single-amplitude correction, and MCP-benchmarked development of AWC prediction.
+It distinguishes demonstrated shape agreement from predictive performance still
+requiring validation. The full-note cover abstract and scientific results are
+unchanged; no run or channel indices appear in the new abstract.
 
 ## Note 1 Backup Placement (23 October)
 

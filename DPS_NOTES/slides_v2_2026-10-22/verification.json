@@ -25,15 +25,15 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "Backup slide 12 visually inspected; no overlap/clipping. Main slides 1-10 and all Note 2 slide text unchanged; references moved to 11 with all seven citation destinations verified. Build has no overflow or unresolved citations.",
+  "visual_review": "Note 2 abstract slide 2 visually inspected: readable and no clipping/overlap. Other slide text unchanged in both decks; no compilation overflow or unresolved citations.",
   "scientific_inputs": "Frozen reference corrections; four new downstream fits (two channels x two reference choices), 1512 common fitting events and 1456 common evaluation events at one threshold. 400 paired block-bootstrap replicas with fixed cuts and calibration.",
-  "combined_sha256": "af57c2cc6f0572f0040acc71be2831813304b2fddc8dc73251e770dc9cd48ca0",
+  "combined_sha256": "8237a64f02baefba1f3469cc712d592118df67d765dc2ca99ffbce2368fd7588",
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 7,
     "note2": 12
   },
-  "note2_slide_content_unchanged": true,
+  "note2_slide_content_unchanged": false,
   "structure_review": "Main result on slide 8; references 9; only empirical AWC-trend backup on 10. New shared-response model deferred and removed.",
   "bar_pair_validation": "DPS_NOTES/review_2026-10-23_reference_transfer/verification.json",
   "slides": {
@@ -384,5 +384,16 @@
     "full_notes_unchanged": true,
     "note2_text_unchanged": true,
     "private_checklist_updated_not_for_upload": true
+  },
+  "note2_abstract_review": {
+    "slide": 2,
+    "date": "2026-10-23",
+    "basis": "Original cover abstract and existing calibration-purpose slide",
+    "focus": "Internal dual-threshold calibration and AWC prediction benchmarked by MCP",
+    "full_note_cover_abstract_unchanged": true,
+    "full_notes_unchanged": true,
+    "other_slide_text_unchanged": true,
+    "note1_submission_unchanged": true,
+    "no_new_analysis": true
   }
 }

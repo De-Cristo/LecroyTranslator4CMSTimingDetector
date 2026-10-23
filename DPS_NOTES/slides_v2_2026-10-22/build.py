@@ -127,7 +127,7 @@ def main():
         else:
             assert note_entries == original_entries
         assert "cms-dpg-conveners-mtd@cern.ch" in pdf.pages[0].extract_text()
-        assert ("Abstract" if name == "note1_mcp_reference" else "Purpose") in pdf.pages[1].extract_text()
+        assert "Abstract" in pdf.pages[1].extract_text()
         for page in pdf.pages:
             assert float(page.mediabox.width) > float(page.mediabox.height)
             combined.add_page(page)

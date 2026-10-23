@@ -2,22 +2,25 @@
 \begin{document}
 \TitleSlide
 
-\begin{frame}{Purpose: rapid, repeatable walk calibration at HL-LHC}
-\large
-BTL needs frequent recalibration as detector response evolves.
-For about 330\,000 channels, a consistent physical parametrization matters.
-\medskip
+\begin{frame}{Abstract}
+\fontsize{10}{12}\selectfont
+Precision timing at the HL-LHC requires rapid, repeatable calibration as detector
+response evolves. With many interactions per bunch crossing, an external
+particle-arrival time reference is not readily available. The CMS barrel timing
+layer (BTL) therefore motivates calibration procedures based on internal
+measurements and a consistent parametrization across about 330\,000 channels.
 
-\textbf{Goal:} predict each channel's walk correction from simple internal
-charge and dual-threshold measurements, without a dedicated $t_0$ reference
-for every calibration.
-\medskip
+We extend an earlier dual-threshold bench study to BTL sensors and TOFHIR2C
+readout exposed to a 180\,GeV pion beam. Two threshold-crossing times provide a
+leading-edge slope proxy. Its mean dependence on charge defines an inverse-slope
+walk correction with one amplitude parameter, AWC, per channel and configuration.
 
-\normalsize
-TOFHIR2C measures the leading-edge slope. This gives a common correction
-form and internal observables with which to predict its amplitude, AWC.
-The MCP study benchmarks this approach; transfer to new data and operating
-conditions is the next test.
+Comparison with independent microchannel-plate (MCP) reference calibrations shows
+good agreement between the correction shapes. Internal charge and slope
+information provide candidate predictors of AWC, with the MCP results serving
+as benchmarks. These results support development of a reference-free calibration
+procedure; predictive precision and transfer to other operating conditions
+require further validation.
 \Source{BTL and TOFHIR2C: Refs.~\cite{MTDTDR,TOFHIR2}; dual-threshold motivation and bench study: Ref.~\cite{DualThreshold}.}
 \end{frame}
 
