@@ -18,7 +18,8 @@
     "short_note1_threshold_separation": "Accepted author direction: no mixing scan settings before fitting. Calibrations/widths separated; only measured widths enter descriptive aggregate.",
     "short_note1_abstract_terminology": "Accepted 23 October 2026: abstract and physical identifiers; no numerical changes.",
     "short_note1_setup": "Accepted 23 October: simplified beamline schematic; no angle annotations per author request.",
-    "short_note1_matching_ns": "23 October: timing residuals in ns, dataset-subset caption, qualified Gaussian-core and drift interpretation; saved timestamp snapshot and plotting script."
+    "short_note1_matching_ns": "Superseded by author: ns residual plot archived; slide 4 restored to interval ratio minus one.",
+    "short_note1_matching_ratio": "23 October: restored dimensionless ratio-minus-one plots and histogram; caption clarifies subsets and distinction from slide 5."
   },
   "files": [
     {
@@ -2243,8 +2244,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/README.md",
-      "sha256": "d6a83c88413d0d71dc5cc74ba7aa2b45cc4446cfc04099c4b55a1ccc964db045",
-      "bytes": 10662
+      "sha256": "a32febe4dfcad2f052c117e064a61f513b1a582b233c5012841a45eb51e6409f",
+      "bytes": 11652
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_matching_ns/event_matching.pdf",
@@ -2277,6 +2278,26 @@
       "bytes": 1039940
     },
     {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_matching_ratio/event_matching.pdf",
+      "sha256": "52a099bc24fac7f5e9c70ec154d960df02aadc4fb1f3c32f3b6e4bc779cf45e8",
+      "bytes": 40739
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_matching_ratio/histogram.csv",
+      "sha256": "3ce8bdbcc4f411e5e3919e6987441d0255abf002dd94e9676172388ec13d1b51",
+      "bytes": 18894
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_matching_ratio/interval_ratios.csv",
+      "sha256": "69b5066c0fa96a0415858cdb94948e30bfbd93cd5628a94ba4ba4ae8e829c5fe",
+      "bytes": 519686
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_matching_ratio/report.json",
+      "sha256": "675ecb624493e56aa9304d4422007b47b80e0e472c14fd264a1b5e41310c130c",
+      "bytes": 1422
+    },
+    {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_public_labels/event_matching.pdf",
       "sha256": "f5ce9e73db2c505b4f1f155fae824a4cbeec05670671a71fd3cfaaf52237d37d",
       "bytes": 622529
@@ -2303,7 +2324,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_setup/setup.pdf",
-      "sha256": "b97039e14e5aef6d7d8742b59824e3107d325fd57ac057b82fcc9b91ba406aab",
+      "sha256": "2cde5525b9cab4567aff5a698099b79a72d19b36a611d9de4ed30c6df75324f2",
       "bytes": 53217
     },
     {
@@ -2343,17 +2364,17 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/both_notes_slides_v2.pdf",
-      "sha256": "acc9a6c9e0ba0c9ffc8f8e6beddbc14052a3988dd4c49acd63e31393e62e7eea",
-      "bytes": 2262970
+      "sha256": "d27d03df36fca6d1256eca55ce2d36f7e0db6e899696d98d4b6a1b3312565678",
+      "bytes": 2236712
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build.py",
-      "sha256": "44add9b7679a955ec6f5517fef26a007634fe3d56ffc722a37229b1d3687e620",
-      "bytes": 7758
+      "sha256": "425434e137512fcb4f8884d45bf96dadbd453b010a802f8233fe9c335f172038",
+      "bytes": 7767
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_report.json",
-      "sha256": "04fadae5e8d1e7c9ca2892e6ea54843677d02fc8f3bb5a35a2b99623b9dd35f7",
+      "sha256": "404710b2d583d89e8b0d3fad726e4e4f4fc97a97278cd678722519ffdd7171b9",
       "bytes": 770
     },
     {
@@ -2363,8 +2384,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/asset_manifest.json",
-      "sha256": "91bdf24bebd29af9b7610c7b44cde25286bc5b7b6519b170c48263ab2888c4f0",
-      "bytes": 1637
+      "sha256": "87c87d7868ad3f30437ae15314b568889e1642d4d50c7e12fba5373a1af76251",
+      "bytes": 1640
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/bar_pair_before_after.pdf",
@@ -2388,8 +2409,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/event_matching.pdf",
-      "sha256": "2f61a5d33f198e169aff4175f40d01a34ce4476545341d193a70cef75e6cc65e",
-      "bytes": 67413
+      "sha256": "52a099bc24fac7f5e9c70ec154d960df02aadc4fb1f3c32f3b6e4bc779cf45e8",
+      "bytes": 40739
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/mcp_waveform.pdf",
@@ -2398,7 +2419,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/setup.pdf",
-      "sha256": "b97039e14e5aef6d7d8742b59824e3107d325fd57ac057b82fcc9b91ba406aab",
+      "sha256": "2cde5525b9cab4567aff5a698099b79a72d19b36a611d9de4ed30c6df75324f2",
       "bytes": 53217
     },
     {
@@ -2423,8 +2444,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/main.tex",
-      "sha256": "18781a79d68370229aa1f8898753f05677d76ef67749764365739f38bf952bc1",
-      "bytes": 6298
+      "sha256": "c4bd1063b3a848f46589b9d82ae7571416ffc291381cb8243976ed8d008b9ce4",
+      "bytes": 6280
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/metadata.tex",
@@ -2443,8 +2464,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/slides.pdf",
-      "sha256": "8748fdf834622a7f975760f9b2a6850e77a0077db4fbed707db5db3cd70b96b9",
-      "bytes": 1227175
+      "sha256": "9e8ebe5b9022783a952b43c54ee37d3a8fb3fcc865e991232bd3f303a81f93c9",
+      "bytes": 1201646
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/CMSlogo_black_label_1024.png",
@@ -2523,7 +2544,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/slides.pdf",
-      "sha256": "8d34b6f4e851a21023a01938a8d86a21eb03f06f4e581dadcded05651cae8d8c",
+      "sha256": "5d954a0e029e629468671349895c46a8674037a957106681eb866a6a4eb72940",
       "bytes": 961917
     },
     {
@@ -2535,6 +2556,11 @@
       "path": "DPS_NOTES/slides_v2_2026-10-22/prepare_note1_matching.py",
       "sha256": "5197529be0b08b9f58d180a8ed2a24992641989b890427eb33d60dc27bc71510",
       "bytes": 7600
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/prepare_note1_matching_ratio.py",
+      "sha256": "1c889a63658e0eddf9f8302fb337628646013c58737bd6c137dea301de13db8d",
+      "bytes": 5409
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/prepare_note2_backups.py",
@@ -2553,8 +2579,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
-      "sha256": "c3f76ea02fb3bff83b84c12ba18fc7603e27a46b77176f42dd09f6f2bd4d5f97",
-      "bytes": 7788
+      "sha256": "5a9adf8df11304f52fd6cf65c22723d8d515053a90295aea02b27ed87c789b84",
+      "bytes": 8441
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -4728,14 +4754,14 @@
     }
   ],
   "verification": {
-    "file_count": 941,
+    "file_count": 946,
     "all_source_hashes_match": true,
     "combined_pages": 57,
     "focused_tests_passed": 140,
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "Note 1 slide 4: author-approved replacement of interval ratios by pre-LOWESS linear-alignment residuals in ns. All 7,206 matched events retained, Gaussian core fitted, subsets and slow-drift tails explained. Core width explicitly effective, not isolated intrinsic noise. Other slides and detector calibrations unchanged.",
+    "latest_change": "Restored Note 1 slide 4 to dimensionless interval ratio minus one, scaled by 1e6. All 7,203 intervals in scatter; histogram shows central 98%, with Gaussian core fit. Subset definition retained; next slide distinguished as time-residual drift study. Ns artifacts archived, not displayed.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 26,
@@ -4755,7 +4781,7 @@
     "n2_3_n2_4_closure_changed_files_hash_checked": 17,
     "title_update_changed_files_hash_checked": 17,
     "github_link_verification": "DPS_NOTES/review_2026-10-22_publication/repository_links.json",
-    "latest_changed_files_hash_checked": 64,
+    "latest_changed_files_hash_checked": 69,
     "original_text_verification": "DPS_NOTES/review_2026-10-22_publication/original_text_check.json",
     "language_review_verification": "DPS_NOTES/review_2026-10-22_publication/language_review_verification.json",
     "short_slides_v2": {

@@ -10,7 +10,7 @@
     "figures": 6,
     "overflow": 0,
     "unresolved_citations": 0,
-    "sha256": "8748fdf834622a7f975760f9b2a6850e77a0077db4fbed707db5db3cd70b96b9"
+    "sha256": "9e8ebe5b9022783a952b43c54ee37d3a8fb3fcc865e991232bd3f303a81f93c9"
   },
   "note2_dual_threshold": {
     "slides": 10,
@@ -23,7 +23,7 @@
     "figures": 5,
     "overflow": 0,
     "unresolved_citations": 0,
-    "sha256": "8d34b6f4e851a21023a01938a8d86a21eb03f06f4e581dadcded05651cae8d8c"
+    "sha256": "5d954a0e029e629468671349895c46a8674037a957106681eb866a6a4eb72940"
   },
   "combined_pages": 20,
   "status": "compiled; internal review draft"

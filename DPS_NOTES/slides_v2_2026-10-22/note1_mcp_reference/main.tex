@@ -42,11 +42,10 @@ Match consecutive trigger-interval patterns in FEBd and the scope; retain unique
 \par\centering
 \includegraphics[width=\linewidth,height=42mm,keepaspectratio]{figures/event_matching.pdf}
 \par\raggedright
-\Source{A segment is one subset of the dataset; colors identify the three subsets.
-All 7,206 matched events are shown after separate linear clock fits, before LOWESS.
-The red Gaussian describes the central synchronization residuals; its width includes remaining drift, not just intrinsic noise.
-Slow clock drift contributes to the tails and is corrected on the next slide.
-Fit window: median $\pm1.5(1.4826\,\mathrm{MAD})$; no events are removed from the plots.
+\Source{Colors identify dataset subsets (segments). $\Delta t$ is the interval between consecutive matched triggers within a subset.
+Scatter: all 7,203 intervals; histogram: central 98\%. Axes show $(r-1)\times10^6$, a dimensionless quantity.
+Gaussian fit window: median $\pm1.5(1.4826\,\mathrm{MAD})$; its width measures ratio spread, not intrinsic timing noise.
+The next slide examines slow drift using time residuals after linear alignment.
 \Code{FEBD_Sync/simple_sync.py}{GitHub: trigger matching}.}
 \end{frame}
 

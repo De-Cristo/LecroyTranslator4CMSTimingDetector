@@ -1,0 +1,49 @@
+{
+  "observable": "r-1 = delta_t_FEBd / delta_t_scope - 1",
+  "units": "dimensionless",
+  "display_multiplier": 1000000.0,
+  "input_sha256": "6354d414bcdcb0aabbd6e548e33ed885fb725400856c705bf0be91ebdde04057",
+  "input": "assets/note1_matching_ns/matched_timestamps.csv",
+  "matched_events": 7206,
+  "intervals": 7203,
+  "subset_interval_counts": {
+    "1": 2404,
+    "2": 2395,
+    "3": 2404
+  },
+  "cross_subset_intervals": false,
+  "clock_alignment_applied": false,
+  "lowess_applied": false,
+  "median_ratio_minus_one": -9.007767585500481e-06,
+  "histogram_display_percentiles": [
+    1,
+    99
+  ],
+  "histogram_intervals": 7057,
+  "intervals_outside_histogram": 146,
+  "gaussian_mean_ratio_minus_one": -8.998718107486089e-06,
+  "gaussian_sigma_ratio": 1.6243115581182622e-07,
+  "gaussian_covariance_scaled": [
+    [
+      90.62706811940083,
+      -0.00044424228941432895,
+      -0.015934098595225536
+    ],
+    [
+      -0.00044424228941432895,
+      6.466460818790225e-06,
+      2.6346546600757674e-07
+    ],
+    [
+      -0.015934098595225536,
+      2.6346546600757674e-07,
+      6.22345152941528e-06
+    ]
+  ],
+  "gaussian_fit_window_scaled": [
+    -9.384297928042828,
+    -8.631237242958134
+  ],
+  "gaussian_fit_method": "Poisson-error-weighted Gaussian fit within median +/- 1.5 scaled MAD",
+  "interpretation": "Width is interval-ratio spread, not intrinsic timing noise; no attribution of all tails to drift."
+}

@@ -25,9 +25,9 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "Note 1 slide 4 inspected: ns scatter and histogram, enlarged labels, all tails retained, readable caption, no layout overflow. All other slide text and embedded raster images unchanged.",
+  "visual_review": "Note 1 slide 4 inspected: dimensionless ratio-minus-one scatter and histogram restored; readable subset caption and distinction from slide 5. No overflow. Other slides unchanged.",
   "scientific_inputs": "Twenty-four newly fitted per-threshold channel corrections, six independent validation samples. Final histograms checked against the threshold reports. No pooled threshold timing distribution.",
-  "combined_sha256": "acc9a6c9e0ba0c9ffc8f8e6beddbc14052a3988dd4c49acd63e31393e62e7eea",
+  "combined_sha256": "d27d03df36fca6d1256eca55ce2d36f7e0db6e899696d98d4b6a1b3312565678",
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 8,
@@ -196,6 +196,23 @@
     "low_frequency_tail_contribution_diagnostic_saved": true,
     "detector_calibrations_unchanged": true,
     "other_slides_unchanged": true,
-    "source_report": "assets/note1_matching_ns/report.json"
+    "source_report": "assets/note1_matching_ns/report.json",
+    "status": "Superseded: ns figure archived; interval-ratio observable restored at author request."
+  },
+  "note1_matching_ratio_review": {
+    "date": "2026-10-23",
+    "slide": 4,
+    "observable": "(delta_t_FEBd/delta_t_scope - 1) * 1e6",
+    "units": "dimensionless",
+    "intervals": 7203,
+    "histogram_intervals": 7057,
+    "intervals_outside_histogram_display": 146,
+    "within_subset_pairing_verified": true,
+    "no_clock_alignment": true,
+    "no_lowess": true,
+    "no_intrinsic_noise_claim": true,
+    "other_slides_unchanged": true,
+    "detector_calibrations_unchanged": true,
+    "source_report": "assets/note1_matching_ratio/report.json"
   }
 }

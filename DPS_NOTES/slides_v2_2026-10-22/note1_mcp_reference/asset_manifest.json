@@ -16,8 +16,8 @@
   },
   {
     "file": "figures/event_matching.pdf",
-    "source": "slides_v2_2026-10-22/assets/note1_matching_ns/event_matching.pdf",
-    "sha256": "2f61a5d33f198e169aff4175f40d01a34ce4476545341d193a70cef75e6cc65e"
+    "source": "slides_v2_2026-10-22/assets/note1_matching_ratio/event_matching.pdf",
+    "sha256": "52a099bc24fac7f5e9c70ec154d960df02aadc4fb1f3c32f3b6e4bc779cf45e8"
   },
   {
     "file": "figures/mcp_waveform.pdf",
@@ -27,7 +27,7 @@
   {
     "file": "figures/setup.pdf",
     "source": "slides_v2_2026-10-22/assets/note1_setup/setup.pdf",
-    "sha256": "b97039e14e5aef6d7d8742b59824e3107d325fd57ac057b82fcc9b91ba406aab"
+    "sha256": "2cde5525b9cab4567aff5a698099b79a72d19b36a611d9de4ed30c6df75324f2"
   },
   {
     "file": "figures/threshold_histograms.pdf",
