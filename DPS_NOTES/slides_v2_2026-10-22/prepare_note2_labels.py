@@ -32,10 +32,10 @@ def prepare():
         fig = plt.figure(figsize=(width / 72, height / 72))
         fig.patch.set_alpha(0)
         if name == "slope_ch150":
-            replacements = {"Run 4076 | Channel 150": "Dual-threshold sample | Bar 8, right"}
+            replacements = {"Run 4076 | Channel 150": "Dual-threshold sample | Bar 8, right SiPM"}
         elif name.startswith("comparison_"):
             channel = "137" if name.endswith("137") else "154"
-            side = "Bar 8, left" if channel == "137" else "Bar 7, right"
+            side = "Bar 8, left SiPM" if channel == "137" else "Bar 7, right SiPM"
             replacements = {
                 f"Channel {channel} | Joint measured support only": f"{side} | Common measured support",
                 "MCP quadratic (run 4399)": "MCP-reference quadratic",
@@ -51,7 +51,7 @@ def prepare():
             box = (.25, .897, .55, .035)
             fig.add_artist(Rectangle(box[:2], box[2], box[3], transform=fig.transFigure,
                                      color="white", linewidth=0))
-            fig.text(.526, .91, "Bar 8, left: residual after walk correction",
+            fig.text(.526, .91, "Bar 8, left SiPM: residual after walk correction",
                      ha="center", va="center", fontsize=11)
         if name not in ("awc_summary_selected", "original_figure5"):
             for old, x, y, size in remove_labels(page, replacements):

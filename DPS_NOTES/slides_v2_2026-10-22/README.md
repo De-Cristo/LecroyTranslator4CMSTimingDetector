@@ -22,6 +22,17 @@ an abstract on slide 2 of both notes, labelled plots,
 and concise procedural captions.
 The titles follow the author's wording, including TOFHIR2C in Note 2.
 
+## SiPM Terminology and Mapping Motivation (24 October)
+
+The short Note 2 deck uses left/right SiPM instead of end, including table and
+plot labels. Slide 3 qualifies the coefficient comparison: Q is raw ADC charge,
+without inter-SiPM gain calibration. Slide 5 emphasizes the author's typical
+single-hit relative uncertainties (approximately 15% for direct slope and less
+than 5% for charge) as the motivation for mapping Q to mean slope. These are
+not new measurements, profile SEMs, or bootstrap-fit uncertainties. The supplied
+original note quotes approximately 13% and 3-5%; the new wording uses the author's
+24 October specification. Selections, points, fits and uncertainty bands are unchanged.
+
 ## Note 2 Abstract (23 October)
 
 Slide 2 now adapts the original abstract to the presentation's calibration

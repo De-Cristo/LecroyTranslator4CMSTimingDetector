@@ -35,7 +35,7 @@ W_i(Q)=a_i+b_i/Q+c_i/Q^2.
 \small
 \begin{tabular}{rrrrr}
 \toprule
-Bar & End & $a_i$ [ns] & $b_i$ [ns ADC] & $c_i$ [ns ADC$^2$]\\
+Bar & SiPM & $a_i$ [ns] & $b_i$ [ns ADC] & $c_i$ [ns ADC$^2$]\\
 \midrule
 7 & Left & 0.0796 & 238.3 & $-2.156\times10^4$\\
 7 & Right & $-0.5155$ & 422.6 & $-5.583\times10^4$\\
@@ -45,10 +45,10 @@ Bar & End & $a_i$ [ns] & $b_i$ [ns ADC] & $c_i$ [ns ADC$^2$]\\
 \end{tabular}
 \par\raggedright
 \normalsize
-The shape coefficients vary substantially even among four channels.
-Use pulse slope to seek a more consistent physical description.
+With $Q$ expressed as raw, uncalibrated ADC values, the shape coefficients
+vary substantially across these four SiPMs.
 \Source{Two bars in the reference module. Earlier time-of-flight calibration experience: ALICE~\cite{ALICEPerformance,ALICEPID}.
-$Q$ is the ADC charge proxy; $a_i$ includes an arbitrary timing offset.
+$Q$ is not gain-calibrated across SiPMs; $a_i$ includes an arbitrary timing offset.
 Coefficient variation alone is not a measure of calibration precision.}
 \end{frame}
 
@@ -74,19 +74,17 @@ The fitted AWC need not equal this threshold separation.
 \end{frame}
 
 \PlotSlide{Measure the charge-to-slope mapping using internal hits}{slope_ch150}{
-Select both ends of one bar; leave the other module unconstrained.
+\textbf{Typical single-hit relative uncertainties:}
+Direct slope: $\sim15\%$; charge: $<5\%$.
 
-Use physical threshold crossings and the peak-right charge region.
-
-Fit ten profile means with SEM weights:
+Use the more precise $Q$ to estimate the mean slope:
 \[
 \overline S_i(Q)=c_{0,i}+c_{1,i}Q.
 \]
-No MCP time enters this fit.
-}{Reference module, bar 8, right end; dual-threshold sample: 19\,312 selected hits.
-Points are mean slopes; bars show hit SD, not uncertainty on the mean.
-The band is the conditional 68\% interval from 1000 hit-bootstrap refits with fixed bins.
-The profile averages the noisy single-hit slope measurements.}
+Ten SEM-weighted profile means; no MCP time.
+}{Reference module, bar 8, right SiPM: 19\,312 hits. Both SiPMs required; other module unconstrained.
+Physical threshold crossings; peak-right charge selection. Points: mean slopes; bars: hit SD, not mean uncertainty.
+Band: conditional 68\% interval from 1000 hit-bootstrap refits with fixed bins.}
 
 \begin{frame}{One amplitude describes walk once the slope is calibrated}
 \large
@@ -111,23 +109,23 @@ The slope fit alone does not fix AWC. The common functional form follows the dua
 \begin{frame}[t]{The single-amplitude model closely follows the MCP curves}
 \begin{columns}[T,onlytextwidth]
 \begin{column}{.49\textwidth}
-\centering\textbf{Bar 8, left end}\par
+\centering\textbf{Bar 8, left SiPM}\par
 \includegraphics[width=\linewidth,height=43mm,keepaspectratio]{figures/comparison_ch137.pdf}
 \end{column}
 \begin{column}{.49\textwidth}
-\centering\textbf{Bar 7, right end}\par
+\centering\textbf{Bar 7, right SiPM}\par
 \includegraphics[width=\linewidth,height=43mm,keepaspectratio]{figures/comparison_ch154.pdf}
 \end{column}
 \end{columns}
 \Source{Reference module. Black: MCP quadratic; red: dual-threshold model.
 Different-event samples; AWC and offset fitted only in common populated charge intervals.
-Bar 8, left end: \ExampleRMS\,ps RMS curve mismatch. Lower panels show curve differences, not event resolution.
+Bar 8, left SiPM: \ExampleRMS\,ps RMS curve mismatch. Lower panels show curve differences, not event resolution.
 Bands propagate slope-fit statistics with the MCP curve fixed. MCP clock alignment uses LOWESS~\cite{LOWESS}.
 This benchmarks shapes, not AWC prediction.}
 \end{frame}
 
 \PlotSlide{Residual charge dependence after the AWC correction}{original_figure5}{
-\textbf{Bar 8, left end}
+\textbf{Bar 8, left SiPM}
 
 Inspect the timing residual versus charge after the inverse-slope correction.
 

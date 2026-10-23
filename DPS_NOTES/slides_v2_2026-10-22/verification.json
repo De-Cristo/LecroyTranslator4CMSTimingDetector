@@ -25,9 +25,9 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "Note 2 changed tables, citations, titles, legends, bibliography and backup visually checked; no clipping/overlap. Raster data/axes below title pixel-identical. Build passes all citation and layout checks.",
+  "visual_review": "24 October: Note 2 slides 3, 5, 7 and 8 inspected, no overlap/clipping; only those slide texts changed. All citation links preserved. Full notes and Note 1 submission unchanged.",
   "scientific_inputs": "Frozen reference corrections; four new downstream fits (two channels x two reference choices), 1512 common fitting events and 1456 common evaluation events at one threshold. 400 paired block-bootstrap replicas with fixed cuts and calibration.",
-  "combined_sha256": "751f232028e4854b453f1a6752b91ca96fea81ad361f1629f5e26602f81c5134",
+  "combined_sha256": "134af7e7ff6320b30115ac3b2449f8ebf1938f727be8df3cf75d96e88f625f89",
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 7,
@@ -407,5 +407,26 @@
     "full_notes_and_note1_submission_unchanged": true,
     "provenance": "assets/note2_public_labels/provenance.json",
     "citation_audit": "note2_dual_threshold/citation_audit.json"
+  },
+  "note2_sipm_charge_precision_review": {
+    "date": "2026-10-24",
+    "changed_slides": [
+      3,
+      5,
+      7,
+      8
+    ],
+    "sipm_replaces_end": true,
+    "raw_uncalibrated_adc_caveat": true,
+    "single_hit_relative_uncertainties": {
+      "slope_approx_percent": 15,
+      "charge_less_than_percent": 5,
+      "source": "Author specification, 24 October 2026",
+      "original_note_context": "Approximately 13% slope, 3-5% charge (supplied Note2.pdf p4)",
+      "not_new_measurements": true,
+      "not_profile_or_fit_errors": true
+    },
+    "selection_and_fits_unchanged": true,
+    "full_cover_abstracts_unchanged": true
   }
 }

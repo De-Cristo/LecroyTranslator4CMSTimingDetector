@@ -13,9 +13,9 @@
       "figure": "slope_ch150.pdf",
       "source": "note2_dual_threshold/figures/slope_ch150.pdf",
       "source_sha256": "2e3ecfb14b07719139d4a1a8e1907dfdfe223d56e1b8728a14616728faf5a340",
-      "sha256": "d1e0faf09d16474958d599d42c07cc050dd5067dd2958b5c2143ca99b5fac052",
+      "sha256": "c06f2eed1949a50ece36f735fa830ec80eaedccbedb5e69648440b46be623aeb",
       "text_replacements": {
-        "Run 4076 | Channel 150": "Dual-threshold sample | Bar 8, right"
+        "Run 4076 | Channel 150": "Dual-threshold sample | Bar 8, right SiPM"
       },
       "raster_title_mask": null
     },
@@ -23,9 +23,9 @@
       "figure": "comparison_ch137.pdf",
       "source": "note2_dual_threshold/figures/comparison_ch137.pdf",
       "source_sha256": "8c1d4a7f8d8a44b6cdb12e292998b24e8b9bd900989fb04fefc468872c73a530",
-      "sha256": "5adfac488aee88d662ae1af8b0d1ead643deab3c50ea7e9b39b9c1240d907974",
+      "sha256": "aadf5cc8304afe4ae40b99271f68b9e626846efba30e6b0bd4bb9198cf9ae4cf",
       "text_replacements": {
-        "Channel 137 | Joint measured support only": "Bar 8, left | Common measured support",
+        "Channel 137 | Joint measured support only": "Bar 8, left SiPM | Common measured support",
         "MCP quadratic (run 4399)": "MCP-reference quadratic",
         "AWC/S(Q) + offset (run 4076)": "Dual-threshold model + offset"
       },
@@ -35,9 +35,9 @@
       "figure": "comparison_ch154.pdf",
       "source": "note2_dual_threshold/figures/comparison_ch154.pdf",
       "source_sha256": "bce6aabfeecc73eed74599dd3f42a387ee2c83ccdb45e70563ca05e8bef5fbfb",
-      "sha256": "d705821248b34d94a9302f81d93a8b6f2e8fa0df9fe8ad7974cb10a41b914ddc",
+      "sha256": "b7afdfc680bb6b7726020f35df5cf29c0f8fd15707eb7bcf4d8f18623b1419a1",
       "text_replacements": {
-        "Channel 154 | Joint measured support only": "Bar 7, right | Common measured support",
+        "Channel 154 | Joint measured support only": "Bar 7, right SiPM | Common measured support",
         "MCP quadratic (run 4399)": "MCP-reference quadratic",
         "AWC/S(Q) + offset (run 4076)": "Dual-threshold model + offset"
       },
@@ -47,7 +47,7 @@
       "figure": "original_figure5.pdf",
       "source": "slides_v2_2026-10-22/assets/note2_figure5/figure5.pdf",
       "source_sha256": "54a817714a014d401449880e97f1e139e930d204baefdc7bdd9eba30b23b9b5e",
-      "sha256": "1473f7df30b5088e7560118c4ddc9fc8165e5519ea5e660330796cd71530095e",
+      "sha256": "4b713a9b4dff59c49a849d13cc16689fd5969fca1969b41eb04a2b95713dd0df",
       "text_replacements": {},
       "raster_title_mask": [
         0.25,
