@@ -25,9 +25,9 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "24 October: Note 2 slides 3, 5, 7 and 8 inspected, no overlap/clipping; only those slide texts changed. All citation links preserved. Full notes and Note 1 submission unchanged.",
+  "visual_review": "24 October: slides 6-7 checked for AWC / mean-slope notation; no clipping or overlap. Only these slide texts changed. All bibliography links verified; full notes and Note 1 submission unchanged.",
   "scientific_inputs": "Frozen reference corrections; four new downstream fits (two channels x two reference choices), 1512 common fitting events and 1456 common evaluation events at one threshold. 400 paired block-bootstrap replicas with fixed cuts and calibration.",
-  "combined_sha256": "134af7e7ff6320b30115ac3b2449f8ebf1938f727be8df3cf75d96e88f625f89",
+  "combined_sha256": "b16de1edb212f526b288aa49b2bb3183bc911a8d076c893db463478c49897f52",
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 7,
@@ -428,5 +428,18 @@
     },
     "selection_and_fits_unchanged": true,
     "full_cover_abstracts_unchanged": true
+  },
+  "note2_awc_notation_review": {
+    "date": "2026-10-24",
+    "changed_slides": [
+      6,
+      7
+    ],
+    "formula": "W(Q) = AWC / Sbar(Q)",
+    "parameter_scope": "per SiPM and configuration",
+    "positivity": "Sbar(Q) > 0",
+    "comparison_legends_consistent": true,
+    "no_refitting": true,
+    "full_notes_unchanged": true
   }
 }

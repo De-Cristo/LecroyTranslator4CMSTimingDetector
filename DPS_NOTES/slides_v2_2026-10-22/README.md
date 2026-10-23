@@ -24,6 +24,11 @@ The titles follow the author's wording, including TOFHIR2C in Note 2.
 
 ## SiPM Terminology and Mapping Motivation (24 October)
 
+From slide 6 onward the correction is written as `W(Q) = AWC / Sbar(Q)`.
+AWC is the per-SiPM, per-configuration parameter; Sbar(Q) denotes the fitted
+mean slope introduced on slide 5. The positivity condition and comparison-plot
+legends use the same notation. This is a notation change only, not a new fit.
+
 The short Note 2 deck uses left/right SiPM instead of end, including table and
 plot labels. Slide 3 qualifies the coefficient comparison: Q is raw ADC charge,
 without inter-SiPM gain calibration. Slide 5 emphasizes the author's typical

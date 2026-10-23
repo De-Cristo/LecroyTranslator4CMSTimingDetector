@@ -23,11 +23,11 @@
       "figure": "comparison_ch137.pdf",
       "source": "note2_dual_threshold/figures/comparison_ch137.pdf",
       "source_sha256": "8c1d4a7f8d8a44b6cdb12e292998b24e8b9bd900989fb04fefc468872c73a530",
-      "sha256": "aadf5cc8304afe4ae40b99271f68b9e626846efba30e6b0bd4bb9198cf9ae4cf",
+      "sha256": "62dda9eca3d0724a8cb8bb39ec5fb15e644fd74d1391d2f9661f85425d51d07f",
       "text_replacements": {
         "Channel 137 | Joint measured support only": "Bar 8, left SiPM | Common measured support",
         "MCP quadratic (run 4399)": "MCP-reference quadratic",
-        "AWC/S(Q) + offset (run 4076)": "Dual-threshold model + offset"
+        "AWC/S(Q) + offset (run 4076)": "$\\mathrm{AWC}/\\overline{S}(Q)$ + offset"
       },
       "raster_title_mask": null
     },
@@ -35,11 +35,11 @@
       "figure": "comparison_ch154.pdf",
       "source": "note2_dual_threshold/figures/comparison_ch154.pdf",
       "source_sha256": "bce6aabfeecc73eed74599dd3f42a387ee2c83ccdb45e70563ca05e8bef5fbfb",
-      "sha256": "b7afdfc680bb6b7726020f35df5cf29c0f8fd15707eb7bcf4d8f18623b1419a1",
+      "sha256": "21d208864fcd6ed8b40dc2399686684260585fd1094125909d91a7eaf4a75359",
       "text_replacements": {
         "Channel 154 | Joint measured support only": "Bar 7, right SiPM | Common measured support",
         "MCP quadratic (run 4399)": "MCP-reference quadratic",
-        "AWC/S(Q) + offset (run 4076)": "Dual-threshold model + offset"
+        "AWC/S(Q) + offset (run 4076)": "$\\mathrm{AWC}/\\overline{S}(Q)$ + offset"
       },
       "raster_title_mask": null
     },

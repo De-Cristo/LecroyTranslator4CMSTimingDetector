@@ -39,7 +39,7 @@ def prepare():
             replacements = {
                 f"Channel {channel} | Joint measured support only": f"{side} | Common measured support",
                 "MCP quadratic (run 4399)": "MCP-reference quadratic",
-                "AWC/S(Q) + offset (run 4076)": "Dual-threshold model + offset",
+                "AWC/S(Q) + offset (run 4076)": r"$\mathrm{AWC}/\overline{S}(Q)$ + offset",
             }
         elif name == "awc_summary_selected":
             replacements = {str(ch): "" for ch in (159, 156, 155, 154, 151, 150, 137, 135, 134, 133)}

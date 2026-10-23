@@ -89,20 +89,20 @@ Band: conditional 68\% interval from 1000 hit-bootstrap refits with fixed bins.}
 \begin{frame}{One amplitude describes walk once the slope is calibrated}
 \large
 \[
-W_i(Q)=\frac{A_i}{c_{0,i}+c_{1,i}Q},\qquad
-t_{\rm corr}=t_{\rm measured}-W_i(Q).
+W(Q)=\frac{\mathrm{AWC}}{\overline S(Q)},\qquad
+t_{\rm corr}=t_{\rm measured}-W(Q).
 \]
 \normalsize
 \begin{itemize}
-\item Internal hits determine $c_{0,i}$ and $c_{1,i}$, the charge-to-slope mapping.
-\item One amplitude $A_i$ (AWC, in $\mu$A) then sets the walk magnitude.
-\item AWC is constant per channel and configuration; the correction varies with $Q$.
+\item Internal hits determine $\overline S(Q)$, the mean slope at a given charge, for each SiPM.
+\item One parameter, AWC (in $\mu$A), sets the walk magnitude.
+\item AWC is constant per SiPM and configuration; the correction varies with $Q$.
 \item Channel timing offsets are a separate calibration.
 \end{itemize}
 \medskip
 \textbf{The remaining task is to predict AWC from internal observables.}
 Use the MCP-calibrated channels to develop and test that prediction.
-\Source{Apply the model within its calibrated charge range, with $c_{0,i}+c_{1,i}Q>0$.
+\Source{Apply the model within its calibrated charge range, with $\overline S(Q)>0$.
 The slope fit alone does not fix AWC. The common functional form follows the dual-threshold model in Ref.~\cite{DualThreshold}.}
 \end{frame}
 
