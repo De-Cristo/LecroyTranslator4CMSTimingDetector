@@ -166,19 +166,16 @@ Bands propagate slope-fit statistics with the MCP curve fixed. MCP clock alignme
 This benchmarks shapes, not AWC prediction.}
 \end{frame}
 
-\PlotSlide{Residual charge dependence after the AWC correction}{original_figure5}{
-\textbf{Bar 8, left SiPM}
-
-Inspect the timing residual versus charge after the inverse-slope correction.
-
-$0.01\,\mathrm{ns}=10\,\mathrm{ps}$.
-
-The residual linear trend is nearly flat over the displayed range.
-
-This is not a single-hit timing-resolution measurement.
-}{Original detector note, Figure 5: residual MCP-referenced timing, $t_{\rm thr1}-t_0$, after applying the AWC-type walk correction.
-Points and error bars are reproduced unchanged; the line is the original residual linear fit.
-This historical figure complements the curve-to-curve comparison on the preceding slide.}
+\PlotSlide{The AWC correction describes the walk at the 10 ps scale}{awc_residual_envelope}{
+\begin{itemize}
+\setlength{\itemsep}{3pt}
+\item \textbf{Y axis:} mean time minus MCP, the AWC correction and a constant offset.
+\item \textbf{Near-zero, flat trend:} little charge-dependent timing bias remains.
+\item \textbf{$\pm10$ ps guide:} supports the AWC walk description at this scale, not an all-point bound.
+\end{itemize}
+}{Residual definition: $r(Q)=\langle t_{\rm thr1}-t_{\rm MCP}\rangle_Q-\mathrm{AWC}/\overline S(Q)-b$, where $b$ removes a constant timing offset.
+Original Figure 5 and MCP-reference data~\cite{ReferenceNote}: points, error bars and linear fit retained; ns converted to ps.
+The guide is not an uncertainty band or single-hit resolution; this tests shape, not reference-free AWC prediction.}
 
 \input{references.tex}
 \end{document}

@@ -269,7 +269,8 @@ At the author's request on 24 October, both exploratory approaches now follow
 slide 6 in the main body. Slide 7 shows the empirical AWC-versus-1/c1 trend;
 slide 8 restores the shared fractional-charge response hypothesis and its
 held-out-bar prediction plot. Slide 9 benchmarks the functional form with the
-MCP comparison curves; slide 10 reproduces the original residual Figure 5.
+MCP comparison curves; slide 10 relabels the original residual Figure 5 in ps
+and adds a +/-10 ps visual guide.
 Slide 11 contains references. Note 2 has no post-reference backup pages.
 
 Both candidates remain explicitly exploratory. The first has a poor weighted
@@ -290,12 +291,23 @@ a reliable local linear mean-slope fit, comparable pulse regions at the selected
 charge medians, and a transferable fractional-charge response K. These are
 testable physical hypotheses, not a universal law; no numerical results change.
 
-The residual figure is the unaltered embedded JPEG from PDF page 12 (printed
+The residual figure comes from the embedded JPEG on PDF page 12 (printed
 page 11) of the supplied `DPS_NOTES/Note2.pdf`, not a replacement refit.
 `assets/note2_figure5/provenance.json` records source and image hashes.
 `prepare_note2_figure5.py` extracts the image and adds the CMS label outside it;
 it can also rebuild from the saved JPEG when the supplied PDF is unavailable.
-Its original points, error bars and residual linear fit are preserved. The
+`prepare_note2_residual_envelope.py` preserves the original plotting field,
+redraws the axes in ps, and adds a +/-10 ps guide. It registers the original
+grid ticks to the new coordinates; no points are digitized, refitted, shifted
+or excluded. `assets/note2_residual_envelope/provenance.json` records the crop,
+source hashes, registration precision and interpretation. Original dots,
+error bars and the linear fit remain raster content, not regenerated data.
+
+Slide 10 defines the ordinate as the binned MCP-referenced leading-edge time
+minus AWC/Sbar(Q) and a constant timing offset. The near-zero, nearly flat
+trend supports the walk description at roughly the 10 ps scale in this example.
+Some points and error bars extend outside the guide; it is neither a bound
+on every residual nor a measured confidence interval. The
 supplied caption does not specify the statistical definition of these error
 bars, so no SD/SEM or uncertainty claim is added. It is a residual-versus-charge
 illustration, not a single-hit resolution or a new reference-free validation.

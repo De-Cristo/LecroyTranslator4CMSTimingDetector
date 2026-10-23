@@ -1,0 +1,45 @@
+{
+  "source": "assets/note2_figure5/original_figure5.jpg",
+  "source_sha256": "1dd7ba2f577e1ee06cde3f59d6719579be347eafc64eff27f6da4f6eadf5f7f2",
+  "source_figure": "Supplied detector Note 2, Figure 5",
+  "treatment": "Original raster plotting field preserved; axes redrawn in ps with a +/-10 ps guide. No point digitization, fit, centering or event processing.",
+  "crop_pixels": [
+    129,
+    42,
+    1587,
+    941
+  ],
+  "extent_q_ps": [
+    150.21712908192876,
+    449.67137511805794,
+    -26.6378899327553,
+    25.100136791409703
+  ],
+  "q_tick_registration_pixels": [
+    127.5,
+    370.8,
+    614.3,
+    857.7,
+    1101.4,
+    1344.7,
+    1588.0
+  ],
+  "ps_tick_registration_pixels": [
+    130.2,
+    303.8,
+    477.6,
+    651.4,
+    825.2
+  ],
+  "max_registration_residual_ps": 0.004605111185888688,
+  "ps_per_pixel": 0.05755064151742492,
+  "raster_field_sha256": "5045c90d913434a66924fd1ebad0aba859c43861f350d64c50c4a9301716db9c",
+  "residual_definition": "r(Q) = binned MCP-referenced leading-edge time - AWC / mean_slope(Q) - constant offset",
+  "envelope_ps": [
+    -10,
+    10
+  ],
+  "envelope_interpretation": "Visual residual-walk scale guide, not a confidence band, all-point bound, or single-hit timing resolution.",
+  "uncertainty": "Original error bars preserved; their statistical definition is not specified in the supplied Figure 5 caption. No numerical refit or uncertainty interpretation added.",
+  "conclusion": "The nearly flat original residual trend supports the AWC form at roughly the 10 ps scale in this example; some points and error bars extend beyond the guide."
+}

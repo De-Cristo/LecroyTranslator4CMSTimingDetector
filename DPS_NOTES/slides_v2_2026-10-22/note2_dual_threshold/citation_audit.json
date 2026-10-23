@@ -56,7 +56,8 @@
       "number": 6,
       "key": "ReferenceNote",
       "body_slides": [
-        3
+        3,
+        10
       ],
       "role": "MCP reference calibration and coefficients",
       "clickable_pdf_link_verified": true

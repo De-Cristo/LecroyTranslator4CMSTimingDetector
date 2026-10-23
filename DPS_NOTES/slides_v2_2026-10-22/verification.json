@@ -25,9 +25,9 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "24 October: revised Note 2 slide 8 visually checked; no overlap or clipping. Only slide 8 text changed; Note 1 text, Note 2 figures, protected full notes and Note 1 submission unchanged. All 11 Note 2 citation destinations checked.",
+  "visual_review": "24 October: Note 2 slide 10 and standalone residual figure visually checked. No clipping or overlap. Only slide 10 text changed; original residual plotting-field pixels preserved losslessly, axes relabelled to ps and +/-10 ps guide added. Full notes and Note 1 submission unchanged; citations checked.",
   "scientific_inputs": "Frozen reference corrections; four new downstream fits (two channels x two reference choices), 1512 common fitting events and 1456 common evaluation events at one threshold. 400 paired block-bootstrap replicas with fixed cuts and calibration.",
-  "combined_sha256": "f410fbbb1ae3c03951014a432968fa28a821a42396f593c258602aad34ed2818",
+  "combined_sha256": "ec8776fa11d97a3685e2659f231f9bfa84079b6f8e1fa19def337b53e715d30d",
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 7,
@@ -98,7 +98,8 @@
     "labelled_pdf_pixels_preserved": true,
     "new_fits": false,
     "uncertainty_definition_not_inferred": true,
-    "other_slides_unchanged_except_numbering": true
+    "other_slides_unchanged_except_numbering": true,
+    "status": "Historical insertion record; slide 10 presentation superseded by residual-envelope review on 24 October. Original source image remains preserved."
   },
   "bar_width_interpretation": {
     "slide": 9,
@@ -479,6 +480,26 @@
     "no_refitting": true,
     "plots_unchanged": true,
     "only_changed_slide": 8,
+    "overflow": 0,
+    "citation_destinations_verified": 11
+  },
+  "note2_residual_envelope_review": {
+    "date": "2026-10-24",
+    "slide": 10,
+    "source": "Supplied detector Note 2, Figure 5",
+    "source_image_sha256": "1dd7ba2f577e1ee06cde3f59d6719579be347eafc64eff27f6da4f6eadf5f7f2",
+    "original_plot_field_pixel_equality_verified": true,
+    "pdf_image_storage": "bottom-up (Matplotlib); equality verified after row reversal",
+    "max_registration_residual_ps": 0.004605111185888688,
+    "guide_ps": [
+      -10,
+      10
+    ],
+    "guide_not_uncertainty_or_resolution": true,
+    "some_points_outside_guide_explicit": true,
+    "residual_formula_explicit": true,
+    "no_new_fits_or_recentering": true,
+    "only_changed_slide": 10,
     "overflow": 0,
     "citation_destinations_verified": 11
   }

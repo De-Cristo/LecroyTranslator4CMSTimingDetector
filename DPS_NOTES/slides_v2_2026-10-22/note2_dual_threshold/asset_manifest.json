@@ -10,6 +10,11 @@
     "sha256": "c32474f7dd29d949165ff43ad6d595b815a8611abedd73ca7769cfe781b66d15"
   },
   {
+    "file": "figures/awc_residual_envelope.pdf",
+    "source": "slides_v2_2026-10-22/assets/note2_residual_envelope/awc_residual_envelope.pdf",
+    "sha256": "f6f9c619e08f3fbf2a5148960c177240286d20487a9a58c39c9ccbe04445cb54"
+  },
+  {
     "file": "figures/awc_summary_selected.pdf",
     "source": "slides_v2_2026-10-22/assets/note2_public_labels/awc_summary_selected.pdf",
     "sha256": "85003ddc51966d5552d343dc9d712ac6ab2f4fba3c1a2e65086254039ab67523"
@@ -28,11 +33,6 @@
     "file": "figures/internal_predictor.pdf",
     "source": "slides_v2_2026-10-22/assets/note2_public_labels/internal_predictor.pdf",
     "sha256": "0511f5544918c209ca62fb1d8c484462d289f8d8318b2771fc78c82482095e5b"
-  },
-  {
-    "file": "figures/original_figure5.pdf",
-    "source": "slides_v2_2026-10-22/assets/note2_public_labels/original_figure5.pdf",
-    "sha256": "4b713a9b4dff59c49a849d13cc16689fd5969fca1969b41eb04a2b95713dd0df"
   },
   {
     "file": "figures/slope_ch150.pdf",

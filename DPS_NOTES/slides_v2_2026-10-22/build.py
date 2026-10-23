@@ -14,6 +14,7 @@ from prepare_note1_labels import NAMES as NOTE1_LABELS, prepare as prepare_note1
 from prepare_note1_matching_ratio import prepare as prepare_note1_matching
 from prepare_note1_drift import prepare as prepare_note1_drift
 from prepare_note2_labels import NAMES as NOTE2_LABELS, prepare as prepare_note2_labels
+from prepare_note2_residual_envelope import prepare as prepare_note2_residual_envelope
 
 ROOT = Path(__file__).resolve().parent
 NOTES = ("note1_mcp_reference", "note2_dual_threshold")
@@ -35,6 +36,7 @@ def run(command, cwd):
 
 def main():
     prepare_note2_labels()
+    prepare_note2_residual_envelope()
     prepare_backups(note="note1_mcp_reference", names=("bar_resolution_check",),
                     source_dir=ROOT.parent / "review_2026-10-23_reference_transfer")
     prepare_note1_labels()
@@ -71,6 +73,8 @@ def main():
                           / THRESHOLD_FIGURES[relative])
             if name == "note2_dual_threshold" and relative == "figures/original_figure5.pdf":
                 origin = ROOT / "assets/note2_figure5/figure5.pdf"
+            if name == "note2_dual_threshold" and relative == "figures/awc_residual_envelope.pdf":
+                origin = ROOT / "assets/note2_residual_envelope/awc_residual_envelope.pdf"
             if name == "note1_mcp_reference" and Path(relative).stem in NOTE1_LABELS:
                 origin = ROOT / "assets/note1_public_labels" / Path(relative).name
             if name == "note1_mcp_reference" and relative == "figures/setup.pdf":
