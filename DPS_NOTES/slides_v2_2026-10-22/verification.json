@@ -25,12 +25,12 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "Slide 11 inspected: half-difference axes, 5 ps bins, 27.0 and 44.3 ps bar estimates, quadrature 51.9 ps. No clipping/overlap; other slide content unchanged.",
+  "visual_review": "Changed slides 3, 6, 8 and 12 visually inspected: citations and seven-entry bibliography fit without overlap. Slides 4 and 5 extracted text checked. Compilation has no overflow or undefined citations.",
   "scientific_inputs": "Frozen reference corrections; four new downstream fits (two channels x two reference choices), 1512 common fitting events and 1456 common evaluation events at one threshold. 400 paired block-bootstrap replicas with fixed cuts and calibration.",
-  "combined_sha256": "40177aabc03a8cc00b48f571ecef41a69e0d11397e2371741c2268fac5a1d12d",
+  "combined_sha256": "bf2c467e8b4b5545a6b1cb5db3065aeaed951a77aa355c4bec3bad094b46cf7f",
   "reference_slides_each": 1,
   "reference_entries": {
-    "note1": 8,
+    "note1": 7,
     "note2": 12
   },
   "note2_slide_content_unchanged": true,
@@ -284,5 +284,97 @@
     "no_refit": true,
     "original_results_preserved": true,
     "quadrature_unchanged": true
+  },
+  "note1_bibliography_review": {
+    "date": "2026-10-23",
+    "scope": "Short Note 1 only",
+    "removed_key": "Fabrice",
+    "reason": "Author requested removal of Saclay source",
+    "references": [
+      {
+        "number": 1,
+        "key": "github_repo",
+        "body_slides": [
+          4
+        ],
+        "role": "Trigger-interval matching implementation",
+        "clickable_pdf_link_verified": true
+      },
+      {
+        "number": 2,
+        "key": "picosec",
+        "body_slides": [
+          6
+        ],
+        "role": "MCP characterization context",
+        "clickable_pdf_link_verified": true
+      },
+      {
+        "number": 3,
+        "key": "MTDTDR",
+        "body_slides": [
+          3
+        ],
+        "role": "Detector-design context",
+        "clickable_pdf_link_verified": true
+      },
+      {
+        "number": 4,
+        "key": "WhitePresentation",
+        "body_slides": [
+          6
+        ],
+        "role": "Waveform-sampling checks context",
+        "clickable_pdf_link_verified": true
+      },
+      {
+        "number": 5,
+        "key": "Leo",
+        "body_slides": [
+          6
+        ],
+        "role": "Leading-edge time-walk context",
+        "clickable_pdf_link_verified": true
+      },
+      {
+        "number": 6,
+        "key": "DualThreshold",
+        "body_slides": [
+          8
+        ],
+        "role": "Slope-based alternative",
+        "clickable_pdf_link_verified": true
+      },
+      {
+        "number": 7,
+        "key": "LOWESS",
+        "body_slides": [
+          5
+        ],
+        "role": "Robust local regression method",
+        "clickable_pdf_link_verified": true
+      }
+    ],
+    "all_references_cited_in_body": true,
+    "bibliography_slide": 12,
+    "changed_text_slides": [
+      3,
+      4,
+      5,
+      6,
+      8,
+      12
+    ],
+    "full_notes_unchanged": true,
+    "note2_text_unchanged": true,
+    "numerical_results_unchanged": true,
+    "source_checks": {
+      "picosec": "arXiv 1909.12604 metadata checked; role also confirmed in supplied Note1 Section 2",
+      "MTDTDR": "Official CDS collection metadata checked; direct record bot-blocked",
+      "WhitePresentation": "Role confirmed in supplied Note1 Section 2; linked presentation not independently retrieved",
+      "Leo": "Indexed table of contents confirms leading-edge triggering on p326; book page not independently retrieved",
+      "DualThreshold": "arXiv 2507.07127 abstract and published JINST metadata checked",
+      "LOWESS": "Previously verified DOI 10.1080/01621459.1979.10481038; original bibliography wording retained"
+    }
   }
 }

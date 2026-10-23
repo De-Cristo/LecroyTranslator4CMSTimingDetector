@@ -26,7 +26,8 @@ synchronization procedure is specific to the test-beam setup.
 \PlotSlide{Parallel MCP and BTL streams are linked through FEBd}{setup}{
 \textbf{Two readout streams}
 
-The scope records the MCP-PMT pulse. FEBd records the BTL SiPM signals.
+The scope records the MCP-PMT pulse. FEBd records the BTL SiPM signals;
+the detector design is described in Ref.~\cite{MTDTDR}.
 
 \textbf{Synchronization link}
 
@@ -39,7 +40,7 @@ This FEBd-based synchronization is specific to the test-beam setup, not the fina
 
 \begin{frame}[t]{Events are correlated using the intervals between triggers}
 \small
-Match consecutive trigger-interval patterns in FEBd and the scope; retain unique event pairs.
+Match consecutive trigger-interval patterns in FEBd and the scope; retain unique event pairs~\cite{github_repo}.
 \par\centering
 \includegraphics[width=\linewidth,height=42mm,keepaspectratio]{figures/event_matching.pdf}
 \par\raggedright
@@ -65,7 +66,8 @@ The calibration rejects subsets with pre-LOWESS scale $1.4826\,\mathrm{MAD}>1$\,
 \end{frame}
 
 \PlotSlide{After synchronization, the MCP defines the calibration time}{mcp_waveform}{
-Fit the MCP waveform to estimate its pulse time.
+MCP characterization~\cite{picosec} and sampling checks~\cite{WhitePresentation}
+provide the waveform-timing context.
 
 Within the scope waveform, define
 \[
@@ -75,7 +77,7 @@ For SiPM channel $i$, use
 \[
 \Delta t_i=t_i-g(u)-\delta_{\rm MCP}.
 \]
-The charge-dependent part of this difference is the walk.
+The charge-dependent part of this difference is the walk~\cite{Leo}.
 }{The waveform and fitted template determine the MCP pulse time. $u$ is the scope-trigger timestamp.
 A fixed cable/geometry offset is irrelevant to the shape; clock-rate conversion over the short waveform interval is neglected.}
 
@@ -111,7 +113,8 @@ Use the bar average: $t_{\rm ref}=(t_L^{\rm corr}+t_R^{\rm corr})/2$.
 \Source{Reference module, bar 8: left and right channels at $T_1=3$, $T_2=60$ (lowest scanned DAC setting).
 Points show profile means with SEM; curves are SEM-weighted quadratics in $1/Q$.
 $t_{\rm MCP}$ is the MCP pulse time mapped to the FEBd clock.
-The +26\,ns display offset does not change the shape. Separate fits are made for every setting and all four channels.}
+The +26\,ns offset preserves the shape. Fits are channel- and setting-specific;
+Ref.~\cite{DualThreshold} discusses a slope-based alternative.}
 \end{frame}
 
 \begin{frame}[t]{Transfer the MCP calibration to the module under test}

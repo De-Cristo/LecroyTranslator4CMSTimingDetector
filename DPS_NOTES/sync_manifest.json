@@ -25,7 +25,8 @@
     "short_note1_walk_axis_definition": "23 October: slide 8 labels define each bar-end time minus clock-aligned MCP time. Existing display offset retained; points and fits unchanged.",
     "short_note1_reference_transfer": "23 October: old slide 9 replaced by three review slides. One-threshold direct MCP vs reference-bar transfer closure and left-minus-right cross-check completed. In-sample scope and unresolved single-bar interpretation explicit; author review pending.",
     "short_note1_single_closure_panel": "23 October: removed auxiliary DUT-minus-MCP panel from slide 10; enlarged DUT-minus-reference comparison with explicit three-case legend. Numerical results unchanged; original two-panel figure retained in analysis.",
-    "short_note1_half_difference_convention": "23 October: slide 11 plots (tL-tR)/2, with exactly halved widths, fit curves, bin edges and bootstrap intervals. Bar estimates 27.0 and 44.3 ps combine to 51.9 ps; assumptions retained. No refitting."
+    "short_note1_half_difference_convention": "23 October: slide 11 plots (tL-tR)/2, with exactly halved widths, fit curves, bin edges and bootstrap intervals. Bar estimates 27.0 and 44.3 ps combine to 51.9 ps; assumptions retained. No refitting.",
+    "short_note1_body_citations": "23 October: removed Saclay source at author request; seven remaining references renumbered and cited in main slide text/captions. Clickable PDF destinations verified. Full notes and Note 2 unchanged."
   },
   "files": [
     {
@@ -2425,12 +2426,12 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/README.md",
-      "sha256": "3685e961882e2d206550bd7e283bcf7c3fa4d756b02862c69ed0526bf8d18fae",
-      "bytes": 14959
+      "sha256": "48b984fca26fee70266c84516ca5bc8081775d07e3ca6628ecc762f267a2d937",
+      "bytes": 15631
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_drift/clock_residuals.pdf",
-      "sha256": "981178023d1b512a523f8cfe5146afd85ed1ab939a5d018d3a286b78fc7896d9",
+      "sha256": "8faa7d020a8ffd60025ab85822a85ca692e439b65ba77216909c33ce423db632",
       "bytes": 88521
     },
     {
@@ -2475,7 +2476,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_matching_ratio/event_matching.pdf",
-      "sha256": "29c2f1232af5aec528efe9b19bf99eb87daaeb1bed73757d5a099cbd668ebe84",
+      "sha256": "1e46bdd7b536bcee17ff64897fa65ff53a6ad84d0e19b9a3075a93fdbf01cedd",
       "bytes": 40739
     },
     {
@@ -2520,7 +2521,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_setup/setup.pdf",
-      "sha256": "a2e79ba7944e91c95349d10e2acef4832de5faf5186ea6a359d17100ca68b1ee",
+      "sha256": "eccf85af3a29c80047c85bb9a28722ce443d25c3697b9b488a10972fc5d2470c",
       "bytes": 53217
     },
     {
@@ -2560,17 +2561,17 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/both_notes_slides_v2.pdf",
-      "sha256": "40177aabc03a8cc00b48f571ecef41a69e0d11397e2371741c2268fac5a1d12d",
-      "bytes": 1806191
+      "sha256": "bf2c467e8b4b5545a6b1cb5db3065aeaed951a77aa355c4bec3bad094b46cf7f",
+      "bytes": 1807669
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build.py",
-      "sha256": "12ff6a6eedf68bbadc4cc484fe7b7d08aa862bc7ca5ed46f99d5a3684ca7c379",
-      "bytes": 8711
+      "sha256": "c5c1f5c3dd7416d89d06831bbbb6cb5023e03b1ee64fee2831d25d126a6b5de1",
+      "bytes": 9348
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_report.json",
-      "sha256": "4294cc795b458e39e7d99e53bc178a9f23ed8e467ca7ad4f4455d3b5d87cc2c1",
+      "sha256": "ae8c398f7832efbc225e279445f39c13e6ce4c2176125cbee4cea8b50c8bc07f",
       "bytes": 772
     },
     {
@@ -2580,8 +2581,13 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/asset_manifest.json",
-      "sha256": "ff217ba599f41cc631378ccca3097e14c87c19298827cb90934d1b27988937be",
+      "sha256": "828f62eac94b7d4aa70113c6fab19fbfa21050956fa64755e6c703a4a577d1d9",
       "bytes": 2254
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/citation_audit.json",
+      "sha256": "90201957a38c58fd29ac2ed4df19bae3f8c5750991a58c1050096e3eec640a80",
+      "bytes": 2387
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/closure_values.tex",
@@ -2615,7 +2621,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/clock_residuals.pdf",
-      "sha256": "981178023d1b512a523f8cfe5146afd85ed1ab939a5d018d3a286b78fc7896d9",
+      "sha256": "8faa7d020a8ffd60025ab85822a85ca692e439b65ba77216909c33ce423db632",
       "bytes": 88521
     },
     {
@@ -2630,7 +2636,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/event_matching.pdf",
-      "sha256": "29c2f1232af5aec528efe9b19bf99eb87daaeb1bed73757d5a099cbd668ebe84",
+      "sha256": "1e46bdd7b536bcee17ff64897fa65ff53a6ad84d0e19b9a3075a93fdbf01cedd",
       "bytes": 40739
     },
     {
@@ -2640,7 +2646,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/setup.pdf",
-      "sha256": "a2e79ba7944e91c95349d10e2acef4832de5faf5186ea6a359d17100ca68b1ee",
+      "sha256": "eccf85af3a29c80047c85bb9a28722ce443d25c3697b9b488a10972fc5d2470c",
       "bytes": 53217
     },
     {
@@ -2665,8 +2671,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/main.tex",
-      "sha256": "00a003dbea479cbe85a44d7478835a922a73568219df18624f67f442b57db68f",
-      "bytes": 8690
+      "sha256": "1e209596a4e5ae2e71e1ef7040651d9ab9d5228b6ee82e7144864d639889d0a3",
+      "bytes": 8870
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/metadata.tex",
@@ -2675,8 +2681,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/references.tex",
-      "sha256": "3647e278700f171c3bb1ff7a39aa8142af2dd3ef8cdb19804096db8dc745b704",
-      "bytes": 1737
+      "sha256": "940d39fac0f1f0db64c3648bf509b34b79b6950f96ec2d5fa8f1adbce1a7978e",
+      "bytes": 1642
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/review_values.tex",
@@ -2685,8 +2691,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/slides.pdf",
-      "sha256": "2807dad820e3c659080d905fc15734922c9b6f7e459e87cabb1b71fb526a770c",
-      "bytes": 763977
+      "sha256": "19a671fa08f1156aae9ab75bc3665998b66662c8794c8f4ac7259c742d63d37c",
+      "bytes": 764135
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_transfer_review.pdf",
@@ -2770,7 +2776,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/slides.pdf",
-      "sha256": "063b94f843d975a6cb85ed0d1fcef8627a024afd6a426cc8c1c32c47d46dd5c2",
+      "sha256": "1ecde4bf26f376e218d5a2219018d8312614a1900e085a4c1c9b2dab9b278839",
       "bytes": 961917
     },
     {
@@ -2810,8 +2816,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
-      "sha256": "2593115345fb2495587dbb24eb0ae23a50a496ac4b86db4e778a202add91ae25",
-      "bytes": 10781
+      "sha256": "bd8930112ec7afedb6fbf8746b82e31a10921b47a174b2e0c533b8f4344968cd",
+      "bytes": 13426
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -4985,14 +4991,14 @@
     }
   ],
   "verification": {
-    "file_count": 950,
+    "file_count": 992,
     "all_source_hashes_match": true,
     "combined_pages": 57,
     "focused_tests_passed": 140,
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "Note 1 slide 11 expresses half-difference widths as conditional bar-average resolution estimates. Counts unchanged, original unscaled results retained. All PDFs rebuilt and checked.",
+    "latest_change": "23 October: removed Saclay source at author request; seven remaining references renumbered and cited in main slide text/captions. Clickable PDF destinations verified. Full notes and Note 2 unchanged.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 26,
@@ -5012,7 +5018,7 @@
     "n2_3_n2_4_closure_changed_files_hash_checked": 17,
     "title_update_changed_files_hash_checked": 17,
     "github_link_verification": "DPS_NOTES/review_2026-10-22_publication/repository_links.json",
-    "latest_changed_files_hash_checked": 114,
+    "latest_changed_files_hash_checked": 17,
     "original_text_verification": "DPS_NOTES/review_2026-10-22_publication/original_text_check.json",
     "language_review_verification": "DPS_NOTES/review_2026-10-22_publication/language_review_verification.json",
     "short_slides_v2": {
@@ -5041,7 +5047,9 @@
         9,
         10,
         11
-      ]
+      ],
+      "note1_reference_entries": 7,
+      "citation_audit": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/citation_audit.json"
     }
   }
 }

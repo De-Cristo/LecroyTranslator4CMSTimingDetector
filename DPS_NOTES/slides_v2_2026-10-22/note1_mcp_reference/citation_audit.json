@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-23",
+  "scope": "Short Note 1 only",
+  "removed_key": "Fabrice",
+  "reason": "Author requested removal of Saclay source",
+  "references": [
+    {
+      "number": 1,
+      "key": "github_repo",
+      "body_slides": [
+        4
+      ],
+      "role": "Trigger-interval matching implementation",
+      "clickable_pdf_link_verified": true
+    },
+    {
+      "number": 2,
+      "key": "picosec",
+      "body_slides": [
+        6
+      ],
+      "role": "MCP characterization context",
+      "clickable_pdf_link_verified": true
+    },
+    {
+      "number": 3,
+      "key": "MTDTDR",
+      "body_slides": [
+        3
+      ],
+      "role": "Detector-design context",
+      "clickable_pdf_link_verified": true
+    },
+    {
+      "number": 4,
+      "key": "WhitePresentation",
+      "body_slides": [
+        6
+      ],
+      "role": "Waveform-sampling checks context",
+      "clickable_pdf_link_verified": true
+    },
+    {
+      "number": 5,
+      "key": "Leo",
+      "body_slides": [
+        6
+      ],
+      "role": "Leading-edge time-walk context",
+      "clickable_pdf_link_verified": true
+    },
+    {
+      "number": 6,
+      "key": "DualThreshold",
+      "body_slides": [
+        8
+      ],
+      "role": "Slope-based alternative",
+      "clickable_pdf_link_verified": true
+    },
+    {
+      "number": 7,
+      "key": "LOWESS",
+      "body_slides": [
+        5
+      ],
+      "role": "Robust local regression method",
+      "clickable_pdf_link_verified": true
+    }
+  ],
+  "all_references_cited_in_body": true,
+  "bibliography_slide": 12,
+  "changed_text_slides": [
+    3,
+    4,
+    5,
+    6,
+    8,
+    12
+  ],
+  "full_notes_unchanged": true,
+  "note2_text_unchanged": true,
+  "numerical_results_unchanged": true,
+  "source_checks": {
+    "picosec": "arXiv 1909.12604 metadata checked; role also confirmed in supplied Note1 Section 2",
+    "MTDTDR": "Official CDS collection metadata checked; direct record bot-blocked",
+    "WhitePresentation": "Role confirmed in supplied Note1 Section 2; linked presentation not independently retrieved",
+    "Leo": "Indexed table of contents confirms leading-edge triggering on p326; book page not independently retrieved",
+    "DualThreshold": "arXiv 2507.07127 abstract and published JINST metadata checked",
+    "LOWESS": "Previously verified DOI 10.1080/01621459.1979.10481038; original bibliography wording retained"
+  }
+}

@@ -110,7 +110,17 @@ def main():
         entry_pattern = r"\\bibitem\[(\d+)\]\{([^}]+)\}([\s\S]*?)(?=\\bibitem|\\end\{thebibliography\})"
         entries = lambda path: [(number, key, " ".join(body.split()))
                                 for number, key, body in re.findall(entry_pattern, path.read_text())]
-        assert entries(note / "references.tex") == entries(original / "references.tex")
+        note_entries = entries(note / "references.tex")
+        original_entries = entries(original / "references.tex")
+        if name == "note1_mcp_reference":
+            expected = [(key, body) for _, key, body in original_entries if key != "Fabrice"]
+            assert [(key, body) for _, key, body in note_entries] == expected
+            assert [int(number) for number, _, _ in note_entries] == list(range(1, 8))
+            cited = {key.strip() for group in re.findall(r"\\cite\{([^}]+)\}", source)
+                     for key in group.split(",")}
+            assert cited == {key for _, key, _ in note_entries}, "Missing or orphan Note 1 citation"
+        else:
+            assert note_entries == original_entries
         assert "cms-dpg-conveners-mtd@cern.ch" in pdf.pages[0].extract_text()
         assert ("Abstract" if name == "note1_mcp_reference" else "Purpose") in pdf.pages[1].extract_text()
         for page in pdf.pages:

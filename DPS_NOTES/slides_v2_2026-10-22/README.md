@@ -17,9 +17,11 @@ The titles follow the author's wording, including TOFHIR2C in Note 2.
 - `both_notes_slides_v2.pdf`: both decks, 22 landscape pages, no covers.
 - `note1_transfer_review.pdf`: the three new Note 1 closure slides only.
 
-Each reference slide uses two columns and preserves the original
-bibliography entries and numbering: eight entries in Note 1 and twelve in Note 2.
-The build checks that these entries match the full notes exactly.
+Each reference slide uses two columns. Note 1 has seven entries after removing
+the Saclay source at the author's request and renumbering; the remaining entry
+text is unchanged. Note 2 retains its original twelve entries and numbering.
+The build checks these against the full notes and requires every remaining
+Note 1 reference to be cited in the slide body or its caption.
 
 Existing numerical macros are copied unchanged from the full notes. Figures
 retain their data and fits; the Note 1 terminology-only adaptations are described below.
@@ -45,6 +47,15 @@ missing fonts, unresolved citations, unexpected page counts and portrait pages.
 These are first discussion drafts, not approved CMS submissions.
 
 ## Note 1 structure review
+
+### Body citations and restricted-source removal
+
+The Saclay presentation (previous reference 2) is removed from the short Note 1
+deck only. All seven remaining entries have explicit citations at the relevant
+discussion: detector design (slide 3), software (4), LOWESS (5), MCP timing,
+waveform sampling and amplitude walk (6), and the slope-based alternative (8).
+The source-to-claim audit is recorded in `note1_mcp_reference/citation_audit.json`.
+The original full-note bibliography and Note 2 are unchanged.
 
 ### 23 October: reference-bar transfer closure replaces old slide 9
 
