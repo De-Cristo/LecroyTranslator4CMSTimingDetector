@@ -1,22 +1,23 @@
 # Internal discussion: what justifies the second AWC candidate?
 
 This is an exploratory model, not an established CMS result or a
-first-principles determination of AWC. This candidate is deferred and its page
-has been removed from the current short deck. The discussion is retained for
-future consideration; only the empirical AWC trend remains as backup.
+first-principles determination of AWC. At the author's request on 24 October,
+this candidate is restored as main-body slide 8, following the empirical trend
+on slide 7. Both are explicitly exploratory approaches, not established
+reference-free calibrations.
 
 ## Exact algebra versus the additional hypothesis
 
 Start with the walk model and the measured mean-slope parametrization:
 
 \[
-W_i(Q)=\frac{A_i}{S_i(Q)},\qquad S_i(Q)=c_{0,i}+c_{1,i}Q.
+W(Q)=\frac{\mathrm{AWC}}{\overline S(Q)},\qquad \overline S(Q)=c_0+c_1Q.
 \]
 
 Holding a channel's AWC fixed, differentiation gives exactly
 
 \[
--\frac{dW_i}{d\ln Q}=\frac{A_i c_{1,i}Q}{S_i(Q)^2}.
+-\frac{dW}{d\ln Q}=\frac{\mathrm{AWC}\,c_1Q}{\overline S(Q)^2}.
 \]
 
 The left-hand side is the change in walk for a small fractional change in
@@ -24,9 +25,9 @@ charge, with a minus sign. The new, unproven hypothesis is that this response
 is approximately common across channels at a prescribed typical charge:
 
 \[
--\left.\frac{dW_i}{d\ln Q}\right|_{Q_{*,i}}\simeq K
+-\left.\frac{dW}{d\ln Q}\right|_{Q_*}\simeq K
 \quad\Longrightarrow\quad
-A_i^{\rm pred}=K\frac{S_i(Q_{*,i})^2}{c_{1,i}Q_{*,i}}.
+\mathrm{AWC}_{\rm pred}=K\frac{\overline S(Q_*)^2}{c_1Q_*}.
 \]
 
 Here K has units of ns. Q* is the median of each channel's selected charge
@@ -61,8 +62,8 @@ rewrites AWC in terms of the local change of walk with fractional charge. We
 then assume that change is approximately shared across channels. That extra
 assumption, and the choice of typical charge, need discussion and independent
 tests. The encouraging held-out-bar result is a reason to investigate it, not
-yet a public performance claim. This candidate has now been removed from the
-short deck; the empirical trend remains internal backup after the references.
+yet a validated performance claim. Both candidate slides are now restored
+before the comparison results, with their assumptions and limitations retained.
 
 ## Provenance
 

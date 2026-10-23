@@ -16,7 +16,7 @@
     "DPS_NOTES/both_notes_review_v1.pdf"
   ],
   "cover_pages": 0,
-  "combined_pages": 22,
+  "combined_pages": 23,
   "exact_user_titles_verified": true,
   "github_links_verified": [
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/FEBD_Sync/simple_sync.py",
@@ -25,31 +25,31 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "24 October: slides 6-7 checked for AWC / mean-slope notation; no clipping or overlap. Only these slide texts changed. All bibliography links verified; full notes and Note 1 submission unchanged.",
+  "visual_review": "24 October: candidate slides 7-8 visually checked; no clipping/overlap. Previous main slides and references unchanged apart from numbering. All 11 citation destinations updated and checked.",
   "scientific_inputs": "Frozen reference corrections; four new downstream fits (two channels x two reference choices), 1512 common fitting events and 1456 common evaluation events at one threshold. 400 paired block-bootstrap replicas with fixed cuts and calibration.",
-  "combined_sha256": "b16de1edb212f526b288aa49b2bb3183bc911a8d076c893db463478c49897f52",
+  "combined_sha256": "fd9b330ea3e0d40b53c7edf071d004b1422704a255e939f4cd041eeebf745aaf",
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 7,
     "note2": 11
   },
   "note2_slide_content_unchanged": false,
-  "structure_review": "Main result on slide 8; references 9; only empirical AWC-trend backup on 10. New shared-response model deferred and removed.",
+  "structure_review": "Note 2: AWC model 6, exploratory candidates 7-8, comparison 9, residual result 10, references 11; no backup.",
   "bar_pair_validation": "DPS_NOTES/review_2026-10-23_reference_transfer/verification.json",
   "slides": {
     "note1": 12,
-    "note2": 10
+    "note2": 11
   },
   "content_slides": {
     "note1": 11,
-    "note2": 9
+    "note2": 10
   },
   "note1_slide_content_unchanged": false,
   "note2_internal_prediction_review": {
     "no_refitting": true,
-    "backup_slides": 1,
-    "final_main_result_slide": 8,
-    "original_final_observable": "AWC versus 1/c1 retained as exploratory backup on slide 10, not the main conclusion",
+    "backup_slides": 0,
+    "final_main_result_slide": 10,
+    "original_final_observable": "AWC versus 1/c1 on main-body slide 7, explicitly exploratory",
     "historical_coefficient_table_source": "Q_Walk/empirical_walk_models.md; supplied Note2.pdf Table 1",
     "predictor_source": "Q_Walk/results/2026-10-22_clock_quality/physical_candidate_quick_test",
     "predictor_channels": 10,
@@ -72,11 +72,12 @@
         6
       ],
       "7_internal_prediction": [
-        10
+        7,
+        8
       ],
-      "8_agreement_with_reference": 7
+      "8_agreement_with_reference": 9
     },
-    "shared_response_model_status": "Deferred; removed from short deck, saved analysis and discussion retained.",
+    "shared_response_model_status": "Restored on main-body slide 8 at author request, with assumptions and limitations retained.",
     "bibliography_exception": "Removed original entry 10 at author request; remaining text preserved and renumbered."
   },
   "note2_profile_update": {
@@ -88,7 +89,7 @@
     "other_pages_unchanged": true
   },
   "note2_figure5_insertion": {
-    "slide": 8,
+    "slide": 10,
     "source": "DPS_NOTES/Note2.pdf",
     "pdf_page": 12,
     "figure": 5,
@@ -114,11 +115,11 @@
   },
   "main_slides": {
     "note1": 10,
-    "note2": 8
+    "note2": 10
   },
   "backup_slides": {
     "note1": 1,
-    "note2": 1
+    "note2": 0
   },
   "note2_backup_reorganization": {
     "references_slide": 9,
@@ -130,13 +131,15 @@
     "cms_preliminary_labels_removed_from_backups": true,
     "cms_logo_omitted_from_backup_header": true,
     "new_fits": false,
-    "explanation": "DPS_NOTES/slides_v2_2026-10-22/AWC_PREDICTOR_DISCUSSION.md"
+    "explanation": "DPS_NOTES/slides_v2_2026-10-22/AWC_PREDICTOR_DISCUSSION.md",
+    "status": "Historical; superseded by 24 October main-body restoration."
   },
   "note2_new_model_removal": {
     "removed_former_slide": 11,
     "retained_backup_slide": 10,
     "all_remaining_pages_unchanged_except_numbering": true,
-    "discussion_and_data_retained": true
+    "discussion_and_data_retained": true,
+    "status": "Historical; superseded by 24 October main-body restoration."
   },
   "note1_abstract_and_terminology_review": {
     "date": "2026-10-23",
@@ -441,5 +444,24 @@
     "comparison_legends_consistent": true,
     "no_refitting": true,
     "full_notes_unchanged": true
+  },
+  "note2_candidate_restoration": {
+    "date": "2026-10-24",
+    "slides": [
+      7,
+      8
+    ],
+    "references_slide": 11,
+    "saved_predictions_recomputed_without_refitting": true,
+    "sipms": 10,
+    "held_out_bar_groups": 6,
+    "rmse_ua": 3.2160786110095962,
+    "fractional_rmse": 0.14121008611047828,
+    "source_csv_sha256": "cff4ea726092781158efb8a3baf21ded9857f1397a2cc5c45ec20dab52262884",
+    "awc_mean_slope_notation": true,
+    "hardware_ids_removed": true,
+    "exploratory_scope_preserved": true,
+    "original_cms_plot_labels_retained": true,
+    "full_notes_and_note1_unchanged": true
   }
 }

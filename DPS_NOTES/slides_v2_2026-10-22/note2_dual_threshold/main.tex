@@ -106,6 +106,30 @@ Use the MCP-calibrated channels to develop and test that prediction.
 The slope fit alone does not fix AWC. The common functional form follows the dual-threshold model in Ref.~\cite{DualThreshold}.}
 \end{frame}
 
+\begin{frame}[t]{Candidate 1: AWC versus inverse slope coefficient}
+\centering
+\includegraphics[width=\linewidth,height=48mm,keepaspectratio]{figures/awc_summary_selected.pdf}
+\par\raggedright
+\Source{An exploratory trend: AWC versus $1/c_1$, the inverse slope-to-charge coefficient.
+Each point is one SiPM, not a charge bin. AWC is benchmarked against MCP; $c_1$ uses internal hits.
+The ten-SiPM trend motivates prediction, but the line is not a precision calibration ($\chi^2/\mathrm{ndf}=\SummaryChi/8$).
+Bars: slope-only 16--84\% bootstrap intervals; reference errors and correlations are omitted. More independent data are needed.}
+\end{frame}
+
+\PlotSlide{Candidate 2: shared fractional-charge response}{internal_predictor}{
+Hypothesis: common $K\simeq-dW/d\ln Q$ at $Q_*$, not a derived law.
+\[
+\mathrm{AWC}_{\rm pred}=K\,\frac{\overline S(Q_*)^2}{c_1Q_*}.
+\]
+$Q_*$: selected-charge median per SiPM.
+
+Learn $K$ on other bars; predict the excluded bar.
+
+RMS error: \PredictorRMSE\,$\mu$A; fractional RMS: \PredictorFraction\%.
+}{Ten SiPMs, six held-out bars. $K$ uses other bars' MCP-calibrated AWC. Dashed line: equality.
+Horizontal bars: conditional reference-AWC intervals, not prediction intervals.
+Empirical hypothesis only: full prediction uncertainties, correlations and transfer to new configurations remain unvalidated.}
+
 \begin{frame}[t]{The single-amplitude model closely follows the MCP curves}
 \begin{columns}[T,onlytextwidth]
 \begin{column}{.49\textwidth}
@@ -139,20 +163,4 @@ Points and error bars are reproduced unchanged; the line is the original residua
 This historical figure complements the curve-to-curve comparison on the preceding slide.}
 
 \input{references.tex}
-
-\begingroup
-\setbeamertemplate{headline}{%
-  \hbox to \paperwidth{\hspace{7mm}\scriptsize\color{black!55}Internal discussion only -- exploratory, not for public presentation\hfill\hspace{7mm}}\vspace{4mm}}
-
-\begin{frame}[t]{Backup: empirical AWC trend with inverse slope coefficient}
-\centering
-\includegraphics[width=\linewidth,height=48mm,keepaspectratio]{figures/awc_summary_selected.pdf}
-\par\raggedright
-\Source{The final observable of the original detector note: AWC versus $1/c_1$, the inverse slope-to-charge coefficient.
-Each point is one channel, not a charge bin. AWC is benchmarked against MCP; $c_1$ uses internal hits.
-The ten-channel trend motivates prediction, but the line is not a precision calibration ($\chi^2/\mathrm{ndf}=\SummaryChi/8$).
-Bars: slope-only 16--84\% bootstrap intervals; reference errors and correlations are omitted. More independent data are needed.}
-\end{frame}
-
-\endgroup
 \end{document}

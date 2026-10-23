@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-23",
+  "date": "2026-10-24",
   "scope": "Short Note 2 only",
   "removed_original_reference": 10,
   "removed_key": "LGAD",
@@ -93,7 +93,7 @@
       "number": 10,
       "key": "LOWESS",
       "body_slides": [
-        7
+        9
       ],
       "role": "MCP clock-alignment local regression, not the linear slope fit",
       "clickable_pdf_link_verified": true
@@ -109,7 +109,7 @@
     }
   ],
   "all_references_cited_in_body": true,
-  "bibliography_slide": 9,
+  "bibliography_slide": 11,
   "remaining_entry_text_unchanged": true,
   "source_checks": {
     "original_note": "Supplied Note2.pdf read in full: ALICE context, leading-edge textbook, Grund/Frolov history and bench-study roles confirmed",

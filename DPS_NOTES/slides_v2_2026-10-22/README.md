@@ -14,8 +14,8 @@ without rerunning analysis or overwriting either review deck. The accompanying
 page count and citation destinations. Preparing this file does not submit it
 to CMS or establish publication approval.
 
-Note 1 has ten main slides, one reference slide and one diagnostic backup slide. Note 2 has eight main
-slides, one reference slide and one exploratory backup slide,
+Note 1 has ten main slides, one reference slide and one diagnostic backup slide. Note 2 has ten main
+slides and one reference slide, with both exploratory candidates in the main body,
 with no A4 cover pages. These are separate from the full
 notes, which remain unchanged. Each deck retains the CMS/contact title slide,
 an abstract on slide 2 of both notes, labelled plots,
@@ -60,9 +60,9 @@ The private meeting checklist has been reconciled locally and is not uploaded.
   the reference time, fit inverse-charge profiles, and check timing correction.
 - `note2_dual_threshold/slides.pdf`: motivate rapid calibration, measure the
   internal charge-to-slope mapping, benchmark the single-amplitude walk form,
-  ending on corrected timing residuals. One post-reference backup slide
-  retains the empirical AWC trend with inverse slope coefficient.
-- `both_notes_slides_v2.pdf`: both decks, 22 landscape pages, no covers.
+  ending on corrected timing residuals. Two exploratory candidate slides precede
+  the comparison results: the inverse-slope-coefficient trend and shared-response hypothesis.
+- `both_notes_slides_v2.pdf`: both decks, 23 landscape pages, no covers.
 - `note1_transfer_review.pdf`: the three new Note 1 closure slides only.
 
 Each reference slide uses two columns. Note 1 has seven entries after removing
@@ -264,29 +264,23 @@ repeatable internal-data calibration, not a catalogue of MCP-fitted amplitudes.
 Slides 2--6 cover the HL-LHC calibration need, variation of the original
 quadratic coefficients, the dual-threshold physical model, internal slope
 profiles and the one-amplitude inverse-slope correction. The internal slope-profile
-example on slide 5 is channel 150 (19,312 selected hits). Slide 7 benchmarks
-the functional form with the existing MCP comparison curves. Slide 8 reproduces
-original Note 2 Figure 5, channel 137 residuals after the AWC correction.
-The main talk ends there. Slide 9 contains the compact original bibliography.
-The former separate future-procedure slide is removed; its independent-test
-requirements remain in the backup discussion.
+example on slide 5 is the right SiPM of bar 8 (19,312 selected hits).
+At the author's request on 24 October, both exploratory approaches now follow
+slide 6 in the main body. Slide 7 shows the empirical AWC-versus-1/c1 trend;
+slide 8 restores the shared fractional-charge response hypothesis and its
+held-out-bar prediction plot. Slide 9 benchmarks the functional form with the
+MCP comparison curves; slide 10 reproduces the original residual Figure 5.
+Slide 11 contains references. Note 2 has no post-reference backup pages.
 
-Slide 10 is internal backup on the original note's final observable,
-AWC versus inverse slope-to-charge coefficient (Figure 6), using the currently
-saved ten-channel figure. It distinguishes an informative trend from a
-validated precision predictor. The original Figure 6 caption incorrectly
-describes the points as charge-bin means: here they are explicitly channels,
-with slope-only conditional AWC bootstrap intervals.
-
-The new shared-response model and its prediction plot (former slide 11) are
-deferred and removed from the current deck. Its discussion document and saved
-analysis artifacts are retained for future consideration; no data are deleted.
-The remaining backup is labelled internal discussion only, not for public presentation.
-Its plot drawing operations and numerical results are unchanged; only the
-CMS Preliminary text object is removed from short-deck figure copies by
-`prepare_note2_backups.py`. The full-note figures are untouched. The backup
-headline also omits the CMS logo. The build checks reference placement and
-the absence of Preliminary labels on the remaining backup page.
+Both candidates remain explicitly exploratory. The first has a poor weighted
+line fit; its bars are slope-only conditional AWC bootstrap intervals. The
+second assumes a common derivative at the selected-charge median, and learns
+K from MCP benchmarks on other bars. Its saved ten-SiPM, six-bar test gives
+3.22 uA RMS error and 14.1% fractional RMS, not a validated general precision.
+Horizontal intervals are reference-AWC intervals, not prediction intervals.
+The AWC/Sbar notation and absence of hardware identifiers are preserved.
+The original CMS-labelled figures are reused with point IDs removed; no fits
+or numerical results are changed. Full-note sources and figures stay untouched.
 
 `AWC_PREDICTOR_DISCUSSION.md` separates the derivative identity from the
 empirical shared-response hypothesis and provides a suggested coauthor reply.

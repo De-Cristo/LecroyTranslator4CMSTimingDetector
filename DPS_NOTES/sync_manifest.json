@@ -32,7 +32,8 @@
     "short_note2_abstract": "23 October: Note 2 slide 2 replaced by abstract adapted from original motivation and internal-calibration purpose. Full-note cover abstract unchanged; all other slide text unchanged. Layout and citation checks passed.",
     "short_note2_labels_citations": "23 October: Note 2 uses descriptive sample and bar/end labels in text and figures, removes numeric backup point IDs, drops former reference 10 and cites all eleven remaining entries in context. Fits unchanged; original full notes and Note 1 submission preserved.",
     "short_note2_sipm_charge_precision": "24 October: Note 2 uses SiPM terminology; slide 3 qualifies coefficient variation with raw uncalibrated ADC charge; slide 5 motivates mapping with author-specified typical single-hit uncertainties (~15% slope, <5% charge), separate from profile and fit errors. Selections and fits unchanged.",
-    "short_note2_awc_notation": "24 October: Note 2 slide 6 uses W(Q)=AWC/Sbar(Q), directly naming AWC and fitted mean slope. Positivity condition and comparison legends consistent. Notation only; fitted values and full notes unchanged."
+    "short_note2_awc_notation": "24 October: Note 2 slide 6 uses W(Q)=AWC/Sbar(Q), directly naming AWC and fitted mean slope. Positivity condition and comparison legends consistent. Notation only; fitted values and full notes unchanged.",
+    "short_note2_candidate_restoration": "24 October: restored both exploratory AWC candidates to Note 2 main body directly after slide 6. Candidates 7-8, comparison 9, residual result 10, references 11. Saved prediction values verified, no refitting; full notes and Note 1 unchanged."
   },
   "files": [
     {
@@ -2427,17 +2428,17 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/AWC_PREDICTOR_DISCUSSION.md",
-      "sha256": "ade751261a3bad932f2991bfe2bc27682e316fab564b664a8e4306f3dbab98e8",
-      "bytes": 3385
+      "sha256": "c795bd9f2a050cf8ba5109040d49910b93a89570a1034dcb404264b04b16b967",
+      "bytes": 3442
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/README.md",
-      "sha256": "c5982d73694390e4f78f3952d9ae8506a07b3fb6c7c511ab9e4cac18aec897a5",
-      "bytes": 19490
+      "sha256": "6532bacf154552923c2db740133f6244f12e5d03c487a69fd34b154a9e5c1d3b",
+      "bytes": 19225
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_drift/clock_residuals.pdf",
-      "sha256": "64d8973a41b9d575326ac06e4162b49bc3a6061275ca76a3f971f84ed955401c",
+      "sha256": "5956d229ef5d53de512751542c649894b985be71f65eac80e492408f1a597b98",
       "bytes": 88521
     },
     {
@@ -2492,7 +2493,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_matching_ratio/event_matching.pdf",
-      "sha256": "3dba3adbe5cc7203813956585a322a5165c31909b9b25613ea4c72f26e1ccfdf",
+      "sha256": "8ac63ed1238c95cbd070bf3c15ed7e4540e9d3371e6656c03c5d2d81dffbbf13",
       "bytes": 40739
     },
     {
@@ -2537,7 +2538,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_setup/setup.pdf",
-      "sha256": "1a1d99b9153e2680303d2bfc77d2422b4d5d1ff3f0e6dbff0e57c97ca1421381",
+      "sha256": "00295198f5d91ebed5e94d79d5336df541ba9fcc256b88a09661c931bd32f00b",
       "bytes": 53217
     },
     {
@@ -2577,8 +2578,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note2_public_labels/awc_summary_selected.pdf",
-      "sha256": "c9c6194efdbcad2173f68b67356dff3814de5d390ea8658bcf9fa2aa303fbd39",
-      "bytes": 35333
+      "sha256": "85003ddc51966d5552d343dc9d712ac6ab2f4fba3c1a2e65086254039ab67523",
+      "bytes": 36931
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note2_public_labels/comparison_ch137.pdf",
@@ -2591,14 +2592,19 @@
       "bytes": 192515
     },
     {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note2_public_labels/internal_predictor.pdf",
+      "sha256": "0511f5544918c209ca62fb1d8c484462d289f8d8318b2771fc78c82482095e5b",
+      "bytes": 30678
+    },
+    {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note2_public_labels/original_figure5.pdf",
       "sha256": "4b713a9b4dff59c49a849d13cc16689fd5969fca1969b41eb04a2b95713dd0df",
       "bytes": 383560
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note2_public_labels/provenance.json",
-      "sha256": "abb4e11bfbbf7fefd422322295db9e161f67b37d29e7633eaa9d464740a3ae92",
-      "bytes": 2935
+      "sha256": "da84fc99195b2afabe016a19f3d04e78abb8ea1646d1636a43ecaf6c2b741821",
+      "bytes": 3473
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note2_public_labels/slope_ch150.pdf",
@@ -2607,13 +2613,13 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/both_notes_slides_v2.pdf",
-      "sha256": "b16de1edb212f526b288aa49b2bb3183bc911a8d076c893db463478c49897f52",
-      "bytes": 2101794
+      "sha256": "fd9b330ea3e0d40b53c7edf071d004b1422704a255e939f4cd041eeebf745aaf",
+      "bytes": 2160613
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build.py",
-      "sha256": "69f808adfe573c43e05a78ef3845903d1030da945fb57cfae316fd39b2ab3ac9",
-      "bytes": 10589
+      "sha256": "2943b77d255006f29334665e8908e4a4c6d737cb72ff833ccc3cea8aa8e98479",
+      "bytes": 10323
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_note1_submission.py",
@@ -2622,8 +2628,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_report.json",
-      "sha256": "d2f63f5f751f037f5f1592e57bfb7d6078b78484163c9b5768c0ddb171330e74",
-      "bytes": 772
+      "sha256": "caa97abcd2fa4a62ad2a75a09bdac435da6552a42502acf75b5c53801b16ecd5",
+      "bytes": 774
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/CMSlogo_black_label_1024.png",
@@ -2632,7 +2638,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/asset_manifest.json",
-      "sha256": "54b732a6b53447ee86f8bd33534f2cfb2ffc9ee0c186b60c9a30842238789398",
+      "sha256": "0317c2d6152726251ba11422152258d8c6054f5c8320bb5d67f74df7a89bea97",
       "bytes": 2268
     },
     {
@@ -2672,7 +2678,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/clock_residuals.pdf",
-      "sha256": "64d8973a41b9d575326ac06e4162b49bc3a6061275ca76a3f971f84ed955401c",
+      "sha256": "5956d229ef5d53de512751542c649894b985be71f65eac80e492408f1a597b98",
       "bytes": 88521
     },
     {
@@ -2687,7 +2693,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/event_matching.pdf",
-      "sha256": "3dba3adbe5cc7203813956585a322a5165c31909b9b25613ea4c72f26e1ccfdf",
+      "sha256": "8ac63ed1238c95cbd070bf3c15ed7e4540e9d3371e6656c03c5d2d81dffbbf13",
       "bytes": 40739
     },
     {
@@ -2697,7 +2703,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/setup.pdf",
-      "sha256": "1a1d99b9153e2680303d2bfc77d2422b4d5d1ff3f0e6dbff0e57c97ca1421381",
+      "sha256": "00295198f5d91ebed5e94d79d5336df541ba9fcc256b88a09661c931bd32f00b",
       "bytes": 53217
     },
     {
@@ -2742,8 +2748,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/slides.pdf",
-      "sha256": "9259e513e3ccddb6b5087bacd016b7ea56b83664480809823a862cbee6fc333d",
-      "bytes": 794279
+      "sha256": "3f270b29a09b6c99b5d071e55ef0d0984e4f23d8b5cd7fb83d39839c174fdd3e",
+      "bytes": 794275
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/submission.tex",
@@ -2762,18 +2768,18 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/asset_manifest.json",
-      "sha256": "1d23970055e293651c20f94da62251ea976d1a6f5533801be200776dfec88f50",
-      "bytes": 1481
+      "sha256": "e3ae5c722d9756c2fee74021ebb48a0343977cc2059c79936375b957f8c7d002",
+      "bytes": 1705
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/citation_audit.json",
-      "sha256": "6f174f5dc232fd898adfdb421b59aa67ff25b6fb187edf7aaea3e589682212f4",
-      "bytes": 3242
+      "sha256": "9ea77788041a7e25f14cacbd0a571de80f35906f648a953f639d441a9957776d",
+      "bytes": 3243
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/figures/awc_summary_selected.pdf",
-      "sha256": "c9c6194efdbcad2173f68b67356dff3814de5d390ea8658bcf9fa2aa303fbd39",
-      "bytes": 35333
+      "sha256": "85003ddc51966d5552d343dc9d712ac6ab2f4fba3c1a2e65086254039ab67523",
+      "bytes": 36931
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/figures/comparison_ch137.pdf",
@@ -2792,8 +2798,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/figures/internal_predictor.pdf",
-      "sha256": "4b6962f4df338123524a61a3627f2e7b2cefef425e2bf676d9dc65a8f6f7baef",
-      "bytes": 30920
+      "sha256": "0511f5544918c209ca62fb1d8c484462d289f8d8318b2771fc78c82482095e5b",
+      "bytes": 30678
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/figures/original_figure5.pdf",
@@ -2817,8 +2823,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/main.tex",
-      "sha256": "d73928473b419d09ba4e5a1951b6f7ce55fc9ca4cb3fb0564fc50eef0c7c8056",
-      "bytes": 7420
+      "sha256": "4880dc6363db18a5a710a3f61f13b51ecb8ae321007deae2c45f320c1ccd4826",
+      "bytes": 7843
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/metadata.tex",
@@ -2837,8 +2843,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/slides.pdf",
-      "sha256": "96bcad5032f3e1ed099b7db314b7aec7047177c09d26fb6a52046d3797144320",
-      "bytes": 1220688
+      "sha256": "1db539979f231210bef5c8174fc64f64172a05e0e44bbcdba821ba50e0e3fb32",
+      "bytes": 1275494
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/prepare_note1_drift.py",
@@ -2872,8 +2878,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/prepare_note2_labels.py",
-      "sha256": "096e62529d45a832e715822253572319cab84080fbf443ae36a5742024ef56cb",
-      "bytes": 4389
+      "sha256": "96cde2a0bfc6c5da3b1d53274b8c67ee9a399bc9d11b17b6534915e864b0bd66",
+      "bytes": 4327
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/slides_preamble.tex",
@@ -2892,8 +2898,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
-      "sha256": "d767b0dc7e7e2f2e5f61f3642f04705e9c43edb5a7f1a24ea241e4ce696e49d9",
-      "bytes": 15831
+      "sha256": "d31ab14de9bc7407195283b467cd5b1d13428229c761af1557191ea546a8607d",
+      "bytes": 16587
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -5067,14 +5073,14 @@
     }
   ],
   "verification": {
-    "file_count": 1006,
+    "file_count": 1007,
     "all_source_hashes_match": true,
     "combined_pages": 57,
     "focused_tests_passed": 140,
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "24 October: Note 2 slide 6 uses W(Q)=AWC/Sbar(Q), directly naming AWC and fitted mean slope. Positivity condition and comparison legends consistent. Notation only; fitted values and full notes unchanged.",
+    "latest_change": "24 October: restored both exploratory AWC candidates to Note 2 main body directly after slide 6. Candidates 7-8, comparison 9, residual result 10, references 11. Saved prediction values verified, no refitting; full notes and Note 1 unchanged.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 26,
@@ -5094,14 +5100,14 @@
     "n2_3_n2_4_closure_changed_files_hash_checked": 17,
     "title_update_changed_files_hash_checked": 17,
     "github_link_verification": "DPS_NOTES/review_2026-10-22_publication/repository_links.json",
-    "latest_changed_files_hash_checked": 21,
+    "latest_changed_files_hash_checked": 24,
     "original_text_verification": "DPS_NOTES/review_2026-10-22_publication/original_text_check.json",
     "language_review_verification": "DPS_NOTES/review_2026-10-22_publication/language_review_verification.json",
     "short_slides_v2": {
       "directory": "DPS_NOTES/slides_v2_2026-10-22",
       "note1_slides": 12,
-      "note2_slides": 10,
-      "combined_pages": 22,
+      "note2_slides": 11,
+      "combined_pages": 23,
       "cover_pages": 0,
       "verification": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
       "reference_slides_each": 1,
@@ -5110,14 +5116,14 @@
       "threshold_settings": 1,
       "content_slides": {
         "note1": 11,
-        "note2": 9
+        "note2": 10
       },
-      "note2_structure_review": "Main result 8; references 9; empirical AWC trend as sole internal backup 10. New shared-response model deferred and removed.",
-      "note2_backup_slides": 1,
+      "note2_structure_review": "AWC model 6 -> exploratory candidates 7-8 -> MCP comparison 9 -> residual 10 -> references 11",
+      "note2_backup_slides": 0,
       "note2_profile_channel": 150,
-      "note2_residual_figure_slide": 8,
-      "note2_reference_slide": 9,
-      "note2_main_slides": 8,
+      "note2_residual_figure_slide": 10,
+      "note2_reference_slide": 11,
+      "note2_main_slides": 10,
       "note1_reference_slide": 11,
       "note1_closure_slides": [
         9,

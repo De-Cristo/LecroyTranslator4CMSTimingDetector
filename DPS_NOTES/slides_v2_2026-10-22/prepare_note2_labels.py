@@ -14,7 +14,7 @@ from prepare_note1_labels import remove_labels
 
 ROOT = Path(__file__).resolve().parent
 NAMES = ("slope_ch150", "comparison_ch137", "comparison_ch154",
-         "original_figure5", "awc_summary_selected")
+         "original_figure5", "awc_summary_selected", "internal_predictor")
 
 
 def prepare():
@@ -25,8 +25,6 @@ def prepare():
         source = ROOT.parent / "note2_dual_threshold/figures" / f"{name}.pdf"
         if name == "original_figure5":
             source = ROOT / "assets/note2_figure5/figure5.pdf"
-        elif name == "awc_summary_selected":
-            source = ROOT / "assets/note2_internal_backups/awc_summary_selected.pdf"
         page = PdfReader(source).pages[0]
         width, height = float(page.mediabox.width), float(page.mediabox.height)
         fig = plt.figure(figsize=(width / 72, height / 72))
@@ -41,7 +39,7 @@ def prepare():
                 "MCP quadratic (run 4399)": "MCP-reference quadratic",
                 "AWC/S(Q) + offset (run 4076)": r"$\mathrm{AWC}/\overline{S}(Q)$ + offset",
             }
-        elif name == "awc_summary_selected":
+        elif name in ("awc_summary_selected", "internal_predictor"):
             replacements = {str(ch): "" for ch in (159, 156, 155, 154, 151, 150, 137, 135, 134, 133)}
             # Point identifiers are 9 pt; axis ticks (including 150) are 12 pt.
             remove_labels(page, replacements, font_size=9)
@@ -53,7 +51,7 @@ def prepare():
                                      color="white", linewidth=0))
             fig.text(.526, .91, "Bar 8, left SiPM: residual after walk correction",
                      ha="center", va="center", fontsize=11)
-        if name not in ("awc_summary_selected", "original_figure5"):
+        if name not in ("awc_summary_selected", "internal_predictor", "original_figure5"):
             for old, x, y, size in remove_labels(page, replacements):
                 title = old.startswith(("Run ", "Channel "))
                 fig.text(.5 if title else x / width, y / height, replacements[old],

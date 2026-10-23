@@ -9,7 +9,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw
 from pypdf import PdfReader, PdfWriter
-from prepare_note2_backups import NAMES as BACKUP_FIGURES, prepare as prepare_backups
+from prepare_note2_backups import prepare as prepare_backups
 from prepare_note1_labels import NAMES as NOTE1_LABELS, prepare as prepare_note1_labels
 from prepare_note1_matching_ratio import prepare as prepare_note1_matching
 from prepare_note1_drift import prepare as prepare_note1_drift
@@ -17,7 +17,7 @@ from prepare_note2_labels import NAMES as NOTE2_LABELS, prepare as prepare_note2
 
 ROOT = Path(__file__).resolve().parent
 NOTES = ("note1_mcp_reference", "note2_dual_threshold")
-EXPECTED_SLIDES = {"note1_mcp_reference": 12, "note2_dual_threshold": 10}
+EXPECTED_SLIDES = {"note1_mcp_reference": 12, "note2_dual_threshold": 11}
 CLOSURE_FIGURES = {"calibration_paths", "closure_timing", "bar_resolution_check"}
 THRESHOLD_FIGURES = {
     "figures/threshold_walk_profiles.pdf": "vth1_3_vth2_60/upstream_walk_profiles.pdf",
@@ -34,7 +34,6 @@ def run(command, cwd):
 
 
 def main():
-    prepare_backups()
     prepare_note2_labels()
     prepare_backups(note="note1_mcp_reference", names=("bar_resolution_check",),
                     source_dir=ROOT.parent / "review_2026-10-23_reference_transfer")
@@ -80,9 +79,7 @@ def main():
                 origin = ROOT / "assets/note1_matching_ratio/event_matching.pdf"
             if name == "note1_mcp_reference" and relative == "figures/clock_residuals.pdf":
                 origin = ROOT / "assets/note1_drift/clock_residuals.pdf"
-            is_backup = name == "note2_dual_threshold" and Path(relative).stem in BACKUP_FIGURES
-            if is_backup:
-                origin = ROOT / "assets/note2_internal_backups" / Path(relative).name
+            is_backup = False
             if name == "note1_mcp_reference" and relative == "figures/bar_resolution_check.pdf":
                 is_backup = True
                 origin = ROOT / "assets/note1_internal_backups" / Path(relative).name
@@ -109,7 +106,7 @@ def main():
         shutil.copy2(note / "build/main.pdf", note / "slides.pdf")
         pdf = PdfReader(note / "slides.pdf")
         assert len(pdf.pages) == EXPECTED_SLIDES[name], (name, len(pdf.pages))
-        reference_index = 10 if name == "note1_mcp_reference" else 8
+        reference_index = 10
         assert "References" in pdf.pages[reference_index].extract_text()
         for page in pdf.pages[reference_index + 1:]:
             text = page.extract_text()
