@@ -1,0 +1,67 @@
+{
+  "status": "passed",
+  "date": "2026-10-24",
+  "method": "Independent numpy.polyfit basis responses and Gaussian profile perturbations; no ROOT reprocessing.",
+  "script_sha256": "f1ed8eeeb890e3fb9cf25d67a7aebdecf7c982b190e6a12fa6f697cc93e94be8",
+  "seed": 20261024,
+  "channels": [
+    {
+      "channel": 133,
+      "bins": 26,
+      "independent_basis_fit_covariance_check": true,
+      "sem_scaling_check": true,
+      "constant_offset_check": true,
+      "positive_definite": true,
+      "gaussian_profile_replicas": 30000,
+      "replica_standard_error_relative_difference": [
+        -0.0025311728889617635,
+        -0.0012915071677381817,
+        -0.00038388269508715656
+      ]
+    },
+    {
+      "channel": 154,
+      "bins": 20,
+      "independent_basis_fit_covariance_check": true,
+      "sem_scaling_check": true,
+      "constant_offset_check": true,
+      "positive_definite": true,
+      "gaussian_profile_replicas": 30000,
+      "replica_standard_error_relative_difference": [
+        -0.0055008849079096755,
+        -0.00541935105362612,
+        -0.00506943717680064
+      ]
+    },
+    {
+      "channel": 137,
+      "bins": 48,
+      "independent_basis_fit_covariance_check": true,
+      "sem_scaling_check": true,
+      "constant_offset_check": true,
+      "positive_definite": true,
+      "gaussian_profile_replicas": 30000,
+      "replica_standard_error_relative_difference": [
+        -0.001968436090846626,
+        -0.002187856068998517,
+        -0.002358743052961798
+      ]
+    },
+    {
+      "channel": 150,
+      "bins": 25,
+      "independent_basis_fit_covariance_check": true,
+      "sem_scaling_check": true,
+      "constant_offset_check": true,
+      "positive_definite": true,
+      "gaussian_profile_replicas": 30000,
+      "replica_standard_error_relative_difference": [
+        -0.005448398100135532,
+        -0.005674592203325335,
+        -0.005666321642317507
+      ]
+    }
+  ],
+  "uncertainty_scope": "Conditional on independent bin means, fixed bin coordinates, selection and calibration; not total errors.",
+  "serialization_followup": "CSV line terminator changed to LF; generated table and full covariance JSON byte-identical to numerically verified outputs. Numerical checks reused."
+}

@@ -25,9 +25,9 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "24 October: Note 2 slide 10 and standalone residual figure visually checked. No clipping or overlap. Only slide 10 text changed; original residual plotting-field pixels preserved losslessly, axes relabelled to ps and +/-10 ps guide added. Full notes and Note 1 submission unchanged; citations checked.",
+  "visual_review": "24 October: Note 2 slides 2, 3, 5, 8, 9 and 10 visually inspected, no clipping/overlap. Other slide texts unchanged. All figure drawing commands, image bytes and labels unchanged. Protected full notes and Note 1 submission unchanged; citation destinations checked.",
   "scientific_inputs": "Frozen reference corrections; four new downstream fits (two channels x two reference choices), 1512 common fitting events and 1456 common evaluation events at one threshold. 400 paired block-bootstrap replicas with fixed cuts and calibration.",
-  "combined_sha256": "ec8776fa11d97a3685e2659f231f9bfa84079b6f8e1fa19def337b53e715d30d",
+  "combined_sha256": "28536400c5c767a0fcc10a13f622099a76285cb162ef46f38df1b7e1c4bdfa4c",
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 7,
@@ -500,6 +500,37 @@
     "residual_formula_explicit": true,
     "no_new_fits_or_recentering": true,
     "only_changed_slide": 10,
+    "overflow": 0,
+    "citation_destinations_verified": 11
+  },
+  "note2_transcript_followup": {
+    "date": "2026-10-24",
+    "changed_slides": [
+      2,
+      3,
+      5,
+      8,
+      9,
+      10
+    ],
+    "conditional_quadratic_errors": "assets/note2_quadratic_uncertainties/verification.json",
+    "full_covariance": "assets/note2_quadratic_uncertainties/covariance.json",
+    "original_coefficients_reproduced": true,
+    "plots_unchanged": true,
+    "independent_verification": "Independent polynomial-fit basis responses, SEM scaling, constant offset and 30000 Gaussian profile perturbations per SiPM.",
+    "sample_context_explicit": true,
+    "sem_and_weights_defined": true,
+    "equal_q_grid_matching_defined": true,
+    "untested_conditions_explicit": [
+      "thresholds",
+      "overvoltage",
+      "charge integration"
+    ],
+    "still_open": [
+      "original Figure 5 error-bar definition",
+      "public reference cleanup and final Note 2 packaging",
+      "physical explanation of Note 1 pair-width excess"
+    ],
     "overflow": 0,
     "citation_destinations_verified": 11
   }

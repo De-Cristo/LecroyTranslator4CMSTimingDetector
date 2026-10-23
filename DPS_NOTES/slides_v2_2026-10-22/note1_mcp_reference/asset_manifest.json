@@ -27,7 +27,7 @@
   {
     "file": "figures/clock_residuals.pdf",
     "source": "slides_v2_2026-10-22/assets/note1_drift/clock_residuals.pdf",
-    "sha256": "95cfb92bad2ff4f69e2f204fdffc9f8a3a5a5f21ff2afd94c867dbca09a297cd"
+    "sha256": "d70e8e3ab4a705a67ce71f94bfa3c85facf4b4a72fdf5adbfc98aba8975661e8"
   },
   {
     "file": "figures/closure_timing.pdf",
@@ -37,7 +37,7 @@
   {
     "file": "figures/event_matching.pdf",
     "source": "slides_v2_2026-10-22/assets/note1_matching_ratio/event_matching.pdf",
-    "sha256": "40ba44da6d08b3494812f139c0a42846d613f5849d8b29b0f17e7d172f409957"
+    "sha256": "06274bf151a3389c6f70bff400154f323f7729992aefe61d65b6fa823fcaaf1e"
   },
   {
     "file": "figures/mcp_waveform.pdf",
@@ -47,7 +47,7 @@
   {
     "file": "figures/setup.pdf",
     "source": "slides_v2_2026-10-22/assets/note1_setup/setup.pdf",
-    "sha256": "c89884188443049877834e00ad31008582ff979b70d411d2d2f92d9e26683b4e"
+    "sha256": "0b02cd4ead1aff26ff4257b85cfe4fc2997f22f40244a9e2fc1184177a52419a"
   },
   {
     "file": "figures/threshold_walk_profiles.pdf",

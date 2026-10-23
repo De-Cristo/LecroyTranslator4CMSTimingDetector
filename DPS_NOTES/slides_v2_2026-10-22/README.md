@@ -318,6 +318,28 @@ it is not presented as the input to the current comparison curves. The latter
 retain their existing provenance. Note 1, cover abstracts, full notes and all
 numerical analysis results are unchanged by this narrative update.
 
+## Transcript follow-up: conditional errors and definitions (24 October)
+
+Slide 3 now includes statistical errors propagated from the saved bin-mean SEM
+through the original unweighted quadratic estimator. Full-precision central
+values are unchanged; the slide rounds them to accompany their errors.
+`assets/note2_quadratic_uncertainties/` stores the reproducible method, full
+covariance matrices, correlations, CSV table, input hashes and verification.
+The strong coefficient correlations and excluded systematic effects are explicit.
+
+The Note 2 abstract now identifies the September 2025 pion-beam study and
+separate acquisitions of the same reference module. Slide 5 defines SD, SEM and
+the actual inverse-variance fit weights. Slide 8 identifies thresholds,
+overvoltage and charge-integration settings as untested transfer conditions.
+Slide 9 specifies equal weighting on the populated common Q grid. Slide 10
+explicitly retains, but does not assign a statistical definition to, the original
+Figure 5 error bars. These table errors do not establish the provenance of those
+historical residual bars. No plots, AWC values or correction functions change.
+
+Publication references and packaging remain pending; this update does not
+resolve the physical origin of the Note 1 pair-width excess or claim a complete
+uncertainty model.
+
 # Slide 7 wording review (23 October 2026)
 
 Note 1 describes the selected coincidence in physical terms: both ends of the

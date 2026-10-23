@@ -1,0 +1,270 @@
+{
+  "method": "Original unweighted least squares in x=1/Q; propagate independent saved bin-mean SEM through the fixed linear estimator.",
+  "covariance": "J diag(SEM^2) J^T, with J the unweighted least-squares response in coefficient order [a,b,c]. No residual chi-square scaling.",
+  "assumptions": "Fixed bin coordinates, binning and selection; independent bin-mean errors. Shared clock/calibration correlations are not propagated.",
+  "exclusions": [
+    "clock and other calibration systematics",
+    "charge-coordinate uncertainty",
+    "selection and binning variation",
+    "functional-form uncertainty",
+    "inter-bin correlations"
+  ],
+  "units": [
+    "ns",
+    "ns ADC",
+    "ns ADC^2"
+  ],
+  "time_convention": "Saved profile means are already in ns with the historical +26 ns display offset; no additional conversion or offset is applied.",
+  "table_c_scale": 10000,
+  "original_coefficients_unchanged": true,
+  "channels": [
+    {
+      "channel": 133,
+      "bar": 7,
+      "sipm": "Left",
+      "bins": 26,
+      "selected_profile_hits": 2456,
+      "coefficients_abc": [
+        0.07959170661997206,
+        238.28128496480025,
+        -21556.141195546108
+      ],
+      "standard_errors": [
+        0.06722326333138924,
+        35.79813090361121,
+        4683.057656104145
+      ],
+      "covariance_abc": [
+        [
+          0.004518967132921301,
+          -2.391343429561535,
+          308.1902606222211
+        ],
+        [
+          -2.391343429561535,
+          1281.506176192084,
+          -166886.10961981918
+        ],
+        [
+          308.1902606222211,
+          -166886.10961981918,
+          21931029.01039565
+        ]
+      ],
+      "correlation_abc": [
+        [
+          1.0,
+          -0.9937153720333344,
+          0.9789709710626976
+        ],
+        [
+          -0.9937153720333344,
+          1.0,
+          -0.9954749459257026
+        ],
+        [
+          0.9789709710626976,
+          -0.9954749459257026,
+          1.0
+        ]
+      ],
+      "original_fit_reproduced": true,
+      "sources": [
+        {
+          "path": "note1_mcp_reference/data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch133_walk_before_walk_fit_expected_refit_profile.csv",
+          "sha256": "87478ad912d4d7b4c3fd6f448afe5d6262bf52d7b6d0f8aeffda8ff76ff2d600"
+        },
+        {
+          "path": "note1_mcp_reference/data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch133_walk_before_walk_fit_expected_refit_coeffs.csv",
+          "sha256": "be9aa0b65f80c6b60df85153194b1307a02b3c3596b7bc60a625c9f946a61a5a"
+        }
+      ]
+    },
+    {
+      "channel": 154,
+      "bar": 7,
+      "sipm": "Right",
+      "bins": 20,
+      "selected_profile_hits": 2526,
+      "coefficients_abc": [
+        -0.5154782751768181,
+        422.56175090530337,
+        -55828.451920889696
+      ],
+      "standard_errors": [
+        0.08963612160739733,
+        67.98032569318967,
+        12683.81608924005
+      ],
+      "covariance_abc": [
+        [
+          0.00803463429681612,
+          -6.064474214778162,
+          1118.2020680419373
+        ],
+        [
+          -6.064474214778162,
+          4621.324681352143,
+          -859109.2064212189
+        ],
+        [
+          1118.2020680419373,
+          -859109.2064212189,
+          160879190.58566475
+        ]
+      ],
+      "correlation_abc": [
+        [
+          0.9999999999999998,
+          -0.9952377844363337,
+          0.9835292894202753
+        ],
+        [
+          -0.9952377844363337,
+          0.9999999999999998,
+          -0.9963575035727328
+        ],
+        [
+          0.9835292894202753,
+          -0.9963575035727328,
+          1.0
+        ]
+      ],
+      "original_fit_reproduced": true,
+      "sources": [
+        {
+          "path": "note1_mcp_reference/data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch154_walk_before_walk_fit_expected_refit_profile.csv",
+          "sha256": "970dc0e87fa171416f66569bf509b6f17f9a16c12efd10447d9fdb210c6548fe"
+        },
+        {
+          "path": "note1_mcp_reference/data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar7_ch154_walk_before_walk_fit_expected_refit_coeffs.csv",
+          "sha256": "a3f40a19f7a3362d365f05022e574a2c17809d817b2bcd9f9f3160f52891441e"
+        }
+      ]
+    },
+    {
+      "channel": 137,
+      "bar": 8,
+      "sipm": "Left",
+      "bins": 48,
+      "selected_profile_hits": 11703,
+      "coefficients_abc": [
+        0.12176797584467636,
+        198.5354033944996,
+        -15233.507643930243
+      ],
+      "standard_errors": [
+        0.027034833680707946,
+        13.122142659241097,
+        1561.5862372136544
+      ],
+      "covariance_abc": [
+        [
+          0.0007308822321435407,
+          -0.3522112693001187,
+          41.18884842013725
+        ],
+        [
+          -0.3522112693001187,
+          172.19062796947503,
+          -20381.474793032397
+        ],
+        [
+          41.18884842013725,
+          -20381.474793032397,
+          2438551.5762551
+        ]
+      ],
+      "correlation_abc": [
+        [
+          0.9999999999999999,
+          -0.9928297686398372,
+          0.9756408480075215
+        ],
+        [
+          -0.9928297686398372,
+          1.0,
+          -0.9946376130991198
+        ],
+        [
+          0.9756408480075215,
+          -0.9946376130991198,
+          1.0
+        ]
+      ],
+      "original_fit_reproduced": true,
+      "sources": [
+        {
+          "path": "note1_mcp_reference/data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch137_walk_before_walk_fit_expected_refit_profile.csv",
+          "sha256": "eb081c1156945577baa6c2a43b0757fd125aa0faafeabb953a9684fe249874d0"
+        },
+        {
+          "path": "note1_mcp_reference/data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch137_walk_before_walk_fit_expected_refit_coeffs.csv",
+          "sha256": "e1d10cf2f90f3141393c6f6aeac5f625425ad07ab19d406a18bd495f75fbb8a4"
+        }
+      ]
+    },
+    {
+      "channel": 150,
+      "bar": 8,
+      "sipm": "Right",
+      "bins": 25,
+      "selected_profile_hits": 12120,
+      "coefficients_abc": [
+        -0.22919492597485913,
+        388.8660362471671,
+        -51320.8567220141
+      ],
+      "standard_errors": [
+        0.03293769824869405,
+        26.24617067365447,
+        5126.105104848104
+      ],
+      "covariance_abc": [
+        [
+          0.001084891965922023,
+          -0.8588581426482643,
+          164.99505401669185
+        ],
+        [
+          -0.8588581426482643,
+          688.8614750305998,
+          -133849.6117729566
+        ],
+        [
+          164.99505401669185,
+          -133849.6117729566,
+          26276953.545949794
+        ]
+      ],
+      "correlation_abc": [
+        [
+          0.9999999999999998,
+          -0.9934871227193605,
+          0.9772151078050784
+        ],
+        [
+          -0.9934871227193605,
+          0.9999999999999999,
+          -0.9948638734433959
+        ],
+        [
+          0.9772151078050784,
+          -0.9948638734433959,
+          1.0000000000000002
+        ]
+      ],
+      "original_fit_reproduced": true,
+      "sources": [
+        {
+          "path": "note1_mcp_reference/data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch150_walk_before_walk_fit_expected_refit_profile.csv",
+          "sha256": "6d7f2f653d0928a2f3f853c149524f9819b5bbf3d69c63e6c1d1ed72897122ca"
+        },
+        {
+          "path": "note1_mcp_reference/data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch150_walk_before_walk_fit_expected_refit_coeffs.csv",
+          "sha256": "643ef4a4cf67938d70ab6c18524e0dc0f2e31fd3454fdd3696bc66f26f669062"
+        }
+      ]
+    }
+  ]
+}

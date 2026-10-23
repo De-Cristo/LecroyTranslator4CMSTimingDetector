@@ -10,17 +10,17 @@ particle-arrival time reference is not readily available. The CMS barrel timing
 layer (BTL) therefore motivates calibration procedures based on internal
 measurements and a consistent parametrization across about 330\,000 channels.
 
-We extend an earlier dual-threshold bench study to BTL sensors and TOFHIR2C
-readout exposed to a 180\,GeV pion beam. Two threshold-crossing times provide a
-leading-edge slope proxy. Its mean dependence on charge defines an inverse-slope
-walk correction with one amplitude parameter, AWC, per channel and configuration.
+The September 2025 test beam exposed BTL sensors with TOFHIR2C readout to
+180\,GeV pions. Separate acquisitions of the same reference module provide
+dual-threshold slopes and MCP-referenced timing; they contain different events.
+Extending an earlier bench study, the mean slope versus charge defines an
+inverse-slope walk correction with one amplitude parameter, AWC, per SiPM and configuration.
 
 Comparison with independent microchannel-plate (MCP) reference calibrations shows
 good agreement between the correction shapes. Internal charge and slope
 information provide candidate predictors of AWC, with the MCP results serving
-as benchmarks. These results support development of a reference-free calibration
-procedure; predictive precision and transfer to other operating conditions
-require further validation.
+as benchmarks. Predictive precision and transfer to other operating conditions
+remain to be validated for reference-free calibration.
 \Source{BTL and TOFHIR2C: Refs.~\cite{MTDTDR,TOFHIR2}; dual-threshold motivation and bench study: Ref.~\cite{DualThreshold}.}
 \end{frame}
 
@@ -33,23 +33,15 @@ W_i(Q)=a_i+b_i/Q+c_i/Q^2.
 \]
 \centering
 \small
-\begin{tabular}{rrrrr}
-\toprule
-Bar & SiPM & $a_i$ [ns] & $b_i$ [ns ADC] & $c_i$ [ns ADC$^2$]\\
-\midrule
-7 & Left & 0.0796 & 238.3 & $-2.156\times10^4$\\
-7 & Right & $-0.5155$ & 422.6 & $-5.583\times10^4$\\
-8 & Left & 0.1218 & 198.5 & $-1.523\times10^4$\\
-8 & Right & $-0.2292$ & 388.9 & $-5.132\times10^4$\\
-\bottomrule
-\end{tabular}
+\setlength{\tabcolsep}{4pt}
+\input{../assets/note2_quadratic_uncertainties/table.tex}
 \par\raggedright
 \normalsize
 With $Q$ expressed as raw, uncalibrated ADC values, the shape coefficients
 vary substantially across these four SiPMs.
-\Source{Two bars in the reference module. Earlier time-of-flight calibration experience: ALICE~\cite{ALICEPerformance,ALICEPID}.
-$Q$ is not gain-calibrated across SiPMs; $a_i$ includes an arbitrary timing offset.
-Coefficient variation alone is not a measure of calibration precision.}
+\Source{Original unweighted fits; $1\sigma$ errors assume independent profile means, fixed bins and selection. No systematics; coefficients strongly correlated.
+$Q$ is not gain-calibrated; $a_i$ includes an arbitrary offset. Coefficient variation does not measure calibration precision.
+Earlier experience: ALICE~\cite{ALICEPerformance,ALICEPID}.}
 \end{frame}
 
 \begin{frame}{TOFHIR2C measures the leading-edge slope with two thresholds}
@@ -81,10 +73,11 @@ Use the more precise $Q$ to estimate the mean slope:
 \[
 \overline S_i(Q)=c_{0,i}+c_{1,i}Q.
 \]
-Ten SEM-weighted profile means; no MCP time.
+Ten means; weights $1/\mathrm{SEM}^2$; no MCP time.
 }{Reference module, bar 8, right SiPM: 19\,312 hits. Both SiPMs required; other module unconstrained.
-Physical threshold crossings; peak-right charge selection. Points: mean slopes; bars: hit SD, not mean uncertainty.
-Band: conditional 68\% interval from 1000 hit-bootstrap refits with fixed bins.}
+Physical crossings; peak-right charge cut. Points: means; bars: hit standard deviation (SD).
+Standard error of the mean: $\mathrm{SEM}=\mathrm{SD}/\sqrt{N}$, for $N$ hits per bin.
+Band: conditional 68\% interval, 1000 hit-bootstrap refits, fixed bins.}
 
 \begin{frame}{One amplitude describes walk once the slope is calibrated}
 \large
@@ -125,6 +118,9 @@ testing a shared timing sensitivity to the same fractional charge change.
 \centering
 \includegraphics[width=\linewidth,height=28mm,keepaspectratio]{figures/internal_predictor.pdf}
 \fontsize{9}{10.5}\selectfont
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{2pt}
+\setlength{\belowdisplayshortskip}{2pt}
 \[
 K\simeq-\frac{dW}{d\ln Q}\bigg|_{Q_*},\quad
 \mathrm{AWC}_{\rm pred}=\frac{K\overline S(Q_*)^2}{c_1Q_*}.
@@ -142,10 +138,9 @@ K\simeq-\frac{dW}{d\ln Q}\bigg|_{Q_*},\quad
 \end{enumerate}
 \end{column}
 \end{columns}
-\Source{Ten SiPMs; hold out each of six bars and learn $K$ from the others' MCP-calibrated AWC.
-RMS error: \PredictorRMSE\,$\mu$A; fractional RMS: \PredictorFraction\%.
-Dashed line: equality. Horizontal bars: conditional reference-AWC intervals, not prediction intervals.
-Not a universal law: full uncertainties, correlations and transfer to new configurations remain unvalidated.}
+\Source{Leave-one-bar-out test: ten SiPMs, six bars; $K$ learned from other bars' MCP AWC.
+RMS: \PredictorRMSE\,$\mu$A (\PredictorFraction\%). Dashed: equality. Bars: conditional reference-AWC intervals, not prediction intervals.
+Full uncertainties and correlations unvalidated. Transfer across thresholds, overvoltage or charge-integration settings untested; recalibration may be needed.}
 \end{frame}
 
 \begin{frame}[t]{The single-amplitude model closely follows the MCP curves}
@@ -159,11 +154,10 @@ Not a universal law: full uncertainties, correlations and transfer to new config
 \includegraphics[width=\linewidth,height=43mm,keepaspectratio]{figures/comparison_ch154.pdf}
 \end{column}
 \end{columns}
-\Source{Reference module. Black: MCP quadratic; red: dual-threshold model.
-Different-event samples; AWC and offset fitted only in common populated charge intervals.
-Bar 8, left SiPM: \ExampleRMS\,ps RMS curve mismatch. Lower panels show curve differences, not event resolution.
-Bands propagate slope-fit statistics with the MCP curve fixed. MCP clock alignment uses LOWESS~\cite{LOWESS}.
-This benchmarks shapes, not AWC prediction.}
+\Source{Reference module; independent samples. Black: MCP quadratic; red: dual-threshold model.
+AWC and offset minimize squared curve differences on equally weighted $Q$-grid points in common populated intervals, excluding gaps.
+Bar 8, left SiPM: \ExampleRMS\,ps RMS mismatch. Lower panels: curve differences, not resolution.
+Bands: slope-fit statistics, MCP curve fixed. Clock alignment: LOWESS~\cite{LOWESS}. Shape benchmark, not AWC prediction.}
 \end{frame}
 
 \PlotSlide{The AWC correction describes the walk at the 10 ps scale}{awc_residual_envelope}{
@@ -173,9 +167,9 @@ This benchmarks shapes, not AWC prediction.}
 \item \textbf{Near-zero, flat trend:} little charge-dependent timing bias remains.
 \item \textbf{$\pm10$ ps guide:} supports the AWC walk description at this scale, not an all-point bound.
 \end{itemize}
-}{Residual definition: $r(Q)=\langle t_{\rm thr1}-t_{\rm MCP}\rangle_Q-\mathrm{AWC}/\overline S(Q)-b$, where $b$ removes a constant timing offset.
-Original Figure 5 and MCP-reference data~\cite{ReferenceNote}: points, error bars and linear fit retained; ns converted to ps.
-The guide is not an uncertainty band or single-hit resolution; this tests shape, not reference-free AWC prediction.}
+}{$r(Q)=\langle t_{\rm thr1}-t_{\rm MCP}\rangle_Q-\mathrm{AWC}/\overline S(Q)-b$; $b$ is a constant offset.
+Original Figure 5, MCP data~\cite{ReferenceNote}: points, error bars and fit retained in ps; error-bar definition unverified.
+Guide: residual-walk scale, not a confidence band or single-hit resolution. AWC prediction is not tested here.}
 
 \input{references.tex}
 \end{document}
