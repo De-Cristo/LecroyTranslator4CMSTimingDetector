@@ -10,14 +10,34 @@
     "sha256": "c32474f7dd29d949165ff43ad6d595b815a8611abedd73ca7769cfe781b66d15"
   },
   {
+    "file": "closure_values.tex",
+    "source": "review_2026-10-23_reference_transfer/closure_values.tex",
+    "sha256": "c7c58f2c92c8e88777598850db10811accb2bf3f2e458f9f472cd0814b049021"
+  },
+  {
+    "file": "figures/calibration_paths.pdf",
+    "source": "review_2026-10-23_reference_transfer/calibration_paths.pdf",
+    "sha256": "d1bfbf72e9e48c49e33789959f66a59b92e821f33b3297e8fb3888c4d5d654d0"
+  },
+  {
     "file": "figures/clock_residuals.pdf",
     "source": "slides_v2_2026-10-22/assets/note1_drift/clock_residuals.pdf",
-    "sha256": "7f22c22de28dbd59e516f8c7825278c717ea54018f0e715269814e5a9bb80ead"
+    "sha256": "b86f007cf40c77575c3659eeba6e8d5c7f33494d617cb6ae2735f56099c9084a"
+  },
+  {
+    "file": "figures/closure_timing.pdf",
+    "source": "review_2026-10-23_reference_transfer/closure_timing.pdf",
+    "sha256": "6944cfee9263fecdd89f244873f1c12a570626be2081d2adf3e15d3bb41cab84"
+  },
+  {
+    "file": "figures/end_difference_check.pdf",
+    "source": "review_2026-10-23_reference_transfer/end_difference_check.pdf",
+    "sha256": "f6bf53610976255583639f4131baeaac822612cf4f28d21727e884c9d2742ff2"
   },
   {
     "file": "figures/event_matching.pdf",
     "source": "slides_v2_2026-10-22/assets/note1_matching_ratio/event_matching.pdf",
-    "sha256": "ae9b2f89d7940caac9720e5c0022d205a114945e8eb8eb7d5060d6fbf987e150"
+    "sha256": "41749ba40fa5c9ae3e1d001e735d67b9f14b57ea10043df298ebdf48b9deb884"
   },
   {
     "file": "figures/mcp_waveform.pdf",
@@ -27,12 +47,7 @@
   {
     "file": "figures/setup.pdf",
     "source": "slides_v2_2026-10-22/assets/note1_setup/setup.pdf",
-    "sha256": "7e72987e83376b546a8d0e7daad641a659b9274ca3bf7fc345a8f5f0f320aeea"
-  },
-  {
-    "file": "figures/threshold_histograms.pdf",
-    "source": "slides_v2_2026-10-22/assets/note1_public_labels/threshold_histograms.pdf",
-    "sha256": "1534f9a07f4c7ac6eb3b97654e17ad930ff781a33b7cd680dbe4649a7fca9d7a"
+    "sha256": "cfa4879cafa646b4b9092f784a0db03b0325fb2fb0a3166a1b62f29c577ac490"
   },
   {
     "file": "figures/threshold_walk_profiles.pdf",

@@ -16,7 +16,8 @@ from prepare_note1_drift import prepare as prepare_note1_drift
 
 ROOT = Path(__file__).resolve().parent
 NOTES = ("note1_mcp_reference", "note2_dual_threshold")
-EXPECTED_SLIDES = {"note1_mcp_reference": 10, "note2_dual_threshold": 10}
+EXPECTED_SLIDES = {"note1_mcp_reference": 12, "note2_dual_threshold": 10}
+CLOSURE_FIGURES = {"calibration_paths", "closure_timing", "end_difference_check"}
 THRESHOLD_FIGURES = {
     "figures/threshold_walk_profiles.pdf": "vth1_3_vth2_60/upstream_walk_profiles.pdf",
     "figures/threshold_histograms.pdf": "before_after_all_thresholds.pdf",
@@ -53,10 +54,15 @@ def main():
         figures.update(re.findall(r"\{figures/([^}]+)\.pdf\}", source))
         (note / "figures").mkdir(exist_ok=True)
         assets = ["CMSlogo_black_label_1024.png", "review_values.tex"]
+        if name == "note1_mcp_reference":
+            assets.append("closure_values.tex")
         assets += [f"figures/{f}.pdf" for f in sorted(figures)]
         manifest = []
         for relative in assets:
             origin = original / relative
+            if name == "note1_mcp_reference" and (Path(relative).stem in CLOSURE_FIGURES
+                                                   or relative == "closure_values.tex"):
+                origin = ROOT.parent / "review_2026-10-23_reference_transfer" / Path(relative).name
             if name == "note1_mcp_reference" and relative in THRESHOLD_FIGURES:
                 origin = (ROOT.parent.parent / "Q_Walk/results/2026-10-22_bar_pair_by_threshold"
                           / THRESHOLD_FIGURES[relative])
@@ -94,7 +100,7 @@ def main():
         shutil.copy2(note / "build/main.pdf", note / "slides.pdf")
         pdf = PdfReader(note / "slides.pdf")
         assert len(pdf.pages) == EXPECTED_SLIDES[name], (name, len(pdf.pages))
-        reference_index = 9 if name == "note1_mcp_reference" else 8
+        reference_index = 11 if name == "note1_mcp_reference" else 8
         assert "References" in pdf.pages[reference_index].extract_text()
         for page in pdf.pages[reference_index + 1:]:
             text = page.extract_text()
@@ -110,6 +116,11 @@ def main():
         for page in pdf.pages:
             assert float(page.mediabox.width) > float(page.mediabox.height)
             combined.add_page(page)
+        if name == "note1_mcp_reference":
+            closure_review = PdfWriter()
+            for page in pdf.pages[8:11]:
+                closure_review.add_page(page)
+            closure_review.write(ROOT / "note1_transfer_review.pdf")
         preview = note / "preview"
         preview.mkdir(exist_ok=True)
         run(["pdftoppm", "-scale-to", "1100", "-png", "slides.pdf", "preview/slide"], note)

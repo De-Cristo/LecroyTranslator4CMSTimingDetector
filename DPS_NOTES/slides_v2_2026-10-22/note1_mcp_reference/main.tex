@@ -1,4 +1,5 @@
 \input{../slides_preamble.tex}
+\input{closure_values.tex}
 \begin{document}
 \TitleSlide
 
@@ -113,14 +114,47 @@ $t_{\rm MCP}$ is the MCP pulse time mapped to the FEBd clock.
 The +26\,ns display offset does not change the shape. Separate fits are made for every setting and all four channels.}
 \end{frame}
 
-\begin{frame}[t]{Final result: module-under-test bar minus reference bar}
+\begin{frame}[t]{Transfer the MCP calibration to the module under test}
+\small
+\textbf{Purpose:} use the calibrated reference bar when no MCP event time is available.
 \centering
-\includegraphics[width=\linewidth,height=47mm,keepaspectratio]{figures/threshold_histograms.pdf}
+\includegraphics[width=\linewidth,height=34mm,keepaspectratio]{figures/calibration_paths.pdf}
 \par\raggedright
-\Source{Difference of bar-average times: module under test (bar 3) minus reference module (bar 8). Corrected core widths: 62--69\,ps.
-For independent timing fluctuations, $\sigma_{\Delta t}=\sqrt{\sigma_{\rm ref}^2+\sigma_{\rm test}^2}\approx65\,\mathrm{ps}$; individual widths are not separately measured.
-Thresholds are fitted separately with identical before/after events. Display-only median centering; no per-file offsets.
-Dashed curves: truncated-normal fits within median $\pm2.5(1.4826\,\mathrm{MAD})$. In-sample validation.}
+\small
+First form $t_{\rm ref}=\tfrac12[(t_L-W_L^{\rm MCP})+(t_R-W_R^{\rm MCP})]$.
+Then fit $t_j-t_{\rm ref}$ versus $1/Q_j$ for each end $j$ of the module under test;
+subtract the resulting $W_j^{\rm ref}(Q_j)$.
+\Source{The downstream transfer fit uses TOFHIR times and the saved reference-bar calibration, not the event's MCP time.
+For closure, also fit the downstream channels directly against MCP on the same selected sample.
+Both routes use 20 inverse-charge bins and SEM-weighted quadratics. One setting only: $T_1=3$, $T_2=60$ DAC.
+This tests transfer to one bar, not yet to every module or operating condition.}
+\end{frame}
+
+\begin{frame}[t]{The transferred calibration agrees with direct MCP calibration}
+\centering
+\includegraphics[width=\linewidth,height=39mm,keepaspectratio]{figures/closure_timing.pdf}
+\par\raggedright\small
+Both routes give a bar-pair width of about 65\,ps, compared with \TransferBefore\,ps before correction.
+\Source{Same \TransferEvents\ events; common fitted charge domains, no extrapolation or threshold mixing.
+Bar times average the two corrected ends. Dashed curves: truncated Gaussian core fits within median
+$\pm2.5(1.4826\,\mathrm{MAD})$; global median removed only for display.
+Width difference (via reference minus direct): $+\TransferDelta$\,ps;
+68\% interval $[\TransferDeltaLow,\,\TransferDeltaHigh]$\,ps from 400 paired subset-bootstrap replicas.
+Cuts and calibrations fixed; no calibration or systematic uncertainty included. In-sample closure, not independent validation.}
+\end{frame}
+
+\begin{frame}[t]{Left-minus-right timing checks what the 65 ps width means}
+\centering
+\includegraphics[width=\linewidth,height=36mm,keepaspectratio]{figures/end_difference_check.pdf}
+\par\raggedright\small
+The independent-end estimate
+$\tfrac12\sqrt{\sigma_{L-R,\rm ref}^2+\sigma_{L-R,\rm DUT}^2}=\TransferLRProxy$\,ps
+does not reproduce the \TransferViaRef\,ps bar-pair width.
+\Source{Same events and core-fit definition as the closure test. Left-minus-right widths change little after correction:
+common timing fluctuations cancel, while hit-position spread contributes.
+The estimate assumes independent end fluctuations and negligible position spread.
+The measured 65\,ps is a two-bar difference width, not a single-bar resolution.
+Correlations and common timing terms require further study.}
 \end{frame}
 \input{references.tex}
 \end{document}

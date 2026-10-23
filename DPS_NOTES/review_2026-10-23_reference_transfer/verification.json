@@ -1,0 +1,17 @@
+{
+  "single_threshold": true,
+  "same_event_comparison": true,
+  "no_extrapolation": true,
+  "mcp_cancels_in_transfer_target": true,
+  "historical_width_reproduced": true,
+  "sample_covariance_identity": true,
+  "all_width_fits_ok": true,
+  "successful_bootstrap_min": 400,
+  "mcp_shift_invariance": true,
+  "maximum_internal_target_discrepancy_ps": 0.0,
+  "independent_polynomial_refit": true,
+  "saved_corrections_recomputed": true,
+  "bootstrap_intervals_recomputed": true,
+  "cache_selection_reproduced": true,
+  "source_cache_sha256": "e6ae420d1b58f52704894835edc5f6adc34796c2e5f20840d121eee8ab3a8d95"
+}

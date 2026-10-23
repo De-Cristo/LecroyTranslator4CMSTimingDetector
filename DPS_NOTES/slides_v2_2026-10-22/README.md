@@ -1,6 +1,6 @@
 # Short slide drafts: version 2, draft 1
 
-Note 1 has nine content slides and one reference slide. Note 2 has eight main
+Note 1 has eleven content slides and one reference slide. Note 2 has eight main
 slides, one reference slide and one exploratory backup slide,
 with no A4 cover pages. These are separate from the full
 notes, which remain unchanged. Each deck retains the CMS/contact title slide,
@@ -14,7 +14,8 @@ The titles follow the author's wording, including TOFHIR2C in Note 2.
   internal charge-to-slope mapping, benchmark the single-amplitude walk form,
   ending on corrected timing residuals. One post-reference backup slide
   retains the empirical AWC trend with inverse slope coefficient.
-- `both_notes_slides_v2.pdf`: both decks, 20 landscape pages, no covers.
+- `both_notes_slides_v2.pdf`: both decks, 22 landscape pages, no covers.
+- `note1_transfer_review.pdf`: the three new Note 1 closure slides only.
 
 Each reference slide uses two columns and preserves the original
 bibliography entries and numbering: eight entries in Note 1 and twelve in Note 2.
@@ -44,6 +45,22 @@ missing fonts, unresolved citations, unexpected page counts and portrait pages.
 These are first discussion drafts, not approved CMS submissions.
 
 ## Note 1 structure review
+
+### 23 October: reference-bar transfer closure replaces old slide 9
+
+Slides 9--11 now show the MCP -> reference -> module-under-test calibration
+path, direct-versus-transfer closure, and left-minus-right timing checks.
+The references move to slide 12. Only T1=3, T2=60 DAC is displayed, chosen
+to match slide 8 rather than by timing performance. The other five settings
+and their historical figures are retained but not shown on these slides.
+
+The separate `DPS_NOTES/review_2026-10-23_reference_transfer/` analysis refits
+both downstream paths on identical input events with the frozen upstream
+calibration. It saves the common-event sample, fitted profiles, curves, timing
+distributions and 400 paired block-bootstrap replicas. The slide build only
+copies these saved closure figures and numerical macros; it does not rerun
+this analysis. Results support in-sample closure for the tested bar, not an
+independent validation for all modules or a single-bar resolution measurement.
 
 ### 23 October: consistent LOWESS drift panels on slide 5
 
