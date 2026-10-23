@@ -58,7 +58,7 @@ clock refit is required. Numerical CSVs, fits, provenance, and a report are
 saved beside the script. This does not modify the original six-setting results.
 
 Run `python DPS_NOTES/review_2026-10-23_reference_transfer/prepare_slides.py`
-afterward to render the workflow and two-panel timing closure, and export
+afterward to render the workflow and bar-pair timing closure, and export
 the numerical LaTeX macros. Then rebuild the short slide decks.
 
 ## First results
@@ -85,3 +85,11 @@ The charge-dependent correction shapes differ by event-weighted RMS values
 of 2.87 ps (left) and 5.14 ps (right) after constant alignment. Differences reach
 12.88 and 23.05 ps at the common fitted-domain boundaries. These are shape
 differences, not timing resolutions or statistically independent deviations.
+
+## Slide 10 presentation update
+
+The displayed closure now contains only DUT minus reference, with explicit
+legend labels for the three calibration cases. The DUT-minus-MCP panel is
+not needed for this comparison and does not isolate the origin of the 65 ps
+width. Its original two-panel PDF is retained as `closure_timing_with_mcp.pdf`;
+all numerical results and the DUT-minus-MCP histogram CSV remain unchanged.

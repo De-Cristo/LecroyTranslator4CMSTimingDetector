@@ -25,9 +25,9 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "New slides 9-11 visually inspected: no overlap or clipping. Note 1 slides 1-8 and references unchanged apart from page counts and PDF-extraction whitespace; Note 2 text unchanged.",
+  "visual_review": "Slide 10 inspected: single enlarged DUT-minus-reference histogram, three explicit calibration cases. No clipping/overlap; other slide content unchanged.",
   "scientific_inputs": "Frozen reference corrections; four new downstream fits (two channels x two reference choices), 1512 common fitting events and 1456 common evaluation events at one threshold. 400 paired block-bootstrap replicas with fixed cuts and calibration.",
-  "combined_sha256": "94e9a0838fa2425a2ab6407ce454583faeb33be82b3720b67d0ff9d1a93b69ce",
+  "combined_sha256": "763441653800dccd38735d27abb1bfd49ca4db89d70268c759f85738a73988f1",
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 8,
@@ -271,5 +271,10 @@
     "in_sample": true,
     "independent_validation": false,
     "single_bar_resolution_claim": false
+  },
+  "note1_single_closure_panel": {
+    "numerical_results_unchanged": true,
+    "previous_two_panel_pdf_preserved": true,
+    "other_slide_content_unchanged": true
   }
 }

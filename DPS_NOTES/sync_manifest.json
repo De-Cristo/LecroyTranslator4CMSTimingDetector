@@ -23,7 +23,8 @@
     "short_note1_lowess_panels": "23 October: consistent three-panel drift illustration and on-slide LOWESS citation; numerical and visual checks passed.",
     "short_note1_coincidence_wording": "23 October: slide 7 describes four coincident bar-end channels plus trigger in physical terms; analysis selection unchanged.",
     "short_note1_walk_axis_definition": "23 October: slide 8 labels define each bar-end time minus clock-aligned MCP time. Existing display offset retained; points and fits unchanged.",
-    "short_note1_reference_transfer": "23 October: old slide 9 replaced by three review slides. One-threshold direct MCP vs reference-bar transfer closure and left-minus-right cross-check completed. In-sample scope and unresolved single-bar interpretation explicit; author review pending."
+    "short_note1_reference_transfer": "23 October: old slide 9 replaced by three review slides. One-threshold direct MCP vs reference-bar transfer closure and left-minus-right cross-check completed. In-sample scope and unresolved single-bar interpretation explicit; author review pending.",
+    "short_note1_single_closure_panel": "23 October: removed auxiliary DUT-minus-MCP panel from slide 10; enlarged DUT-minus-reference comparison with explicit three-case legend. Numerical results unchanged; original two-panel figure retained in analysis."
   },
   "files": [
     {
@@ -2243,12 +2244,12 @@
     },
     {
       "path": "DPS_NOTES/review_2026-10-23_reference_transfer/README.md",
-      "sha256": "20ba77ef6ae071d3cc7823647d02489965509627fe6674dc57cff0b21f1d25c5",
-      "bytes": 4892
+      "sha256": "cb8baec24c3d7c7fef5816ab30593a18be8a18aaad2551448f841818cf4e2cd7",
+      "bytes": 5306
     },
     {
       "path": "DPS_NOTES/review_2026-10-23_reference_transfer/calibration_paths.pdf",
-      "sha256": "d1bfbf72e9e48c49e33789959f66a59b92e821f33b3297e8fb3888c4d5d654d0",
+      "sha256": "940bf21c6690e004a0c5d74b00803cb33848ed87d235ef24e67935d0f846ade9",
       "bytes": 16324
     },
     {
@@ -2308,6 +2309,11 @@
     },
     {
       "path": "DPS_NOTES/review_2026-10-23_reference_transfer/closure_timing.pdf",
+      "sha256": "35d6be5f77c06cd23604d67e16806966a21b127c7f3bfbefcab6e4107212fd90",
+      "bytes": 26694
+    },
+    {
+      "path": "DPS_NOTES/review_2026-10-23_reference_transfer/closure_timing_with_mcp.pdf",
       "sha256": "6944cfee9263fecdd89f244873f1c12a570626be2081d2adf3e15d3bb41cab84",
       "bytes": 30738
     },
@@ -2353,8 +2359,8 @@
     },
     {
       "path": "DPS_NOTES/review_2026-10-23_reference_transfer/prepare_slides.py",
-      "sha256": "28756422f1b7f35520cb1465bc17a3acad9aca988bb21808fafdbba78b46a6db",
-      "bytes": 4059
+      "sha256": "ab0ffe724cc279e897e0d7d2846f1aab4308933292547507b26ab96c6ab84239",
+      "bytes": 3869
     },
     {
       "path": "DPS_NOTES/review_2026-10-23_reference_transfer/ref_lr_histogram.csv",
@@ -2398,12 +2404,12 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/README.md",
-      "sha256": "50e9a1db0187ca6f5a5b91906d1caa3a8684ece531c590a5e0f9cdbc341cf065",
-      "bytes": 14292
+      "sha256": "1983af64f50e74ad9cd331b066f3b59b288e5f5b6cdb474654d874e947ed06f9",
+      "bytes": 14606
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_drift/clock_residuals.pdf",
-      "sha256": "b86f007cf40c77575c3659eeba6e8d5c7f33494d617cb6ae2735f56099c9084a",
+      "sha256": "40f66200c675ea5110496e0c76f7233cf76afe384761e3b7fafd657b06bb69be",
       "bytes": 88521
     },
     {
@@ -2448,7 +2454,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_matching_ratio/event_matching.pdf",
-      "sha256": "41749ba40fa5c9ae3e1d001e735d67b9f14b57ea10043df298ebdf48b9deb884",
+      "sha256": "fb8f80e2a20816c3eed097218b602facb34f624d92e73c6c38a64482f45e3389",
       "bytes": 40739
     },
     {
@@ -2493,7 +2499,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_setup/setup.pdf",
-      "sha256": "cfa4879cafa646b4b9092f784a0db03b0325fb2fb0a3166a1b62f29c577ac490",
+      "sha256": "1e2ee2018720d8207d8cf0413ed74752e671d39e47ac84e30f9263c0a2ba0748",
       "bytes": 53217
     },
     {
@@ -2533,8 +2539,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/both_notes_slides_v2.pdf",
-      "sha256": "94e9a0838fa2425a2ab6407ce454583faeb33be82b3720b67d0ff9d1a93b69ce",
-      "bytes": 1815038
+      "sha256": "763441653800dccd38735d27abb1bfd49ca4db89d70268c759f85738a73988f1",
+      "bytes": 1810993
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build.py",
@@ -2543,7 +2549,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_report.json",
-      "sha256": "ee87d40be24d42c6fca0e9287073e3628564256d6cc7a93873c36cab276d1b51",
+      "sha256": "cef9c43702739f3c973324f26ece5fdfc4160b86e0ed8c355adf09109f0e3ace",
       "bytes": 772
     },
     {
@@ -2553,7 +2559,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/asset_manifest.json",
-      "sha256": "ccea114c7eca1cff1a39c9fac083f17329250dfa0e86e602c72b708c12277a41",
+      "sha256": "fa87132b13ee249bc35cb35bb2b11d13874a7a79defadc6c9d4d642e67fd53b9",
       "bytes": 2254
     },
     {
@@ -2568,7 +2574,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/calibration_paths.pdf",
-      "sha256": "d1bfbf72e9e48c49e33789959f66a59b92e821f33b3297e8fb3888c4d5d654d0",
+      "sha256": "940bf21c6690e004a0c5d74b00803cb33848ed87d235ef24e67935d0f846ade9",
       "bytes": 16324
     },
     {
@@ -2583,13 +2589,13 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/clock_residuals.pdf",
-      "sha256": "b86f007cf40c77575c3659eeba6e8d5c7f33494d617cb6ae2735f56099c9084a",
+      "sha256": "40f66200c675ea5110496e0c76f7233cf76afe384761e3b7fafd657b06bb69be",
       "bytes": 88521
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/closure_timing.pdf",
-      "sha256": "6944cfee9263fecdd89f244873f1c12a570626be2081d2adf3e15d3bb41cab84",
-      "bytes": 30738
+      "sha256": "35d6be5f77c06cd23604d67e16806966a21b127c7f3bfbefcab6e4107212fd90",
+      "bytes": 26694
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/end_difference_check.pdf",
@@ -2598,7 +2604,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/event_matching.pdf",
-      "sha256": "41749ba40fa5c9ae3e1d001e735d67b9f14b57ea10043df298ebdf48b9deb884",
+      "sha256": "fb8f80e2a20816c3eed097218b602facb34f624d92e73c6c38a64482f45e3389",
       "bytes": 40739
     },
     {
@@ -2608,7 +2614,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/setup.pdf",
-      "sha256": "cfa4879cafa646b4b9092f784a0db03b0325fb2fb0a3166a1b62f29c577ac490",
+      "sha256": "1e2ee2018720d8207d8cf0413ed74752e671d39e47ac84e30f9263c0a2ba0748",
       "bytes": 53217
     },
     {
@@ -2653,13 +2659,13 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/slides.pdf",
-      "sha256": "02c28ca29d539039f35384be9db6b0f9e00164dc8f9c9595ca476f88a2cde07c",
-      "bytes": 772341
+      "sha256": "ba23865a9f04a0cd83547fdd1ac45e897eb087e087ae5c0d0e8f51c1a3bd0ebd",
+      "bytes": 768284
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_transfer_review.pdf",
-      "sha256": "3b51a34b9c92eb65febed599428f18506afe2ddcc422dfdf65f6eea037701ab8",
-      "bytes": 344021
+      "sha256": "94b332b3ab0a7fa61523f0dcb91cd15362788c4b7062732b3fcefb4e34377b22",
+      "bytes": 339976
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/CMSlogo_black_label_1024.png",
@@ -2738,7 +2744,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/slides.pdf",
-      "sha256": "92774f12019cfee670eedf8540897a297b3b4c86e2aeafb4b0392f3c8f6be24b",
+      "sha256": "181956dee3c72d70d9984fc6d93a445369a9d71048e835cebeafe6b65dff2cd0",
       "bytes": 961917
     },
     {
@@ -2778,8 +2784,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
-      "sha256": "1c84016cf10c029722fa938a720b294d4c9d183d8dbac3bc38415b65824a1a9b",
-      "bytes": 10373
+      "sha256": "7ee508bbf54230eea2475db97852524fc72111faea49cf80ce7b640a131f9e1d",
+      "bytes": 10514
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -4960,7 +4966,7 @@
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "New reference-transfer closure: 1512 fitting events, 1456 common evaluation events, 400 paired block-bootstrap replicas; old 64.7 ps reproduced. Note 1 now 12 pages; three-page extract provided. Earlier slides/full notes and Note 2 content unchanged.",
+    "latest_change": "Note 1 slide 10 now displays only DUT minus reference. No numerical changes. Both decks, 22-page combined PDF and three-page closure extract rebuilt and checked.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 26,
@@ -4980,7 +4986,7 @@
     "n2_3_n2_4_closure_changed_files_hash_checked": 17,
     "title_update_changed_files_hash_checked": 17,
     "github_link_verification": "DPS_NOTES/review_2026-10-22_publication/repository_links.json",
-    "latest_changed_files_hash_checked": 108,
+    "latest_changed_files_hash_checked": 109,
     "original_text_verification": "DPS_NOTES/review_2026-10-22_publication/original_text_check.json",
     "language_review_verification": "DPS_NOTES/review_2026-10-22_publication/language_review_verification.json",
     "short_slides_v2": {

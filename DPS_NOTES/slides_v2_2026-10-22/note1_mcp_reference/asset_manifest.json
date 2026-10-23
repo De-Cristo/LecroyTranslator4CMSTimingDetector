@@ -17,17 +17,17 @@
   {
     "file": "figures/calibration_paths.pdf",
     "source": "review_2026-10-23_reference_transfer/calibration_paths.pdf",
-    "sha256": "d1bfbf72e9e48c49e33789959f66a59b92e821f33b3297e8fb3888c4d5d654d0"
+    "sha256": "940bf21c6690e004a0c5d74b00803cb33848ed87d235ef24e67935d0f846ade9"
   },
   {
     "file": "figures/clock_residuals.pdf",
     "source": "slides_v2_2026-10-22/assets/note1_drift/clock_residuals.pdf",
-    "sha256": "b86f007cf40c77575c3659eeba6e8d5c7f33494d617cb6ae2735f56099c9084a"
+    "sha256": "40f66200c675ea5110496e0c76f7233cf76afe384761e3b7fafd657b06bb69be"
   },
   {
     "file": "figures/closure_timing.pdf",
     "source": "review_2026-10-23_reference_transfer/closure_timing.pdf",
-    "sha256": "6944cfee9263fecdd89f244873f1c12a570626be2081d2adf3e15d3bb41cab84"
+    "sha256": "35d6be5f77c06cd23604d67e16806966a21b127c7f3bfbefcab6e4107212fd90"
   },
   {
     "file": "figures/end_difference_check.pdf",
@@ -37,7 +37,7 @@
   {
     "file": "figures/event_matching.pdf",
     "source": "slides_v2_2026-10-22/assets/note1_matching_ratio/event_matching.pdf",
-    "sha256": "41749ba40fa5c9ae3e1d001e735d67b9f14b57ea10043df298ebdf48b9deb884"
+    "sha256": "fb8f80e2a20816c3eed097218b602facb34f624d92e73c6c38a64482f45e3389"
   },
   {
     "file": "figures/mcp_waveform.pdf",
@@ -47,7 +47,7 @@
   {
     "file": "figures/setup.pdf",
     "source": "slides_v2_2026-10-22/assets/note1_setup/setup.pdf",
-    "sha256": "cfa4879cafa646b4b9092f784a0db03b0325fb2fb0a3166a1b62f29c577ac490"
+    "sha256": "1e2ee2018720d8207d8cf0413ed74752e671d39e47ac84e30f9263c0a2ba0748"
   },
   {
     "file": "figures/threshold_walk_profiles.pdf",

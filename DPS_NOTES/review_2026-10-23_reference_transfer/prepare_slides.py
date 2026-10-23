@@ -11,14 +11,12 @@ from run import OUT, COLORS, export, histogram
 def main():
     report = json.loads((OUT / "report.json").read_text())
     events = pd.read_csv(OUT / "closure_events.csv.gz")
-    fig, axes = plt.subplots(1, 2, figsize=(12.5, 4.6), constrained_layout=True)
-    for ax, prefix, title, xlabel in (
-        (axes[0], 'pair', 'Module under test minus reference bar', r'$t_{\rm DUT}-t_{\rm ref}$ [ps], centered'),
-        (axes[1], 'dut_mcp', 'Module under test minus MCP', r'$t_{\rm DUT}-t_{\rm MCP}$ [ps], centered')):
-        table = histogram(ax, events, report['stats'], [f'{prefix}_{mode}' for mode in ('raw', 'direct', 'transfer')],
-                          ['Before', 'Direct MCP', 'Via reference'], list(COLORS.values()), xlabel)
-        table.to_csv(OUT / f'{prefix}_closure_histogram.csv', index=False)
-        ax.set_title(title, fontsize=13)
+    fig, ax = plt.subplots(figsize=(12.5, 4.2), constrained_layout=True)
+    table = histogram(ax, events, report['stats'], ['pair_raw', 'pair_direct', 'pair_transfer'],
+                      ['Both raw', 'Both calibrated by MCP', 'Ref by MCP; DUT by ref'],
+                      list(COLORS.values()), r'$t_{\rm DUT}-t_{\rm ref}$ [ps], centered')
+    table.to_csv(OUT / 'pair_closure_histogram.csv', index=False)
+    ax.set_title('Module under test minus reference bar', fontsize=13)
     fig.suptitle(f"CMS Preliminary Phase 2 | T1=3, T2=60 DAC | Same {len(events):,} events", fontsize=14)
     export(fig, 'closure_timing')
 

@@ -62,6 +62,11 @@ copies these saved closure figures and numerical macros; it does not rerun
 this analysis. Results support in-sample closure for the tested bar, not an
 independent validation for all modules or a single-bar resolution measurement.
 
+Slide 10 now shows only DUT minus reference, enlarged, with legend labels
+identifying the calibration of each bar. The auxiliary DUT-minus-MCP comparison
+is retained in the saved analysis but is not presented in the deck. No numerical
+results or uncertainty definitions were changed for this presentation update.
+
 ### 23 October: consistent LOWESS drift panels on slide 5
 
 `prepare_note1_drift.py` redraws three panels from the same frozen matched-event
