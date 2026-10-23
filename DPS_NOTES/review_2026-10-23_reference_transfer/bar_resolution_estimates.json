@@ -1,0 +1,34 @@
+{
+  "ref_lr_raw": {
+    "sigma_bar_estimate_ps": 27.312320502235174,
+    "p16_ps": 26.679947241896944,
+    "p84_ps": 27.767317221688607,
+    "conditional_bootstrap_std_ps": 0.5580542967867487
+  },
+  "ref_lr_corrected": {
+    "sigma_bar_estimate_ps": 26.951277264040435,
+    "p16_ps": 26.498784188448262,
+    "p84_ps": 27.5122527304179,
+    "conditional_bootstrap_std_ps": 0.516169793136552
+  },
+  "dut_lr_raw": {
+    "sigma_bar_estimate_ps": 44.457872507969554,
+    "p16_ps": 43.674521283596356,
+    "p84_ps": 45.64674237560486,
+    "conditional_bootstrap_std_ps": 0.9837651022411399
+  },
+  "dut_lr_direct": {
+    "sigma_bar_estimate_ps": 44.65755477747589,
+    "p16_ps": 43.63810117882027,
+    "p84_ps": 45.18640821726958,
+    "conditional_bootstrap_std_ps": 0.7825788948947662
+  },
+  "dut_lr_transfer": {
+    "sigma_bar_estimate_ps": 44.309279439145655,
+    "p16_ps": 43.48654942117004,
+    "p84_ps": 45.1819251032732,
+    "conditional_bootstrap_std_ps": 0.8602744921497713
+  },
+  "combined_transfer_estimate_ps": 51.862159524835434,
+  "interpretation": "Half-difference core width estimates bar-average resolution only for negligible within-bar covariance and position spread. Quadrature also assumes negligible inter-bar covariance."
+}

@@ -3,7 +3,9 @@ import json
 
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch
+import numpy as np
 import pandas as pd
+from scipy.special import ndtr
 
 from run import OUT, COLORS, export, histogram
 
@@ -19,6 +21,41 @@ def main():
     ax.set_title('Module under test minus reference bar', fontsize=13)
     fig.suptitle(f"CMS Preliminary Phase 2 | T1=3, T2=60 DAC | Same {len(events):,} events", fontsize=14)
     export(fig, 'closure_timing')
+
+    # Scale the observable, fitted parameters and bin widths together; no refit.
+    fig, axes = plt.subplots(1, 2, figsize=(12.5, 4.6), constrained_layout=True)
+    estimates = {}
+    for ax, title, keys, labels, colors, name in (
+        (axes[0], 'Reference bar', ['ref_lr_raw', 'ref_lr_corrected'],
+         ['Before', 'MCP calibrated'], [COLORS['raw'], COLORS['direct']], 'ref'),
+        (axes[1], 'Module under test', ['dut_lr_raw', 'dut_lr_direct', 'dut_lr_transfer'],
+         ['Before', 'Direct MCP', 'Via reference'], list(COLORS.values()), 'dut')):
+        edges = np.arange(-200, 205, 5)
+        table = {'bin_low_ps': edges[:-1], 'bin_high_ps': edges[1:]}
+        for key, label, color in zip(keys, labels, colors):
+            s, ci = report['stats'][key], report['intervals'][key]
+            x = events[key].to_numpy()/2
+            median = s['median_ps']/2
+            lo, hi, mu, sigma = [s[k]/2 for k in ('fit_low_ps', 'fit_high_ps', 'fit_mean_ps', 'sigma_ps')]
+            table[key] = np.histogram(x-median, edges)[0]
+            ax.hist(x-median, bins=edges, histtype='step', lw=1.6, color=color,
+                    label=f"{label}: {sigma:.1f} ps")
+            grid = np.linspace(lo, hi, 300)
+            norm = ndtr((hi-mu)/sigma)-ndtr((lo-mu)/sigma)
+            count = np.sum((x >= lo) & (x <= hi))
+            y = count*5/(norm*sigma*np.sqrt(2*np.pi))*np.exp(-.5*((grid-mu)/sigma)**2)
+            ax.plot(grid-median, y, color=color, ls='--', lw=1)
+            estimates[key] = dict(sigma_bar_estimate_ps=sigma, p16_ps=ci['p16']/2,
+                                  p84_ps=ci['p84']/2, conditional_bootstrap_std_ps=ci['std_ps']/2)
+        pd.DataFrame(table).to_csv(OUT / f'{name}_half_difference_histogram.csv', index=False)
+        ax.set(title=title, xlim=(-175, 175), xlabel=r'$(t_L-t_R)/2$ [ps], centered', ylabel='Events / 5 ps')
+        ax.legend(fontsize=10, loc='upper right')
+        ax.grid(alpha=.2)
+    fig.suptitle(f"CMS Preliminary Phase 2 | T1=3, T2=60 DAC | Same {len(events):,} events", fontsize=14)
+    export(fig, 'bar_resolution_check')
+    estimates['combined_transfer_estimate_ps'] = report['lr_core_proxy_ps']['transfer']
+    estimates['interpretation'] = 'Half-difference core width estimates bar-average resolution only for negligible within-bar covariance and position spread. Quadrature also assumes negligible inter-bar covariance.'
+    (OUT / 'bar_resolution_estimates.json').write_text(json.dumps(estimates, indent=2)+'\n')
 
     fig, ax = plt.subplots(figsize=(12.5, 3.4))
     fig.subplots_adjust(left=.01, right=.99, top=.88, bottom=.04)
@@ -64,6 +101,8 @@ def main():
         'TransferDeltaLow': f"{ci['pair_transfer_minus_direct']['p16']:.2f}",
         'TransferDeltaHigh': f"{ci['pair_transfer_minus_direct']['p84']:.2f}",
         'TransferLRProxy': f"{report['lr_core_proxy_ps']['transfer']:.1f}",
+        'TransferRefBarEstimate': f"{s['ref_lr_corrected']['sigma_ps']/2:.1f}",
+        'TransferDUTBarEstimate': f"{s['dut_lr_transfer']['sigma_ps']/2:.1f}",
     }
     text = '\n'.join('\\newcommand{\\'+key+'}{'+value+'}' for key,value in values.items())+'\n'
     (OUT / 'closure_values.tex').write_text(text)

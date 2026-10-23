@@ -25,9 +25,9 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "Slide 10 inspected: single enlarged DUT-minus-reference histogram, three explicit calibration cases. No clipping/overlap; other slide content unchanged.",
+  "visual_review": "Slide 11 inspected: half-difference axes, 5 ps bins, 27.0 and 44.3 ps bar estimates, quadrature 51.9 ps. No clipping/overlap; other slide content unchanged.",
   "scientific_inputs": "Frozen reference corrections; four new downstream fits (two channels x two reference choices), 1512 common fitting events and 1456 common evaluation events at one threshold. 400 paired block-bootstrap replicas with fixed cuts and calibration.",
-  "combined_sha256": "763441653800dccd38735d27abb1bfd49ca4db89d70268c759f85738a73988f1",
+  "combined_sha256": "40177aabc03a8cc00b48f571ecef41a69e0d11397e2371741c2268fac5a1d12d",
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 8,
@@ -276,5 +276,13 @@
     "numerical_results_unchanged": true,
     "previous_two_panel_pdf_preserved": true,
     "other_slide_content_unchanged": true
+  },
+  "note1_half_difference_convention": {
+    "exact_half_scaling_verified": true,
+    "histogram_counts_unchanged": true,
+    "conditional_intervals_halved": true,
+    "no_refit": true,
+    "original_results_preserved": true,
+    "quadrature_unchanged": true
   }
 }

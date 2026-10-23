@@ -12,32 +12,32 @@
   {
     "file": "closure_values.tex",
     "source": "review_2026-10-23_reference_transfer/closure_values.tex",
-    "sha256": "c7c58f2c92c8e88777598850db10811accb2bf3f2e458f9f472cd0814b049021"
+    "sha256": "f40d3789cf8092c6c9741d55d3e356bcd64cad4ff54ee2a897c019004be02891"
+  },
+  {
+    "file": "figures/bar_resolution_check.pdf",
+    "source": "review_2026-10-23_reference_transfer/bar_resolution_check.pdf",
+    "sha256": "ebf90c96d896de86b5abb492b349796f95e89c2bc76ad07f73a593535c2eb036"
   },
   {
     "file": "figures/calibration_paths.pdf",
     "source": "review_2026-10-23_reference_transfer/calibration_paths.pdf",
-    "sha256": "940bf21c6690e004a0c5d74b00803cb33848ed87d235ef24e67935d0f846ade9"
+    "sha256": "94e08aaab4671304953215a9738c8ee3c79822ce92b7a8bec20984fd78b23719"
   },
   {
     "file": "figures/clock_residuals.pdf",
     "source": "slides_v2_2026-10-22/assets/note1_drift/clock_residuals.pdf",
-    "sha256": "40f66200c675ea5110496e0c76f7233cf76afe384761e3b7fafd657b06bb69be"
+    "sha256": "981178023d1b512a523f8cfe5146afd85ed1ab939a5d018d3a286b78fc7896d9"
   },
   {
     "file": "figures/closure_timing.pdf",
     "source": "review_2026-10-23_reference_transfer/closure_timing.pdf",
-    "sha256": "35d6be5f77c06cd23604d67e16806966a21b127c7f3bfbefcab6e4107212fd90"
-  },
-  {
-    "file": "figures/end_difference_check.pdf",
-    "source": "review_2026-10-23_reference_transfer/end_difference_check.pdf",
-    "sha256": "f6bf53610976255583639f4131baeaac822612cf4f28d21727e884c9d2742ff2"
+    "sha256": "cd4116fe64f864b3448c1f8c7a32bd2448c15c90d40264d66cb5693cc74d4928"
   },
   {
     "file": "figures/event_matching.pdf",
     "source": "slides_v2_2026-10-22/assets/note1_matching_ratio/event_matching.pdf",
-    "sha256": "fb8f80e2a20816c3eed097218b602facb34f624d92e73c6c38a64482f45e3389"
+    "sha256": "29c2f1232af5aec528efe9b19bf99eb87daaeb1bed73757d5a099cbd668ebe84"
   },
   {
     "file": "figures/mcp_waveform.pdf",
@@ -47,7 +47,7 @@
   {
     "file": "figures/setup.pdf",
     "source": "slides_v2_2026-10-22/assets/note1_setup/setup.pdf",
-    "sha256": "1e2ee2018720d8207d8cf0413ed74752e671d39e47ac84e30f9263c0a2ba0748"
+    "sha256": "a2e79ba7944e91c95349d10e2acef4832de5faf5186ea6a359d17100ca68b1ee"
   },
   {
     "file": "figures/threshold_walk_profiles.pdf",

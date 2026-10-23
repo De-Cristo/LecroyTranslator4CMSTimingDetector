@@ -145,16 +145,16 @@ Cuts and calibrations fixed; no calibration or systematic uncertainty included. 
 
 \begin{frame}[t]{Left-minus-right timing checks what the 65 ps width means}
 \centering
-\includegraphics[width=\linewidth,height=36mm,keepaspectratio]{figures/end_difference_check.pdf}
+\includegraphics[width=\linewidth,height=36mm,keepaspectratio]{figures/bar_resolution_check.pdf}
 \par\raggedright\small
-The independent-end estimate
-$\tfrac12\sqrt{\sigma_{L-R,\rm ref}^2+\sigma_{L-R,\rm DUT}^2}=\TransferLRProxy$\,ps
-does not reproduce the \TransferViaRef\,ps bar-pair width.
-\Source{Same events and core-fit definition as the closure test. Left-minus-right widths change little after correction:
-common timing fluctuations cancel, while hit-position spread contributes.
-The estimate assumes independent end fluctuations and negligible position spread.
-The measured 65\,ps is a two-bar difference width, not a single-bar resolution.
-Correlations and common timing terms require further study.}
+For $t_{\rm bar}=(t_L+t_R)/2$, estimate $\sigma_{\rm bar}^{(L-R)}=\sigma(t_L-t_R)/2$.
+Combine the bar estimates:
+$\sqrt{\TransferRefBarEstimate^2+\TransferDUTBarEstimate^2}=\TransferLRProxy$\,ps,
+compared with the measured \TransferViaRef\,ps bar-pair width.
+\Source{The plotted variable is $(t_L-t_R)/2$: widths, fit curves and bins are rescaled by one half, with no refit.
+Same events as the closure test. Interpreting these widths as bar-average resolutions requires independent end fluctuations
+and negligible position spread; quadrature also assumes independent bars.
+Common timing fluctuations cancel in the half-difference. Correlations and position effects require further study to explain the 65\,ps width.}
 \end{frame}
 \input{references.tex}
 \end{document}

@@ -17,7 +17,7 @@ from prepare_note1_drift import prepare as prepare_note1_drift
 ROOT = Path(__file__).resolve().parent
 NOTES = ("note1_mcp_reference", "note2_dual_threshold")
 EXPECTED_SLIDES = {"note1_mcp_reference": 12, "note2_dual_threshold": 10}
-CLOSURE_FIGURES = {"calibration_paths", "closure_timing", "end_difference_check"}
+CLOSURE_FIGURES = {"calibration_paths", "closure_timing", "bar_resolution_check"}
 THRESHOLD_FIGURES = {
     "figures/threshold_walk_profiles.pdf": "vth1_3_vth2_60/upstream_walk_profiles.pdf",
     "figures/threshold_histograms.pdf": "before_after_all_thresholds.pdf",

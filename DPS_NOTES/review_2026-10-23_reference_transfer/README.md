@@ -93,3 +93,13 @@ legend labels for the three calibration cases. The DUT-minus-MCP panel is
 not needed for this comparison and does not isolate the origin of the 65 ps
 width. Its original two-panel PDF is retained as `closure_timing_with_mcp.pdf`;
 all numerical results and the DUT-minus-MCP histogram CSV remain unchanged.
+
+## Slide 11 bar-average convention
+
+The slide now plots (tL-tR)/2, not tL-tR, with 5 ps bins. The saved core fits
+are rescaled exactly, without refitting: reference 26.95 ps and downstream
+44.31 ps via reference calibration. Their quadrature remains 51.86 ps.
+`bar_resolution_estimates.json` also halves the conditional bootstrap intervals;
+the original unscaled histograms and reports are retained. The interpretation
+as bar-average resolution assumes negligible end covariance and position
+spread; combining the two estimates also assumes negligible bar covariance.

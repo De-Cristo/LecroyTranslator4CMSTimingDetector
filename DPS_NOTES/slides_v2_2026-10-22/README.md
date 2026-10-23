@@ -67,6 +67,12 @@ identifying the calibration of each bar. The auxiliary DUT-minus-MCP comparison
 is retained in the saved analysis but is not presented in the deck. No numerical
 results or uncertainty definitions were changed for this presentation update.
 
+Slide 11 uses the bar-average convention explicitly: histograms show
+(tL-tR)/2, with widths 27.0 ps for the calibrated reference and 44.3 ps for
+the downstream bar calibrated via reference. Their quadrature is 51.9 ps.
+The independent-end and negligible-position-spread assumptions remain visible;
+the original unscaled analysis outputs are preserved.
+
 ### 23 October: consistent LOWESS drift panels on slide 5
 
 `prepare_note1_drift.py` redraws three panels from the same frozen matched-event
