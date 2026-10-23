@@ -29,13 +29,14 @@ def main():
                 or "undefined" in line.lower()]
     assert not problems, problems
     reader = PdfReader(build / "submission.pdf")
-    assert len(reader.pages) == 11
+    assert len(reader.pages) == 12
     text = "\n".join(page.extract_text() for page in reader.pages)
     for phrase in ("draft", "internal review", "internal discussion", "not approved",
-                   "pending approval", "not for public", "backup:"):
+                   "pending approval", "not for public"):
         assert phrase not in (text + str(reader.metadata)).lower(), phrase
     assert "Abstract" in reader.pages[1].extract_text()
     assert "References" in reader.pages[10].extract_text()
+    assert "Backup: left-minus-right timing check" in reader.pages[11].extract_text()
     assert "cms-dpg-conveners-mtd@cern.ch" in reader.pages[0].extract_text()
     for number in (3, 4, 5, 6, 8, 9, 10):
         assert "Preliminary Phase 2" in reader.pages[number - 1].extract_text(), number
@@ -48,7 +49,8 @@ def main():
     def content(page):
         value = re.sub(r"\s+", "", page.extract_text())
         for label in ("Internal review draft \u2013 22 October 2026", "V2 slides \u2013 draft 1",
-                      "Discussion draft; not approved for public release."):
+                      "Discussion draft; not approved for public release.",
+                      "Internal discussion only \u2013 diagnostic, not for public presentation"):
             value = value.replace(re.sub(r"\s+", "", label), "")
         return re.sub(r"\d+/(?:11|12)$", "", value)
 
@@ -59,7 +61,7 @@ def main():
     target = output / "note1_mcp_reference.pdf"
     shutil.copy2(build / "submission.pdf", target)
     report = {
-        "pages": 11, "reference_page": 11, "backup_pages": 0,
+        "pages": 12, "reference_page": 11, "backup_pages": 1,
         "cover_pages": 0, "review_notices_removed": True,
         "scientific_content_unchanged": True, "cms_preliminary_labels_retained": True,
         "citation_destinations": citations, "overflow": 0, "undefined_citations": 0,

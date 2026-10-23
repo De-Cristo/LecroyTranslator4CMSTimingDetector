@@ -1,7 +1,7 @@
 {
-  "pages": 11,
+  "pages": 12,
   "reference_page": 11,
-  "backup_pages": 0,
+  "backup_pages": 1,
   "cover_pages": 0,
   "review_notices_removed": true,
   "scientific_content_unchanged": true,
@@ -17,9 +17,6 @@
   },
   "overflow": 0,
   "undefined_citations": 0,
-  "sha256": "41e4486a4749d2c75caaa222b82944f9677237ec02795f126a0bc5f22e24163e",
-  "source": "note1_mcp_reference/submission.tex",
-  "review_pdfs_unchanged": true,
-  "all_seven_body_citation_links_checked": true,
-  "visual_review": "Title, closure result and references inspected; no overlap or clipping."
+  "sha256": "c5f44a468ce9b9e801ca8ea4c193c4af8f21d8374f5cf324c70a70d05e9f5e23",
+  "source": "note1_mcp_reference/submission.tex"
 }

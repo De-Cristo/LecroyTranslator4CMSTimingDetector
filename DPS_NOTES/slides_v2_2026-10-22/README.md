@@ -2,10 +2,11 @@
 
 ## Note 1 Submission Presentation
 
-`submission/note1_mcp_reference.pdf` is the 11-slide submission-format copy:
-title, abstract, main results, and references. Draft/review notices and the
-internal backup are omitted; CMS Preliminary Phase 2 labels and scientific
-qualifications are retained. It shares the reviewed source and figures.
+`submission/note1_mcp_reference.pdf` is the 12-slide submission-format copy:
+title, abstract, main results, references on slide 11, and the left-minus-right
+backup on slide 12. Draft/review notices are omitted, including on the backup;
+existing plot labels and scientific qualifications are retained. It shares the
+reviewed source and figures.
 
 Rebuild with `python build_note1_submission.py`. This compiles the saved assets
 without rerunning analysis or overwriting either review deck. The accompanying

@@ -28,7 +28,7 @@
     "short_note1_half_difference_convention": "23 October: slide 11 plots (tL-tR)/2, with exactly halved widths, fit curves, bin edges and bootstrap intervals. Bar estimates 27.0 and 44.3 ps combine to 51.9 ps; assumptions retained. No refitting.",
     "short_note1_body_citations": "23 October: removed Saclay source at author request; seven remaining references renumbered and cited in main slide text/captions. Clickable PDF destinations verified. Full notes and Note 2 unchanged.",
     "short_note1_backup_reorganization": "23 October: moved left-minus-right diagnostic behind references as internal backup. Main result remains closure on slide 10; references 11; backup 12. Main results, full notes and Note 2 content unchanged.",
-    "note1_submission_format": "23 October: prepared separate 11-page Note 1 submission-format PDF, without review notices or internal backup. Scientific content and CMS Preliminary labels retained; review PDFs unchanged."
+    "note1_submission_format": "23 October: submission-format Note 1 now retains left-minus-right backup as slide 12 after references, without internal-review notices. Scientific content unchanged; build and visual checks passed."
   },
   "files": [
     {
@@ -2428,8 +2428,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/README.md",
-      "sha256": "508e67493232a78fb0dff2a3df16e15458ab0ed99151d9ab7a2f006eb3c37d59",
-      "bytes": 16874
+      "sha256": "190c55030ffb4dd875013e0e02ec9b044dd3b0866f2bfbb2ead2230c153ad766",
+      "bytes": 16918
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_drift/clock_residuals.pdf",
@@ -2583,8 +2583,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_note1_submission.py",
-      "sha256": "d497f5d68ecd195623036b34dd20de3326f020e46f5a42f1dfcf8b8dcdac6b3f",
-      "bytes": 3309
+      "sha256": "a39e0a6dd6e849a25f4d98090dff3a196a0ce1683316e26e6f3d2681595329db",
+      "bytes": 3481
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_report.json",
@@ -2688,7 +2688,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/main.tex",
-      "sha256": "1adfa28d4a08c49b703330e8148db307aa7ecbc3bf2c91d2dfc03a65e2e8c2fa",
+      "sha256": "8ed569d5477af889188116110e94d56a637c2245b653969e81ba787487625a77",
       "bytes": 9105
     },
     {
@@ -2838,13 +2838,13 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/submission/note1_mcp_reference.pdf",
-      "sha256": "41e4486a4749d2c75caaa222b82944f9677237ec02795f126a0bc5f22e24163e",
-      "bytes": 730567
+      "sha256": "c5f44a468ce9b9e801ca8ea4c193c4af8f21d8374f5cf324c70a70d05e9f5e23",
+      "bytes": 793371
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/submission/verification.json",
-      "sha256": "1d6d51912f5813056bb0487d970eb25be5333d74617dfd0896945206720764d1",
-      "bytes": 794
+      "sha256": "0f9180370b488e706313b529444fdd61b39d4445239a59fa6ca7b4e83730b0a1",
+      "bytes": 618
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
@@ -5030,7 +5030,7 @@
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "23 October: prepared separate 11-page Note 1 submission-format PDF, without review notices or internal backup. Scientific content and CMS Preliminary labels retained; review PDFs unchanged.",
+    "latest_change": "23 October: submission-format Note 1 now retains left-minus-right backup as slide 12 after references, without internal-review notices. Scientific content unchanged; build and visual checks passed.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 26,
@@ -5050,7 +5050,7 @@
     "n2_3_n2_4_closure_changed_files_hash_checked": 17,
     "title_update_changed_files_hash_checked": 17,
     "github_link_verification": "DPS_NOTES/review_2026-10-22_publication/repository_links.json",
-    "latest_changed_files_hash_checked": 7,
+    "latest_changed_files_hash_checked": 5,
     "original_text_verification": "DPS_NOTES/review_2026-10-22_publication/original_text_check.json",
     "language_review_verification": "DPS_NOTES/review_2026-10-22_publication/language_review_verification.json",
     "short_slides_v2": {
@@ -5087,8 +5087,10 @@
     },
     "note1_submission": {
       "pdf": "DPS_NOTES/slides_v2_2026-10-22/submission/note1_mcp_reference.pdf",
-      "pages": 11,
-      "verification": "DPS_NOTES/slides_v2_2026-10-22/submission/verification.json"
+      "pages": 12,
+      "verification": "DPS_NOTES/slides_v2_2026-10-22/submission/verification.json",
+      "backup_pages": 1,
+      "reference_page": 11
     }
   }
 }
