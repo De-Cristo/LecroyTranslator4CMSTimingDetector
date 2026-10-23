@@ -1,0 +1,122 @@
+{
+  "date": "2026-10-23",
+  "scope": "Short Note 2 only",
+  "removed_original_reference": 10,
+  "removed_key": "LGAD",
+  "reason": "Author requested removal of private-communication/LGAD entry",
+  "references": [
+    {
+      "number": 1,
+      "key": "ALICEPerformance",
+      "body_slides": [
+        3
+      ],
+      "role": "Earlier time-of-flight calibration experience",
+      "clickable_pdf_link_verified": true
+    },
+    {
+      "number": 2,
+      "key": "ALICEPID",
+      "body_slides": [
+        3
+      ],
+      "role": "Earlier time-of-flight calibration experience",
+      "clickable_pdf_link_verified": true
+    },
+    {
+      "number": 3,
+      "key": "MTDTDR",
+      "body_slides": [
+        2
+      ],
+      "role": "Detector context",
+      "clickable_pdf_link_verified": true
+    },
+    {
+      "number": 4,
+      "key": "Leo",
+      "body_slides": [
+        4
+      ],
+      "role": "Leading-edge amplitude walk",
+      "clickable_pdf_link_verified": true
+    },
+    {
+      "number": 5,
+      "key": "DualThreshold",
+      "body_slides": [
+        2,
+        4,
+        6
+      ],
+      "role": "Bench study and inverse-slope model",
+      "clickable_pdf_link_verified": true
+    },
+    {
+      "number": 6,
+      "key": "ReferenceNote",
+      "body_slides": [
+        3
+      ],
+      "role": "MCP reference calibration and coefficients",
+      "clickable_pdf_link_verified": true
+    },
+    {
+      "number": 7,
+      "key": "TOFHIR2",
+      "body_slides": [
+        2,
+        4
+      ],
+      "role": "Readout ASIC and two threshold crossings",
+      "clickable_pdf_link_verified": true
+    },
+    {
+      "number": 8,
+      "key": "Grund",
+      "body_slides": [
+        4
+      ],
+      "role": "Historical multi-threshold timing implementation",
+      "clickable_pdf_link_verified": true
+    },
+    {
+      "number": 9,
+      "key": "Frolov",
+      "body_slides": [
+        4
+      ],
+      "role": "Historical double-threshold timing implementation",
+      "clickable_pdf_link_verified": true
+    },
+    {
+      "number": 10,
+      "key": "LOWESS",
+      "body_slides": [
+        7
+      ],
+      "role": "MCP clock-alignment local regression, not the linear slope fit",
+      "clickable_pdf_link_verified": true
+    },
+    {
+      "number": 11,
+      "key": "github_repo",
+      "body_slides": [
+        4
+      ],
+      "role": "Timing and threshold reconstruction code",
+      "clickable_pdf_link_verified": true
+    }
+  ],
+  "all_references_cited_in_body": true,
+  "bibliography_slide": 9,
+  "remaining_entry_text_unchanged": true,
+  "source_checks": {
+    "original_note": "Supplied Note2.pdf read in full: ALICE context, leading-edge textbook, Grund/Frolov history and bench-study roles confirmed",
+    "Frolov": "Publisher abstract confirms two-threshold timing (doi:10.1016/0168-9002(94)01239-3)",
+    "Grund": "Original note cites historical timing; search-indexed authored SLAC report confirms multiple-measurement TOF instrumentation; direct full-text retrieval blocked",
+    "ALICEPID": "Role verified from supplied note; direct PoS retrieval blocked",
+    "LOWESS": "Scope limited to the existing MCP clock-alignment procedure, not the linear slope-profile fit"
+  },
+  "full_notes_unchanged": true
+}

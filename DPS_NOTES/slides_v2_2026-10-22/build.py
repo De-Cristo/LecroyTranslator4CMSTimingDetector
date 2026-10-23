@@ -13,6 +13,7 @@ from prepare_note2_backups import NAMES as BACKUP_FIGURES, prepare as prepare_ba
 from prepare_note1_labels import NAMES as NOTE1_LABELS, prepare as prepare_note1_labels
 from prepare_note1_matching_ratio import prepare as prepare_note1_matching
 from prepare_note1_drift import prepare as prepare_note1_drift
+from prepare_note2_labels import NAMES as NOTE2_LABELS, prepare as prepare_note2_labels
 
 ROOT = Path(__file__).resolve().parent
 NOTES = ("note1_mcp_reference", "note2_dual_threshold")
@@ -34,6 +35,7 @@ def run(command, cwd):
 
 def main():
     prepare_backups()
+    prepare_note2_labels()
     prepare_backups(note="note1_mcp_reference", names=("bar_resolution_check",),
                     source_dir=ROOT.parent / "review_2026-10-23_reference_transfer")
     prepare_note1_labels()
@@ -84,6 +86,8 @@ def main():
             if name == "note1_mcp_reference" and relative == "figures/bar_resolution_check.pdf":
                 is_backup = True
                 origin = ROOT / "assets/note1_internal_backups" / Path(relative).name
+            if name == "note2_dual_threshold" and Path(relative).stem in NOTE2_LABELS:
+                origin = ROOT / "assets/note2_public_labels" / Path(relative).name
             target = note / relative
             shutil.copy2(origin, target)
             digest = hashlib.sha256(target.read_bytes()).hexdigest()
@@ -125,7 +129,14 @@ def main():
                      for key in group.split(",")}
             assert cited == {key for _, key, _ in note_entries}, "Missing or orphan Note 1 citation"
         else:
-            assert note_entries == original_entries
+            expected = [(key, body) for _, key, body in original_entries if key != "LGAD"]
+            assert [(key, body) for _, key, body in note_entries] == expected
+            assert [int(number) for number, _, _ in note_entries] == list(range(1, 12))
+            cited = {key.strip() for group in re.findall(r"\\cite\{([^}]+)\}", source)
+                     for key in group.split(",")}
+            assert cited == {key for _, key, _ in note_entries}, "Missing or orphan Note 2 citation"
+            visible = "\n".join(page.extract_text() for page in pdf.pages)
+            assert not re.search(r"(?:run|channel|SiPM)\s*(?:4076|4399|1[3-5]\d)", visible, re.I)
         assert "cms-dpg-conveners-mtd@cern.ch" in pdf.pages[0].extract_text()
         assert "Abstract" in pdf.pages[1].extract_text()
         for page in pdf.pages:

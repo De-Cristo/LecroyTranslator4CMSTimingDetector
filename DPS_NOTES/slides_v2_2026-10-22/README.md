@@ -51,9 +51,26 @@ The private meeting checklist has been reconciled locally and is not uploaded.
 
 Each reference slide uses two columns. Note 1 has seven entries after removing
 the Saclay source at the author's request and renumbering; the remaining entry
-text is unchanged. Note 2 retains its original twelve entries and numbering.
+text is unchanged. Note 2 has eleven entries after removing former reference 10
+(the private-communication/LGAD entry); surviving entry text is unchanged.
 The build checks these against the full notes and requires every remaining
-Note 1 reference to be cited in the slide body or its caption.
+reference in both short decks to be cited in the slide body or its caption.
+
+### Note 2 Descriptive Labels and Citations (23 October)
+
+Visible run identifiers are replaced by MCP-reference and dual-threshold sample
+labels. Channel identifiers are replaced by bar/end labels in the coefficient
+table, captions, plot titles and legends. Numeric point IDs are removed from the
+backup without changing axis ticks or points. The raster residual plot has only
+its title masked and relabelled; the underlying image bytes are unchanged.
+Bar indices remain to connect the examples. Provenance retains the hardware map.
+
+`assets/note2_public_labels/provenance.json` records all figure changes.
+`note2_dual_threshold/citation_audit.json` maps citations to supporting context:
+detector/ASIC and bench study, ALICE calibration experience, leading-edge walk,
+historical two-threshold implementations, the MCP reference, clock LOWESS, and
+analysis code. No source is cited as establishing reference-free AWC prediction.
+The full-note cover abstract, full bibliographies and original figures are unchanged.
 
 Existing numerical macros are copied unchanged from the full notes. Figures
 retain their data and fits; the Note 1 terminology-only adaptations are described below.

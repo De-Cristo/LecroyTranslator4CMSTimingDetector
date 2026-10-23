@@ -22,7 +22,7 @@ SOURCES = {
 NAMES = tuple(SOURCES)
 
 
-def remove_labels(page, replacements):
+def remove_labels(page, replacements, font_size=None):
     """Remove complete text objects only; retain all plot drawing operations."""
     positions = []
 
@@ -30,7 +30,9 @@ def remove_labels(page, replacements):
         # This source PDF stores the rotated label's ff ligature separately.
         if text.strip() == "Time di" and "Time difference [ns]" in replacements:
             text = "Time difference [ns]"
-        if text.strip() in replacements:
+        if text.strip() == "AWC/S(Q) + o" and "AWC/S(Q) + offset (run 4076)" in replacements:
+            text = "AWC/S(Q) + offset (run 4076)"
+        if text.strip() in replacements and (font_size is None or size == font_size):
             x = tm[4] * cm[0] + tm[5] * cm[2] + cm[4]
             y = tm[4] * cm[1] + tm[5] * cm[3] + cm[5]
             positions.append((text.strip(), x, y, size))
@@ -39,9 +41,12 @@ def remove_labels(page, replacements):
     content = page.get_contents()
     remove = []
     start = None
+    size = None
     for index, (args, operator) in enumerate(content.operations):
         if operator == b"BT":
             start, text = index, ""
+        elif operator == b"Tf":
+            size = float(args[1])
         elif start is not None and operator == b"Tj":
             text += str(args[0])
         elif start is not None and operator == b"TJ":
@@ -49,7 +54,9 @@ def remove_labels(page, replacements):
         elif operator == b"ET" and start is not None:
             if text.strip() == "Time dierence [ns]":
                 text = "Time difference [ns]"
-            if text.strip() in replacements:
+            if text.startswith("AWC/S(Q)"):
+                text = text.replace("\x01", "ff")
+            if text.strip() in replacements and (font_size is None or size == font_size):
                 remove.append((start, index + 1))
             start = None
     assert len(remove) == len(positions)

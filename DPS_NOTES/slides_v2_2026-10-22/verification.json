@@ -25,13 +25,13 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "Note 2 abstract slide 2 visually inspected: readable and no clipping/overlap. Other slide text unchanged in both decks; no compilation overflow or unresolved citations.",
+  "visual_review": "Note 2 changed tables, citations, titles, legends, bibliography and backup visually checked; no clipping/overlap. Raster data/axes below title pixel-identical. Build passes all citation and layout checks.",
   "scientific_inputs": "Frozen reference corrections; four new downstream fits (two channels x two reference choices), 1512 common fitting events and 1456 common evaluation events at one threshold. 400 paired block-bootstrap replicas with fixed cuts and calibration.",
-  "combined_sha256": "8237a64f02baefba1f3469cc712d592118df67d765dc2ca99ffbce2368fd7588",
+  "combined_sha256": "751f232028e4854b453f1a6752b91ca96fea81ad361f1629f5e26602f81c5134",
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 7,
-    "note2": 12
+    "note2": 11
   },
   "note2_slide_content_unchanged": false,
   "structure_review": "Main result on slide 8; references 9; only empirical AWC-trend backup on 10. New shared-response model deferred and removed.",
@@ -58,7 +58,7 @@
     "fractional_rmse": 0.14121008611047828,
     "prediction_table_and_model_formula_verified": true,
     "reference_training_and_transfer_limitations_explicit": true,
-    "original_bibliography_preserved": true,
+    "original_bibliography_preserved": false,
     "all_figure_sources_hash_checked": true,
     "cited_code_matches_pinned_commit_and_local_checkout": true,
     "authors_outline_slides": {
@@ -76,7 +76,8 @@
       ],
       "8_agreement_with_reference": 7
     },
-    "shared_response_model_status": "Deferred; removed from short deck, saved analysis and discussion retained."
+    "shared_response_model_status": "Deferred; removed from short deck, saved analysis and discussion retained.",
+    "bibliography_exception": "Removed original entry 10 at author request; remaining text preserved and renumbered."
   },
   "note2_profile_update": {
     "slide": 5,
@@ -395,5 +396,16 @@
     "other_slide_text_unchanged": true,
     "note1_submission_unchanged": true,
     "no_new_analysis": true
+  },
+  "note2_public_labels_and_citations": {
+    "visible_run_channel_ids_removed": true,
+    "bar_end_mapping_verified": true,
+    "numeric_backup_labels_removed_axis_ticks_preserved": true,
+    "raster_plot_area_pixel_identical": true,
+    "raster_title_only_changed": true,
+    "no_refitting": true,
+    "full_notes_and_note1_submission_unchanged": true,
+    "provenance": "assets/note2_public_labels/provenance.json",
+    "citation_audit": "note2_dual_threshold/citation_audit.json"
   }
 }

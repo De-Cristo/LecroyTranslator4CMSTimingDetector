@@ -35,27 +35,28 @@ W_i(Q)=a_i+b_i/Q+c_i/Q^2.
 \small
 \begin{tabular}{rrrrr}
 \toprule
-Bar & Channel & $a_i$ [ns] & $b_i$ [ns ADC] & $c_i$ [ns ADC$^2$]\\
+Bar & End & $a_i$ [ns] & $b_i$ [ns ADC] & $c_i$ [ns ADC$^2$]\\
 \midrule
-7 & 133 & 0.0796 & 238.3 & $-2.156\times10^4$\\
-7 & 154 & $-0.5155$ & 422.6 & $-5.583\times10^4$\\
-8 & 137 & 0.1218 & 198.5 & $-1.523\times10^4$\\
-8 & 150 & $-0.2292$ & 388.9 & $-5.132\times10^4$\\
+7 & Left & 0.0796 & 238.3 & $-2.156\times10^4$\\
+7 & Right & $-0.5155$ & 422.6 & $-5.583\times10^4$\\
+8 & Left & 0.1218 & 198.5 & $-1.523\times10^4$\\
+8 & Right & $-0.2292$ & 388.9 & $-5.132\times10^4$\\
 \bottomrule
 \end{tabular}
 \par\raggedright
 \normalsize
 The shape coefficients vary substantially even among four channels.
 Use pulse slope to seek a more consistent physical description.
-\Source{Original reference coefficients, also reproduced in Table 1 of the detector note.
+\Source{Two bars in the reference module. Earlier time-of-flight calibration experience: ALICE~\cite{ALICEPerformance,ALICEPID}.
 $Q$ is the ADC charge proxy; $a_i$ includes an arbitrary timing offset.
 Coefficient variation alone is not a measure of calibration precision.}
 \end{frame}
 
 \begin{frame}{TOFHIR2C measures the leading-edge slope with two thresholds}
 \normalsize
-Larger pulses cross a fixed threshold earlier: the timestamp depends on amplitude.
-Two thresholds also measure how fast the pulse rises~\cite{TOFHIR2,DualThreshold}.
+Larger pulses cross a fixed threshold earlier: the timestamp depends on amplitude~\cite{Leo}.
+Two-threshold timing has earlier implementations~\cite{Grund,Frolov};
+TOFHIR2C provides both crossings~\cite{TOFHIR2,DualThreshold}.
 \[
 I_1<I_2,\qquad t_1<t_2,\qquad
 S=\frac{I_2-I_1}{t_2-t_1}\quad[\mu\mathrm{A/ns}].
@@ -67,9 +68,9 @@ Locally, an approximately linear leading edge gives
 \textbf{Physical model:} describe amplitude walk with an inverse slope,
 rather than an independent polynomial shape for every channel.
 \Source{$S$ is a finite-interval slope proxy, not the instantaneous derivative.
-Run 4076 uses $\Delta I=7.8125\,\mu$A from the implemented threshold conversion.
+The dual-threshold sample uses $\Delta I=7.8125\,\mu$A from the implemented threshold conversion.
 The fitted AWC need not equal this threshold separation.
-\Code{Q_Walk/qwalk_core.py}{GitHub: timing and threshold reconstruction}.}
+\Code{Q_Walk/qwalk_core.py}{GitHub: timing and threshold reconstruction}~\cite{github_repo}.}
 \end{frame}
 
 \PlotSlide{Measure the charge-to-slope mapping using internal hits}{slope_ch150}{
@@ -82,7 +83,8 @@ Fit ten profile means with SEM weights:
 \overline S_i(Q)=c_{0,i}+c_{1,i}Q.
 \]
 No MCP time enters this fit.
-}{Channel 150, run 4076: 19\,312 selected hits. Points are mean slopes; bars show hit SD, not uncertainty on the mean.
+}{Reference module, bar 8, right end; dual-threshold sample: 19\,312 selected hits.
+Points are mean slopes; bars show hit SD, not uncertainty on the mean.
 The band is the conditional 68\% interval from 1000 hit-bootstrap refits with fixed bins.
 The profile averages the noisy single-hit slope measurements.}
 
@@ -109,22 +111,23 @@ The slope fit alone does not fix AWC. The common functional form follows the dua
 \begin{frame}[t]{The single-amplitude model closely follows the MCP curves}
 \begin{columns}[T,onlytextwidth]
 \begin{column}{.49\textwidth}
-\centering\textbf{Channel 137}\par
+\centering\textbf{Bar 8, left end}\par
 \includegraphics[width=\linewidth,height=43mm,keepaspectratio]{figures/comparison_ch137.pdf}
 \end{column}
 \begin{column}{.49\textwidth}
-\centering\textbf{Channel 154}\par
+\centering\textbf{Bar 7, right end}\par
 \includegraphics[width=\linewidth,height=43mm,keepaspectratio]{figures/comparison_ch154.pdf}
 \end{column}
 \end{columns}
-\Source{Black: MCP quadratic (run 4399); red: inverse-slope model (run 4076).
-AWC and an offset are fitted over charge intervals populated in both runs, which contain different events.
-Channel 137 has \ExampleRMS\,ps RMS curve mismatch. Lower panels show curve differences, not event resolution.
-Bands propagate slope-fit statistics with the MCP curve fixed. This tests the functional form, before predicting AWC.}
+\Source{Reference module. Black: MCP quadratic; red: dual-threshold model.
+Different-event samples; AWC and offset fitted only in common populated charge intervals.
+Bar 8, left end: \ExampleRMS\,ps RMS curve mismatch. Lower panels show curve differences, not event resolution.
+Bands propagate slope-fit statistics with the MCP curve fixed. MCP clock alignment uses LOWESS~\cite{LOWESS}.
+This benchmarks shapes, not AWC prediction.}
 \end{frame}
 
 \PlotSlide{Residual charge dependence after the AWC correction}{original_figure5}{
-\textbf{Channel 137}
+\textbf{Bar 8, left end}
 
 Inspect the timing residual versus charge after the inverse-slope correction.
 
