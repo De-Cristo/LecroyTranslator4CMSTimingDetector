@@ -1,0 +1,9 @@
+[
+  {
+    "source": "review_2026-10-23_reference_transfer/bar_resolution_check.pdf",
+    "source_sha256": "ebf90c96d896de86b5abb492b349796f95e89c2bc76ad07f73a593535c2eb036",
+    "figure": "bar_resolution_check.pdf",
+    "sha256": "6e40afeba0ae548b0a741bddf1ca50873ace1efede1d9e4edf69f5b5adee276b",
+    "change": "Removed CMS Preliminary label; remaining text and plot drawing operations unchanged."
+  }
+]

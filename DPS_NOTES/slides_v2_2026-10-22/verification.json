@@ -25,9 +25,9 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "Changed slides 3, 6, 8 and 12 visually inspected: citations and seven-entry bibliography fit without overlap. Slides 4 and 5 extracted text checked. Compilation has no overflow or undefined citations.",
+  "visual_review": "Backup slide 12 visually inspected; no overlap/clipping. Main slides 1-10 and all Note 2 slide text unchanged; references moved to 11 with all seven citation destinations verified. Build has no overflow or unresolved citations.",
   "scientific_inputs": "Frozen reference corrections; four new downstream fits (two channels x two reference choices), 1512 common fitting events and 1456 common evaluation events at one threshold. 400 paired block-bootstrap replicas with fixed cuts and calibration.",
-  "combined_sha256": "bf2c467e8b4b5545a6b1cb5db3065aeaed951a77aa355c4bec3bad094b46cf7f",
+  "combined_sha256": "af57c2cc6f0572f0040acc71be2831813304b2fddc8dc73251e770dc9cd48ca0",
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 7,
@@ -112,11 +112,11 @@
     "no_new_fit": true
   },
   "main_slides": {
-    "note1": 9,
+    "note1": 10,
     "note2": 8
   },
   "backup_slides": {
-    "note1": 0,
+    "note1": 1,
     "note2": 1
   },
   "note2_backup_reorganization": {
@@ -262,9 +262,9 @@
     "slides": [
       9,
       10,
-      11
+      12
     ],
-    "reference_slide": 12,
+    "reference_slide": 11,
     "standalone_review_pages": 3,
     "full_notes_unchanged": true,
     "numerical_verification": "DPS_NOTES/review_2026-10-23_reference_transfer/verification.json",
@@ -356,13 +356,9 @@
       }
     ],
     "all_references_cited_in_body": true,
-    "bibliography_slide": 12,
+    "bibliography_slide": 11,
     "changed_text_slides": [
-      3,
-      4,
-      5,
-      6,
-      8,
+      11,
       12
     ],
     "full_notes_unchanged": true,
@@ -376,5 +372,17 @@
       "DualThreshold": "arXiv 2507.07127 abstract and published JINST metadata checked",
       "LOWESS": "Previously verified DOI 10.1080/01621459.1979.10481038; original bibliography wording retained"
     }
+  },
+  "note1_backup_reorganization": {
+    "main_result_slide": 10,
+    "references_slide": 11,
+    "backup_slide": 12,
+    "numerical_results_unchanged": true,
+    "original_labelled_analysis_figure_retained": true,
+    "backup_cms_label_removed": true,
+    "internal_discussion_header": true,
+    "full_notes_unchanged": true,
+    "note2_text_unchanged": true,
+    "private_checklist_updated_not_for_upload": true
   }
 }

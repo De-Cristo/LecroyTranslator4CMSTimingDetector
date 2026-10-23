@@ -34,6 +34,8 @@ def run(command, cwd):
 
 def main():
     prepare_backups()
+    prepare_backups(note="note1_mcp_reference", names=("bar_resolution_check",),
+                    source_dir=ROOT.parent / "review_2026-10-23_reference_transfer")
     prepare_note1_labels()
     prepare_note1_matching()
     prepare_note1_drift()
@@ -79,6 +81,9 @@ def main():
             is_backup = name == "note2_dual_threshold" and Path(relative).stem in BACKUP_FIGURES
             if is_backup:
                 origin = ROOT / "assets/note2_internal_backups" / Path(relative).name
+            if name == "note1_mcp_reference" and relative == "figures/bar_resolution_check.pdf":
+                is_backup = True
+                origin = ROOT / "assets/note1_internal_backups" / Path(relative).name
             target = note / relative
             shutil.copy2(origin, target)
             digest = hashlib.sha256(target.read_bytes()).hexdigest()
@@ -100,7 +105,7 @@ def main():
         shutil.copy2(note / "build/main.pdf", note / "slides.pdf")
         pdf = PdfReader(note / "slides.pdf")
         assert len(pdf.pages) == EXPECTED_SLIDES[name], (name, len(pdf.pages))
-        reference_index = 11 if name == "note1_mcp_reference" else 8
+        reference_index = 10 if name == "note1_mcp_reference" else 8
         assert "References" in pdf.pages[reference_index].extract_text()
         for page in pdf.pages[reference_index + 1:]:
             text = page.extract_text()
@@ -128,8 +133,8 @@ def main():
             combined.add_page(page)
         if name == "note1_mcp_reference":
             closure_review = PdfWriter()
-            for page in pdf.pages[8:11]:
-                closure_review.add_page(page)
+            for index in (8, 9, 11):
+                closure_review.add_page(pdf.pages[index])
             closure_review.write(ROOT / "note1_transfer_review.pdf")
         preview = note / "preview"
         preview.mkdir(exist_ok=True)

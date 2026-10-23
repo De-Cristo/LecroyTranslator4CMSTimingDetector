@@ -4,13 +4,13 @@
     "source_sha256": "01a382c3bf216fc897a05666eecd70712da63ea22ad6420196d2737e44949279",
     "figure": "awc_summary_selected.pdf",
     "sha256": "3fd3415717ab0ffe5c5d6553f86f65be16718d1196002408ab683216acea0fa0",
-    "change": "Removed exactly one CMS Preliminary text object; plot drawing operations unchanged."
+    "change": "Removed CMS Preliminary label; remaining text and plot drawing operations unchanged."
   },
   {
     "source": "note2_dual_threshold/figures/internal_predictor.pdf",
     "source_sha256": "4fd4c3136396eba4a1a3a21fce4db6e502a5894028e5d76385c95a7345292794",
     "figure": "internal_predictor.pdf",
     "sha256": "4b6962f4df338123524a61a3627f2e7b2cefef425e2bf676d9dc65a8f6f7baef",
-    "change": "Removed exactly one CMS Preliminary text object; plot drawing operations unchanged."
+    "change": "Removed CMS Preliminary label; remaining text and plot drawing operations unchanged."
   }
 ]

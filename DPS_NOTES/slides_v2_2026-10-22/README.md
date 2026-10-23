@@ -1,12 +1,21 @@
 # Short slide drafts: version 2, draft 1
 
-Note 1 has eleven content slides and one reference slide. Note 2 has eight main
+Note 1 has ten main slides, one reference slide and one diagnostic backup slide. Note 2 has eight main
 slides, one reference slide and one exploratory backup slide,
 with no A4 cover pages. These are separate from the full
 notes, which remain unchanged. Each deck retains the CMS/contact title slide,
 an abstract on Note 1 slide 2 and a purpose slide on Note 2 slide 2, labelled plots,
 and concise procedural captions.
 The titles follow the author's wording, including TOFHIR2C in Note 2.
+
+## Note 1 Backup Placement (23 October)
+
+The main presentation ends on the calibration-route closure (slide 10).
+References are slide 11. The left-minus-right diagnostic is now backup slide 12,
+marked internal discussion only, without a CMS Preliminary plot label. Its
+points, widths and assumptions are unchanged. The original labelled analysis
+figure remains archived. `note1_transfer_review.pdf` contains slides 9, 10 and 12.
+The private meeting checklist has been reconciled locally and is not uploaded.
 
 - `note1_mcp_reference/slides.pdf`: synchronize MCP/FEBd records, construct
   the reference time, fit inverse-charge profiles, and check timing correction.
@@ -59,9 +68,9 @@ The original full-note bibliography and Note 2 are unchanged.
 
 ### 23 October: reference-bar transfer closure replaces old slide 9
 
-Slides 9--11 now show the MCP -> reference -> module-under-test calibration
+Slides 9, 10 and backup 12 show the MCP -> reference -> module-under-test calibration
 path, direct-versus-transfer closure, and left-minus-right timing checks.
-The references move to slide 12. Only T1=3, T2=60 DAC is displayed, chosen
+The references are on slide 11. Only T1=3, T2=60 DAC is displayed, chosen
 to match slide 8 rather than by timing performance. The other five settings
 and their historical figures are retained but not shown on these slides.
 
@@ -78,7 +87,7 @@ identifying the calibration of each bar. The auxiliary DUT-minus-MCP comparison
 is retained in the saved analysis but is not presented in the deck. No numerical
 results or uncertainty definitions were changed for this presentation update.
 
-Slide 11 uses the bar-average convention explicitly: histograms show
+Backup slide 12 uses the bar-average convention explicitly: histograms show
 (tL-tR)/2, with widths 27.0 ps for the calibrated reference and 44.3 ps for
 the downstream bar calibrated via reference. Their quadrature is 51.9 ps.
 The independent-end and negligible-position-spread assumptions remain visible;

@@ -146,7 +146,13 @@ Width difference (via reference minus direct): $+\TransferDelta$\,ps;
 Cuts and calibrations fixed; no calibration or systematic uncertainty included. In-sample closure, not independent validation.}
 \end{frame}
 
-\begin{frame}[t]{Left-minus-right timing checks what the 65 ps width means}
+\input{references.tex}
+
+\begingroup
+\setbeamertemplate{headline}{%
+  \hbox to \paperwidth{\hspace{7mm}\scriptsize\color{black!55}Internal discussion only -- diagnostic, not for public presentation\hfill\hspace{7mm}}\vspace{4mm}}
+
+\begin{frame}[t]{Backup: left-minus-right timing check}
 \centering
 \includegraphics[width=\linewidth,height=36mm,keepaspectratio]{figures/bar_resolution_check.pdf}
 \par\raggedright\small
@@ -159,5 +165,5 @@ Same events as the closure test. Interpreting these widths as bar-average resolu
 and negligible position spread; quadrature also assumes independent bars.
 Common timing fluctuations cancel in the half-difference. Correlations and position effects require further study to explain the 65\,ps width.}
 \end{frame}
-\input{references.tex}
+\endgroup
 \end{document}
