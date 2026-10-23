@@ -20,7 +20,8 @@
     "short_note1_setup": "Accepted 23 October: simplified beamline schematic; no angle annotations per author request.",
     "short_note1_matching_ns": "Superseded by author: ns residual plot archived; slide 4 restored to interval ratio minus one.",
     "short_note1_matching_ratio": "23 October: restored dimensionless ratio-minus-one plots and histogram; caption clarifies subsets and distinction from slide 5.",
-    "short_note1_lowess_panels": "23 October: consistent three-panel drift illustration and on-slide LOWESS citation; numerical and visual checks passed."
+    "short_note1_lowess_panels": "23 October: consistent three-panel drift illustration and on-slide LOWESS citation; numerical and visual checks passed.",
+    "short_note1_coincidence_wording": "23 October: slide 7 describes four coincident bar-end channels plus trigger in physical terms; analysis selection unchanged."
   },
   "files": [
     {
@@ -2245,12 +2246,12 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/README.md",
-      "sha256": "13f5d71fcc887f7190d7a91a4785bf3789acf9ac4ebc75afb1d9a95671763369",
-      "bytes": 12585
+      "sha256": "91207c1b13691f21598eb5be4ee1227c1c1c0aebebf9d239878a62201e2cbe97",
+      "bytes": 12910
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_drift/clock_residuals.pdf",
-      "sha256": "7d5abb850a12840d04e31be7544810f0304a20bfa383855d53cae4df265709e5",
+      "sha256": "6c3fea73cda0e8d393625860594ef91273945b942db37dbdda592f7921b2dcd0",
       "bytes": 88521
     },
     {
@@ -2295,7 +2296,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_matching_ratio/event_matching.pdf",
-      "sha256": "1376e7a5e0b312dbce2c52d2d14afce6f04227dc82a69dd5b6b447671ce4a244",
+      "sha256": "cf9a0279c6c08f207db7269b4b396ad4e2c90091b32050b432fc5ef181340360",
       "bytes": 40739
     },
     {
@@ -2340,7 +2341,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_setup/setup.pdf",
-      "sha256": "69fb2c95b2684bab7cca6142bad7f5e28564e9d502f01c5b9da68737e0ee90c4",
+      "sha256": "8969d13beff2d572e85736af8aec38b15eab5109394727c8785d92c282396663",
       "bytes": 53217
     },
     {
@@ -2380,8 +2381,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/both_notes_slides_v2.pdf",
-      "sha256": "439dfcb204def666657a86b45898e4794119fce281c782dfabde947b71db932b",
-      "bytes": 1856119
+      "sha256": "4701d56994b117eb105bdface35c476f45cf883bc18c5b4543b822b2716617b4",
+      "bytes": 1856098
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build.py",
@@ -2390,7 +2391,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_report.json",
-      "sha256": "4a953b1b231c57d64923c09ffecfd89971dc653d0c5139d8f6a2cd53f22e9331",
+      "sha256": "6bcc301bdbc7edfc7f4664b634eaf12ce11680e2973168014d9282d3663be6e4",
       "bytes": 770
     },
     {
@@ -2400,7 +2401,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/asset_manifest.json",
-      "sha256": "1ec7949e0f0fa767434d71fe13b800dc82cdab31d6a2077cc1072b0641489628",
+      "sha256": "0fa5193016da80dc752c81226f529048b680f50b60a4eef1910a6e4421bad51a",
       "bytes": 1652
     },
     {
@@ -2420,12 +2421,12 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/clock_residuals.pdf",
-      "sha256": "7d5abb850a12840d04e31be7544810f0304a20bfa383855d53cae4df265709e5",
+      "sha256": "6c3fea73cda0e8d393625860594ef91273945b942db37dbdda592f7921b2dcd0",
       "bytes": 88521
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/event_matching.pdf",
-      "sha256": "1376e7a5e0b312dbce2c52d2d14afce6f04227dc82a69dd5b6b447671ce4a244",
+      "sha256": "cf9a0279c6c08f207db7269b4b396ad4e2c90091b32050b432fc5ef181340360",
       "bytes": 40739
     },
     {
@@ -2435,7 +2436,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/setup.pdf",
-      "sha256": "69fb2c95b2684bab7cca6142bad7f5e28564e9d502f01c5b9da68737e0ee90c4",
+      "sha256": "8969d13beff2d572e85736af8aec38b15eab5109394727c8785d92c282396663",
       "bytes": 53217
     },
     {
@@ -2460,8 +2461,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/main.tex",
-      "sha256": "1b7d7f250e89cd469813f08cf65b13e4931236db6c602a4905bdde098834f74e",
-      "bytes": 6595
+      "sha256": "5bcd6116a31a453cdecf5d516666f3a87dcbfed0cd7166b8f008be635da32ebf",
+      "bytes": 6585
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/metadata.tex",
@@ -2480,8 +2481,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/slides.pdf",
-      "sha256": "e08b0d028362e3f1912fd0dbb14f4a3556f318486a09d1b3830f95bf10473a1d",
-      "bytes": 819575
+      "sha256": "13aea94597b93be4e14f227c42f55e968df6a2e7eb16460f638e742166efb5cd",
+      "bytes": 819547
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/CMSlogo_black_label_1024.png",
@@ -2560,7 +2561,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/slides.pdf",
-      "sha256": "87359beeaa1d22882a789caeae71d1ad29d2223d42ddb539220c36eb3c1814be",
+      "sha256": "4ae1263f3471ebc6111e945177402e2e70c62d15e17c746acc2a63ee2998134b",
       "bytes": 961917
     },
     {
@@ -2600,8 +2601,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
-      "sha256": "3d60e0be2191e56db34ec6c42bf8a957df5c90d72d29434bf10b93ed857cdda0",
-      "bytes": 9115
+      "sha256": "f9bc13a818a0a6fe81c692df523e9287237206a418bbe4effb0499a0b6ed23f5",
+      "bytes": 9368
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -4782,7 +4783,7 @@
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "Note 1 slide 5 redrawn from the same matched subsets as slide 4. Shared ns residual axes and consistent colors; existing LOWESS function with fraction 0.15 and three robust iterations. On-slide Cleveland [8] citation and verified DOI. Other slides/full notes and detector calibration results unchanged.",
+    "latest_change": "Note 1 slide 7 coincidence wording simplified. Rebuilt both decks and combined PDF; changed slide visually checked and all other slide text unchanged.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 26,

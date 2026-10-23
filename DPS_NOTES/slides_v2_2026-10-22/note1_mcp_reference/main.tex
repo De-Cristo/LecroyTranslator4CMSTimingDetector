@@ -82,9 +82,9 @@ A fixed cable/geometry offset is irrelevant to the shape; clock-rate conversion 
 \fontsize{9.5}{11}\selectfont
 \textbf{Separate threshold settings before selection and fitting.}
 \begin{enumerate}
-\item Require exactly five TOFHIR hits and a unique MCP match:
-the left and right channels of one bar in the reference module and one bar
-in the module under test, plus the dedicated trigger channel.
+\item Select coincident events in the left and right channels of both the
+upstream reference bar and the downstream bar under test:
+four bar-end channels plus the dedicated trigger channel.
 \item Within each setting, require clock quality and finite positive charge,
 $\Delta I$ and threshold-rise time. Keep charge above the spectrum's left half-maximum boundary.
 \item Form 20 uniform $1/Q$ bins. Clip timing outliers at

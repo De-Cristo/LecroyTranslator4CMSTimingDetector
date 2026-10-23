@@ -235,5 +235,13 @@
     "other_slides_unchanged": true,
     "detector_calibrations_unchanged": true,
     "source_report": "assets/note1_drift/report.json"
+  },
+  "note1_coincidence_wording_review": {
+    "date": "2026-10-23",
+    "slide": 7,
+    "wording_only": true,
+    "all_other_slides_text_unchanged": true,
+    "visual_check": "Passed; no overlap or clipping",
+    "analysis_selection_unchanged": true
   }
 }

@@ -202,3 +202,10 @@ from Table 1 of the supplied detector note and `Q_Walk/empirical_walk_models.md`
 it is not presented as the input to the current comparison curves. The latter
 retain their existing provenance. Note 1, cover abstracts, full notes and all
 numerical analysis results are unchanged by this narrative update.
+
+# Slide 7 wording review (23 October 2026)
+
+Note 1 describes the selected coincidence in physical terms: both ends of the
+upstream reference bar and downstream bar under test, plus the dedicated
+trigger channel. This is a wording-only change; the five-hit selection and
+unique MCP matching in the analysis remain unchanged.
