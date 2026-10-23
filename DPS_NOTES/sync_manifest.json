@@ -19,7 +19,8 @@
     "short_note1_abstract_terminology": "Accepted 23 October 2026: abstract and physical identifiers; no numerical changes.",
     "short_note1_setup": "Accepted 23 October: simplified beamline schematic; no angle annotations per author request.",
     "short_note1_matching_ns": "Superseded by author: ns residual plot archived; slide 4 restored to interval ratio minus one.",
-    "short_note1_matching_ratio": "23 October: restored dimensionless ratio-minus-one plots and histogram; caption clarifies subsets and distinction from slide 5."
+    "short_note1_matching_ratio": "23 October: restored dimensionless ratio-minus-one plots and histogram; caption clarifies subsets and distinction from slide 5.",
+    "short_note1_lowess_panels": "23 October: consistent three-panel drift illustration and on-slide LOWESS citation; numerical and visual checks passed."
   },
   "files": [
     {
@@ -2244,8 +2245,23 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/README.md",
-      "sha256": "a32febe4dfcad2f052c117e064a61f513b1a582b233c5012841a45eb51e6409f",
-      "bytes": 11652
+      "sha256": "13f5d71fcc887f7190d7a91a4785bf3789acf9ac4ebc75afb1d9a95671763369",
+      "bytes": 12585
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_drift/clock_residuals.pdf",
+      "sha256": "7d5abb850a12840d04e31be7544810f0304a20bfa383855d53cae4df265709e5",
+      "bytes": 88521
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_drift/drift_points.csv",
+      "sha256": "c8a1186e2fcdeea83b1d989b3a5c84da742664a601b736c9920524a7dd1679e8",
+      "bytes": 1165786
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_drift/report.json",
+      "sha256": "e94ffd7cf9fe490098e8700d2c041c6e9660f729ee8d26e6489163a93c3ed312",
+      "bytes": 2182
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_matching_ns/event_matching.pdf",
@@ -2279,7 +2295,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_matching_ratio/event_matching.pdf",
-      "sha256": "52a099bc24fac7f5e9c70ec154d960df02aadc4fb1f3c32f3b6e4bc779cf45e8",
+      "sha256": "1376e7a5e0b312dbce2c52d2d14afce6f04227dc82a69dd5b6b447671ce4a244",
       "bytes": 40739
     },
     {
@@ -2324,7 +2340,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_setup/setup.pdf",
-      "sha256": "2cde5525b9cab4567aff5a698099b79a72d19b36a611d9de4ed30c6df75324f2",
+      "sha256": "69fb2c95b2684bab7cca6142bad7f5e28564e9d502f01c5b9da68737e0ee90c4",
       "bytes": 53217
     },
     {
@@ -2364,17 +2380,17 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/both_notes_slides_v2.pdf",
-      "sha256": "d27d03df36fca6d1256eca55ce2d36f7e0db6e899696d98d4b6a1b3312565678",
-      "bytes": 2236712
+      "sha256": "439dfcb204def666657a86b45898e4794119fce281c782dfabde947b71db932b",
+      "bytes": 1856119
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build.py",
-      "sha256": "425434e137512fcb4f8884d45bf96dadbd453b010a802f8233fe9c335f172038",
-      "bytes": 7767
+      "sha256": "60ddfc6ab339224487d271ea00a3ea088e9b38e9e64f4b17c80c686710421aa2",
+      "bytes": 8021
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_report.json",
-      "sha256": "404710b2d583d89e8b0d3fad726e4e4f4fc97a97278cd678722519ffdd7171b9",
+      "sha256": "4a953b1b231c57d64923c09ffecfd89971dc653d0c5139d8f6a2cd53f22e9331",
       "bytes": 770
     },
     {
@@ -2384,8 +2400,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/asset_manifest.json",
-      "sha256": "87c87d7868ad3f30437ae15314b568889e1642d4d50c7e12fba5373a1af76251",
-      "bytes": 1640
+      "sha256": "1ec7949e0f0fa767434d71fe13b800dc82cdab31d6a2077cc1072b0641489628",
+      "bytes": 1652
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/bar_pair_before_after.pdf",
@@ -2404,12 +2420,12 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/clock_residuals.pdf",
-      "sha256": "d4e026a5524297e2ac009659533d943c42aa53335ffe438ab09c4bd0d0f5eff1",
-      "bytes": 473060
+      "sha256": "7d5abb850a12840d04e31be7544810f0304a20bfa383855d53cae4df265709e5",
+      "bytes": 88521
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/event_matching.pdf",
-      "sha256": "52a099bc24fac7f5e9c70ec154d960df02aadc4fb1f3c32f3b6e4bc779cf45e8",
+      "sha256": "1376e7a5e0b312dbce2c52d2d14afce6f04227dc82a69dd5b6b447671ce4a244",
       "bytes": 40739
     },
     {
@@ -2419,7 +2435,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/setup.pdf",
-      "sha256": "2cde5525b9cab4567aff5a698099b79a72d19b36a611d9de4ed30c6df75324f2",
+      "sha256": "69fb2c95b2684bab7cca6142bad7f5e28564e9d502f01c5b9da68737e0ee90c4",
       "bytes": 53217
     },
     {
@@ -2444,8 +2460,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/main.tex",
-      "sha256": "c4bd1063b3a848f46589b9d82ae7571416ffc291381cb8243976ed8d008b9ce4",
-      "bytes": 6280
+      "sha256": "1b7d7f250e89cd469813f08cf65b13e4931236db6c602a4905bdde098834f74e",
+      "bytes": 6595
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/metadata.tex",
@@ -2464,8 +2480,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/slides.pdf",
-      "sha256": "9e8ebe5b9022783a952b43c54ee37d3a8fb3fcc865e991232bd3f303a81f93c9",
-      "bytes": 1201646
+      "sha256": "e08b0d028362e3f1912fd0dbb14f4a3556f318486a09d1b3830f95bf10473a1d",
+      "bytes": 819575
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/CMSlogo_black_label_1024.png",
@@ -2544,8 +2560,13 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/slides.pdf",
-      "sha256": "5d954a0e029e629468671349895c46a8674037a957106681eb866a6a4eb72940",
+      "sha256": "87359beeaa1d22882a789caeae71d1ad29d2223d42ddb539220c36eb3c1814be",
       "bytes": 961917
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/prepare_note1_drift.py",
+      "sha256": "c3efe3a7231618672b675f32ea149665e8508e5411f58da885565300213c0f7b",
+      "bytes": 4711
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/prepare_note1_labels.py",
@@ -2579,8 +2600,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
-      "sha256": "5a9adf8df11304f52fd6cf65c22723d8d515053a90295aea02b27ed87c789b84",
-      "bytes": 8441
+      "sha256": "3d60e0be2191e56db34ec6c42bf8a957df5c90d72d29434bf10b93ed857cdda0",
+      "bytes": 9115
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -4754,14 +4775,14 @@
     }
   ],
   "verification": {
-    "file_count": 946,
+    "file_count": 950,
     "all_source_hashes_match": true,
     "combined_pages": 57,
     "focused_tests_passed": 140,
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "Restored Note 1 slide 4 to dimensionless interval ratio minus one, scaled by 1e6. All 7,203 intervals in scatter; histogram shows central 98%, with Gaussian core fit. Subset definition retained; next slide distinguished as time-residual drift study. Ns artifacts archived, not displayed.",
+    "latest_change": "Note 1 slide 5 redrawn from the same matched subsets as slide 4. Shared ns residual axes and consistent colors; existing LOWESS function with fraction 0.15 and three robust iterations. On-slide Cleveland [8] citation and verified DOI. Other slides/full notes and detector calibration results unchanged.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 26,
@@ -4781,7 +4802,7 @@
     "n2_3_n2_4_closure_changed_files_hash_checked": 17,
     "title_update_changed_files_hash_checked": 17,
     "github_link_verification": "DPS_NOTES/review_2026-10-22_publication/repository_links.json",
-    "latest_changed_files_hash_checked": 69,
+    "latest_changed_files_hash_checked": 73,
     "original_text_verification": "DPS_NOTES/review_2026-10-22_publication/original_text_check.json",
     "language_review_verification": "DPS_NOTES/review_2026-10-22_publication/language_review_verification.json",
     "short_slides_v2": {

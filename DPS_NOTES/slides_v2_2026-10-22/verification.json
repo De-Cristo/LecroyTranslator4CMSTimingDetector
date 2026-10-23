@@ -25,9 +25,9 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "Note 1 slide 4 inspected: dimensionless ratio-minus-one scatter and histogram restored; readable subset caption and distinction from slide 5. No overflow. Other slides unchanged.",
+  "visual_review": "Slide 5 inspected: three consistent panels, shared ns limits, same subset colors as slide 4, visible red LOWESS curves and on-slide reference [8]/DOI. No overflow. Other slide text and embedded images unchanged.",
   "scientific_inputs": "Twenty-four newly fitted per-threshold channel corrections, six independent validation samples. Final histograms checked against the threshold reports. No pooled threshold timing distribution.",
-  "combined_sha256": "d27d03df36fca6d1256eca55ce2d36f7e0db6e899696d98d4b6a1b3312565678",
+  "combined_sha256": "439dfcb204def666657a86b45898e4794119fce281c782dfabde947b71db932b",
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 8,
@@ -214,5 +214,26 @@
     "other_slides_unchanged": true,
     "detector_calibrations_unchanged": true,
     "source_report": "assets/note1_matching_ratio/report.json"
+  },
+  "note1_drift_review": {
+    "date": "2026-10-23",
+    "slide": 5,
+    "events": 7206,
+    "identical_input_to_slide4": true,
+    "shared_y_limits_ns": [
+      -0.35000000000000003,
+      0.25
+    ],
+    "lowess_frac": 0.15,
+    "lowess_iterations": 3,
+    "existing_implementation_reproduced": true,
+    "all_subsets_pass_quality_threshold": true,
+    "all_events_visible": true,
+    "corrected_residual_sign_verified": true,
+    "doi_link_verified": true,
+    "published_code_matches_local": true,
+    "other_slides_unchanged": true,
+    "detector_calibrations_unchanged": true,
+    "source_report": "assets/note1_drift/report.json"
   }
 }

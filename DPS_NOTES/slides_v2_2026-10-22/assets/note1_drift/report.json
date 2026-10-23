@@ -1,0 +1,64 @@
+{
+  "input": "assets/note1_matching_ns/matched_timestamps.csv",
+  "input_sha256": "6354d414bcdcb0aabbd6e548e33ed885fb725400856c705bf0be91ebdde04057",
+  "events": 7206,
+  "subsets": [
+    {
+      "subset": 1,
+      "events": 2405,
+      "slope": 0.9999909880522575,
+      "centered_intercept_ns": -0.01631804711519663,
+      "scope_origin_ps": 0.0,
+      "febd_origin_ps": 16014243789690.0,
+      "pre_lowess_scaled_mad_ns": 0.03964231540560722,
+      "before_sd_ns": 0.0385475507903066,
+      "after_sd_ns": 0.029126057404463824
+    },
+    {
+      "subset": 2,
+      "events": 2396,
+      "slope": 0.9999909981138754,
+      "centered_intercept_ns": 0.213486747660099,
+      "scope_origin_ps": 0.0,
+      "febd_origin_ps": 17791523421608.0,
+      "pre_lowess_scaled_mad_ns": 0.1427288451567292,
+      "before_sd_ns": 0.12104467289248685,
+      "after_sd_ns": 0.029801357259992407
+    },
+    {
+      "subset": 3,
+      "events": 2405,
+      "slope": 0.9999909848121733,
+      "centered_intercept_ns": 0.2651022768005492,
+      "scope_origin_ps": 0.0,
+      "febd_origin_ps": 19519478703856.0,
+      "pre_lowess_scaled_mad_ns": 0.08823835201263427,
+      "before_sd_ns": 0.09436897087424664,
+      "after_sd_ns": 0.029390143317673104
+    }
+  ],
+  "linear_fit": "Centered least-squares line per subset",
+  "residual_units": "ns",
+  "horizontal_units": "elapsed seconds within each subset",
+  "lowess_frac": 0.15,
+  "lowess_robust_iterations": 3,
+  "implementation": "TimeCalibration/ch192_vs_trigger_lowess.py::_lowess_smooth",
+  "implementation_sha256": "3e186bbebd88e0359da3871a215a3aa8c5daf5d3521c8f2491fdb35f21cdb317",
+  "no_display_clipping": true,
+  "no_event_rejection": true,
+  "common_y_limits_ns": [
+    -0.35000000000000003,
+    0.25
+  ],
+  "correction": "g_s(u)=a_s*u+b_s+d_s(u); corrected residual=r_s(u)-d_s(u)",
+  "detector_calibration_results_unchanged": true,
+  "reference": {
+    "author": "William S. Cleveland",
+    "year": 1979,
+    "title": "Robust Locally Weighted Regression and Smoothing Scatterplots",
+    "journal": "Journal of the American Statistical Association",
+    "volume": 74,
+    "pages": "829-836",
+    "doi": "10.1080/01621459.1979.10481038"
+  }
+}

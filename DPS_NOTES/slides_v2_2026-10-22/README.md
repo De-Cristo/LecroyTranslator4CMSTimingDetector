@@ -37,12 +37,27 @@ python3 DPS_NOTES/slides_v2_2026-10-22/build.py
 ```
 
 Requires pdfLaTeX with TikZ, Poppler, Pillow, pypdf, Matplotlib, NumPy, pandas
-and SciPy. Previews are generated locally
+and SciPy; the reused clock-analysis module also requires uproot and awkward.
+Previews are generated locally
 under each note's `preview/` directory. The builder rejects layout overflow,
 missing fonts, unresolved citations, unexpected page counts and portrait pages.
 These are first discussion drafts, not approved CMS submissions.
 
 ## Note 1 structure review
+
+### 23 October: consistent LOWESS drift panels on slide 5
+
+`prepare_note1_drift.py` redraws three panels from the same frozen matched-event
+snapshot as slide 4, with the same subset colors, common ns residual limits,
+and elapsed scope time in seconds. Each subset has a centered least-squares
+clock line; the residuals are smoothed using the existing
+`TimeCalibration/ch192_vs_trigger_lowess.py::_lowess_smooth` implementation
+(fraction 0.15, three robust iterations). All 7,206 points are retained. This
+illustrative redraw does not rerun or replace detector calibration results.
+The curves, residuals and settings are saved in `assets/note1_drift/`.
+Slide 5 briefly defines LOWESS, cites reference [8], and links directly to
+Cleveland's 1979 JASA paper, DOI `10.1080/01621459.1979.10481038`.
+The original bibliography entries and the full notes remain unchanged.
 
 ### 23 October: restore interval ratio minus one on slide 4
 

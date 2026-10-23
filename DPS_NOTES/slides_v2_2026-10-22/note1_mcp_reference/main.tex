@@ -49,19 +49,19 @@ The next slide examines slow drift using time residuals after linear alignment.
 \Code{FEBD_Sync/simple_sync.py}{GitHub: trigger matching}.}
 \end{frame}
 
-\PlotSlide{The matched clocks show low-frequency relative drift}{clock_residuals}{
-\textbf{Correct the timing coordinate}
-
-\begin{enumerate}
-\item Split data at clock resets.
-\item Fit a line between matched trigger times in each segment.
-\item Fit the remaining drift with LOWESS.
-\end{enumerate}
-
-Add the drift to the line prediction to obtain $g(u)$, the expected TOFHIR trigger time.
-}{Points show residuals before LOWESS; red curves describe smooth drift.
-Reject groups with pre-LOWESS residual scale $1.4826\,\mathrm{MAD}>1$\,ns.
+\begin{frame}[t]{The matched clocks show low-frequency relative drift}
+\small
+Fit the relative clock rate in each subset, then model the remaining drift with LOWESS~\cite{LOWESS}.
+\par\centering
+\includegraphics[width=\linewidth,height=39mm,keepaspectratio]{figures/clock_residuals.pdf}
+\par\raggedright
+\Source{Same three subsets and colors as slide 4; points show all 7,206 matched events after separate linear fits, with shared ns limits.
+Red curves: robust locally weighted linear regression (LOWESS), using a 15\% neighborhood and three robust iterations.
+Add the fitted drift to the line: $g_s(u)=a_su+b_s+d_s(u)$.
+The calibration rejects subsets with pre-LOWESS scale $1.4826\,\mathrm{MAD}>1$\,ns; all three shown pass.
+\href{https://doi.org/10.1080/01621459.1979.10481038}{W. S. Cleveland, JASA 74 (1979), 829--836}~\cite{LOWESS}.
 \Code{TimeCalibration/ch192_vs_trigger_lowess.py}{GitHub: clock reconstruction}.}
+\end{frame}
 
 \PlotSlide{After synchronization, the MCP defines the calibration time}{mcp_waveform}{
 Fit the MCP waveform to estimate its pulse time.
