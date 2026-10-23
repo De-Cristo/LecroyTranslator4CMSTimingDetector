@@ -25,9 +25,9 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "24 October: candidate slides 7-8 visually checked; no clipping/overlap. Previous main slides and references unchanged apart from numbering. All 11 citation destinations updated and checked.",
+  "visual_review": "24 October: revised Note 2 slide 8 visually checked; no overlap or clipping. Only slide 8 text changed; Note 1 text, Note 2 figures, protected full notes and Note 1 submission unchanged. All 11 Note 2 citation destinations checked.",
   "scientific_inputs": "Frozen reference corrections; four new downstream fits (two channels x two reference choices), 1512 common fitting events and 1456 common evaluation events at one threshold. 400 paired block-bootstrap replicas with fixed cuts and calibration.",
-  "combined_sha256": "fd9b330ea3e0d40b53c7edf071d004b1422704a255e939f4cd041eeebf745aaf",
+  "combined_sha256": "f410fbbb1ae3c03951014a432968fa28a821a42396f593c258602aad34ed2818",
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 7,
@@ -463,5 +463,23 @@
     "exploratory_scope_preserved": true,
     "original_cms_plot_labels_retained": true,
     "full_notes_and_note1_unchanged": true
+  },
+  "note2_physics_motivation_review": {
+    "date": "2026-10-24",
+    "slide": 8,
+    "motivation": "Similar scintillation pulses and front-end shaping motivate testing common timing sensitivity to fractional charge.",
+    "explicit_assumptions": [
+      "Local inverse-slope walk approximation with constant AWC per SiPM",
+      "Reliable local linear mean-slope fit near Q*",
+      "Selected-charge medians sample comparable pulse regions",
+      "Common fractional-charge timing response K transfers between SiPMs and bars under comparable conditions"
+    ],
+    "universal_law_not_claimed": true,
+    "reference_based_training_disclosed": true,
+    "no_refitting": true,
+    "plots_unchanged": true,
+    "only_changed_slide": 8,
+    "overflow": 0,
+    "citation_destinations_verified": 11
   }
 }

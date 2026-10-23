@@ -33,6 +33,17 @@ is approximately common across channels at a prescribed typical charge:
 Here K has units of ns. Q* is the median of each channel's selected charge
 sample, computed once, not the event charge. AWC remains a channel constant.
 
+## Required assumptions on slide 8
+
+1. The local inverse-slope approximation describes the walk, with AWC constant per SiPM and configuration.
+2. The linear mean-slope fit is reliable near the selected-charge median Q*.
+3. These medians sample comparable pulse regions across the SiPMs.
+4. Similar pulse shapes and operating conditions give a common fractional-charge timing response K that transfers between SiPMs and bars.
+
+The first two support the derivative expression; the last two are additional
+physical hypotheses needed to use one shared K for prediction. They are not
+established by the algebra or by nominally identical detector construction.
+
 ## Why consider it, and what is not justified?
 
 Similar scintillators and front-end shaping motivate testing whether channels

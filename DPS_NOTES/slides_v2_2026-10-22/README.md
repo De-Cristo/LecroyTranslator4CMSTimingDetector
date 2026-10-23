@@ -284,6 +284,11 @@ or numerical results are changed. Full-note sources and figures stay untouched.
 
 `AWC_PREDICTOR_DISCUSSION.md` separates the derivative identity from the
 empirical shared-response hypothesis and provides a suggested coauthor reply.
+The slide-8 wording review makes the scintillation-pulse and front-end-shaping
+motivation explicit and lists four assumptions: the inverse-slope approximation,
+a reliable local linear mean-slope fit, comparable pulse regions at the selected
+charge medians, and a transferable fractional-charge response K. These are
+testable physical hypotheses, not a universal law; no numerical results change.
 
 The residual figure is the unaltered embedded JPEG from PDF page 12 (printed
 page 11) of the supplied `DPS_NOTES/Note2.pdf`, not a replacement refit.

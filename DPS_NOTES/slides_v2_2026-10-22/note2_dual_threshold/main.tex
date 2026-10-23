@@ -116,19 +116,37 @@ The ten-SiPM trend motivates prediction, but the line is not a precision calibra
 Bars: slope-only 16--84\% bootstrap intervals; reference errors and correlations are omitted. More independent data are needed.}
 \end{frame}
 
-\PlotSlide{Candidate 2: shared fractional-charge response}{internal_predictor}{
-Hypothesis: common $K\simeq-dW/d\ln Q$ at $Q_*$, not a derived law.
+\begin{frame}[t]{Candidate 2: a physics-motivated AWC predictor}
+\small
+\textbf{Physics motivation:} similar scintillation pulses and front-end shaping motivate
+testing a shared timing sensitivity to the same fractional charge change.
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.43\textwidth}
+\centering
+\includegraphics[width=\linewidth,height=28mm,keepaspectratio]{figures/internal_predictor.pdf}
+\fontsize{9}{10.5}\selectfont
 \[
-\mathrm{AWC}_{\rm pred}=K\,\frac{\overline S(Q_*)^2}{c_1Q_*}.
+K\simeq-\frac{dW}{d\ln Q}\bigg|_{Q_*},\quad
+\mathrm{AWC}_{\rm pred}=\frac{K\overline S(Q_*)^2}{c_1Q_*}.
 \]
-$Q_*$: selected-charge median per SiPM.
-
-Learn $K$ on other bars; predict the excluded bar.
-
+\end{column}
+\begin{column}{.55\textwidth}
+\fontsize{9.5}{11}\selectfont
+\textbf{Required assumptions}
+\begin{enumerate}
+\setlength{\itemsep}{1pt}
+\item $W=\mathrm{AWC}/\overline S$ holds locally, with constant AWC per SiPM.
+\item The fitted $\overline S(Q)=c_0+c_1Q$ is reliable near $Q_*$.
+\item $Q_*$, the selected-charge median per SiPM, samples comparable pulse regions.
+\item Similar pulses and operating conditions allow a common $K$ across SiPMs and bars.
+\end{enumerate}
+\end{column}
+\end{columns}
+\Source{Ten SiPMs; hold out each of six bars and learn $K$ from the others' MCP-calibrated AWC.
 RMS error: \PredictorRMSE\,$\mu$A; fractional RMS: \PredictorFraction\%.
-}{Ten SiPMs, six held-out bars. $K$ uses other bars' MCP-calibrated AWC. Dashed line: equality.
-Horizontal bars: conditional reference-AWC intervals, not prediction intervals.
-Empirical hypothesis only: full prediction uncertainties, correlations and transfer to new configurations remain unvalidated.}
+Dashed line: equality. Horizontal bars: conditional reference-AWC intervals, not prediction intervals.
+Not a universal law: full uncertainties, correlations and transfer to new configurations remain unvalidated.}
+\end{frame}
 
 \begin{frame}[t]{The single-amplitude model closely follows the MCP curves}
 \begin{columns}[T,onlytextwidth]

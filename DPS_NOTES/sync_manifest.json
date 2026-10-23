@@ -33,7 +33,8 @@
     "short_note2_labels_citations": "23 October: Note 2 uses descriptive sample and bar/end labels in text and figures, removes numeric backup point IDs, drops former reference 10 and cites all eleven remaining entries in context. Fits unchanged; original full notes and Note 1 submission preserved.",
     "short_note2_sipm_charge_precision": "24 October: Note 2 uses SiPM terminology; slide 3 qualifies coefficient variation with raw uncalibrated ADC charge; slide 5 motivates mapping with author-specified typical single-hit uncertainties (~15% slope, <5% charge), separate from profile and fit errors. Selections and fits unchanged.",
     "short_note2_awc_notation": "24 October: Note 2 slide 6 uses W(Q)=AWC/Sbar(Q), directly naming AWC and fitted mean slope. Positivity condition and comparison legends consistent. Notation only; fitted values and full notes unchanged.",
-    "short_note2_candidate_restoration": "24 October: restored both exploratory AWC candidates to Note 2 main body directly after slide 6. Candidates 7-8, comparison 9, residual result 10, references 11. Saved prediction values verified, no refitting; full notes and Note 1 unchanged."
+    "short_note2_candidate_restoration": "24 October: restored both exploratory AWC candidates to Note 2 main body directly after slide 6. Candidates 7-8, comparison 9, residual result 10, references 11. Saved prediction values verified, no refitting; full notes and Note 1 unchanged.",
+    "note2_slide8_physics_motivation": "Closed 24 October: pulse physics motivation and four required assumptions explicit; exploratory common-K hypothesis distinguished from algebra. No refitting or changed numerical results."
   },
   "files": [
     {
@@ -2428,17 +2429,17 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/AWC_PREDICTOR_DISCUSSION.md",
-      "sha256": "c795bd9f2a050cf8ba5109040d49910b93a89570a1034dcb404264b04b16b967",
-      "bytes": 3442
+      "sha256": "2afdb91a7fab3606c81c32a58792175e3d25e2282a1c8c292b9b9d81adbad0ff",
+      "bytes": 4098
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/README.md",
-      "sha256": "6532bacf154552923c2db740133f6244f12e5d03c487a69fd34b154a9e5c1d3b",
-      "bytes": 19225
+      "sha256": "81a45b305d5cd0c6bbc7dadfd77131fde2fad381817b5bfd87d15aaa4a353cf3",
+      "bytes": 19621
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_drift/clock_residuals.pdf",
-      "sha256": "5956d229ef5d53de512751542c649894b985be71f65eac80e492408f1a597b98",
+      "sha256": "40afdd0aec9b9e9c736738d8b6b3f6bf31bc6c025861096aab26608f85c0dee4",
       "bytes": 88521
     },
     {
@@ -2493,7 +2494,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_matching_ratio/event_matching.pdf",
-      "sha256": "8ac63ed1238c95cbd070bf3c15ed7e4540e9d3371e6656c03c5d2d81dffbbf13",
+      "sha256": "f034e1fa18ec6f33d5111efe7a87c68080dbb7956e561b7f3c8aff0480f638b7",
       "bytes": 40739
     },
     {
@@ -2538,7 +2539,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_setup/setup.pdf",
-      "sha256": "00295198f5d91ebed5e94d79d5336df541ba9fcc256b88a09661c931bd32f00b",
+      "sha256": "0ad2f9426a7df4749cdec43e77f6acafa35b1774ea9ba8116ae1913a98d01482",
       "bytes": 53217
     },
     {
@@ -2613,8 +2614,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/both_notes_slides_v2.pdf",
-      "sha256": "fd9b330ea3e0d40b53c7edf071d004b1422704a255e939f4cd041eeebf745aaf",
-      "bytes": 2160613
+      "sha256": "f410fbbb1ae3c03951014a432968fa28a821a42396f593c258602aad34ed2818",
+      "bytes": 2204513
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build.py",
@@ -2628,7 +2629,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_report.json",
-      "sha256": "caa97abcd2fa4a62ad2a75a09bdac435da6552a42502acf75b5c53801b16ecd5",
+      "sha256": "ab3c32e4402bcbee7abe186a6e903c26eeab3fe7bff5bd5aba80216ebd91c4c8",
       "bytes": 774
     },
     {
@@ -2638,7 +2639,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/asset_manifest.json",
-      "sha256": "0317c2d6152726251ba11422152258d8c6054f5c8320bb5d67f74df7a89bea97",
+      "sha256": "e96714d8ae4355b8cd08ecc6fec299b414b6c2c9c464a917b2d75917d97f9c32",
       "bytes": 2268
     },
     {
@@ -2678,7 +2679,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/clock_residuals.pdf",
-      "sha256": "5956d229ef5d53de512751542c649894b985be71f65eac80e492408f1a597b98",
+      "sha256": "40afdd0aec9b9e9c736738d8b6b3f6bf31bc6c025861096aab26608f85c0dee4",
       "bytes": 88521
     },
     {
@@ -2693,7 +2694,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/event_matching.pdf",
-      "sha256": "8ac63ed1238c95cbd070bf3c15ed7e4540e9d3371e6656c03c5d2d81dffbbf13",
+      "sha256": "f034e1fa18ec6f33d5111efe7a87c68080dbb7956e561b7f3c8aff0480f638b7",
       "bytes": 40739
     },
     {
@@ -2703,7 +2704,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/setup.pdf",
-      "sha256": "00295198f5d91ebed5e94d79d5336df541ba9fcc256b88a09661c931bd32f00b",
+      "sha256": "0ad2f9426a7df4749cdec43e77f6acafa35b1774ea9ba8116ae1913a98d01482",
       "bytes": 53217
     },
     {
@@ -2748,7 +2749,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/slides.pdf",
-      "sha256": "3f270b29a09b6c99b5d071e55ef0d0984e4f23d8b5cd7fb83d39839c174fdd3e",
+      "sha256": "5a28c1fabca62a10ed7693e15fbb91e018a25b17a4bd45b25c2e9b504a02127a",
       "bytes": 794275
     },
     {
@@ -2823,8 +2824,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/main.tex",
-      "sha256": "4880dc6363db18a5a710a3f61f13b51ecb8ae321007deae2c45f320c1ccd4826",
-      "bytes": 7843
+      "sha256": "ed8197e9b11fe4e2c2b9052b7d079186f706671ee256dee2da589784ef01314d",
+      "bytes": 8603
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/metadata.tex",
@@ -2843,8 +2844,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/slides.pdf",
-      "sha256": "1db539979f231210bef5c8174fc64f64172a05e0e44bbcdba821ba50e0e3fb32",
-      "bytes": 1275494
+      "sha256": "f42a0f748c8f1be5ec9de770f68c53d91bfe237827691bc20e3a76b1011b2dc0",
+      "bytes": 1315804
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/prepare_note1_drift.py",
@@ -2898,8 +2899,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
-      "sha256": "d31ab14de9bc7407195283b467cd5b1d13428229c761af1557191ea546a8607d",
-      "bytes": 16587
+      "sha256": "d30ea69fc481b762f44b1570024dc9da3ceaba234d18c767a35d46f7c8a3db91",
+      "bytes": 17426
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -5080,7 +5081,7 @@
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "24 October: restored both exploratory AWC candidates to Note 2 main body directly after slide 6. Candidates 7-8, comparison 9, residual result 10, references 11. Saved prediction values verified, no refitting; full notes and Note 1 unchanged.",
+    "latest_change": "24 October: Note 2 slide 8 explains pulse-physics motivation and four assumptions for the shared fractional-charge AWC predictor. Only slide 8 text changed; figures and full notes unchanged. Layout and citations verified.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 26,
@@ -5100,7 +5101,7 @@
     "n2_3_n2_4_closure_changed_files_hash_checked": 17,
     "title_update_changed_files_hash_checked": 17,
     "github_link_verification": "DPS_NOTES/review_2026-10-22_publication/repository_links.json",
-    "latest_changed_files_hash_checked": 24,
+    "latest_changed_files_hash_checked": 15,
     "original_text_verification": "DPS_NOTES/review_2026-10-22_publication/original_text_check.json",
     "language_review_verification": "DPS_NOTES/review_2026-10-22_publication/language_review_verification.json",
     "short_slides_v2": {
