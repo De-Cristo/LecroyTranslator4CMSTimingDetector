@@ -32,6 +32,13 @@ def run(command, cwd):
 def main():
     prepare_backups()
     prepare_note1_labels()
+    setup = ROOT / "assets/note1_setup"
+    (setup / "build").mkdir(exist_ok=True)
+    run(["pdflatex", "-interaction=nonstopmode", "-halt-on-error",
+         "-output-directory=build", "setup.tex"], setup)
+    setup_log = (setup / "build/setup.log").read_text(errors="replace")
+    assert not any(issue in setup_log for issue in ("Overfull", "Missing character", "Font Warning"))
+    shutil.copy2(setup / "build/setup.pdf", setup / "setup.pdf")
     combined = PdfWriter()
     report = {}
     for name in NOTES:
@@ -53,6 +60,8 @@ def main():
                 origin = ROOT / "assets/note2_figure5/figure5.pdf"
             if name == "note1_mcp_reference" and Path(relative).stem in NOTE1_LABELS:
                 origin = ROOT / "assets/note1_public_labels" / Path(relative).name
+            if name == "note1_mcp_reference" and relative == "figures/setup.pdf":
+                origin = setup / "setup.pdf"
             is_backup = name == "note2_dual_threshold" and Path(relative).stem in BACKUP_FIGURES
             if is_backup:
                 origin = ROOT / "assets/note2_internal_backups" / Path(relative).name

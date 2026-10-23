@@ -25,9 +25,9 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "Note 1 contact sheets inspected; setup and matching figure labels inspected at high resolution. No layout overflow. Note 2 page content streams and embedded image pixels match the previous committed deck.",
+  "visual_review": "Note 1 slide 3 inspected at 1100 px: beamline and three detectors only, no angle labels/arcs, separated labels, no overflow. Other slide text and full notes unchanged.",
   "scientific_inputs": "Twenty-four newly fitted per-threshold channel corrections, six independent validation samples. Final histograms checked against the threshold reports. No pooled threshold timing distribution.",
-  "combined_sha256": "f1000951ca1387d79cc11ee1d30dd5ddca341ac287af33c2024d94d8ed7850b2",
+  "combined_sha256": "ba80ae88f1026f6ef49cd5303fdb313cd42743fbf6a29fb4f8a1d7f657be799e",
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 8,
@@ -156,5 +156,26 @@
     "source_figures_unchanged": true,
     "figure_provenance": "assets/note1_public_labels/provenance.json",
     "github_code_links_match_published_commit": true
+  },
+  "note1_setup_review": {
+    "date": "2026-10-23",
+    "slide": 3,
+    "source": "assets/note1_setup/setup.tex",
+    "figure_sha256": "65e6337fd5adef8b565389c84f6ba690ab525a86deecb0ebfaa3d69a6504b43b",
+    "source_sha256": "30044bf14bca708281b3dd0e85952606dc2a286b56cdce58a4d6410e2f3c9c7e",
+    "components": [
+      "beamline",
+      "reference module",
+      "module under test",
+      "MCP"
+    ],
+    "rotation_degrees": 52,
+    "rotation_convention": "from orientation perpendicular to beam",
+    "geometry_source": "author specification",
+    "not_to_scale": true,
+    "vector_only": true,
+    "other_slide_text_and_raster_images_unchanged": true,
+    "no_refitting": true,
+    "angle_annotations": false
   }
 }

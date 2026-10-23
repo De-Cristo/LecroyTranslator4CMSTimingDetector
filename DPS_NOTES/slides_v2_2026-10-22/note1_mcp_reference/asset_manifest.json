@@ -26,8 +26,8 @@
   },
   {
     "file": "figures/setup.pdf",
-    "source": "slides_v2_2026-10-22/assets/note1_public_labels/setup.pdf",
-    "sha256": "65927e86aac24b63835d68ec5a80d5099e92c0723fc2336e25898f42ae49c5f8"
+    "source": "slides_v2_2026-10-22/assets/note1_setup/setup.pdf",
+    "sha256": "65e6337fd5adef8b565389c84f6ba690ab525a86deecb0ebfaa3d69a6504b43b"
   },
   {
     "file": "figures/threshold_histograms.pdf",

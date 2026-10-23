@@ -43,6 +43,19 @@ These are first discussion drafts, not approved CMS submissions.
 
 ## Note 1 structure review
 
+### 23 October: simplified beam-test schematic
+
+Slide 3 now uses the editable vector drawing `assets/note1_setup/setup.tex`.
+Only the beamline, upstream reference module, downstream module under test, and
+MCP are shown. The reference module is perpendicular to the beam; the module
+under test is rotated by approximately 52 degrees from that orientation, as
+specified by the author. At the author's request, the slide does not annotate
+the angle: no numerical angle, arc, or dashed angular baseline is shown.
+Distances and dimensions are not to scale.
+The build compiles this TikZ source and records the resulting figure hash.
+The caption no longer refers to the removed readout-path highlighting.
+The previous setup assets remain archived but are not used on the slide.
+
 ### 23 October: abstract and audience-facing terminology
 
 Note 1 slide 2 is now an abstract, adapted from the earlier abstract and the
