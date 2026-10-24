@@ -1,0 +1,74 @@
+{
+  "sources": [
+    {
+      "path_relative_to_DPS_NOTES": "note1_mcp_reference/data/sandbox_test/Q_Walk/reference_quadratic_t0/ch192_vs_trig_lowess_bar8_ch137_walk_before_walk_fit_expected_refit_profile.csv",
+      "sha256": "eb081c1156945577baa6c2a43b0757fd125aa0faafeabb953a9684fe249874d0"
+    },
+    {
+      "path_relative_to_DPS_NOTES": "note2_dual_threshold/data/sandbox_test/Q_Walk/results/2026-10-22_clock_quality/inputs/channel_137/channel_137_safe_time2_two_upstream_peak_right_profile_linear_summary.json",
+      "sha256": "b3d42f2904b04829243da70efccff8417066dc6ecea09b382e413082e9a52d72"
+    },
+    {
+      "path_relative_to_DPS_NOTES": "slides_v2_2026-10-22/assets/note2_figure5/original_figure5.jpg",
+      "sha256": "1dd7ba2f577e1ee06cde3f59d6719579be347eafc64eff27f6da4f6eadf5f7f2"
+    }
+  ],
+  "calculation": "Profile-level mean time minus AWC/(c0+c1*Q_eff), then an inverse-variance fitted constant offset; not an event-level correction.",
+  "q_definition": "Q_eff = 1 / mean(1/Q) in each saved inverse-charge bin; not mean(Q). Bin representative must lie within the slope-profile domain; full-bin containment is not asserted.",
+  "time_units": "Input mean and SEM are ns; existing +26 ns display offset is not added again; residual output is ps.",
+  "awc_ua": 20.0,
+  "awc_source": "Supplied detector Note 2, Table 2, bar 8 ch137 (left SiPM): 20 uA; not fitted in this calculation.",
+  "c0_ua_per_ns": 11.613434729249832,
+  "c1_ua_per_ns_per_adc": 0.012318232421558717,
+  "slope_domain_adc": [
+    184.92645263671875,
+    656.4407348632812
+  ],
+  "selected_q_range_adc": [
+    185.55060567296647,
+    400.6863114561761
+  ],
+  "input_bins": 48,
+  "selected_bins": 43,
+  "exclusions": "Five bin representatives below the slope domain; no residual-based cuts or extrapolation.",
+  "fitted_offset_ns": -0.6883411657842745,
+  "displayed_errors": "Saved input profile-mean SEM, converted ns to ps. Correction and fitted offset treated as fixed for display. Not total post-fit residual uncertainties.",
+  "excluded_uncertainties": [
+    "Slope-fit and AWC errors",
+    "Shared timing/calibration systematics",
+    "Offset-estimation covariance and resulting bin correlations",
+    "Finite-bin correction bias and charge-coordinate uncertainty",
+    "Transfer between independent acquisitions"
+  ],
+  "bin_residual_rms_ps": 6.077604867561275,
+  "weighted_bin_residual_rms_ps": 5.31375539310059,
+  "central_points_outside_10ps": 5,
+  "diagnostic_line": {
+    "pivot_q_adc": 236.53306840345306,
+    "intercept_ps": 6.261147907637008e-14,
+    "slope_ps_per_adc": -0.031060382374840472,
+    "fixed_sem_covariance": [
+      [
+        0.7356511285234045,
+        3.0522331816999215e-18
+      ],
+      [
+        3.0522331816999215e-18,
+        0.0003958550427069817
+      ]
+    ],
+    "chi2": 35.9451963142831,
+    "ndf": 41,
+    "applied_as_correction": false
+  },
+  "interpretation": "About 6.1 ps RMS of bin-mean residuals supports the walk form at roughly 10 ps scale in this example, not a single-hit resolution, all-point bound, or test of reference-free AWC prediction.",
+  "historical_comparison": {
+    "purpose": "Diagnostic comparison only; digitized points are not calculation inputs.",
+    "bins": 43,
+    "constant_alignment_ps": -0.5234040448270042,
+    "shape_difference_rms_ps": 1.6126594044298133,
+    "max_absolute_difference_ps": 3.2602428918312225,
+    "ps_per_pixel": 0.05755064151742492,
+    "conclusion": "Close but not identical; present as a new calculation, not an exact reproduction of Figure 5."
+  }
+}

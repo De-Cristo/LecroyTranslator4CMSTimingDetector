@@ -160,16 +160,17 @@ Bar 8, left SiPM: \ExampleRMS\,ps RMS mismatch. Lower panels: curve differences,
 Bands: slope-fit statistics, MCP curve fixed. Clock alignment: LOWESS~\cite{LOWESS}. Shape benchmark, not AWC prediction.}
 \end{frame}
 
-\PlotSlide{The AWC correction describes the walk at the 10 ps scale}{awc_residual_envelope}{
+\PlotSlide{The AWC correction describes the walk at the 10 ps scale}{awc_residual_profile}{
 \begin{itemize}
 \setlength{\itemsep}{3pt}
 \item \textbf{Y axis:} mean time minus MCP, the AWC correction and a constant offset.
-\item \textbf{Near-zero, flat trend:} little charge-dependent timing bias remains.
-\item \textbf{$\pm10$ ps guide:} supports the AWC walk description at this scale, not an all-point bound.
+\item \textbf{43 charge bins:} within the slope calibration range, with 6.1 ps RMS of bin residuals.
+\item \textbf{$\pm10$ ps guide:} indicates the residual-walk scale, not an all-point bound.
 \end{itemize}
-}{$r(Q)=\langle t_{\rm thr1}-t_{\rm MCP}\rangle_Q-\mathrm{AWC}/\overline S(Q)-b$; $b$ is a constant offset.
-Original Figure 5, MCP data~\cite{ReferenceNote}: points, error bars and fit retained in ps; error-bar definition unverified.
-Guide: residual-walk scale, not a confidence band or single-hit resolution. AWC prediction is not tested here.}
+}{$r(Q)=\langle t_{\rm thr1}-t_{\rm MCP}\rangle_Q-\mathrm{AWC}/\overline S(Q)-b$; $b$: fitted constant.
+New MCP-profile calculation~\cite{ReferenceNote}: saved $\overline S(Q)$, fixed AWC $=20\,\mu$A.
+Bars: input profile-mean SEM, conditional on fixed correction and offset. Line: diagnostic only.
+Guide: not a confidence band. This is neither single-hit resolution nor AWC-prediction validation.}
 
 \input{references.tex}
 \end{document}

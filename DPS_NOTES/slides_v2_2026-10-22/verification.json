@@ -25,9 +25,9 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "24 October: Note 2 slides 2, 3, 5, 8, 9 and 10 visually inspected, no clipping/overlap. Other slide texts unchanged. All figure drawing commands, image bytes and labels unchanged. Protected full notes and Note 1 submission unchanged; citation destinations checked.",
+  "visual_review": "24 October: new Note 2 slide 10 inspected at final size; no clipping or overlaps. Only slide 10 text/plot changes. All other figure drawing streams and image bytes unchanged. Full notes, cover abstracts and Note 1 submission byte-identical; all Note 2 citation destinations checked.",
   "scientific_inputs": "Frozen reference corrections; four new downstream fits (two channels x two reference choices), 1512 common fitting events and 1456 common evaluation events at one threshold. 400 paired block-bootstrap replicas with fixed cuts and calibration.",
-  "combined_sha256": "28536400c5c767a0fcc10a13f622099a76285cb162ef46f38df1b7e1c4bdfa4c",
+  "combined_sha256": "a841360d8e4bc6e06e4e638f6adecefcb4bbc5060e41d4f392ac904aa6cb5758",
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 7,
@@ -44,7 +44,7 @@
     "note1": 11,
     "note2": 10
   },
-  "note1_slide_content_unchanged": false,
+  "note1_slide_content_unchanged": true,
   "note2_internal_prediction_review": {
     "no_refitting": true,
     "backup_slides": 0,
@@ -99,7 +99,8 @@
     "new_fits": false,
     "uncertainty_definition_not_inferred": true,
     "other_slides_unchanged_except_numbering": true,
-    "status": "Historical insertion record; slide 10 presentation superseded by residual-envelope review on 24 October. Original source image remains preserved."
+    "status": "Historical insertion record; slide 10 presentation superseded by residual-envelope review on 24 October. Original source image remains preserved.",
+    "superseded_by": "note2_numeric_residual_review; original JPEG archived unchanged"
   },
   "bar_width_interpretation": {
     "slide": 9,
@@ -501,7 +502,8 @@
     "no_new_fits_or_recentering": true,
     "only_changed_slide": 10,
     "overflow": 0,
-    "citation_destinations_verified": 11
+    "citation_destinations_verified": 11,
+    "superseded_by": "note2_numeric_residual_review; historical assets preserved unchanged"
   },
   "note2_transcript_followup": {
     "date": "2026-10-24",
@@ -527,10 +529,52 @@
       "charge integration"
     ],
     "still_open": [
-      "original Figure 5 error-bar definition",
       "public reference cleanup and final Note 2 packaging",
-      "physical explanation of Note 1 pair-width excess"
+      "physical explanation of Note 1 pair-width excess: author deferred to coauthor discussion"
     ],
+    "overflow": 0,
+    "citation_destinations_verified": 11,
+    "historical_residual_bars": "Definition remains unknown; no longer used on slide 10. Presentation issue closed by numerical replacement, not retroactive identification."
+  },
+  "note2_numeric_residual_review": {
+    "date": "2026-10-24",
+    "status": "point 1 closed by numerical replacement",
+    "only_changed_slide": 10,
+    "new_calculation_not_exact_reproduction": true,
+    "numerical_checks": "assets/note2_residual_profile/verification.json",
+    "provenance": "assets/note2_residual_profile/provenance.json",
+    "input_bins": 48,
+    "selected_bins": 43,
+    "awc_fixed_ua": 20,
+    "slope_fit_fixed": true,
+    "new_fits": "Inverse-variance constant centering and diagnostic linear trend only; trend is not subtracted. No AWC refit.",
+    "bin_residual_rms_ps": 6.077604867561275,
+    "uncertainty": "Saved input profile-mean SEM in ps; correction parameters and fitted offset treated as fixed, not total uncertainty.",
+    "old_shape_difference_rms_ps": 1.6126594044298133,
+    "point_2": "Unchanged, deferred to coauthors by author",
+    "protected_files_byte_identical": [
+      "DPS_NOTES/note1_mcp_reference/main.tex",
+      "DPS_NOTES/note1_mcp_reference/metadata.tex",
+      "DPS_NOTES/note1_mcp_reference/references.tex",
+      "DPS_NOTES/note1_mcp_reference/cover.pdf",
+      "DPS_NOTES/note1_mcp_reference/slides.pdf",
+      "DPS_NOTES/note1_mcp_reference/note_with_cover.pdf",
+      "DPS_NOTES/note2_dual_threshold/main.tex",
+      "DPS_NOTES/note2_dual_threshold/metadata.tex",
+      "DPS_NOTES/note2_dual_threshold/references.tex",
+      "DPS_NOTES/note2_dual_threshold/cover.pdf",
+      "DPS_NOTES/note2_dual_threshold/slides.pdf",
+      "DPS_NOTES/note2_dual_threshold/note_with_cover.pdf",
+      "DPS_NOTES/both_notes_review_v1.pdf",
+      "DPS_NOTES/slides_v2_2026-10-22/submission/note1_mcp_reference.pdf"
+    ],
+    "unchanged_figure_drawing_streams_and_images": true,
+    "slide_text_changes": {
+      "note1_mcp_reference": [],
+      "note2_dual_threshold": [
+        10
+      ]
+    },
     "overflow": 0,
     "citation_destinations_verified": 11
   }

@@ -36,7 +36,8 @@
     "short_note2_candidate_restoration": "24 October: restored both exploratory AWC candidates to Note 2 main body directly after slide 6. Candidates 7-8, comparison 9, residual result 10, references 11. Saved prediction values verified, no refitting; full notes and Note 1 unchanged.",
     "note2_slide8_physics_motivation": "Closed 24 October: pulse physics motivation and four required assumptions explicit; exploratory common-K hypothesis distinguished from algebra. No refitting or changed numerical results.",
     "note2_slide10_residual_envelope": "Closed 24 October: original residual plotting field relabelled in ps with +/-10 ps visual guide. Explicit binned MCP-time minus AWC/Sbar and constant-offset definition; guide is not resolution, confidence interval or all-point bound. No refit.",
-    "note2_transcript_errors_and_context": "Closed wording/statistical follow-up 24 October: original unweighted quadratic coefficients reproduced; independent-profile-SEM covariance propagated and checked. Added conditional errors to slide 3, full matrices saved. Clarified separate samples, SEM weighting, matching objective and untested operating conditions. Historical residual-bar definition remains unverified."
+    "note2_transcript_errors_and_context": "Closed wording/statistical follow-up 24 October: original unweighted quadratic coefficients reproduced; independent-profile-SEM covariance propagated and checked. Added conditional errors to slide 3, full matrices saved. Clarified separate samples, SEM weighting, matching objective and untested operating conditions. Historical residual-bar definition remains unverified.",
+    "note2_numeric_residual_errors": "Closed point 1 on 24 October: slide 10 replaced by new numerical profile-level residuals with explicit input-SEM bars. Fixed saved slope and AWC=20 uA; fitted constant only, diagnostic trend not subtracted. 43 bins inside slope domain, 6.08 ps bin RMS. Historical figure retained but not claimed exactly reproduced. Point 2 left unchanged for coauthor discussion."
   },
   "files": [
     {
@@ -2436,12 +2437,12 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/README.md",
-      "sha256": "8bf5fbef07898be4128182b26e5ae09a185e6235f6eeda5aa37113ec035c0533",
-      "bytes": 21736
+      "sha256": "2a4d86a90f8f17d39549b569f9f0f9c153f2954c49a318bd9e7b1e5ba084a19a",
+      "bytes": 23417
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_drift/clock_residuals.pdf",
-      "sha256": "d70e8e3ab4a705a67ce71f94bfa3c85facf4b4a72fdf5adbfc98aba8975661e8",
+      "sha256": "4899fa5feafb54574e45d3a0210cb25084586d3794394070debd8cca212857f6",
       "bytes": 88521
     },
     {
@@ -2496,7 +2497,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_matching_ratio/event_matching.pdf",
-      "sha256": "06274bf151a3389c6f70bff400154f323f7729992aefe61d65b6fa823fcaaf1e",
+      "sha256": "b98723c952580eb9c9940caf9672e437212eca78572449fb844e79f75c96f706",
       "bytes": 40739
     },
     {
@@ -2541,7 +2542,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_setup/setup.pdf",
-      "sha256": "0b02cd4ead1aff26ff4257b85cfe4fc2997f22f40244a9e2fc1184177a52419a",
+      "sha256": "a4fad220fec38da7d07476b42e318e35cfc721817aef3b7f643e7392bead7416",
       "bytes": 53217
     },
     {
@@ -2650,14 +2651,44 @@
       "bytes": 1600
     },
     {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note2_residual_profile/README.md",
+      "sha256": "3f914dd03244ac1aa1702de3b5ee2128c1678228cb1fcdaf4653db8f9b2698e5",
+      "bytes": 3506
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note2_residual_profile/awc_residual_profile.pdf",
+      "sha256": "6bf474061840457b6b82c0d2337b5da9b0e639e0e2b2e0b456320fb519f51be7",
+      "bytes": 31043
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note2_residual_profile/historical_marker_audit.csv",
+      "sha256": "775574a48a0bc330802a7232062f4cd3c997932567d066788a5da4152dd5c4d6",
+      "bytes": 3367
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note2_residual_profile/provenance.json",
+      "sha256": "7044604ac7ab76db8aef5d7a101659a429519adf9158b7908cdc4165e2e6989c",
+      "bytes": 3536
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note2_residual_profile/residual_profile.csv",
+      "sha256": "8e68a708e5a3084ff2f1cbe7c9c793298af17a91a699ee687f1c9ab2bc1f0077",
+      "bytes": 8334
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note2_residual_profile/verification.json",
+      "sha256": "f66a97948c2fd92405df5e6d03be37a9adc362c5a10333a2f39c988b2dd1ac3e",
+      "bytes": 388
+    },
+    {
       "path": "DPS_NOTES/slides_v2_2026-10-22/both_notes_slides_v2.pdf",
-      "sha256": "28536400c5c767a0fcc10a13f622099a76285cb162ef46f38df1b7e1c4bdfa4c",
-      "bytes": 2137294
+      "sha256": "a841360d8e4bc6e06e4e638f6adecefcb4bbc5060e41d4f392ac904aa6cb5758",
+      "bytes": 1859179
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build.py",
-      "sha256": "a2189abadbe7ec481b94b1ac3ba67f524c2d5eee18df84af60cc08b051f7a194",
-      "bytes": 10760
+      "sha256": "1fbf84919d9d9e0f0c7a0c28e0d06e9cd15a62523a32f046120f80c42fc8699c",
+      "bytes": 10938
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_note1_submission.py",
@@ -2666,7 +2697,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_report.json",
-      "sha256": "e6bf20b6f8f73ea1f2cb36b71107822b015cf499d5428d18c0c123b35ef8f92a",
+      "sha256": "52198a1cc437539460e8447779a1d3b0045ba32a7739cb051a20172341625cde",
       "bytes": 774
     },
     {
@@ -2676,7 +2707,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/asset_manifest.json",
-      "sha256": "7ba5c9eb485b4227555ecc188c196990bff63568a068619014d130cf9d5aa15b",
+      "sha256": "dc727e6e7dcbc66cea51ca915e5c640bb0a3de0bda89ceab146d2278995d4831",
       "bytes": 2268
     },
     {
@@ -2716,7 +2747,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/clock_residuals.pdf",
-      "sha256": "d70e8e3ab4a705a67ce71f94bfa3c85facf4b4a72fdf5adbfc98aba8975661e8",
+      "sha256": "4899fa5feafb54574e45d3a0210cb25084586d3794394070debd8cca212857f6",
       "bytes": 88521
     },
     {
@@ -2731,7 +2762,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/event_matching.pdf",
-      "sha256": "06274bf151a3389c6f70bff400154f323f7729992aefe61d65b6fa823fcaaf1e",
+      "sha256": "b98723c952580eb9c9940caf9672e437212eca78572449fb844e79f75c96f706",
       "bytes": 40739
     },
     {
@@ -2741,7 +2772,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/figures/setup.pdf",
-      "sha256": "0b02cd4ead1aff26ff4257b85cfe4fc2997f22f40244a9e2fc1184177a52419a",
+      "sha256": "a4fad220fec38da7d07476b42e318e35cfc721817aef3b7f643e7392bead7416",
       "bytes": 53217
     },
     {
@@ -2786,8 +2817,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/slides.pdf",
-      "sha256": "1fcc2036acc4d8f6df396eb45ed3fbb4a620a78763de3f2acc84926cd88cc426",
-      "bytes": 794279
+      "sha256": "8681d22fe2a57eb13210051648ad7ae8513249f6413e944e261300e01d1a78c3",
+      "bytes": 794275
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/submission.tex",
@@ -2806,8 +2837,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/asset_manifest.json",
-      "sha256": "f8d850df151fa3cb2c9f5fcd0db8d16cf579af53a818612121ec0c2f8dbaab72",
-      "bytes": 1719
+      "sha256": "26e0ca6622d18a5967fdab8e48fea283c8ebddba15a0ffbe46b21235d87338c6",
+      "bytes": 1716
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/citation_audit.json",
@@ -2818,6 +2849,11 @@
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/figures/awc_residual_envelope.pdf",
       "sha256": "1b42f9492a99f1d531076e8e9c266b0e6c176153f0faa7eaddf3d30ad3b69a04",
       "bytes": 309029
+    },
+    {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/figures/awc_residual_profile.pdf",
+      "sha256": "6bf474061840457b6b82c0d2337b5da9b0e639e0e2b2e0b456320fb519f51be7",
+      "bytes": 31043
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/figures/awc_summary_selected.pdf",
@@ -2866,8 +2902,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/main.tex",
-      "sha256": "d059efb7f0778f930902dc0a3f5e6f7ef6f7874030118354f59f334eacff4155",
-      "bytes": 8743
+      "sha256": "5fd5e6210471c83bfd27d2fd00f3fd5a6d6f63836754e9676bd4bbe64ab15eda",
+      "bytes": 8798
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/metadata.tex",
@@ -2886,8 +2922,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/slides.pdf",
-      "sha256": "191d77b2b632cc4289f0ad83109817c7ba13c35dc42371b5b80022aff194392a",
-      "bytes": 1246841
+      "sha256": "79a4f19b81ad1295d349b29255c9d1bf693dffb768c01b61f4dd1a359cc09473",
+      "bytes": 968687
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/prepare_note1_drift.py",
@@ -2935,6 +2971,11 @@
       "bytes": 4426
     },
     {
+      "path": "DPS_NOTES/slides_v2_2026-10-22/prepare_note2_residual_profile.py",
+      "sha256": "0b4b2786e0c23ebaf6b06cee5f46232239a3ec707aafa27b0275196899c67f39",
+      "bytes": 9135
+    },
+    {
       "path": "DPS_NOTES/slides_v2_2026-10-22/slides_preamble.tex",
       "sha256": "c9633eed45f8c411856d4584bfeaa23c632b1f9792a205c41da557ab0d846518",
       "bytes": 2097
@@ -2951,8 +2992,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
-      "sha256": "52363e83be1ada676aea89cc8fb4839adf4ab71e3c0c98ff0be808aca929501f",
-      "bytes": 19409
+      "sha256": "8e74b0a8dab6aedd22b58d04934831484bec162766d80fead7c1a922f3ba6663",
+      "bytes": 21683
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -5126,14 +5167,14 @@
     }
   ],
   "verification": {
-    "file_count": 1017,
+    "file_count": 1025,
     "all_source_hashes_match": true,
     "combined_pages": 57,
     "focused_tests_passed": 140,
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "24 October: Note 2 conditional coefficient errors and transcript wording follow-up on slides 2,3,5,8,9,10. Central fits and all plot content unchanged; covariance and 30000-replica checks passed. Protected full notes and Note 1 unchanged.",
+    "latest_change": "24 October: Note 2 slide 10 numerical residual replacement. Independent SEM/domain/centering/line checks passed, 11-slide deck and 23-page combined PDF compiled without overflow. Only slide 10 content changed; other plot drawing streams/images identical. Protected full notes and Note 1 submission byte-identical.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 26,

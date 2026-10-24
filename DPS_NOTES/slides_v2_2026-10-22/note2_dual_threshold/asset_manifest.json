@@ -10,9 +10,9 @@
     "sha256": "c32474f7dd29d949165ff43ad6d595b815a8611abedd73ca7769cfe781b66d15"
   },
   {
-    "file": "figures/awc_residual_envelope.pdf",
-    "source": "slides_v2_2026-10-22/assets/note2_residual_envelope/awc_residual_envelope.pdf",
-    "sha256": "1b42f9492a99f1d531076e8e9c266b0e6c176153f0faa7eaddf3d30ad3b69a04"
+    "file": "figures/awc_residual_profile.pdf",
+    "source": "slides_v2_2026-10-22/assets/note2_residual_profile/awc_residual_profile.pdf",
+    "sha256": "6bf474061840457b6b82c0d2337b5da9b0e639e0e2b2e0b456320fb519f51be7"
   },
   {
     "file": "figures/awc_summary_selected.pdf",

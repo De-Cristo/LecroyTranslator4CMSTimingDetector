@@ -291,7 +291,7 @@ a reliable local linear mean-slope fit, comparable pulse regions at the selected
 charge medians, and a transferable fractional-charge response K. These are
 testable physical hypotheses, not a universal law; no numerical results change.
 
-The residual figure comes from the embedded JPEG on PDF page 12 (printed
+The archived residual figure comes from the embedded JPEG on PDF page 12 (printed
 page 11) of the supplied `DPS_NOTES/Note2.pdf`, not a replacement refit.
 `assets/note2_figure5/provenance.json` records source and image hashes.
 `prepare_note2_figure5.py` extracts the image and adds the CMS label outside it;
@@ -303,7 +303,7 @@ or excluded. `assets/note2_residual_envelope/provenance.json` records the crop,
 source hashes, registration precision and interpretation. Original dots,
 error bars and the linear fit remain raster content, not regenerated data.
 
-Slide 10 defines the ordinate as the binned MCP-referenced leading-edge time
+The earlier slide-10 version defined the ordinate as the binned MCP-referenced leading-edge time
 minus AWC/Sbar(Q) and a constant timing offset. The near-zero, nearly flat
 trend supports the walk description at roughly the 10 ps scale in this example.
 Some points and error bars extend outside the guide; it is neither a bound
@@ -331,14 +331,41 @@ The Note 2 abstract now identifies the September 2025 pion-beam study and
 separate acquisitions of the same reference module. Slide 5 defines SD, SEM and
 the actual inverse-variance fit weights. Slide 8 identifies thresholds,
 overvoltage and charge-integration settings as untested transfer conditions.
-Slide 9 specifies equal weighting on the populated common Q grid. Slide 10
-explicitly retains, but does not assign a statistical definition to, the original
-Figure 5 error bars. These table errors do not establish the provenance of those
-historical residual bars. No plots, AWC values or correction functions change.
+Slide 9 specifies equal weighting on the populated common Q grid. That update
+retained the original Figure 5 error bars without assigning them a statistical
+definition. The replacement below supersedes that slide, not the historical
+archive; the table errors do not establish the provenance of historical bars.
 
 Publication references and packaging remain pending; this update does not
 resolve the physical origin of the Note 1 pair-width excess or claim a complete
 uncertainty model.
+
+## Residual-error review closed by replacement (24 October)
+
+Slide 10 now uses `prepare_note2_residual_profile.py` and the numerical MCP
+profile, with saved bin-mean SEM converted from ns to ps. The saved linear
+mean-slope fit and the original detector note's Table 2 AWC = 20 uA are fixed.
+Only an inverse-variance constant offset is fitted for centering; a diagnostic
+linear trend is drawn but not subtracted. AWC is not optimized again.
+
+The calculation retains 43 of 48 bin representatives inside the measured slope
+domain, with no residual-based cuts or extrapolation. Their residual RMS is
+6.08 ps and five central values lie outside +/-10 ps. This is a bin-mean
+residual spread, not a single-hit resolution or a bound on every point.
+The errors condition on fixed correction and offset: they omit slope/AWC
+uncertainties, offset-induced covariance, and systematic effects.
+
+The new plot is explicitly labelled a new calculation. A marker-center audit of
+the historical raster on the same 43 bins finds a 1.61 ps RMS shape difference
+after a constant alignment. Exact reproduction is not claimed, and the
+historical error-bar definition remains unknown. The slide issue is closed by
+replacing those bars with documented numerical SEM, not by guessing their
+original definition. `assets/note2_residual_profile/` saves the full input/output
+table, exclusions, provenance and diagnostic comparison; its README details the
+effective-charge convention and limitations of a profile-level calculation.
+
+Point 2, the Note 1 width interpretation, remains unchanged for coauthor
+discussion at the author's request. Full notes and cover abstracts are unchanged.
 
 # Slide 7 wording review (23 October 2026)
 
