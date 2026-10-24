@@ -14,6 +14,23 @@ without rerunning analysis or overwriting either review deck. The accompanying
 page count and citation destinations. Preparing this file does not submit it
 to CMS or establish publication approval.
 
+## Note 2 Submission Presentation
+
+`submission/note2_dual_threshold.pdf` is the 11-slide submission-format copy:
+title, abstract, current main results and the reference page on slide 11.
+Internal-review and draft notices are omitted. Scientific qualifications,
+exploratory-model limitations and CMS Preliminary Phase 2 plot labels remain.
+Slide 10 retains the residual points, SEM bars and +/-10 ps guide without a
+trend fit. No cover or backup page is added.
+
+Rebuild with `python build_note2_submission.py`. The builder compiles the saved
+assets without rerunning analysis or modifying either review deck or the Note 1
+submission PDF. `submission/note2_verification.json` checks scientific-text
+equality, page count, layout and citation links. This is a submission-format
+file, not a claim of CMS approval or an actual submission.
+
+## Review Decks
+
 Note 1 has ten main slides, one reference slide and one diagnostic backup slide. Note 2 has ten main
 slides and one reference slide, with both exploratory candidates in the main body,
 with no A4 cover pages. These are separate from the full

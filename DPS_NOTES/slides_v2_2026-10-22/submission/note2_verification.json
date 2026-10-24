@@ -1,0 +1,29 @@
+{
+  "pages": 11,
+  "reference_page": 11,
+  "backup_pages": 0,
+  "cover_pages": 0,
+  "review_notices_removed": true,
+  "scientific_content_unchanged": true,
+  "cms_preliminary_labels_retained": true,
+  "citation_destinations": {
+    "beamerbibALICEPID": 11,
+    "beamerbibALICEPerformance": 11,
+    "beamerbibDualThreshold": 11,
+    "beamerbibFrolov": 11,
+    "beamerbibGrund": 11,
+    "beamerbibLOWESS": 11,
+    "beamerbibLeo": 11,
+    "beamerbibMTDTDR": 11,
+    "beamerbibReferenceNote": 11,
+    "beamerbibTOFHIR2": 11,
+    "beamerbibgithub_repo": 11
+  },
+  "body_citation_links_verified": true,
+  "overflow": 0,
+  "undefined_citations": 0,
+  "sha256": "b4abd22b0cd742fa5cbb5ae7af0cb1a3eb7570c76d5c3cee7fa9d64d54b0ee8a",
+  "source": "note2_dual_threshold/submission.tex",
+  "visual_review": "All 11 rendered submission slides inspected; no clipping or overlap.",
+  "review_decks_full_notes_and_note1_submission_unchanged": true
+}
