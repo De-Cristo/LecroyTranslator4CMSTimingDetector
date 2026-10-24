@@ -37,7 +37,8 @@
     "note2_slide8_physics_motivation": "Closed 24 October: pulse physics motivation and four required assumptions explicit; exploratory common-K hypothesis distinguished from algebra. No refitting or changed numerical results.",
     "note2_slide10_residual_envelope": "Closed 24 October: original residual plotting field relabelled in ps with +/-10 ps visual guide. Explicit binned MCP-time minus AWC/Sbar and constant-offset definition; guide is not resolution, confidence interval or all-point bound. No refit.",
     "note2_transcript_errors_and_context": "Closed wording/statistical follow-up 24 October: original unweighted quadratic coefficients reproduced; independent-profile-SEM covariance propagated and checked. Added conditional errors to slide 3, full matrices saved. Clarified separate samples, SEM weighting, matching objective and untested operating conditions. Historical residual-bar definition remains unverified.",
-    "note2_numeric_residual_errors": "Closed point 1 on 24 October: slide 10 replaced by new numerical profile-level residuals with explicit input-SEM bars. Fixed saved slope and AWC=20 uA; fitted constant only, diagnostic trend not subtracted. 43 bins inside slope domain, 6.08 ps bin RMS. Historical figure retained but not claimed exactly reproduced. Point 2 left unchanged for coauthor discussion."
+    "note2_numeric_residual_errors": "Closed point 1 on 24 October: slide 10 replaced by new numerical profile-level residuals with explicit input-SEM bars. Fixed saved slope and AWC=20 uA; fitted constant only, diagnostic trend not subtracted. 43 bins inside slope domain, 6.08 ps bin RMS. Historical figure retained but not claimed exactly reproduced. Point 2 left unchanged for coauthor discussion.",
+    "note2_residual_trend_removal": "24 October: removed residual trend fit and line from slide 10 at author request. Residual points, SEM, AWC, centering and +/-10 ps guide unchanged."
   },
   "files": [
     {
@@ -2437,8 +2438,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/README.md",
-      "sha256": "2a4d86a90f8f17d39549b569f9f0f9c153f2954c49a318bd9e7b1e5ba084a19a",
-      "bytes": 23417
+      "sha256": "ee669dd5d58d97b0621fb718244b168351bb400fa9b17ad4bb0d14cb81a34318",
+      "bytes": 23500
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_drift/clock_residuals.pdf",
@@ -2652,13 +2653,13 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note2_residual_profile/README.md",
-      "sha256": "3f914dd03244ac1aa1702de3b5ee2128c1678228cb1fcdaf4653db8f9b2698e5",
-      "bytes": 3506
+      "sha256": "1e8415243d59571fac8b7d7d2582466387fba1fe1eaa43300539c8736d86fabe",
+      "bytes": 3305
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note2_residual_profile/awc_residual_profile.pdf",
-      "sha256": "6bf474061840457b6b82c0d2337b5da9b0e639e0e2b2e0b456320fb519f51be7",
-      "bytes": 31043
+      "sha256": "1cf655278b350b14d55de8cd4fbd28b4014b3903925b313a14ebbd04ee334e80",
+      "bytes": 30824
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note2_residual_profile/historical_marker_audit.csv",
@@ -2667,8 +2668,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note2_residual_profile/provenance.json",
-      "sha256": "7044604ac7ab76db8aef5d7a101659a429519adf9158b7908cdc4165e2e6989c",
-      "bytes": 3536
+      "sha256": "3fe3fbac77cd84dd52a4edbb8e67dbdfea869747b52331a43f48007aa8e13b0e",
+      "bytes": 3139
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note2_residual_profile/residual_profile.csv",
@@ -2677,13 +2678,13 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note2_residual_profile/verification.json",
-      "sha256": "f66a97948c2fd92405df5e6d03be37a9adc362c5a10333a2f39c988b2dd1ac3e",
-      "bytes": 388
+      "sha256": "52ae01bb2a5a3a95cf12e122d10277054e7eb79ae58a49946f1cc2e4ce8d392f",
+      "bytes": 465
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/both_notes_slides_v2.pdf",
-      "sha256": "a841360d8e4bc6e06e4e638f6adecefcb4bbc5060e41d4f392ac904aa6cb5758",
-      "bytes": 1859179
+      "sha256": "4e0f3f7780baf28ab062259c613e7f7ffad010fb063397c68f619473cde7e16d",
+      "bytes": 1855631
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build.py",
@@ -2697,7 +2698,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_report.json",
-      "sha256": "52198a1cc437539460e8447779a1d3b0045ba32a7739cb051a20172341625cde",
+      "sha256": "181524cac10931d280402ae0ab0a193455d6c043bf58b551b489b25f7061a1f1",
       "bytes": 774
     },
     {
@@ -2837,7 +2838,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/asset_manifest.json",
-      "sha256": "26e0ca6622d18a5967fdab8e48fea283c8ebddba15a0ffbe46b21235d87338c6",
+      "sha256": "d08be918087b1ffba10d577416b2463b98d4da459c004319eaf35c0bd898ff39",
       "bytes": 1716
     },
     {
@@ -2852,8 +2853,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/figures/awc_residual_profile.pdf",
-      "sha256": "6bf474061840457b6b82c0d2337b5da9b0e639e0e2b2e0b456320fb519f51be7",
-      "bytes": 31043
+      "sha256": "1cf655278b350b14d55de8cd4fbd28b4014b3903925b313a14ebbd04ee334e80",
+      "bytes": 30824
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/figures/awc_summary_selected.pdf",
@@ -2902,8 +2903,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/main.tex",
-      "sha256": "5fd5e6210471c83bfd27d2fd00f3fd5a6d6f63836754e9676bd4bbe64ab15eda",
-      "bytes": 8798
+      "sha256": "c8a507642751a895eff6b9d5416127ee93085660c13b43b720b090cb93a15f3b",
+      "bytes": 8775
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/metadata.tex",
@@ -2922,8 +2923,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/slides.pdf",
-      "sha256": "79a4f19b81ad1295d349b29255c9d1bf693dffb768c01b61f4dd1a359cc09473",
-      "bytes": 968687
+      "sha256": "5681bf70595da4da860a92e03daa1535a74091dd9253552fbb2922bbc5c897c9",
+      "bytes": 968445
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/prepare_note1_drift.py",
@@ -2972,8 +2973,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/prepare_note2_residual_profile.py",
-      "sha256": "0b4b2786e0c23ebaf6b06cee5f46232239a3ec707aafa27b0275196899c67f39",
-      "bytes": 9135
+      "sha256": "803072967949108bb65c4279ac94e5a5fd5970ecc8f7ae0f57531c88a73cb7ed",
+      "bytes": 8210
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/slides_preamble.tex",
@@ -2992,8 +2993,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
-      "sha256": "8e74b0a8dab6aedd22b58d04934831484bec162766d80fead7c1a922f3ba6663",
-      "bytes": 21683
+      "sha256": "532eacbfbef69e11d6a4463f3e5165c1197c08cd0fb91fc7802768a82b21d958",
+      "bytes": 21698
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -5174,7 +5175,7 @@
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "24 October: Note 2 slide 10 numerical residual replacement. Independent SEM/domain/centering/line checks passed, 11-slide deck and 23-page combined PDF compiled without overflow. Only slide 10 content changed; other plot drawing streams/images identical. Protected full notes and Note 1 submission byte-identical.",
+    "latest_change": "24 October: Note 2 slide 10 trend removed. Residual CSV byte-identical; only slide 10 content changes. Note 1 and full notes byte-identical. Rebuilt Note 2 and combined PDF; no overflow or unresolved citations.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 26,
@@ -5194,7 +5195,7 @@
     "n2_3_n2_4_closure_changed_files_hash_checked": 17,
     "title_update_changed_files_hash_checked": 17,
     "github_link_verification": "DPS_NOTES/review_2026-10-22_publication/repository_links.json",
-    "latest_changed_files_hash_checked": 24,
+    "latest_changed_files_hash_checked": 13,
     "original_text_verification": "DPS_NOTES/review_2026-10-22_publication/original_text_check.json",
     "language_review_verification": "DPS_NOTES/review_2026-10-22_publication/language_review_verification.json",
     "short_slides_v2": {

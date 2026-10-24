@@ -43,24 +43,7 @@
   "bin_residual_rms_ps": 6.077604867561275,
   "weighted_bin_residual_rms_ps": 5.31375539310059,
   "central_points_outside_10ps": 5,
-  "diagnostic_line": {
-    "pivot_q_adc": 236.53306840345306,
-    "intercept_ps": 6.261147907637008e-14,
-    "slope_ps_per_adc": -0.031060382374840472,
-    "fixed_sem_covariance": [
-      [
-        0.7356511285234045,
-        3.0522331816999215e-18
-      ],
-      [
-        3.0522331816999215e-18,
-        0.0003958550427069817
-      ]
-    ],
-    "chi2": 35.9451963142831,
-    "ndf": 41,
-    "applied_as_correction": false
-  },
+  "residual_trend_fit": false,
   "interpretation": "About 6.1 ps RMS of bin-mean residuals supports the walk form at roughly 10 ps scale in this example, not a single-hit resolution, all-point bound, or test of reference-free AWC prediction.",
   "historical_comparison": {
     "purpose": "Diagnostic comparison only; digitized points are not calculation inputs.",

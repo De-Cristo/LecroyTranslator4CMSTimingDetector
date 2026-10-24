@@ -345,8 +345,9 @@ uncertainty model.
 Slide 10 now uses `prepare_note2_residual_profile.py` and the numerical MCP
 profile, with saved bin-mean SEM converted from ns to ps. The saved linear
 mean-slope fit and the original detector note's Table 2 AWC = 20 uA are fixed.
-Only an inverse-variance constant offset is fitted for centering; a diagnostic
-linear trend is drawn but not subtracted. AWC is not optimized again.
+Only an inverse-variance constant offset is fitted for centering. At the author's
+follow-up request, no residual trend is fitted or drawn. The points, SEM bars,
+zero line and +/-10 ps guide are retained. AWC is not optimized again.
 
 The calculation retains 43 of 48 bin representatives inside the measured slope
 domain, with no residual-based cuts or extrapolation. Their residual RMS is

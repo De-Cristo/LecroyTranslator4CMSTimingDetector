@@ -5,7 +5,9 @@
   "bins_in_domain": 43,
   "excluded_bins_have_no_residual": 5,
   "no_residual_cut_or_awc_refit": true,
-  "line_independently_checked_with_numpy_polyfit": true,
   "historical_shape_difference_rms_ps": 1.6126594044298133,
-  "bin_residual_rms_ps": 6.077604867561275
+  "bin_residual_rms_ps": 6.077604867561275,
+  "trend_fit_removed": true,
+  "residual_csv_byte_identical_to_prior_version": true,
+  "all_other_provenance_values_unchanged": true
 }

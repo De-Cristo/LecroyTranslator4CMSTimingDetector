@@ -79,12 +79,6 @@ def prepare():
     charge = q[use]
     rms_ps = float(np.sqrt(np.mean(residual_ps**2)))
 
-    # Diagnostic line only: do not subtract it or use it to change AWC.
-    pivot = float(np.average(charge, weights=weights))
-    design = np.column_stack((np.ones(len(charge)), charge - pivot))
-    whitened = design / sem_ps[:, None]
-    line = np.linalg.lstsq(whitened, residual_ps / sem_ps, rcond=None)[0]
-    covariance = np.linalg.inv(whitened.T @ whitened)
     table["q_effective_adc"] = q
     table["selected"] = use
     table["selection_reason"] = np.where(use, "within_slope_domain", "outside_slope_domain")
@@ -105,16 +99,13 @@ def prepare():
         ax.axhline(0, color="0.55", lw=.7)
         ax.errorbar(charge, residual_ps, yerr=sem_ps, fmt="o", ms=4.5,
                     capsize=2, lw=1, color="#2277aa", label=r"Profile residual $\pm$ SEM")
-        grid = np.linspace(charge.min(), charge.max(), 200)
-        ax.plot(grid, line[0] + line[1] * (grid - pivot), color="#a33f36",
-                lw=1.5, label="Diagnostic linear fit")
         ax.set(xlim=(150, 450), ylim=(-30, 30), xticks=np.arange(150, 451, 50),
                yticks=np.arange(-30, 31, 10), xlabel=r"Charge proxy $Q$ [ADC]",
                ylabel=r"Residual $r(Q)$ [ps]")
         ax.grid(alpha=.2)
         ax.text(.98, .04, r"$\pm10$ ps guide", color="#23795d", ha="right",
                 transform=ax.transAxes, fontsize=11)
-        ax.legend(loc="lower center", bbox_to_anchor=(.5, 1.005), ncol=2,
+        ax.legend(loc="lower center", bbox_to_anchor=(.5, 1.005),
                   frameon=False, fontsize=10)
         fig.text(.14, .97, r"$\bf{CMS}$ Preliminary Phase 2", fontsize=14, va="top")
         fig.text(.14, .90, "Reference module, bar 8, left SiPM", fontsize=12, va="top")
@@ -146,11 +137,7 @@ def prepare():
         "bin_residual_rms_ps": rms_ps,
         "weighted_bin_residual_rms_ps": float(np.sqrt(np.average(residual_ps**2, weights=weights))),
         "central_points_outside_10ps": int((np.abs(residual_ps) > 10).sum()),
-        "diagnostic_line": {"pivot_q_adc": pivot, "intercept_ps": float(line[0]),
-                            "slope_ps_per_adc": float(line[1]),
-                            "fixed_sem_covariance": covariance.tolist(),
-                            "chi2": float(np.sum(((residual_ps - design @ line) / sem_ps)**2)),
-                            "ndf": len(charge) - 2, "applied_as_correction": False},
+        "residual_trend_fit": False,
         "interpretation": "About 6.1 ps RMS of bin-mean residuals supports the walk form at roughly 10 ps scale in this example, not a single-hit resolution, all-point bound, or test of reference-free AWC prediction.",
         "historical_comparison": historical_comparison(charge, residual_ps),
     }

@@ -25,9 +25,9 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "24 October: new Note 2 slide 10 inspected at final size; no clipping or overlaps. Only slide 10 text/plot changes. All other figure drawing streams and image bytes unchanged. Full notes, cover abstracts and Note 1 submission byte-identical; all Note 2 citation destinations checked.",
+  "visual_review": "24 October: slide 10 residual trend removed; final slide visually checked. Only slide 10 changed. Residual CSV, SEM, centering, AWC and RMS unchanged. Note 1 and full notes byte-identical.",
   "scientific_inputs": "Frozen reference corrections; four new downstream fits (two channels x two reference choices), 1512 common fitting events and 1456 common evaluation events at one threshold. 400 paired block-bootstrap replicas with fixed cuts and calibration.",
-  "combined_sha256": "a841360d8e4bc6e06e4e638f6adecefcb4bbc5060e41d4f392ac904aa6cb5758",
+  "combined_sha256": "4e0f3f7780baf28ab062259c613e7f7ffad010fb063397c68f619473cde7e16d",
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 7,
@@ -547,7 +547,7 @@
     "selected_bins": 43,
     "awc_fixed_ua": 20,
     "slope_fit_fixed": true,
-    "new_fits": "Inverse-variance constant centering and diagnostic linear trend only; trend is not subtracted. No AWC refit.",
+    "new_fits": "Inverse-variance constant centering only; no residual trend fit or AWC refit.",
     "bin_residual_rms_ps": 6.077604867561275,
     "uncertainty": "Saved input profile-mean SEM in ps; correction parameters and fitted offset treated as fixed, not total uncertainty.",
     "old_shape_difference_rms_ps": 1.6126594044298133,
@@ -576,6 +576,8 @@
       ]
     },
     "overflow": 0,
-    "citation_destinations_verified": 11
+    "citation_destinations_verified": 11,
+    "residual_trend_fit": false,
+    "followup": "Author requested removal of diagnostic trend; points, SEM and +/-10 ps guide unchanged."
   }
 }

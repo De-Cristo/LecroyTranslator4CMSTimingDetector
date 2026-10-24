@@ -29,7 +29,7 @@ Evaluating a nonlinear correction at a representative charge is not the same
 as averaging that correction over all events in a bin. These inputs do not
 provide that event-level calculation; finite-bin effects are not estimated.
 
-## Errors and diagnostic line
+## Errors
 
 Displayed bars are exactly the saved input profile-mean SEM in ps. They are
 conditional bars with AWC, slope coefficients and fitted centering treated as
@@ -39,10 +39,8 @@ finite-bin effects, and cross-acquisition transfer effects. If the fitted
 offset uncertainty were propagated, the centered residuals would be correlated;
 these bars do not include that covariance.
 
-The inverse-variance diagnostic line is not subtracted and does not change AWC.
-Its covariance is the fixed-input-SEM regression covariance, without chi-square
-rescaling. The same unknown constant is accounted for once in its 41 degrees
-of freedom (43 bins minus intercept and trend). Residual RMS is 6.08 ps over
+No residual trend is fitted or drawn, per the author's follow-up request.
+The constant centering and AWC are unchanged. Residual RMS is 6.08 ps over
 bin means, not a single-hit timing resolution; five central points exceed the
 visual +/-10 ps guide. That guide is not a confidence band.
 
@@ -50,7 +48,7 @@ visual +/-10 ps guide. That guide is not a confidence band.
 
 `historical_marker_audit.csv` contains digitized centers solely to compare
 the old illustration with this calculation. No digitized values enter the new
-residuals, centering or diagnostic fit. On the same 43 bins, removing an
+residuals or centering. On the same 43 bins, removing an
 arbitrary constant between the illustrations leaves a 1.61 ps RMS difference,
 larger than the approximately 0.058 ps/pixel raster scale. Thus the shapes are
 close but not identical. The saved slope coefficient also differs from the
