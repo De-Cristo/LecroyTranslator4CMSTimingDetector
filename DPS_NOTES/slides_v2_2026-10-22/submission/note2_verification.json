@@ -22,8 +22,13 @@
   "body_citation_links_verified": true,
   "overflow": 0,
   "undefined_citations": 0,
-  "sha256": "b4abd22b0cd742fa5cbb5ae7af0cb1a3eb7570c76d5c3cee7fa9d64d54b0ee8a",
+  "sha256": "d13b9286beff91efb8845e42559853df4665ad7b7a75bdc87b2628b97dd95ffc",
   "source": "note2_dual_threshold/submission.tex",
-  "visual_review": "All 11 rendered submission slides inspected; no clipping or overlap.",
-  "review_decks_full_notes_and_note1_submission_unchanged": true
+  "overlay_slide": 7,
+  "candidate_slides": [
+    8,
+    9
+  ],
+  "visual_review": "Slide 7 equation, plots and caption checked after reorder; no clipping or overlaps.",
+  "note1_and_full_notes_unchanged": true
 }

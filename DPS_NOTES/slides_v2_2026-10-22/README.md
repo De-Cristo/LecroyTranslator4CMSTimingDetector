@@ -77,8 +77,8 @@ The private meeting checklist has been reconciled locally and is not uploaded.
   the reference time, fit inverse-charge profiles, and check timing correction.
 - `note2_dual_threshold/slides.pdf`: motivate rapid calibration, measure the
   internal charge-to-slope mapping, benchmark the single-amplitude walk form,
-  ending on corrected timing residuals. Two exploratory candidate slides precede
-  the comparison results: the inverse-slope-coefficient trend and shared-response hypothesis.
+  ending on corrected timing residuals. The MCP curve matching precedes two
+  exploratory candidates: the inverse-slope-coefficient trend and shared-response hypothesis.
 - `both_notes_slides_v2.pdf`: both decks, 23 landscape pages, no covers.
 - `note1_transfer_review.pdf`: the three new Note 1 closure slides only.
 
@@ -282,12 +282,16 @@ Slides 2--6 cover the HL-LHC calibration need, variation of the original
 quadratic coefficients, the dual-threshold physical model, internal slope
 profiles and the one-amplitude inverse-slope correction. The internal slope-profile
 example on slide 5 is the right SiPM of bar 8 (19,312 selected hits).
-At the author's request on 24 October, both exploratory approaches now follow
-slide 6 in the main body. Slide 7 shows the empirical AWC-versus-1/c1 trend;
-slide 8 restores the shared fractional-charge response hypothesis and its
-held-out-bar prediction plot. Slide 9 benchmarks the functional form with the
-MCP comparison curves; slide 10 relabels the original residual Figure 5 in ps
-and adds a +/-10 ps visual guide.
+At the author's request on 26 October, slide 7 first obtains benchmark AWC
+values by matching the MCP curves. The equation fits AWC and a free constant
+offset by minimizing squared curve differences, with equal weights on the
+uniform Q grid in common populated intervals, excluding gaps and extrapolation.
+The saved slope map and MCP quadratic are fixed. This is the existing
+align calculation in the measured-overlap analysis, not a new fit or an
+internal prediction. Slide 8 shows the empirical AWC-versus-1/c1 candidate;
+slide 9 shows the shared fractional-charge response candidate and its
+held-out-bar prediction plot. Slide 10 retains the new numerical residual
+illustration with SEM bars and a +/-10 ps guide, without a trend fit.
 Slide 11 contains references. Note 2 has no post-reference backup pages.
 
 Both candidates remain explicitly exploratory. The first has a poor weighted

@@ -99,6 +99,35 @@ Use the MCP-calibrated channels to develop and test that prediction.
 The slope fit alone does not fix AWC. The common functional form follows the dual-threshold model in Ref.~\cite{DualThreshold}.}
 \end{frame}
 
+\begin{frame}[t]{Obtain benchmark AWC by matching the MCP curves}
+\setlength{\parskip}{1pt}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.49\textwidth}
+\centering\textbf{Bar 8, left SiPM}\par
+\includegraphics[width=\linewidth,height=32mm,keepaspectratio]{figures/comparison_ch137.pdf}
+\end{column}
+\begin{column}{.49\textwidth}
+\centering\textbf{Bar 7, right SiPM}\par
+\includegraphics[width=\linewidth,height=32mm,keepaspectratio]{figures/comparison_ch154.pdf}
+\end{column}
+\end{columns}
+{\fontsize{10}{12}\selectfont
+\setlength{\abovedisplayskip}{1pt}
+\setlength{\belowdisplayskip}{1pt}
+\setlength{\abovedisplayshortskip}{1pt}
+\setlength{\belowdisplayshortskip}{1pt}
+\[
+(\mathrm{AWC}_{\rm fit},b_{\rm fit})=\operatorname*{arg\,min}\nolimits_{\mathrm{AWC},\,b}
+\sum\nolimits_{Q_j\in\Omega}\left[f_{\rm MCP}(Q_j)-\left(\frac{\mathrm{AWC}}{\overline S(Q_j)}+b\right)\right]^2.
+\]
+}
+\Source{Black: MCP quadratic $f_{\rm MCP}$~\cite{ReferenceNote}; red: AWC model; $b$: free offset.
+$\Omega$: equally weighted $Q$ grid in common populated intervals; no gaps or extrapolation. Independent reference-module samples.
+Bar 8, left SiPM: \ExampleRMS\,ps RMS mismatch. Lower panels: curve differences, not resolution.
+Bands: slope-fit statistics, MCP curve fixed; clock alignment: LOWESS~\cite{LOWESS}.
+AWC is fitted to MCP here, not predicted by the following candidates.}
+\end{frame}
+
 \begin{frame}[t]{Candidate 1: AWC versus inverse slope coefficient}
 \centering
 \includegraphics[width=\linewidth,height=48mm,keepaspectratio]{figures/awc_summary_selected.pdf}
@@ -141,23 +170,6 @@ K\simeq-\frac{dW}{d\ln Q}\bigg|_{Q_*},\quad
 \Source{Leave-one-bar-out test: ten SiPMs, six bars; $K$ learned from other bars' MCP AWC.
 RMS: \PredictorRMSE\,$\mu$A (\PredictorFraction\%). Dashed: equality. Bars: conditional reference-AWC intervals, not prediction intervals.
 Full uncertainties and correlations unvalidated. Transfer across thresholds, overvoltage or charge-integration settings untested; recalibration may be needed.}
-\end{frame}
-
-\begin{frame}[t]{The single-amplitude model closely follows the MCP curves}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{.49\textwidth}
-\centering\textbf{Bar 8, left SiPM}\par
-\includegraphics[width=\linewidth,height=43mm,keepaspectratio]{figures/comparison_ch137.pdf}
-\end{column}
-\begin{column}{.49\textwidth}
-\centering\textbf{Bar 7, right SiPM}\par
-\includegraphics[width=\linewidth,height=43mm,keepaspectratio]{figures/comparison_ch154.pdf}
-\end{column}
-\end{columns}
-\Source{Reference module; independent samples. Black: MCP quadratic; red: dual-threshold model.
-AWC and offset minimize squared curve differences on equally weighted $Q$-grid points in common populated intervals, excluding gaps.
-Bar 8, left SiPM: \ExampleRMS\,ps RMS mismatch. Lower panels: curve differences, not resolution.
-Bands: slope-fit statistics, MCP curve fixed. Clock alignment: LOWESS~\cite{LOWESS}. Shape benchmark, not AWC prediction.}
 \end{frame}
 
 \PlotSlide{The AWC correction describes the walk at the 10 ps scale}{awc_residual_profile}{

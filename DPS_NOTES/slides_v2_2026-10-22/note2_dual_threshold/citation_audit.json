@@ -57,6 +57,7 @@
       "key": "ReferenceNote",
       "body_slides": [
         3,
+        7,
         10
       ],
       "role": "MCP reference calibration and coefficients",
@@ -94,7 +95,7 @@
       "number": 10,
       "key": "LOWESS",
       "body_slides": [
-        9
+        7
       ],
       "role": "MCP clock-alignment local regression, not the linear slope fit",
       "clickable_pdf_link_verified": true

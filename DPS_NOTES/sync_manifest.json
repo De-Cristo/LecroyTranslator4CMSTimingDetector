@@ -39,7 +39,8 @@
     "note2_transcript_errors_and_context": "Closed wording/statistical follow-up 24 October: original unweighted quadratic coefficients reproduced; independent-profile-SEM covariance propagated and checked. Added conditional errors to slide 3, full matrices saved. Clarified separate samples, SEM weighting, matching objective and untested operating conditions. Historical residual-bar definition remains unverified.",
     "note2_numeric_residual_errors": "Closed point 1 on 24 October: slide 10 replaced by new numerical profile-level residuals with explicit input-SEM bars. Fixed saved slope and AWC=20 uA; fitted constant only, diagnostic trend not subtracted. 43 bins inside slope domain, 6.08 ps bin RMS. Historical figure retained but not claimed exactly reproduced. Point 2 left unchanged for coauthor discussion.",
     "note2_residual_trend_removal": "24 October: removed residual trend fit and line from slide 10 at author request. Residual points, SEM, AWC, centering and +/-10 ps guide unchanged.",
-    "note2_submission_format": "24 October: 11-slide submission-format Note 2 prepared from current reviewed sources; draft/review notices removed, scientific content and caveats retained. References on slide 11; no cover or backup. No actual CMS submission or approval implied."
+    "note2_submission_format": "24 October: 11-slide submission-format Note 2 prepared from current reviewed sources; draft/review notices removed, scientific content and caveats retained. References on slide 11; no cover or backup. No actual CMS submission or approval implied.",
+    "note2_overlay_order": "26 October: MCP-overlay benchmark moved to slide 7 before candidates 8-9. Added explicit least-squares objective fitting AWC and constant offset over equally weighted common populated Q support. Benchmarks distinguished from internal predictions. No numerical/figure changes; review and submission rebuilt."
   },
   "files": [
     {
@@ -2439,8 +2440,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/README.md",
-      "sha256": "2391adce9dc1df59d9b498a688e623a500199d84479f9578ccfe0b935119ba03",
-      "bytes": 24351
+      "sha256": "56b9aaa62f5b0301fd49001f6d80c7cba0240ccbb37445d1b734f69d535ec79a",
+      "bytes": 24665
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_drift/clock_residuals.pdf",
@@ -2684,8 +2685,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/both_notes_slides_v2.pdf",
-      "sha256": "4e0f3f7780baf28ab062259c613e7f7ffad010fb063397c68f619473cde7e16d",
-      "bytes": 1855631
+      "sha256": "1c478af398c2d63f9ed4ad8798771aaefb2648e7f1ffe046b7622de33853364a",
+      "bytes": 1879258
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build.py",
@@ -2704,7 +2705,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_report.json",
-      "sha256": "181524cac10931d280402ae0ab0a193455d6c043bf58b551b489b25f7061a1f1",
+      "sha256": "582ef27ed509cc7ac1da9d503879e2fd1734b3a2dceb49c4ca4bc6b221e6436c",
       "bytes": 774
     },
     {
@@ -2849,8 +2850,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/citation_audit.json",
-      "sha256": "4630dcaf14bac45b0b81f5e2ca23be34c67fb54ccba692f2c630926e4822daf4",
-      "bytes": 3255
+      "sha256": "9f104da61569a124f487fed1663a0ede11856c94482da23a71e9fc6832e7ca00",
+      "bytes": 3266
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/figures/awc_residual_envelope.pdf",
@@ -2909,8 +2910,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/main.tex",
-      "sha256": "c8a507642751a895eff6b9d5416127ee93085660c13b43b720b090cb93a15f3b",
-      "bytes": 8775
+      "sha256": "e30b01e87167536fe36bd33702d80fe51568e09f5bde1491a0b1cce84052812a",
+      "bytes": 9217
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/metadata.tex",
@@ -2929,8 +2930,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/slides.pdf",
-      "sha256": "5681bf70595da4da860a92e03daa1535a74091dd9253552fbb2922bbc5c897c9",
-      "bytes": 968445
+      "sha256": "8fe93d768dc132041a70e70d0f3767a2448514adf00b09c626d59e440c8bbe6f",
+      "bytes": 989764
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note2_dual_threshold/submission.tex",
@@ -2999,13 +3000,13 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/submission/note2_dual_threshold.pdf",
-      "sha256": "b4abd22b0cd742fa5cbb5ae7af0cb1a3eb7570c76d5c3cee7fa9d64d54b0ee8a",
-      "bytes": 967599
+      "sha256": "d13b9286beff91efb8845e42559853df4665ad7b7a75bdc87b2628b97dd95ffc",
+      "bytes": 988928
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/submission/note2_verification.json",
-      "sha256": "98d6759497bfb574d2fab9e12258078c02aedabc24971e2c10184f733a26028e",
-      "bytes": 931
+      "sha256": "1872a63388f99eb748b16b858efeb2f61f474b8c9863cf575767b5c4cf028515",
+      "bytes": 986
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/submission/verification.json",
@@ -3014,8 +3015,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
-      "sha256": "532eacbfbef69e11d6a4463f3e5165c1197c08cd0fb91fc7802768a82b21d958",
-      "bytes": 21698
+      "sha256": "ceca21fe74d480703cd4ffb19502079798a93eeef79bf25528790b208fea9a2d",
+      "bytes": 22881
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -5196,7 +5197,7 @@
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "24 October: new Note 2 submission-format PDF. Scientific text equality, eleven bibliography destinations/body links and all rendered pages checked; no overflow. Review decks, full notes and Note 1 submission unchanged.",
+    "latest_change": "26 October: reordered Note 2 overlay/candidates and added matching equation, independently checked against both saved fits. Review/submission 11 slides, combined 23 pages; no overflow. Citation links updated. Note 1/full notes and all figure PDFs unchanged.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 26,
@@ -5216,7 +5217,7 @@
     "n2_3_n2_4_closure_changed_files_hash_checked": 17,
     "title_update_changed_files_hash_checked": 17,
     "github_link_verification": "DPS_NOTES/review_2026-10-22_publication/repository_links.json",
-    "latest_changed_files_hash_checked": 5,
+    "latest_changed_files_hash_checked": 9,
     "original_text_verification": "DPS_NOTES/review_2026-10-22_publication/original_text_check.json",
     "language_review_verification": "DPS_NOTES/review_2026-10-22_publication/language_review_verification.json",
     "short_slides_v2": {
@@ -5234,7 +5235,7 @@
         "note1": 11,
         "note2": 10
       },
-      "note2_structure_review": "AWC model 6 -> exploratory candidates 7-8 -> MCP comparison 9 -> residual 10 -> references 11",
+      "note2_structure_review": "AWC model 6 -> MCP-overlay benchmark 7 -> exploratory candidates 8-9 -> residual 10 -> references 11",
       "note2_backup_slides": 0,
       "note2_profile_channel": 150,
       "note2_residual_figure_slide": 10,
@@ -5265,7 +5266,12 @@
       "pages": 11,
       "reference_page": 11,
       "backup_pages": 0,
-      "verification": "DPS_NOTES/slides_v2_2026-10-22/submission/note2_verification.json"
+      "verification": "DPS_NOTES/slides_v2_2026-10-22/submission/note2_verification.json",
+      "overlay_slide": 7,
+      "candidate_slides": [
+        8,
+        9
+      ]
     }
   }
 }

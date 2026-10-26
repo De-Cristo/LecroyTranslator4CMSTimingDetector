@@ -25,16 +25,16 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "24 October: slide 10 residual trend removed; final slide visually checked. Only slide 10 changed. Residual CSV, SEM, centering, AWC and RMS unchanged. Note 1 and full notes byte-identical.",
+  "visual_review": "26 October: reordered Note 2 overlay slide 7 inspected in submission format; equation and caption fit without clipping. Other slide content preserved under the 7->8, 8->9, 9->7 permutation; all figure files unchanged.",
   "scientific_inputs": "Frozen reference corrections; four new downstream fits (two channels x two reference choices), 1512 common fitting events and 1456 common evaluation events at one threshold. 400 paired block-bootstrap replicas with fixed cuts and calibration.",
-  "combined_sha256": "4e0f3f7780baf28ab062259c613e7f7ffad010fb063397c68f619473cde7e16d",
+  "combined_sha256": "1c478af398c2d63f9ed4ad8798771aaefb2648e7f1ffe046b7622de33853364a",
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 7,
     "note2": 11
   },
   "note2_slide_content_unchanged": false,
-  "structure_review": "Note 2: AWC model 6, exploratory candidates 7-8, comparison 9, residual result 10, references 11; no backup.",
+  "structure_review": "Note 2: AWC model 6, MCP-overlay benchmark 7, exploratory candidates 8-9, residual 10, references 11.",
   "bar_pair_validation": "DPS_NOTES/review_2026-10-23_reference_transfer/verification.json",
   "slides": {
     "note1": 12,
@@ -579,5 +579,49 @@
     "citation_destinations_verified": 11,
     "residual_trend_fit": false,
     "followup": "Author requested removal of diagnostic trend; points, SEM and +/-10 ps guide unchanged."
+  },
+  "note2_overlay_order_review": {
+    "date": "2026-10-26",
+    "overlay_slide": 7,
+    "candidate_slides": [
+      8,
+      9
+    ],
+    "residual_slide": 10,
+    "reference_slide": 11,
+    "equation": "argmin over AWC and b of sum over common populated uniform Q grid of [f_MCP(Q)-AWC/Sbar(Q)-b]^2",
+    "equation_checks": [
+      {
+        "channel": 137,
+        "awc_ua": 18.33161672670884,
+        "offset_ns": -26.579043773418014,
+        "uniform_grid_equation_matches_saved_fit": true
+      },
+      {
+        "channel": 154,
+        "awc_ua": 24.248586049235364,
+        "offset_ns": -27.64715040418433,
+        "uniform_grid_equation_matches_saved_fit": true
+      }
+    ],
+    "curves_and_numerical_results_unchanged": true,
+    "all_figure_pdfs_byte_identical": true,
+    "unmodified_slide_mapping_new_to_old": {
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "8": 7,
+      "9": 8,
+      "10": 10,
+      "11": 11
+    },
+    "no_new_calibration_fits": true,
+    "note1_and_full_notes_unchanged": true,
+    "review_and_submission_pages": 11,
+    "overflow": 0,
+    "citation_destinations_verified": 11
   }
 }
