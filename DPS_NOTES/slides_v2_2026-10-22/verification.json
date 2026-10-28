@@ -25,9 +25,9 @@
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/Q_Walk/qwalk_two_hit_pair_profile.py",
     "https://github.com/De-Cristo/LecroyTranslator4CMSTimingDetector/blob/45a907c422d6c8afbe0cdf44cd2827d3433d0f97/TimeCalibration/ch192_vs_trigger_lowess.py"
   ],
-  "visual_review": "26 October: reordered Note 2 overlay slide 7 inspected in submission format; equation and caption fit without clipping. Other slide content preserved under the 7->8, 8->9, 9->7 permutation; all figure files unchanged.",
+  "visual_review": "28 October: Note 1 submission reference page inspected; published MCP entry fits cleanly. Only reference pages change across Note 1 variants; covers, scientific slide text and Note 2 unchanged.",
   "scientific_inputs": "Frozen reference corrections; four new downstream fits (two channels x two reference choices), 1512 common fitting events and 1456 common evaluation events at one threshold. 400 paired block-bootstrap replicas with fixed cuts and calibration.",
-  "combined_sha256": "1c478af398c2d63f9ed4ad8798771aaefb2648e7f1ffe046b7622de33853364a",
+  "combined_sha256": "2f229932d2f43a00222d1283d524cd17e5f913651de913656c6773cce4db8026",
   "reference_slides_each": 1,
   "reference_entries": {
     "note1": 7,
@@ -623,5 +623,29 @@
     "review_and_submission_pages": 11,
     "overflow": 0,
     "citation_destinations_verified": 11
-  }
+  },
+  "note1_mcp_journal_citation": {
+    "date": "2026-10-28",
+    "citation": "J. Bortfeldt et al., Timing Performance of a Micro-Channel-Plate Photomultiplier Tube, Nucl. Instrum. Meth. A 960 (2020) 163592 [arXiv:1909.12604].",
+    "doi": "10.1016/j.nima.2020.163592",
+    "author_requested_exception_to_original_reference_text": true,
+    "only_changed_pages": {
+      "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/slides.pdf": [
+        11
+      ],
+      "DPS_NOTES/slides_v2_2026-10-22/submission/note1_mcp_reference.pdf": [
+        11
+      ],
+      "DPS_NOTES/note1_mcp_reference/slides.pdf": [
+        25
+      ],
+      "DPS_NOTES/note1_mcp_reference/publication_candidate_slides.pdf": [
+        25
+      ]
+    },
+    "doi_and_arxiv_links_verified": true,
+    "covers_and_note2_unchanged": true,
+    "overflow": 0
+  },
+  "original_note_reference_exception": "28 October: author requested the published MCP citation; full Note 1 references and derived PDFs updated. Cover abstract unchanged."
 }

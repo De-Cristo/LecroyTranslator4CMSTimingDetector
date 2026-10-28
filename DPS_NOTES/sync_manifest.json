@@ -40,7 +40,8 @@
     "note2_numeric_residual_errors": "Closed point 1 on 24 October: slide 10 replaced by new numerical profile-level residuals with explicit input-SEM bars. Fixed saved slope and AWC=20 uA; fitted constant only, diagnostic trend not subtracted. 43 bins inside slope domain, 6.08 ps bin RMS. Historical figure retained but not claimed exactly reproduced. Point 2 left unchanged for coauthor discussion.",
     "note2_residual_trend_removal": "24 October: removed residual trend fit and line from slide 10 at author request. Residual points, SEM, AWC, centering and +/-10 ps guide unchanged.",
     "note2_submission_format": "24 October: 11-slide submission-format Note 2 prepared from current reviewed sources; draft/review notices removed, scientific content and caveats retained. References on slide 11; no cover or backup. No actual CMS submission or approval implied.",
-    "note2_overlay_order": "26 October: MCP-overlay benchmark moved to slide 7 before candidates 8-9. Added explicit least-squares objective fitting AWC and constant offset over equally weighted common populated Q support. Benchmarks distinguished from internal predictions. No numerical/figure changes; review and submission rebuilt."
+    "note2_overlay_order": "26 October: MCP-overlay benchmark moved to slide 7 before candidates 8-9. Added explicit least-squares objective fitting AWC and constant offset over equally weighted common populated Q support. Benchmarks distinguished from internal predictions. No numerical/figure changes; review and submission rebuilt.",
+    "note1_published_mcp_reference": "28 October: author requested published citation J. Bortfeldt et al., Nucl. Instrum. Meth. A 960 (2020) 163592 [arXiv:1909.12604]. Full and short Note 1 references updated with DOI/arXiv links; all derived Note 1 PDFs rebuilt. Only bibliography pages changed; covers and Note 2 unchanged."
   },
   "files": [
     {
@@ -65,8 +66,8 @@
     },
     {
       "path": "DPS_NOTES/both_notes_review_v1.pdf",
-      "sha256": "824ea078664d2310e87048c0d7f12bdd09b0d7d131ccfc39365fd93ca0cee66d",
-      "bytes": 6235808
+      "sha256": "489a0b09ef7b9579db83a339ff53de5b3fa9be8aa73aaa248a261b1f7f43b7bf",
+      "bytes": 6236821
     },
     {
       "path": "DPS_NOTES/cms_dp_note_template/CMSlogo_black_label_1024.png",
@@ -150,7 +151,7 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/candidate_report.json",
-      "sha256": "f6ac68f22a044c402b816a8e4c87a019a96f3de48f9597d1f27857bbbb9287c0",
+      "sha256": "fc24759a5e378282b6e30b6286bb44c83342985ba85b5206cec37d0cdfb82d03",
       "bytes": 549
     },
     {
@@ -495,8 +496,8 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/note_with_cover.pdf",
-      "sha256": "2fe3fa8b673debc632abcc2ecfc839d51f33003ec3fb8d91b3b1c24099b894f4",
-      "bytes": 4235974
+      "sha256": "f9b64eceb53a0fed02994de3e0fd1a8768ab2c10f1807b298bef8a3a60426e3b",
+      "bytes": 4236983
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/publication_candidate.tex",
@@ -505,18 +506,18 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/publication_candidate_slides.pdf",
-      "sha256": "091ca4bb55fcc4162f46b73e5791a7cac7f5112db60c5de6a51963b5c40dcfc7",
-      "bytes": 2841842
+      "sha256": "8525c931e60a92f3c244db70a713ca7ef4f8f2aae185b5ff9227835cc128dea3",
+      "bytes": 2842470
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/publication_candidate_with_cover.pdf",
-      "sha256": "b9d0398fdc4b2b4d90e7323a08218fcecf5c30a156c9f0ea91e737773090441d",
-      "bytes": 3886834
+      "sha256": "0806f9473c35db969d6618e6f48d91939e965bd267d534c09c75baeb731d061b",
+      "bytes": 3887843
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/references.tex",
-      "sha256": "d14c72ea486e8c82a01032095500863a8dd11d907ef69da4f06f36a719ecef95",
-      "bytes": 1640
+      "sha256": "908b88ae6369c6836a1f46d1be1d376cd5ce89b6ed592bd1e42f37090926ed89",
+      "bytes": 1789
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/review_values.tex",
@@ -525,8 +526,8 @@
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/slides.pdf",
-      "sha256": "e74f96a793e75f940394de8524df45815ece3df05e07912f2eb6155e28cddefc",
-      "bytes": 3186261
+      "sha256": "6e5be56246b679428eb6c7069683a4a37d3dd3f25533843d14533f6158077350",
+      "bytes": 3186874
     },
     {
       "path": "DPS_NOTES/note1_mcp_reference/slides_preamble.tex",
@@ -2440,8 +2441,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/README.md",
-      "sha256": "56b9aaa62f5b0301fd49001f6d80c7cba0240ccbb37445d1b734f69d535ec79a",
-      "bytes": 24665
+      "sha256": "ac8d15abe205b38a41650fb133b506da097b507cd43290ae43ce207fb0d384a2",
+      "bytes": 25049
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/assets/note1_drift/clock_residuals.pdf",
@@ -2685,8 +2686,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/both_notes_slides_v2.pdf",
-      "sha256": "1c478af398c2d63f9ed4ad8798771aaefb2648e7f1ffe046b7622de33853364a",
-      "bytes": 1879258
+      "sha256": "2f229932d2f43a00222d1283d524cd17e5f913651de913656c6773cce4db8026",
+      "bytes": 1880471
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build.py",
@@ -2705,7 +2706,7 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/build_report.json",
-      "sha256": "582ef27ed509cc7ac1da9d503879e2fd1734b3a2dceb49c4ca4bc6b221e6436c",
+      "sha256": "bffe45490c91de621d918e8addfe3154884e0837e314a9658808a0ed1d85fb3a",
       "bytes": 774
     },
     {
@@ -2720,8 +2721,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/citation_audit.json",
-      "sha256": "a6336d67d03ec27bf586cf60f3aeb8be83e02594d707daf24fc11f8565906ce4",
-      "bytes": 2360
+      "sha256": "1a5b85357d0798422e4f36fbed9453082ca9fe991239bc1cd09db49dc9923b9b",
+      "bytes": 3182
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/closure_values.tex",
@@ -2815,8 +2816,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/references.tex",
-      "sha256": "940d39fac0f1f0db64c3648bf509b34b79b6950f96ec2d5fa8f1adbce1a7978e",
-      "bytes": 1642
+      "sha256": "1ba4d921a796b0e95553b75670faaaff9c36f2f92b05107592b43306155df9c9",
+      "bytes": 1790
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/review_values.tex",
@@ -2825,8 +2826,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/slides.pdf",
-      "sha256": "8681d22fe2a57eb13210051648ad7ae8513249f6413e944e261300e01d1a78c3",
-      "bytes": 794275
+      "sha256": "7d9256c302b7a331fb9cafcd9c28ff842da96c10d3802a1f7224a2ac96d75d71",
+      "bytes": 795009
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/submission.tex",
@@ -2995,8 +2996,8 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/submission/note1_mcp_reference.pdf",
-      "sha256": "c5f44a468ce9b9e801ca8ea4c193c4af8f21d8374f5cf324c70a70d05e9f5e23",
-      "bytes": 793371
+      "sha256": "e6e14a73a9998e2ac21fe36603e1e9ccfcdb7b8dd7c1b1309dcfb750a55e444e",
+      "bytes": 794103
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/submission/note2_dual_threshold.pdf",
@@ -3010,13 +3011,13 @@
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/submission/verification.json",
-      "sha256": "0f9180370b488e706313b529444fdd61b39d4445239a59fa6ca7b4e83730b0a1",
+      "sha256": "67a37db06af66a9648adb31dd27a2094ecb8de69e41e188bfa824475b2cdd149",
       "bytes": 618
     },
     {
       "path": "DPS_NOTES/slides_v2_2026-10-22/verification.json",
-      "sha256": "ceca21fe74d480703cd4ffb19502079798a93eeef79bf25528790b208fea9a2d",
-      "bytes": 22881
+      "sha256": "1908eb4a9fdc24959b9555a73ad34614e10965bc7cab3110dabf89dc15f6c352",
+      "bytes": 23861
     },
     {
       "path": "FEBD_Sync/simple_sync.py",
@@ -5197,7 +5198,7 @@
     "integration_tests_passed": 25,
     "optional_integration_skipped": 1,
     "unrelated_docs_preserved": true,
-    "latest_change": "26 October: reordered Note 2 overlay/candidates and added matching equation, independently checked against both saved fits. Review/submission 11 slides, combined 23 pages; no overflow. Citation links updated. Note 1/full notes and all figure PDFs unchanged.",
+    "latest_change": "28 October: Note 1 published MCP citation updated. Short submission/review reference page 11 and full/candidate reference page 25 checked; DOI and arXiv links present; no overflow. Scientific content, cover abstracts and Note 2 unchanged.",
     "publication_verification": "DPS_NOTES/review_2026-10-22_publication/verification.json",
     "candidate_slides": {
       "note1_mcp_reference": 26,
@@ -5217,7 +5218,7 @@
     "n2_3_n2_4_closure_changed_files_hash_checked": 17,
     "title_update_changed_files_hash_checked": 17,
     "github_link_verification": "DPS_NOTES/review_2026-10-22_publication/repository_links.json",
-    "latest_changed_files_hash_checked": 9,
+    "latest_changed_files_hash_checked": 16,
     "original_text_verification": "DPS_NOTES/review_2026-10-22_publication/original_text_check.json",
     "language_review_verification": "DPS_NOTES/review_2026-10-22_publication/language_review_verification.json",
     "short_slides_v2": {

@@ -84,5 +84,28 @@
     "Leo": "Indexed table of contents confirms leading-edge triggering on p326; book page not independently retrieved",
     "DualThreshold": "arXiv 2507.07127 abstract and published JINST metadata checked",
     "LOWESS": "Previously verified DOI 10.1080/01621459.1979.10481038; original bibliography wording retained"
+  },
+  "mcp_journal_update": {
+    "date": "2026-10-28",
+    "citation": "J. Bortfeldt et al., Timing Performance of a Micro-Channel-Plate Photomultiplier Tube, Nucl. Instrum. Meth. A 960 (2020) 163592 [arXiv:1909.12604].",
+    "doi": "10.1016/j.nima.2020.163592",
+    "author_requested_exception_to_original_reference_text": true,
+    "only_changed_pages": {
+      "DPS_NOTES/slides_v2_2026-10-22/note1_mcp_reference/slides.pdf": [
+        11
+      ],
+      "DPS_NOTES/slides_v2_2026-10-22/submission/note1_mcp_reference.pdf": [
+        11
+      ],
+      "DPS_NOTES/note1_mcp_reference/slides.pdf": [
+        25
+      ],
+      "DPS_NOTES/note1_mcp_reference/publication_candidate_slides.pdf": [
+        25
+      ]
+    },
+    "doi_and_arxiv_links_verified": true,
+    "covers_and_note2_unchanged": true,
+    "overflow": 0
   }
 }

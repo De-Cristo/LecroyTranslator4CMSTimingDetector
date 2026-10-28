@@ -31,6 +31,12 @@ file, not a claim of CMS approval or an actual submission.
 
 ## Review Decks
 
+On 28 October, Note 1's MCP citation was updated to J. Bortfeldt et al.,
+"Timing Performance of a Micro-Channel-Plate Photomultiplier Tube",
+Nucl. Instrum. Meth. A 960 (2020) 163592 [arXiv:1909.12604], with clickable
+journal DOI and arXiv links. The full Note 1 and short review/submission versions
+use the same entry; reference numbers, scientific content and Note 2 are unchanged.
+
 Note 1 has ten main slides, one reference slide and one diagnostic backup slide. Note 2 has ten main
 slides and one reference slide, with both exploratory candidates in the main body,
 with no A4 cover pages. These are separate from the full
